@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Box2D</title>
-    <link>http://box2d.org/tags/</link>
+    <link>https://erincatto.github.io/tags/</link>
     <description>Recent content in Tags on Box2D</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://box2d.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://erincatto.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>math</title>
-      <link>http://box2d.org/tags/math/</link>
+      <link>https://erincatto.github.io/tags/math/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://box2d.org/tags/math/</guid>
+      <guid>https://erincatto.github.io/tags/math/</guid>
       <description></description>
     </item>
     
     <item>
       <title>box2d</title>
-      <link>http://box2d.org/tags/box2d/</link>
+      <link>https://erincatto.github.io/tags/box2d/</link>
       <pubDate>Sat, 07 Jul 2018 21:53:34 +0000</pubDate>
       
-      <guid>http://box2d.org/tags/box2d/</guid>
+      <guid>https://erincatto.github.io/tags/box2d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>collision</title>
-      <link>http://box2d.org/tags/collision/</link>
+      <link>https://erincatto.github.io/tags/collision/</link>
       <pubDate>Thu, 07 Aug 2014 09:36:34 +0000</pubDate>
       
-      <guid>http://box2d.org/tags/collision/</guid>
+      <guid>https://erincatto.github.io/tags/collision/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>http://box2d.org/tags/programming/</link>
+      <link>https://erincatto.github.io/tags/programming/</link>
       <pubDate>Fri, 31 Aug 2012 12:28:59 +0000</pubDate>
       
-      <guid>http://box2d.org/tags/programming/</guid>
+      <guid>https://erincatto.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
