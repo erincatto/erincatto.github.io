@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Erin Catto ">
+<meta name="description" content="I ran into a problem computing a polygon normal using Newell&#39;s method as described in Christer Ericson&#39;s excellent book Real-Time Collision Detection. In this case the polygon happens to a be a triangle that is close to the origin. So I would guess that Newell&#39;s method would yield a great result. However, this is not true. I only get 2 digits of accuracy in single precision.
+Here is the triangle:" />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="http://box2d.org/posts/2014/01/troublesome-triangle/" />
+
+
+    <title>
+        
+            Troublesome Triangle :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="http://box2d.org/main.min.07e7e54bc1398d83c6b3623d8dfa710ec576e7ce64d27472bb79c03d9e7dca23.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="http://box2d.org/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://box2d.org/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://box2d.org/favicon-16x16.png">
+<link rel="manifest" href="http://box2d.org/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://box2d.org/images/logo.png"/>
+
+<meta name="twitter:title" content="Troublesome Triangle"/>
+<meta name="twitter:description" content="I ran into a problem computing a polygon normal using Newell&#39;s method as described in Christer Ericson&#39;s excellent book Real-Time Collision Detection. In this case the polygon happens to a be a triangle that is close to the origin. So I would guess that Newell&#39;s method would yield a great result. However, this is not true. I only get 2 digits of accuracy in single precision.
+Here is the triangle:"/>
+
+
+
+
+
+    <meta property="article:published_time" content="2014-01-31 16:50:09 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="http://box2d.org/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="http://box2d.org/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://box2d.org/about/">About</a></li><li><a href="http://box2d.org/posts/">Posts</a></li><li><a href="http://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Jan 31, 2014</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="http://box2d.org/posts/2014/01/troublesome-triangle/">Troublesome Triangle</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>I ran into a problem computing a polygon normal using Newell's method as described in Christer Ericson's excellent book Real-Time Collision Detection. In this case the polygon happens to a be a triangle that is close to the origin. So I would guess that Newell's method would yield a great result. However, this is not true. I only get 2 digits of accuracy in single precision.</p>
+<p>Here is the triangle:</p>
+<pre><code>p1 = (0.331916571, 0.382771939, -0.465963870)
+p2 = (0.378853887, -0.246981591, -0.440359056)
+p3 = (0.331879079, 0.382861078, -0.465974003)
+</code></pre><p>I knew I was getting a bad normal because some of my convex hull code was failing. So I decided to analyze the problem. First of all, this triangle has edge lengths of around 0.6320, 0.6321, and 1e-4. So this is a sliver and it is well known that slivers can be numerically challenging.</p>
+<p>I computed a baseline normal using doubles. Doubles yielded the following normal vector (truncated to 6 digits):</p>
+<p>normal_doubles = (0.206384 -0.0243884 -0.978167).</p>
+<p>I got the same result computing the normal in many different ways. So I am confident that this is accurate.</p>
+<p>Then I computed the normal many several different ways using single precision:</p>
+<ul>
+<li>1 way using Newell's method as stated in Christer's book</li>
+<li>3 ways using edge cross products</li>
+<li>3 ways using Newell's method on the triangle shifted to each vertex (suggested by Christer)</li>
+<li>1 way using Newell's method on the triangle shifted to the centroid</li>
+</ul>
+<p>Here is the code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">float</span> Real; <span style="color:#75715e">// change this to double to get a high accuracy result
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">float</span> <span style="color:#a6e22e">Sqrt</span>(<span style="color:#66d9ef">float</span> s)
+{
+  <span style="color:#66d9ef">return</span> sqrtf(s);
+}
+
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">Sqrt</span>(<span style="color:#66d9ef">double</span> s)
+{
+  <span style="color:#66d9ef">return</span> sqrt(s);
+}
+
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Vec</span>
+{
+  Vec() {}
+  Vec(Real x_, Real y_, Real z_) { x <span style="color:#f92672">=</span> x_; y <span style="color:#f92672">=</span> y_; z <span style="color:#f92672">=</span> z_; }
+  Real x, y, z;
+};
+
+<span style="color:#66d9ef">inline</span> Vec <span style="color:#66d9ef">operator</span><span style="color:#f92672">-</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a, <span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> b)
+{
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Vec</span>(a.x <span style="color:#f92672">-</span> b.x, a.y <span style="color:#f92672">-</span> b.y, a.z <span style="color:#f92672">-</span> b.z);
+}
+
+<span style="color:#66d9ef">inline</span> Vec <span style="color:#66d9ef">operator</span><span style="color:#f92672">+</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a, <span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> b)
+{
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Vec</span>(a.x <span style="color:#f92672">+</span> b.x, a.y <span style="color:#f92672">+</span> b.y, a.z <span style="color:#f92672">+</span> b.z);
+}
+
+<span style="color:#66d9ef">inline</span> Vec <span style="color:#a6e22e">Cross</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a, <span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> b)
+{
+  <span style="color:#66d9ef">return</span> Vec(a.y <span style="color:#f92672">*</span> b.z <span style="color:#f92672">-</span> a.z <span style="color:#f92672">*</span> b.y, a.z <span style="color:#f92672">*</span> b.x <span style="color:#f92672">-</span> a.x <span style="color:#f92672">*</span> b.z, a.x <span style="color:#f92672">*</span> b.y <span style="color:#f92672">-</span> a.y <span style="color:#f92672">*</span> b.x);
+}
+
+<span style="color:#66d9ef">inline</span> Vec <span style="color:#a6e22e">Newell</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a, <span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> b)
+{
+  <span style="color:#66d9ef">return</span> Vec((a.y <span style="color:#f92672">-</span> b.y) <span style="color:#f92672">*</span> (a.z <span style="color:#f92672">+</span> b.z), (a.z <span style="color:#f92672">-</span> b.z) <span style="color:#f92672">*</span> (a.x <span style="color:#f92672">+</span> b.x), (a.x <span style="color:#f92672">-</span> b.x) <span style="color:#f92672">*</span> (a.y <span style="color:#f92672">+</span> b.y));
+}
+
+<span style="color:#66d9ef">inline</span> Vec <span style="color:#a6e22e">Normalize</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a)
+{
+  <span style="color:#66d9ef">float</span> d <span style="color:#f92672">=</span> Sqrt(a.x <span style="color:#f92672">*</span> a.x <span style="color:#f92672">+</span> a.y <span style="color:#f92672">*</span> a.y <span style="color:#f92672">+</span> a.z <span style="color:#f92672">*</span> a.z);
+  <span style="color:#66d9ef">return</span> Vec(a.x<span style="color:#f92672">/</span>d, a.y<span style="color:#f92672">/</span>d, a.z<span style="color:#f92672">/</span>d);
+}
+
+<span style="color:#66d9ef">inline</span> Real <span style="color:#a6e22e">Length</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a)
+{
+  <span style="color:#66d9ef">return</span> Sqrt(a.x <span style="color:#f92672">*</span> a.x <span style="color:#f92672">+</span> a.y <span style="color:#f92672">*</span> a.y <span style="color:#f92672">+</span> a.z <span style="color:#f92672">*</span> a.z);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+  Vec p1(<span style="color:#ae81ff">0.331916571f</span>, <span style="color:#ae81ff">0.382771939f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.465963870f</span>);
+  Vec p2(<span style="color:#ae81ff">0.378853887f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.246981591f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.440359056f</span>);
+  Vec p3(<span style="color:#ae81ff">0.331879079f</span>, <span style="color:#ae81ff">0.382861078f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.465974003f</span>);
+  
+  Vec newell <span style="color:#f92672">=</span> Normalize(Newell(p1, p2) <span style="color:#f92672">+</span> Newell(p2, p3) <span style="color:#f92672">+</span> Newell(p3, p1));
+  
+  Vec e1 <span style="color:#f92672">=</span> p2 <span style="color:#f92672">-</span> p1;
+  Vec e2 <span style="color:#f92672">=</span> p3 <span style="color:#f92672">-</span> p2;
+  Vec e3 <span style="color:#f92672">=</span> p1 <span style="color:#f92672">-</span> p3;
+  
+  Real d1 <span style="color:#f92672">=</span> Length(e1);
+  Real d2 <span style="color:#f92672">=</span> Length(e2);
+  Real d3 <span style="color:#f92672">=</span> Length(e3);
+  
+  Vec n1 <span style="color:#f92672">=</span> Cross(e3, e1);
+  Vec n2 <span style="color:#f92672">=</span> Cross(e1, e2);
+  Vec n3 <span style="color:#f92672">=</span> Cross(e2, e3);
+  
+  Real s1 <span style="color:#f92672">=</span> Length(n1);
+  Real s2 <span style="color:#f92672">=</span> Length(n2);
+  Real s3 <span style="color:#f92672">=</span> Length(n3);
+  
+  n1 <span style="color:#f92672">=</span> Normalize(n1);
+  n2 <span style="color:#f92672">=</span> Normalize(n2);
+  n3 <span style="color:#f92672">=</span> Normalize(n3);
+  
+  Vec shift1 <span style="color:#f92672">=</span> Normalize(Newell(p1<span style="color:#f92672">-</span>p1, p2<span style="color:#f92672">-</span>p1) <span style="color:#f92672">+</span> Newell(p2<span style="color:#f92672">-</span>p1, p3<span style="color:#f92672">-</span>p1) <span style="color:#f92672">+</span> Newell(p3<span style="color:#f92672">-</span>p1, p1<span style="color:#f92672">-</span>p1));
+  Vec shift2 <span style="color:#f92672">=</span> Normalize(Newell(p1<span style="color:#f92672">-</span>p2, p2<span style="color:#f92672">-</span>p2) <span style="color:#f92672">+</span> Newell(p2<span style="color:#f92672">-</span>p2, p3<span style="color:#f92672">-</span>p2) <span style="color:#f92672">+</span> Newell(p3<span style="color:#f92672">-</span>p2, p1<span style="color:#f92672">-</span>p2));
+  Vec shift3 <span style="color:#f92672">=</span> Normalize(Newell(p1<span style="color:#f92672">-</span>p3, p2<span style="color:#f92672">-</span>p3) <span style="color:#f92672">+</span> Newell(p2<span style="color:#f92672">-</span>p3, p3<span style="color:#f92672">-</span>p3) <span style="color:#f92672">+</span> Newell(p3<span style="color:#f92672">-</span>p3, p1<span style="color:#f92672">-</span>p3));
+  
+  Vec c <span style="color:#f92672">=</span> p1 <span style="color:#f92672">+</span> p2 <span style="color:#f92672">+</span> p3;
+  c.x <span style="color:#f92672">=</span> c.x <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.0f</span>;
+  c.y <span style="color:#f92672">=</span> c.y <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.0f</span>;
+  c.z <span style="color:#f92672">=</span> c.z <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.0f</span>;
+  
+  Vec shiftc <span style="color:#f92672">=</span> Normalize(Newell(p1<span style="color:#f92672">-</span>c, p2<span style="color:#f92672">-</span>c) <span style="color:#f92672">+</span> Newell(p2<span style="color:#f92672">-</span>c, p3<span style="color:#f92672">-</span>c) <span style="color:#f92672">+</span> Newell(p3<span style="color:#f92672">-</span>c, p1<span style="color:#f92672">-</span>c));
+  
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, newell.x, newell.y, newell.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n1.x, n1.y, n1.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n2.x, n2.y, n2.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n3.x, n3.y, n3.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, shift1.x, shift1.y, shift1.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, shift2.x, shift2.y, shift2.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, shift3.x, shift3.y, shift3.z);
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%g %g %g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, shiftc.x, shiftc.y, shiftc.z);
+}
+</code></pre></div>
+<p>And here are the results:</p>
+<pre><code>0.205007 -0.0244907 -0.978454
+0.206384 -0.0243884 -0.978167
+0.206417 -0.0243837 -0.97816
+0.206384 -0.0243884 -0.978167
+0.206377 -0.0243887 -0.978168
+0.206453 -0.024386 -0.978153
+0.206315 -0.0243899 -0.978182
+0.206375 -0.0243882 -0.978169
+</code></pre><p>Exact:</p>
+<pre><code>0.206384 -0.0243884 -0.978167
+</code></pre><p>As you can see, Newell's method is only giving 2 digits of accuracy. Every other method is giving close to 4 digits of accuracy or more. The best result is from n1 and n2. Both of these are cross products that include the shortest edge. This agrees with Gino van den Bergen's comments on <a href="https://twitter.com/erin_catto/status/408711096631971841" title="Twitter">Twitter</a>.</p>
+<p>Shifting the triangle origin to one of the vertices or the centroid all improve Newell's method substantially. I'm a little disappointed that Newell's method is still not as good as <em>any</em> of the cross products. The price of generality?</p>
+<p>Bottom line:</p>
+<ol>
+<li>Shift a vertex to the origin before applying Newell's method.</li>
+<li>Cross products can produce triangle normals that are superior to the results of Newell's method.</li>
+<li>Switching to doubles can solve numerical problems, but it is better to first understand the underlying issue.</li>
+</ol>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://box2d.org/tags/collision">collision</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>827 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2014-01-31 08:50 -0800</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="http://box2d.org">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="http://box2d.org/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
+
+    </body>
+</html>

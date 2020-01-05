@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Box2D</title>
+    <link>http://box2d.org/posts/</link>
+    <description>Recent content in Posts on Box2D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://box2d.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Transform a Plane</title>
+      <link>http://box2d.org/posts/2018/09/how-to-transform-a-plane/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2018/09/how-to-transform-a-plane/</guid>
+      <description>Suppose you have a plane equation in local space and you&#39;d like to express that plane equation in world space. The plane in local space is written as:
+\[P := (n, w)\]
+where \(n\) is the plane normal and \(w\) is the plane offset.
+A point \(x\) is on the plane if
+\[n \cdot x = w\]
+Now define a transform \(A\) as
+\[ A := (R, p) \]
+where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.</description>
+    </item>
+    
+    <item>
+      <title>Box2D Subreddit</title>
+      <link>http://box2d.org/posts/2018/07/box2d-subreddit/</link>
+      <pubDate>Sat, 07 Jul 2018 21:53:34 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2018/07/box2d-subreddit/</guid>
+      <description>I&#39;m now a moderator on the Box2D subreddit. So I think this makes it the official!
+r/box2d
+I look forward to seeing Box2D discussion on reddit.</description>
+    </item>
+    
+    <item>
+      <title>Box2D Discord Server</title>
+      <link>http://box2d.org/posts/2018/06/box2d-discord-server/</link>
+      <pubDate>Sun, 24 Jun 2018 11:03:23 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2018/06/box2d-discord-server/</guid>
+      <description>Hi All! I created a Box2D server on Discord.
+Discord
+On a related note, I&#39;m considering locking the forums because I&#39;d rather spend my limited free time working on Box2D than maintaining the forums. I&#39;ve looked for new moderators over the last year or so unsuccessfully. Also updating phpBB and dealing with spam is not my cup of tea.
+In the future I&#39;d like to see most Box2D community interactions be on GitHub and Discord, with announcements on my Twitter account.</description>
+    </item>
+    
+    <item>
+      <title>Balancing Dynamic Trees</title>
+      <link>http://box2d.org/posts/2014/08/balancing-dynamic-trees/</link>
+      <pubDate>Thu, 07 Aug 2014 09:36:34 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2014/08/balancing-dynamic-trees/</guid>
+      <description>I received this question on LinkedIn:
+I&#39;m working on a 3d dynamic aabb tree based on the concepts of Presson&#39;s bullet contribution. I came across a bullet forum thread in which Dirk recommended looking at your box2d implementation. I noticed the major difference is that box2d is a balanced tree using a surface area heuristic while bullet&#39;s is unbalanced with manhattan distance heuristic.
+My guess is that keeping your tree balanced resulted in increased maintenance overhead but decreased tree query times.</description>
+    </item>
+    
+    <item>
+      <title>Computing a Basis</title>
+      <link>http://box2d.org/posts/2014/02/computing-a-basis/</link>
+      <pubDate>Mon, 03 Feb 2014 11:33:04 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2014/02/computing-a-basis/</guid>
+      <description>Given a normalized 3D vector, here’s an efficient method for computing a full basis. The computed basis is axis aligned if the input vector is axis aligned.
+void ComputeBasis(const Vec&amp;amp; a, Vec* b, Vec* c) { // Suppose vector a has all equal components and is a unit vector:  // a = (s, s, s)  // Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at  // least one component of a unit vector must be greater or equal  // to 0.</description>
+    </item>
+    
+    <item>
+      <title>Troublesome Triangle</title>
+      <link>http://box2d.org/posts/2014/01/troublesome-triangle/</link>
+      <pubDate>Fri, 31 Jan 2014 16:50:09 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2014/01/troublesome-triangle/</guid>
+      <description>I ran into a problem computing a polygon normal using Newell&#39;s method as described in Christer Ericson&#39;s excellent book Real-Time Collision Detection. In this case the polygon happens to a be a triangle that is close to the origin. So I would guess that Newell&#39;s method would yield a great result. However, this is not true. I only get 2 digits of accuracy in single precision.
+Here is the triangle:</description>
+    </item>
+    
+    <item>
+      <title>__m128</title>
+      <link>http://box2d.org/posts/2012/08/__m128/</link>
+      <pubDate>Fri, 31 Aug 2012 12:28:59 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2012/08/__m128/</guid>
+      <description>The best way to use SSE is to use the __m128 intrinsic directly. Unfortunately Visual Studio displays the values backwards (w,z,y,x). Bleh. Here is a change to autoexp.dat to correct the order.
+First comment out this line:
+__m128=$BUILTIN(M128) And add this line:
+__m128=&amp;lt;m128_f32[0]&amp;gt;, &amp;lt;m128_f32[1]&amp;gt;, &amp;lt;m128_f32[2]&amp;gt;, &amp;lt;m128_f32[3]&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Shape Coordinates</title>
+      <link>http://box2d.org/posts/2012/03/shape-coordinates/</link>
+      <pubDate>Sun, 25 Mar 2012 20:52:29 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2012/03/shape-coordinates/</guid>
+      <description>Keep in mind that a shape does not know about bodies and stand apart from the dynamics system. Shapes are stored in a compact form that is optimized for size and performance. As such, shapes are not easily moved around. You have to manually set the shape vertex positions to move a shape. However, when a shape is attached to a body using a fixture, the shapes move rigidly with the host body.</description>
+    </item>
+    
+    <item>
+      <title>Pixels</title>
+      <link>http://box2d.org/posts/2011/12/pixels/</link>
+      <pubDate>Sat, 17 Dec 2011 17:10:25 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2011/12/pixels/</guid>
+      <description>Box2D uses MKS (meters, kilograms, and seconds) units and radians for angles. You may have trouble working with meters because your game is expressed in terms of pixels. To deal with this in the testbed I have the whole game work in meters and just use an OpenGL viewport transformation to scale the world into screen space.
+float lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f; gluOrtho2D(lowerX, upperX, lowerY, upperY);  If your game must work in pixel units then you should convert your length units from pixels to meters when passing values from Box2D.</description>
+    </item>
+    
+  </channel>
+</rss>

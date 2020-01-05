@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Box2D</title>
+    <link>http://box2d.org/tags/programming/</link>
+    <description>Recent content in programming on Box2D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 31 Aug 2012 12:28:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://box2d.org/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>__m128</title>
+      <link>http://box2d.org/posts/2012/08/__m128/</link>
+      <pubDate>Fri, 31 Aug 2012 12:28:59 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2012/08/__m128/</guid>
+      <description>The best way to use SSE is to use the __m128 intrinsic directly. Unfortunately Visual Studio displays the values backwards (w,z,y,x). Bleh. Here is a change to autoexp.dat to correct the order.
+First comment out this line:
+__m128=$BUILTIN(M128) And add this line:
+__m128=&amp;lt;m128_f32[0]&amp;gt;, &amp;lt;m128_f32[1]&amp;gt;, &amp;lt;m128_f32[2]&amp;gt;, &amp;lt;m128_f32[3]&amp;gt; </description>
+    </item>
+    
+  </channel>
+</rss>

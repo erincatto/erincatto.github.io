@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>box2d on Box2D</title>
+    <link>http://box2d.org/tags/box2d/</link>
+    <description>Recent content in box2d on Box2D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 07 Jul 2018 21:53:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://box2d.org/tags/box2d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Box2D Subreddit</title>
+      <link>http://box2d.org/posts/2018/07/box2d-subreddit/</link>
+      <pubDate>Sat, 07 Jul 2018 21:53:34 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2018/07/box2d-subreddit/</guid>
+      <description>I&#39;m now a moderator on the Box2D subreddit. So I think this makes it the official!
+r/box2d
+I look forward to seeing Box2D discussion on reddit.</description>
+    </item>
+    
+    <item>
+      <title>Box2D Discord Server</title>
+      <link>http://box2d.org/posts/2018/06/box2d-discord-server/</link>
+      <pubDate>Sun, 24 Jun 2018 11:03:23 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2018/06/box2d-discord-server/</guid>
+      <description>Hi All! I created a Box2D server on Discord.
+Discord
+On a related note, I&#39;m considering locking the forums because I&#39;d rather spend my limited free time working on Box2D than maintaining the forums. I&#39;ve looked for new moderators over the last year or so unsuccessfully. Also updating phpBB and dealing with spam is not my cup of tea.
+In the future I&#39;d like to see most Box2D community interactions be on GitHub and Discord, with announcements on my Twitter account.</description>
+    </item>
+    
+    <item>
+      <title>Shape Coordinates</title>
+      <link>http://box2d.org/posts/2012/03/shape-coordinates/</link>
+      <pubDate>Sun, 25 Mar 2012 20:52:29 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2012/03/shape-coordinates/</guid>
+      <description>Keep in mind that a shape does not know about bodies and stand apart from the dynamics system. Shapes are stored in a compact form that is optimized for size and performance. As such, shapes are not easily moved around. You have to manually set the shape vertex positions to move a shape. However, when a shape is attached to a body using a fixture, the shapes move rigidly with the host body.</description>
+    </item>
+    
+    <item>
+      <title>Pixels</title>
+      <link>http://box2d.org/posts/2011/12/pixels/</link>
+      <pubDate>Sat, 17 Dec 2011 17:10:25 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2011/12/pixels/</guid>
+      <description>Box2D uses MKS (meters, kilograms, and seconds) units and radians for angles. You may have trouble working with meters because your game is expressed in terms of pixels. To deal with this in the testbed I have the whole game work in meters and just use an OpenGL viewport transformation to scale the world into screen space.
+float lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f; gluOrtho2D(lowerX, upperX, lowerY, upperY);  If your game must work in pixel units then you should convert your length units from pixels to meters when passing values from Box2D.</description>
+    </item>
+    
+  </channel>
+</rss>

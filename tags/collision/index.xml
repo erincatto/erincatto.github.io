@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>collision on Box2D</title>
+    <link>http://box2d.org/tags/collision/</link>
+    <description>Recent content in collision on Box2D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 07 Aug 2014 09:36:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://box2d.org/tags/collision/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Balancing Dynamic Trees</title>
+      <link>http://box2d.org/posts/2014/08/balancing-dynamic-trees/</link>
+      <pubDate>Thu, 07 Aug 2014 09:36:34 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2014/08/balancing-dynamic-trees/</guid>
+      <description>I received this question on LinkedIn:
+I&#39;m working on a 3d dynamic aabb tree based on the concepts of Presson&#39;s bullet contribution. I came across a bullet forum thread in which Dirk recommended looking at your box2d implementation. I noticed the major difference is that box2d is a balanced tree using a surface area heuristic while bullet&#39;s is unbalanced with manhattan distance heuristic.
+My guess is that keeping your tree balanced resulted in increased maintenance overhead but decreased tree query times.</description>
+    </item>
+    
+    <item>
+      <title>Troublesome Triangle</title>
+      <link>http://box2d.org/posts/2014/01/troublesome-triangle/</link>
+      <pubDate>Fri, 31 Jan 2014 16:50:09 +0000</pubDate>
+      
+      <guid>http://box2d.org/posts/2014/01/troublesome-triangle/</guid>
+      <description>I ran into a problem computing a polygon normal using Newell&#39;s method as described in Christer Ericson&#39;s excellent book Real-Time Collision Detection. In this case the polygon happens to a be a triangle that is close to the origin. So I would guess that Newell&#39;s method would yield a great result. However, this is not true. I only get 2 digits of accuracy in single precision.
+Here is the triangle:</description>
+    </item>
+    
+  </channel>
+</rss>
