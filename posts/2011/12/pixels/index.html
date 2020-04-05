@@ -36,9 +36,7 @@ float lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f; gluOrtho2
 
 
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://box2d.org/images/logo.png"/>
-
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pixels"/>
 <meta name="twitter:description" content="Box2D uses MKS (meters, kilograms, and seconds) units and radians for angles. You may have trouble working with meters because your game is expressed in terms of pixels. To deal with this in the testbed I have the whole game work in meters and just use an OpenGL viewport transformation to scale the world into screen space.
 float lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f; gluOrtho2D(lowerX, upperX, lowerY, upperY);  If your game must work in pixel units then you should convert your length units from pixels to meters when passing values from Box2D."/>
