@@ -139,21 +139,21 @@ There are other artifacts due to discrete time steps. Joint limits can also suff
 <pre><code>C = translation - lower_limit</code></pre>
 <p>We can use this formula to compute the new position constraint value based on the current position constraint value and the velocity constraint value:</p>
 
-<p><span  class="math">\[C_2 = C_1 + \Delta t \dot{C}\]</span></p>
+<p><span  class="math">\[C_2 = C_1 + \Delta t \dot{C_1}\]</span></p>
 
 <p>The time step is <span  class="math">\(\Delta t\)</span> and the velocity constraint value is <span  class="math">\(\dot{C}\)</span>. Normally when the joint limit is active we want <span  class="math">\(\dot{C} >= 0\)</span>, however the formula above implies that what we want:</p>
 
-<p><span  class="math">\[\dot{C} + \frac{C_1}{\Delta t} >= 0\]</span></p>
+<p><span  class="math">\[\dot{C_1} + \frac{C_1}{\Delta t} >= 0\]</span></p>
 
-<p>So in the velocity solver I normally use <span  class="math">\(\dot{C}\)</span> to compute the impulse. Instead I replace <span  class="math">\(\dot{C}\)</span> with <span  class="math">\(\dot{C} + \frac{C_1}{\Delta t}\)</span>. Simple!</p>
+<p>So in the velocity solver I normally use <span  class="math">\(\dot{C}\)</span> to compute the impulse. Instead I replace <span  class="math">\(\dot{C}\)</span> with <span  class="math">\(\dot{C} + \frac{C}{\Delta t}\)</span>. Simple!</p>
 
 <p>However, there is a special consideration for Box2D. I do not want the velocity solver to deal with position constraint errors because this can add kinetic energy if the position constraint is ever violated. Instead, I have a separate position solver that never modifies the velocity state. So instead I use this in the velocity solver:</p>
 
-<p><span  class="math">\[\dot{C} + \frac{\max (C_1, 0)}{\Delta t}\]</span></p>
+<p><span  class="math">\[\dot{C_1} + \frac{\max (C_1, 0)}{\Delta t}\]</span></p>
 
 <p>This is a very cheap modification to the joint limit solver and it has very nice results. It even simplifies the solver because I don't need to track the limit state for the velocity solver. The downside is that I need two constraints: a lower limit constraint and an upper limit constraint. This is necessary because the velocity constraint value can flip signs in the middle of the solver iterations.</p>
 
-<p>So predictive constraints are pro-active and try to anticipate constraint violations before they happen. This works particularly well for some joint limits. We should all try to be more pro-active!</p>
+<p>So predictive constraints are proactive and try to anticipate constraint violations before they happen. This works particularly well for some joint limits. We should all try to be more proactive!</p>
 
 <p>I made a recording of the discrete and predictive prismatic joint solvers in Box2D. I reduced the iteration count and used a large time step (30 Hertz) to show the effect well. Also I had to turn off some velocity clamping.</p>
 
