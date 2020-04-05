@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Erin Catto ">
+<meta name="description" content="Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.
+There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2020/04/predictive-joint-limits/" />
+
+
+    <title>
+        
+            Predictive Joint Limits :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.07e7e54bc1398d83c6b3623d8dfa710ec576e7ce64d27472bb79c03d9e7dca23.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://box2d.org/images/logo.png"/>
+
+<meta name="twitter:title" content="Predictive Joint Limits"/>
+<meta name="twitter:description" content="Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.
+There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints."/>
+
+
+
+
+
+    <meta property="article:published_time" content="2020-04-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Apr 3, 2020</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2020/04/predictive-joint-limits/">Predictive Joint Limits</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.</p>
+
+<p>There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints. A lower and upper limit can be set on a prismatic joint to keep the drawer from going in too deep or pulling out too far.</p>
+
+<p><figure><img src="/images/filing_cabinet.svg" alt="filing cabinet"></figure></p>
+
+<p>However, with fast movement the drawer can temporarily end up in a bad state. This can cause a glaring visual glitch. The reason this happens is because with discrete simulation the solver doesn't consider the joint limit <em>until it is violated</em>. Discrete simulation is reactive and it is alway trying to catch up to all the mistakes that have been made (kind of like my life at times).</p>
+
+<p><figure><img src="/images/filing_cabinet_broken.svg" alt="joint glitch"></figure></p>
+
+<p>It might be possible to compute the time of impact of the joint on a limit and then use sub-stepping. However, this is quite complicated, especially if there are multiple joints and multiple bodies involved. Admittedly, this is also quite complicated for continuous collision.</p>
+
+<p>Is there a simpler solution? We can draw inspiration from &quot;A Different Approach for Continuous Physics&quot; by Vincent Robert. The idea is to measure the gap between the current position and the limit. This is the position constraint <span  class="math">\(C\)</span>, but in this case the constraint is <em>not</em> being violated yet. However, suppose body velocities are such that the gap is closing. Based on the current position and velocities, I can determine if the limit would be violated once the positions are updated. In that case I can apply an impulse so that the limit is reached but not exceeded.</p>
+
+<p><figure><img src="/images/drawer_limits.svg" alt="joint limits"></figure></p>
+
+<p>Here is some math that shows how to use predictive limits. First we have the position constraint <span  class="math">\(C\)</span>. In the case of the prismatic joint the position constraint for the lower limit is:</p>
+<pre><code>C = translation - lower_limit</code></pre>
+<p>We can use this formula to compute the new position constraint value based on the current position constraint value and the velocity constraint value:</p>
+
+<p><span  class="math">\[C_2 = C_1 + \Delta t \dot{C}\]</span></p>
+
+<p>The time step is <span  class="math">\(\Delta t\)</span> and the velocity constraint value is <span  class="math">\(\dot{C}\)</span>. Normally when the joint limit is active we want <span  class="math">\(\dot{C} >= 0\)</span>, however the formula above implies that what we want:</p>
+
+<p><span  class="math">\[\dot{C} + \frac{C_1}{\Delta t} >= 0\]</span></p>
+
+<p>So in the velocity solver I normally use <span  class="math">\(\dot{C}\)</span> to compute the impulse. Instead I replace <span  class="math">\(\dot{C}\)</span> with <span  class="math">\(\dot{C} + \frac{C_1}{\Delta t}\)</span>. Simple!</p>
+
+<p>However, there is a special consideration for Box2D. I do not want the velocity solver to deal with position constraint errors because this can add kinetic energy if the position constraint is ever violated. Instead, I have a separate position solver that never modifies the velocity state. So instead I use this in the velocity solver:</p>
+
+<p><span  class="math">\[\dot{C} + \frac{\max (C_1, 0)}{\Delta t}\]</span></p>
+
+<p>This is a very cheap modification to the joint limit solver and it has very nice results. It even simplifies the solver because I don't need to track the limit state for the velocity solver. The downside is that I need two constraints: a lower limit constraint and an upper limit constraint. This is necessary because the velocity constraint value can flip signs in the middle of the solver iterations.</p>
+
+<p>So predictive constraints are pro-active and try to anticipate constraint violations before they happen. This works particularly well for some joint limits. We should all try to be more pro-active!</p>
+
+<p>I made a recording of the discrete and predictive prismatic joint solvers in Box2D. I reduced the iteration count and used a large time step (30 Hertz) to show the effect well. Also I had to turn off some velocity clamping.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/6Ig3lpfen4U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://box2d.org/tags/physics">physics</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>645 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-02 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://box2d.org">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
+
+    </body>
+</html>

@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://box2d.org/about/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <loc>https://box2d.org/</loc>
+    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://box2d.org/</loc>
+    <loc>https://box2d.org/tags/physics/</loc>
+    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/posts/</loc>
+    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/posts/2020/04/predictive-joint-limits/</loc>
+    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/tags/</loc>
+    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/about/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -19,16 +39,6 @@
   
   <url>
     <loc>https://box2d.org/tags/math/</loc>
-    <lastmod>2018-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://box2d.org/posts/</loc>
-    <lastmod>2018-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://box2d.org/tags/</loc>
     <lastmod>2018-09-05T00:00:00+00:00</lastmod>
   </url>
   
