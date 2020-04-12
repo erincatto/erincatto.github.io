@@ -5,10 +5,21 @@
     <link>https://box2d.org/posts/</link>
     <description>Recent content in Posts on Box2D</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://box2d.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stuck Inside</title>
+      <link>https://box2d.org/posts/2020/04/stuck-inside/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://box2d.org/posts/2020/04/stuck-inside/</guid>
+      <description>There a several computational geometry algorithms that are relevant for preparing collision data: convex hull, mesh simplification, and convex decomposition.
+Many implementations of these algorithms are developed outside the specific context of rigid body simulation. For example, qhull computes convex hulls and appears to be application agnostic. Simplygon is focused on simplifying render mesh.
+On the other hand, convex decomposition algorithms such as V-HACD are developed with physics simulation in mind.</description>
+    </item>
     
     <item>
       <title>Predictive Joint Limits</title>

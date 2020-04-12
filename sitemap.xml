@@ -4,7 +4,27 @@
   
   <url>
     <loc>https://box2d.org/</loc>
-    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/tags/collision/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/posts/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/posts/2020/04/stuck-inside/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://box2d.org/tags/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +33,7 @@
   </url>
   
   <url>
-    <loc>https://box2d.org/posts/</loc>
-    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://box2d.org/posts/2020/04/predictive-joint-limits/</loc>
-    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://box2d.org/tags/</loc>
     <lastmod>2020-04-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -59,11 +69,6 @@
   
   <url>
     <loc>https://box2d.org/posts/2014/08/balancing-dynamic-trees/</loc>
-    <lastmod>2014-08-07T09:36:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://box2d.org/tags/collision/</loc>
     <lastmod>2014-08-07T09:36:34+00:00</lastmod>
   </url>
   
