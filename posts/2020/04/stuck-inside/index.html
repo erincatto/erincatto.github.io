@@ -142,13 +142,15 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
 <li>Don't forget about continuous collision</li>
 </ol>
 <p>Consider a different approach where the legs are extended to the top of the table. In this case there is no channel where the beam can get stuck.</p>
-<p><img src="/images/table_decompose2.svg" alt="table decomposed"></p>
+<p><img src="/images/table_decompose2.svg" alt="table overlapped"></p>
 <p>I made a demo of this in Box2D that shows the effect for the table and a similar situation for a wedge shaped space ship. When the collision shapes are overlapped the shape is immediately ejected. In addition to fixing the visual bug, this also improves performance by allowing the bodies to go to sleep.</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/BZEydMGMapk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+<p>A further refinement is to limit the overlap of parallel surfaces. This can prevent redundant contact points.</p>
+<p><img src="/images/table_decompose3.svg" alt="table refined"></p>
 <p>This technique of overlapping the convex shapes helps a lot. Maybe a convex decomposition algorithm can be made to do this (or maybe one already exists). However, in my opinion the human touch on collision authoring often leads to a superior result. I feel like attention to detail on collision authoring could use more promotion, so hopefully this helps.</p>
 
             </div>
@@ -161,7 +163,7 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://box2d.org/tags/collision">collision</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>599 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>616 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-11 17:00 -0700</p>
         </div>
