@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Erin Catto ">
+<meta name="description" content="Dealing with ghost collisions is a challenging problem in game physics. The basic idea comes from motion across a flat surface. You may have several shapes joined together to make a flat surface, like a triangle mesh in 3D or a chain of edges in 2D. Convex shapes can hit the internal connections and have their motion blocked. This is undesirable, we would rather have the convex shape move smoothly across the surface." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2020/06/ghost-collisions/" />
+
+
+    <title>
+        
+            Ghost Collisions :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ghost Collisions"/>
+<meta name="twitter:description" content="Dealing with ghost collisions is a challenging problem in game physics. The basic idea comes from motion across a flat surface. You may have several shapes joined together to make a flat surface, like a triangle mesh in 3D or a chain of edges in 2D. Convex shapes can hit the internal connections and have their motion blocked. This is undesirable, we would rather have the convex shape move smoothly across the surface."/>
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-21 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Jun 21, 2020</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2020/06/ghost-collisions/">Ghost Collisions</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>Dealing with ghost collisions is a challenging problem in game physics. The basic idea comes from motion across a flat surface. You may have several shapes joined together to make a flat surface, like a triangle mesh in 3D or a chain of edges in 2D. Convex shapes can hit the internal connections and have their motion blocked. This is undesirable, we would rather have the convex shape move smoothly across the surface. A real-life analogy is tripping on cracks in the sidewalk.</p>
+<p>The image below shows a box sliding to the right across two connected edges (line segments). The box is slightly overlapped with the edges. This sort of overlap is inevitable in a physics engine, especially with discrete collision detection. As the box moves to the right along edge1, it encounters edge2. The shortest path to resolve collision with edge2 is to push the box to the left instead of up. This blocks the motion of the box.</p>
+<p><img src="/images/ghost_collision.svg" alt="Ghost Collision"></p>
+<p>A more extreme example happens when the surface is not flat. This images shows a box hitting the backside of a peak.</p>
+<p><img src="/images/backside_collision.png" alt="Backside Collision"></p>
+<h2 id="chain-shapes">Chain Shapes</h2>
+<p>Box2D supports chain shapes, which are a sequence of edges connected end-to-end. The chain can be open or closed (a loop). It is expected that the chain shape does not self-intersect. Chain shapes are intended to be used for static game level geometry that can be convex or concave.</p>
+<p>A goal for chain shapes has to been to support smooth collision by eliminating ghost collisions. Another goal has been to support two-sided collision to give more freedom to level design. As we will see, these two goals are conflicted.</p>
+<h2 id="contact-generation">Contact Generation</h2>
+<p>Box2D generates contacts by colliding edge shapes with convex shapes (polygons or circles). These are done one-by-one for each edge shape in a chain. The chain shape provides each edge shape some context about neighbors. Each edge shape knows about the vertices of its neighboring edge shapes. This information can be used to eliminate ghost collisions. These neighboring vertices are called ghost vertices.</p>
+<p><img src="/images/ghost_vertices.svg" alt="Ghost Vertices"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EdgeShape</span>
+{
+  Vec2 vertex1;
+  Vec2 vertex2;
+  Vec2 ghost1;
+  Vec2 ghost2;
+};
+</code></pre></div>
+<p>Box2D uses the <a href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem">Separating Axis Test</a> (SAT) and <a href="https://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm">Sutherland-Hodgman</a> clipping to compute the contact points and normals. In 2D these algorithms are simple and robust.</p>
+<h2 id="voronoi-regions">Voronoi Regions</h2>
+<p>Consider a box on top of a flat edge with an edge sloping down to the right. As the box moves to the right we can imagine it tilting on the corner where the two edges meet. As it tilts the contact normal goes from pointing up to pointing up and to the right, perpendicular to the sloped edges. So the valid range of normals is between normal1 and normal2.</p>
+<p>Any collision normal computed must live in this range or be discarded. Otherwise the box will be pushed in the wrong direction. What does discarding mean? Suppose the collision algorithm processes one edge at a time. First I collide the shape with edge1 and then with edge2. If an edge generates a normal outside of that region then that normal is ignored and generates zero contact points. This prevents backside or internal collisions.</p>
+<p><img src="/images/edge_voronoi.svg" alt="Voronoi Region"></p>
+<h2 id="concave-collision">Concave collision</h2>
+<p>If two edges meet at a concave angle then things are actually simpler. In this case the two edges can only collide along their normals. If both edges are infinite and one-sided then we can just compute the collision along the edge normal and be done.</p>
+<p><img src="/images/edge_concave.svg" alt="Concave"></p>
+<p>There are some implementation details. Since Box2D uses the Separating Axis Test. It may be that the box face has the normal with least overlap. This could end up pushing the box in the wrong direction. So I need to only consider the edge normal.</p>
+<p><img src="/images/concave_overlap.svg" alt="Concave Overlap"></p>
+<h2 id="multiple-edges">Multiple edges</h2>
+<p>In practice there are multiple edges chained together. However, Box2D only collides with one edge at a time. For a give edge, the two vertices can be convex or concave in any combination. There are three unique configurations.</p>
+<p><img src="/images/edge_configurations.svg" alt="Edge Combinations"></p>
+<p>For the left configuration the Voronoi region sweeps out a wedge from the left normal to the right normal. The middle configuration only allows an upward normal. The right configuration only allows a normal between the wedge of the left edge normal and the upward normal of the middle edge.</p>
+<h2 id="examples">Examples</h2>
+<p>How do we make use of these Voronoi regions within a SAT framework that solves one edge at a time? Lets consider some examples.</p>
+<p>But first lets discuss what kind of cases we should consider. Cases with no overlap are not interesting because they don't require any special handling. The normals will always be in range. Also I think <a href="http://box2d.org/posts/2020/04/stuck-inside/">significant overlap</a> is an important use case for real games. So I will only consider cases with significant overlap.</p>
+<h3 id="case-1-convex-convex">Case 1: Convex-Convex</h3>
+<p>The following figure shows a case where the box is tilted and overlapping the left edge.</p>
+<p><img src="/images/voronoi_case1.svg" alt="Voronoi Case 1"></p>
+<p>There is a small amount of overlap with the top edge. The SAT will tell us to push the box away from the top edge along the lower right box face. This normal happens to be to the left of the Voronoi region. What shall we do? Here are a couple options:</p>
+<ol>
+<li>Snap the normal to the closest Voronoi region and compute the penetration along that direction</li>
+<li>Ignore the collision with the top edge</li>
+</ol>
+<p>Option 2 is appealing because it is faster and from the image we can be confident that the left edge will take care of the collision completely on its own. Also in this case the normal would be snapped to align with the left edge, leading to redundant contact points.</p>
+<p>By the way, Option 2 matches Pierre Terdiman's feature voiding approach <a href="http://www.codercorner.com/blog/?p=1156">presented here</a>.</p>
+<h3 id="case-2-concave-concave">Case 2: Concave-Concave</h3>
+<p>Lets consider another case with a concave corner. Again I am considering collision between the box and the middle edge. In this case the box may have a collision normal from SAT aligned with the right box face. This is outside of the Voronoi region. In this case we have to snap the normal to align with the edge normal. If we ignore the collision the box can slide through the middle edge. We have to snap the normal to the middle edge normal. This will push the box up.</p>
+<p><img src="/images/voronoi_case2.svg" alt="Voronoi Case 2"></p>
+<p>It seems that we can skip collisions outside of the Voronoi regions of convex corners but collisions around concave corners must be snapped.</p>
+<h3 id="case-3-concave-convex">Case 3: Concave-Convex</h3>
+<p>How about the case where one corner is concave and one is convex? In this case we still need to snap normals generated on the concave side. But the middle edge can ignore the box on the convex side since that collision will be fully handled by the right edge.</p>
+<p><img src="/images/voronoi_case3.svg" alt="Voronoi Case 3"></p>
+<p>These rules can be encoded in a <a href="https://en.wikipedia.org/wiki/Gauss_map">Gauss Map</a>. I classify three regions: admit, skip, and snap.</p>
+<p><img src="/images/voronoi_case3_gauss.svg" alt="Voronoi Case 3"></p>
+<h2 id="two-sided-collision">Two-sided collision</h2>
+<p>Ideally we want smooth two-side collision with edge chains. Is this possible?</p>
+<p>In order to compute the correct Voronoi region, I need to know if the chain vertices are concave or convex. I cannot classify the vertices unless I know if the shape is inside or outside the chain loop. This is the <a href="https://en.wikipedia.org/wiki/Point_in_polygon">point-in-polygon problem</a> where the point in consideration is the centroid of the convex shape (circle or polygon).</p>
+<p>It is also possible in Box2D to create non-looping chains with unconnected ends. This still amounts to a similar inside-outside problem as a closed loop.</p>
+<p>It is tempting to use only the neighboring ghost vertices of an edge to try to determine if the shape is inside or outside the chain. But using only the immediate neighbors is insufficient.</p>
+<p>For example, consider the scenario in the figure below. The long box is colliding with edge2. Locally box appears to be inside this chain of edges considering edge1 and edge2. This makes the bottom left vertex appear concave and the contact normal with edge2 is admitted.</p>
+<p><img src="/images/two_sided_long1.svg" alt="Tall Box"></p>
+<p>Now tilt the box to the left. Looking at the centroid, the box seems to be outside the edge chain and so the bottom left vertex is convex. Therefore the contact normal on edge2 is skipped (to avoid a ghost collision).</p>
+<p><img src="/images/two_sided_long2.svg" alt="Tall Box Tilted"></p>
+<p>However, we did not consider that there could be a second neighbor edge0 that is also tilted to the left. Now the box seems to be on the inside of the chain and now the bottom left vertex is once again concave. If we don't consider the second neighbor the box will incorrectly falls through edge2.</p>
+<p><img src="/images/two_sided_long3.svg" alt="Second Neighbor"></p>
+<p>In general we it is not enough to consider just first neighbors or even second neighbors. We need to solve the global point-in-polygon problem to be confident.</p>
+<p>Chain shapes are meant to be used for building large game worlds, so the chain loops can contain hundreds of edges. It is too expensive to perform the point-in-polygon test. Therefore, it seems that smooth collision can only be efficiently and robustly achieved with one-sided edge chains.</p>
+<p><img src="/images/large_chain.svg" alt="Large Chain Loop"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://box2d.org/tags/collision">collision</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1472 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-06-20 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://box2d.org">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
+
+    </body>
+</html>
