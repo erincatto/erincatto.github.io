@@ -669,8 +669,8 @@ $(document).ready(function(){initNavTree('b2__math_8h_source.html',''); initResi
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
 <div class="line"><a name="l00684"></a><span class="lineno"><a class="line" href="structb2_sweep.html#ac3d40511e86ab6dba3fc6c2fc872a363">  684</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structb2_sweep.html#ac3d40511e86ab6dba3fc6c2fc872a363">b2Sweep::GetTransform</a>(<a class="code" href="structb2_transform.html">b2Transform</a>* xf, <span class="keywordtype">float</span> beta)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    xf-&gt;p = (1.0f - beta) * c0 + beta * <a class="code" href="structb2_sweep.html#a1b5402e01b92cc82473389fc6f0375c3">c</a>;</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordtype">float</span> angle = (1.0f - beta) * a0 + beta * <a class="code" href="structb2_sweep.html#abe0aef7b6e9abcf39757c613a37173fc">a</a>;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    xf-&gt;p = c0 + beta * (<a class="code" href="structb2_sweep.html#a1b5402e01b92cc82473389fc6f0375c3">c</a> - c0);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordtype">float</span> angle = a0 + beta * (<a class="code" href="structb2_sweep.html#abe0aef7b6e9abcf39757c613a37173fc">a</a> - a0);</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    xf-&gt;q.<a class="code" href="structb2_rot.html#a16a35e0f8e38c2855d528ca0ae044bf3">Set</a>(angle);</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// Shift to origin</span></div>

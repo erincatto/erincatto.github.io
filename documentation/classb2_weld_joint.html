@@ -137,20 +137,20 @@ const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td><td cla
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_weld_joint.html#ac7f218b7b727f81167835ba92acb7f95">GetReferenceAngle</a> () const</td></tr>
 <tr class="memdesc:ac7f218b7b727f81167835ba92acb7f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference angle. <br /></td></tr>
 <tr class="separator:ac7f218b7b727f81167835ba92acb7f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69356bad5be6866e5d6cef7ae843116f"><td class="memItemLeft" align="right" valign="top"><a id="a69356bad5be6866e5d6cef7ae843116f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_weld_joint.html#a69356bad5be6866e5d6cef7ae843116f">SetFrequency</a> (float hz)</td></tr>
-<tr class="memdesc:a69356bad5be6866e5d6cef7ae843116f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get frequency in Hz. <br /></td></tr>
-<tr class="separator:a69356bad5be6866e5d6cef7ae843116f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed0dbef228a57b8f5cdce3f4ec7277f"><td class="memItemLeft" align="right" valign="top"><a id="a3ed0dbef228a57b8f5cdce3f4ec7277f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_weld_joint.html#a3ed0dbef228a57b8f5cdce3f4ec7277f">SetStiffness</a> (float hz)</td></tr>
+<tr class="memdesc:a3ed0dbef228a57b8f5cdce3f4ec7277f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get stiffness in N*m. <br /></td></tr>
+<tr class="separator:a3ed0dbef228a57b8f5cdce3f4ec7277f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecd75c926c70ac445b85ea281ef98eb8"><td class="memItemLeft" align="right" valign="top"><a id="aecd75c926c70ac445b85ea281ef98eb8"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrequency</b> () const</td></tr>
 <tr class="separator:aecd75c926c70ac445b85ea281ef98eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a277fb4538bab3639823303c5a9ff6d2e"><td class="memItemLeft" align="right" valign="top"><a id="a277fb4538bab3639823303c5a9ff6d2e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_weld_joint.html#a277fb4538bab3639823303c5a9ff6d2e">SetDampingRatio</a> (float ratio)</td></tr>
-<tr class="memdesc:a277fb4538bab3639823303c5a9ff6d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get damping ratio. <br /></td></tr>
-<tr class="separator:a277fb4538bab3639823303c5a9ff6d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af20dfa5a3fdebfa9335fe71ed91eead6"><td class="memItemLeft" align="right" valign="top"><a id="af20dfa5a3fdebfa9335fe71ed91eead6"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>GetDampingRatio</b> () const</td></tr>
-<tr class="separator:af20dfa5a3fdebfa9335fe71ed91eead6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a091b5363ad3826c4d21f42a395d76a6f"><td class="memItemLeft" align="right" valign="top"><a id="a091b5363ad3826c4d21f42a395d76a6f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_weld_joint.html#a091b5363ad3826c4d21f42a395d76a6f">SetDamping</a> (float damping)</td></tr>
+<tr class="memdesc:a091b5363ad3826c4d21f42a395d76a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get damping in N*m*s. <br /></td></tr>
+<tr class="separator:a091b5363ad3826c4d21f42a395d76a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e321f4ed4ba92e552679681a393277"><td class="memItemLeft" align="right" valign="top"><a id="aa9e321f4ed4ba92e552679681a393277"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>GetDamping</b> () const</td></tr>
+<tr class="separator:aa9e321f4ed4ba92e552679681a393277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59de1cad3229b41886bc23c4d6216e2f"><td class="memItemLeft" align="right" valign="top"><a id="a59de1cad3229b41886bc23c4d6216e2f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_weld_joint.html#a59de1cad3229b41886bc23c4d6216e2f">Dump</a> () override</td></tr>
 <tr class="memdesc:a59de1cad3229b41886bc23c4d6216e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump to b2Log. <br /></td></tr>
@@ -183,16 +183,20 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a492f2d02496437572aaec6013ebdc1c8">SetUserData</a> (void *data)</td></tr>
 <tr class="memdesc:a492f2d02496437572aaec6013ebdc1c8 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the user data pointer. <br /></td></tr>
 <tr class="separator:a492f2d02496437572aaec6013ebdc1c8 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ae9cfbd158216c9855c2f018ff3c9c922"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ae9cfbd158216c9855c2f018ff3c9c922">IsActive</a> () const</td></tr>
-<tr class="memdesc:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short-cut function to determine if either body is inactive. <br /></td></tr>
-<tr class="separator:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ad8afc5c7b8b325e982e75fe35730253d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ad8afc5c7b8b325e982e75fe35730253d">IsEnabled</a> () const</td></tr>
+<tr class="memdesc:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short-cut function to determine if either body is enabled. <br /></td></tr>
+<tr class="separator:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48492903df96c8a7b8cad8ed826f8cb0 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a48492903df96c8a7b8cad8ed826f8cb0">GetCollideConnected</a> () const</td></tr>
 <tr class="separator:a48492903df96c8a7b8cad8ed826f8cb0 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7804f649e993dc0fd9ae47fde5601f90 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="a7804f649e993dc0fd9ae47fde5601f90"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a7804f649e993dc0fd9ae47fde5601f90">ShiftOrigin</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;newOrigin)</td></tr>
 <tr class="memdesc:a7804f649e993dc0fd9ae47fde5601f90 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift the origin for any points stored in world coordinates. <br /></td></tr>
 <tr class="separator:a7804f649e993dc0fd9ae47fde5601f90 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea86b65244fc81ea1511d462b36ffbe4 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="aea86b65244fc81ea1511d462b36ffbe4"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#aea86b65244fc81ea1511d462b36ffbe4">Draw</a> (<a class="el" href="classb2_draw.html">b2Draw</a> *draw) const</td></tr>
+<tr class="memdesc:aea86b65244fc81ea1511d462b36ffbe4 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug draw this joint. <br /></td></tr>
+<tr class="separator:aea86b65244fc81ea1511d462b36ffbe4 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -215,12 +219,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SolvePositionConstrai
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a20e03d8dd6b411d78733421a60886c13"><td class="memItemLeft" align="right" valign="top"><a id="a20e03d8dd6b411d78733421a60886c13"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_frequencyHz</b></td></tr>
-<tr class="separator:a20e03d8dd6b411d78733421a60886c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a434c33786f7d6bfb3f2686b013cf656c"><td class="memItemLeft" align="right" valign="top"><a id="a434c33786f7d6bfb3f2686b013cf656c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_dampingRatio</b></td></tr>
-<tr class="separator:a434c33786f7d6bfb3f2686b013cf656c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef00719765d0d9c267c8d1595a6e7a90"><td class="memItemLeft" align="right" valign="top"><a id="aef00719765d0d9c267c8d1595a6e7a90"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_stiffness</b></td></tr>
+<tr class="separator:aef00719765d0d9c267c8d1595a6e7a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32801289f037ecf46e5b9058ad6064a0"><td class="memItemLeft" align="right" valign="top"><a id="a32801289f037ecf46e5b9058ad6064a0"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_damping</b></td></tr>
+<tr class="separator:a32801289f037ecf46e5b9058ad6064a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27288760540ebcf14e75fa38345d23cd"><td class="memItemLeft" align="right" valign="top"><a id="a27288760540ebcf14e75fa38345d23cd"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_bias</b></td></tr>
 <tr class="separator:a27288760540ebcf14e75fa38345d23cd"><td class="memSeparator" colspan="2">&#160;</td></tr>

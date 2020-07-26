@@ -99,16 +99,12 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>Set()
 : <a class="el" href="structb2_distance_proxy.html#a80a59a9c9e952482a8fc6db4b883365d">b2DistanceProxy</a>
-, <a class="el" href="classb2_edge_shape.html#a67dd3b17630a600033cb4380697a4e9d">b2EdgeShape</a>
 , <a class="el" href="structb2_mat22.html#aed3bee1de38a0b3f36e21c90faa24112">b2Mat22</a>
 , <a class="el" href="classb2_polygon_shape.html#a4d7b35550509f570814b97325a68966b">b2PolygonShape</a>
 , <a class="el" href="structb2_rot.html#a16a35e0f8e38c2855d528ca0ae044bf3">b2Rot</a>
 , <a class="el" href="structb2_transform.html#a79d07c5469f6ee6e2d99d80827b6038f">b2Transform</a>
 , <a class="el" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">b2Vec2</a>
 , <a class="el" href="structb2_vec3.html#abac600f1ab36d68f152bfb35f61c74c6">b2Vec3</a>
-</li>
-<li>SetActive()
-: <a class="el" href="classb2_body.html#ab8059b7b3e3b64aee17b54f68f7dde80">b2Body</a>
 </li>
 <li>SetAllowSleeping()
 : <a class="el" href="classb2_world.html#a6755872564fc3db70c69d2b9d349fa33">b2World</a>
@@ -146,10 +142,13 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <li>SetCorrectionFactor()
 : <a class="el" href="classb2_motor_joint.html#a4fb5a4ee4d16bae6be450979bf3d388b">b2MotorJoint</a>
 </li>
+<li>SetDamping()
+: <a class="el" href="classb2_distance_joint.html#a4351bf0172499a882713637076b31481">b2DistanceJoint</a>
+, <a class="el" href="classb2_weld_joint.html#a091b5363ad3826c4d21f42a395d76a6f">b2WeldJoint</a>
+, <a class="el" href="classb2_wheel_joint.html#a8ef2ae12739ddd92e765cc0419395d3a">b2WheelJoint</a>
+</li>
 <li>SetDampingRatio()
-: <a class="el" href="classb2_distance_joint.html#a42c345dd2ad39bfd12e698cd3a1d37a0">b2DistanceJoint</a>
-, <a class="el" href="classb2_mouse_joint.html#a767e28f60859d66bab2fac6b3f089e5f">b2MouseJoint</a>
-, <a class="el" href="classb2_weld_joint.html#a277fb4538bab3639823303c5a9ff6d2e">b2WeldJoint</a>
+: <a class="el" href="classb2_mouse_joint.html#a767e28f60859d66bab2fac6b3f089e5f">b2MouseJoint</a>
 </li>
 <li>SetDebugDraw()
 : <a class="el" href="classb2_world.html#a6976d2c67400df03c0d44174ffcfb7ee">b2World</a>
@@ -161,7 +160,8 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classb2_world.html#ae377f2dd5512ada7d27f4ad3541c75bf">b2World</a>
 </li>
 <li>SetEnabled()
-: <a class="el" href="classb2_contact.html#a6edf582f8c161d6632854cddefe55a0c">b2Contact</a>
+: <a class="el" href="classb2_body.html#a06bd5b953ff991174fdbf801d52db177">b2Body</a>
+, <a class="el" href="classb2_contact.html#a6edf582f8c161d6632854cddefe55a0c">b2Contact</a>
 </li>
 <li>SetFilterData()
 : <a class="el" href="classb2_fixture.html#a2c5e0d12c174927a4ad550459be334ad">b2Fixture</a>
@@ -173,9 +173,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classb2_draw.html#ac2bbe31595478690e44de4ff1e7f347e">b2Draw</a>
 </li>
 <li>SetFrequency()
-: <a class="el" href="classb2_distance_joint.html#adc51bf92ad8b71306ed31b0a4eaecd98">b2DistanceJoint</a>
-, <a class="el" href="classb2_mouse_joint.html#a3aab0355ffc7878d224e5d2c43902c5b">b2MouseJoint</a>
-, <a class="el" href="classb2_weld_joint.html#a69356bad5be6866e5d6cef7ae843116f">b2WeldJoint</a>
+: <a class="el" href="classb2_mouse_joint.html#a3aab0355ffc7878d224e5d2c43902c5b">b2MouseJoint</a>
 </li>
 <li>SetFriction()
 : <a class="el" href="classb2_contact.html#a6cac6c0db18a161a359d73672596b413">b2Contact</a>
@@ -198,6 +196,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <li>SetLimits()
 : <a class="el" href="classb2_prismatic_joint.html#a1f066e458852ee0728330d9413e57003">b2PrismaticJoint</a>
 , <a class="el" href="classb2_revolute_joint.html#aea6f893b0b0b5295837e6a10aa723582">b2RevoluteJoint</a>
+, <a class="el" href="classb2_wheel_joint.html#ad57816ee69ab15373aedd1079d97d926">b2WheelJoint</a>
 </li>
 <li>SetLinearDamping()
 : <a class="el" href="classb2_body.html#aa36fac8c5d7293d1a81405c147204d20">b2Body</a>
@@ -235,11 +234,8 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 , <a class="el" href="classb2_revolute_joint.html#a67735e2a230dc4e8a1c438aeb3fad9bc">b2RevoluteJoint</a>
 , <a class="el" href="classb2_wheel_joint.html#aa4ec3bc7ea7b5c977ccab10593176594">b2WheelJoint</a>
 </li>
-<li>SetNextVertex()
-: <a class="el" href="classb2_chain_shape.html#a15c7c2821a52266ef57621ac7d34a95f">b2ChainShape</a>
-</li>
-<li>SetPrevVertex()
-: <a class="el" href="classb2_chain_shape.html#aeb2ddbe0c52a98885e91b7c8f597315b">b2ChainShape</a>
+<li>SetOneSided()
+: <a class="el" href="classb2_edge_shape.html#ad2b74e7d57e3144f09f8cd2dccdd21d9">b2EdgeShape</a>
 </li>
 <li>SetRatio()
 : <a class="el" href="classb2_gear_joint.html#afba67bc47667ac37db4de7819f306821">b2GearJoint</a>
@@ -254,11 +250,10 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <li>SetSleepingAllowed()
 : <a class="el" href="classb2_body.html#a229a6de228416203fecbf7a7544c33bb">b2Body</a>
 </li>
-<li>SetSpringDampingRatio()
-: <a class="el" href="classb2_wheel_joint.html#a4442e7520799d4d2acb04e046d18e2b1">b2WheelJoint</a>
-</li>
-<li>SetSpringFrequencyHz()
-: <a class="el" href="classb2_wheel_joint.html#a074ea53eee7471a3ab3b0adf23b19f21">b2WheelJoint</a>
+<li>SetStiffness()
+: <a class="el" href="classb2_distance_joint.html#a667de5de10fabc00c39900fba0e9b95e">b2DistanceJoint</a>
+, <a class="el" href="classb2_weld_joint.html#a3ed0dbef228a57b8f5cdce3f4ec7277f">b2WeldJoint</a>
+, <a class="el" href="classb2_wheel_joint.html#a2ed4f65494d59e65b2319b840ef3a503">b2WheelJoint</a>
 </li>
 <li>SetSubStepping()
 : <a class="el" href="classb2_world.html#ae8aacc78ea4753075067daff51b61778">b2World</a>
@@ -271,6 +266,9 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>SetTransform()
 : <a class="el" href="classb2_body.html#abfe3e65202189e99f46b8688886eff86">b2Body</a>
+</li>
+<li>SetTwoSided()
+: <a class="el" href="classb2_edge_shape.html#ad2c40bb652b4ea1f087580b8c42fcdf2">b2EdgeShape</a>
 </li>
 <li>SetType()
 : <a class="el" href="classb2_body.html#a34ff1c84b10b74eb990749a025a1b1ad">b2Body</a>
@@ -317,6 +315,11 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>Step()
 : <a class="el" href="classb2_world.html#a82c081319af9a47e282dde807e4cd7b8">b2World</a>
+</li>
+<li>stiffness
+: <a class="el" href="structb2_distance_joint_def.html#a858640393f567a2aca1b40cbe534b4e2">b2DistanceJointDef</a>
+, <a class="el" href="structb2_weld_joint_def.html#aeb881c0408c9674b2a1869b491fdc6a0">b2WeldJointDef</a>
+, <a class="el" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">b2WheelJointDef</a>
 </li>
 </ul>
 </div><!-- contents -->

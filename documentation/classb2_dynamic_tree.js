@@ -2,6 +2,7 @@ var classb2_dynamic_tree =
 [
     [ "b2DynamicTree", "classb2_dynamic_tree.html#a8af64cf6a1566fa4c5b5c9683bd937d9", null ],
     [ "~b2DynamicTree", "classb2_dynamic_tree.html#a9060565fc63b4dd87d9560775c076786", null ],
+    [ "ClearMoved", "classb2_dynamic_tree.html#a7a39e2e844d68e4a09771a60c47e3fed", null ],
     [ "CreateProxy", "classb2_dynamic_tree.html#ae44676f12977dada46037da47fc7ffbf", null ],
     [ "DestroyProxy", "classb2_dynamic_tree.html#a62aa451e7d7fe029818dd05f76ea9cdc", null ],
     [ "GetAreaRatio", "classb2_dynamic_tree.html#a270c60a449c1cb2e1d0dd7bf2089e3fe", null ],
@@ -14,5 +15,6 @@ var classb2_dynamic_tree =
     [ "RayCast", "classb2_dynamic_tree.html#aebd2dc6ee462e0cd0763a5f472243a13", null ],
     [ "RebuildBottomUp", "classb2_dynamic_tree.html#abd146017cfec1cf5ea7b87331f30a3ff", null ],
     [ "ShiftOrigin", "classb2_dynamic_tree.html#af37ddfed6a5da97d5a78b09918d19ceb", null ],
-    [ "Validate", "classb2_dynamic_tree.html#ae9b989f0c04e38f9c940623d4e1728b9", null ]
+    [ "Validate", "classb2_dynamic_tree.html#ae9b989f0c04e38f9c940623d4e1728b9", null ],
+    [ "WasMoved", "classb2_dynamic_tree.html#a150e4ee484eaa7a470844c93e2621920", null ]
 ];

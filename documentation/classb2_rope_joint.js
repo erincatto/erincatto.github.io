@@ -4,7 +4,7 @@ var classb2_rope_joint =
     [ "Dump", "classb2_rope_joint.html#a0028d3d3710bf1a9a905e9b55a4f37c5", null ],
     [ "GetAnchorA", "classb2_rope_joint.html#a5757fdeb008bf1bbe15348e80aab9402", null ],
     [ "GetAnchorB", "classb2_rope_joint.html#a5e1d615b5cff50b367a74e109184e5d5", null ],
-    [ "GetLimitState", "classb2_rope_joint.html#ab7b606273b65339f0ab502675f32997e", null ],
+    [ "GetLength", "classb2_rope_joint.html#acbbca758a5930f30a1085017ceb8c06b", null ],
     [ "GetLocalAnchorA", "classb2_rope_joint.html#a5fb600991e676e61e266ecb99448bb86", null ],
     [ "GetLocalAnchorB", "classb2_rope_joint.html#a8a9b925c7ffa11d331ba369cc9fe2ac5", null ],
     [ "GetMaxLength", "classb2_rope_joint.html#a21b60f4f5fa165adc3b027fec759c9b8", null ],
@@ -31,6 +31,5 @@ var classb2_rope_joint =
     [ "m_maxLength", "classb2_rope_joint.html#afa86c63b4a42fcd14f2762e4ac6b5028", null ],
     [ "m_rA", "classb2_rope_joint.html#af8ae48af2656b1e605a099b8f4aa82b0", null ],
     [ "m_rB", "classb2_rope_joint.html#ae577e49beef03d266ff4c54e852b4f41", null ],
-    [ "m_state", "classb2_rope_joint.html#ac73c9451360c80c8a98376b922f4bed4", null ],
     [ "m_u", "classb2_rope_joint.html#ae95185c5ad4c119a9893294491ba1609", null ]
 ];

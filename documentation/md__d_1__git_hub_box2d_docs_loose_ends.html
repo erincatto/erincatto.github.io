@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('md__d_1__git_hub_box2d_docs_loose_ends
 <div class="title">Loose Ends </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md119"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md120"></a>
 User Data</h1>
 <p>The <code><a class="el" href="classb2_fixture.html">b2Fixture</a></code>, <code><a class="el" href="classb2_body.html" title="A rigid body. These are created via b2World::CreateBody.">b2Body</a></code>, and <code><a class="el" href="classb2_joint.html">b2Joint</a></code> classes allow you to attach user data as a void pointer. This is handy when you are examining Box2D data structures and you want to determine how they relate to the objects in your game engine.</p>
 <p>For example, it is typical to attach an actor pointer to the rigid body on that actor. This sets up a circular reference. If you have the actor, you can get the body. If you have the body, you can get the actor.</p>
@@ -123,7 +123,7 @@ User Data</h1>
 <div class="line"> </div>
 <div class="line"><span class="keyword">delete</span> fixture-&gt;<a class="code" href="classb2_fixture.html#ae2a865ed59ffe9b1cb89f577052f4d50">GetUserData</a>();</div>
 <div class="line">body-&gt;<a class="code" href="classb2_body.html#a856d1df86b7bded91f02d8cfcaea1c2f">DestroyFixture</a>(fixture);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md120"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md121"></a>
 Implicit Destruction</h1>
 <p>Box2D doesn't use reference counting. So if you destroy a body it is really gone. Accessing a pointer to a destroyed body has undefined behavior. In other words, your program will likely crash and burn. To help fix these problems, the debug build memory manager fills destroyed entities with FDFDFDFD. This can help find problems more easily in some cases.</p>
 <p>If you destroy a Box2D entity, it is up to you to make sure you remove all references to the destroyed object. This is easy if you only have a single reference to the entity. If you have multiple references, you might consider implementing a handle class to wrap the raw pointer.</p>
@@ -146,7 +146,7 @@ Implicit Destruction</h1>
 <div class="line">};</div>
 </div><!-- fragment --><p>You can then register an instance of your destruction listener with your world object. You should do this during world initialization.</p>
 <div class="fragment"><div class="line">myWorld-&gt;SetListener(myDestructionListener);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md121"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md122"></a>
 Pixels and Coordinate Systems</h1>
 <p>Recall that Box2D uses MKS (meters, kilograms, and seconds) units and radians for angles. You may have trouble working with meters because your game is expressed in terms of pixels. To deal with this in the testbed I have the whole <em>game</em> work in meters and just use an OpenGL viewport transformation to scale the world into screen space.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">float</span> lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f;</div>
@@ -160,7 +160,7 @@ Pixels and Coordinate Systems</h1>
 <div class="line">yPixels = 50.0f * yMeters;</div>
 </div><!-- fragment --><p>You should consider using MKS units in your game code and just convert to pixels when you render. This will simplify your game logic and reduce the chance for errors since the rendering conversion can be isolated to a small amount of code.</p>
 <p>If you use a conversion factor, you should try tweaking it globally to make sure nothing breaks. You can also try adjusting it to improve stability.</p>
-<h1><a class="anchor" id="autotoc_md122"></a>
+<h1><a class="anchor" id="autotoc_md123"></a>
 Debug Drawing</h1>
 <p>You can implement the b2DebugDraw class to get detailed drawing of the physics world. Here are the available entities:</p><ul>
 <li>shape outlines</li>
@@ -174,7 +174,7 @@ Debug Drawing</h1>
 Debug Draw</div></div>
    <p>This is the preferred method of drawing these physics entities, rather than accessing the data directly. The reason is that much of the necessary data is internal and subject to change.</p>
 <p>The testbed draws physics entities using the debug draw facility and the contact listener, so it serves as the primary example of how to implement debug drawing as well as how to draw contact points.</p>
-<h1><a class="anchor" id="autotoc_md123"></a>
+<h1><a class="anchor" id="autotoc_md124"></a>
 Limitations</h1>
 <p>Box2D uses several approximations to simulate rigid body physics efficiently. This brings some limitations.</p>
 <p>Here are the current limitations:</p><ol type="1">
@@ -199,7 +199,7 @@ Limitations</h1>
 <div class="ttc" id="astructb2_body_def_html"><div class="ttname"><a href="structb2_body_def.html">b2BodyDef</a></div><div class="ttdef"><b>Definition:</b> b2_body.h:54</div></div>
 <div class="ttc" id="aclassb2_fixture_html_ae2a865ed59ffe9b1cb89f577052f4d50"><div class="ttname"><a href="classb2_fixture.html#ae2a865ed59ffe9b1cb89f577052f4d50">b2Fixture::GetUserData</a></div><div class="ttdeci">void * GetUserData() const</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:268</div></div>
 <div class="ttc" id="aclassb2_body_html_a856d1df86b7bded91f02d8cfcaea1c2f"><div class="ttname"><a href="classb2_body.html#a856d1df86b7bded91f02d8cfcaea1c2f">b2Body::DestroyFixture</a></div><div class="ttdeci">void DestroyFixture(b2Fixture *fixture)</div></div>
-<div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:107</div></div>
+<div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:110</div></div>
 <div class="ttc" id="aclassb2_destruction_listener_html"><div class="ttname"><a href="classb2_destruction_listener.html">b2DestructionListener</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:40</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

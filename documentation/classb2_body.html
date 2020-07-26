@@ -215,12 +215,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:ac72ed3df52a26c33db82252ab57399af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a697f708427cdf7d31a626e80e694682c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#a697f708427cdf7d31a626e80e694682c">IsAwake</a> () const</td></tr>
 <tr class="separator:a697f708427cdf7d31a626e80e694682c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8059b7b3e3b64aee17b54f68f7dde80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#ab8059b7b3e3b64aee17b54f68f7dde80">SetActive</a> (bool flag)</td></tr>
-<tr class="separator:ab8059b7b3e3b64aee17b54f68f7dde80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a825f37f457d3674ace96e2b8a9b4cae6"><td class="memItemLeft" align="right" valign="top"><a id="a825f37f457d3674ace96e2b8a9b4cae6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#a825f37f457d3674ace96e2b8a9b4cae6">IsActive</a> () const</td></tr>
-<tr class="memdesc:a825f37f457d3674ace96e2b8a9b4cae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the active state of the body. <br /></td></tr>
-<tr class="separator:a825f37f457d3674ace96e2b8a9b4cae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bd5b953ff991174fdbf801d52db177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#a06bd5b953ff991174fdbf801d52db177">SetEnabled</a> (bool flag)</td></tr>
+<tr class="separator:a06bd5b953ff991174fdbf801d52db177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065ecdf30e8d27a0a1164f5fb1bfc99a"><td class="memItemLeft" align="right" valign="top"><a id="a065ecdf30e8d27a0a1164f5fb1bfc99a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#a065ecdf30e8d27a0a1164f5fb1bfc99a">IsEnabled</a> () const</td></tr>
+<tr class="memdesc:a065ecdf30e8d27a0a1164f5fb1bfc99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the active state of the body. <br /></td></tr>
+<tr class="separator:a065ecdf30e8d27a0a1164f5fb1bfc99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff35078e2a221d2d05409674936cb8d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#aff35078e2a221d2d05409674936cb8d2">SetFixedRotation</a> (bool flag)</td></tr>
 <tr class="separator:aff35078e2a221d2d05409674936cb8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0920b7a770f7c876cf6d149e227036b5"><td class="memItemLeft" align="right" valign="top"><a id="a0920b7a770f7c876cf6d149e227036b5"></a>
@@ -270,7 +270,7 @@ const <a class="el" href="classb2_world.html">b2World</a> *&#160;</td><td class=
 <tr class="separator:a5d818ba53f7434cf5f844cca54b0aec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9e482f7d9df92801c24e79a7e751d06"><td class="memItemLeft" align="right" valign="top"><a id="ac9e482f7d9df92801c24e79a7e751d06"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_body.html#ac9e482f7d9df92801c24e79a7e751d06">Dump</a> ()</td></tr>
-<tr class="memdesc:ac9e482f7d9df92801c24e79a7e751d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump this body to a log file. <br /></td></tr>
+<tr class="memdesc:ac9e482f7d9df92801c24e79a7e751d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump this body to a file. <br /></td></tr>
 <tr class="separator:ac9e482f7d9df92801c24e79a7e751d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -1162,25 +1162,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>b2WheelJoint</b></td
 
 </div>
 </div>
-<a id="ab8059b7b3e3b64aee17b54f68f7dde80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8059b7b3e3b64aee17b54f68f7dde80">&#9670;&nbsp;</a></span>SetActive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void b2Body::SetActive </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>flag</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Set the active state of the body. An inactive body is not simulated and cannot be collided with or woken up. If you pass a flag of true, all fixtures will be added to the broad-phase. If you pass a flag of false, all fixtures will be removed from the broad-phase and all contacts will be destroyed. Fixtures and joints are otherwise unaffected. You may continue to create/destroy fixtures and joints on inactive bodies. Fixtures on an inactive body are implicitly inactive and will not participate in collisions, ray-casts, or queries. Joints connected to an inactive body are implicitly inactive. An inactive body is still owned by a <a class="el" href="classb2_world.html">b2World</a> object and remains in the body list. </p>
-
-</div>
-</div>
 <a id="a1a8ff152b3a0189b391c9dd6b4c5f12c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a8ff152b3a0189b391c9dd6b4c5f12c">&#9670;&nbsp;</a></span>SetAngularVelocity()</h2>
 
@@ -1242,6 +1223,25 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>b2WheelJoint</b></td
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a06bd5b953ff991174fdbf801d52db177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06bd5b953ff991174fdbf801d52db177">&#9670;&nbsp;</a></span>SetEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void b2Body::SetEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allow a body to be disabled. A disabled body is not simulated and cannot be collided with or woken up. If you pass a flag of true, all fixtures will be added to the broad-phase. If you pass a flag of false, all fixtures will be removed from the broad-phase and all contacts will be destroyed. Fixtures and joints are otherwise unaffected. You may continue to create/destroy fixtures and joints on disabled bodies. Fixtures on a disabled body are implicitly disabled and will not participate in collisions, ray-casts, or queries. Joints connected to a disabled body are implicitly disabled. An diabled body is still owned by a <a class="el" href="classb2_world.html">b2World</a> object and remains in the body list. </p>
 
 </div>
 </div>

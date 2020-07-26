@@ -24,7 +24,7 @@ var b2__settings_8h =
     [ "b2_pi", "b2__settings_8h.html#a3f1872f3fc3c46abc809e7f7d467eb6c", null ],
     [ "b2_polygonRadius", "b2__settings_8h.html#afc0f934dabffb1e83e081249133ad860", null ],
     [ "b2_timeToSleep", "b2__settings_8h.html#ab021adb740e4a5e1f5f7d9913ed94781", null ],
-    [ "b2_toiBaugarte", "b2__settings_8h.html#addf67cb7c89ad8a0370b488e8120a6ed", null ],
+    [ "b2_toiBaumgarte", "b2__settings_8h.html#a210f37bad1337ca3e28c26f0fe38cd03", null ],
     [ "b2_velocityThreshold", "b2__settings_8h.html#a690b448aa2dba2a1393781f8c059c22a", null ],
     [ "b2Assert", "b2__settings_8h.html#ab3fe3791ea4d700d5cc1f8124d2edf33", null ],
     [ "b2DEBUG", "b2__settings_8h.html#a76c36ad7e53158b76b87f84d8260623a", null ],
@@ -35,7 +35,10 @@ var b2__settings_8h =
     [ "uint32", "b2__settings_8h.html#a1134b580f8da4de94ca6b1de4d37975e", null ],
     [ "uint8", "b2__settings_8h.html#adde6aaee8457bee49c2a92621fe22b79", null ],
     [ "b2Alloc", "b2__settings_8h.html#a2dca9b286e9b9d6d022055fd61534bd7", null ],
+    [ "b2CloseDump", "b2__settings_8h.html#abd646d0ec7f4ba3b2870f2855618191d", null ],
+    [ "b2Dump", "b2__settings_8h.html#ace4f4330b566703b8885a970945ac7bc", null ],
     [ "b2Free", "b2__settings_8h.html#a50f4abf5edeabd0300946edbd542e24d", null ],
     [ "b2Log", "b2__settings_8h.html#a9f10095d05c74eebfe535931c9061ab2", null ],
+    [ "b2OpenDump", "b2__settings_8h.html#ab6fcb96fe471342272c624bced36ac97", null ],
     [ "b2_version", "b2__settings_8h.html#a3a20e3b6a8b05633d911fea031f7a44f", null ]
 ];

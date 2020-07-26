@@ -2,6 +2,7 @@ var classb2_joint =
 [
     [ "b2Joint", "classb2_joint.html#a8d6cce91546335fe95325d5e29c06a19", null ],
     [ "~b2Joint", "classb2_joint.html#ab44cde7b81c3e77540400e0da90d6ceb", null ],
+    [ "Draw", "classb2_joint.html#aea86b65244fc81ea1511d462b36ffbe4", null ],
     [ "Dump", "classb2_joint.html#abd35e7316017ad9a40d5dbf9b5ba3f36", null ],
     [ "GetAnchorA", "classb2_joint.html#abe46ca3aad5db73909a9b5a7b2117447", null ],
     [ "GetAnchorB", "classb2_joint.html#a88e947c65d4ea26fe539f02a8cb7f7a9", null ],
@@ -15,7 +16,7 @@ var classb2_joint =
     [ "GetType", "classb2_joint.html#ac56eef62fe1ac7c9e5e21a79fb035255", null ],
     [ "GetUserData", "classb2_joint.html#a798c593c7a4958d408bca10f3b3788f9", null ],
     [ "InitVelocityConstraints", "classb2_joint.html#a599c013de5514e02684b958b31dd76a4", null ],
-    [ "IsActive", "classb2_joint.html#ae9cfbd158216c9855c2f018ff3c9c922", null ],
+    [ "IsEnabled", "classb2_joint.html#ad8afc5c7b8b325e982e75fe35730253d", null ],
     [ "SetUserData", "classb2_joint.html#a492f2d02496437572aaec6013ebdc1c8", null ],
     [ "ShiftOrigin", "classb2_joint.html#a7804f649e993dc0fd9ae47fde5601f90", null ],
     [ "SolvePositionConstraints", "classb2_joint.html#af767ac9aa494bd15cdf83dfe3e487d9c", null ],

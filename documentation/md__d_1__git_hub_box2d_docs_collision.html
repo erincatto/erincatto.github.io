@@ -149,7 +149,8 @@ Polygon Skin</div></div>
 <object type="image/svg+xml" data="skin_collision.svg" style="pointer-events: none;"></object>
 <div class="caption">
 Skin Collision</div></div>
-   <h2><a class="anchor" id="autotoc_md38"></a>
+   <p>Not that polygon skin is only provided to help with continuous collision. The purpose is not to simulate rounded polygons.</p>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Edge Shapes</h2>
 <p>Edge shapes are line segments. These are provided to assist in making a free-form static environment for your game. A major limitation of edge shapes is that they can collide with circles and polygons but not with themselves. The collision algorithms used by Box2D require that at least one of two colliding shapes have volume. Edge shapes have no volume, so edge-edge collision is not possible.</p>
 <div class="fragment"><div class="line"><span class="comment">// This an edge shape.</span></div>
@@ -157,7 +158,7 @@ Edge Shapes</h2>
 <div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> v2(1.0f, 0.0f);</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="classb2_edge_shape.html">b2EdgeShape</a> edge;</div>
-<div class="line">edge.<a class="code" href="classb2_edge_shape.html#a67dd3b17630a600033cb4380697a4e9d">Set</a>(v1, v2);</div>
+<div class="line">edge.<a class="code" href="classb2_edge_shape.html#ad2c40bb652b4ea1f087580b8c42fcdf2">SetTwoSided</a>(v1, v2);</div>
 </div><!-- fragment --><p>In many cases a game environment is constructed by connecting several edge shapes end-to-end. This can give rise to an unexpected artifact when a polygon slides along the chain of edges. In the figure below we see a box colliding with an internal vertex. These <em>ghost</em> collisions are caused when the polygon collides with an internal vertex generating an internal collision normal.</p>
 <div class="image">
 <object type="image/svg+xml" data="ghost_collision.svg" style="pointer-events: none;"></object>
@@ -169,48 +170,50 @@ Ghost Collision</div></div>
 <object type="image/svg+xml" data="ghost_vertices.svg" style="pointer-events: none;"></object>
 <div class="caption">
 Ghost Vertices</div></div>
-   <div class="fragment"><div class="line"><span class="comment">// This is an edge shape with ghost vertices.</span></div>
+   <p>The Box2D algorithm for dealing with ghost collisions only supports one-sided collision. The front face is to the right when looking from the first vertex towards the second vertex. This matches the CCW winding order used by polygons.</p>
+<div class="fragment"><div class="line"><span class="comment">// This is an edge shape with ghost vertices.</span></div>
 <div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> v0(1.7f, 0.0f);</div>
 <div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> v1(1.0f, 0.25f);</div>
 <div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> v2(0.0f, 0.0f);</div>
 <div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> v3(-1.7f, 0.4f);</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="classb2_edge_shape.html">b2EdgeShape</a> edge;</div>
-<div class="line">edge.<a class="code" href="classb2_edge_shape.html#a67dd3b17630a600033cb4380697a4e9d">Set</a>(v1, v2);</div>
-<div class="line">edge.m_hasVertex0 = <span class="keyword">true</span>;</div>
-<div class="line">edge.m_hasVertex3 = <span class="keyword">true</span>;</div>
-<div class="line">edge.<a class="code" href="classb2_edge_shape.html#a907c9829484cc1ba7527ab368e9fdf93">m_vertex0</a> = v0;</div>
-<div class="line">edge.m_vertex3 = v3;</div>
+<div class="line">edge.<a class="code" href="classb2_edge_shape.html#ad2b74e7d57e3144f09f8cd2dccdd21d9">SetOneSided</a>(v0, v1, v2, v3);</div>
 </div><!-- fragment --><p>In general stitching edges together this way is a bit wasteful and tedious. This brings us to chain shapes.</p>
 <h2><a class="anchor" id="autotoc_md39"></a>
 Chain Shapes</h2>
-<p>The chain shape provides an efficient way to connect many edges together to construct your static game worlds. Chain shapes automatically eliminate ghost collisions and provide two-sided collision.</p>
-<div class="image">
-<object type="image/svg+xml" data="chain_shape.svg" style="pointer-events: none;"></object>
-<div class="caption">
-Chain Shape</div></div>
-   <div class="fragment"><div class="line"><span class="comment">// This a chain shape with isolated vertices</span></div>
-<div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> vs[4];</div>
+<p>The chain shape provides an efficient way to connect many edges together to construct your static game worlds. Chain shapes automatically eliminate ghost collisions and provide one-sided collision. The collision is one-sided to eliminate ghost collisions.</p>
+<p>If you don't care about ghost collisions, you can just create a bunch of two-sided edge shapes. The efficiency is similar.</p>
+<p>The simplest way to use chain shapes is to create loops. Simply provide an array of vertices.</p>
+<div class="fragment"><div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> vs[4];</div>
 <div class="line">vs[0].<a class="code" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">Set</a>(1.7f, 0.0f);</div>
 <div class="line">vs[1].<a class="code" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">Set</a>(1.0f, 0.25f);</div>
 <div class="line">vs[2].<a class="code" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">Set</a>(0.0f, 0.0f);</div>
 <div class="line">vs[3].<a class="code" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">Set</a>(-1.7f, 0.4f);</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="classb2_chain_shape.html">b2ChainShape</a> chain;</div>
-<div class="line">chain.<a class="code" href="classb2_chain_shape.html#aa0977339b743c05f2179939ccc38e7e0">CreateChain</a>(vs, 4);</div>
-</div><!-- fragment --><p>You may have a scrolling game world and would like to connect several chains together. You can connect chains together using ghost vertices, like we did with <a class="el" href="classb2_edge_shape.html">b2EdgeShape</a>.</p>
-<div class="fragment"><div class="line"><span class="comment">// Install ghost vertices</span></div>
-<div class="line">chain.<a class="code" href="classb2_chain_shape.html#aeb2ddbe0c52a98885e91b7c8f597315b">SetPrevVertex</a>(<a class="code" href="structb2_vec2.html">b2Vec2</a>(3.0f, 1.0f));</div>
-<div class="line">chain.<a class="code" href="classb2_chain_shape.html#a15c7c2821a52266ef57621ac7d34a95f">SetNextVertex</a>(<a class="code" href="structb2_vec2.html">b2Vec2</a>(-2.0f, 0.0f));</div>
-</div><!-- fragment --><p>You may also create loops automatically.</p>
-<div class="fragment"><div class="line"><span class="comment">// Create a loop. The first and last vertices are connected.</span></div>
-<div class="line"><a class="code" href="classb2_chain_shape.html">b2ChainShape</a> chain;</div>
 <div class="line">chain.<a class="code" href="classb2_chain_shape.html#ac257742a52cac391e25962a4c703fb06">CreateLoop</a>(vs, 4);</div>
+</div><!-- fragment --><p>The edge normal depends on the winding order. A counter-clockwise winding order orients the normal outwards and a clockwise winding order orients the normal inwards.</p>
+<div class="image">
+<object type="image/svg+xml" data="chain_loop_outwards.svg" style="pointer-events: none;"></object>
+<div class="caption">
+Chain Shape Outwards Loop</div></div>
+   <div class="image">
+<object type="image/svg+xml" data="chain_loop_inwards.svg" style="pointer-events: none;"></object>
+<div class="caption">
+Chain Shape Inwards Loop</div></div>
+   <p>You may have a scrolling game world and would like to connect several chains together. You can connect chains together using ghost vertices, like we did with <a class="el" href="classb2_edge_shape.html">b2EdgeShape</a>.</p>
+<div class="image">
+<object type="image/svg+xml" data="chain_shape.svg" style="pointer-events: none;"></object>
+<div class="caption">
+Chain Shape</div></div>
+   <div class="fragment"><div class="line"><a class="code" href="classb2_chain_shape.html#ad84a2fcd7aea6d8024759baa4275db9f">b2ChainShape::CreateChain</a>(<span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>* vertices, int32 count,</div>
+<div class="line">        <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; prevVertex, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; nextVertex);</div>
 </div><!-- fragment --><p>Self-intersection of chain shapes is not supported. It might work, it might not. The code that prevents ghost collisions assumes there are no self-intersections of the chain. Also, very close vertices can cause problems. Make sure all your edges are longer than b2_linearSlop (5mm).</p>
 <div class="image">
 <object type="image/svg+xml" data="self_intersect.svg" style="pointer-events: none;"></object>
 <div class="caption">
-Self Intersection</div></div>
+Self Intersection is Bad</div></div>
    <p>Each edge in the chain is treated as a child shape and can be accessed by index. When a chain shape is connected to a body, each edge gets its own bounding box in the broad-phase collision tree.</p>
 <div class="fragment"><div class="line"><span class="comment">// Visit each child edge.</span></div>
 <div class="line"><span class="keywordflow">for</span> (int32 i = 0; i \&lt; chain.<a class="code" href="classb2_chain_shape.html#a4d4fd8f5386a30f35b10d1b2848dbe54">GetChildCount</a>(); ++i)</div>
@@ -226,17 +229,21 @@ Geometric Queries</h1>
 <h2><a class="anchor" id="autotoc_md41"></a>
 Shape Point Test</h2>
 <p>You can test a point for overlap with a shape. You provide a transform for the shape and a world point.</p>
-<div class="fragment"><div class="line">b2Transfrom transform;</div>
-<div class="line">transform.SetIdentity();</div>
+<div class="fragment"><div class="line"><a class="code" href="structb2_transform.html">b2Transform</a> transform;</div>
+<div class="line">transform.<a class="code" href="structb2_transform.html#af92af4ec6833552b1b22a6ca6d4f5644">SetIdentity</a>();</div>
 <div class="line"><a class="code" href="structb2_vec2.html">b2Vec2</a> point(5.0f, 2.0f);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">bool</span> hit = shape-&gt;TestPoint(transform, point);</div>
 </div><!-- fragment --><p>Edge and chain shapes always return false, even if the chain is a loop.</p>
 <h2><a class="anchor" id="autotoc_md42"></a>
 Shape Ray Cast</h2>
-<p>You can cast a ray at a shape to get the point of first intersection and normal vector. No hit will register if the ray starts inside the shape. A child index is included for chain shapes because the ray cast will only check a single edge at a time.</p>
+<p>You can cast a ray at a shape to get the point of first intersection and normal vector. A child index is included for chain shapes because the ray cast will only check a single edge at a time.</p>
+<blockquote class="doxtable">
+<p><b>Caution</b>: No hit will register if the ray starts inside a convex shape like a circle or polygon. This is consistent with Box2D treating convex shapes as solid.</p>
+<p></p>
+</blockquote>
 <div class="fragment"><div class="line">b2Transfrom transform;</div>
-<div class="line">transform.SetIdentity();</div>
+<div class="line">transform.<a class="code" href="structb2_transform.html#af92af4ec6833552b1b22a6ca6d4f5644">SetIdentity</a>();</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="structb2_ray_cast_input.html">b2RayCastInput</a> input;</div>
 <div class="line">input.p1.<a class="code" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">Set</a>(0.0f, 0.0f);</div>
@@ -348,30 +355,29 @@ Broad-phase</h1>
 <div class="ttc" id="ab2__collision_8h_html_ae7601420d0b42c1ee494e879dd2009a5"><div class="ttname"><a href="b2__collision_8h.html#ae7601420d0b42c1ee494e879dd2009a5">b2TestOverlap</a></div><div class="ttdeci">bool b2TestOverlap(const b2Shape *shapeA, int32 indexA, const b2Shape *shapeB, int32 indexB, const b2Transform &amp;xfA, const b2Transform &amp;xfB)</div><div class="ttdoc">Determine if two generic shapes overlap.</div></div>
 <div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:39</div></div>
 <div class="ttc" id="aclassb2_edge_shape_html"><div class="ttname"><a href="classb2_edge_shape.html">b2EdgeShape</a></div><div class="ttdef"><b>Definition:</b> b2_edge_shape.h:31</div></div>
-<div class="ttc" id="aclassb2_chain_shape_html_aa0977339b743c05f2179939ccc38e7e0"><div class="ttname"><a href="classb2_chain_shape.html#aa0977339b743c05f2179939ccc38e7e0">b2ChainShape::CreateChain</a></div><div class="ttdeci">void CreateChain(const b2Vec2 *vertices, int32 count)</div></div>
 <div class="ttc" id="astructb2_ray_cast_input_html"><div class="ttname"><a href="structb2_ray_cast_input.html">b2RayCastInput</a></div><div class="ttdoc">Ray-cast input data. The ray extends from p1 to p1 + maxFraction * (p2 - p1).</div><div class="ttdef"><b>Definition:</b> b2_collision.h:151</div></div>
 <div class="ttc" id="astructb2_transform_html"><div class="ttname"><a href="structb2_transform.html">b2Transform</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:336</div></div>
-<div class="ttc" id="aclassb2_edge_shape_html_a907c9829484cc1ba7527ab368e9fdf93"><div class="ttname"><a href="classb2_edge_shape.html#a907c9829484cc1ba7527ab368e9fdf93">b2EdgeShape::m_vertex0</a></div><div class="ttdeci">b2Vec2 m_vertex0</div><div class="ttdoc">Optional adjacent vertices. These are used for smooth collision.</div><div class="ttdef"><b>Definition:</b> b2_edge_shape.h:62</div></div>
 <div class="ttc" id="aclassb2_polygon_shape_html_a4d7b35550509f570814b97325a68966b"><div class="ttname"><a href="classb2_polygon_shape.html#a4d7b35550509f570814b97325a68966b">b2PolygonShape::Set</a></div><div class="ttdeci">void Set(const b2Vec2 *points, int32 count)</div></div>
 <div class="ttc" id="aclassb2_shape_html_af145c8df4c0ffb5780b40cf8e4d64c9c"><div class="ttname"><a href="classb2_shape.html#af145c8df4c0ffb5780b40cf8e4d64c9c">b2Shape::m_radius</a></div><div class="ttdeci">float m_radius</div><div class="ttdef"><b>Definition:</b> b2_shape.h:101</div></div>
 <div class="ttc" id="ab2__collision_8h_html_a0a894e3715ce8c61b7958dd6e083663d"><div class="ttname"><a href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663d">b2PointState</a></div><div class="ttdeci">b2PointState</div><div class="ttdoc">This is used for determining the state of contact points.</div><div class="ttdef"><b>Definition:</b> b2_collision.h:130</div></div>
 <div class="ttc" id="astructb2_vec2_html_a78f0e635a664a563dd9246397d5f6e7e"><div class="ttname"><a href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">b2Vec2::Set</a></div><div class="ttdeci">void Set(float x_, float y_)</div><div class="ttdoc">Set this vector to some specified coordinates.</div><div class="ttdef"><b>Definition:</b> b2_math.h:51</div></div>
-<div class="ttc" id="aclassb2_chain_shape_html"><div class="ttname"><a href="classb2_chain_shape.html">b2ChainShape</a></div><div class="ttdef"><b>Definition:</b> b2_chain_shape.h:36</div></div>
+<div class="ttc" id="aclassb2_chain_shape_html"><div class="ttname"><a href="classb2_chain_shape.html">b2ChainShape</a></div><div class="ttdef"><b>Definition:</b> b2_chain_shape.h:35</div></div>
 <div class="ttc" id="astructb2_world_manifold_html"><div class="ttname"><a href="structb2_world_manifold.html">b2WorldManifold</a></div><div class="ttdoc">This is used to compute the current state of a contact manifold.</div><div class="ttdef"><b>Definition:</b> b2_collision.h:114</div></div>
-<div class="ttc" id="aclassb2_circle_shape_html_a190705618b2e65f636f1dc03c63640ff"><div class="ttname"><a href="classb2_circle_shape.html#a190705618b2e65f636f1dc03c63640ff">b2CircleShape::m_p</a></div><div class="ttdeci">b2Vec2 m_p</div><div class="ttdoc">Position.</div><div class="ttdef"><b>Definition:</b> b2_circle_shape.h:54</div></div>
+<div class="ttc" id="astructb2_transform_html_af92af4ec6833552b1b22a6ca6d4f5644"><div class="ttname"><a href="structb2_transform.html#af92af4ec6833552b1b22a6ca6d4f5644">b2Transform::SetIdentity</a></div><div class="ttdeci">void SetIdentity()</div><div class="ttdoc">Set this to the identity transform.</div><div class="ttdef"><b>Definition:</b> b2_math.h:345</div></div>
+<div class="ttc" id="aclassb2_circle_shape_html_a190705618b2e65f636f1dc03c63640ff"><div class="ttname"><a href="classb2_circle_shape.html#a190705618b2e65f636f1dc03c63640ff">b2CircleShape::m_p</a></div><div class="ttdeci">b2Vec2 m_p</div><div class="ttdoc">Position.</div><div class="ttdef"><b>Definition:</b> b2_circle_shape.h:56</div></div>
 <div class="ttc" id="aclassb2_polygon_shape_html"><div class="ttname"><a href="classb2_polygon_shape.html">b2PolygonShape</a></div><div class="ttdef"><b>Definition:</b> b2_polygon_shape.h:31</div></div>
-<div class="ttc" id="aclassb2_chain_shape_html_a15c7c2821a52266ef57621ac7d34a95f"><div class="ttname"><a href="classb2_chain_shape.html#a15c7c2821a52266ef57621ac7d34a95f">b2ChainShape::SetNextVertex</a></div><div class="ttdeci">void SetNextVertex(const b2Vec2 &amp;nextVertex)</div></div>
-<div class="ttc" id="aclassb2_edge_shape_html_a67dd3b17630a600033cb4380697a4e9d"><div class="ttname"><a href="classb2_edge_shape.html#a67dd3b17630a600033cb4380697a4e9d">b2EdgeShape::Set</a></div><div class="ttdeci">void Set(const b2Vec2 &amp;v1, const b2Vec2 &amp;v2)</div><div class="ttdoc">Set this as an isolated edge.</div></div>
 <div class="ttc" id="aclassb2_chain_shape_html_ac257742a52cac391e25962a4c703fb06"><div class="ttname"><a href="classb2_chain_shape.html#ac257742a52cac391e25962a4c703fb06">b2ChainShape::CreateLoop</a></div><div class="ttdeci">void CreateLoop(const b2Vec2 *vertices, int32 count)</div></div>
 <div class="ttc" id="astructb2_world_manifold_html_a205cd53748c5ee68f0958af96f45f5a4"><div class="ttname"><a href="structb2_world_manifold.html#a205cd53748c5ee68f0958af96f45f5a4">b2WorldManifold::Initialize</a></div><div class="ttdeci">void Initialize(const b2Manifold *manifold, const b2Transform &amp;xfA, float radiusA, const b2Transform &amp;xfB, float radiusB)</div></div>
 <div class="ttc" id="aclassb2_chain_shape_html_abfe7f836d3c32dc06b920df61a74f412"><div class="ttname"><a href="classb2_chain_shape.html#abfe7f836d3c32dc06b920df61a74f412">b2ChainShape::GetChildEdge</a></div><div class="ttdeci">void GetChildEdge(b2EdgeShape *edge, int32 index) const</div><div class="ttdoc">Get a child edge.</div></div>
-<div class="ttc" id="aclassb2_chain_shape_html_aeb2ddbe0c52a98885e91b7c8f597315b"><div class="ttname"><a href="classb2_chain_shape.html#aeb2ddbe0c52a98885e91b7c8f597315b">b2ChainShape::SetPrevVertex</a></div><div class="ttdeci">void SetPrevVertex(const b2Vec2 &amp;prevVertex)</div></div>
 <div class="ttc" id="ab2__collision_8h_html_a401e2747d276e9fbfd131989e02ff568"><div class="ttname"><a href="b2__collision_8h.html#a401e2747d276e9fbfd131989e02ff568">b2GetPointStates</a></div><div class="ttdeci">void b2GetPointStates(b2PointState state1[b2_maxManifoldPoints], b2PointState state2[b2_maxManifoldPoints], const b2Manifold *manifold1, const b2Manifold *manifold2)</div></div>
+<div class="ttc" id="aclassb2_edge_shape_html_ad2c40bb652b4ea1f087580b8c42fcdf2"><div class="ttname"><a href="classb2_edge_shape.html#ad2c40bb652b4ea1f087580b8c42fcdf2">b2EdgeShape::SetTwoSided</a></div><div class="ttdeci">void SetTwoSided(const b2Vec2 &amp;v1, const b2Vec2 &amp;v2)</div><div class="ttdoc">Set this as an isolated edge. Collision is two-sided.</div></div>
+<div class="ttc" id="aclassb2_chain_shape_html_ad84a2fcd7aea6d8024759baa4275db9f"><div class="ttname"><a href="classb2_chain_shape.html#ad84a2fcd7aea6d8024759baa4275db9f">b2ChainShape::CreateChain</a></div><div class="ttdeci">void CreateChain(const b2Vec2 *vertices, int32 count, const b2Vec2 &amp;prevVertex, const b2Vec2 &amp;nextVertex)</div></div>
 <div class="ttc" id="aclassb2_chain_shape_html_a4d4fd8f5386a30f35b10d1b2848dbe54"><div class="ttname"><a href="classb2_chain_shape.html#a4d4fd8f5386a30f35b10d1b2848dbe54">b2ChainShape::GetChildCount</a></div><div class="ttdeci">int32 GetChildCount() const override</div></div>
 <div class="ttc" id="astructb2_ray_cast_output_html"><div class="ttname"><a href="structb2_ray_cast_output.html">b2RayCastOutput</a></div><div class="ttdef"><b>Definition:</b> b2_collision.h:159</div></div>
 <div class="ttc" id="astructb2_world_manifold_html_af15e84b90f102c0ac433be2d63604021"><div class="ttname"><a href="structb2_world_manifold.html#af15e84b90f102c0ac433be2d63604021">b2WorldManifold::points</a></div><div class="ttdeci">b2Vec2 points[b2_maxManifoldPoints]</div><div class="ttdoc">world contact point (point of intersection)</div><div class="ttdef"><b>Definition:</b> b2_collision.h:125</div></div>
 <div class="ttc" id="ab2__collision_8h_html_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be"><div class="ttname"><a href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be">b2_removeState</a></div><div class="ttdeci">@ b2_removeState</div><div class="ttdoc">point was removed in the update</div><div class="ttdef"><b>Definition:</b> b2_collision.h:135</div></div>
-<div class="ttc" id="aclassb2_circle_shape_html"><div class="ttname"><a href="classb2_circle_shape.html">b2CircleShape</a></div><div class="ttdoc">A circle shape.</div><div class="ttdef"><b>Definition:</b> b2_circle_shape.h:29</div></div>
+<div class="ttc" id="aclassb2_circle_shape_html"><div class="ttname"><a href="classb2_circle_shape.html">b2CircleShape</a></div><div class="ttdoc">A solid circle shape.</div><div class="ttdef"><b>Definition:</b> b2_circle_shape.h:29</div></div>
+<div class="ttc" id="aclassb2_edge_shape_html_ad2b74e7d57e3144f09f8cd2dccdd21d9"><div class="ttname"><a href="classb2_edge_shape.html#ad2b74e7d57e3144f09f8cd2dccdd21d9">b2EdgeShape::SetOneSided</a></div><div class="ttdeci">void SetOneSided(const b2Vec2 &amp;v0, const b2Vec2 &amp;v1, const b2Vec2 &amp;v2, const b2Vec2 &amp;v3)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

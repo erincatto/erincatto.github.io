@@ -190,6 +190,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>GetMaxMotorTorque</b
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_revolute_joint.html#a408badabe21b169412a5c4a2f36bbbd8">Dump</a> () override</td></tr>
 <tr class="memdesc:a408badabe21b169412a5c4a2f36bbbd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump to b2Log. <br /></td></tr>
 <tr class="separator:a408badabe21b169412a5c4a2f36bbbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa2a3c758243f39a97c43f7a2acc23e"><td class="memItemLeft" align="right" valign="top"><a id="adaa2a3c758243f39a97c43f7a2acc23e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_revolute_joint.html#adaa2a3c758243f39a97c43f7a2acc23e">Draw</a> (<a class="el" href="classb2_draw.html">b2Draw</a> *draw) const override</td></tr>
+<tr class="memdesc:adaa2a3c758243f39a97c43f7a2acc23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug draw this joint. <br /></td></tr>
+<tr class="separator:adaa2a3c758243f39a97c43f7a2acc23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classb2_joint"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classb2_joint')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classb2_joint.html">b2Joint</a></td></tr>
 <tr class="memitem:ac56eef62fe1ac7c9e5e21a79fb035255 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ac56eef62fe1ac7c9e5e21a79fb035255"></a>
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ac56eef62fe1ac7c9e5e21a79fb035255">GetType</a> () const</td></tr>
@@ -218,10 +222,10 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a492f2d02496437572aaec6013ebdc1c8">SetUserData</a> (void *data)</td></tr>
 <tr class="memdesc:a492f2d02496437572aaec6013ebdc1c8 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the user data pointer. <br /></td></tr>
 <tr class="separator:a492f2d02496437572aaec6013ebdc1c8 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ae9cfbd158216c9855c2f018ff3c9c922"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ae9cfbd158216c9855c2f018ff3c9c922">IsActive</a> () const</td></tr>
-<tr class="memdesc:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short-cut function to determine if either body is inactive. <br /></td></tr>
-<tr class="separator:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ad8afc5c7b8b325e982e75fe35730253d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ad8afc5c7b8b325e982e75fe35730253d">IsEnabled</a> () const</td></tr>
+<tr class="memdesc:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short-cut function to determine if either body is enabled. <br /></td></tr>
+<tr class="separator:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48492903df96c8a7b8cad8ed826f8cb0 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a48492903df96c8a7b8cad8ed826f8cb0">GetCollideConnected</a> () const</td></tr>
 <tr class="separator:a48492903df96c8a7b8cad8ed826f8cb0 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7804f649e993dc0fd9ae47fde5601f90 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="a7804f649e993dc0fd9ae47fde5601f90"></a>
@@ -256,12 +260,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ae206b6bcc7b6527d7d18f239d20a7ae9"><td class="memItemLeft" align="right" valign="top"><a id="ae206b6bcc7b6527d7d18f239d20a7ae9"></a>
 <a class="el" href="structb2_vec2.html">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_localAnchorB</b></td></tr>
 <tr class="separator:ae206b6bcc7b6527d7d18f239d20a7ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00d576701b8e2ee886e9a59811b4df65"><td class="memItemLeft" align="right" valign="top"><a id="a00d576701b8e2ee886e9a59811b4df65"></a>
-<a class="el" href="structb2_vec3.html">b2Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_impulse</b></td></tr>
-<tr class="separator:a00d576701b8e2ee886e9a59811b4df65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8cdf942be7837c67382b619f9ebc4d"><td class="memItemLeft" align="right" valign="top"><a id="a7e8cdf942be7837c67382b619f9ebc4d"></a>
+<a class="el" href="structb2_vec2.html">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_impulse</b></td></tr>
+<tr class="separator:a7e8cdf942be7837c67382b619f9ebc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae137757f09cde1592f0025eb9bc6b74b"><td class="memItemLeft" align="right" valign="top"><a id="ae137757f09cde1592f0025eb9bc6b74b"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_motorImpulse</b></td></tr>
 <tr class="separator:ae137757f09cde1592f0025eb9bc6b74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2aa5c79961b980d3fe41efd27a561e"><td class="memItemLeft" align="right" valign="top"><a id="a7c2aa5c79961b980d3fe41efd27a561e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_lowerImpulse</b></td></tr>
+<tr class="separator:a7c2aa5c79961b980d3fe41efd27a561e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837bb75e4cba595cfe1fc05547bc0aef"><td class="memItemLeft" align="right" valign="top"><a id="a837bb75e4cba595cfe1fc05547bc0aef"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_upperImpulse</b></td></tr>
+<tr class="separator:a837bb75e4cba595cfe1fc05547bc0aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fcdcbfc9fd51e8b5dc98ed8ea652e13"><td class="memItemLeft" align="right" valign="top"><a id="a8fcdcbfc9fd51e8b5dc98ed8ea652e13"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_enableMotor</b></td></tr>
 <tr class="separator:a8fcdcbfc9fd51e8b5dc98ed8ea652e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -313,15 +323,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_invIA</b></td></tr
 <tr class="memitem:a1ffe5c7739413a2d20cb6f380e174320"><td class="memItemLeft" align="right" valign="top"><a id="a1ffe5c7739413a2d20cb6f380e174320"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_invIB</b></td></tr>
 <tr class="separator:a1ffe5c7739413a2d20cb6f380e174320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a284ae761074305d5032a2b666efb0650"><td class="memItemLeft" align="right" valign="top"><a id="a284ae761074305d5032a2b666efb0650"></a>
-<a class="el" href="structb2_mat33.html">b2Mat33</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_mass</b></td></tr>
-<tr class="separator:a284ae761074305d5032a2b666efb0650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa3d9c2c22a51c662e119d0b7cbdd1d0"><td class="memItemLeft" align="right" valign="top"><a id="aaa3d9c2c22a51c662e119d0b7cbdd1d0"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_motorMass</b></td></tr>
-<tr class="separator:aaa3d9c2c22a51c662e119d0b7cbdd1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe77594f4773d21dabd8912d6630dc6a"><td class="memItemLeft" align="right" valign="top"><a id="abe77594f4773d21dabd8912d6630dc6a"></a>
-b2LimitState&#160;</td><td class="memItemRight" valign="bottom"><b>m_limitState</b></td></tr>
-<tr class="separator:abe77594f4773d21dabd8912d6630dc6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bad1c3167e4239a53dc146c48580efa"><td class="memItemLeft" align="right" valign="top"><a id="a0bad1c3167e4239a53dc146c48580efa"></a>
+<a class="el" href="structb2_mat22.html">b2Mat22</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_K</b></td></tr>
+<tr class="separator:a0bad1c3167e4239a53dc146c48580efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade96c90116b13fd7a19f980e7758d1df"><td class="memItemLeft" align="right" valign="top"><a id="ade96c90116b13fd7a19f980e7758d1df"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_angle</b></td></tr>
+<tr class="separator:ade96c90116b13fd7a19f980e7758d1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131e3e610941686cdd62a39825f61a46"><td class="memItemLeft" align="right" valign="top"><a id="a131e3e610941686cdd62a39825f61a46"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_axialMass</b></td></tr>
+<tr class="separator:a131e3e610941686cdd62a39825f61a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classb2_joint"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classb2_joint')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classb2_joint.html">b2Joint</a></td></tr>
 <tr class="memitem:a3fd3f2532d108d81df81427815210a59 inherit pro_attribs_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="a3fd3f2532d108d81df81427815210a59"></a>
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>

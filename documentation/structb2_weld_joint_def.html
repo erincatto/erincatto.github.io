@@ -124,12 +124,12 @@ Public Attributes</h2></td></tr>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_weld_joint_def.html#a88841acce3b4e88fb33997a2f9eedb52">referenceAngle</a></td></tr>
 <tr class="memdesc:a88841acce3b4e88fb33997a2f9eedb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bodyB angle minus bodyA angle in the reference state (radians). <br /></td></tr>
 <tr class="separator:a88841acce3b4e88fb33997a2f9eedb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4130af6abc8fbcf78fbc089832e706a3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_weld_joint_def.html#a4130af6abc8fbcf78fbc089832e706a3">frequencyHz</a></td></tr>
-<tr class="separator:a4130af6abc8fbcf78fbc089832e706a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fadcf3047d4adb119a5a132e8834c7b"><td class="memItemLeft" align="right" valign="top"><a id="a1fadcf3047d4adb119a5a132e8834c7b"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_weld_joint_def.html#a1fadcf3047d4adb119a5a132e8834c7b">dampingRatio</a></td></tr>
-<tr class="memdesc:a1fadcf3047d4adb119a5a132e8834c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The damping ratio. 0 = no damping, 1 = critical damping. <br /></td></tr>
-<tr class="separator:a1fadcf3047d4adb119a5a132e8834c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb881c0408c9674b2a1869b491fdc6a0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_weld_joint_def.html#aeb881c0408c9674b2a1869b491fdc6a0">stiffness</a></td></tr>
+<tr class="separator:aeb881c0408c9674b2a1869b491fdc6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59dcfbbd7c8d4421b3c621946ab4ec7d"><td class="memItemLeft" align="right" valign="top"><a id="a59dcfbbd7c8d4421b3c621946ab4ec7d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_weld_joint_def.html#a59dcfbbd7c8d4421b3c621946ab4ec7d">damping</a></td></tr>
+<tr class="memdesc:a59dcfbbd7c8d4421b3c621946ab4ec7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotational damping in N*m*s. <br /></td></tr>
+<tr class="separator:a59dcfbbd7c8d4421b3c621946ab4ec7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_structb2_joint_def"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structb2_joint_def')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="structb2_joint_def.html">b2JointDef</a></td></tr>
 <tr class="memitem:a470f2879b24adb05facbd49f338856fb inherit pub_attribs_structb2_joint_def"><td class="memItemLeft" align="right" valign="top"><a id="a470f2879b24adb05facbd49f338856fb"></a>
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">type</a></td></tr>
@@ -186,23 +186,30 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialize the bodies, anchors, and reference angle using a world anchor point. </p>
+<p>Initialize the bodies, anchors, reference angle, stiffness, and damping. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bodyA</td><td>the first body connected by this joint </td></tr>
+    <tr><td class="paramname">bodyB</td><td>the second body connected by this joint </td></tr>
+    <tr><td class="paramname">anchor</td><td>the point of connection in world coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4130af6abc8fbcf78fbc089832e706a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4130af6abc8fbcf78fbc089832e706a3">&#9670;&nbsp;</a></span>frequencyHz</h2>
+<a id="aeb881c0408c9674b2a1869b491fdc6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb881c0408c9674b2a1869b491fdc6a0">&#9670;&nbsp;</a></span>stiffness</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float b2WeldJointDef::frequencyHz</td>
+          <td class="memname">float b2WeldJointDef::stiffness</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The mass-spring-damper frequency in Hertz. Rotation only. Disable softness with a value of 0. </p>
+<p>The rotational stiffness in N*m Disable softness with a value of 0 </p>
 
 </div>
 </div>

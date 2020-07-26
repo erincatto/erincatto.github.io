@@ -117,12 +117,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a434d4b61ab15726302ec5ad484011c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac257742a52cac391e25962a4c703fb06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_chain_shape.html#ac257742a52cac391e25962a4c703fb06">CreateLoop</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> *vertices, int32 count)</td></tr>
 <tr class="separator:ac257742a52cac391e25962a4c703fb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0977339b743c05f2179939ccc38e7e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_chain_shape.html#aa0977339b743c05f2179939ccc38e7e0">CreateChain</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> *vertices, int32 count)</td></tr>
-<tr class="separator:aa0977339b743c05f2179939ccc38e7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb2ddbe0c52a98885e91b7c8f597315b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_chain_shape.html#aeb2ddbe0c52a98885e91b7c8f597315b">SetPrevVertex</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;prevVertex)</td></tr>
-<tr class="separator:aeb2ddbe0c52a98885e91b7c8f597315b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15c7c2821a52266ef57621ac7d34a95f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_chain_shape.html#a15c7c2821a52266ef57621ac7d34a95f">SetNextVertex</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;nextVertex)</td></tr>
-<tr class="separator:a15c7c2821a52266ef57621ac7d34a95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84a2fcd7aea6d8024759baa4275db9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_chain_shape.html#ad84a2fcd7aea6d8024759baa4275db9f">CreateChain</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> *vertices, int32 count, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;prevVertex, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;nextVertex)</td></tr>
+<tr class="separator:ad84a2fcd7aea6d8024759baa4275db9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5916e4b5dd8edce3cf71ecfe775501e1"><td class="memItemLeft" align="right" valign="top"><a id="a5916e4b5dd8edce3cf71ecfe775501e1"></a>
 <a class="el" href="classb2_shape.html">b2Shape</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_chain_shape.html#a5916e4b5dd8edce3cf71ecfe775501e1">Clone</a> (<a class="el" href="classb2_block_allocator.html">b2BlockAllocator</a> *allocator) const override</td></tr>
 <tr class="memdesc:a5916e4b5dd8edce3cf71ecfe775501e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <a class="el" href="classb2_shape.html">b2Shape</a>. Vertices are cloned using b2Alloc. <br /></td></tr>
@@ -163,12 +159,6 @@ int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <tr class="memitem:af3716ef780dd5bcd905e350d8854aaa2"><td class="memItemLeft" align="right" valign="top"><a id="af3716ef780dd5bcd905e350d8854aaa2"></a>
 <a class="el" href="structb2_vec2.html">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_nextVertex</b></td></tr>
 <tr class="separator:af3716ef780dd5bcd905e350d8854aaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a6ffbb9de0e2b8545c8b4fc8aa77249"><td class="memItemLeft" align="right" valign="top"><a id="a8a6ffbb9de0e2b8545c8b4fc8aa77249"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_hasPrevVertex</b></td></tr>
-<tr class="separator:a8a6ffbb9de0e2b8545c8b4fc8aa77249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a333b74486566e73c3cf1f7da5e69a96e"><td class="memItemLeft" align="right" valign="top"><a id="a333b74486566e73c3cf1f7da5e69a96e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_hasNextVertex</b></td></tr>
-<tr class="separator:a333b74486566e73c3cf1f7da5e69a96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classb2_shape"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classb2_shape')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classb2_shape.html">b2Shape</a></td></tr>
 <tr class="memitem:adb051791133b24f53c6e9a565a7b7bbb inherit pub_attribs_classb2_shape"><td class="memItemLeft" align="right" valign="top"><a id="adb051791133b24f53c6e9a565a7b7bbb"></a>
 Type&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
@@ -191,7 +181,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4c1f3a9ad6b3150bb90ad9018ca4b1e0 inherit pub_types_classb2_shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A chain shape is a free form sequence of line segments. The chain has two-sided collision, so you can use inside and outside collision. Therefore, you may use any winding order. Since there may be many vertices, they are allocated using b2Alloc. Connectivity information is used to create smooth collisions. WARNING: The chain will not collide properly if there are self-intersections. </p>
+<div class="textblock"><p>A chain shape is a free form sequence of line segments. The chain has one-sided collision, with the surface normal pointing to the right of the edge. This provides a counter-clockwise winding like the polygon shape. Connectivity information is used to create smooth collisions. </p><dl class="section warning"><dt>Warning</dt><dd>the chain will not collide properly if there are self-intersections. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae1d7470ce8d32e92d27c149ab45f5468"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1d7470ce8d32e92d27c149ab45f5468">&#9670;&nbsp;</a></span>ComputeAABB()</h2>
@@ -277,8 +267,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa0977339b743c05f2179939ccc38e7e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0977339b743c05f2179939ccc38e7e0">&#9670;&nbsp;</a></span>CreateChain()</h2>
+<a id="ad84a2fcd7aea6d8024759baa4275db9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84a2fcd7aea6d8024759baa4275db9f">&#9670;&nbsp;</a></span>CreateChain()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,7 +283,19 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int32&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
+          <td class="paramname"><em>prevVertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
+          <td class="paramname"><em>nextVertex</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -302,10 +304,12 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a chain with isolated end vertices. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Create a chain with ghost vertices to connect multiple chains together. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vertices</td><td>an array of vertices, these are copied </td></tr>
     <tr><td class="paramname">count</td><td>the vertex count </td></tr>
+    <tr><td class="paramname">prevVertex</td><td>previous vertex from chain that connects to the start </td></tr>
+    <tr><td class="paramname">nextVertex</td><td>next vertex from chain that connects to the end </td></tr>
   </table>
   </dd>
 </dl>
@@ -372,44 +376,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab" title="Get the number of child primitives.">b2Shape::GetChildCount</a> </dd></dl>
 
 <p>Implements <a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab">b2Shape</a>.</p>
-
-</div>
-</div>
-<a id="a15c7c2821a52266ef57621ac7d34a95f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15c7c2821a52266ef57621ac7d34a95f">&#9670;&nbsp;</a></span>SetNextVertex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void b2ChainShape::SetNextVertex </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
-          <td class="paramname"><em>nextVertex</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Establish connectivity to a vertex that follows the last vertex. Don't call this for loops. </p>
-
-</div>
-</div>
-<a id="aeb2ddbe0c52a98885e91b7c8f597315b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb2ddbe0c52a98885e91b7c8f597315b">&#9670;&nbsp;</a></span>SetPrevVertex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void b2ChainShape::SetPrevVertex </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
-          <td class="paramname"><em>prevVertex</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Establish connectivity to a vertex that precedes the first vertex. Don't call this for loops. </p>
 
 </div>
 </div>

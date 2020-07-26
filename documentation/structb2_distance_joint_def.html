@@ -124,12 +124,14 @@ Public Attributes</h2></td></tr>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#a001acbbd67326ab5e5d5ec6dc64faf78">length</a></td></tr>
 <tr class="memdesc:a001acbbd67326ab5e5d5ec6dc64faf78"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural length between the anchor points. <br /></td></tr>
 <tr class="separator:a001acbbd67326ab5e5d5ec6dc64faf78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af929a9cb9114f934f8d4c3a25b5769e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#af929a9cb9114f934f8d4c3a25b5769e0">frequencyHz</a></td></tr>
-<tr class="separator:af929a9cb9114f934f8d4c3a25b5769e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35db4b2f47e877ba722e5f1112e98b28"><td class="memItemLeft" align="right" valign="top"><a id="a35db4b2f47e877ba722e5f1112e98b28"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#a35db4b2f47e877ba722e5f1112e98b28">dampingRatio</a></td></tr>
-<tr class="memdesc:a35db4b2f47e877ba722e5f1112e98b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The damping ratio. 0 = no damping, 1 = critical damping. <br /></td></tr>
-<tr class="separator:a35db4b2f47e877ba722e5f1112e98b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858640393f567a2aca1b40cbe534b4e2"><td class="memItemLeft" align="right" valign="top"><a id="a858640393f567a2aca1b40cbe534b4e2"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#a858640393f567a2aca1b40cbe534b4e2">stiffness</a></td></tr>
+<tr class="memdesc:a858640393f567a2aca1b40cbe534b4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The linear stiffness in N/m. A value of 0 disables softness. <br /></td></tr>
+<tr class="separator:a858640393f567a2aca1b40cbe534b4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa488d9b1f5300e795587b844b6db0d98"><td class="memItemLeft" align="right" valign="top"><a id="aa488d9b1f5300e795587b844b6db0d98"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#aa488d9b1f5300e795587b844b6db0d98">damping</a></td></tr>
+<tr class="memdesc:aa488d9b1f5300e795587b844b6db0d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">The linear damping in N*s/m. <br /></td></tr>
+<tr class="separator:aa488d9b1f5300e795587b844b6db0d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_structb2_joint_def"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structb2_joint_def')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="structb2_joint_def.html">b2JointDef</a></td></tr>
 <tr class="memitem:a470f2879b24adb05facbd49f338856fb inherit pub_attribs_structb2_joint_def"><td class="memItemLeft" align="right" valign="top"><a id="a470f2879b24adb05facbd49f338856fb"></a>
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">type</a></td></tr>
@@ -193,22 +195,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
       </table>
 </div><div class="memdoc">
 <p>Initialize the bodies, anchors, and length using the world anchors. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="af929a9cb9114f934f8d4c3a25b5769e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af929a9cb9114f934f8d4c3a25b5769e0">&#9670;&nbsp;</a></span>frequencyHz</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float b2DistanceJointDef::frequencyHz</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The mass-spring-damper frequency in Hertz. A value of 0 disables softness. </p>
 
 </div>
 </div>

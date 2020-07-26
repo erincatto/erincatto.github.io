@@ -101,7 +101,7 @@ Prerequisites</h1>
 </blockquote>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Scope</h1>
-<p>This manual covers the majority of the Box2D API. However, not every aspect is covered. Please look at the samples included with Box2D to learn more.</p>
+<p>This manual covers the majority of the Box2D API. However, not every aspect is covered. Please look at the testbed included with Box2D to learn more.</p>
 <p>This manual is only updated with new releases. The latest version of Box2D may be out of sync with this manual.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Feedback and Bugs</h1>
@@ -162,6 +162,11 @@ Units</h1>
 <p><b>Caution</b>: Box2D is tuned for MKS units. Keep the size of moving objects roughly between 0.1 and 10 meters. You'll need to use some scaling system when you render your environment and actors. The Box2D testbed does this by using an OpenGL viewport transform. DO NOT USE PIXELS. </p>
 </blockquote>
 <p>It is best to think of Box2D bodies as moving billboards upon which you attach your artwork. The billboard may move in a unit system of meters, but you can convert that to pixel coordinates with a simple scaling factor. You can then use those pixel coordinates to place your sprites, etc. You can also account for flipped coordinate axes.</p>
+<p>Another limitation to consider is overall world size. If your world units become larger than 2 kilometers or so, then the lost precision can affect stability.</p>
+<blockquote class="doxtable">
+<p><b>Caution</b>: Box2D works best with world sizes less than 2 kilometers. Use <a class="el" href="classb2_world.html#afc33e20e64252c5be115216051408047">b2World::ShiftOrigin</a> to support larger worlds. </p>
+</blockquote>
+<p>If you need to have a larger game world, consider using <a class="el" href="classb2_world.html#afc33e20e64252c5be115216051408047">b2World::ShiftOrigin</a> to keep the world origin close to your player. I recommend to use grid lines along with some hysteresis for triggering calls to ShiftOrigin. This call should be made infrequently because it is has CPU cost. You may need to store a physics offset when translating between game units and Box2D units.</p>
 <p>Box2D uses radians for angles. The body rotation is stored in radians and may grow unbounded. Consider normalizing the angle of your bodies if the magnitude of the angle becomes too large (use b2Body::SetAngle).</p>
 <blockquote class="doxtable">
 <p><b>Caution</b>: Box2D uses radians, not degrees. </p>
@@ -189,7 +194,7 @@ Factories and Definitions</h1>
 <div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:131</div></div>
 <div class="ttc" id="aclassb2_world_html_a9323d553e4c132b26d8741b457d7c034"><div class="ttname"><a href="classb2_world.html#a9323d553e4c132b26d8741b457d7c034">b2World::CreateBody</a></div><div class="ttdeci">b2Body * CreateBody(const b2BodyDef *def)</div></div>
 <div class="ttc" id="aclassb2_world_html_ad52231ad7a9556ef5735ac79cbcd8fcf"><div class="ttname"><a href="classb2_world.html#ad52231ad7a9556ef5735ac79cbcd8fcf">b2World::DestroyBody</a></div><div class="ttdeci">void DestroyBody(b2Body *body)</div></div>
-<div class="ttc" id="astructb2_joint_def_html"><div class="ttname"><a href="structb2_joint_def.html">b2JointDef</a></div><div class="ttdoc">Joint definitions are used to construct joints.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:78</div></div>
+<div class="ttc" id="astructb2_joint_def_html"><div class="ttname"><a href="structb2_joint_def.html">b2JointDef</a></div><div class="ttdoc">Joint definitions are used to construct joints.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:71</div></div>
 <div class="ttc" id="aclassb2_world_html_add5942aef171e54cfa384c8975746dca"><div class="ttname"><a href="classb2_world.html#add5942aef171e54cfa384c8975746dca">b2World::DestroyJoint</a></div><div class="ttdeci">void DestroyJoint(b2Joint *joint)</div></div>
 <div class="ttc" id="aclassb2_body_html_a40dda91b34418bb40e31e2db9b1b76a5"><div class="ttname"><a href="classb2_body.html#a40dda91b34418bb40e31e2db9b1b76a5">b2Body::CreateFixture</a></div><div class="ttdeci">b2Fixture * CreateFixture(const b2FixtureDef *def)</div></div>
 <div class="ttc" id="astructb2_fixture_def_html"><div class="ttname"><a href="structb2_fixture_def.html">b2FixtureDef</a></div><div class="ttdef"><b>Definition:</b> b2_fixture.h:60</div></div>
@@ -197,7 +202,7 @@ Factories and Definitions</h1>
 <div class="ttc" id="astructb2_body_def_html"><div class="ttname"><a href="structb2_body_def.html">b2BodyDef</a></div><div class="ttdef"><b>Definition:</b> b2_body.h:54</div></div>
 <div class="ttc" id="aclassb2_body_html_a856d1df86b7bded91f02d8cfcaea1c2f"><div class="ttname"><a href="classb2_body.html#a856d1df86b7bded91f02d8cfcaea1c2f">b2Body::DestroyFixture</a></div><div class="ttdeci">void DestroyFixture(b2Fixture *fixture)</div></div>
 <div class="ttc" id="aclassb2_shape_html"><div class="ttname"><a href="classb2_shape.html">b2Shape</a></div><div class="ttdef"><b>Definition:</b> b2_shape.h:47</div></div>
-<div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:107</div></div>
+<div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:110</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

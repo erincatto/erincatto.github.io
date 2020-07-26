@@ -107,10 +107,12 @@ Inheritance diagram for b2EdgeShape:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a67dd3b17630a600033cb4380697a4e9d"><td class="memItemLeft" align="right" valign="top"><a id="a67dd3b17630a600033cb4380697a4e9d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_edge_shape.html#a67dd3b17630a600033cb4380697a4e9d">Set</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v1, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v2)</td></tr>
-<tr class="memdesc:a67dd3b17630a600033cb4380697a4e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this as an isolated edge. <br /></td></tr>
-<tr class="separator:a67dd3b17630a600033cb4380697a4e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b74e7d57e3144f09f8cd2dccdd21d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_edge_shape.html#ad2b74e7d57e3144f09f8cd2dccdd21d9">SetOneSided</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v0, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v1, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v2, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v3)</td></tr>
+<tr class="separator:ad2b74e7d57e3144f09f8cd2dccdd21d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c40bb652b4ea1f087580b8c42fcdf2"><td class="memItemLeft" align="right" valign="top"><a id="ad2c40bb652b4ea1f087580b8c42fcdf2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_edge_shape.html#ad2c40bb652b4ea1f087580b8c42fcdf2">SetTwoSided</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v1, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;v2)</td></tr>
+<tr class="memdesc:ad2c40bb652b4ea1f087580b8c42fcdf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this as an isolated edge. Collision is two-sided. <br /></td></tr>
+<tr class="separator:ad2c40bb652b4ea1f087580b8c42fcdf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99fd092e0f3a4074ad1fba1fa6023451"><td class="memItemLeft" align="right" valign="top"><a id="a99fd092e0f3a4074ad1fba1fa6023451"></a>
 <a class="el" href="classb2_shape.html">b2Shape</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_edge_shape.html#a99fd092e0f3a4074ad1fba1fa6023451">Clone</a> (<a class="el" href="classb2_block_allocator.html">b2BlockAllocator</a> *allocator) const override</td></tr>
 <tr class="memdesc:a99fd092e0f3a4074ad1fba1fa6023451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <a class="el" href="classb2_shape.html">b2Shape</a>. <br /></td></tr>
@@ -147,12 +149,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a7991fd8b38806a7785748cd991c18452"><td class="memItemLeft" align="right" valign="top"><a id="a7991fd8b38806a7785748cd991c18452"></a>
 <a class="el" href="structb2_vec2.html">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_vertex3</b></td></tr>
 <tr class="separator:a7991fd8b38806a7785748cd991c18452"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d0f39259f0963146b343d6b048f3f8a"><td class="memItemLeft" align="right" valign="top"><a id="a1d0f39259f0963146b343d6b048f3f8a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_hasVertex0</b></td></tr>
-<tr class="separator:a1d0f39259f0963146b343d6b048f3f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb0dfac66fe677ccd765d48610fa56f"><td class="memItemLeft" align="right" valign="top"><a id="afeb0dfac66fe677ccd765d48610fa56f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_hasVertex3</b></td></tr>
-<tr class="separator:afeb0dfac66fe677ccd765d48610fa56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954ce55a70f9cd10d6ad0e2073c5addc"><td class="memItemLeft" align="right" valign="top"><a id="a954ce55a70f9cd10d6ad0e2073c5addc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_edge_shape.html#a954ce55a70f9cd10d6ad0e2073c5addc">m_oneSided</a></td></tr>
+<tr class="memdesc:a954ce55a70f9cd10d6ad0e2073c5addc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses m_vertex0 and m_vertex3 to create smooth collision. <br /></td></tr>
+<tr class="separator:a954ce55a70f9cd10d6ad0e2073c5addc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classb2_shape"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classb2_shape')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classb2_shape.html">b2Shape</a></td></tr>
 <tr class="memitem:adb051791133b24f53c6e9a565a7b7bbb inherit pub_attribs_classb2_shape"><td class="memItemLeft" align="right" valign="top"><a id="adb051791133b24f53c6e9a565a7b7bbb"></a>
 Type&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
@@ -175,7 +175,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4c1f3a9ad6b3150bb90ad9018ca4b1e0 inherit pub_types_classb2_shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A line segment (edge) shape. These can be connected in chains or loops to other edge shapes. The connectivity information is used to ensure correct contact normals. </p>
+<div class="textblock"><p>A line segment (edge) shape. These can be connected in chains or loops to other edge shapes. Edges created independently are two-sided and do no provide smooth movement across junctions. <br  />
+ </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a238139ae1736b457d77443133ff16854"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a238139ae1736b457d77443133ff16854">&#9670;&nbsp;</a></span>ComputeAABB()</h2>
@@ -286,6 +287,47 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab" title="Get the number of child primitives.">b2Shape::GetChildCount</a> </dd></dl>
 
 <p>Implements <a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab">b2Shape</a>.</p>
+
+</div>
+</div>
+<a id="ad2b74e7d57e3144f09f8cd2dccdd21d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b74e7d57e3144f09f8cd2dccdd21d9">&#9670;&nbsp;</a></span>SetOneSided()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void b2EdgeShape::SetOneSided </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;&#160;</td>
+          <td class="paramname"><em>v3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set this as a part of a sequence. Vertex v0 precedes the edge and vertex v3 follows. These extra vertices are used to provide smooth movement across junctions. This also makes the collision one-sided. The edge normal points to the right looking from v1 to v2. </p>
 
 </div>
 </div>

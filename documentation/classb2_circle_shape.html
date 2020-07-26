@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('classb2_circle_shape.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
-<p>A circle shape.  
+<p>A solid circle shape.  
  <a href="classb2_circle_shape.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="b2__circle__shape_8h_source.html">b2_circle_shape.h</a>&gt;</code></p>
@@ -120,9 +120,7 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_circle_shape.html#a84e22b3807e84b72f2981010fc197099">TestPoint</a> (const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;p) const override</td></tr>
 <tr class="memdesc:a84e22b3807e84b72f2981010fc197099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <a class="el" href="classb2_shape.html">b2Shape</a>. <br /></td></tr>
 <tr class="separator:a84e22b3807e84b72f2981010fc197099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a442e847b9fc3d1344b02b48d490eb0c6"><td class="memItemLeft" align="right" valign="top"><a id="a442e847b9fc3d1344b02b48d490eb0c6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_circle_shape.html#a442e847b9fc3d1344b02b48d490eb0c6">RayCast</a> (<a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *output, const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;input, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, int32 childIndex) const override</td></tr>
-<tr class="memdesc:a442e847b9fc3d1344b02b48d490eb0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <a class="el" href="classb2_shape.html">b2Shape</a>. <br /></td></tr>
+<tr class="memitem:a442e847b9fc3d1344b02b48d490eb0c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_circle_shape.html#a442e847b9fc3d1344b02b48d490eb0c6">RayCast</a> (<a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *output, const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;input, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, int32 childIndex) const override</td></tr>
 <tr class="separator:a442e847b9fc3d1344b02b48d490eb0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a4ea78780af7a7ce40bf5d54affe83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_circle_shape.html#af4a4ea78780af7a7ce40bf5d54affe83">ComputeAABB</a> (<a class="el" href="structb2_a_a_b_b.html">b2AABB</a> *aabb, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, int32 childIndex) const override</td></tr>
 <tr class="separator:af4a4ea78780af7a7ce40bf5d54affe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,7 +158,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4c1f3a9ad6b3150bb90ad9018ca4b1e0 inherit pub_types_classb2_shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A circle shape. </p>
+<div class="textblock"><p>A solid circle shape. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af4a4ea78780af7a7ce40bf5d54affe83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4a4ea78780af7a7ce40bf5d54affe83">&#9670;&nbsp;</a></span>ComputeAABB()</h2>
@@ -271,6 +269,57 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab" title="Get the number of child primitives.">b2Shape::GetChildCount</a> </dd></dl>
 
 <p>Implements <a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab">b2Shape</a>.</p>
+
+</div>
+</div>
+<a id="a442e847b9fc3d1344b02b48d490eb0c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a442e847b9fc3d1344b02b48d490eb0c6">&#9670;&nbsp;</a></span>RayCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool b2CircleShape::RayCast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>childIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Implement <a class="el" href="classb2_shape.html">b2Shape</a>. </p><dl class="section note"><dt>Note</dt><dd>because the circle is solid, rays that start inside do not hit because the normal is not defined. </dd></dl>
+
+<p>Implements <a class="el" href="classb2_shape.html#aee53a926f4fe64cd03693f6211ef6335">b2Shape</a>.</p>
 
 </div>
 </div>

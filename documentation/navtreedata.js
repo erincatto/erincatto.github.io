@@ -113,12 +113,13 @@ var NAVTREE =
         [ "Weld Joint", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md91", null ],
         [ "Rope Joint", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md92", null ],
         [ "Friction Joint", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md93", null ],
-        [ "Motor Joint", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md94", null ]
+        [ "Motor Joint", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md94", null ],
+        [ "Wheel Joint", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md95", null ]
       ] ],
-      [ "Contacts", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md95", [
-        [ "Contact Class", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md103", null ],
-        [ "Accessing Contacts", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md104", null ],
-        [ "Contact Listener", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md105", [
+      [ "Contacts", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md96", [
+        [ "Contact Class", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md104", null ],
+        [ "Accessing Contacts", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md105", null ],
+        [ "Contact Listener", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md106", [
           [ "shape", "index.html#autotoc_md5", null ],
           [ "rigid body", "index.html#autotoc_md6", null ],
           [ "fixture", "index.html#autotoc_md7", null ],
@@ -133,77 +134,77 @@ var NAVTREE =
           [ "b2_staticBody", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md52", null ],
           [ "b2_kinematicBody", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md53", null ],
           [ "b2_dynamicBody", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md54", [
-            [ "contact point", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md96", null ],
-            [ "contact normal", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md97", null ],
-            [ "contact separation", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md98", null ],
-            [ "contact manifold", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md99", null ],
-            [ "normal impulse", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md100", null ],
-            [ "tangent impulse", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md101", null ],
-            [ "contact ids", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md102", null ]
+            [ "contact point", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md97", null ],
+            [ "contact normal", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md98", null ],
+            [ "contact separation", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md99", null ],
+            [ "contact manifold", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md100", null ],
+            [ "normal impulse", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md101", null ],
+            [ "tangent impulse", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md102", null ],
+            [ "contact ids", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md103", null ]
           ] ],
-          [ "Begin Contact Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md106", null ],
-          [ "End Contact Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md107", null ],
-          [ "Pre-Solve Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md108", null ],
-          [ "Post-Solve Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md109", null ]
+          [ "Begin Contact Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md107", null ],
+          [ "End Contact Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md108", null ],
+          [ "Pre-Solve Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md109", null ],
+          [ "Post-Solve Event", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md110", null ]
         ] ],
-        [ "Contact Filtering", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md110", null ]
+        [ "Contact Filtering", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md111", null ]
       ] ],
-      [ "World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md111", [
-        [ "Creating and Destroying a World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md112", null ],
-        [ "Using a World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md113", null ],
-        [ "Simulation", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md114", null ],
-        [ "Exploring the World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md115", null ],
-        [ "AABB Queries", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md116", null ],
-        [ "Ray Casts", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md117", null ]
+      [ "World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md112", [
+        [ "Creating and Destroying a World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md113", null ],
+        [ "Using a World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md114", null ],
+        [ "Simulation", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md115", null ],
+        [ "Exploring the World", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md116", null ],
+        [ "AABB Queries", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md117", null ],
+        [ "Ray Casts", "md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md118", null ]
       ] ]
     ] ],
     [ "Loose Ends", "md__d_1__git_hub_box2d_docs_loose_ends.html", [
-      [ "User Data", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md119", null ],
-      [ "Implicit Destruction", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md120", null ],
-      [ "Pixels and Coordinate Systems", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md121", null ],
-      [ "Debug Drawing", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md122", null ],
-      [ "Limitations", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md123", null ]
+      [ "User Data", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md120", null ],
+      [ "Implicit Destruction", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md121", null ],
+      [ "Pixels and Coordinate Systems", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md122", null ],
+      [ "Debug Drawing", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md123", null ],
+      [ "Limitations", "md__d_1__git_hub_box2d_docs_loose_ends.html#autotoc_md124", null ]
     ] ],
     [ "References", "md__d_1__git_hub_box2d_docs_references.html", null ],
     [ "FAQ", "md__d_1__git_hub_box2d_docs__f_a_q.html", [
-      [ "What is Box2D?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md126", null ],
-      [ "What platforms does Box2D support?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md127", null ],
-      [ "Who makes it?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md128", null ],
-      [ "How do I get help?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md129", null ],
-      [ "Documentation", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md130", [
-        [ "Why isn't feature foo documented?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md131", null ]
+      [ "What is Box2D?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md127", null ],
+      [ "What platforms does Box2D support?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md128", null ],
+      [ "Who makes it?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md129", null ],
+      [ "How do I get help?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md130", null ],
+      [ "Documentation", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md131", [
+        [ "Why isn't feature foo documented?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md132", null ]
       ] ],
-      [ "Prerequisites", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md132", [
-        [ "Programming", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md133", null ],
-        [ "Math and Physics", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md134", null ]
+      [ "Prerequisites", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md133", [
+        [ "Programming", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md134", null ],
+        [ "Math and Physics", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md135", null ]
       ] ],
-      [ "API", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md135", [
-        [ "What units does Box2D use?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md136", null ],
-        [ "How do I convert pixels to meters?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md137", null ],
-        [ "Why don't you use this awesome C++ feature?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md138", null ],
-        [ "Can I use Box2D in a DLL?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md139", null ],
-        [ "Is Box2D thread-safe?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md140", null ]
+      [ "API", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md136", [
+        [ "What units does Box2D use?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md137", null ],
+        [ "How do I convert pixels to meters?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md138", null ],
+        [ "Why don't you use this awesome C++ feature?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md139", null ],
+        [ "Can I use Box2D in a DLL?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md140", null ],
+        [ "Is Box2D thread-safe?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md141", null ]
       ] ],
-      [ "Build Issues", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md141", [
-        [ "Why doesn't my code compile and/or link?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md142", null ]
+      [ "Build Issues", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md142", [
+        [ "Why doesn't my code compile and/or link?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md143", null ]
       ] ],
-      [ "Rendering", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md143", [
-        [ "What are Box2D's rendering capabilities?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md144", null ],
-        [ "But the Testbed draws stuff", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md145", null ],
-        [ "How do I draw shapes?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md146", null ]
+      [ "Rendering", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md144", [
+        [ "What are Box2D's rendering capabilities?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md145", null ],
+        [ "But the Testbed draws stuff", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md146", null ],
+        [ "How do I draw shapes?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md147", null ]
       ] ],
-      [ "Accuracy", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md147", null ],
-      [ "Making Games", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md148", [
-        [ "Worms Clones", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md149", null ],
-        [ "Tile Based Environment", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md150", null ],
-        [ "Asteroid Type Coordinate Systems", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md151", null ]
+      [ "Accuracy", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md148", null ],
+      [ "Making Games", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md149", [
+        [ "Worms Clones", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md150", null ],
+        [ "Tile Based Environment", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md151", null ],
+        [ "Asteroid Type Coordinate Systems", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md152", null ]
       ] ],
-      [ "Determinism", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md152", [
-        [ "Is Box2D deterministic?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md153", null ],
-        [ "But I really want determinism", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md154", null ]
+      [ "Determinism", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md153", [
+        [ "Is Box2D deterministic?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md154", null ],
+        [ "But I really want determinism", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md155", null ]
       ] ],
-      [ "Why is the restitution/friction mixing inaccurate?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md155", null ],
-      [ "What are the biggest mistakes made by new users?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md156", null ]
+      [ "Why is the restitution/friction mixing inaccurate?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md156", null ],
+      [ "What are the biggest mistakes made by new users?", "md__d_1__git_hub_box2d_docs__f_a_q.html#autotoc_md157", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -233,12 +234,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classb2_contact.html#a609281d276c38146455774734ba8d83e",
-"classb2_gear_joint.html#a52ae3b3a06ad9dae6b3201404784cc18",
-"classb2_pulley_joint.html#a7cda7fbb25c3e3bb12a136c968053ad0",
-"classb2_world.html#a293d9865e407fd463e168b0a29856acc",
-"md__d_1__git_hub_box2d_docs_hello.html#autotoc_md22",
-"structb2_revolute_joint_def.html#a20296c13c3102d03eb8787e463ff63d1"
+"classb2_contact.html#a61c20f566cb4a25077a495e60b9ea10b",
+"classb2_gear_joint.html#a4ff9230891fcd182272515ebe8ede48a",
+"classb2_pulley_joint.html#a58cb3464ba25236e316b35d66e92366f",
+"classb2_wheel_joint.html#ad6d3aea7a5ecbcc9b45aa93874a458cc",
+"md__d_1__git_hub_box2d_docs_dynamics.html#autotoc_md82",
+"structb2_profile.html#ac89fb41a9d5169573c03936f49224cf9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

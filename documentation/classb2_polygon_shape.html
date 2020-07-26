@@ -121,9 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af80eb52027ffe85dd4d0a3110eae9d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a129c4ac76727fe02724f675e3fef7fe5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_polygon_shape.html#a129c4ac76727fe02724f675e3fef7fe5">TestPoint</a> (const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;p) const override</td></tr>
 <tr class="separator:a129c4ac76727fe02724f675e3fef7fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41f20072763688f1745f12f67f40e904"><td class="memItemLeft" align="right" valign="top"><a id="a41f20072763688f1745f12f67f40e904"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_polygon_shape.html#a41f20072763688f1745f12f67f40e904">RayCast</a> (<a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *output, const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;input, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, int32 childIndex) const override</td></tr>
-<tr class="memdesc:a41f20072763688f1745f12f67f40e904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <a class="el" href="classb2_shape.html">b2Shape</a>. <br /></td></tr>
+<tr class="memitem:a41f20072763688f1745f12f67f40e904"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_polygon_shape.html#a41f20072763688f1745f12f67f40e904">RayCast</a> (<a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *output, const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;input, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, int32 childIndex) const override</td></tr>
 <tr class="separator:a41f20072763688f1745f12f67f40e904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9bcc185caf4a030003cefc4576e4717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_polygon_shape.html#ae9bcc185caf4a030003cefc4576e4717">ComputeAABB</a> (<a class="el" href="structb2_a_a_b_b.html">b2AABB</a> *aabb, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;transform, int32 childIndex) const override</td></tr>
 <tr class="separator:ae9bcc185caf4a030003cefc4576e4717"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +169,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4c1f3a9ad6b3150bb90ad9018ca4b1e0 inherit pub_types_classb2_shape"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A convex polygon. It is assumed that the interior of the polygon is to the left of each edge. Polygons have a maximum number of vertices equal to b2_maxPolygonVertices. In most cases you should not need many vertices for a convex polygon. </p>
+<div class="textblock"><p>A solid convex polygon. It is assumed that the interior of the polygon is to the left of each edge. Polygons have a maximum number of vertices equal to b2_maxPolygonVertices. In most cases you should not need many vertices for a convex polygon. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae9bcc185caf4a030003cefc4576e4717"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9bcc185caf4a030003cefc4576e4717">&#9670;&nbsp;</a></span>ComputeAABB()</h2>
@@ -282,6 +280,57 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab" title="Get the number of child primitives.">b2Shape::GetChildCount</a> </dd></dl>
 
 <p>Implements <a class="el" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab">b2Shape</a>.</p>
+
+</div>
+</div>
+<a id="a41f20072763688f1745f12f67f40e904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f20072763688f1745f12f67f40e904">&#9670;&nbsp;</a></span>RayCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool b2PolygonShape::RayCast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>childIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Implement <a class="el" href="classb2_shape.html">b2Shape</a>. </p><dl class="section note"><dt>Note</dt><dd>because the polygon is solid, rays that start inside do not hit because the normal is not defined. </dd></dl>
+
+<p>Implements <a class="el" href="classb2_shape.html#aee53a926f4fe64cd03693f6211ef6335">b2Shape</a>.</p>
 
 </div>
 </div>

@@ -8,6 +8,9 @@ var structb2_rope_tuning =
     [ "damping", "structb2_rope_tuning.html#acf03028dd7a64644a817a3fc885be584", null ],
     [ "fixedEffectiveMass", "structb2_rope_tuning.html#a3809a5967f1f684dbd8f9e37610f3c3e", null ],
     [ "isometric", "structb2_rope_tuning.html#a367cef87611572ed56c2a5f036877588", null ],
+    [ "stretchDamping", "structb2_rope_tuning.html#a5116eea155bd005537a17bc3852c2ceb", null ],
+    [ "stretchHertz", "structb2_rope_tuning.html#aba3f9d247339684608ec0b9ab2413dc5", null ],
+    [ "stretchingModel", "structb2_rope_tuning.html#a74a341f139b19aeec78c856e44e8f6b1", null ],
     [ "stretchStiffness", "structb2_rope_tuning.html#ab7444b8ef6be5286ac7a34552dded1fa", null ],
     [ "warmStart", "structb2_rope_tuning.html#a9670c23a46a43b81353ec7aa5aac8fc0", null ]
 ];

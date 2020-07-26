@@ -149,40 +149,40 @@ $(document).ready(function(){initNavTree('b2__rope__joint_8h_source.html',''); i
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classb2_rope_joint.html#ab08a9ee55c152c927d3e9ca00bf47169">   78</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_rope_joint.html#ab08a9ee55c152c927d3e9ca00bf47169">SetMaxLength</a>(<span class="keywordtype">float</span> length) { m_maxLength = length; }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">float</span> GetMaxLength() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    b2LimitState GetLimitState() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_rope_joint.html#a0028d3d3710bf1a9a905e9b55a4f37c5">Dump</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classb2_joint.html">b2Joint</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classb2_rope_joint.html">b2RopeJoint</a>(<span class="keyword">const</span> <a class="code" href="structb2_rope_joint_def.html">b2RopeJointDef</a>* data);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> InitVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> SolveVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> SolvePositionConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Solver shared</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorA;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorB;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">float</span> m_maxLength;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">float</span> m_length;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">float</span> m_impulse;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Solver temp</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    int32 m_indexA;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    int32 m_indexB;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_u;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_rA;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_rB;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterA;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterB;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">float</span> m_invMassA;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">float</span> m_invMassB;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">float</span> m_invIA;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">float</span> m_invIB;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">float</span> m_mass;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    b2LimitState m_state;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Get current length</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">float</span> GetLength() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_rope_joint.html#a0028d3d3710bf1a9a905e9b55a4f37c5">Dump</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classb2_joint.html">b2Joint</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classb2_rope_joint.html">b2RopeJoint</a>(<span class="keyword">const</span> <a class="code" href="structb2_rope_joint_def.html">b2RopeJointDef</a>* data);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> InitVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> SolveVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> SolvePositionConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Solver shared</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorA;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorB;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">float</span> m_maxLength;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">float</span> m_length;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">float</span> m_impulse;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Solver temp</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    int32 m_indexA;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    int32 m_indexB;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_u;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_rA;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_rB;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterA;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterB;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">float</span> m_invMassA;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">float</span> m_invMassB;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">float</span> m_invIA;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">float</span> m_invIB;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">float</span> m_mass;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -190,9 +190,9 @@ $(document).ready(function(){initNavTree('b2__rope__joint_8h_source.html',''); i
 </div><!-- doc-content -->
 <div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:39</div></div>
 <div class="ttc" id="aclassb2_rope_joint_html_ad7891edfc6b48270372b35b7fc9e509f"><div class="ttname"><a href="classb2_rope_joint.html#ad7891edfc6b48270372b35b7fc9e509f">b2RopeJoint::GetReactionForce</a></div><div class="ttdeci">b2Vec2 GetReactionForce(float inv_dt) const override</div><div class="ttdoc">Get the reaction force on bodyB at the joint anchor in Newtons.</div></div>
-<div class="ttc" id="astructb2_joint_def_html"><div class="ttname"><a href="structb2_joint_def.html">b2JointDef</a></div><div class="ttdoc">Joint definitions are used to construct joints.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:78</div></div>
+<div class="ttc" id="astructb2_joint_def_html"><div class="ttname"><a href="structb2_joint_def.html">b2JointDef</a></div><div class="ttdoc">Joint definitions are used to construct joints.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:71</div></div>
 <div class="ttc" id="aclassb2_rope_joint_html_a8a9b925c7ffa11d331ba369cc9fe2ac5"><div class="ttname"><a href="classb2_rope_joint.html#a8a9b925c7ffa11d331ba369cc9fe2ac5">b2RopeJoint::GetLocalAnchorB</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAnchorB() const</div><div class="ttdoc">The local anchor point relative to bodyB's origin.</div><div class="ttdef"><b>Definition:</b> b2_rope_joint.h:75</div></div>
-<div class="ttc" id="astructb2_joint_def_html_a470f2879b24adb05facbd49f338856fb"><div class="ttname"><a href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">b2JointDef::type</a></div><div class="ttdeci">b2JointType type</div><div class="ttdoc">The joint type is set automatically for concrete joint types.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:90</div></div>
+<div class="ttc" id="astructb2_joint_def_html_a470f2879b24adb05facbd49f338856fb"><div class="ttname"><a href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">b2JointDef::type</a></div><div class="ttdeci">b2JointType type</div><div class="ttdoc">The joint type is set automatically for concrete joint types.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:83</div></div>
 <div class="ttc" id="aclassb2_rope_joint_html_a5fb600991e676e61e266ecb99448bb86"><div class="ttname"><a href="classb2_rope_joint.html#a5fb600991e676e61e266ecb99448bb86">b2RopeJoint::GetLocalAnchorA</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAnchorA() const</div><div class="ttdoc">The local anchor point relative to bodyA's origin.</div><div class="ttdef"><b>Definition:</b> b2_rope_joint.h:72</div></div>
 <div class="ttc" id="astructb2_rope_joint_def_html_ab680fcc3cd44741a7a824ddff86ff01e"><div class="ttname"><a href="structb2_rope_joint_def.html#ab680fcc3cd44741a7a824ddff86ff01e">b2RopeJointDef::localAnchorA</a></div><div class="ttdeci">b2Vec2 localAnchorA</div><div class="ttdoc">The local anchor point relative to bodyA's origin.</div><div class="ttdef"><b>Definition:</b> b2_rope_joint.h:43</div></div>
 <div class="ttc" id="astructb2_vec2_html_a78f0e635a664a563dd9246397d5f6e7e"><div class="ttname"><a href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">b2Vec2::Set</a></div><div class="ttdeci">void Set(float x_, float y_)</div><div class="ttdoc">Set this vector to some specified coordinates.</div><div class="ttdef"><b>Definition:</b> b2_math.h:51</div></div>
@@ -204,7 +204,7 @@ $(document).ready(function(){initNavTree('b2__rope__joint_8h_source.html',''); i
 <div class="ttc" id="astructb2_rope_joint_def_html_a3271da0e4027e25546aa6a81e8fbe4e2"><div class="ttname"><a href="structb2_rope_joint_def.html#a3271da0e4027e25546aa6a81e8fbe4e2">b2RopeJointDef::localAnchorB</a></div><div class="ttdeci">b2Vec2 localAnchorB</div><div class="ttdoc">The local anchor point relative to bodyB's origin.</div><div class="ttdef"><b>Definition:</b> b2_rope_joint.h:46</div></div>
 <div class="ttc" id="astructb2_rope_joint_def_html_aa4b72cff0a666276fafcf4c94e44dd4e"><div class="ttname"><a href="structb2_rope_joint_def.html#aa4b72cff0a666276fafcf4c94e44dd4e">b2RopeJointDef::maxLength</a></div><div class="ttdeci">float maxLength</div><div class="ttdef"><b>Definition:</b> b2_rope_joint.h:51</div></div>
 <div class="ttc" id="aclassb2_rope_joint_html_a5757fdeb008bf1bbe15348e80aab9402"><div class="ttname"><a href="classb2_rope_joint.html#a5757fdeb008bf1bbe15348e80aab9402">b2RopeJoint::GetAnchorA</a></div><div class="ttdeci">b2Vec2 GetAnchorA() const override</div><div class="ttdoc">Get the anchor point on bodyA in world coordinates.</div></div>
-<div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:107</div></div>
+<div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:110</div></div>
 <div class="ttc" id="aclassb2_rope_joint_html_a88d6fa015712aa14fbb981c053493082"><div class="ttname"><a href="classb2_rope_joint.html#a88d6fa015712aa14fbb981c053493082">b2RopeJoint::GetReactionTorque</a></div><div class="ttdeci">float GetReactionTorque(float inv_dt) const override</div><div class="ttdoc">Get the reaction torque on bodyB in N*m.</div></div>
 <div class="ttc" id="aclassb2_rope_joint_html_a0028d3d3710bf1a9a905e9b55a4f37c5"><div class="ttname"><a href="classb2_rope_joint.html#a0028d3d3710bf1a9a905e9b55a4f37c5">b2RopeJoint::Dump</a></div><div class="ttdeci">void Dump() override</div><div class="ttdoc">Dump joint to dmLog.</div></div>
 <!-- start footer part -->

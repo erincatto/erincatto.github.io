@@ -200,6 +200,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_prismatic_joint.html#a843ddb0f912085f3deb3ee7320d7ddc7">Dump</a> () override</td></tr>
 <tr class="memdesc:a843ddb0f912085f3deb3ee7320d7ddc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump to b2Log. <br /></td></tr>
 <tr class="separator:a843ddb0f912085f3deb3ee7320d7ddc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d9629a8ac5f10d51af72977672d802"><td class="memItemLeft" align="right" valign="top"><a id="a36d9629a8ac5f10d51af72977672d802"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_prismatic_joint.html#a36d9629a8ac5f10d51af72977672d802">Draw</a> (<a class="el" href="classb2_draw.html">b2Draw</a> *draw) const override</td></tr>
+<tr class="memdesc:a36d9629a8ac5f10d51af72977672d802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug draw this joint. <br /></td></tr>
+<tr class="separator:a36d9629a8ac5f10d51af72977672d802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classb2_joint"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classb2_joint')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classb2_joint.html">b2Joint</a></td></tr>
 <tr class="memitem:ac56eef62fe1ac7c9e5e21a79fb035255 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ac56eef62fe1ac7c9e5e21a79fb035255"></a>
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ac56eef62fe1ac7c9e5e21a79fb035255">GetType</a> () const</td></tr>
@@ -228,10 +232,10 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a492f2d02496437572aaec6013ebdc1c8">SetUserData</a> (void *data)</td></tr>
 <tr class="memdesc:a492f2d02496437572aaec6013ebdc1c8 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the user data pointer. <br /></td></tr>
 <tr class="separator:a492f2d02496437572aaec6013ebdc1c8 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ae9cfbd158216c9855c2f018ff3c9c922"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ae9cfbd158216c9855c2f018ff3c9c922">IsActive</a> () const</td></tr>
-<tr class="memdesc:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short-cut function to determine if either body is inactive. <br /></td></tr>
-<tr class="separator:ae9cfbd158216c9855c2f018ff3c9c922 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="ad8afc5c7b8b325e982e75fe35730253d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#ad8afc5c7b8b325e982e75fe35730253d">IsEnabled</a> () const</td></tr>
+<tr class="memdesc:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short-cut function to determine if either body is enabled. <br /></td></tr>
+<tr class="separator:ad8afc5c7b8b325e982e75fe35730253d inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48492903df96c8a7b8cad8ed826f8cb0 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_joint.html#a48492903df96c8a7b8cad8ed826f8cb0">GetCollideConnected</a> () const</td></tr>
 <tr class="separator:a48492903df96c8a7b8cad8ed826f8cb0 inherit pub_methods_classb2_joint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7804f649e993dc0fd9ae47fde5601f90 inherit pub_methods_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="a7804f649e993dc0fd9ae47fde5601f90"></a>
@@ -275,12 +279,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:af4899b245976a48a0906328fd8570d19"><td class="memItemLeft" align="right" valign="top"><a id="af4899b245976a48a0906328fd8570d19"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_referenceAngle</b></td></tr>
 <tr class="separator:af4899b245976a48a0906328fd8570d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92530ae3ec9765d775ec82a39400f770"><td class="memItemLeft" align="right" valign="top"><a id="a92530ae3ec9765d775ec82a39400f770"></a>
-<a class="el" href="structb2_vec3.html">b2Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_impulse</b></td></tr>
-<tr class="separator:a92530ae3ec9765d775ec82a39400f770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a347fcb1b248bc02684e5a55757cc46"><td class="memItemLeft" align="right" valign="top"><a id="a4a347fcb1b248bc02684e5a55757cc46"></a>
+<a class="el" href="structb2_vec2.html">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_impulse</b></td></tr>
+<tr class="separator:a4a347fcb1b248bc02684e5a55757cc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82d4ccbb97d1862bfa7c076addf42d9a"><td class="memItemLeft" align="right" valign="top"><a id="a82d4ccbb97d1862bfa7c076addf42d9a"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_motorImpulse</b></td></tr>
 <tr class="separator:a82d4ccbb97d1862bfa7c076addf42d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a716bd5ea1b6745a95def00605b701faf"><td class="memItemLeft" align="right" valign="top"><a id="a716bd5ea1b6745a95def00605b701faf"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_lowerImpulse</b></td></tr>
+<tr class="separator:a716bd5ea1b6745a95def00605b701faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fdc463f41ebfc4e2f322db71ef594ff"><td class="memItemLeft" align="right" valign="top"><a id="a5fdc463f41ebfc4e2f322db71ef594ff"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_upperImpulse</b></td></tr>
+<tr class="separator:a5fdc463f41ebfc4e2f322db71ef594ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0932421f5d2eff34f714a3ed8f30712f"><td class="memItemLeft" align="right" valign="top"><a id="a0932421f5d2eff34f714a3ed8f30712f"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_lowerTranslation</b></td></tr>
 <tr class="separator:a0932421f5d2eff34f714a3ed8f30712f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,9 +309,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_enableLimit</b></td
 <tr class="memitem:af36c993314f8ae833f5f3b3aebd66497"><td class="memItemLeft" align="right" valign="top"><a id="af36c993314f8ae833f5f3b3aebd66497"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_enableMotor</b></td></tr>
 <tr class="separator:af36c993314f8ae833f5f3b3aebd66497"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ce4e2d66a0d612573e07103b407b99"><td class="memItemLeft" align="right" valign="top"><a id="ad5ce4e2d66a0d612573e07103b407b99"></a>
-b2LimitState&#160;</td><td class="memItemRight" valign="bottom"><b>m_limitState</b></td></tr>
-<tr class="separator:ad5ce4e2d66a0d612573e07103b407b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd142bc49ea7eb475e0811f11932e64"><td class="memItemLeft" align="right" valign="top"><a id="a2cd142bc49ea7eb475e0811f11932e64"></a>
 int32&#160;</td><td class="memItemRight" valign="bottom"><b>m_indexA</b></td></tr>
 <tr class="separator:a2cd142bc49ea7eb475e0811f11932e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -344,12 +351,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_a1</b></td></tr>
 <tr class="memitem:a6cce050e7462ef4f117ef1d90906b138"><td class="memItemLeft" align="right" valign="top"><a id="a6cce050e7462ef4f117ef1d90906b138"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_a2</b></td></tr>
 <tr class="separator:a6cce050e7462ef4f117ef1d90906b138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a19322c65fd08eda34991dfa50c5d00"><td class="memItemLeft" align="right" valign="top"><a id="a2a19322c65fd08eda34991dfa50c5d00"></a>
-<a class="el" href="structb2_mat33.html">b2Mat33</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_K</b></td></tr>
-<tr class="separator:a2a19322c65fd08eda34991dfa50c5d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a888449585c650245ed820b7ff3625ea4"><td class="memItemLeft" align="right" valign="top"><a id="a888449585c650245ed820b7ff3625ea4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_motorMass</b></td></tr>
-<tr class="separator:a888449585c650245ed820b7ff3625ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f07317904c17e947c3ba2bde2fadb3e"><td class="memItemLeft" align="right" valign="top"><a id="a2f07317904c17e947c3ba2bde2fadb3e"></a>
+<a class="el" href="structb2_mat22.html">b2Mat22</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_K</b></td></tr>
+<tr class="separator:a2f07317904c17e947c3ba2bde2fadb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c802f17939795ee281b8c0cc2365172"><td class="memItemLeft" align="right" valign="top"><a id="a8c802f17939795ee281b8c0cc2365172"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_translation</b></td></tr>
+<tr class="separator:a8c802f17939795ee281b8c0cc2365172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a8058d21a0ea42bf5402995c5c0acc"><td class="memItemLeft" align="right" valign="top"><a id="a61a8058d21a0ea42bf5402995c5c0acc"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_axialMass</b></td></tr>
+<tr class="separator:a61a8058d21a0ea42bf5402995c5c0acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classb2_joint"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classb2_joint')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classb2_joint.html">b2Joint</a></td></tr>
 <tr class="memitem:a3fd3f2532d108d81df81427815210a59 inherit pro_attribs_classb2_joint"><td class="memItemLeft" align="right" valign="top"><a id="a3fd3f2532d108d81df81427815210a59"></a>
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
