@@ -16,10 +16,11 @@ var classb2_fixture =
     [ "GetNext", "classb2_fixture.html#a53808c75e490b053d3a0de6b2fe30ab8", null ],
     [ "GetNext", "classb2_fixture.html#a1c1ec15bdbc4e8efc1892b6bbf6c4ebf", null ],
     [ "GetRestitution", "classb2_fixture.html#a50f89dfa96a456ca28b03e418e8dee3f", null ],
+    [ "GetRestitutionThreshold", "classb2_fixture.html#a3fb3768555b29d85e40f5c4ddedbf348", null ],
     [ "GetShape", "classb2_fixture.html#a9951f54d1d2a5afe22d731045a48e486", null ],
     [ "GetShape", "classb2_fixture.html#a22a332c3be988a5f864904d3634c34c6", null ],
     [ "GetType", "classb2_fixture.html#a7a566c1e3b768f6a72ebc3b758aad70e", null ],
-    [ "GetUserData", "classb2_fixture.html#ae2a865ed59ffe9b1cb89f577052f4d50", null ],
+    [ "GetUserData", "classb2_fixture.html#af42d4b917097c6300012f63410a985dc", null ],
     [ "IsSensor", "classb2_fixture.html#aedd23d27ff7ce2d53b6c5b7a878a35d3", null ],
     [ "RayCast", "classb2_fixture.html#aaaafd69aa3e1a922acc4b9d7fb49170a", null ],
     [ "Refilter", "classb2_fixture.html#a45d3320f94811d67383c48466165fa26", null ],
@@ -27,8 +28,8 @@ var classb2_fixture =
     [ "SetFilterData", "classb2_fixture.html#a2c5e0d12c174927a4ad550459be334ad", null ],
     [ "SetFriction", "classb2_fixture.html#a097aa48046dd2686db47b7ab8e2cde92", null ],
     [ "SetRestitution", "classb2_fixture.html#abd9d4c46a54febb1b06cedc8f9b88b26", null ],
+    [ "SetRestitutionThreshold", "classb2_fixture.html#a50231620388dd3e0eddce81af516a6cc", null ],
     [ "SetSensor", "classb2_fixture.html#a6198a81dcee0fe814d730383ebfa7038", null ],
-    [ "SetUserData", "classb2_fixture.html#a3db7f89ef4493247d922fe3d96351ad9", null ],
     [ "Synchronize", "classb2_fixture.html#ac8fd15bfd9a3a7ba05f3831e6f598908", null ],
     [ "TestPoint", "classb2_fixture.html#aa56d3ca04a5d0478c6477876cd480cc6", null ],
     [ "b2Body", "classb2_fixture.html#a010ab52de250e5fe30a45d642f46405b", null ],
@@ -44,6 +45,7 @@ var classb2_fixture =
     [ "m_proxies", "classb2_fixture.html#a0056031e2b2b53e6a4c0ef7a0c87821a", null ],
     [ "m_proxyCount", "classb2_fixture.html#aae71b4a0071346aba2eb6f4a764785a4", null ],
     [ "m_restitution", "classb2_fixture.html#a45894817f4d754a8c5acf2fb72822e53", null ],
+    [ "m_restitutionThreshold", "classb2_fixture.html#a393eca3e917f0911302a593f5aa6cb04", null ],
     [ "m_shape", "classb2_fixture.html#a54fa48dfc8b70a435c8f17f8b7720828", null ],
-    [ "m_userData", "classb2_fixture.html#a60191e5c76bfd115e6c38d78b6cffd8b", null ]
+    [ "m_userData", "classb2_fixture.html#acc2b349c36b4cc7e06024ce805ece672", null ]
 ];

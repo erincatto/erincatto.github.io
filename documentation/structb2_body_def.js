@@ -14,5 +14,5 @@ var structb2_body_def =
     [ "linearVelocity", "structb2_body_def.html#a25fa5aa78d93159c344241af95bec2bf", null ],
     [ "position", "structb2_body_def.html#a680cadc09ad6cf4b3366cbf0914c648b", null ],
     [ "type", "structb2_body_def.html#a89cc3ad1873908042b002147b3861381", null ],
-    [ "userData", "structb2_body_def.html#ae457dd1d39be09945eace6061121be29", null ]
+    [ "userData", "structb2_body_def.html#ae913ce354e5602ddafecd5999c2db170", null ]
 ];

@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -122,11 +122,19 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a3c8995be726238eee084af750442255c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a001acbbd67326ab5e5d5ec6dc64faf78"><td class="memItemLeft" align="right" valign="top"><a id="a001acbbd67326ab5e5d5ec6dc64faf78"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#a001acbbd67326ab5e5d5ec6dc64faf78">length</a></td></tr>
-<tr class="memdesc:a001acbbd67326ab5e5d5ec6dc64faf78"><td class="mdescLeft">&#160;</td><td class="mdescRight">The natural length between the anchor points. <br /></td></tr>
+<tr class="memdesc:a001acbbd67326ab5e5d5ec6dc64faf78"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rest length of this joint. Clamped to a stable minimum value. <br /></td></tr>
 <tr class="separator:a001acbbd67326ab5e5d5ec6dc64faf78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91529f9af7d7881ac71cd96737b65cd9"><td class="memItemLeft" align="right" valign="top"><a id="a91529f9af7d7881ac71cd96737b65cd9"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#a91529f9af7d7881ac71cd96737b65cd9">minLength</a></td></tr>
+<tr class="memdesc:a91529f9af7d7881ac71cd96737b65cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum length. Clamped to a stable minimum value. <br /></td></tr>
+<tr class="separator:a91529f9af7d7881ac71cd96737b65cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0033f63ca1cbede5e415e72f6c0698"><td class="memItemLeft" align="right" valign="top"><a id="ace0033f63ca1cbede5e415e72f6c0698"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#ace0033f63ca1cbede5e415e72f6c0698">maxLength</a></td></tr>
+<tr class="memdesc:ace0033f63ca1cbede5e415e72f6c0698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length. Must be greater than or equal to the minimum length. <br /></td></tr>
+<tr class="separator:ace0033f63ca1cbede5e415e72f6c0698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858640393f567a2aca1b40cbe534b4e2"><td class="memItemLeft" align="right" valign="top"><a id="a858640393f567a2aca1b40cbe534b4e2"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#a858640393f567a2aca1b40cbe534b4e2">stiffness</a></td></tr>
-<tr class="memdesc:a858640393f567a2aca1b40cbe534b4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The linear stiffness in N/m. A value of 0 disables softness. <br /></td></tr>
+<tr class="memdesc:a858640393f567a2aca1b40cbe534b4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The linear stiffness in N/m. <br /></td></tr>
 <tr class="separator:a858640393f567a2aca1b40cbe534b4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa488d9b1f5300e795587b844b6db0d98"><td class="memItemLeft" align="right" valign="top"><a id="aa488d9b1f5300e795587b844b6db0d98"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_distance_joint_def.html#aa488d9b1f5300e795587b844b6db0d98">damping</a></td></tr>
@@ -137,10 +145,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 b2JointType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">type</a></td></tr>
 <tr class="memdesc:a470f2879b24adb05facbd49f338856fb inherit pub_attribs_structb2_joint_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">The joint type is set automatically for concrete joint types. <br /></td></tr>
 <tr class="separator:a470f2879b24adb05facbd49f338856fb inherit pub_attribs_structb2_joint_def"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07eb150daaaa52fc09c3bcf402b295fe inherit pub_attribs_structb2_joint_def"><td class="memItemLeft" align="right" valign="top"><a id="a07eb150daaaa52fc09c3bcf402b295fe"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_joint_def.html#a07eb150daaaa52fc09c3bcf402b295fe">userData</a></td></tr>
-<tr class="memdesc:a07eb150daaaa52fc09c3bcf402b295fe inherit pub_attribs_structb2_joint_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this to attach application specific data to your joints. <br /></td></tr>
-<tr class="separator:a07eb150daaaa52fc09c3bcf402b295fe inherit pub_attribs_structb2_joint_def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ae1ebbdd3d9b9a6b409c0b05096ded inherit pub_attribs_structb2_joint_def"><td class="memItemLeft" align="right" valign="top"><a id="a78ae1ebbdd3d9b9a6b409c0b05096ded"></a>
+<a class="el" href="structb2_joint_user_data.html">b2JointUserData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_joint_def.html#a78ae1ebbdd3d9b9a6b409c0b05096ded">userData</a></td></tr>
+<tr class="memdesc:a78ae1ebbdd3d9b9a6b409c0b05096ded inherit pub_attribs_structb2_joint_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this to attach application specific data to your joints. <br /></td></tr>
+<tr class="separator:a78ae1ebbdd3d9b9a6b409c0b05096ded inherit pub_attribs_structb2_joint_def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cd54c93da396be75a9788f2c6897f05 inherit pub_attribs_structb2_joint_def"><td class="memItemLeft" align="right" valign="top"><a id="a8cd54c93da396be75a9788f2c6897f05"></a>
 <a class="el" href="classb2_body.html">b2Body</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structb2_joint_def.html#a8cd54c93da396be75a9788f2c6897f05">bodyA</a></td></tr>
 <tr class="memdesc:a8cd54c93da396be75a9788f2c6897f05 inherit pub_attribs_structb2_joint_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first attached body. <br /></td></tr>
@@ -155,7 +163,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <tr class="separator:aef099a1f89b64e230173b6016848ea9b inherit pub_attribs_structb2_joint_def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Distance joint definition. This requires defining an anchor point on both bodies and the non-zero length of the distance joint. The definition uses local anchor points so that the initial configuration can violate the constraint slightly. This helps when saving and loading a game. </p><dl class="section warning"><dt>Warning</dt><dd>Do not use a zero or short length. </dd></dl>
+<div class="textblock"><p>Distance joint definition. This requires defining an anchor point on both bodies and the non-zero distance of the distance joint. The definition uses local anchor points so that the initial configuration can violate the constraint slightly. This helps when saving and loading a game. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a99788a534638cc28cd1e44e0036503f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99788a534638cc28cd1e44e0036503f0">&#9670;&nbsp;</a></span>Initialize()</h2>
@@ -194,7 +202,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialize the bodies, anchors, and length using the world anchors. </p>
+<p>Initialize the bodies, anchors, and rest length using world space anchors. The minimum and maximum lengths are set to the rest length. </p>
 
 </div>
 </div>

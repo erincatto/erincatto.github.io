@@ -15,14 +15,14 @@ var b2__collision_8h =
       [ "b2_persistState", "b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a", null ],
       [ "b2_removeState", "b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be", null ]
     ] ],
-    [ "b2ClipSegmentToLine", "b2__collision_8h.html#a778caf513d8ab482b1743de067a21e79", null ],
-    [ "b2CollideCircles", "b2__collision_8h.html#ab8a1bf2c6a9453307466f4870c1fa333", null ],
-    [ "b2CollideEdgeAndCircle", "b2__collision_8h.html#aee6f752fdf8c89152e824da12e944733", null ],
-    [ "b2CollideEdgeAndPolygon", "b2__collision_8h.html#a5d0c5fab412d5ca886b1965666b16d99", null ],
-    [ "b2CollidePolygonAndCircle", "b2__collision_8h.html#a30da13c857596fbefa40b47c3e1e78d0", null ],
-    [ "b2CollidePolygons", "b2__collision_8h.html#a2f7b9859479384c0e2cceb9e7744afcb", null ],
-    [ "b2GetPointStates", "b2__collision_8h.html#a401e2747d276e9fbfd131989e02ff568", null ],
+    [ "b2ClipSegmentToLine", "b2__collision_8h.html#ae3cb294fe9a7fc7468af0890098db22c", null ],
+    [ "b2CollideCircles", "b2__collision_8h.html#a07097764ce44f2f56363665e174e6a99", null ],
+    [ "b2CollideEdgeAndCircle", "b2__collision_8h.html#a178f4de7a4c22aafc58f087ca44ba244", null ],
+    [ "b2CollideEdgeAndPolygon", "b2__collision_8h.html#a0ac33feb3d8d7bc13f56c5d729ab29a0", null ],
+    [ "b2CollidePolygonAndCircle", "b2__collision_8h.html#a2ac0c6b0178c2af3c07a0bc18bdbbcab", null ],
+    [ "b2CollidePolygons", "b2__collision_8h.html#aba296a9e3c99f43e4f27aeeadc3a7a9b", null ],
+    [ "b2GetPointStates", "b2__collision_8h.html#a04288250049cbfc7d1a860e7c60e55e9", null ],
     [ "b2TestOverlap", "b2__collision_8h.html#a3dea7a8a1115626c450a697f6c6bf97e", null ],
-    [ "b2TestOverlap", "b2__collision_8h.html#ae7601420d0b42c1ee494e879dd2009a5", null ],
+    [ "b2TestOverlap", "b2__collision_8h.html#a769992d82855399cf20721cd6b411fe7", null ],
     [ "b2_nullFeature", "b2__collision_8h.html#a910fdc8a802b3cac220f2ee873109818", null ]
 ];

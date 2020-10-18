@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -114,42 +114,43 @@ $(document).ready(function(){initNavTree('b2__time__of__impact_8h_source.html','
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef B2_TIME_OF_IMPACT_H</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define B2_TIME_OF_IMPACT_H</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;b2_math.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;b2_distance.h&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structb2_t_o_i_input.html">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_t_o_i_input.html">b2TOIInput</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="structb2_distance_proxy.html">b2DistanceProxy</a> proxyA;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="structb2_distance_proxy.html">b2DistanceProxy</a> proxyB;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="structb2_sweep.html">b2Sweep</a> sweepA;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="structb2_sweep.html">b2Sweep</a> sweepB;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> tMax;     <span class="comment">// defines sweep interval [0, tMax]</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structb2_t_o_i_output.html">   40</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_t_o_i_output.html">b2TOIOutput</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">enum</span> State</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        e_unknown,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        e_failed,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        e_overlapped,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        e_touching,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        e_separated</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    State state;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">float</span> t;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> b2TimeOfImpact(<a class="code" href="structb2_t_o_i_output.html">b2TOIOutput</a>* output, <span class="keyword">const</span> <a class="code" href="structb2_t_o_i_input.html">b2TOIInput</a>* input);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;b2_api.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;b2_math.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;b2_distance.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structb2_t_o_i_input.html">   31</a></span>&#160;<span class="keyword">struct </span>B2_API <a class="code" href="structb2_t_o_i_input.html">b2TOIInput</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="structb2_distance_proxy.html">b2DistanceProxy</a> proxyA;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="structb2_distance_proxy.html">b2DistanceProxy</a> proxyB;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="structb2_sweep.html">b2Sweep</a> sweepA;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structb2_sweep.html">b2Sweep</a> sweepB;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> tMax;     <span class="comment">// defines sweep interval [0, tMax]</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structb2_t_o_i_output.html">   41</a></span>&#160;<span class="keyword">struct </span>B2_API <a class="code" href="structb2_t_o_i_output.html">b2TOIOutput</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">enum</span> State</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        e_unknown,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        e_failed,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        e_overlapped,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        e_touching,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        e_separated</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    State state;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> t;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;B2_API <span class="keywordtype">void</span> b2TimeOfImpact(<a class="code" href="structb2_t_o_i_output.html">b2TOIOutput</a>* output, <span class="keyword">const</span> <a class="code" href="structb2_t_o_i_input.html">b2TOIInput</a>* input);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructb2_sweep_html"><div class="ttname"><a href="structb2_sweep.html">b2Sweep</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:366</div></div>
-<div class="ttc" id="astructb2_t_o_i_input_html"><div class="ttname"><a href="structb2_t_o_i_input.html">b2TOIInput</a></div><div class="ttdoc">Input parameters for b2TimeOfImpact.</div><div class="ttdef"><b>Definition:</b> b2_time_of_impact.h:30</div></div>
-<div class="ttc" id="astructb2_t_o_i_output_html"><div class="ttname"><a href="structb2_t_o_i_output.html">b2TOIOutput</a></div><div class="ttdoc">Output parameters for b2TimeOfImpact.</div><div class="ttdef"><b>Definition:</b> b2_time_of_impact.h:40</div></div>
-<div class="ttc" id="astructb2_distance_proxy_html"><div class="ttname"><a href="structb2_distance_proxy.html">b2DistanceProxy</a></div><div class="ttdef"><b>Definition:</b> b2_distance.h:32</div></div>
+<div class="ttc" id="astructb2_sweep_html"><div class="ttname"><a href="structb2_sweep.html">b2Sweep</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:368</div></div>
+<div class="ttc" id="astructb2_t_o_i_input_html"><div class="ttname"><a href="structb2_t_o_i_input.html">b2TOIInput</a></div><div class="ttdoc">Input parameters for b2TimeOfImpact.</div><div class="ttdef"><b>Definition:</b> b2_time_of_impact.h:31</div></div>
+<div class="ttc" id="astructb2_t_o_i_output_html"><div class="ttname"><a href="structb2_t_o_i_output.html">b2TOIOutput</a></div><div class="ttdoc">Output parameters for b2TimeOfImpact.</div><div class="ttdef"><b>Definition:</b> b2_time_of_impact.h:41</div></div>
+<div class="ttc" id="astructb2_distance_proxy_html"><div class="ttname"><a href="structb2_distance_proxy.html">b2DistanceProxy</a></div><div class="ttdef"><b>Definition:</b> b2_distance.h:33</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

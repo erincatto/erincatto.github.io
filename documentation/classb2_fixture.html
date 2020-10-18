@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -133,12 +133,8 @@ const <a class="el" href="classb2_body.html">b2Body</a> *&#160;</td><td class="m
 <tr class="memitem:a1c1ec15bdbc4e8efc1892b6bbf6c4ebf"><td class="memItemLeft" align="right" valign="top"><a id="a1c1ec15bdbc4e8efc1892b6bbf6c4ebf"></a>
 const <a class="el" href="classb2_fixture.html">b2Fixture</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetNext</b> () const</td></tr>
 <tr class="separator:a1c1ec15bdbc4e8efc1892b6bbf6c4ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2a865ed59ffe9b1cb89f577052f4d50"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#ae2a865ed59ffe9b1cb89f577052f4d50">GetUserData</a> () const</td></tr>
-<tr class="separator:ae2a865ed59ffe9b1cb89f577052f4d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3db7f89ef4493247d922fe3d96351ad9"><td class="memItemLeft" align="right" valign="top"><a id="a3db7f89ef4493247d922fe3d96351ad9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#a3db7f89ef4493247d922fe3d96351ad9">SetUserData</a> (void *data)</td></tr>
-<tr class="memdesc:a3db7f89ef4493247d922fe3d96351ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the user data. Use this to store your application specific data. <br /></td></tr>
-<tr class="separator:a3db7f89ef4493247d922fe3d96351ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42d4b917097c6300012f63410a985dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structb2_fixture_user_data.html">b2FixtureUserData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#af42d4b917097c6300012f63410a985dc">GetUserData</a> ()</td></tr>
+<tr class="separator:af42d4b917097c6300012f63410a985dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa56d3ca04a5d0478c6477876cd480cc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#aa56d3ca04a5d0478c6477876cd480cc6">TestPoint</a> (const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;p) const</td></tr>
 <tr class="separator:aa56d3ca04a5d0478c6477876cd480cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaafd69aa3e1a922acc4b9d7fb49170a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#aaaafd69aa3e1a922acc4b9d7fb49170a">RayCast</a> (<a class="el" href="structb2_ray_cast_output.html">b2RayCastOutput</a> *output, const <a class="el" href="structb2_ray_cast_input.html">b2RayCastInput</a> &amp;input, int32 childIndex) const</td></tr>
@@ -163,6 +159,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <tr class="separator:a50f89dfa96a456ca28b03e418e8dee3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9d4c46a54febb1b06cedc8f9b88b26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#abd9d4c46a54febb1b06cedc8f9b88b26">SetRestitution</a> (float restitution)</td></tr>
 <tr class="separator:abd9d4c46a54febb1b06cedc8f9b88b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb3768555b29d85e40f5c4ddedbf348"><td class="memItemLeft" align="right" valign="top"><a id="a3fb3768555b29d85e40f5c4ddedbf348"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#a3fb3768555b29d85e40f5c4ddedbf348">GetRestitutionThreshold</a> () const</td></tr>
+<tr class="memdesc:a3fb3768555b29d85e40f5c4ddedbf348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the restitution velocity threshold. <br /></td></tr>
+<tr class="separator:a3fb3768555b29d85e40f5c4ddedbf348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50231620388dd3e0eddce81af516a6cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#a50231620388dd3e0eddce81af516a6cc">SetRestitutionThreshold</a> (float threshold)</td></tr>
+<tr class="separator:a50231620388dd3e0eddce81af516a6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a158574dc389fec83a05b09ab715c4474"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structb2_a_a_b_b.html">b2AABB</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_fixture.html#a158574dc389fec83a05b09ab715c4474">GetAABB</a> (int32 childIndex) const</td></tr>
 <tr class="separator:a158574dc389fec83a05b09ab715c4474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57485e73a2063060e320c7176676cd5e"><td class="memItemLeft" align="right" valign="top"><a id="a57485e73a2063060e320c7176676cd5e"></a>
@@ -208,6 +210,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_friction</b></td><
 <tr class="memitem:a45894817f4d754a8c5acf2fb72822e53"><td class="memItemLeft" align="right" valign="top"><a id="a45894817f4d754a8c5acf2fb72822e53"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_restitution</b></td></tr>
 <tr class="separator:a45894817f4d754a8c5acf2fb72822e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a393eca3e917f0911302a593f5aa6cb04"><td class="memItemLeft" align="right" valign="top"><a id="a393eca3e917f0911302a593f5aa6cb04"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_restitutionThreshold</b></td></tr>
+<tr class="separator:a393eca3e917f0911302a593f5aa6cb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0056031e2b2b53e6a4c0ef7a0c87821a"><td class="memItemLeft" align="right" valign="top"><a id="a0056031e2b2b53e6a4c0ef7a0c87821a"></a>
 <a class="el" href="structb2_fixture_proxy.html">b2FixtureProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_proxies</b></td></tr>
 <tr class="separator:a0056031e2b2b53e6a4c0ef7a0c87821a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,9 +225,9 @@ int32&#160;</td><td class="memItemRight" valign="bottom"><b>m_proxyCount</b></td
 <tr class="memitem:a4b6b47a8de6d37acf9b980b33b22f634"><td class="memItemLeft" align="right" valign="top"><a id="a4b6b47a8de6d37acf9b980b33b22f634"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_isSensor</b></td></tr>
 <tr class="separator:a4b6b47a8de6d37acf9b980b33b22f634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60191e5c76bfd115e6c38d78b6cffd8b"><td class="memItemLeft" align="right" valign="top"><a id="a60191e5c76bfd115e6c38d78b6cffd8b"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>m_userData</b></td></tr>
-<tr class="separator:a60191e5c76bfd115e6c38d78b6cffd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2b349c36b4cc7e06024ce805ece672"><td class="memItemLeft" align="right" valign="top"><a id="acc2b349c36b4cc7e06024ce805ece672"></a>
+<a class="el" href="structb2_fixture_user_data.html">b2FixtureUserData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_userData</b></td></tr>
+<tr class="separator:acc2b349c36b4cc7e06024ce805ece672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -400,8 +405,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>b2ContactManager</b>
 
 </div>
 </div>
-<a id="ae2a865ed59ffe9b1cb89f577052f4d50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2a865ed59ffe9b1cb89f577052f4d50">&#9670;&nbsp;</a></span>GetUserData()</h2>
+<a id="af42d4b917097c6300012f63410a985dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42d4b917097c6300012f63410a985dc">&#9670;&nbsp;</a></span>GetUserData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,10 +415,10 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>b2ContactManager</b>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void * b2Fixture::GetUserData </td>
+          <td class="memname"><a class="el" href="structb2_fixture_user_data.html">b2FixtureUserData</a> &amp; b2Fixture::GetUserData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -599,6 +604,33 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>b2ContactManager</b>
 </table>
 </div><div class="memdoc">
 <p>Set the coefficient of restitution. This will <em>not</em> change the restitution of existing contacts. </p>
+
+</div>
+</div>
+<a id="a50231620388dd3e0eddce81af516a6cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50231620388dd3e0eddce81af516a6cc">&#9670;&nbsp;</a></span>SetRestitutionThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void b2Fixture::SetRestitutionThreshold </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the restitution threshold. This will <em>not</em> change the restitution threshold of existing contacts. </p>
 
 </div>
 </div>

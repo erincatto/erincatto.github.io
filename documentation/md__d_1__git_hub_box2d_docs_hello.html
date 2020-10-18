@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('md__d_1__git_hub_box2d_docs_hello.html
 <div class="contents">
 <div class="textblock"><p>In the distribution of Box2D is a Hello World project. The program creates a large ground box and a small dynamic box. This code does not contain any graphics. All you will see is text output in the console of the box's position over time.</p>
 <p>This is a good example of how to get up and running with Box2D.</p>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Creating a World</h1>
 <p>Every Box2D program begins with the creation of a <a class="el" href="classb2_world.html">b2World</a> object. <a class="el" href="classb2_world.html">b2World</a> is the physics hub that manages memory, objects, and simulation. You can allocate the physics world on the stack, heap, or data section.</p>
 <p>It is easy to create a Box2D world. First, we define the gravity vector.</p>
@@ -99,7 +99,7 @@ Creating a World</h1>
 </div><!-- fragment --><p>Now we create the world object. Note that we are creating the world on the stack, so the world must remain in scope.</p>
 <div class="fragment"><div class="line"><a class="code" href="classb2_world.html">b2World</a> world(gravity);</div>
 </div><!-- fragment --><p>So now we have our physics world, let's start adding some stuff to it.</p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Creating a Ground Box</h1>
 <p>Bodies are built using the following steps:</p><ol type="1">
 <li>Define a body with position, damping, etc.</li>
@@ -121,7 +121,7 @@ Creating a Ground Box</h1>
 </div><!-- fragment --><p>Box2D does not keep a reference to the shape. It clones the data into a new <a class="el" href="classb2_shape.html">b2Shape</a> object.</p>
 <p>Note that every fixture must have a parent body, even fixtures that are static. However, you can attach all static fixtures to a single static body.</p>
 <p>When you attach a shape to a body using a fixture, the shape's coordinates become local to the body. So when the body moves, so does the shape. A fixture's world transform is inherited from the parent body. A fixture does not have a transform independent of the body. So we don't move a shape around on the body. Moving or modifying a shape that is on a body is not supported. The reason is simple: a body with morphing shapes is not a rigid body, but Box2D is a rigid body engine. Many of the assumptions made in Box2D are based on the rigid body model. If this is violated many things will break</p>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Creating a Dynamic Body</h1>
 <p>So now we have a ground body. We can use the same technique to create a dynamic body. The main difference, besides dimensions, is that we must establish the dynamic body's mass properties.</p>
 <p>First we create the body using CreateBody. By default bodies are static, so we should set the b2BodyType at construction time to make the body dynamic.</p>
@@ -146,7 +146,7 @@ Creating a Dynamic Body</h1>
 <p>Using the fixture definition we can now create the fixture. This automatically updates the mass of the body. You can add as many fixtures as you like to a body. Each one contributes to the total mass.</p>
 <div class="fragment"><div class="line">body-&gt;<a class="code" href="classb2_body.html#a40dda91b34418bb40e31e2db9b1b76a5">CreateFixture</a>(&amp;fixtureDef);</div>
 </div><!-- fragment --><p>That's it for initialization. We are now ready to begin simulating.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Simulating the World</h1>
 <p>So we have initialized the ground box and a dynamic box. Now we are ready to set Newton loose to do his thing. We just have a couple more issues to consider.</p>
 <p>Box2D uses a computational algorithm called an integrator. Integrators simulate the physics equations at discrete points of time. This goes along with the traditional game loop where we essentially have a flip book of movement on the screen. So we need to pick a time step for Box2D. Generally physics engines for games like a time step at least as fast as 60Hz or 1/60 seconds. You can get away with larger time steps, but you will have to be more careful about setting up the definitions for your world. We also don't like the time step to change much. A variable time step produces variable results, which makes it difficult to debug. So don't tie the time step to your frame rate (unless you really, really have to). Without further ado, here is the time step.</p>
@@ -174,28 +174,28 @@ Simulating the World</h1>
 <div class="line">0.00 1.25 0.00</div>
 <div class="line">0.00 1.13 0.00</div>
 <div class="line">0.00 1.01 0.00</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md25"></a>
 Cleanup</h1>
 <p>When a world leaves scope or is deleted by calling delete on a pointer, all the memory reserved for bodies, fixtures, and joints is freed. This is done to improve performance and make your life easier. However, you will need to nullify any body, fixture, or joint pointers you have because they will become invalid. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:39</div></div>
-<div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:131</div></div>
+<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:41</div></div>
+<div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:128</div></div>
 <div class="ttc" id="aclassb2_polygon_shape_html_ae356d825f51f7b827edb0c71fec781f8"><div class="ttname"><a href="classb2_polygon_shape.html#ae356d825f51f7b827edb0c71fec781f8">b2PolygonShape::SetAsBox</a></div><div class="ttdeci">void SetAsBox(float hx, float hy)</div></div>
-<div class="ttc" id="astructb2_fixture_def_html_a13799607109ebee16538facf1f0e1701"><div class="ttname"><a href="structb2_fixture_def.html#a13799607109ebee16538facf1f0e1701">b2FixtureDef::friction</a></div><div class="ttdeci">float friction</div><div class="ttdoc">The friction coefficient, usually in the range [0,1].</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:81</div></div>
-<div class="ttc" id="astructb2_fixture_def_html_a1e41753d89abf3443e7897e2498a3240"><div class="ttname"><a href="structb2_fixture_def.html#a1e41753d89abf3443e7897e2498a3240">b2FixtureDef::shape</a></div><div class="ttdeci">const b2Shape * shape</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:75</div></div>
-<div class="ttc" id="astructb2_vec2_html_a78f0e635a664a563dd9246397d5f6e7e"><div class="ttname"><a href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">b2Vec2::Set</a></div><div class="ttdeci">void Set(float x_, float y_)</div><div class="ttdoc">Set this vector to some specified coordinates.</div><div class="ttdef"><b>Definition:</b> b2_math.h:51</div></div>
+<div class="ttc" id="astructb2_fixture_def_html_a13799607109ebee16538facf1f0e1701"><div class="ttname"><a href="structb2_fixture_def.html#a13799607109ebee16538facf1f0e1701">b2FixtureDef::friction</a></div><div class="ttdeci">float friction</div><div class="ttdoc">The friction coefficient, usually in the range [0,1].</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:82</div></div>
+<div class="ttc" id="astructb2_fixture_def_html_a1e41753d89abf3443e7897e2498a3240"><div class="ttname"><a href="structb2_fixture_def.html#a1e41753d89abf3443e7897e2498a3240">b2FixtureDef::shape</a></div><div class="ttdeci">const b2Shape * shape</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:76</div></div>
+<div class="ttc" id="astructb2_vec2_html_a78f0e635a664a563dd9246397d5f6e7e"><div class="ttname"><a href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">b2Vec2::Set</a></div><div class="ttdeci">void Set(float x_, float y_)</div><div class="ttdoc">Set this vector to some specified coordinates.</div><div class="ttdef"><b>Definition:</b> b2_math.h:53</div></div>
 <div class="ttc" id="aclassb2_body_html_a40dda91b34418bb40e31e2db9b1b76a5"><div class="ttname"><a href="classb2_body.html#a40dda91b34418bb40e31e2db9b1b76a5">b2Body::CreateFixture</a></div><div class="ttdeci">b2Fixture * CreateFixture(const b2FixtureDef *def)</div></div>
-<div class="ttc" id="astructb2_fixture_def_html"><div class="ttname"><a href="structb2_fixture_def.html">b2FixtureDef</a></div><div class="ttdef"><b>Definition:</b> b2_fixture.h:60</div></div>
-<div class="ttc" id="astructb2_body_def_html_a89cc3ad1873908042b002147b3861381"><div class="ttname"><a href="structb2_body_def.html#a89cc3ad1873908042b002147b3861381">b2BodyDef::type</a></div><div class="ttdeci">b2BodyType type</div><div class="ttdef"><b>Definition:</b> b2_body.h:77</div></div>
-<div class="ttc" id="aclassb2_body_html_ab5d135ef592b5f11f4e8d3ffbd831ac5"><div class="ttname"><a href="classb2_body.html#ab5d135ef592b5f11f4e8d3ffbd831ac5">b2Body::GetAngle</a></div><div class="ttdeci">float GetAngle() const</div><div class="ttdef"><b>Definition:</b> b2_body.h:492</div></div>
-<div class="ttc" id="astructb2_body_def_html"><div class="ttname"><a href="structb2_body_def.html">b2BodyDef</a></div><div class="ttdef"><b>Definition:</b> b2_body.h:54</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html"><div class="ttname"><a href="classb2_polygon_shape.html">b2PolygonShape</a></div><div class="ttdef"><b>Definition:</b> b2_polygon_shape.h:31</div></div>
-<div class="ttc" id="astructb2_fixture_def_html_a386a1e68b7bebb7d1de64332d3bf34ce"><div class="ttname"><a href="structb2_fixture_def.html#a386a1e68b7bebb7d1de64332d3bf34ce">b2FixtureDef::density</a></div><div class="ttdeci">float density</div><div class="ttdoc">The density, usually in kg/m^2.</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:87</div></div>
-<div class="ttc" id="aclassb2_world_html"><div class="ttname"><a href="classb2_world.html">b2World</a></div><div class="ttdef"><b>Definition:</b> b2_world.h:45</div></div>
-<div class="ttc" id="aclassb2_body_html_a7944dc953ac0cb1e00b32bc61b50e70d"><div class="ttname"><a href="classb2_body.html#a7944dc953ac0cb1e00b32bc61b50e70d">b2Body::GetPosition</a></div><div class="ttdeci">const b2Vec2 &amp; GetPosition() const</div><div class="ttdef"><b>Definition:</b> b2_body.h:487</div></div>
-<div class="ttc" id="astructb2_body_def_html_a680cadc09ad6cf4b3366cbf0914c648b"><div class="ttname"><a href="structb2_body_def.html#a680cadc09ad6cf4b3366cbf0914c648b">b2BodyDef::position</a></div><div class="ttdeci">b2Vec2 position</div><div class="ttdef"><b>Definition:</b> b2_body.h:81</div></div>
+<div class="ttc" id="astructb2_fixture_def_html"><div class="ttname"><a href="structb2_fixture_def.html">b2FixtureDef</a></div><div class="ttdef"><b>Definition:</b> b2_fixture.h:61</div></div>
+<div class="ttc" id="astructb2_body_def_html_a89cc3ad1873908042b002147b3861381"><div class="ttname"><a href="structb2_body_def.html#a89cc3ad1873908042b002147b3861381">b2BodyDef::type</a></div><div class="ttdeci">b2BodyType type</div><div class="ttdef"><b>Definition:</b> b2_body.h:74</div></div>
+<div class="ttc" id="aclassb2_body_html_ab5d135ef592b5f11f4e8d3ffbd831ac5"><div class="ttname"><a href="classb2_body.html#ab5d135ef592b5f11f4e8d3ffbd831ac5">b2Body::GetAngle</a></div><div class="ttdeci">float GetAngle() const</div><div class="ttdef"><b>Definition:</b> b2_body.h:489</div></div>
+<div class="ttc" id="astructb2_body_def_html"><div class="ttname"><a href="structb2_body_def.html">b2BodyDef</a></div><div class="ttdef"><b>Definition:</b> b2_body.h:52</div></div>
+<div class="ttc" id="aclassb2_polygon_shape_html"><div class="ttname"><a href="classb2_polygon_shape.html">b2PolygonShape</a></div><div class="ttdef"><b>Definition:</b> b2_polygon_shape.h:32</div></div>
+<div class="ttc" id="astructb2_fixture_def_html_a386a1e68b7bebb7d1de64332d3bf34ce"><div class="ttname"><a href="structb2_fixture_def.html#a386a1e68b7bebb7d1de64332d3bf34ce">b2FixtureDef::density</a></div><div class="ttdeci">float density</div><div class="ttdoc">The density, usually in kg/m^2.</div><div class="ttdef"><b>Definition:</b> b2_fixture.h:92</div></div>
+<div class="ttc" id="aclassb2_world_html"><div class="ttname"><a href="classb2_world.html">b2World</a></div><div class="ttdef"><b>Definition:</b> b2_world.h:46</div></div>
+<div class="ttc" id="aclassb2_body_html_a7944dc953ac0cb1e00b32bc61b50e70d"><div class="ttname"><a href="classb2_body.html#a7944dc953ac0cb1e00b32bc61b50e70d">b2Body::GetPosition</a></div><div class="ttdeci">const b2Vec2 &amp; GetPosition() const</div><div class="ttdef"><b>Definition:</b> b2_body.h:484</div></div>
+<div class="ttc" id="astructb2_body_def_html_a680cadc09ad6cf4b3366cbf0914c648b"><div class="ttname"><a href="structb2_body_def.html#a680cadc09ad6cf4b3366cbf0914c648b">b2BodyDef::position</a></div><div class="ttdeci">b2Vec2 position</div><div class="ttdef"><b>Definition:</b> b2_body.h:78</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

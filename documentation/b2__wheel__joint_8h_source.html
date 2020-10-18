@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -114,228 +114,207 @@ $(document).ready(function(){initNavTree('b2__wheel__joint_8h_source.html',''); 
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef B2_WHEEL_JOINT_H</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define B2_WHEEL_JOINT_H</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;b2_joint.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_wheel_joint_def.html">b2WheelJointDef</a> : <span class="keyword">public</span> <a class="code" href="structb2_joint_def.html">b2JointDef</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structb2_wheel_joint_def.html">b2WheelJointDef</a>()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">type</a> = e_wheelJoint;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">localAnchorA</a>.<a class="code" href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">SetZero</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">localAnchorB</a>.<a class="code" href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">SetZero</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">localAxisA</a>.<a class="code" href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">Set</a>(1.0f, 0.0f);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">enableLimit</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">lowerTranslation</a> = 0.0f;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">upperTranslation</a> = 0.0f;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">enableMotor</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">maxMotorTorque</a> = 0.0f;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">motorSpeed</a> = 0.0f;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">stiffness</a> = 0.0f;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">damping</a> = 0.0f;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structb2_wheel_joint_def.html#af26887092d36c3cd03898401a38783e2">Initialize</a>(<a class="code" href="classb2_body.html">b2Body</a>* <a class="code" href="structb2_joint_def.html#a8cd54c93da396be75a9788f2c6897f05">bodyA</a>, <a class="code" href="classb2_body.html">b2Body</a>* <a class="code" href="structb2_joint_def.html#aa4f4dee2fbcd12187b19506b60e68e3d">bodyB</a>, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; anchor, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; axis);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">   57</a></span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">localAnchorA</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">   60</a></span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">localAnchorB</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">   63</a></span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">localAxisA</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">   66</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">enableLimit</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">   69</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">lowerTranslation</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">   72</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">upperTranslation</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">   75</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">enableMotor</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">   78</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">maxMotorTorque</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">   81</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">motorSpeed</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">   84</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">stiffness</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">   87</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">damping</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html">   94</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_wheel_joint.html">b2WheelJoint</a> : <span class="keyword">public</span> <a class="code" href="classb2_joint.html">b2Joint</a></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="classb2_wheel_joint.html#a43a301e48ba486278932c82d3a98abd8">GetAnchorA</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="classb2_wheel_joint.html#a62f450ad368793c3cde36404a39775e0">GetAnchorB</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="classb2_wheel_joint.html#af60590d061d9c47e1f30c6d96a667ff4">GetReactionForce</a>(<span class="keywordtype">float</span> inv_dt) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a2dc2734c5df3b381163b2ae25779f665">GetReactionTorque</a>(<span class="keywordtype">float</span> inv_dt) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#aaf132c39227962a0b0788558e7dd6662">  104</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; <a class="code" href="classb2_wheel_joint.html#aaf132c39227962a0b0788558e7dd6662">GetLocalAnchorA</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_localAnchorA; }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#a78c56833f42bfc61998aa5ea8c876f3e">  107</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; <a class="code" href="classb2_wheel_joint.html#a78c56833f42bfc61998aa5ea8c876f3e">GetLocalAnchorB</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> m_localAnchorB; }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#a86bf4dbf356f9095c05d62313810e602">  110</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; <a class="code" href="classb2_wheel_joint.html#a86bf4dbf356f9095c05d62313810e602">GetLocalAxisA</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_localXAxisA; }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a7bfbe118654808ef258000f21cfd69ff">GetJointTranslation</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#adf275d41c2deee038c6e574a96482828">GetJointLinearSpeed</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a18d00b2e7a7837c00795ea295a484cba">GetJointAngle</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a4678f47b5875e76989e0531115fd3784">GetJointAngularSpeed</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_wheel_joint.html#a8d94a1a2fe588fa5f4905334d4456ffd">IsLimitEnabled</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#a73e40351f5f42cf2de7235524bf1afad">EnableLimit</a>(<span class="keywordtype">bool</span> flag);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a6022fc9b4b2b57ded45b45df94f14503">GetLowerLimit</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#ae095bf76b791e44736d3dfebcaf0bbe6">GetUpperLimit</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#ad57816ee69ab15373aedd1079d97d926">SetLimits</a>(<span class="keywordtype">float</span> lower, <span class="keywordtype">float</span> upper);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_wheel_joint.html#aef7948a18ec2784397a1d3745824cd78">IsMotorEnabled</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#a7a832d814bdda135a78fad41ba671da6">EnableMotor</a>(<span class="keywordtype">bool</span> flag);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#aa4ec3bc7ea7b5c977ccab10593176594">SetMotorSpeed</a>(<span class="keywordtype">float</span> speed);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">GetMotorSpeed</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#adf5fb5c84056f595636bbc86ec974749">SetMaxMotorTorque</a>(<span class="keywordtype">float</span> torque);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">float</span> GetMaxMotorTorque() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a6272c7afa6a27cc7c2ec8c531d279070">GetMotorTorque</a>(<span class="keywordtype">float</span> inv_dt) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#a2ed4f65494d59e65b2319b840ef3a503">SetStiffness</a>(<span class="keywordtype">float</span> stiffness);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">float</span> GetStiffness() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#a8ef2ae12739ddd92e765cc0419395d3a">SetDamping</a>(<span class="keywordtype">float</span> damping);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">float</span> GetDamping() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#a8295644bd733c28c8c9fa6390a367f3f">Dump</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_wheel_joint.html#a259eee444cf0bd720960b72a628db3fe">Draw</a>(<a class="code" href="classb2_draw.html">b2Draw</a>* draw) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classb2_joint.html">b2Joint</a>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="classb2_wheel_joint.html">b2WheelJoint</a>(<span class="keyword">const</span> <a class="code" href="structb2_wheel_joint_def.html">b2WheelJointDef</a>* def);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> InitVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> SolveVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">bool</span> SolvePositionConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorA;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorB;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localXAxisA;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localYAxisA;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">float</span> m_impulse;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">float</span> m_motorImpulse;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">float</span> m_springImpulse;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">float</span> m_lowerImpulse;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">float</span> m_upperImpulse;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">float</span> m_translation;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">float</span> m_lowerTranslation;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">float</span> m_upperTranslation;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">float</span> m_maxMotorTorque;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">float</span> m_motorSpeed;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">bool</span> m_enableLimit;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">bool</span> m_enableMotor;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">float</span> m_stiffness;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">float</span> m_damping;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// Solver temp</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    int32 m_indexA;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    int32 m_indexB;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterA;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterB;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">float</span> m_invMassA;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">float</span> m_invMassB;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">float</span> m_invIA;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">float</span> m_invIB;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_ax, m_ay;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">float</span> m_sAx, m_sBx;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">float</span> m_sAy, m_sBy;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">float</span> m_mass;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">float</span> m_motorMass;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">float</span> m_axialMass;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">float</span> m_springMass;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">float</span> m_bias;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">float</span> m_gamma;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">  229</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">b2WheelJoint::GetMotorSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">return</span> m_motorSpeed;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> b2WheelJoint::GetMaxMotorTorque()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">return</span> m_maxMotorTorque;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;b2_api.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;b2_joint.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html">   35</a></span>&#160;<span class="keyword">struct </span>B2_API <a class="code" href="structb2_wheel_joint_def.html">b2WheelJointDef</a> : <span class="keyword">public</span> <a class="code" href="structb2_joint_def.html">b2JointDef</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structb2_wheel_joint_def.html">b2WheelJointDef</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        type = e_wheelJoint;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        localAnchorA.SetZero();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        localAnchorB.SetZero();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        localAxisA.Set(1.0f, 0.0f);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        enableLimit = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        lowerTranslation = 0.0f;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        upperTranslation = 0.0f;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        enableMotor = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        maxMotorTorque = 0.0f;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        motorSpeed = 0.0f;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        stiffness = 0.0f;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        damping = 0.0f;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> Initialize(<a class="code" href="classb2_body.html">b2Body</a>* bodyA, <a class="code" href="classb2_body.html">b2Body</a>* bodyB, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; anchor, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; axis);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">   58</a></span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">localAnchorA</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">   61</a></span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">localAnchorB</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">   64</a></span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">localAxisA</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">   67</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">enableLimit</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">   70</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">lowerTranslation</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">   73</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">upperTranslation</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">   76</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">enableMotor</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">   79</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">maxMotorTorque</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">   82</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">motorSpeed</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">   85</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">stiffness</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">   88</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">damping</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html">   95</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_wheel_joint.html">b2WheelJoint</a> : <span class="keyword">public</span> <a class="code" href="classb2_joint.html">b2Joint</a></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="classb2_joint.html#abe46ca3aad5db73909a9b5a7b2117447">GetAnchorA</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="classb2_joint.html#a88e947c65d4ea26fe539f02a8cb7f7a9">GetAnchorB</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> <a class="code" href="classb2_joint.html#ad9f0c84f0292ab17cbdb6435c7a039b9">GetReactionForce</a>(<span class="keywordtype">float</span> inv_dt) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classb2_joint.html#aeda5032fc551df6f488355d459ae60ef">GetReactionTorque</a>(<span class="keywordtype">float</span> inv_dt) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#aaf132c39227962a0b0788558e7dd6662">  105</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; <a class="code" href="classb2_wheel_joint.html#aaf132c39227962a0b0788558e7dd6662">GetLocalAnchorA</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_localAnchorA; }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#a78c56833f42bfc61998aa5ea8c876f3e">  108</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; <a class="code" href="classb2_wheel_joint.html#a78c56833f42bfc61998aa5ea8c876f3e">GetLocalAnchorB</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> m_localAnchorB; }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#a86bf4dbf356f9095c05d62313810e602">  111</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; <a class="code" href="classb2_wheel_joint.html#a86bf4dbf356f9095c05d62313810e602">GetLocalAxisA</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_localXAxisA; }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">float</span> GetJointTranslation() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">float</span> GetJointLinearSpeed() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">float</span> GetJointAngle() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">float</span> GetJointAngularSpeed() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">bool</span> IsLimitEnabled() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> EnableLimit(<span class="keywordtype">bool</span> flag);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">float</span> GetLowerLimit() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">float</span> GetUpperLimit() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> SetLimits(<span class="keywordtype">float</span> lower, <span class="keywordtype">float</span> upper);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">bool</span> IsMotorEnabled() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> EnableMotor(<span class="keywordtype">bool</span> flag);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> SetMotorSpeed(<span class="keywordtype">float</span> speed);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">float</span> GetMotorSpeed() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> SetMaxMotorTorque(<span class="keywordtype">float</span> torque);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">float</span> GetMaxMotorTorque() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">float</span> GetMotorTorque(<span class="keywordtype">float</span> inv_dt) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> SetStiffness(<span class="keywordtype">float</span> stiffness);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">float</span> GetStiffness() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> SetDamping(<span class="keywordtype">float</span> damping);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">float</span> GetDamping() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_joint.html#abd35e7316017ad9a40d5dbf9b5ba3f36">Dump</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_joint.html#aea86b65244fc81ea1511d462b36ffbe4">Draw</a>(<a class="code" href="classb2_draw.html">b2Draw</a>* draw) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classb2_joint.html">b2Joint</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classb2_wheel_joint.html">b2WheelJoint</a>(<span class="keyword">const</span> <a class="code" href="structb2_wheel_joint_def.html">b2WheelJointDef</a>* def);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> InitVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> SolveVelocityConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">bool</span> SolvePositionConstraints(<span class="keyword">const</span> <a class="code" href="structb2_solver_data.html">b2SolverData</a>&amp; data) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorA;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localAnchorB;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localXAxisA;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localYAxisA;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">float</span> m_impulse;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">float</span> m_motorImpulse;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">float</span> m_springImpulse;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">float</span> m_lowerImpulse;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">float</span> m_upperImpulse;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">float</span> m_translation;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">float</span> m_lowerTranslation;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">float</span> m_upperTranslation;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">float</span> m_maxMotorTorque;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">float</span> m_motorSpeed;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">bool</span> m_enableLimit;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">bool</span> m_enableMotor;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">float</span> m_stiffness;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">float</span> m_damping;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// Solver temp</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    int32 m_indexA;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    int32 m_indexB;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterA;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_localCenterB;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">float</span> m_invMassA;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">float</span> m_invMassB;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">float</span> m_invIA;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">float</span> m_invIB;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_ax, m_ay;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">float</span> m_sAx, m_sBx;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">float</span> m_sAy, m_sBy;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">float</span> m_mass;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">float</span> m_motorMass;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">float</span> m_axialMass;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">float</span> m_springMass;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">float</span> m_bias;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">float</span> m_gamma;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;};</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">  230</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">b2WheelJoint::GetMotorSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> m_motorSpeed;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> b2WheelJoint::GetMaxMotorTorque()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> m_maxMotorTorque;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:39</div></div>
-<div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:131</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_af26887092d36c3cd03898401a38783e2"><div class="ttname"><a href="structb2_wheel_joint_def.html#af26887092d36c3cd03898401a38783e2">b2WheelJointDef::Initialize</a></div><div class="ttdeci">void Initialize(b2Body *bodyA, b2Body *bodyB, const b2Vec2 &amp;anchor, const b2Vec2 &amp;axis)</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a7a832d814bdda135a78fad41ba671da6"><div class="ttname"><a href="classb2_wheel_joint.html#a7a832d814bdda135a78fad41ba671da6">b2WheelJoint::EnableMotor</a></div><div class="ttdeci">void EnableMotor(bool flag)</div><div class="ttdoc">Enable/disable the joint motor.</div></div>
-<div class="ttc" id="aclassb2_draw_html"><div class="ttname"><a href="classb2_draw.html">b2Draw</a></div><div class="ttdef"><b>Definition:</b> b2_draw.h:47</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a8ef2ae12739ddd92e765cc0419395d3a"><div class="ttname"><a href="classb2_wheel_joint.html#a8ef2ae12739ddd92e765cc0419395d3a">b2WheelJoint::SetDamping</a></div><div class="ttdeci">void SetDamping(float damping)</div><div class="ttdoc">Access damping.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a6272c7afa6a27cc7c2ec8c531d279070"><div class="ttname"><a href="classb2_wheel_joint.html#a6272c7afa6a27cc7c2ec8c531d279070">b2WheelJoint::GetMotorTorque</a></div><div class="ttdeci">float GetMotorTorque(float inv_dt) const</div><div class="ttdoc">Get the current motor torque given the inverse time step, usually in N-m.</div></div>
-<div class="ttc" id="astructb2_joint_def_html"><div class="ttname"><a href="structb2_joint_def.html">b2JointDef</a></div><div class="ttdoc">Joint definitions are used to construct joints.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:71</div></div>
-<div class="ttc" id="astructb2_joint_def_html_a470f2879b24adb05facbd49f338856fb"><div class="ttname"><a href="structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb">b2JointDef::type</a></div><div class="ttdeci">b2JointType type</div><div class="ttdoc">The joint type is set automatically for concrete joint types.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:83</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a88ba0f7108076b9d7ced68425be95c27"><div class="ttname"><a href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">b2WheelJointDef::localAnchorB</a></div><div class="ttdeci">b2Vec2 localAnchorB</div><div class="ttdoc">The local anchor point relative to bodyB's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:60</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a7bfbe118654808ef258000f21cfd69ff"><div class="ttname"><a href="classb2_wheel_joint.html#a7bfbe118654808ef258000f21cfd69ff">b2WheelJoint::GetJointTranslation</a></div><div class="ttdeci">float GetJointTranslation() const</div><div class="ttdoc">Get the current joint translation, usually in meters.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a6022fc9b4b2b57ded45b45df94f14503"><div class="ttname"><a href="classb2_wheel_joint.html#a6022fc9b4b2b57ded45b45df94f14503">b2WheelJoint::GetLowerLimit</a></div><div class="ttdeci">float GetLowerLimit() const</div><div class="ttdoc">Get the lower joint translation limit, usually in meters.</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a63cf58bd91517985d824cd983d3c7b94"><div class="ttname"><a href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">b2WheelJointDef::upperTranslation</a></div><div class="ttdeci">float upperTranslation</div><div class="ttdoc">The upper translation limit, usually in meters.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:72</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html"><div class="ttname"><a href="classb2_wheel_joint.html">b2WheelJoint</a></div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:94</div></div>
-<div class="ttc" id="astructb2_vec2_html_a78f0e635a664a563dd9246397d5f6e7e"><div class="ttname"><a href="structb2_vec2.html#a78f0e635a664a563dd9246397d5f6e7e">b2Vec2::Set</a></div><div class="ttdeci">void Set(float x_, float y_)</div><div class="ttdoc">Set this vector to some specified coordinates.</div><div class="ttdef"><b>Definition:</b> b2_math.h:51</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a4a93efb807f7ab44d51941748b42f038"><div class="ttname"><a href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">b2WheelJointDef::stiffness</a></div><div class="ttdeci">float stiffness</div><div class="ttdoc">Suspension stiffness. Typically in units N/m.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:84</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a8e7193d6c34c784ffd71e79d3a70acc6"><div class="ttname"><a href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">b2WheelJointDef::enableMotor</a></div><div class="ttdeci">bool enableMotor</div><div class="ttdoc">Enable/disable the joint motor.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:75</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a4678f47b5875e76989e0531115fd3784"><div class="ttname"><a href="classb2_wheel_joint.html#a4678f47b5875e76989e0531115fd3784">b2WheelJoint::GetJointAngularSpeed</a></div><div class="ttdeci">float GetJointAngularSpeed() const</div><div class="ttdoc">Get the current joint angular speed in radians per second.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a8295644bd733c28c8c9fa6390a367f3f"><div class="ttname"><a href="classb2_wheel_joint.html#a8295644bd733c28c8c9fa6390a367f3f">b2WheelJoint::Dump</a></div><div class="ttdeci">void Dump() override</div><div class="ttdoc">Dump to b2Log.</div></div>
-<div class="ttc" id="astructb2_joint_def_html_aa4f4dee2fbcd12187b19506b60e68e3d"><div class="ttname"><a href="structb2_joint_def.html#aa4f4dee2fbcd12187b19506b60e68e3d">b2JointDef::bodyB</a></div><div class="ttdeci">b2Body * bodyB</div><div class="ttdoc">The second attached body.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:92</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_adf275d41c2deee038c6e574a96482828"><div class="ttname"><a href="classb2_wheel_joint.html#adf275d41c2deee038c6e574a96482828">b2WheelJoint::GetJointLinearSpeed</a></div><div class="ttdeci">float GetJointLinearSpeed() const</div><div class="ttdoc">Get the current joint linear speed, usually in meters per second.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a6d757bbcef609f4a496b71c89046663b"><div class="ttname"><a href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">b2WheelJoint::GetMotorSpeed</a></div><div class="ttdeci">float GetMotorSpeed() const</div><div class="ttdoc">Get the motor speed, usually in radians per second.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:229</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a86bf4dbf356f9095c05d62313810e602"><div class="ttname"><a href="classb2_wheel_joint.html#a86bf4dbf356f9095c05d62313810e602">b2WheelJoint::GetLocalAxisA</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAxisA() const</div><div class="ttdoc">The local joint axis relative to bodyA.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:110</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a8d94a1a2fe588fa5f4905334d4456ffd"><div class="ttname"><a href="classb2_wheel_joint.html#a8d94a1a2fe588fa5f4905334d4456ffd">b2WheelJoint::IsLimitEnabled</a></div><div class="ttdeci">bool IsLimitEnabled() const</div><div class="ttdoc">Is the joint limit enabled?</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_aef7948a18ec2784397a1d3745824cd78"><div class="ttname"><a href="classb2_wheel_joint.html#aef7948a18ec2784397a1d3745824cd78">b2WheelJoint::IsMotorEnabled</a></div><div class="ttdeci">bool IsMotorEnabled() const</div><div class="ttdoc">Is the joint motor enabled?</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_ad57816ee69ab15373aedd1079d97d926"><div class="ttname"><a href="classb2_wheel_joint.html#ad57816ee69ab15373aedd1079d97d926">b2WheelJoint::SetLimits</a></div><div class="ttdeci">void SetLimits(float lower, float upper)</div><div class="ttdoc">Set the joint translation limits, usually in meters.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a259eee444cf0bd720960b72a628db3fe"><div class="ttname"><a href="classb2_wheel_joint.html#a259eee444cf0bd720960b72a628db3fe">b2WheelJoint::Draw</a></div><div class="ttdeci">void Draw(b2Draw *draw) const override</div><div class="ttdoc">Debug draw this joint.</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_ad635ee7b77b50037dc0e021a0f5c93a6"><div class="ttname"><a href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">b2WheelJointDef::localAxisA</a></div><div class="ttdeci">b2Vec2 localAxisA</div><div class="ttdoc">The local translation axis in bodyA.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:63</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_abfef1664c79bc98b782cc8035931aad0"><div class="ttname"><a href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">b2WheelJointDef::damping</a></div><div class="ttdeci">float damping</div><div class="ttdoc">Suspension damping. Typically in units of N*s/m.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:87</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a73e40351f5f42cf2de7235524bf1afad"><div class="ttname"><a href="classb2_wheel_joint.html#a73e40351f5f42cf2de7235524bf1afad">b2WheelJoint::EnableLimit</a></div><div class="ttdeci">void EnableLimit(bool flag)</div><div class="ttdoc">Enable/disable the joint translation limit.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a62f450ad368793c3cde36404a39775e0"><div class="ttname"><a href="classb2_wheel_joint.html#a62f450ad368793c3cde36404a39775e0">b2WheelJoint::GetAnchorB</a></div><div class="ttdeci">b2Vec2 GetAnchorB() const override</div><div class="ttdoc">Get the anchor point on bodyB in world coordinates.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_aaf132c39227962a0b0788558e7dd6662"><div class="ttname"><a href="classb2_wheel_joint.html#aaf132c39227962a0b0788558e7dd6662">b2WheelJoint::GetLocalAnchorA</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAnchorA() const</div><div class="ttdoc">The local anchor point relative to bodyA's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:104</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html"><div class="ttname"><a href="structb2_wheel_joint_def.html">b2WheelJointDef</a></div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:34</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a2ed4f65494d59e65b2319b840ef3a503"><div class="ttname"><a href="classb2_wheel_joint.html#a2ed4f65494d59e65b2319b840ef3a503">b2WheelJoint::SetStiffness</a></div><div class="ttdeci">void SetStiffness(float stiffness)</div><div class="ttdoc">Access spring stiffness.</div></div>
-<div class="ttc" id="astructb2_solver_data_html"><div class="ttname"><a href="structb2_solver_data.html">b2SolverData</a></div><div class="ttdoc">Solver Data.</div><div class="ttdef"><b>Definition:</b> b2_time_step.h:66</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_ae095bf76b791e44736d3dfebcaf0bbe6"><div class="ttname"><a href="classb2_wheel_joint.html#ae095bf76b791e44736d3dfebcaf0bbe6">b2WheelJoint::GetUpperLimit</a></div><div class="ttdeci">float GetUpperLimit() const</div><div class="ttdoc">Get the upper joint translation limit, usually in meters.</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_ac2f848b113782cf594f7fe28aaeb7a97"><div class="ttname"><a href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">b2WheelJointDef::maxMotorTorque</a></div><div class="ttdeci">float maxMotorTorque</div><div class="ttdoc">The maximum motor torque, usually in N-m.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:78</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a9429d2273bfdd8bdc0db416e73b89ae4"><div class="ttname"><a href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">b2WheelJointDef::localAnchorA</a></div><div class="ttdeci">b2Vec2 localAnchorA</div><div class="ttdoc">The local anchor point relative to bodyA's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:57</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a3d46200f4f5342a46f5ef79f6a059d28"><div class="ttname"><a href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">b2WheelJointDef::enableLimit</a></div><div class="ttdeci">bool enableLimit</div><div class="ttdoc">Enable/disable the joint limit.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:66</div></div>
-<div class="ttc" id="astructb2_vec2_html_a5c6cbe27cfb29c6dbb29b9a3285b88d0"><div class="ttname"><a href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">b2Vec2::SetZero</a></div><div class="ttdeci">void SetZero()</div><div class="ttdoc">Set this vector to all zeros.</div><div class="ttdef"><b>Definition:</b> b2_math.h:48</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a3afc5f07648a13caedc9ca3f223a556f"><div class="ttname"><a href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">b2WheelJointDef::motorSpeed</a></div><div class="ttdeci">float motorSpeed</div><div class="ttdoc">The desired motor speed in radians per second.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:81</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_aa4ec3bc7ea7b5c977ccab10593176594"><div class="ttname"><a href="classb2_wheel_joint.html#aa4ec3bc7ea7b5c977ccab10593176594">b2WheelJoint::SetMotorSpeed</a></div><div class="ttdeci">void SetMotorSpeed(float speed)</div><div class="ttdoc">Set the motor speed, usually in radians per second.</div></div>
-<div class="ttc" id="astructb2_joint_def_html_a8cd54c93da396be75a9788f2c6897f05"><div class="ttname"><a href="structb2_joint_def.html#a8cd54c93da396be75a9788f2c6897f05">b2JointDef::bodyA</a></div><div class="ttdeci">b2Body * bodyA</div><div class="ttdoc">The first attached body.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:89</div></div>
+<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:41</div></div>
+<div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:128</div></div>
+<div class="ttc" id="aclassb2_joint_html_ad9f0c84f0292ab17cbdb6435c7a039b9"><div class="ttname"><a href="classb2_joint.html#ad9f0c84f0292ab17cbdb6435c7a039b9">b2Joint::GetReactionForce</a></div><div class="ttdeci">virtual b2Vec2 GetReactionForce(float inv_dt) const =0</div><div class="ttdoc">Get the reaction force on bodyB at the joint anchor in Newtons.</div></div>
+<div class="ttc" id="aclassb2_joint_html_abe46ca3aad5db73909a9b5a7b2117447"><div class="ttname"><a href="classb2_joint.html#abe46ca3aad5db73909a9b5a7b2117447">b2Joint::GetAnchorA</a></div><div class="ttdeci">virtual b2Vec2 GetAnchorA() const =0</div><div class="ttdoc">Get the anchor point on bodyA in world coordinates.</div></div>
+<div class="ttc" id="aclassb2_draw_html"><div class="ttname"><a href="classb2_draw.html">b2Draw</a></div><div class="ttdef"><b>Definition:</b> b2_draw.h:48</div></div>
+<div class="ttc" id="astructb2_joint_def_html"><div class="ttname"><a href="structb2_joint_def.html">b2JointDef</a></div><div class="ttdoc">Joint definitions are used to construct joints.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:72</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a88ba0f7108076b9d7ced68425be95c27"><div class="ttname"><a href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">b2WheelJointDef::localAnchorB</a></div><div class="ttdeci">b2Vec2 localAnchorB</div><div class="ttdoc">The local anchor point relative to bodyB's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:61</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a63cf58bd91517985d824cd983d3c7b94"><div class="ttname"><a href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">b2WheelJointDef::upperTranslation</a></div><div class="ttdeci">float upperTranslation</div><div class="ttdoc">The upper translation limit, usually in meters.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:73</div></div>
+<div class="ttc" id="aclassb2_wheel_joint_html"><div class="ttname"><a href="classb2_wheel_joint.html">b2WheelJoint</a></div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:95</div></div>
+<div class="ttc" id="aclassb2_joint_html_aea86b65244fc81ea1511d462b36ffbe4"><div class="ttname"><a href="classb2_joint.html#aea86b65244fc81ea1511d462b36ffbe4">b2Joint::Draw</a></div><div class="ttdeci">virtual void Draw(b2Draw *draw) const</div><div class="ttdoc">Debug draw this joint.</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a4a93efb807f7ab44d51941748b42f038"><div class="ttname"><a href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">b2WheelJointDef::stiffness</a></div><div class="ttdeci">float stiffness</div><div class="ttdoc">Suspension stiffness. Typically in units N/m.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:85</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a8e7193d6c34c784ffd71e79d3a70acc6"><div class="ttname"><a href="structb2_wheel_joint_def.html#a8e7193d6c34c784ffd71e79d3a70acc6">b2WheelJointDef::enableMotor</a></div><div class="ttdeci">bool enableMotor</div><div class="ttdoc">Enable/disable the joint motor.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:76</div></div>
+<div class="ttc" id="aclassb2_wheel_joint_html_a6d757bbcef609f4a496b71c89046663b"><div class="ttname"><a href="classb2_wheel_joint.html#a6d757bbcef609f4a496b71c89046663b">b2WheelJoint::GetMotorSpeed</a></div><div class="ttdeci">float GetMotorSpeed() const</div><div class="ttdoc">Get the motor speed, usually in radians per second.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:230</div></div>
+<div class="ttc" id="aclassb2_joint_html_abd35e7316017ad9a40d5dbf9b5ba3f36"><div class="ttname"><a href="classb2_joint.html#abd35e7316017ad9a40d5dbf9b5ba3f36">b2Joint::Dump</a></div><div class="ttdeci">virtual void Dump()</div><div class="ttdoc">Dump this joint to the log file.</div><div class="ttdef"><b>Definition:</b> b2_joint.h:151</div></div>
+<div class="ttc" id="aclassb2_wheel_joint_html_a86bf4dbf356f9095c05d62313810e602"><div class="ttname"><a href="classb2_wheel_joint.html#a86bf4dbf356f9095c05d62313810e602">b2WheelJoint::GetLocalAxisA</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAxisA() const</div><div class="ttdoc">The local joint axis relative to bodyA.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:111</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_ad635ee7b77b50037dc0e021a0f5c93a6"><div class="ttname"><a href="structb2_wheel_joint_def.html#ad635ee7b77b50037dc0e021a0f5c93a6">b2WheelJointDef::localAxisA</a></div><div class="ttdeci">b2Vec2 localAxisA</div><div class="ttdoc">The local translation axis in bodyA.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:64</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_abfef1664c79bc98b782cc8035931aad0"><div class="ttname"><a href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">b2WheelJointDef::damping</a></div><div class="ttdeci">float damping</div><div class="ttdoc">Suspension damping. Typically in units of N*s/m.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:88</div></div>
+<div class="ttc" id="aclassb2_wheel_joint_html_aaf132c39227962a0b0788558e7dd6662"><div class="ttname"><a href="classb2_wheel_joint.html#aaf132c39227962a0b0788558e7dd6662">b2WheelJoint::GetLocalAnchorA</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAnchorA() const</div><div class="ttdoc">The local anchor point relative to bodyA's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:105</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html"><div class="ttname"><a href="structb2_wheel_joint_def.html">b2WheelJointDef</a></div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:35</div></div>
+<div class="ttc" id="astructb2_solver_data_html"><div class="ttname"><a href="structb2_solver_data.html">b2SolverData</a></div><div class="ttdoc">Solver Data.</div><div class="ttdef"><b>Definition:</b> b2_time_step.h:67</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_ac2f848b113782cf594f7fe28aaeb7a97"><div class="ttname"><a href="structb2_wheel_joint_def.html#ac2f848b113782cf594f7fe28aaeb7a97">b2WheelJointDef::maxMotorTorque</a></div><div class="ttdeci">float maxMotorTorque</div><div class="ttdoc">The maximum motor torque, usually in N-m.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:79</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a9429d2273bfdd8bdc0db416e73b89ae4"><div class="ttname"><a href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">b2WheelJointDef::localAnchorA</a></div><div class="ttdeci">b2Vec2 localAnchorA</div><div class="ttdoc">The local anchor point relative to bodyA's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:58</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a3d46200f4f5342a46f5ef79f6a059d28"><div class="ttname"><a href="structb2_wheel_joint_def.html#a3d46200f4f5342a46f5ef79f6a059d28">b2WheelJointDef::enableLimit</a></div><div class="ttdeci">bool enableLimit</div><div class="ttdoc">Enable/disable the joint limit.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:67</div></div>
+<div class="ttc" id="aclassb2_joint_html_a88e947c65d4ea26fe539f02a8cb7f7a9"><div class="ttname"><a href="classb2_joint.html#a88e947c65d4ea26fe539f02a8cb7f7a9">b2Joint::GetAnchorB</a></div><div class="ttdeci">virtual b2Vec2 GetAnchorB() const =0</div><div class="ttdoc">Get the anchor point on bodyB in world coordinates.</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a3afc5f07648a13caedc9ca3f223a556f"><div class="ttname"><a href="structb2_wheel_joint_def.html#a3afc5f07648a13caedc9ca3f223a556f">b2WheelJointDef::motorSpeed</a></div><div class="ttdeci">float motorSpeed</div><div class="ttdoc">The desired motor speed in radians per second.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:82</div></div>
 <div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:110</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a2dc2734c5df3b381163b2ae25779f665"><div class="ttname"><a href="classb2_wheel_joint.html#a2dc2734c5df3b381163b2ae25779f665">b2WheelJoint::GetReactionTorque</a></div><div class="ttdeci">float GetReactionTorque(float inv_dt) const override</div><div class="ttdoc">Get the reaction torque on bodyB in N*m.</div></div>
-<div class="ttc" id="astructb2_wheel_joint_def_html_a74d5dd6cf83e7984e599da98500fd949"><div class="ttname"><a href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">b2WheelJointDef::lowerTranslation</a></div><div class="ttdeci">float lowerTranslation</div><div class="ttdoc">The lower translation limit, usually in meters.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:69</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a43a301e48ba486278932c82d3a98abd8"><div class="ttname"><a href="classb2_wheel_joint.html#a43a301e48ba486278932c82d3a98abd8">b2WheelJoint::GetAnchorA</a></div><div class="ttdeci">b2Vec2 GetAnchorA() const override</div><div class="ttdoc">Get the anchor point on bodyA in world coordinates.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_af60590d061d9c47e1f30c6d96a667ff4"><div class="ttname"><a href="classb2_wheel_joint.html#af60590d061d9c47e1f30c6d96a667ff4">b2WheelJoint::GetReactionForce</a></div><div class="ttdeci">b2Vec2 GetReactionForce(float inv_dt) const override</div><div class="ttdoc">Get the reaction force on bodyB at the joint anchor in Newtons.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_adf5fb5c84056f595636bbc86ec974749"><div class="ttname"><a href="classb2_wheel_joint.html#adf5fb5c84056f595636bbc86ec974749">b2WheelJoint::SetMaxMotorTorque</a></div><div class="ttdeci">void SetMaxMotorTorque(float torque)</div><div class="ttdoc">Set/Get the maximum motor force, usually in N-m.</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a78c56833f42bfc61998aa5ea8c876f3e"><div class="ttname"><a href="classb2_wheel_joint.html#a78c56833f42bfc61998aa5ea8c876f3e">b2WheelJoint::GetLocalAnchorB</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAnchorB() const</div><div class="ttdoc">The local anchor point relative to bodyB's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:107</div></div>
-<div class="ttc" id="aclassb2_wheel_joint_html_a18d00b2e7a7837c00795ea295a484cba"><div class="ttname"><a href="classb2_wheel_joint.html#a18d00b2e7a7837c00795ea295a484cba">b2WheelJoint::GetJointAngle</a></div><div class="ttdeci">float GetJointAngle() const</div><div class="ttdoc">Get the current joint angle in radians.</div></div>
+<div class="ttc" id="aclassb2_joint_html_aeda5032fc551df6f488355d459ae60ef"><div class="ttname"><a href="classb2_joint.html#aeda5032fc551df6f488355d459ae60ef">b2Joint::GetReactionTorque</a></div><div class="ttdeci">virtual float GetReactionTorque(float inv_dt) const =0</div><div class="ttdoc">Get the reaction torque on bodyB in N*m.</div></div>
+<div class="ttc" id="astructb2_wheel_joint_def_html_a74d5dd6cf83e7984e599da98500fd949"><div class="ttname"><a href="structb2_wheel_joint_def.html#a74d5dd6cf83e7984e599da98500fd949">b2WheelJointDef::lowerTranslation</a></div><div class="ttdeci">float lowerTranslation</div><div class="ttdoc">The lower translation limit, usually in meters.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:70</div></div>
+<div class="ttc" id="aclassb2_wheel_joint_html_a78c56833f42bfc61998aa5ea8c876f3e"><div class="ttname"><a href="classb2_wheel_joint.html#a78c56833f42bfc61998aa5ea8c876f3e">b2WheelJoint::GetLocalAnchorB</a></div><div class="ttdeci">const b2Vec2 &amp; GetLocalAnchorB() const</div><div class="ttdoc">The local anchor point relative to bodyB's origin.</div><div class="ttdef"><b>Definition:</b> b2_wheel_joint.h:108</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

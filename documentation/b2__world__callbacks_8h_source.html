@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -114,107 +114,104 @@ $(document).ready(function(){initNavTree('b2__world__callbacks_8h_source.html','
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef B2_WORLD_CALLBACKS_H</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define B2_WORLD_CALLBACKS_H</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="b2__settings_8h.html">b2_settings.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_vec2.html">b2Vec2</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_transform.html">b2Transform</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_fixture.html">b2Fixture</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_body.html">b2Body</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_joint.html">b2Joint</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_contact.html">b2Contact</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">struct </span>b2ContactResult;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_manifold.html">b2Manifold</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classb2_destruction_listener.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_destruction_listener.html">b2DestructionListener</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_destruction_listener.html">b2DestructionListener</a>() {}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_destruction_listener.html#a6cd15baa6e5c33118cf7173ab5bf6d58">SayGoodbye</a>(<a class="code" href="classb2_joint.html">b2Joint</a>* joint) = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_destruction_listener.html#a6cd15baa6e5c33118cf7173ab5bf6d58">SayGoodbye</a>(<a class="code" href="classb2_fixture.html">b2Fixture</a>* fixture) = 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classb2_contact_filter.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_contact_filter.html">b2ContactFilter</a></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_contact_filter.html">b2ContactFilter</a>() {}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classb2_contact_filter.html#a0e33d4fc90a9345160a07cc494b45ecd">ShouldCollide</a>(<a class="code" href="classb2_fixture.html">b2Fixture</a>* fixtureA, <a class="code" href="classb2_fixture.html">b2Fixture</a>* fixtureB);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structb2_contact_impulse.html">   69</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_contact_impulse.html">b2ContactImpulse</a></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">float</span> normalImpulses[<a class="code" href="b2__settings_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">float</span> tangentImpulses[<a class="code" href="b2__settings_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    int32 count;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html">   85</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_contact_listener.html">b2ContactListener</a></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_contact_listener.html">b2ContactListener</a>() {}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#a35148fc56fb9eac12077200fbd928f65">   91</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#a35148fc56fb9eac12077200fbd928f65">BeginContact</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact) { B2_NOT_USED(contact); }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#afb3059058e5c47903a3947c2eef5826b">   94</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#afb3059058e5c47903a3947c2eef5826b">EndContact</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact) { B2_NOT_USED(contact); }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">  106</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">PreSolve</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact, <span class="keyword">const</span> <a class="code" href="structb2_manifold.html">b2Manifold</a>* oldManifold)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        B2_NOT_USED(contact);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        B2_NOT_USED(oldManifold);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#acd58ec96f7569b95eec65b8ca3f8013d">  118</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#acd58ec96f7569b95eec65b8ca3f8013d">PostSolve</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact, <span class="keyword">const</span> <a class="code" href="structb2_contact_impulse.html">b2ContactImpulse</a>* impulse)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        B2_NOT_USED(contact);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        B2_NOT_USED(impulse);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classb2_query_callback.html">  127</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_query_callback.html">b2QueryCallback</a></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_query_callback.html">b2QueryCallback</a>() {}</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classb2_query_callback.html#a187dd04dd0f5164fb05c2ce2cbfd9ee5">ReportFixture</a>(<a class="code" href="classb2_fixture.html">b2Fixture</a>* fixture) = 0;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classb2_ray_cast_callback.html">  139</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_ray_cast_callback.html">b2RayCastCallback</a></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_ray_cast_callback.html">b2RayCastCallback</a>() {}</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="classb2_ray_cast_callback.html#ae0a13ab4fe2f4a7b501445af1a01ebb1">ReportFixture</a>(    <a class="code" href="classb2_fixture.html">b2Fixture</a>* fixture, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; point,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; normal, <span class="keywordtype">float</span> fraction) = 0;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;b2_api.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="b2__settings_8h.html">b2_settings.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_vec2.html">b2Vec2</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_transform.html">b2Transform</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_fixture.html">b2Fixture</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_body.html">b2Body</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_joint.html">b2Joint</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span><a class="code" href="classb2_contact.html">b2Contact</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">struct </span>b2ContactResult;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">struct </span><a class="code" href="structb2_manifold.html">b2Manifold</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classb2_destruction_listener.html">   41</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_destruction_listener.html">b2DestructionListener</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_destruction_listener.html">b2DestructionListener</a>() {}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SayGoodbye(<a class="code" href="classb2_joint.html">b2Joint</a>* joint) = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SayGoodbye(<a class="code" href="classb2_fixture.html">b2Fixture</a>* fixture) = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classb2_contact_filter.html">   57</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_contact_filter.html">b2ContactFilter</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_contact_filter.html">b2ContactFilter</a>() {}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> ShouldCollide(<a class="code" href="classb2_fixture.html">b2Fixture</a>* fixtureA, <a class="code" href="classb2_fixture.html">b2Fixture</a>* fixtureB);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structb2_contact_impulse.html">   70</a></span>&#160;<span class="keyword">struct </span>B2_API <a class="code" href="structb2_contact_impulse.html">b2ContactImpulse</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">float</span> normalImpulses[<a class="code" href="b2__common_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> tangentImpulses[<a class="code" href="b2__common_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    int32 count;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html">   86</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_contact_listener.html">b2ContactListener</a></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_contact_listener.html">b2ContactListener</a>() {}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#a35148fc56fb9eac12077200fbd928f65">   92</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#a35148fc56fb9eac12077200fbd928f65">BeginContact</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact) { B2_NOT_USED(contact); }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#afb3059058e5c47903a3947c2eef5826b">   95</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#afb3059058e5c47903a3947c2eef5826b">EndContact</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact) { B2_NOT_USED(contact); }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">  107</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">PreSolve</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact, <span class="keyword">const</span> <a class="code" href="structb2_manifold.html">b2Manifold</a>* oldManifold)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        B2_NOT_USED(contact);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        B2_NOT_USED(oldManifold);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classb2_contact_listener.html#acd58ec96f7569b95eec65b8ca3f8013d">  119</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classb2_contact_listener.html#acd58ec96f7569b95eec65b8ca3f8013d">PostSolve</a>(<a class="code" href="classb2_contact.html">b2Contact</a>* contact, <span class="keyword">const</span> <a class="code" href="structb2_contact_impulse.html">b2ContactImpulse</a>* impulse)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        B2_NOT_USED(contact);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        B2_NOT_USED(impulse);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classb2_query_callback.html">  128</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_query_callback.html">b2QueryCallback</a></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_query_callback.html">b2QueryCallback</a>() {}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> ReportFixture(<a class="code" href="classb2_fixture.html">b2Fixture</a>* fixture) = 0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classb2_ray_cast_callback.html">  140</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_ray_cast_callback.html">b2RayCastCallback</a></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classb2_ray_cast_callback.html">b2RayCastCallback</a>() {}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> ReportFixture(    <a class="code" href="classb2_fixture.html">b2Fixture</a>* fixture, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; point,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                    <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; normal, <span class="keywordtype">float</span> fraction) = 0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:39</div></div>
-<div class="ttc" id="aclassb2_contact_listener_html_a416f85eb45a1099053402b15a19a7de0"><div class="ttname"><a href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">b2ContactListener::PreSolve</a></div><div class="ttdeci">virtual void PreSolve(b2Contact *contact, const b2Manifold *oldManifold)</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:106</div></div>
-<div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:131</div></div>
+<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:41</div></div>
+<div class="ttc" id="aclassb2_contact_listener_html_a416f85eb45a1099053402b15a19a7de0"><div class="ttname"><a href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">b2ContactListener::PreSolve</a></div><div class="ttdeci">virtual void PreSolve(b2Contact *contact, const b2Manifold *oldManifold)</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:107</div></div>
+<div class="ttc" id="aclassb2_body_html"><div class="ttname"><a href="classb2_body.html">b2Body</a></div><div class="ttdoc">A rigid body. These are created via b2World::CreateBody.</div><div class="ttdef"><b>Definition:</b> b2_body.h:128</div></div>
 <div class="ttc" id="ab2__settings_8h_html"><div class="ttname"><a href="b2__settings_8h.html">b2_settings.h</a></div></div>
-<div class="ttc" id="aclassb2_contact_filter_html_a0e33d4fc90a9345160a07cc494b45ecd"><div class="ttname"><a href="classb2_contact_filter.html#a0e33d4fc90a9345160a07cc494b45ecd">b2ContactFilter::ShouldCollide</a></div><div class="ttdeci">virtual bool ShouldCollide(b2Fixture *fixtureA, b2Fixture *fixtureB)</div></div>
-<div class="ttc" id="aclassb2_contact_listener_html"><div class="ttname"><a href="classb2_contact_listener.html">b2ContactListener</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:85</div></div>
-<div class="ttc" id="astructb2_transform_html"><div class="ttname"><a href="structb2_transform.html">b2Transform</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:336</div></div>
-<div class="ttc" id="aclassb2_contact_listener_html_a35148fc56fb9eac12077200fbd928f65"><div class="ttname"><a href="classb2_contact_listener.html#a35148fc56fb9eac12077200fbd928f65">b2ContactListener::BeginContact</a></div><div class="ttdeci">virtual void BeginContact(b2Contact *contact)</div><div class="ttdoc">Called when two fixtures begin to touch.</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:91</div></div>
-<div class="ttc" id="aclassb2_ray_cast_callback_html_ae0a13ab4fe2f4a7b501445af1a01ebb1"><div class="ttname"><a href="classb2_ray_cast_callback.html#ae0a13ab4fe2f4a7b501445af1a01ebb1">b2RayCastCallback::ReportFixture</a></div><div class="ttdeci">virtual float ReportFixture(b2Fixture *fixture, const b2Vec2 &amp;point, const b2Vec2 &amp;normal, float fraction)=0</div></div>
-<div class="ttc" id="astructb2_manifold_html"><div class="ttname"><a href="structb2_manifold.html">b2Manifold</a></div><div class="ttdef"><b>Definition:</b> b2_collision.h:97</div></div>
-<div class="ttc" id="aclassb2_query_callback_html"><div class="ttname"><a href="classb2_query_callback.html">b2QueryCallback</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:127</div></div>
-<div class="ttc" id="aclassb2_destruction_listener_html_a6cd15baa6e5c33118cf7173ab5bf6d58"><div class="ttname"><a href="classb2_destruction_listener.html#a6cd15baa6e5c33118cf7173ab5bf6d58">b2DestructionListener::SayGoodbye</a></div><div class="ttdeci">virtual void SayGoodbye(b2Joint *joint)=0</div></div>
-<div class="ttc" id="aclassb2_contact_listener_html_acd58ec96f7569b95eec65b8ca3f8013d"><div class="ttname"><a href="classb2_contact_listener.html#acd58ec96f7569b95eec65b8ca3f8013d">b2ContactListener::PostSolve</a></div><div class="ttdeci">virtual void PostSolve(b2Contact *contact, const b2ContactImpulse *impulse)</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:118</div></div>
-<div class="ttc" id="aclassb2_contact_listener_html_afb3059058e5c47903a3947c2eef5826b"><div class="ttname"><a href="classb2_contact_listener.html#afb3059058e5c47903a3947c2eef5826b">b2ContactListener::EndContact</a></div><div class="ttdeci">virtual void EndContact(b2Contact *contact)</div><div class="ttdoc">Called when two fixtures cease to touch.</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:94</div></div>
-<div class="ttc" id="aclassb2_fixture_html"><div class="ttname"><a href="classb2_fixture.html">b2Fixture</a></div><div class="ttdef"><b>Definition:</b> b2_fixture.h:111</div></div>
-<div class="ttc" id="aclassb2_query_callback_html_a187dd04dd0f5164fb05c2ce2cbfd9ee5"><div class="ttname"><a href="classb2_query_callback.html#a187dd04dd0f5164fb05c2ce2cbfd9ee5">b2QueryCallback::ReportFixture</a></div><div class="ttdeci">virtual bool ReportFixture(b2Fixture *fixture)=0</div></div>
-<div class="ttc" id="astructb2_contact_impulse_html"><div class="ttname"><a href="structb2_contact_impulse.html">b2ContactImpulse</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:69</div></div>
-<div class="ttc" id="ab2__settings_8h_html_aa5f44cc9edf711433dea2b2ec94f3c42"><div class="ttname"><a href="b2__settings_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a></div><div class="ttdeci">#define b2_maxManifoldPoints</div><div class="ttdef"><b>Definition:</b> b2_settings.h:56</div></div>
-<div class="ttc" id="aclassb2_contact_html"><div class="ttname"><a href="classb2_contact.html">b2Contact</a></div><div class="ttdef"><b>Definition:</b> b2_contact.h:81</div></div>
-<div class="ttc" id="aclassb2_ray_cast_callback_html"><div class="ttname"><a href="classb2_ray_cast_callback.html">b2RayCastCallback</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:139</div></div>
-<div class="ttc" id="aclassb2_contact_filter_html"><div class="ttname"><a href="classb2_contact_filter.html">b2ContactFilter</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:56</div></div>
+<div class="ttc" id="aclassb2_contact_listener_html"><div class="ttname"><a href="classb2_contact_listener.html">b2ContactListener</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:86</div></div>
+<div class="ttc" id="astructb2_transform_html"><div class="ttname"><a href="structb2_transform.html">b2Transform</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:338</div></div>
+<div class="ttc" id="aclassb2_contact_listener_html_a35148fc56fb9eac12077200fbd928f65"><div class="ttname"><a href="classb2_contact_listener.html#a35148fc56fb9eac12077200fbd928f65">b2ContactListener::BeginContact</a></div><div class="ttdeci">virtual void BeginContact(b2Contact *contact)</div><div class="ttdoc">Called when two fixtures begin to touch.</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:92</div></div>
+<div class="ttc" id="astructb2_manifold_html"><div class="ttname"><a href="structb2_manifold.html">b2Manifold</a></div><div class="ttdef"><b>Definition:</b> b2_collision.h:99</div></div>
+<div class="ttc" id="aclassb2_query_callback_html"><div class="ttname"><a href="classb2_query_callback.html">b2QueryCallback</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:128</div></div>
+<div class="ttc" id="aclassb2_contact_listener_html_acd58ec96f7569b95eec65b8ca3f8013d"><div class="ttname"><a href="classb2_contact_listener.html#acd58ec96f7569b95eec65b8ca3f8013d">b2ContactListener::PostSolve</a></div><div class="ttdeci">virtual void PostSolve(b2Contact *contact, const b2ContactImpulse *impulse)</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:119</div></div>
+<div class="ttc" id="ab2__common_8h_html_aa5f44cc9edf711433dea2b2ec94f3c42"><div class="ttname"><a href="b2__common_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a></div><div class="ttdeci">#define b2_maxManifoldPoints</div><div class="ttdef"><b>Definition:</b> b2_common.h:51</div></div>
+<div class="ttc" id="aclassb2_contact_listener_html_afb3059058e5c47903a3947c2eef5826b"><div class="ttname"><a href="classb2_contact_listener.html#afb3059058e5c47903a3947c2eef5826b">b2ContactListener::EndContact</a></div><div class="ttdeci">virtual void EndContact(b2Contact *contact)</div><div class="ttdoc">Called when two fixtures cease to touch.</div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:95</div></div>
+<div class="ttc" id="aclassb2_fixture_html"><div class="ttname"><a href="classb2_fixture.html">b2Fixture</a></div><div class="ttdef"><b>Definition:</b> b2_fixture.h:116</div></div>
+<div class="ttc" id="astructb2_contact_impulse_html"><div class="ttname"><a href="structb2_contact_impulse.html">b2ContactImpulse</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:70</div></div>
+<div class="ttc" id="aclassb2_contact_html"><div class="ttname"><a href="classb2_contact.html">b2Contact</a></div><div class="ttdef"><b>Definition:</b> b2_contact.h:88</div></div>
+<div class="ttc" id="aclassb2_ray_cast_callback_html"><div class="ttname"><a href="classb2_ray_cast_callback.html">b2RayCastCallback</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:140</div></div>
+<div class="ttc" id="aclassb2_contact_filter_html"><div class="ttname"><a href="classb2_contact_filter.html">b2ContactFilter</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:57</div></div>
 <div class="ttc" id="aclassb2_joint_html"><div class="ttname"><a href="classb2_joint.html">b2Joint</a></div><div class="ttdef"><b>Definition:</b> b2_joint.h:110</div></div>
-<div class="ttc" id="aclassb2_destruction_listener_html"><div class="ttname"><a href="classb2_destruction_listener.html">b2DestructionListener</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:40</div></div>
+<div class="ttc" id="aclassb2_destruction_listener_html"><div class="ttname"><a href="classb2_destruction_listener.html">b2DestructionListener</a></div><div class="ttdef"><b>Definition:</b> b2_world_callbacks.h:41</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

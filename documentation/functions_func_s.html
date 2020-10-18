@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -138,11 +138,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 </li>
 <li>SetDamping()
 : <a class="el" href="classb2_distance_joint.html#a4351bf0172499a882713637076b31481">b2DistanceJoint</a>
+, <a class="el" href="classb2_mouse_joint.html#a1d04f5a481c764596c39bc5e967ea2b8">b2MouseJoint</a>
 , <a class="el" href="classb2_weld_joint.html#a091b5363ad3826c4d21f42a395d76a6f">b2WeldJoint</a>
 , <a class="el" href="classb2_wheel_joint.html#a8ef2ae12739ddd92e765cc0419395d3a">b2WheelJoint</a>
-</li>
-<li>SetDampingRatio()
-: <a class="el" href="classb2_mouse_joint.html#a767e28f60859d66bab2fac6b3f089e5f">b2MouseJoint</a>
 </li>
 <li>SetDebugDraw()
 : <a class="el" href="classb2_world.html#a6976d2c67400df03c0d44174ffcfb7ee">b2World</a>
@@ -166,9 +164,6 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>SetFlags()
 : <a class="el" href="classb2_draw.html#ac2bbe31595478690e44de4ff1e7f347e">b2Draw</a>
 </li>
-<li>SetFrequency()
-: <a class="el" href="classb2_mouse_joint.html#a3aab0355ffc7878d224e5d2c43902c5b">b2MouseJoint</a>
-</li>
 <li>SetFriction()
 : <a class="el" href="classb2_contact.html#a6cac6c0db18a161a359d73672596b413">b2Contact</a>
 , <a class="el" href="classb2_fixture.html#a097aa48046dd2686db47b7ab8e2cde92">b2Fixture</a>
@@ -185,7 +180,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 , <a class="el" href="structb2_transform.html#af92af4ec6833552b1b22a6ca6d4f5644">b2Transform</a>
 </li>
 <li>SetLength()
-: <a class="el" href="classb2_distance_joint.html#a5d6273f44e2094ad18258069d6b6b25f">b2DistanceJoint</a>
+: <a class="el" href="classb2_distance_joint.html#a3ab199174058e4a9fcb54c66dcbdda56">b2DistanceJoint</a>
 </li>
 <li>SetLimits()
 : <a class="el" href="classb2_prismatic_joint.html#a1f066e458852ee0728330d9413e57003">b2PrismaticJoint</a>
@@ -210,7 +205,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 , <a class="el" href="classb2_mouse_joint.html#ac6a661049f97830f0fa05f0241a3b775">b2MouseJoint</a>
 </li>
 <li>SetMaxLength()
-: <a class="el" href="classb2_rope_joint.html#ab08a9ee55c152c927d3e9ca00bf47169">b2RopeJoint</a>
+: <a class="el" href="classb2_distance_joint.html#a12ce2326e74a3a2a49ebf4593bf5c7f6">b2DistanceJoint</a>
 </li>
 <li>SetMaxMotorForce()
 : <a class="el" href="classb2_prismatic_joint.html#a94ce7073bb3c8098a7fef85f3bceb11d">b2PrismaticJoint</a>
@@ -222,6 +217,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>SetMaxTorque()
 : <a class="el" href="classb2_friction_joint.html#a909cf64070371f60bc856d2c8eca2c49">b2FrictionJoint</a>
 , <a class="el" href="classb2_motor_joint.html#a73ef23148813ca3b30e1d52d8faa43a9">b2MotorJoint</a>
+</li>
+<li>SetMinLength()
+: <a class="el" href="classb2_distance_joint.html#aa4f595e9561349b6214cc61564346f87">b2DistanceJoint</a>
 </li>
 <li>SetMotorSpeed()
 : <a class="el" href="classb2_prismatic_joint.html#aa2274e38ed0d6667cc2dd7f769bbdc02">b2PrismaticJoint</a>
@@ -238,6 +236,10 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 : <a class="el" href="classb2_contact.html#a685a1c4cfca30c379c402e20e04723b6">b2Contact</a>
 , <a class="el" href="classb2_fixture.html#abd9d4c46a54febb1b06cedc8f9b88b26">b2Fixture</a>
 </li>
+<li>SetRestitutionThreshold()
+: <a class="el" href="classb2_contact.html#ab39c848fdeb22d1de4c1c3561b8579bd">b2Contact</a>
+, <a class="el" href="classb2_fixture.html#a50231620388dd3e0eddce81af516a6cc">b2Fixture</a>
+</li>
 <li>SetSensor()
 : <a class="el" href="classb2_fixture.html#a6198a81dcee0fe814d730383ebfa7038">b2Fixture</a>
 </li>
@@ -246,6 +248,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 </li>
 <li>SetStiffness()
 : <a class="el" href="classb2_distance_joint.html#a667de5de10fabc00c39900fba0e9b95e">b2DistanceJoint</a>
+, <a class="el" href="classb2_mouse_joint.html#adb9628ad6cb8da4a1bbcb84455066106">b2MouseJoint</a>
 , <a class="el" href="classb2_weld_joint.html#a3ed0dbef228a57b8f5cdce3f4ec7277f">b2WeldJoint</a>
 , <a class="el" href="classb2_wheel_joint.html#a2ed4f65494d59e65b2319b840ef3a503">b2WheelJoint</a>
 </li>
@@ -269,8 +272,6 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 </li>
 <li>SetUserData()
 : <a class="el" href="classb2_body.html#a5553a5ecdfd2d7200ba2405ce6043f52">b2Body</a>
-, <a class="el" href="classb2_fixture.html#a3db7f89ef4493247d922fe3d96351ad9">b2Fixture</a>
-, <a class="el" href="classb2_joint.html#a492f2d02496437572aaec6013ebdc1c8">b2Joint</a>
 </li>
 <li>SetWarmStarting()
 : <a class="el" href="classb2_world.html#a8e8c12142e8c4884a18787926a261359">b2World</a>

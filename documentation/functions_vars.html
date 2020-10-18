@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -156,11 +156,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>damping
 : <a class="el" href="structb2_distance_joint_def.html#aa488d9b1f5300e795587b844b6db0d98">b2DistanceJointDef</a>
+, <a class="el" href="structb2_mouse_joint_def.html#a0887471452796ff614965a7518e1f5aa">b2MouseJointDef</a>
 , <a class="el" href="structb2_weld_joint_def.html#a59dcfbbd7c8d4421b3c621946ab4ec7d">b2WeldJointDef</a>
 , <a class="el" href="structb2_wheel_joint_def.html#abfef1664c79bc98b782cc8035931aad0">b2WheelJointDef</a>
-</li>
-<li>dampingRatio
-: <a class="el" href="structb2_mouse_joint_def.html#aad16025f2ab92396448f40371a981f63">b2MouseJointDef</a>
 </li>
 <li>density
 : <a class="el" href="structb2_fixture_def.html#a386a1e68b7bebb7d1de64332d3bf34ce">b2FixtureDef</a>
@@ -191,9 +189,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>fixedRotation
 : <a class="el" href="structb2_body_def.html#a273a51c57440a8884de5939d76b6e3ea">b2BodyDef</a>
-</li>
-<li>frequencyHz
-: <a class="el" href="structb2_mouse_joint_def.html#a1b75f3016bf49062a789741faa712f11">b2MouseJointDef</a>
 </li>
 <li>friction
 : <a class="el" href="structb2_fixture_def.html#a13799607109ebee16538facf1f0e1701">b2FixtureDef</a>
@@ -286,7 +281,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="structb2_prismatic_joint_def.html#abb51df8daff7a55f47adc83e4f7fa5b9">b2PrismaticJointDef</a>
 , <a class="el" href="structb2_pulley_joint_def.html#ad7677a4ad02a6e7cb8699fc5012eac3e">b2PulleyJointDef</a>
 , <a class="el" href="structb2_revolute_joint_def.html#a76337d07aa63232a7b20d50decc862ae">b2RevoluteJointDef</a>
-, <a class="el" href="structb2_rope_joint_def.html#ab680fcc3cd44741a7a824ddff86ff01e">b2RopeJointDef</a>
 , <a class="el" href="structb2_weld_joint_def.html#a3b04af6164bb32efc3f5cf3e8d2b7109">b2WeldJointDef</a>
 , <a class="el" href="structb2_wheel_joint_def.html#a9429d2273bfdd8bdc0db416e73b89ae4">b2WheelJointDef</a>
 </li>
@@ -296,7 +290,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="structb2_prismatic_joint_def.html#a5acc1f2f14d1b659fc9d804ab1baf4a3">b2PrismaticJointDef</a>
 , <a class="el" href="structb2_pulley_joint_def.html#aed3f9c9f5f4145ceb32e7e164de73144">b2PulleyJointDef</a>
 , <a class="el" href="structb2_revolute_joint_def.html#a3f33bc1d9f6c22043a5ff2f1d89f04e0">b2RevoluteJointDef</a>
-, <a class="el" href="structb2_rope_joint_def.html#a3271da0e4027e25546aa6a81e8fbe4e2">b2RopeJointDef</a>
 , <a class="el" href="structb2_weld_joint_def.html#a528262b92dac10de37411ad8c5637149">b2WeldJointDef</a>
 , <a class="el" href="structb2_wheel_joint_def.html#a88ba0f7108076b9d7ced68425be95c27">b2WheelJointDef</a>
 </li>
@@ -364,7 +357,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="structb2_mouse_joint_def.html#a6ae811967747e4d1752b571c894c1ba7">b2MouseJointDef</a>
 </li>
 <li>maxLength
-: <a class="el" href="structb2_rope_joint_def.html#aa4b72cff0a666276fafcf4c94e44dd4e">b2RopeJointDef</a>
+: <a class="el" href="structb2_distance_joint_def.html#ace0033f63ca1cbede5e415e72f6c0698">b2DistanceJointDef</a>
 </li>
 <li>maxMotorForce
 : <a class="el" href="structb2_prismatic_joint_def.html#af7bb74b4f5188352c704d9822fb20d5a">b2PrismaticJointDef</a>
@@ -379,6 +372,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>metric
 : <a class="el" href="structb2_simplex_cache.html#a700adfcbce992d5efcadf62490f3100e">b2SimplexCache</a>
+</li>
+<li>minLength
+: <a class="el" href="structb2_distance_joint_def.html#a91529f9af7d7881ac71cd96737b65cd9">b2DistanceJointDef</a>
 </li>
 <li>minor
 : <a class="el" href="structb2_version.html#a115b8797a6e0b8e53f54502bd20d89da">b2Version</a>
@@ -423,6 +419,11 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>pointCount
 : <a class="el" href="structb2_manifold.html#abf59ff6fa36bed34b0242ad54951a696">b2Manifold</a>
 </li>
+<li>pointer
+: <a class="el" href="structb2_body_user_data.html#ae23e3ff9873138240adc85619ba38fb6">b2BodyUserData</a>
+, <a class="el" href="structb2_fixture_user_data.html#a7de93df0f0e8a734795b04b7255f55a8">b2FixtureUserData</a>
+, <a class="el" href="structb2_joint_user_data.html#a1aa036ecc13e8f99e35e961fd39fdc97">b2JointUserData</a>
+</li>
 <li>points
 : <a class="el" href="structb2_manifold.html#ab8021128e9792cc7391a8804ea02173d">b2Manifold</a>
 , <a class="el" href="structb2_world_manifold.html#af15e84b90f102c0ac433be2d63604021">b2WorldManifold</a>
@@ -450,6 +451,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>restitution
 : <a class="el" href="structb2_fixture_def.html#a87e1f5db5b7164fc7198e18a02ee6e36">b2FixtureDef</a>
 </li>
+<li>restitutionThreshold
+: <a class="el" href="structb2_fixture_def.html#ad56b10047e9c1b3bb317e7e5249f030c">b2FixtureDef</a>
+</li>
 <li>revision
 : <a class="el" href="structb2_version.html#a395cfe1434e348115d2ead3d72b88847">b2Version</a>
 </li>
@@ -468,6 +472,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>stiffness
 : <a class="el" href="structb2_distance_joint_def.html#a858640393f567a2aca1b40cbe534b4e2">b2DistanceJointDef</a>
+, <a class="el" href="structb2_mouse_joint_def.html#ae44cee9f187989e20dfa4346970391ce">b2MouseJointDef</a>
 , <a class="el" href="structb2_weld_joint_def.html#aeb881c0408c9674b2a1869b491fdc6a0">b2WeldJointDef</a>
 , <a class="el" href="structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038">b2WheelJointDef</a>
 </li>
@@ -506,9 +511,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="structb2_wheel_joint_def.html#a63cf58bd91517985d824cd983d3c7b94">b2WheelJointDef</a>
 </li>
 <li>userData
-: <a class="el" href="structb2_body_def.html#ae457dd1d39be09945eace6061121be29">b2BodyDef</a>
-, <a class="el" href="structb2_fixture_def.html#a4f77ef2b2585a40899b61faf53db1093">b2FixtureDef</a>
-, <a class="el" href="structb2_joint_def.html#a07eb150daaaa52fc09c3bcf402b295fe">b2JointDef</a>
+: <a class="el" href="structb2_body_def.html#ae913ce354e5602ddafecd5999c2db170">b2BodyDef</a>
+, <a class="el" href="structb2_fixture_def.html#a480da3de55f826e8df9e7d2c0f7e911f">b2FixtureDef</a>
+, <a class="el" href="structb2_joint_def.html#a78ae1ebbdd3d9b9a6b409c0b05096ded">b2JointDef</a>
 </li>
 </ul>
 </div><!-- contents -->

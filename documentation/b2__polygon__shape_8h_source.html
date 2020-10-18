@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -113,73 +113,71 @@ $(document).ready(function(){initNavTree('b2__polygon__shape_8h_source.html','')
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef B2_POLYGON_SHAPE_H</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define B2_POLYGON_SHAPE_H</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;b2_shape.h&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classb2_polygon_shape.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classb2_polygon_shape.html">b2PolygonShape</a> : <span class="keyword">public</span> <a class="code" href="classb2_shape.html">b2Shape</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classb2_polygon_shape.html">b2PolygonShape</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classb2_shape.html">b2Shape</a>* <a class="code" href="classb2_polygon_shape.html#ab3409517e0e6ae926998f78238a38954">Clone</a>(<a class="code" href="classb2_block_allocator.html">b2BlockAllocator</a>* allocator) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    int32 <a class="code" href="classb2_polygon_shape.html#aa8bb0d5a88624104425cdee0b2f4427a">GetChildCount</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_polygon_shape.html#a4d7b35550509f570814b97325a68966b">Set</a>(<span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>* points, int32 count);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_polygon_shape.html#ae356d825f51f7b827edb0c71fec781f8">SetAsBox</a>(<span class="keywordtype">float</span> hx, <span class="keywordtype">float</span> hy);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_polygon_shape.html#ae356d825f51f7b827edb0c71fec781f8">SetAsBox</a>(<span class="keywordtype">float</span> hx, <span class="keywordtype">float</span> hy, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; center, <span class="keywordtype">float</span> angle);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_polygon_shape.html#a129c4ac76727fe02724f675e3fef7fe5">TestPoint</a>(<span class="keyword">const</span> <a class="code" href="structb2_transform.html">b2Transform</a>&amp; transform, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; p) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_polygon_shape.html#a41f20072763688f1745f12f67f40e904">RayCast</a>(<a class="code" href="structb2_ray_cast_output.html">b2RayCastOutput</a>* output, <span class="keyword">const</span> <a class="code" href="structb2_ray_cast_input.html">b2RayCastInput</a>&amp; input,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keyword">const</span> <a class="code" href="structb2_transform.html">b2Transform</a>&amp; transform, int32 childIndex) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_polygon_shape.html#ae9bcc185caf4a030003cefc4576e4717">ComputeAABB</a>(<a class="code" href="structb2_a_a_b_b.html">b2AABB</a>* aabb, <span class="keyword">const</span> <a class="code" href="structb2_transform.html">b2Transform</a>&amp; transform, int32 childIndex) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_polygon_shape.html#ab9b7bf3fb10c6995b6ac3648919dfd36">ComputeMass</a>(<a class="code" href="structb2_mass_data.html">b2MassData</a>* massData, <span class="keywordtype">float</span> density) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_polygon_shape.html#a135f4c20e17f10479e08f7befbd4d1f0">Validate</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_centroid;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_vertices[<a class="code" href="b2__settings_8h.html#a09d71ee1993bee28b5b2e6d893b41884">b2_maxPolygonVertices</a>];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_normals[<a class="code" href="b2__settings_8h.html#a09d71ee1993bee28b5b2e6d893b41884">b2_maxPolygonVertices</a>];</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    int32 m_count;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">inline</span> b2PolygonShape::b2PolygonShape()</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    m_type = e_polygon;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classb2_shape.html#af145c8df4c0ffb5780b40cf8e4d64c9c">m_radius</a> = <a class="code" href="b2__settings_8h.html#afc0f934dabffb1e83e081249133ad860">b2_polygonRadius</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    m_count = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_centroid.<a class="code" href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">SetZero</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;b2_api.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;b2_shape.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classb2_polygon_shape.html">   32</a></span>&#160;<span class="keyword">class </span>B2_API <a class="code" href="classb2_polygon_shape.html">b2PolygonShape</a> : <span class="keyword">public</span> <a class="code" href="classb2_shape.html">b2Shape</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classb2_polygon_shape.html">b2PolygonShape</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classb2_shape.html">b2Shape</a>* <a class="code" href="classb2_shape.html#a4716243454bb9cf7c7ee1d9cb23ae634">Clone</a>(<a class="code" href="classb2_block_allocator.html">b2BlockAllocator</a>* allocator) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    int32 <a class="code" href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab">GetChildCount</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> Set(<span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>* points, int32 count);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> SetAsBox(<span class="keywordtype">float</span> hx, <span class="keywordtype">float</span> hy);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> SetAsBox(<span class="keywordtype">float</span> hx, <span class="keywordtype">float</span> hy, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; center, <span class="keywordtype">float</span> angle);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_shape.html#a6ac968e403e2d93e8ae46d728a2e50fa">TestPoint</a>(<span class="keyword">const</span> <a class="code" href="structb2_transform.html">b2Transform</a>&amp; transform, <span class="keyword">const</span> <a class="code" href="structb2_vec2.html">b2Vec2</a>&amp; p) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classb2_shape.html#aee53a926f4fe64cd03693f6211ef6335">RayCast</a>(<a class="code" href="structb2_ray_cast_output.html">b2RayCastOutput</a>* output, <span class="keyword">const</span> <a class="code" href="structb2_ray_cast_input.html">b2RayCastInput</a>&amp; input,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keyword">const</span> <a class="code" href="structb2_transform.html">b2Transform</a>&amp; transform, int32 childIndex) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_shape.html#a88e9807fab0c8ca9a98d8926e50a1411">ComputeAABB</a>(<a class="code" href="structb2_a_a_b_b.html">b2AABB</a>* aabb, <span class="keyword">const</span> <a class="code" href="structb2_transform.html">b2Transform</a>&amp; transform, int32 childIndex) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classb2_shape.html#a1b9497fd7951fa995df6fe00bcf8581b">ComputeMass</a>(<a class="code" href="structb2_mass_data.html">b2MassData</a>* massData, <span class="keywordtype">float</span> density) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> Validate() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_centroid;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_vertices[<a class="code" href="b2__settings_8h.html#a09d71ee1993bee28b5b2e6d893b41884">b2_maxPolygonVertices</a>];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="structb2_vec2.html">b2Vec2</a> m_normals[<a class="code" href="b2__settings_8h.html#a09d71ee1993bee28b5b2e6d893b41884">b2_maxPolygonVertices</a>];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    int32 m_count;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">inline</span> b2PolygonShape::b2PolygonShape()</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    m_type = e_polygon;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classb2_shape.html#af145c8df4c0ffb5780b40cf8e4d64c9c">m_radius</a> = <a class="code" href="b2__common_8h.html#afc0f934dabffb1e83e081249133ad860">b2_polygonRadius</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_count = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    m_centroid.<a class="code" href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">SetZero</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassb2_polygon_shape_html_a135f4c20e17f10479e08f7befbd4d1f0"><div class="ttname"><a href="classb2_polygon_shape.html#a135f4c20e17f10479e08f7befbd4d1f0">b2PolygonShape::Validate</a></div><div class="ttdeci">bool Validate() const</div></div>
-<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:39</div></div>
-<div class="ttc" id="astructb2_ray_cast_input_html"><div class="ttname"><a href="structb2_ray_cast_input.html">b2RayCastInput</a></div><div class="ttdoc">Ray-cast input data. The ray extends from p1 to p1 + maxFraction * (p2 - p1).</div><div class="ttdef"><b>Definition:</b> b2_collision.h:151</div></div>
-<div class="ttc" id="astructb2_transform_html"><div class="ttname"><a href="structb2_transform.html">b2Transform</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:336</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_ae356d825f51f7b827edb0c71fec781f8"><div class="ttname"><a href="classb2_polygon_shape.html#ae356d825f51f7b827edb0c71fec781f8">b2PolygonShape::SetAsBox</a></div><div class="ttdeci">void SetAsBox(float hx, float hy)</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_a4d7b35550509f570814b97325a68966b"><div class="ttname"><a href="classb2_polygon_shape.html#a4d7b35550509f570814b97325a68966b">b2PolygonShape::Set</a></div><div class="ttdeci">void Set(const b2Vec2 *points, int32 count)</div></div>
-<div class="ttc" id="aclassb2_shape_html_af145c8df4c0ffb5780b40cf8e4d64c9c"><div class="ttname"><a href="classb2_shape.html#af145c8df4c0ffb5780b40cf8e4d64c9c">b2Shape::m_radius</a></div><div class="ttdeci">float m_radius</div><div class="ttdef"><b>Definition:</b> b2_shape.h:101</div></div>
-<div class="ttc" id="ab2__settings_8h_html_afc0f934dabffb1e83e081249133ad860"><div class="ttname"><a href="b2__settings_8h.html#afc0f934dabffb1e83e081249133ad860">b2_polygonRadius</a></div><div class="ttdeci">#define b2_polygonRadius</div><div class="ttdef"><b>Definition:</b> b2_settings.h:83</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_ab3409517e0e6ae926998f78238a38954"><div class="ttname"><a href="classb2_polygon_shape.html#ab3409517e0e6ae926998f78238a38954">b2PolygonShape::Clone</a></div><div class="ttdeci">b2Shape * Clone(b2BlockAllocator *allocator) const override</div><div class="ttdoc">Implement b2Shape.</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_a41f20072763688f1745f12f67f40e904"><div class="ttname"><a href="classb2_polygon_shape.html#a41f20072763688f1745f12f67f40e904">b2PolygonShape::RayCast</a></div><div class="ttdeci">bool RayCast(b2RayCastOutput *output, const b2RayCastInput &amp;input, const b2Transform &amp;transform, int32 childIndex) const override</div></div>
-<div class="ttc" id="astructb2_a_a_b_b_html"><div class="ttname"><a href="structb2_a_a_b_b.html">b2AABB</a></div><div class="ttdoc">An axis aligned bounding box.</div><div class="ttdef"><b>Definition:</b> b2_collision.h:166</div></div>
-<div class="ttc" id="aclassb2_block_allocator_html"><div class="ttname"><a href="classb2_block_allocator.html">b2BlockAllocator</a></div><div class="ttdef"><b>Definition:</b> b2_block_allocator.h:36</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_a129c4ac76727fe02724f675e3fef7fe5"><div class="ttname"><a href="classb2_polygon_shape.html#a129c4ac76727fe02724f675e3fef7fe5">b2PolygonShape::TestPoint</a></div><div class="ttdeci">bool TestPoint(const b2Transform &amp;transform, const b2Vec2 &amp;p) const override</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html"><div class="ttname"><a href="classb2_polygon_shape.html">b2PolygonShape</a></div><div class="ttdef"><b>Definition:</b> b2_polygon_shape.h:31</div></div>
-<div class="ttc" id="aclassb2_shape_html"><div class="ttname"><a href="classb2_shape.html">b2Shape</a></div><div class="ttdef"><b>Definition:</b> b2_shape.h:47</div></div>
-<div class="ttc" id="astructb2_mass_data_html"><div class="ttname"><a href="structb2_mass_data.html">b2MassData</a></div><div class="ttdoc">This holds the mass data computed for a shape.</div><div class="ttdef"><b>Definition:</b> b2_shape.h:32</div></div>
-<div class="ttc" id="astructb2_vec2_html_a5c6cbe27cfb29c6dbb29b9a3285b88d0"><div class="ttname"><a href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">b2Vec2::SetZero</a></div><div class="ttdeci">void SetZero()</div><div class="ttdoc">Set this vector to all zeros.</div><div class="ttdef"><b>Definition:</b> b2_math.h:48</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_ab9b7bf3fb10c6995b6ac3648919dfd36"><div class="ttname"><a href="classb2_polygon_shape.html#ab9b7bf3fb10c6995b6ac3648919dfd36">b2PolygonShape::ComputeMass</a></div><div class="ttdeci">void ComputeMass(b2MassData *massData, float density) const override</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_ae9bcc185caf4a030003cefc4576e4717"><div class="ttname"><a href="classb2_polygon_shape.html#ae9bcc185caf4a030003cefc4576e4717">b2PolygonShape::ComputeAABB</a></div><div class="ttdeci">void ComputeAABB(b2AABB *aabb, const b2Transform &amp;transform, int32 childIndex) const override</div></div>
-<div class="ttc" id="astructb2_ray_cast_output_html"><div class="ttname"><a href="structb2_ray_cast_output.html">b2RayCastOutput</a></div><div class="ttdef"><b>Definition:</b> b2_collision.h:159</div></div>
-<div class="ttc" id="aclassb2_polygon_shape_html_aa8bb0d5a88624104425cdee0b2f4427a"><div class="ttname"><a href="classb2_polygon_shape.html#aa8bb0d5a88624104425cdee0b2f4427a">b2PolygonShape::GetChildCount</a></div><div class="ttdeci">int32 GetChildCount() const override</div></div>
-<div class="ttc" id="ab2__settings_8h_html_a09d71ee1993bee28b5b2e6d893b41884"><div class="ttname"><a href="b2__settings_8h.html#a09d71ee1993bee28b5b2e6d893b41884">b2_maxPolygonVertices</a></div><div class="ttdeci">#define b2_maxPolygonVertices</div><div class="ttdef"><b>Definition:</b> b2_settings.h:60</div></div>
+<div class="ttc" id="astructb2_vec2_html"><div class="ttname"><a href="structb2_vec2.html">b2Vec2</a></div><div class="ttdoc">A 2D column vector.</div><div class="ttdef"><b>Definition:</b> b2_math.h:41</div></div>
+<div class="ttc" id="aclassb2_shape_html_aee53a926f4fe64cd03693f6211ef6335"><div class="ttname"><a href="classb2_shape.html#aee53a926f4fe64cd03693f6211ef6335">b2Shape::RayCast</a></div><div class="ttdeci">virtual bool RayCast(b2RayCastOutput *output, const b2RayCastInput &amp;input, const b2Transform &amp;transform, int32 childIndex) const =0</div></div>
+<div class="ttc" id="aclassb2_shape_html_a05a3c445017d96df9238ceefe6ce37ab"><div class="ttname"><a href="classb2_shape.html#a05a3c445017d96df9238ceefe6ce37ab">b2Shape::GetChildCount</a></div><div class="ttdeci">virtual int32 GetChildCount() const =0</div><div class="ttdoc">Get the number of child primitives.</div></div>
+<div class="ttc" id="astructb2_ray_cast_input_html"><div class="ttname"><a href="structb2_ray_cast_input.html">b2RayCastInput</a></div><div class="ttdoc">Ray-cast input data. The ray extends from p1 to p1 + maxFraction * (p2 - p1).</div><div class="ttdef"><b>Definition:</b> b2_collision.h:153</div></div>
+<div class="ttc" id="astructb2_transform_html"><div class="ttname"><a href="structb2_transform.html">b2Transform</a></div><div class="ttdef"><b>Definition:</b> b2_math.h:338</div></div>
+<div class="ttc" id="aclassb2_shape_html_a88e9807fab0c8ca9a98d8926e50a1411"><div class="ttname"><a href="classb2_shape.html#a88e9807fab0c8ca9a98d8926e50a1411">b2Shape::ComputeAABB</a></div><div class="ttdeci">virtual void ComputeAABB(b2AABB *aabb, const b2Transform &amp;xf, int32 childIndex) const =0</div></div>
+<div class="ttc" id="aclassb2_shape_html_af145c8df4c0ffb5780b40cf8e4d64c9c"><div class="ttname"><a href="classb2_shape.html#af145c8df4c0ffb5780b40cf8e4d64c9c">b2Shape::m_radius</a></div><div class="ttdeci">float m_radius</div><div class="ttdef"><b>Definition:</b> b2_shape.h:102</div></div>
+<div class="ttc" id="aclassb2_shape_html_a1b9497fd7951fa995df6fe00bcf8581b"><div class="ttname"><a href="classb2_shape.html#a1b9497fd7951fa995df6fe00bcf8581b">b2Shape::ComputeMass</a></div><div class="ttdeci">virtual void ComputeMass(b2MassData *massData, float density) const =0</div></div>
+<div class="ttc" id="astructb2_a_a_b_b_html"><div class="ttname"><a href="structb2_a_a_b_b.html">b2AABB</a></div><div class="ttdoc">An axis aligned bounding box.</div><div class="ttdef"><b>Definition:</b> b2_collision.h:168</div></div>
+<div class="ttc" id="aclassb2_block_allocator_html"><div class="ttname"><a href="classb2_block_allocator.html">b2BlockAllocator</a></div><div class="ttdef"><b>Definition:</b> b2_block_allocator.h:37</div></div>
+<div class="ttc" id="aclassb2_polygon_shape_html"><div class="ttname"><a href="classb2_polygon_shape.html">b2PolygonShape</a></div><div class="ttdef"><b>Definition:</b> b2_polygon_shape.h:32</div></div>
+<div class="ttc" id="ab2__common_8h_html_afc0f934dabffb1e83e081249133ad860"><div class="ttname"><a href="b2__common_8h.html#afc0f934dabffb1e83e081249133ad860">b2_polygonRadius</a></div><div class="ttdeci">#define b2_polygonRadius</div><div class="ttdef"><b>Definition:</b> b2_common.h:74</div></div>
+<div class="ttc" id="aclassb2_shape_html"><div class="ttname"><a href="classb2_shape.html">b2Shape</a></div><div class="ttdef"><b>Definition:</b> b2_shape.h:48</div></div>
+<div class="ttc" id="astructb2_mass_data_html"><div class="ttname"><a href="structb2_mass_data.html">b2MassData</a></div><div class="ttdoc">This holds the mass data computed for a shape.</div><div class="ttdef"><b>Definition:</b> b2_shape.h:33</div></div>
+<div class="ttc" id="astructb2_vec2_html_a5c6cbe27cfb29c6dbb29b9a3285b88d0"><div class="ttname"><a href="structb2_vec2.html#a5c6cbe27cfb29c6dbb29b9a3285b88d0">b2Vec2::SetZero</a></div><div class="ttdeci">void SetZero()</div><div class="ttdoc">Set this vector to all zeros.</div><div class="ttdef"><b>Definition:</b> b2_math.h:50</div></div>
+<div class="ttc" id="aclassb2_shape_html_a4716243454bb9cf7c7ee1d9cb23ae634"><div class="ttname"><a href="classb2_shape.html#a4716243454bb9cf7c7ee1d9cb23ae634">b2Shape::Clone</a></div><div class="ttdeci">virtual b2Shape * Clone(b2BlockAllocator *allocator) const =0</div><div class="ttdoc">Clone the concrete shape using the provided allocator.</div></div>
+<div class="ttc" id="astructb2_ray_cast_output_html"><div class="ttname"><a href="structb2_ray_cast_output.html">b2RayCastOutput</a></div><div class="ttdef"><b>Definition:</b> b2_collision.h:161</div></div>
+<div class="ttc" id="aclassb2_shape_html_a6ac968e403e2d93e8ae46d728a2e50fa"><div class="ttname"><a href="classb2_shape.html#a6ac968e403e2d93e8ae46d728a2e50fa">b2Shape::TestPoint</a></div><div class="ttdeci">virtual bool TestPoint(const b2Transform &amp;xf, const b2Vec2 &amp;p) const =0</div></div>
+<div class="ttc" id="ab2__settings_8h_html_a09d71ee1993bee28b5b2e6d893b41884"><div class="ttname"><a href="b2__settings_8h.html#a09d71ee1993bee28b5b2e6d893b41884">b2_maxPolygonVertices</a></div><div class="ttdeci">#define b2_maxPolygonVertices</div><div class="ttdef"><b>Definition:</b> b2_settings.h:53</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -6,6 +6,7 @@ var structb2_fixture_def =
     [ "friction", "structb2_fixture_def.html#a13799607109ebee16538facf1f0e1701", null ],
     [ "isSensor", "structb2_fixture_def.html#ac8cfcc6208663c92861eaab3b3fdc57e", null ],
     [ "restitution", "structb2_fixture_def.html#a87e1f5db5b7164fc7198e18a02ee6e36", null ],
+    [ "restitutionThreshold", "structb2_fixture_def.html#ad56b10047e9c1b3bb317e7e5249f030c", null ],
     [ "shape", "structb2_fixture_def.html#a1e41753d89abf3443e7897e2498a3240", null ],
-    [ "userData", "structb2_fixture_def.html#a4f77ef2b2585a40899b61faf53db1093", null ]
+    [ "userData", "structb2_fixture_def.html#a480da3de55f826e8df9e7d2c0f7e911f", null ]
 ];

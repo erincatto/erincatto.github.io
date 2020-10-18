@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -171,6 +171,16 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_contact.html#a243501bc5c146e9eb1296162d328aef1">ResetRestitution</a> ()</td></tr>
 <tr class="memdesc:a243501bc5c146e9eb1296162d328aef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the restitution to the default value. <br /></td></tr>
 <tr class="separator:a243501bc5c146e9eb1296162d328aef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39c848fdeb22d1de4c1c3561b8579bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_contact.html#ab39c848fdeb22d1de4c1c3561b8579bd">SetRestitutionThreshold</a> (float threshold)</td></tr>
+<tr class="separator:ab39c848fdeb22d1de4c1c3561b8579bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7ae870baa3dc346e0246658a2083e3"><td class="memItemLeft" align="right" valign="top"><a id="a7c7ae870baa3dc346e0246658a2083e3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_contact.html#a7c7ae870baa3dc346e0246658a2083e3">GetRestitutionThreshold</a> () const</td></tr>
+<tr class="memdesc:a7c7ae870baa3dc346e0246658a2083e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the restitution threshold. <br /></td></tr>
+<tr class="separator:a7c7ae870baa3dc346e0246658a2083e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62865984306890f8cb5369b08918c1c"><td class="memItemLeft" align="right" valign="top"><a id="ad62865984306890f8cb5369b08918c1c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_contact.html#ad62865984306890f8cb5369b08918c1c">ResetRestitutionThreshold</a> ()</td></tr>
+<tr class="memdesc:ad62865984306890f8cb5369b08918c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the restitution threshold to the default value. <br /></td></tr>
+<tr class="separator:ad62865984306890f8cb5369b08918c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac58319a0fd072126191bd2bd31b6b3c3"><td class="memItemLeft" align="right" valign="top"><a id="ac58319a0fd072126191bd2bd31b6b3c3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classb2_contact.html#ac58319a0fd072126191bd2bd31b6b3c3">SetTangentSpeed</a> (float speed)</td></tr>
 <tr class="memdesc:ac58319a0fd072126191bd2bd31b6b3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the desired tangent speed for a conveyor belt behavior. In meters per second. <br /></td></tr>
@@ -273,6 +283,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_friction</b></td><
 <tr class="memitem:ace776817722a18427375faf9ae0804e0"><td class="memItemLeft" align="right" valign="top"><a id="ace776817722a18427375faf9ae0804e0"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_restitution</b></td></tr>
 <tr class="separator:ace776817722a18427375faf9ae0804e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa70eb713ae33d676d56eeb3d401caa9"><td class="memItemLeft" align="right" valign="top"><a id="aaa70eb713ae33d676d56eeb3d401caa9"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>m_restitutionThreshold</b></td></tr>
+<tr class="separator:aaa70eb713ae33d676d56eeb3d401caa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01f420dc139cca8f73c0a6946eed6e83"><td class="memItemLeft" align="right" valign="top"><a id="a01f420dc139cca8f73c0a6946eed6e83"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_tangentSpeed</b></td></tr>
 <tr class="separator:a01f420dc139cca8f73c0a6946eed6e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -411,6 +424,33 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>b2Fixture</b></td></
 </table>
 </div><div class="memdoc">
 <p>Override the default restitution mixture. You can call this in <a class="el" href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">b2ContactListener::PreSolve</a>. The value persists until you set or reset. </p>
+
+</div>
+</div>
+<a id="ab39c848fdeb22d1de4c1c3561b8579bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39c848fdeb22d1de4c1c3561b8579bd">&#9670;&nbsp;</a></span>SetRestitutionThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void b2Contact::SetRestitutionThreshold </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Override the default restitution velocity threshold mixture. You can call this in <a class="el" href="classb2_contact_listener.html#a416f85eb45a1099053402b15a19a7de0">b2ContactListener::PreSolve</a>. The value persists until you set or reset. </p>
 
 </div>
 </div>

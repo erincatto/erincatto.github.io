@@ -4,6 +4,7 @@ var hierarchy =
     [ "b2BlockAllocator", "classb2_block_allocator.html", null ],
     [ "b2Body", "classb2_body.html", null ],
     [ "b2BodyDef", "structb2_body_def.html", null ],
+    [ "b2BodyUserData", "structb2_body_user_data.html", null ],
     [ "b2BroadPhase", "classb2_broad_phase.html", null ],
     [ "b2ClipVertex", "structb2_clip_vertex.html", null ],
     [ "b2Color", "structb2_color.html", null ],
@@ -26,6 +27,7 @@ var hierarchy =
     [ "b2Fixture", "classb2_fixture.html", null ],
     [ "b2FixtureDef", "structb2_fixture_def.html", null ],
     [ "b2FixtureProxy", "structb2_fixture_proxy.html", null ],
+    [ "b2FixtureUserData", "structb2_fixture_user_data.html", null ],
     [ "b2GrowableStack< T, N >", "classb2_growable_stack.html", null ],
     [ "b2Jacobian", "structb2_jacobian.html", null ],
     [ "b2Joint", "classb2_joint.html", [
@@ -37,7 +39,6 @@ var hierarchy =
       [ "b2PrismaticJoint", "classb2_prismatic_joint.html", null ],
       [ "b2PulleyJoint", "classb2_pulley_joint.html", null ],
       [ "b2RevoluteJoint", "classb2_revolute_joint.html", null ],
-      [ "b2RopeJoint", "classb2_rope_joint.html", null ],
       [ "b2WeldJoint", "classb2_weld_joint.html", null ],
       [ "b2WheelJoint", "classb2_wheel_joint.html", null ]
     ] ],
@@ -50,11 +51,11 @@ var hierarchy =
       [ "b2PrismaticJointDef", "structb2_prismatic_joint_def.html", null ],
       [ "b2PulleyJointDef", "structb2_pulley_joint_def.html", null ],
       [ "b2RevoluteJointDef", "structb2_revolute_joint_def.html", null ],
-      [ "b2RopeJointDef", "structb2_rope_joint_def.html", null ],
       [ "b2WeldJointDef", "structb2_weld_joint_def.html", null ],
       [ "b2WheelJointDef", "structb2_wheel_joint_def.html", null ]
     ] ],
     [ "b2JointEdge", "structb2_joint_edge.html", null ],
+    [ "b2JointUserData", "structb2_joint_user_data.html", null ],
     [ "b2Manifold", "structb2_manifold.html", null ],
     [ "b2ManifoldPoint", "structb2_manifold_point.html", null ],
     [ "b2MassData", "structb2_mass_data.html", null ],

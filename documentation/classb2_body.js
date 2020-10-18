@@ -35,7 +35,7 @@ var classb2_body =
     [ "GetPosition", "classb2_body.html#a7944dc953ac0cb1e00b32bc61b50e70d", null ],
     [ "GetTransform", "classb2_body.html#afb316448e6e555ceb2df23ed216b2f53", null ],
     [ "GetType", "classb2_body.html#a9c2234b5a5fff91305a65ecd0cf0ee59", null ],
-    [ "GetUserData", "classb2_body.html#a672c782f7184faf3d673b08681dd63e3", null ],
+    [ "GetUserData", "classb2_body.html#a13eeec74f9c874f9dab25463b0c11717", null ],
     [ "GetWorld", "classb2_body.html#a934fd329f6264cd55e58eab34baadb39", null ],
     [ "GetWorld", "classb2_body.html#a5d818ba53f7434cf5f844cca54b0aec8", null ],
     [ "GetWorldCenter", "classb2_body.html#a3e14cfe61c63913ef7b0f719f7145318", null ],

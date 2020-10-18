@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Box2D
-   &#160;<span id="projectnumber">2.4.0</span>
+   &#160;<span id="projectnumber">2.4.1</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -94,8 +94,9 @@ $(document).ready(function(){initNavTree('b2__collision_8h.html',''); initResiza
 <div class="title">b2_collision.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;b2_math.h&quot;</code><br />
-<code>#include &lt;limits.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;limits.h&gt;</code><br />
+<code>#include &quot;b2_api.h&quot;</code><br />
+<code>#include &quot;b2_math.h&quot;</code><br />
 </div>
 <p><a href="b2__collision_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -137,36 +138,36 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a401e2747d276e9fbfd131989e02ff568"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a401e2747d276e9fbfd131989e02ff568">b2GetPointStates</a> (<a class="el" href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663d">b2PointState</a> state1[<a class="el" href="b2__settings_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>], <a class="el" href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663d">b2PointState</a> state2[<a class="el" href="b2__settings_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>], const <a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold1, const <a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold2)</td></tr>
-<tr class="separator:a401e2747d276e9fbfd131989e02ff568"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8a1bf2c6a9453307466f4870c1fa333"><td class="memItemLeft" align="right" valign="top"><a id="ab8a1bf2c6a9453307466f4870c1fa333"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#ab8a1bf2c6a9453307466f4870c1fa333">b2CollideCircles</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
-<tr class="memdesc:ab8a1bf2c6a9453307466f4870c1fa333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between two circles. <br /></td></tr>
-<tr class="separator:ab8a1bf2c6a9453307466f4870c1fa333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30da13c857596fbefa40b47c3e1e78d0"><td class="memItemLeft" align="right" valign="top"><a id="a30da13c857596fbefa40b47c3e1e78d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a30da13c857596fbefa40b47c3e1e78d0">b2CollidePolygonAndCircle</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *polygonA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
-<tr class="memdesc:a30da13c857596fbefa40b47c3e1e78d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between a polygon and a circle. <br /></td></tr>
-<tr class="separator:a30da13c857596fbefa40b47c3e1e78d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f7b9859479384c0e2cceb9e7744afcb"><td class="memItemLeft" align="right" valign="top"><a id="a2f7b9859479384c0e2cceb9e7744afcb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a2f7b9859479384c0e2cceb9e7744afcb">b2CollidePolygons</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *polygonA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *polygonB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
-<tr class="memdesc:a2f7b9859479384c0e2cceb9e7744afcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between two polygons. <br /></td></tr>
-<tr class="separator:a2f7b9859479384c0e2cceb9e7744afcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6f752fdf8c89152e824da12e944733"><td class="memItemLeft" align="right" valign="top"><a id="aee6f752fdf8c89152e824da12e944733"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#aee6f752fdf8c89152e824da12e944733">b2CollideEdgeAndCircle</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_edge_shape.html">b2EdgeShape</a> *polygonA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
-<tr class="memdesc:aee6f752fdf8c89152e824da12e944733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between an edge and a circle. <br /></td></tr>
-<tr class="separator:aee6f752fdf8c89152e824da12e944733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0c5fab412d5ca886b1965666b16d99"><td class="memItemLeft" align="right" valign="top"><a id="a5d0c5fab412d5ca886b1965666b16d99"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a5d0c5fab412d5ca886b1965666b16d99">b2CollideEdgeAndPolygon</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_edge_shape.html">b2EdgeShape</a> *edgeA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
-<tr class="memdesc:a5d0c5fab412d5ca886b1965666b16d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between an edge and a polygon. <br /></td></tr>
-<tr class="separator:a5d0c5fab412d5ca886b1965666b16d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778caf513d8ab482b1743de067a21e79"><td class="memItemLeft" align="right" valign="top"><a id="a778caf513d8ab482b1743de067a21e79"></a>
-int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a778caf513d8ab482b1743de067a21e79">b2ClipSegmentToLine</a> (<a class="el" href="structb2_clip_vertex.html">b2ClipVertex</a> vOut[2], const <a class="el" href="structb2_clip_vertex.html">b2ClipVertex</a> vIn[2], const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;normal, float offset, int32 vertexIndexA)</td></tr>
-<tr class="memdesc:a778caf513d8ab482b1743de067a21e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clipping for contact manifolds. <br /></td></tr>
-<tr class="separator:a778caf513d8ab482b1743de067a21e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7601420d0b42c1ee494e879dd2009a5"><td class="memItemLeft" align="right" valign="top"><a id="ae7601420d0b42c1ee494e879dd2009a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#ae7601420d0b42c1ee494e879dd2009a5">b2TestOverlap</a> (const <a class="el" href="classb2_shape.html">b2Shape</a> *shapeA, int32 indexA, const <a class="el" href="classb2_shape.html">b2Shape</a> *shapeB, int32 indexB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
-<tr class="memdesc:ae7601420d0b42c1ee494e879dd2009a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if two generic shapes overlap. <br /></td></tr>
-<tr class="separator:ae7601420d0b42c1ee494e879dd2009a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04288250049cbfc7d1a860e7c60e55e9"><td class="memItemLeft" align="right" valign="top">B2_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a04288250049cbfc7d1a860e7c60e55e9">b2GetPointStates</a> (<a class="el" href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663d">b2PointState</a> state1[<a class="el" href="b2__common_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>], <a class="el" href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663d">b2PointState</a> state2[<a class="el" href="b2__common_8h.html#aa5f44cc9edf711433dea2b2ec94f3c42">b2_maxManifoldPoints</a>], const <a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold1, const <a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold2)</td></tr>
+<tr class="separator:a04288250049cbfc7d1a860e7c60e55e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07097764ce44f2f56363665e174e6a99"><td class="memItemLeft" align="right" valign="top"><a id="a07097764ce44f2f56363665e174e6a99"></a>
+B2_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a07097764ce44f2f56363665e174e6a99">b2CollideCircles</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
+<tr class="memdesc:a07097764ce44f2f56363665e174e6a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between two circles. <br /></td></tr>
+<tr class="separator:a07097764ce44f2f56363665e174e6a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac0c6b0178c2af3c07a0bc18bdbbcab"><td class="memItemLeft" align="right" valign="top"><a id="a2ac0c6b0178c2af3c07a0bc18bdbbcab"></a>
+B2_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a2ac0c6b0178c2af3c07a0bc18bdbbcab">b2CollidePolygonAndCircle</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *polygonA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
+<tr class="memdesc:a2ac0c6b0178c2af3c07a0bc18bdbbcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between a polygon and a circle. <br /></td></tr>
+<tr class="separator:a2ac0c6b0178c2af3c07a0bc18bdbbcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba296a9e3c99f43e4f27aeeadc3a7a9b"><td class="memItemLeft" align="right" valign="top"><a id="aba296a9e3c99f43e4f27aeeadc3a7a9b"></a>
+B2_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#aba296a9e3c99f43e4f27aeeadc3a7a9b">b2CollidePolygons</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *polygonA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *polygonB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
+<tr class="memdesc:aba296a9e3c99f43e4f27aeeadc3a7a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between two polygons. <br /></td></tr>
+<tr class="separator:aba296a9e3c99f43e4f27aeeadc3a7a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a178f4de7a4c22aafc58f087ca44ba244"><td class="memItemLeft" align="right" valign="top"><a id="a178f4de7a4c22aafc58f087ca44ba244"></a>
+B2_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a178f4de7a4c22aafc58f087ca44ba244">b2CollideEdgeAndCircle</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_edge_shape.html">b2EdgeShape</a> *polygonA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_circle_shape.html">b2CircleShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
+<tr class="memdesc:a178f4de7a4c22aafc58f087ca44ba244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between an edge and a circle. <br /></td></tr>
+<tr class="separator:a178f4de7a4c22aafc58f087ca44ba244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac33feb3d8d7bc13f56c5d729ab29a0"><td class="memItemLeft" align="right" valign="top"><a id="a0ac33feb3d8d7bc13f56c5d729ab29a0"></a>
+B2_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a0ac33feb3d8d7bc13f56c5d729ab29a0">b2CollideEdgeAndPolygon</a> (<a class="el" href="structb2_manifold.html">b2Manifold</a> *manifold, const <a class="el" href="classb2_edge_shape.html">b2EdgeShape</a> *edgeA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="classb2_polygon_shape.html">b2PolygonShape</a> *circleB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
+<tr class="memdesc:a0ac33feb3d8d7bc13f56c5d729ab29a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the collision manifold between an edge and a polygon. <br /></td></tr>
+<tr class="separator:a0ac33feb3d8d7bc13f56c5d729ab29a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3cb294fe9a7fc7468af0890098db22c"><td class="memItemLeft" align="right" valign="top"><a id="ae3cb294fe9a7fc7468af0890098db22c"></a>
+B2_API int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#ae3cb294fe9a7fc7468af0890098db22c">b2ClipSegmentToLine</a> (<a class="el" href="structb2_clip_vertex.html">b2ClipVertex</a> vOut[2], const <a class="el" href="structb2_clip_vertex.html">b2ClipVertex</a> vIn[2], const <a class="el" href="structb2_vec2.html">b2Vec2</a> &amp;normal, float offset, int32 vertexIndexA)</td></tr>
+<tr class="memdesc:ae3cb294fe9a7fc7468af0890098db22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clipping for contact manifolds. <br /></td></tr>
+<tr class="separator:ae3cb294fe9a7fc7468af0890098db22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769992d82855399cf20721cd6b411fe7"><td class="memItemLeft" align="right" valign="top"><a id="a769992d82855399cf20721cd6b411fe7"></a>
+B2_API bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="b2__collision_8h.html#a769992d82855399cf20721cd6b411fe7">b2TestOverlap</a> (const <a class="el" href="classb2_shape.html">b2Shape</a> *shapeA, int32 indexA, const <a class="el" href="classb2_shape.html">b2Shape</a> *shapeB, int32 indexB, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfA, const <a class="el" href="structb2_transform.html">b2Transform</a> &amp;xfB)</td></tr>
+<tr class="memdesc:a769992d82855399cf20721cd6b411fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if two generic shapes overlap. <br /></td></tr>
+<tr class="separator:a769992d82855399cf20721cd6b411fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dea7a8a1115626c450a697f6c6bf97e"><td class="memItemLeft" align="right" valign="top"><a id="a3dea7a8a1115626c450a697f6c6bf97e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2TestOverlap</b> (const <a class="el" href="structb2_a_a_b_b.html">b2AABB</a> &amp;a, const <a class="el" href="structb2_a_a_b_b.html">b2AABB</a> &amp;b)</td></tr>
 <tr class="separator:a3dea7a8a1115626c450a697f6c6bf97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,14 +208,14 @@ const uint8&#160;</td><td class="memItemRight" valign="bottom"><b>b2_nullFeature
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a401e2747d276e9fbfd131989e02ff568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a401e2747d276e9fbfd131989e02ff568">&#9670;&nbsp;</a></span>b2GetPointStates()</h2>
+<a id="a04288250049cbfc7d1a860e7c60e55e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04288250049cbfc7d1a860e7c60e55e9">&#9670;&nbsp;</a></span>b2GetPointStates()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void b2GetPointStates </td>
+          <td class="memname">B2_API void b2GetPointStates </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="b2__collision_8h.html#a0a894e3715ce8c61b7958dd6e083663d">b2PointState</a>&#160;</td>
           <td class="paramname"><em>state1</em>[b2_maxManifoldPoints], </td>
