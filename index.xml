@@ -122,11 +122,11 @@ Here is the triangle:</description>
     </item>
     
     <item>
-      <title>__m128</title>
-      <link>https://box2d.org/posts/2012/08/__m128/</link>
+      <title>m128</title>
+      <link>https://box2d.org/posts/2012/08/m128/</link>
       <pubDate>Fri, 31 Aug 2012 12:28:59 +0000</pubDate>
       
-      <guid>https://box2d.org/posts/2012/08/__m128/</guid>
+      <guid>https://box2d.org/posts/2012/08/m128/</guid>
       <description>The best way to use SSE is to use the __m128 intrinsic directly. Unfortunately Visual Studio displays the values backwards (w,z,y,x). Bleh. Here is a change to autoexp.dat to correct the order.
 First comment out this line:
 __m128=$BUILTIN(M128) And add this line:
