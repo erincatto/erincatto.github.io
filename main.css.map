@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "E:/github/blog",
+	"sourceRoot": "E:/github/box2d_blog",
 	"sources": [
 		"themes/box2d/assets/scss/main.scss",
 		"themes/box2d/assets/scss/_normalize.scss",

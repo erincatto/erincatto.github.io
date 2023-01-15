@@ -5,10 +5,19 @@
     <link>https://box2d.org/posts/</link>
     <description>Recent content in Posts on Box2D</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 21 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://box2d.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Starting Box2D 3.0</title>
+      <link>https://box2d.org/posts/2023/01/starting-box2d-3.0/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://box2d.org/posts/2023/01/starting-box2d-3.0/</guid>
+      <description>Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I&#39;m doing a major update to Box2D I might as well tackle some other big features and make version 3.</description>
+    </item>
     
     <item>
       <title>Ghost Collisions</title>
