@@ -208,7 +208,7 @@ The island uses arrays of pointers because the island does not own the bodies or
 <p>Union-find (UF) is a competitor to DFS for game physics island simulation. This algorithm is also called a <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">Disjoint-set data structure</a>.</p>
 <p>UF focuses on merging sets (islands). Each dynamic body starts alone in its own set. As constraints are added to the world the sets are merged. Within each set a single body is considered the root body and uniquely identifies the set. After all constraints have been added the union-find is complete.</p>
 <p>This video series explains union-find very well: <a href="https://youtube.com/playlist?list=PLDV1Zeh2NRsBI1C-mR6ZhHTyfoEJWlxvq&amp;si=brluQ5CldgIXFMhv">https://youtube.com/playlist?list=PLDV1Zeh2NRsBI1C-mR6ZhHTyfoEJWlxvq&amp;si=brluQ5CldgIXFMhv</a>. If you are not familiar with union-find and/or path compression, please go watch this and come back.</p>
-<p>Like DFS, union-find (with path compression) has linear time complexity for building islands. Union-find can be a drop-in replacement for DFS.</p>
+<p>Like DFS, union-find (with path compression) has linear time complexity for building islands. Union-find can be a drop-in replacement for DFS. However, some additional care must be used to ensure that all touching bodies are woke up.</p>
 <h2 id="the-amdahl-problem">The Amdahl problem</h2>
 <p>DFS and UF are fast but they are not parallel algorithms. So when I began multithreading Box2D I started to get timing results like this:</p>
 <p><img src="/images/dfs_island.png" alt="island gap"></p>
@@ -221,7 +221,8 @@ The island uses arrays of pointers because the island does not own the bodies or
   <iframe src="https://www.youtube.com/embed/A8eCGOqgvH4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>The first challenge I faced was making the algorithm recursive so that it would wake entire islands in one time step. After fumbling with atomics a bit, I got something working. However, I quickly ran into a problem and did a lot of head scratching trying to figure out the problem. Fortunately I still have plenty of hair.</p>
+<p>The first challenge I faced was making the algorithm recursive so that it would wake entire islands in one time step. I needed to add some additional iteration to ensure that all touching bodies are woken up. After fumbling with atomics a bit, I got something working.</p>
+<p>However, I quickly ran into a problem and did a lot of head scratching trying to figure out the problem. Fortunately I still have plenty of hair.</p>
 <p>Parallel union-find uses atomic compare-and-swap (<a href="https://en.wikipedia.org/wiki/Compare-and-swap">CAS</a>) when merging islands. This means the order of constraints in the resulting islands is non-deterministic. The final order depends on which core happens to be faster at completing the CAS. This can change dramatically across time steps and repeated runs of the application.</p>
 <p>This is a serious problem for the solver used in game physics because the constraints are solved one at a time, sequentially. The results from each constraint propagate to the next constraint. This contraint solver algorithm is formally called the <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method">Gauss-Seidel method</a>. The problem is magnified because Box2D uses <em>warm starting</em> for contacts, which gets confused when the contraint order varies each time step. You can read more about Gauss-Seidel and warm starting <a href="http://localhost:1313/files/ErinCatto_IterativeDynamics_GDC2005.pdf">here</a>.</p>
 <p>The constraints can be sorted after union-find and they can be sorted for each island independently. However, I could not find a faster way to do this than by using quicksort which is O(n log n). For large islands this added cost is significant, even when sorting a minimal index array. This video shows the effect of a parallel union-find and the resulting non-deterministic constraint order.</p>
@@ -429,6 +430,16 @@ The island uses arrays of pointers because the island does not own the bodies or
 <p>The current implementation uses DFS to split at most one island per time step. My current heuristic is to split the largest island that has had one or more constraints removed.</p>
 <p>Island splitting isn't free but it is usually easy to hide the cost. I have experimented with putting the island splitting at the end of an island solve task. When there are many islands and multiple cores then this time is almost completely hidden and insignificant, amounting to a few microseconds on a single core.</p>
 <p>If there are a small number of large islands then the cost of splitting can be significant. Nevertheless, island splitting can be done in parallel with other work and this is a significant gain over the traditional serial DFS/UF.</p>
+<h2 id="summary">Summary</h2>
+<p>I covered a lot of material in this post and there are a lot of references and auxilliary knowledge. Simulation islands touch a lot of systems, so it is challenging to fully understand islands without understanding how a physics engine is put together. Hopefully I've provided enough background knowledge so you can understand the scope of island mangement. If not, please let me know!</p>
+<p>These are the main takeaways I have learned or reinforced while working on islands:</p>
+<ul>
+<li>island management can become a bottleneck in multicore simulation</li>
+<li>determinism is important for game physics</li>
+<li>spatial and temporal coherence provide many opportunities for improving performance</li>
+<li>sometimes a fast serial algorithm may be better than a parallel algorithm</li>
+<li>bit arrays are awesome!</li>
+</ul>
 <h2 id="whats-next-1">What's next?</h2>
 <p>At the end of this journey I have many tools to work with islands. This will help me as I explore other aspects of improving Box2D.</p>
 <p>There is more work to do on Box2D and more to write up. I plan to post more in the future on broad-phase improvements and dealing with large islands. Stay tuned!</p>
@@ -440,7 +451,7 @@ The island uses arrays of pointers because the island does not own the bodies or
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>4226 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>4378 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2023-10-07 17:00 -0700</p>
         </div>
