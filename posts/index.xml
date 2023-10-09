@@ -5,10 +5,20 @@
     <link>https://box2d.org/posts/</link>
     <description>Recent content in Posts on Box2D</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://box2d.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Simulation Islands - DRAFT</title>
+      <link>https://box2d.org/posts/2023/10/simulation-islands-draft/</link>
+      <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://box2d.org/posts/2023/10/simulation-islands-draft/</guid>
+      <description>Island management is a fundamental low level feature of physics engines and can have a big impact on solver design and performance. This was one of the first problems I decided to work on for Box2D version 3 (v3).
+Since I began working on v3 I&#39;ve been comparing several algorithms for island management. My goal has been to make island building scale better with multiple CPU cores. Here are the three main approaches I&#39;ve considered:</description>
+    </item>
     
     <item>
       <title>Starting Box2D 3.0</title>
