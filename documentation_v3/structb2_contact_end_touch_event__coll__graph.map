@@ -1,0 +1,5 @@
+<map id="b2ContactEndTouchEvent" name="b2ContactEndTouchEvent">
+<area shape="rect" id="Node000001" title="An end touch event is generated when two shapes stop touching." alt="" coords="5,108,176,133"/>
+<area shape="rect" id="Node000002" href="$structb2_shape_id.html" title="References a shape instance." alt="" coords="49,5,132,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,46,93,107,88,107,88,46"/>
+</map>

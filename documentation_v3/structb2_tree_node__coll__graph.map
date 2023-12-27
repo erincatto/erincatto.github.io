@@ -1,0 +1,7 @@
+<map id="b2TreeNode" name="b2TreeNode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,196,96,221"/>
+<area shape="rect" id="Node000002" href="$types_8h.html#structb2_a_a_b_b" title="Axis&#45;aligned bounding box." alt="" coords="15,108,87,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,149,53,196,48,196,48,149"/>
+<area shape="rect" id="Node000003" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="17,5,84,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="53,46,53,107,48,107,48,46"/>
+</map>

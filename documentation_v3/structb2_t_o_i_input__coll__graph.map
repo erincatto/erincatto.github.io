@@ -1,0 +1,10 @@
+<map id="b2TOIInput" name="b2TOIInput">
+<area shape="rect" id="Node000001" title="Input parameters for b2TimeOfImpact." alt="" coords="84,225,168,251"/>
+<area shape="rect" id="Node000002" href="$structb2_distance_proxy.html" title="A distance proxy is used by the GJK algorithm. It encapsulates any shape." alt="" coords="5,123,127,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,160,104,200,120,224,116,227,100,203,77,163"/>
+<area shape="rect" id="Node000003" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="94,5,161,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,44,102,56,84,92,72,123,67,121,79,90,97,53,105,42"/>
+<area shape="rect" id="Node000004" href="$structb2_sweep.html" title=" " alt="" coords="151,123,226,148"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="145,43,151,53,185,121,181,123,146,56,140,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,162,136,226,131,223,171,160"/>
+</map>

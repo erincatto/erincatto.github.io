@@ -1,0 +1,7 @@
+<map id="b2PrismaticJointDef" name="b2PrismaticJointDef">
+<area shape="rect" id="Node000001" title=" " alt="" coords="23,123,160,148"/>
+<area shape="rect" id="Node000002" href="$structb2_body_id.html" title="Body identitifier." alt="" coords="5,5,81,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,46,51,72,60,97,79,120,75,124,56,100,46,73,42,47"/>
+<area shape="rect" id="Node000003" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="106,5,173,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,46,112,100,100,124,96,121,108,98,128,44"/>
+</map>

@@ -1,0 +1,25 @@
+var group___shape_a_p_i =
+[
+    [ "b2Chain_SetFriction", "group___shape_a_p_i.html#gaf65fdcad7f99bba9eed5923bf95f9ea5", null ],
+    [ "b2Chain_SetRestitution", "group___shape_a_p_i.html#ga4ad7c5179daff18f25356cbfd3df7709", null ],
+    [ "b2CreateCapsuleShape", "group___shape_a_p_i.html#ga818f3bfcb94ec20dde5493b1a8c043bc", null ],
+    [ "b2CreateChain", "group___shape_a_p_i.html#gad94e527220dbcbfc7c9249fdc23928f8", null ],
+    [ "b2CreateCircleShape", "group___shape_a_p_i.html#ga42fda37085eeb19bbdf532f06ef3421c", null ],
+    [ "b2CreatePolygonShape", "group___shape_a_p_i.html#gaad57080193c9c0790857e9d12e56c5ba", null ],
+    [ "b2CreateSegmentShape", "group___shape_a_p_i.html#gad955ba85f9506fe24fc24c8b8a3aba32", null ],
+    [ "b2DestroyChain", "group___shape_a_p_i.html#gaaad17fcb467fa8461dc0d1c957abca08", null ],
+    [ "b2DestroyShape", "group___shape_a_p_i.html#ga6662fdaad229f3e4fa18d90c3f997928", null ],
+    [ "b2Shape_GetBody", "group___shape_a_p_i.html#ga131b35be367466024c3efbcd133d2af2", null ],
+    [ "b2Shape_GetCapsule", "group___shape_a_p_i.html#ga5f61f523395fc5fa17addb614243822f", null ],
+    [ "b2Shape_GetCircle", "group___shape_a_p_i.html#ga0c4d0ad48702beb337b9b95eb7170bdc", null ],
+    [ "b2Shape_GetContactCapacity", "group___shape_a_p_i.html#ga6fbc8491cfc6a654c4eb4155cd9755a1", null ],
+    [ "b2Shape_GetContactData", "group___shape_a_p_i.html#ga9a689bebd328da0a1aed80a72c4f5798", null ],
+    [ "b2Shape_GetPolygon", "group___shape_a_p_i.html#gad153d48ce881f1468a52380660f84b9e", null ],
+    [ "b2Shape_GetSegment", "group___shape_a_p_i.html#ga7325cf3481fdf0b74bdbe93a63bc800e", null ],
+    [ "b2Shape_GetSmoothSegment", "group___shape_a_p_i.html#gaee81a8681ac73030f62a1f636c5a98b1", null ],
+    [ "b2Shape_GetType", "group___shape_a_p_i.html#ga5263a91a5ad90f44a7d8e0550d86d03d", null ],
+    [ "b2Shape_GetUserData", "group___shape_a_p_i.html#gaa49fd43d16e9c6a110fad958ddc901d2", null ],
+    [ "b2Shape_SetFriction", "group___shape_a_p_i.html#ga1b681f76bcda4553ff44601c08241231", null ],
+    [ "b2Shape_SetRestitution", "group___shape_a_p_i.html#gaf6bac738a316063804c5cee4de683aec", null ],
+    [ "b2Shape_TestPoint", "group___shape_a_p_i.html#ga8f0f8edf93bb0ea1dfe0f3d2785a6e2c", null ]
+];

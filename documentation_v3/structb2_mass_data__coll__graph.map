@@ -1,0 +1,5 @@
+<map id="b2MassData" name="b2MassData">
+<area shape="rect" id="Node000001" title="This holds the mass data computed for a shape." alt="" coords="5,93,100,119"/>
+<area shape="rect" id="Node000002" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="19,5,86,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,46,55,93,50,93,50,46"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="b2SensorEvents" name="b2SensorEvents">
+<area shape="rect" id="Node000001" title=" " alt="" coords="133,196,249,221"/>
+<area shape="rect" id="Node000002" href="$structb2_sensor_begin_touch_event.html" title="A begin touch event is generated when a shape starts to overlap a sensor shape." alt="" coords="5,108,183,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,142,180,194,176,198,117,146"/>
+<area shape="rect" id="Node000003" href="$structb2_shape_id.html" title="References a shape instance." alt="" coords="150,5,233,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="168,43,153,57,106,109,102,106,149,53,164,39"/>
+<area shape="rect" id="Node000004" href="$structb2_sensor_end_touch_event.html" title="An end touch event is generated when a shape stops overlapping a sensor shape." alt="" coords="207,108,373,133"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="226,38,244,53,268,80,285,106,281,109,263,84,240,57,222,42"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,146,207,198,203,194,263,142"/>
+</map>

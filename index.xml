@@ -65,7 +65,7 @@ There are other artifacts due to discrete time steps. Joint limits can also suff
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://box2d.org/about/</guid>
-      <description>Hello! I&#39;m Erin Catto. I work at Blizzard Entertainment. I also created Box2D, a 2D physics engine for games.
+      <description>Hello! I&#39;m Erin Catto. I work in the video game industry. I also created Box2D, a 2D physics engine for games.
 I use this blog to give updates on Box2D and write about game physics and programming.
  You can find Box2D on GitHub There is a Discord Server And there is a Subreddit  This site was created using Hugo and a modified version of hello friend ng.</description>
     </item>
