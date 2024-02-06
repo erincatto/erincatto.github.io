@@ -5,10 +5,19 @@
     <link>https://box2d.org/</link>
     <description>Recent content on Box2D</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 08 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://box2d.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Solver2D</title>
+      <link>https://box2d.org/posts/2024/01/solver2d/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://box2d.org/posts/2024/01/solver2d/</guid>
+      <description>I was recently testing the Box2D version 3.0 alpha and found a stability problem. I found a fix for the problem fairly quickly, however the experience left me thinking about the progression of v3.0 and how the engine has been getting more features and more complexity. There are several joint types now. There is island management, multithreading, SIMD, graph coloring, continuous collision, and so on. These are all important features, but there is a problem.</description>
+    </item>
     
     <item>
       <title>Simulation Islands</title>
