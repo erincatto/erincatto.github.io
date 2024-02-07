@@ -284,14 +284,126 @@ applyBias <span style="color:#f92672">=</span> false;
   <iframe src="https://www.youtube.com/embed/sKHf_o_UCzI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 </p>
+<h2 id="update-performance">Update: Performance</h2>
+<p>Solver2D is not optimized, so it is not appropriate to compare absolute performance numbers for all the solvers. However, I think it is meaningful to compare the number of body and constraint traversals each solver must perform for the 4/2 iteration limits. The actual number of traversals in Solver2D may be higher as these numbers account for loops that could be easily merged. For example, constraint preparation can often be merged with warm starting, but I didn't write it that way in order to allow for more code sharing. There are some loops that could probably be merged with some extra effort, but that is not reflected in this table.</p>
+<table>
+<thead>
+<tr>
+<th>Solver</th>
+<th>Body Loops</th>
+<th>Constraint Loops</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PGS</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>PGS NGS</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr>
+<td>PGS NGS Block</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr>
+<td>PGS Soft</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr>
+<td>TGS Sticky</td>
+<td>11</td>
+<td>8</td>
+</tr>
+<tr>
+<td>TGS Soft</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>TGS NGS</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>XPBD</td>
+<td>9</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Constraint loops are much more expensive than body loops. Constraints do more math and they also have more cache misses when a constraint accesses the connected bodies. So if we want to compare solvers at a somewhat equal performance level, I would add more primary iterations to solvers with lower constraint loop counts to bring them up to par. Here's what I suggest:</p>
+<table>
+<thead>
+<tr>
+<th>Solver</th>
+<th>Added Primary Iterations</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PGS</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td>PGS NGS</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>PGS NGS Block</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>PGS Soft</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>TGS Sticky</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>TGS Soft</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>TGS NGS</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>XPBD</td>
+<td>0</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Here's the result for the large pyramid test:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/5-1cGVHTe5k" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
 <h2 id="future">Future</h2>
 <p>There are certainly more solver variations than I've tried so far. Here are some future options to try:</p>
 <ol>
 <li>Shock propagation, from the paper &ldquo;Nonconvex Rigid Bodies with Stacking&rdquo;</li>
 <li>Conjugate residual method, from the paper &ldquo;Non-Smooth Newton Methods for Deformable Multi-Body Dynamics&rdquo;</li>
-<li>A direct solver. I'm not sure what the state of the art is for direct solvers, so this would require more research.
-I've also thought about adding a joint coordinate solver, like Featherstone's algorithm. However, this is not a complete solver because it does not address contact. Still it might be interesting to see it for ragdolls and other samples with joints.</li>
+<li>A direct solver. I'm not sure what the state of the art is for direct solvers, so this would require more research.</li>
+<li>GPU friendly solvers. Jacobi, mass-splitting, etc.</li>
 </ol>
+<p>I've also thought about adding a joint coordinate solver, like Featherstone's algorithm. However, this is not a complete solver because it does not address contact. Still it might be interesting to see it for ragdolls and other samples with joints.</p>
 <p>However, I should probably get back to finishing Box2D version 3.0!</p>
 
             </div>
@@ -301,7 +413,7 @@ I've also thought about adding a joint coordinate solver, like Featherstone's al
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3632 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3893 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2024-02-04 16:00 -0800</p>
         </div>
