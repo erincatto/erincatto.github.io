@@ -1,0 +1,10 @@
+<map id="Joint" name="Joint">
+<area shape="rect" id="Node000002" href="$group__distance__joint.html" title=" " alt="" coords="105,5,209,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,153,55,179"/>
+<area shape="rect" id="Node000003" href="$group__motor__joint.html" title=" " alt="" coords="113,55,200,80"/>
+<area shape="rect" id="Node000004" href="$group__mouse__joint.html" title=" " alt="" coords="111,104,203,129"/>
+<area shape="rect" id="Node000005" href="$group__prismatic__joint.html" title=" " alt="" coords="103,153,211,179"/>
+<area shape="rect" id="Node000006" href="$group__revolute__joint.html" title=" " alt="" coords="105,203,208,228"/>
+<area shape="rect" id="Node000007" href="$group__weld__joint.html" title=" " alt="" coords="115,252,198,277"/>
+<area shape="rect" id="Node000008" href="$group__wheel__joint.html" title="The wheel joint can be used to simulate wheels on vehicles." alt="" coords="111,301,202,327"/>
+</map>

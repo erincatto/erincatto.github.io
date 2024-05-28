@@ -1,7 +1,7 @@
 <map id="b2Transform" name="b2Transform">
 <area shape="rect" id="Node000001" title="A 2D rigid transform." alt="" coords="35,93,128,119"/>
-<area shape="rect" id="Node000002" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="5,5,72,31"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,43,78,92,73,94,49,46"/>
-<area shape="rect" id="Node000003" href="$types_8h.html#structb2_rot" title="2D rotation" alt="" coords="96,5,152,31"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_rot" title="2D rotation This is similar to using a complex number for rotation" alt="" coords="96,5,152,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,46,90,94,85,92,109,43"/>
 </map>

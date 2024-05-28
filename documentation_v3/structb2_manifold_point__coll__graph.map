@@ -1,5 +1,5 @@
 <map id="b2ManifoldPoint" name="b2ManifoldPoint">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,120,148"/>
-<area shape="rect" id="Node000002" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="29,5,96,31"/>
+<area shape="rect" id="Node000001" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="5,123,120,148"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="29,5,96,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,46,65,122,60,122,60,46"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="b2DebugDraw" name="b2DebugDraw">
+<area shape="rect" id="Node000001" title="This struct holds callbacks you can implement to draw a Box2D world." alt="" coords="5,196,108,221"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_a_a_b_b" title="Axis&#45;aligned bounding box." alt="" coords="21,108,93,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,149,59,196,54,196,54,149"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="23,5,90,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,46,59,107,54,107,54,46"/>
+</map>

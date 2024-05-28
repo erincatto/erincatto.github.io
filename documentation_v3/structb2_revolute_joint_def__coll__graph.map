@@ -1,7 +1,7 @@
 <map id="b2RevoluteJointDef" name="b2RevoluteJointDef">
-<area shape="rect" id="Node000001" title=" " alt="" coords="26,108,157,133"/>
-<area shape="rect" id="Node000002" href="$structb2_body_id.html" title="Body identitifier." alt="" coords="5,5,81,31"/>
+<area shape="rect" id="Node000001" title="Revolute joint definition." alt="" coords="26,108,157,133"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb2_body_id" title="Body id references a body instance. This should be treated as an opaque handle." alt="" coords="5,5,81,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,45,60,83,79,106,75,109,56,85,44,47"/>
-<area shape="rect" id="Node000003" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="106,5,173,31"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="106,5,173,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,46,112,85,100,109,95,106,108,83,126,44"/>
 </map>

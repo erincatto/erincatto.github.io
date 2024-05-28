@@ -1,5 +1,5 @@
 <map id="b2SensorEndTouchEvent" name="b2SensorEndTouchEvent">
 <area shape="rect" id="Node000001" title="An end touch event is generated when a shape stops overlapping a sensor shape." alt="" coords="5,108,172,133"/>
-<area shape="rect" id="Node000002" href="$structb2_shape_id.html" title="References a shape instance." alt="" coords="47,5,130,31"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb2_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="47,5,130,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,46,91,107,86,107,86,46"/>
 </map>

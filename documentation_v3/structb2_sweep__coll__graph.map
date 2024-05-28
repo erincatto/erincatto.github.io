@@ -1,5 +1,7 @@
 <map id="b2Sweep" name="b2Sweep">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,80,148"/>
-<area shape="rect" id="Node000002" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="9,5,76,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,46,45,122,40,122,40,46"/>
+<area shape="rect" id="Node000001" title="This describes the motion of a body/shape for TOI computation." alt="" coords="49,123,124,148"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,46,36,72,42,97,52,110,65,120,61,124,48,114,38,100,30,72,31,46"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_rot" title="2D rotation This is similar to using a complex number for rotation" alt="" coords="107,5,163,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,46,108,100,96,124,91,121,103,98,124,44"/>
 </map>

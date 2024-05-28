@@ -1,5 +1,5 @@
 <map id="b2SensorBeginTouchEvent" name="b2SensorBeginTouchEvent">
 <area shape="rect" id="Node000001" title="A begin touch event is generated when a shape starts to overlap a sensor shape." alt="" coords="5,108,183,133"/>
-<area shape="rect" id="Node000002" href="$structb2_shape_id.html" title="References a shape instance." alt="" coords="53,5,135,31"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb2_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="53,5,135,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,46,97,107,91,107,91,46"/>
 </map>

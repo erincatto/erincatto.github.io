@@ -1,0 +1,7 @@
+<map id="b2ContactHitEvent" name="b2ContactHitEvent">
+<area shape="rect" id="Node000001" title="A hit touch event is generated when two shapes collide with a speed faster than the hit speed thresho..." alt="" coords="31,108,161,133"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb2_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="5,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,46,53,65,60,83,80,106,76,109,55,85,48,66,45,47"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="112,5,179,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,46,118,85,105,109,101,106,114,83,132,44"/>
+</map>

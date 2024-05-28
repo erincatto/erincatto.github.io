@@ -1,5 +1,5 @@
 <map id="b2Segment" name="b2Segment">
 <area shape="rect" id="Node000001" title="A line segment with two&#45;sided collision." alt="" coords="5,108,93,133"/>
-<area shape="rect" id="Node000002" href="$types_8h.html#structb2_vec2" title=" " alt="" coords="16,5,83,31"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="16,5,83,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,46,52,107,47,107,47,46"/>
 </map>

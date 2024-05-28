@@ -1,28 +1,7 @@
 var searchData=
 [
-  ['s_0',['s',['../types_8h.html#a481158564d4e66b742b591cd68575dda',1,'b2Rot']]],
-  ['s_20rendering_20capabilities_1',['What are Box2D&apos;s rendering capabilities?',['../md__f_a_q.html#autotoc_md147',1,'']]],
-  ['safe_2',['Is Box2D thread-safe?',['../md__f_a_q.html#autotoc_md143',1,'']]],
-  ['scale_3',['Gravity Scale',['../md_dynamics.html#autotoc_md61',1,'']]],
-  ['scope_4',['Scope',['../index.html#autotoc_md2',1,'']]],
-  ['segment_5',['segment',['../structb2_smooth_segment.html#ac325eeb392c204c197e5dae066088a94',1,'b2SmoothSegment']]],
-  ['sensors_6',['Sensors',['../md_dynamics.html#autotoc_md81',1,'']]],
-  ['separation_7',['separation',['../md_dynamics.html#autotoc_md100',1,'contact separation'],['../structb2_manifold_point.html#a77ae27a5556d1a10971eb29cde82938e',1,'b2ManifoldPoint::separation']]],
-  ['settings_8',['Settings',['../md_common.html#autotoc_md28',1,'']]],
-  ['shape_9',['shape',['../index.html#autotoc_md5',1,'']]],
-  ['shape_20point_20test_10',['Shape Point Test',['../md_collision.html#autotoc_md42',1,'']]],
-  ['shape_20ray_20cast_11',['Shape Ray Cast',['../md_collision.html#autotoc_md43',1,'']]],
-  ['shapecapacity_12',['shapeCapacity',['../types_8h.html#aeb44592ab66b4b14cc9da6d229bb8627',1,'b2WorldDef']]],
-  ['shapes_13',['shapes',['../md_collision.html#autotoc_md40',1,'Chain Shapes'],['../md_collision.html#autotoc_md37',1,'Circle Shapes'],['../md_collision.html#autotoc_md39',1,'Edge Shapes'],['../md__f_a_q.html#autotoc_md149',1,'How do I draw shapes?'],['../md_collision.html#autotoc_md38',1,'Polygon Shapes'],['../md_collision.html#autotoc_md36',1,'Shapes'],['../group___shape_a_p_i.html',1,'Shapes']]],
-  ['simulating_20the_20world_14',['Simulating the World',['../md_hello.html#autotoc_md24',1,'']]],
-  ['simulation_15',['Simulation',['../md_dynamics.html#autotoc_md116',1,'']]],
-  ['sleep_20parameters_16',['Sleep Parameters',['../md_dynamics.html#autotoc_md62',1,'']]],
-  ['solve_20event_17',['solve event',['../md_dynamics.html#autotoc_md111',1,'Post-Solve Event'],['../md_dynamics.html#autotoc_md110',1,'Pre-Solve Event']]],
-  ['solver_18',['solver',['../index.html#autotoc_md14',1,'']]],
-  ['stackallocatorcapacity_19',['stackAllocatorCapacity',['../types_8h.html#a1a7b3dc91ee8c592864eff68df4b275e',1,'b2WorldDef']]],
-  ['state_20information_20',['State Information',['../md_dynamics.html#autotoc_md70',1,'']]],
-  ['stiffness_21',['stiffness',['../structb2_mouse_joint_def.html#ae44cee9f187989e20dfa4346970391ce',1,'b2MouseJointDef::stiffness'],['../structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038',1,'b2WheelJointDef::stiffness']]],
-  ['stuff_22',['But the Testbed draws stuff',['../md__f_a_q.html#autotoc_md148',1,'']]],
-  ['support_23',['What platforms does Box2D support?',['../md__f_a_q.html#autotoc_md130',1,'']]],
-  ['systems_24',['systems',['../md__f_a_q.html#autotoc_md154',1,'Asteroid Type Coordinate Systems'],['../md_loose__ends.html#autotoc_md124',1,'Pixels and Coordinate Systems']]]
+  ['q1_0',['q1',['../group__distance.html#a8fcaa714bea5f99ffcd8c9dcf45bb529',1,'b2Sweep']]],
+  ['q2_1',['q2',['../group__distance.html#a25b52d75f7fde5ca00c679bddce56957',1,'b2Sweep']]],
+  ['queries_2',['Queries',['../md_collision.html#autotoc_md39',1,'Geometric Queries'],['../md_simulation.html#autotoc_md112',1,'Overlap Queries'],['../md_migration.html#autotoc_md165',1,'Queries'],['../md_simulation.html#spatial',1,'Spatial Queries']]],
+  ['query_20filtering_3',['Query Filtering',['../md_simulation.html#autotoc_md113',1,'']]]
 ];
