@@ -40,7 +40,7 @@ window.MathJax = {
   <td id="projectalign">
    <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.0</span>
    </div>
-   <div id="projectbrief">A 2D physics engine</div>
+   <div id="projectbrief">A 2D physics engine for games</div>
   </td>
  </tr>
  </tbody>
@@ -125,6 +125,7 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga74ddb02261648c2bff691a866b5c03e0" id="r_ga74ddb02261648c2bff691a866b5c03e0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74ddb02261648c2bff691a866b5c03e0">b2BodyType</a> { <a class="el" href="#gga74ddb02261648c2bff691a866b5c03e0a0608664fbdfecd9d3f33cfdfb904ffbc">b2_staticBody</a> = 0
 , <a class="el" href="#gga74ddb02261648c2bff691a866b5c03e0a1b79458529f906fbf58858ab9508b985">b2_kinematicBody</a> = 1
 , <a class="el" href="#gga74ddb02261648c2bff691a866b5c03e0a65cfde8d03fe7855d91759842840ef40">b2_dynamicBody</a> = 2
+, <a class="el" href="#gga74ddb02261648c2bff691a866b5c03e0af9034e3abe1f40d5ad9f2e525dbfde3b">b2_bodyTypeCount</a>
  }</td></tr>
 <tr class="memdesc:ga74ddb02261648c2bff691a866b5c03e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The body simulation type.  <a href="#ga74ddb02261648c2bff691a866b5c03e0">More...</a><br /></td></tr>
 <tr class="separator:ga74ddb02261648c2bff691a866b5c03e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -522,6 +523,8 @@ Use this to store application specific body data. </td></tr>
 <tr><td class="fieldname"><a id="gga74ddb02261648c2bff691a866b5c03e0a1b79458529f906fbf58858ab9508b985" name="gga74ddb02261648c2bff691a866b5c03e0a1b79458529f906fbf58858ab9508b985"></a>b2_kinematicBody&#160;</td><td class="fielddoc"><p>zero mass, velocity set by user, moved by solver </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga74ddb02261648c2bff691a866b5c03e0a65cfde8d03fe7855d91759842840ef40" name="gga74ddb02261648c2bff691a866b5c03e0a65cfde8d03fe7855d91759842840ef40"></a>b2_dynamicBody&#160;</td><td class="fielddoc"><p>positive mass, velocity determined by forces, moved by solver </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga74ddb02261648c2bff691a866b5c03e0af9034e3abe1f40d5ad9f2e525dbfde3b" name="gga74ddb02261648c2bff691a866b5c03e0af9034e3abe1f40d5ad9f2e525dbfde3b"></a>b2_bodyTypeCount&#160;</td><td class="fielddoc"><p>number of body types </p>
 </td></tr>
 </table>
 
@@ -1097,7 +1100,7 @@ Use this to store application specific body data. </td></tr>
 <div class="line"><a class="code hl_struct" href="group__id.html#structb2_body_id">b2BodyId</a> myBodyId = <a class="code hl_function" href="#gae508148d6b854188a14075edd90c7777">b2CreateBody</a>(myWorldId, &amp;bodyDef);</div>
 <div class="ttc" id="agroup__body_html_ga8f9e64b598f7e50a646fe29a55189441"><div class="ttname"><a href="#ga8f9e64b598f7e50a646fe29a55189441">b2DefaultBodyDef</a></div><div class="ttdeci">b2BodyDef b2DefaultBodyDef()</div><div class="ttdoc">Use this to initialize your body definition.</div></div>
 <div class="ttc" id="agroup__body_html_gae508148d6b854188a14075edd90c7777"><div class="ttname"><a href="#gae508148d6b854188a14075edd90c7777">b2CreateBody</a></div><div class="ttdeci">b2BodyId b2CreateBody(b2WorldId worldId, const b2BodyDef *def)</div><div class="ttdoc">Create a rigid body given a definition.</div></div>
-<div class="ttc" id="agroup__body_html_structb2_body_def"><div class="ttname"><a href="#structb2_body_def">b2BodyDef</a></div><div class="ttdoc">A body definition holds all the data needed to construct a rigid body.</div><div class="ttdef"><b>Definition</b> types.h:140</div></div>
+<div class="ttc" id="agroup__body_html_structb2_body_def"><div class="ttname"><a href="#structb2_body_def">b2BodyDef</a></div><div class="ttdoc">A body definition holds all the data needed to construct a rigid body.</div><div class="ttdef"><b>Definition</b> types.h:143</div></div>
 <div class="ttc" id="agroup__id_html_structb2_body_id"><div class="ttname"><a href="group__id.html#structb2_body_id">b2BodyId</a></div><div class="ttdoc">Body id references a body instance. This should be treated as an opaque handle.</div><div class="ttdef"><b>Definition</b> id.h:44</div></div>
 </div><!-- fragment --> <dl class="section warning"><dt>Warning</dt><dd>This function is locked during callbacks. </dd></dl>
 

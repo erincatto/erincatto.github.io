@@ -40,7 +40,7 @@ window.MathJax = {
   <td id="projectalign">
    <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.0</span>
    </div>
-   <div id="projectbrief">A 2D physics engine</div>
+   <div id="projectbrief">A 2D physics engine for games</div>
   </td>
  </tr>
  </tbody>
@@ -115,10 +115,10 @@ User Data</h1>
 <div class="line"><a class="code hl_struct" href="group__body.html#structb2_body_def">b2BodyDef</a> bodyDef = <a class="code hl_function" href="group__body.html#ga8f9e64b598f7e50a646fe29a55189441">b2DefaultBodyDef</a>();</div>
 <div class="line">bodyDef.<a class="code hl_variable" href="group__body.html#ae457dd1d39be09945eace6061121be29">userData</a> = entity;</div>
 <div class="line">entity-&gt;bodyId = <a class="code hl_function" href="group__body.html#gae508148d6b854188a14075edd90c7777">b2CreateBody</a>(myWorldId, &amp;bodyDef);</div>
-<div class="ttc" id="agroup__body_html_ae457dd1d39be09945eace6061121be29"><div class="ttname"><a href="group__body.html#ae457dd1d39be09945eace6061121be29">b2BodyDef::userData</a></div><div class="ttdeci">void * userData</div><div class="ttdoc">Use this to store application specific body data.</div><div class="ttdef"><b>Definition</b> types.h:178</div></div>
+<div class="ttc" id="agroup__body_html_ae457dd1d39be09945eace6061121be29"><div class="ttname"><a href="group__body.html#ae457dd1d39be09945eace6061121be29">b2BodyDef::userData</a></div><div class="ttdeci">void * userData</div><div class="ttdoc">Use this to store application specific body data.</div><div class="ttdef"><b>Definition</b> types.h:181</div></div>
 <div class="ttc" id="agroup__body_html_ga8f9e64b598f7e50a646fe29a55189441"><div class="ttname"><a href="group__body.html#ga8f9e64b598f7e50a646fe29a55189441">b2DefaultBodyDef</a></div><div class="ttdeci">b2BodyDef b2DefaultBodyDef()</div><div class="ttdoc">Use this to initialize your body definition.</div></div>
 <div class="ttc" id="agroup__body_html_gae508148d6b854188a14075edd90c7777"><div class="ttname"><a href="group__body.html#gae508148d6b854188a14075edd90c7777">b2CreateBody</a></div><div class="ttdeci">b2BodyId b2CreateBody(b2WorldId worldId, const b2BodyDef *def)</div><div class="ttdoc">Create a rigid body given a definition.</div></div>
-<div class="ttc" id="agroup__body_html_structb2_body_def"><div class="ttname"><a href="group__body.html#structb2_body_def">b2BodyDef</a></div><div class="ttdoc">A body definition holds all the data needed to construct a rigid body.</div><div class="ttdef"><b>Definition</b> types.h:140</div></div>
+<div class="ttc" id="agroup__body_html_structb2_body_def"><div class="ttname"><a href="group__body.html#structb2_body_def">b2BodyDef</a></div><div class="ttdoc">A body definition holds all the data needed to construct a rigid body.</div><div class="ttdef"><b>Definition</b> types.h:143</div></div>
 </div><!-- fragment --><p>Here are some examples of cases where you would need the user data:</p><ul>
 <li>Applying damage to an entity using a collision result.</li>
 <li>Playing a scripted event if the player is inside an axis-aligned box.</li>

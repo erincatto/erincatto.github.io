@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"group__tree.html#gaf127b49f30902ac1abdd4e9fe4b97abf":[10,8,24],
 "group__tree.html#gaf669993b7c57317a9e9c1b339e1eb2d4":[10,8,3],
 "group__tree.html#structb2_dynamic_tree":[10,8,1],
 "group__tree.html#structb2_tree_node":[10,8,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "md_simulation.html#autotoc_md48":[5,0],
 "md_simulation.html#autotoc_md49":[5,1],
 "md_simulation.html#autotoc_md50":[5,1,0],
-"md_simulation.html#autotoc_md51":[5,1,1],
-"md_simulation.html#autotoc_md52":[5,1,2]
+"md_simulation.html#autotoc_md51":[5,1,1]
 };

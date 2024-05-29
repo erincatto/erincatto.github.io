@@ -22,7 +22,8 @@ var group__body =
     [ "b2BodyType", "group__body.html#ga74ddb02261648c2bff691a866b5c03e0", [
       [ "b2_staticBody", "group__body.html#gga74ddb02261648c2bff691a866b5c03e0a0608664fbdfecd9d3f33cfdfb904ffbc", null ],
       [ "b2_kinematicBody", "group__body.html#gga74ddb02261648c2bff691a866b5c03e0a1b79458529f906fbf58858ab9508b985", null ],
-      [ "b2_dynamicBody", "group__body.html#gga74ddb02261648c2bff691a866b5c03e0a65cfde8d03fe7855d91759842840ef40", null ]
+      [ "b2_dynamicBody", "group__body.html#gga74ddb02261648c2bff691a866b5c03e0a65cfde8d03fe7855d91759842840ef40", null ],
+      [ "b2_bodyTypeCount", "group__body.html#gga74ddb02261648c2bff691a866b5c03e0af9034e3abe1f40d5ad9f2e525dbfde3b", null ]
     ] ],
     [ "b2Body_ApplyAngularImpulse", "group__body.html#ga9bb0fad748b06d579fe91c94461ad09c", null ],
     [ "b2Body_ApplyForce", "group__body.html#ga8d8f4349543e42666200fbcf2200eef4", null ],
