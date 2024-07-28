@@ -1,0 +1,7 @@
+<map id="b2Simplex" name="b2Simplex">
+<area shape="rect" id="Node000001" title="Simplex from the GJK algorithm." alt="" coords="25,240,107,265"/>
+<area shape="rect" id="Node000002" href="$group__distance.html#structb2_simplex_vertex" title="Simplex vertex for debugging the GJK algorithm." alt="" coords="5,123,127,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,164,69,239,63,239,63,164"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="33,5,99,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,46,69,122,63,122,63,46"/>
+</map>

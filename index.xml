@@ -187,7 +187,7 @@ float lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f; gluOrtho2
       
       <guid>https://box2d.org/publications/</guid>
       <description>Box2D v3 Benchmarks Benchmarks
-Dynamic Bounding Volume Hierarchies &amp;mdash; GDC 2019 GDC Slides Full Slides
+ Dynamic Bounding Volume Hierarchies &amp;mdash; GDC 2019 GDC Slides Full Slides
  Numerical Methods &amp;mdash; GDC 2015 Slides
  Understanding Constraints &amp;mdash; GDC 2014 Slides Matlab Source YouTube
  Continuous Collision &amp;mdash; GDC 2013 Slides YouTube

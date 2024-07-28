@@ -6,5 +6,6 @@ var searchData=
   ['restitution_3',['restitution',['../group__shape.html#a3bbd19eefb879e36b3850a3a1375f80e',1,'b2ShapeDef::restitution'],['../group__shape.html#a960e3ae4e81ae4a136e7116a7100f3f7',1,'b2ChainDef::restitution']]],
   ['restitutionthreshold_4',['restitutionThreshold',['../group__world.html#aac6834c8e6e29c0aba4ecaff28cf8195',1,'b2WorldDef']]],
   ['revision_5',['revision',['../group__base.html#abd9ba5666207f8055bdc8ad30ea60a85',1,'b2Version']]],
-  ['root_6',['root',['../group__tree.html#ad887c74d97a08e3aab5189052ac82286',1,'b2DynamicTree']]]
+  ['root_6',['root',['../group__tree.html#ad887c74d97a08e3aab5189052ac82286',1,'b2DynamicTree']]],
+  ['rotationalinertia_7',['rotationalInertia',['../group__geometry.html#afef6d5063a10b4cf60ee3b2976544e07',1,'b2MassData']]]
 ];

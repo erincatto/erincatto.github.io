@@ -17,5 +17,6 @@ var searchData=
   ['rigid_20bodies_14',['Rigid Bodies',['../md_simulation.html#autotoc_md53',1,'']]],
   ['rigid_20body_15',['rigid body',['../index.html#autotoc_md5',1,'']]],
   ['root_16',['root',['../group__tree.html#ad887c74d97a08e3aab5189052ac82286',1,'b2DynamicTree']]],
-  ['rotation_17',['Fixed Rotation',['../md_simulation.html#autotoc_md61',1,'']]]
+  ['rotation_17',['Fixed Rotation',['../md_simulation.html#autotoc_md61',1,'']]],
+  ['rotationalinertia_18',['rotationalInertia',['../group__geometry.html#afef6d5063a10b4cf60ee3b2976544e07',1,'b2MassData']]]
 ];

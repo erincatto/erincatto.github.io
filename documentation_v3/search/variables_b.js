@@ -10,10 +10,9 @@ var searchData=
   ['maxmotortorque_7',['maxMotorTorque',['../group__revolute__joint.html#af059ed0a6290622637814d5003739082',1,'b2RevoluteJointDef::maxMotorTorque'],['../group__wheel__joint.html#ac2f848b113782cf594f7fe28aaeb7a97',1,'b2WheelJointDef::maxMotorTorque']]],
   ['maxnormalimpulse_8',['maxNormalImpulse',['../group__collision.html#a0c8d301f4b658f48e6b6d5597f341fa0',1,'b2ManifoldPoint']]],
   ['maxtorque_9',['maxTorque',['../group__motor__joint.html#acfeb8b3e2275da2f8f4365c1848e5385',1,'b2MotorJointDef']]],
-  ['metric_10',['metric',['../group__distance.html#ae247cb46fbf3c40283247cbc428fda35',1,'b2DistanceCache']]],
-  ['minlength_11',['minLength',['../group__distance__joint.html#a91529f9af7d7881ac71cd96737b65cd9',1,'b2DistanceJointDef']]],
-  ['minor_12',['minor',['../group__base.html#a01eb6e0f78d658d53400340ff281ff92',1,'b2Version']]],
-  ['motorspeed_13',['motorSpeed',['../group__distance__joint.html#afa5a0bfb5fb84ea2457bc310b98c9574',1,'b2DistanceJointDef::motorSpeed'],['../group__prismatic__joint.html#a58c40902a70a31bf4f6e17f3d4c7413a',1,'b2PrismaticJointDef::motorSpeed'],['../group__revolute__joint.html#a2ef3e7869ceacdf7212cf813fcc18074',1,'b2RevoluteJointDef::motorSpeed'],['../group__wheel__joint.html#a3afc5f07648a13caedc9ca3f223a556f',1,'b2WheelJointDef::motorSpeed']]],
-  ['movecount_14',['moveCount',['../group__events.html#a18790f5807c96e9dc26243f20c3afea5',1,'b2BodyEvents']]],
-  ['moveevents_15',['moveEvents',['../group__events.html#a9373881d53fab36e3620b703edadc629',1,'b2BodyEvents']]]
+  ['minlength_10',['minLength',['../group__distance__joint.html#a91529f9af7d7881ac71cd96737b65cd9',1,'b2DistanceJointDef']]],
+  ['minor_11',['minor',['../group__base.html#a01eb6e0f78d658d53400340ff281ff92',1,'b2Version']]],
+  ['motorspeed_12',['motorSpeed',['../group__distance__joint.html#afa5a0bfb5fb84ea2457bc310b98c9574',1,'b2DistanceJointDef::motorSpeed'],['../group__prismatic__joint.html#a58c40902a70a31bf4f6e17f3d4c7413a',1,'b2PrismaticJointDef::motorSpeed'],['../group__revolute__joint.html#a2ef3e7869ceacdf7212cf813fcc18074',1,'b2RevoluteJointDef::motorSpeed'],['../group__wheel__joint.html#a3afc5f07648a13caedc9ca3f223a556f',1,'b2WheelJointDef::motorSpeed']]],
+  ['movecount_13',['moveCount',['../group__events.html#a18790f5807c96e9dc26243f20c3afea5',1,'b2BodyEvents']]],
+  ['moveevents_14',['moveEvents',['../group__events.html#a9373881d53fab36e3620b703edadc629',1,'b2BodyEvents']]]
 ];

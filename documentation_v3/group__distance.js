@@ -15,8 +15,7 @@ var group__distance =
     [ "b2DistanceCache", "group__distance.html#structb2_distance_cache", [
       [ "count", "group__distance.html#a1b30b8e0b11dca4a98efd7230d21a76c", null ],
       [ "indexA", "group__distance.html#a8cabd12a0b5c8f35780843c31cb8e6f2", null ],
-      [ "indexB", "group__distance.html#a277c1ec9419599b42165c0717d253115", null ],
-      [ "metric", "group__distance.html#ae247cb46fbf3c40283247cbc428fda35", null ]
+      [ "indexB", "group__distance.html#a277c1ec9419599b42165c0717d253115", null ]
     ] ],
     [ "b2DistanceInput", "group__distance.html#structb2_distance_input", [
       [ "proxyA", "group__distance.html#a84d378f4f0e2f06fbe03d413e9dfbbd9", null ],
@@ -29,7 +28,20 @@ var group__distance =
       [ "distance", "group__distance.html#a32e1ffb8d8ebeec15bc66b0388ad6a1f", null ],
       [ "iterations", "group__distance.html#a713acd7fdb880c0f61c8ae87b25a8443", null ],
       [ "pointA", "group__distance.html#a7e0f1f44a64e596dc7d37570c69eefce", null ],
-      [ "pointB", "group__distance.html#aa85beca17337a506cd4a924d0c6f92cc", null ]
+      [ "pointB", "group__distance.html#aa85beca17337a506cd4a924d0c6f92cc", null ],
+      [ "simplexCount", "group__distance.html#af79faddd7a2d7f718b7f0bb7528e56f2", null ]
+    ] ],
+    [ "b2SimplexVertex", "group__distance.html#structb2_simplex_vertex", [
+      [ "a", "group__distance.html#ad0dd97ab1c1be9cf427534bdbc6f8978", null ],
+      [ "indexA", "group__distance.html#aff9e218120b975097ad716b9dd5e16c0", null ],
+      [ "indexB", "group__distance.html#a32c324a30a5fb8c2c38d191e4e61b602", null ],
+      [ "w", "group__distance.html#a32e374d7bbb6d8a0589a91bd3de3029f", null ],
+      [ "wA", "group__distance.html#a35098ec42d2615c7dc6d645e4a7c0674", null ],
+      [ "wB", "group__distance.html#a73d6b5be3648a293b103d559e9d03534", null ]
+    ] ],
+    [ "b2Simplex", "group__distance.html#structb2_simplex", [
+      [ "count", "group__distance.html#a262d8ed8aa2cdfef6eda46aacf73a854", null ],
+      [ "v3", "group__distance.html#a75bc998a7f38f44c2f699c0f0fc85870", null ]
     ] ],
     [ "b2ShapeCastPairInput", "group__distance.html#structb2_shape_cast_pair_input", [
       [ "maxFraction", "group__distance.html#a55fa0e1d762b4903cc7ec899db794ae7", null ],
@@ -62,6 +74,6 @@ var group__distance =
     [ "b2MakeProxy", "group__distance.html#ga9b0ece6d925b9e4bb858dded84576357", null ],
     [ "b2SegmentDistance", "group__distance.html#ga01ce5ae3a29a436e19ded886074e0968", null ],
     [ "b2ShapeCast", "group__distance.html#ga71e2e7028b67d243282f232537a811da", null ],
-    [ "b2ShapeDistance", "group__distance.html#ga3effee57b8dd9d640b9d62452cfdadbd", null ],
+    [ "b2ShapeDistance", "group__distance.html#gac4bf4a47f7b62d4656485ba68942838d", null ],
     [ "b2TimeOfImpact", "group__distance.html#ga0d7b925f60608f2fb551c0cd755a4f58", null ]
 ];

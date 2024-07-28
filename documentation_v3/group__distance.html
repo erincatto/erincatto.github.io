@@ -126,11 +126,17 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:structb2_distance_cache"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to warm start b2Distance.  <a href="#structb2_distance_cache">More...</a><br /></td></tr>
 <tr class="separator:structb2_distance_cache"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structb2_distance_input" id="r_structb2_distance_input"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_distance_input">b2DistanceInput</a></td></tr>
-<tr class="memdesc:structb2_distance_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for b2Distance.  <a href="#structb2_distance_input">More...</a><br /></td></tr>
+<tr class="memdesc:structb2_distance_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input for b2ShapeDistance.  <a href="#structb2_distance_input">More...</a><br /></td></tr>
 <tr class="separator:structb2_distance_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structb2_distance_output" id="r_structb2_distance_output"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_distance_output">b2DistanceOutput</a></td></tr>
-<tr class="memdesc:structb2_distance_output"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for b2Distance.  <a href="#structb2_distance_output">More...</a><br /></td></tr>
+<tr class="memdesc:structb2_distance_output"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output for b2ShapeDistance.  <a href="#structb2_distance_output">More...</a><br /></td></tr>
 <tr class="separator:structb2_distance_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structb2_simplex_vertex" id="r_structb2_simplex_vertex"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_simplex_vertex">b2SimplexVertex</a></td></tr>
+<tr class="memdesc:structb2_simplex_vertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplex vertex for debugging the GJK algorithm.  <a href="#structb2_simplex_vertex">More...</a><br /></td></tr>
+<tr class="separator:structb2_simplex_vertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structb2_simplex" id="r_structb2_simplex"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_simplex">b2Simplex</a></td></tr>
+<tr class="memdesc:structb2_simplex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplex from the GJK algorithm.  <a href="#structb2_simplex">More...</a><br /></td></tr>
+<tr class="separator:structb2_simplex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structb2_shape_cast_pair_input" id="r_structb2_shape_cast_pair_input"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_shape_cast_pair_input">b2ShapeCastPairInput</a></td></tr>
 <tr class="memdesc:structb2_shape_cast_pair_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input parameters for b2ShapeCast.  <a href="#structb2_shape_cast_pair_input">More...</a><br /></td></tr>
 <tr class="separator:structb2_shape_cast_pair_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +170,9 @@ Functions</h2></td></tr>
 <a class="el" href="#structb2_segment_distance_result">b2SegmentDistanceResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2SegmentDistance</b> (<a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> p1, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> q1, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> p2, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> q2)</td></tr>
 <tr class="memdesc:ga01ce5ae3a29a436e19ded886074e0968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance between two line segments, clamping at the end points if needed. <br /></td></tr>
 <tr class="separator:ga01ce5ae3a29a436e19ded886074e0968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3effee57b8dd9d640b9d62452cfdadbd" id="r_ga3effee57b8dd9d640b9d62452cfdadbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structb2_distance_output">b2DistanceOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3effee57b8dd9d640b9d62452cfdadbd">b2ShapeDistance</a> (<a class="el" href="#structb2_distance_cache">b2DistanceCache</a> *cache, const <a class="el" href="#structb2_distance_input">b2DistanceInput</a> *input)</td></tr>
-<tr class="memdesc:ga3effee57b8dd9d640b9d62452cfdadbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the closest points between two shapes.  <br /></td></tr>
-<tr class="separator:ga3effee57b8dd9d640b9d62452cfdadbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4bf4a47f7b62d4656485ba68942838d" id="r_gac4bf4a47f7b62d4656485ba68942838d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structb2_distance_output">b2DistanceOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4bf4a47f7b62d4656485ba68942838d">b2ShapeDistance</a> (<a class="el" href="#structb2_distance_cache">b2DistanceCache</a> *cache, const <a class="el" href="#structb2_distance_input">b2DistanceInput</a> *input, <a class="el" href="#structb2_simplex">b2Simplex</a> *simplexes, int simplexCapacity)</td></tr>
+<tr class="memdesc:gac4bf4a47f7b62d4656485ba68942838d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the closest points between two shapes represented as point clouds.  <br /></td></tr>
+<tr class="separator:gac4bf4a47f7b62d4656485ba68942838d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga71e2e7028b67d243282f232537a811da" id="r_ga71e2e7028b67d243282f232537a811da"><td class="memItemLeft" align="right" valign="top"><a id="ga71e2e7028b67d243282f232537a811da" name="ga71e2e7028b67d243282f232537a811da"></a>
 <a class="el" href="group__geometry.html#structb2_cast_output">b2CastOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2ShapeCast</b> (const <a class="el" href="#structb2_shape_cast_pair_input">b2ShapeCastPairInput</a> *input)</td></tr>
 <tr class="memdesc:ga71e2e7028b67d243282f232537a811da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a linear shape cast of shape B moving and shape A fixed. Determines the hit point, normal, and translation fraction. <br /></td></tr>
@@ -240,7 +246,7 @@ The barycentric coordinate on the first segment. </td></tr>
 <td class="fieldname">
 fraction2</td>
 <td class="fielddoc">
-The barycentric coordinate on the first segment. </td></tr>
+The barycentric coordinate on the second segment. </td></tr>
 </table>
 
 </div>
@@ -324,12 +330,6 @@ The cached simplex indices on shape A. </td></tr>
 indexB[3]</td>
 <td class="fielddoc">
 The cached simplex indices on shape B. </td></tr>
-<tr><td class="fieldtype">
-<a id="ae247cb46fbf3c40283247cbc428fda35" name="ae247cb46fbf3c40283247cbc428fda35"></a>float</td>
-<td class="fieldname">
-metric</td>
-<td class="fielddoc">
-Length or area. </td></tr>
 </table>
 
 </div>
@@ -345,13 +345,13 @@ Length or area. </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Input for b2Distance. </p>
+<div class="textblock"><p>Input for b2ShapeDistance. </p>
 </div><div class="dynheader">
 Collaboration diagram for b2DistanceInput:</div>
 <div class="dyncontent">
 <div class="center"><img src="structb2_distance_input__coll__graph.png" border="0" usemap="#ab2_distance_input_coll__map" alt="Collaboration graph"/></div>
 <map name="ab2_distance_input_coll__map" id="ab2_distance_input_coll__map">
-<area shape="rect" title="Input for b2Distance." alt="" coords="74,196,189,221"/>
+<area shape="rect" title="Input for b2ShapeDistance." alt="" coords="74,196,189,221"/>
 <area shape="rect" href="group__distance.html#structb2_distance_proxy" title="A distance proxy is used by the GJK algorithm. It encapsulates any shape." alt="" coords="5,93,127,119"/>
 <area shape="poly" title=" " alt="" coords="84,130,126,194,121,197,80,133"/>
 <area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="66,5,133,31"/>
@@ -410,13 +410,13 @@ Should the proxy radius be considered? </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Output for b2Distance. </p>
+<div class="textblock"><p>Output for b2ShapeDistance. </p>
 </div><div class="dynheader">
 Collaboration diagram for b2DistanceOutput:</div>
 <div class="dyncontent">
 <div class="center"><img src="structb2_distance_output__coll__graph.png" border="0" usemap="#ab2_distance_output_coll__map" alt="Collaboration graph"/></div>
 <map name="ab2_distance_output_coll__map" id="ab2_distance_output_coll__map">
-<area shape="rect" title="Output for b2Distance." alt="" coords="5,108,132,133"/>
+<area shape="rect" title="Output for b2ShapeDistance." alt="" coords="5,108,132,133"/>
 <area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="35,5,102,31"/>
 <area shape="poly" title=" " alt="" coords="71,46,71,107,66,107,66,46"/>
 </map>
@@ -447,6 +447,130 @@ Closest point on shapeA. </td></tr>
 pointB</td>
 <td class="fielddoc">
 Closest point on shapeB. </td></tr>
+<tr><td class="fieldtype">
+<a id="af79faddd7a2d7f718b7f0bb7528e56f2" name="af79faddd7a2d7f718b7f0bb7528e56f2"></a>int32_t</td>
+<td class="fieldname">
+simplexCount</td>
+<td class="fielddoc">
+The number of simplexes stored in the simplex array. </td></tr>
+</table>
+
+</div>
+</div>
+<a name="structb2_simplex_vertex" id="structb2_simplex_vertex"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structb2_simplex_vertex">&#9670;&#160;</a></span>b2SimplexVertex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct b2SimplexVertex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Simplex vertex for debugging the GJK algorithm. </p>
+</div><div class="dynheader">
+Collaboration diagram for b2SimplexVertex:</div>
+<div class="dyncontent">
+<div class="center"><img src="structb2_simplex_vertex__coll__graph.png" border="0" usemap="#ab2_simplex_vertex_coll__map" alt="Collaboration graph"/></div>
+<map name="ab2_simplex_vertex_coll__map" id="ab2_simplex_vertex_coll__map">
+<area shape="rect" title="Simplex vertex for debugging the GJK algorithm." alt="" coords="5,123,127,148"/>
+<area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="33,5,99,31"/>
+<area shape="poly" title=" " alt="" coords="69,46,69,122,63,122,63,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a id="ad0dd97ab1c1be9cf427534bdbc6f8978" name="ad0dd97ab1c1be9cf427534bdbc6f8978"></a>float</td>
+<td class="fieldname">
+a</td>
+<td class="fielddoc">
+barycentric coordinate for closest point </td></tr>
+<tr><td class="fieldtype">
+<a id="aff9e218120b975097ad716b9dd5e16c0" name="aff9e218120b975097ad716b9dd5e16c0"></a>int32_t</td>
+<td class="fieldname">
+indexA</td>
+<td class="fielddoc">
+wA index </td></tr>
+<tr><td class="fieldtype">
+<a id="a32c324a30a5fb8c2c38d191e4e61b602" name="a32c324a30a5fb8c2c38d191e4e61b602"></a>int32_t</td>
+<td class="fieldname">
+indexB</td>
+<td class="fielddoc">
+wB index </td></tr>
+<tr><td class="fieldtype">
+<a id="a32e374d7bbb6d8a0589a91bd3de3029f" name="a32e374d7bbb6d8a0589a91bd3de3029f"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
+<td class="fieldname">
+w</td>
+<td class="fielddoc">
+wB - wA </td></tr>
+<tr><td class="fieldtype">
+<a id="a35098ec42d2615c7dc6d645e4a7c0674" name="a35098ec42d2615c7dc6d645e4a7c0674"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
+<td class="fieldname">
+wA</td>
+<td class="fielddoc">
+support point in proxyA </td></tr>
+<tr><td class="fieldtype">
+<a id="a73d6b5be3648a293b103d559e9d03534" name="a73d6b5be3648a293b103d559e9d03534"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
+<td class="fieldname">
+wB</td>
+<td class="fielddoc">
+support point in proxyB </td></tr>
+</table>
+
+</div>
+</div>
+<a name="structb2_simplex" id="structb2_simplex"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structb2_simplex">&#9670;&#160;</a></span>b2Simplex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct b2Simplex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Simplex from the GJK algorithm. </p>
+</div><div class="dynheader">
+Collaboration diagram for b2Simplex:</div>
+<div class="dyncontent">
+<div class="center"><img src="structb2_simplex__coll__graph.png" border="0" usemap="#ab2_simplex_coll__map" alt="Collaboration graph"/></div>
+<map name="ab2_simplex_coll__map" id="ab2_simplex_coll__map">
+<area shape="rect" title="Simplex from the GJK algorithm." alt="" coords="25,240,107,265"/>
+<area shape="rect" href="group__distance.html#structb2_simplex_vertex" title="Simplex vertex for debugging the GJK algorithm." alt="" coords="5,123,127,148"/>
+<area shape="poly" title=" " alt="" coords="69,164,69,239,63,239,63,164"/>
+<area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="33,5,99,31"/>
+<area shape="poly" title=" " alt="" coords="69,46,69,122,63,122,63,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a id="a262d8ed8aa2cdfef6eda46aacf73a854" name="a262d8ed8aa2cdfef6eda46aacf73a854"></a>int32_t</td>
+<td class="fieldname">
+count</td>
+<td class="fielddoc">
+number of valid vertices </td></tr>
+<tr><td class="fieldtype">
+<a id="a9cee1fb39bf0029ac9837365e2e28ea2" name="a9cee1fb39bf0029ac9837365e2e28ea2"></a><a class="el" href="#structb2_simplex_vertex">b2SimplexVertex</a></td>
+<td class="fieldname">
+v1</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a1a75feda9eba7777cffe5209900e86c6" name="a1a75feda9eba7777cffe5209900e86c6"></a><a class="el" href="#structb2_simplex_vertex">b2SimplexVertex</a></td>
+<td class="fieldname">
+v2</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a75bc998a7f38f44c2f699c0f0fc85870" name="a75bc998a7f38f44c2f699c0f0fc85870"></a><a class="el" href="#structb2_simplex_vertex">b2SimplexVertex</a></td>
+<td class="fieldname">
+v3</td>
+<td class="fielddoc">
+vertices </td></tr>
 </table>
 
 </div>
@@ -680,8 +804,8 @@ The time of the collision. </td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga3effee57b8dd9d640b9d62452cfdadbd" name="ga3effee57b8dd9d640b9d62452cfdadbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3effee57b8dd9d640b9d62452cfdadbd">&#9670;&#160;</a></span>b2ShapeDistance()</h2>
+<a id="gac4bf4a47f7b62d4656485ba68942838d" name="gac4bf4a47f7b62d4656485ba68942838d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4bf4a47f7b62d4656485ba68942838d">&#9670;&#160;</a></span>b2ShapeDistance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -694,13 +818,23 @@ The time of the collision. </td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#structb2_distance_input">b2DistanceInput</a> *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#structb2_distance_input">b2DistanceInput</a> *</td>          <td class="paramname"><span class="paramname"><em>input</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#structb2_simplex">b2Simplex</a> *</td>          <td class="paramname"><span class="paramname"><em>simplexes</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>simplexCapacity</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Compute the closest points between two shapes. </p>
-<p>Supports any combination of: <a class="el" href="group__geometry.html#structb2_circle" title="A solid circle.">b2Circle</a>, <a class="el" href="group__geometry.html#structb2_polygon" title="A solid convex polygon.">b2Polygon</a>, b2EdgeShape. The simplex cache is input/output. On the first call set b2SimplexCache.count to zero. </p>
+<p>Compute the closest points between two shapes represented as point clouds. </p>
+<p><a class="el" href="#structb2_distance_cache" title="Used to warm start b2Distance.">b2DistanceCache</a> cache is input/output. On the first call set <a class="el" href="#a1b30b8e0b11dca4a98efd7230d21a76c" title="The number of stored simplex points.">b2DistanceCache.count</a> to zero. The underlying GJK algorithm may be debugged by passing in debug simplexes and capacity. You may pass in NULL and 0 for these. </p>
 
 </div>
 </div>

@@ -224,10 +224,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__distance__joint.html#a573b68cd33c7ce82bd8040f2a3a90b8c",
-"group__motor__joint.html#aa6638c5e1a1bca31b23c41a8939e9445",
-"group__tree.html#gaf127b49f30902ac1abdd4e9fe4b97abf",
-"md_simulation.html#autotoc_md52"
+"group__distance__joint.html#a001acbbd67326ab5e5d5ec6dc64faf78",
+"group__math.html#structb2_vec2",
+"group__tree.html#ga995f73f8b2b0edf02bd613a13952c43b",
+"md_simulation.html#autotoc_md112"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

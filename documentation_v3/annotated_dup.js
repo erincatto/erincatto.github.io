@@ -47,6 +47,8 @@ var annotated_dup =
     [ "b2ShapeCastPairInput", "group__distance.html#structb2_shape_cast_pair_input", "group__distance_structb2_shape_cast_pair_input" ],
     [ "b2ShapeDef", "group__shape.html#structb2_shape_def", "group__shape_structb2_shape_def" ],
     [ "b2ShapeId", "group__id.html#structb2_shape_id", null ],
+    [ "b2Simplex", "group__distance.html#structb2_simplex", "group__distance_structb2_simplex" ],
+    [ "b2SimplexVertex", "group__distance.html#structb2_simplex_vertex", "group__distance_structb2_simplex_vertex" ],
     [ "b2SmoothSegment", "group__geometry.html#structb2_smooth_segment", "group__geometry_structb2_smooth_segment" ],
     [ "b2Sweep", "group__distance.html#structb2_sweep", "group__distance_structb2_sweep" ],
     [ "b2TOIInput", "group__distance.html#structb2_t_o_i_input", "group__distance_structb2_t_o_i_input" ],
