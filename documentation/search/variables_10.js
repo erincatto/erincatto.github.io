@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['s_975',['s',['../structb2_rot.html#a481158564d4e66b742b591cd68575dda',1,'b2Rot']]],
-  ['separations_976',['separations',['../structb2_world_manifold.html#a0bbe5473b313e7cc590ffd80ae4b4616',1,'b2WorldManifold']]],
-  ['shape_977',['shape',['../structb2_fixture_def.html#a1e41753d89abf3443e7897e2498a3240',1,'b2FixtureDef']]],
-  ['stiffness_978',['stiffness',['../structb2_distance_joint_def.html#a858640393f567a2aca1b40cbe534b4e2',1,'b2DistanceJointDef::stiffness()'],['../structb2_mouse_joint_def.html#ae44cee9f187989e20dfa4346970391ce',1,'b2MouseJointDef::stiffness()'],['../structb2_weld_joint_def.html#aeb881c0408c9674b2a1869b491fdc6a0',1,'b2WeldJointDef::stiffness()'],['../structb2_wheel_joint_def.html#a4a93efb807f7ab44d51941748b42f038',1,'b2WheelJointDef::stiffness()']]]
+  ['radius_0',['radius',['../group__geometry.html#a452dda21cc9ad500ee4e02fc47f053cf',1,'b2ShapeCastInput::radius'],['../group__geometry.html#a757d579fa23bd9090a1f5c52c37703ad',1,'b2Circle::radius'],['../group__geometry.html#ab3ce676ad6729815f57cbe4ee8e7a9f4',1,'b2Capsule::radius'],['../group__geometry.html#a8626cdffafaec82e0ec78d1e3626677f',1,'b2Polygon::radius'],['../group__distance.html#ab6c35b6eaf09f84e941f000fd2e83cc2',1,'b2DistanceProxy::radius']]],
+  ['rebuildcapacity_1',['rebuildCapacity',['../group__tree.html#a69fe38e3ccdc1a09e51f5d280419759a',1,'b2DynamicTree']]],
+  ['referenceangle_2',['referenceAngle',['../group__prismatic__joint.html#abdfbcaa344eeebd0c0bf07e1030bc285',1,'b2PrismaticJointDef::referenceAngle'],['../group__revolute__joint.html#a7d70409545eecd92b84b3d55724019e1',1,'b2RevoluteJointDef::referenceAngle'],['../group__weld__joint.html#a88841acce3b4e88fb33997a2f9eedb52',1,'b2WeldJointDef::referenceAngle']]],
+  ['restitution_3',['restitution',['../group__shape.html#a3bbd19eefb879e36b3850a3a1375f80e',1,'b2ShapeDef::restitution'],['../group__shape.html#a960e3ae4e81ae4a136e7116a7100f3f7',1,'b2ChainDef::restitution']]],
+  ['restitutionthreshold_4',['restitutionThreshold',['../group__world.html#aac6834c8e6e29c0aba4ecaff28cf8195',1,'b2WorldDef']]],
+  ['revision_5',['revision',['../group__base.html#abd9ba5666207f8055bdc8ad30ea60a85',1,'b2Version']]],
+  ['root_6',['root',['../group__tree.html#ad887c74d97a08e3aab5189052ac82286',1,'b2DynamicTree']]],
+  ['rotation_7',['rotation',['../group__body.html#a73b6b262aaa294604bd92784d3acd474',1,'b2BodyDef']]],
+  ['rotationalinertia_8',['rotationalInertia',['../group__geometry.html#afef6d5063a10b4cf60ee3b2976544e07',1,'b2MassData']]]
 ];

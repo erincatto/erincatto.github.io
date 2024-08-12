@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['next_384',['next',['../structb2_contact_edge.html#a9af32b3cfadf35a927f4dffcf6338a6d',1,'b2ContactEdge::next()'],['../structb2_joint_edge.html#a3d17286bc697bb620ee151e4cd07438c',1,'b2JointEdge::next()']]],
-  ['normal_385',['normal',['../structb2_world_manifold.html#acf8de61b73d9784d16f7d0e824ce44bf',1,'b2WorldManifold']]],
-  ['normalimpulse_386',['normalImpulse',['../structb2_manifold_point.html#a09176fb626391441d9335af818ce51f2',1,'b2ManifoldPoint']]],
-  ['normalize_387',['Normalize',['../structb2_vec2.html#ae0128c95454ebf5dfe152c5644f06d21',1,'b2Vec2::Normalize()'],['../structb2_sweep.html#ad66a3086bc7656df9cf7454013a2f61b',1,'b2Sweep::Normalize()']]]
+  ['joint_0',['Joint',['../md_migration.html#autotoc_md161',1,'Creating a joint'],['../group__distance__joint.html',1,'Distance Joint'],['../md_simulation.html#autotoc_md104',1,'Distance Joint'],['../group__joint.html',1,'Joint'],['../group__motor__joint.html',1,'Motor Joint'],['../md_simulation.html#autotoc_md110',1,'Motor Joint'],['../group__mouse__joint.html',1,'Mouse Joint'],['../md_simulation.html#autotoc_md107',1,'Mouse Joint'],['../group__prismatic__joint.html',1,'Prismatic Joint'],['../md_simulation.html#autotoc_md106',1,'Prismatic Joint'],['../group__revolute__joint.html',1,'Revolute Joint'],['../md_simulation.html#autotoc_md105',1,'Revolute Joint'],['../group__weld__joint.html',1,'Weld Joint'],['../md_simulation.html#autotoc_md109',1,'Weld Joint'],['../group__wheel__joint.html',1,'Wheel Joint'],['../md_simulation.html#autotoc_md108',1,'Wheel Joint'],['../md_simulation.html#autotoc_md111',1,'Wheel Joint']]],
+  ['joint_20constraint_1',['joint constraint',['../index.html#autotoc_md9',1,'']]],
+  ['joint_20definition_2',['Joint Definition',['../md_simulation.html#autotoc_md101',1,'']]],
+  ['joint_20lifetime_3',['Joint Lifetime',['../md_simulation.html#autotoc_md102',1,'']]],
+  ['joint_20limit_4',['joint limit',['../index.html#autotoc_md10',1,'']]],
+  ['joint_20motor_5',['joint motor',['../index.html#autotoc_md11',1,'']]],
+  ['joint_20spring_6',['joint spring',['../index.html#autotoc_md12',1,'']]],
+  ['jointdampingratio_7',['jointDampingRatio',['../group__world.html#af440736e44f50902fa7eebea3815727e',1,'b2WorldDef']]],
+  ['jointhertz_8',['jointHertz',['../group__world.html#ad90e4c2786b8bf9073f99563e1508f06',1,'b2WorldDef']]],
+  ['joints_9',['Joints',['../md_simulation.html#autotoc_md71',1,'Accessing Shapes and Joints'],['../md_simulation.html#autotoc_md100',1,'Joints'],['../md_simulation.html#autotoc_md103',1,'Using Joints']]]
 ];

@@ -1,0 +1,7 @@
+<map id="b2BodyDef" name="b2BodyDef">
+<area shape="rect" id="Node000001" title="A body definition holds all the data needed to construct a rigid body." alt="" coords="52,108,137,133"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,46,37,65,42,83,53,96,67,105,64,110,50,100,38,85,32,66,31,46"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_rot" title="2D rotation This is similar to using a complex number for rotation" alt="" coords="124,5,180,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,47,125,85,107,109,103,106,120,83,139,44"/>
+</map>

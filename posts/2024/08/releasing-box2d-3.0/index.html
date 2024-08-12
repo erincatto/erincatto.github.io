@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Erin Catto ">
+<meta name="description" content="Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&#39;ve learned a lot. There is more work to do, but the library is ready to be used for game development.
+I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!" />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2024/08/releasing-box2d-3.0/" />
+
+
+    <title>
+        
+            Releasing Box2D 3.0 :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Releasing Box2D 3.0"/>
+<meta name="twitter:description" content="Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&#39;ve learned a lot. There is more work to do, but the library is ready to be used for game development.
+I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!"/>
+
+
+
+
+
+    <meta property="article:published_time" content="2024-08-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Aug 9, 2024</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2024/08/releasing-box2d-3.0/">Releasing Box2D 3.0</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>Over 18 months ago I <a href="https://box2d.org/posts/2023/01/starting-box2d-3.0/">announced</a> that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I've learned a lot. There is more work to do, but the library is ready to be used for game development.</p>
+<p>I'd like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful! I made many changes and decisions based in input from the Box2D community on <a href="https://discord.gg/rNfy3PsH">Discord</a> and <a href="https://github.com/erincatto/box2d">GitHub</a>.</p>
+<p>Let's review my initial goals!</p>
+<h2 id="speculative-collision">Speculative collision</h2>
+<p>Version 3.0 completely overhauls continuous collision and response. It uses a hybrid speculative and time of impact approach.</p>
+<p>This approach has the following benefits:</p>
+<ol>
+<li>a polygon skin is no longer required so there are no gaps between polygons</li>
+<li>naturally supports rounded polygons</li>
+<li>minimal movement pauses (time loss)</li>
+<li>easy to solve in parallel</li>
+<li>supports <a href="https://box2d.org/documentation/md_simulation.html#bullets">bullets</a></li>
+</ol>
+<p>The v3 continuous collision design seems to prevent almost all dynamic versus static tunneling. With bullets there is tunneling prevention for dynamic versus kinematic and dynamic, but it is not as robust.</p>
+<p>I believe this strikes a good balance between performance and robustness. Let me know what you think!</p>
+<h2 id="api-changes">API changes</h2>
+<p>The v3 API is completely new. The entire API consists of enums, structs, and functions. There are no C++ classes, operator overloads, or inheritance. I've made minimal use of macros. All internal data is hidden in the <code>src</code> directory, making the public include headers smaller and easier to read.</p>
+<p>The use of <a href="https://box2d.org/documentation/index.html#autotoc_md20">ids</a> replaces most pointers and should help reduce the chances of double frees and orphaned objects.</p>
+<p>There are optional math operator overloads provided for C++ users.</p>
+<p>I'm satisfied with the overall design, but I'm happy to get feedback.</p>
+<h2 id="moving-to-c-from-c">Moving to C from C++</h2>
+<p>Writing a whole library in C has been quite interesting! It has been challenging in some ways and refreshing in others.</p>
+<p>Pros:</p>
+<ol>
+<li>C fits with how I naturally like to program</li>
+<li>C lets me focus on algorithms and data structures</li>
+<li>C compiles very fast</li>
+</ol>
+<p>Cons:</p>
+<ol>
+<li>MSVC is behind the current C standard, making some things harder than they should be (e.g. multithreading)</li>
+<li>I want a simple type-safe dynamic array with bounds checking. Pretty please?</li>
+</ol>
+<h2 id="why-not-language-x">Why not language X?</h2>
+<p>I think the decision to stick with C was correct. Debugging is easy. The tooling is good. I am very productive.</p>
+<p>I am interested in other languages, but I think C is the right choice for Box2D and arguably game physics engines in general.</p>
+<h2 id="performance">Performance</h2>
+<p>Working on v3 performance was a long road with many <a href="https://github.com/erincatto/solver2d">side quests</a>. The main focus was <a href="https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)">multithreading</a> and <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a>.</p>
+<p>For multithreading I explored many options. Along the way I decided Box2D should support multithreading large piles of bodies, especially after seeing Petri Purho discuss the technology behind <a href="https://www.youtube.com/watch?v=prXuyMCgbTc">Noita</a>. This lead me to explore <a href="https://en.wikipedia.org/wiki/Graph_coloring">graph coloring</a>. I was inspired by the threading design of <a href="https://www.bepuentertainment.com/">bepu</a>.</p>
+<p>I spent a lot of time looking at profilers. I found <a href="https://github.com/wolfpld/tracy">Tracy</a> to be exceptionally useful as well as friendly to C development.</p>
+<p><img src="/images/tracy.png" alt="Tracy"><em>Tracy</em></p>
+<p>I also leaned on <a href="https://github.com/dougbinks/enkiTS">enkiTS</a> for managing threads and the task pool. This is another excellent library that is also friendly to C development.</p>
+<p>A big part of multithreading performance was minimizing single-threaded bottlenecks. This lead to persistent <a href="https://box2d.org/posts/2023/10/simulation-islands/">islands</a>, data-oriented data layout, broad-phase threading, faster collision pair management, reworked continuous collision, and threaded island splitting.</p>
+<p>I implemented AVX2 for the contact solver since that is usually the bottleneck. This relied on graph coloring and gives a very nice speed gain. In a constraint solver it is necessary to gather and scatter body state data and in 2D it conveniently works out that this body state fits in 32 bytes, making this work great with 256-bit AVX vectors.</p>
+<p>I also developed a benchmarking console application I can use to efficiently measure performance. This application emits CSV files that can be compared with the main branch using this <a href="https://box2d.org/files/benchmark_results.html">page</a>. This also shows how well v3 scales with core count and different processors. The bottom line is that v3 scales quite well with cores as long as they share an L2/L3 cache.</p>
+<p>My initial approach to performance was multithreading but then I realized that single-threaded performance is also still important. I'm happy to say that my tests indicate that v3 is more than twice as fast as v2.4. This is mainly due to the data oriented design of v3 and the use of SIMD.</p>
+<h2 id="capsules">Capsules</h2>
+<p>Yes, v3 finally got capsules! As a bonus rounded polygons are also available.</p>
+<h2 id="other-improvements">Other improvements</h2>
+<p>Beyond my initial goals, I added even more stuff to v3.</p>
+<h3 id="soft-step-solver">Soft Step solver</h3>
+<p>Version 3.0 ships with a new solver I'm dubbing <em>Soft Step</em> (formerly called <code>TGS_Soft</code>). This arose from my <a href="http://box2d.org/posts/2024/02/solver2d/">Solver2D</a> experiment. This solver is more stable in almost every way than version 2.4. It handles higher mass ratios, longer chains of bodies, larger stacks, and so on. It is based on <a href="http://box2d.org/files/ErinCatto_SoftConstraints_GDC2011.pdf">soft constraints</a> and sub-stepping. Hence the name. It falls slightly behind the NGS block solver of v2.4 for vertical stacks, but that solver was basically designed for vertical stacking and I don't think it is worth the performance trade-off just for vertical box stacks.</p>
+<h3 id="improved-precision">Improved precision</h3>
+<p>I spent a fair bit of time adjusting the algorithms in Box2D to have improved precision. In my tests this means simulation runs well on worlds up to around 20 kilometers in size. Beyond that I think you would need to recenter the world or use doubles.</p>
+<h3 id="joints">Joints</h3>
+<p>Joints are a mixed bag. I removed the pulley and gear joints because I want to rework them later. On the other hand the remaining joints got new stuff. I added springs to many joints. I also added a motor to the distance joint.</p>
+<h3 id="extensive-testing">Extensive testing</h3>
+<p>I've made the samples application more extensive and faster. I added more unit tests. I've run sanitizers. Version 3.0 uses more complex algorithms than version 2.4 and it needs more testing.</p>
+<h2 id="release-video">Release video</h2>
+<p>I made a video to celebrate the release of v3. I hope you enjoy it.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/dAoM-xjOWtA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="supporting-box2d">Supporting Box2D</h2>
+<p>Box2D has been very fun to work on. However, I have put <em>a lot</em> of work into it. If your company uses Box2D, it should consider sponsoring Box2D. Of course sponsorship is optional in all cases.</p>
+<p>If you'd like to sponsor Box2D development, you can sign up using <a href="https://github.com/sponsors/erincatto">GitHub sponsors</a> or <a href="https://www.patreon.com/Box2D">Patreon</a>.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1062 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2024-08-08 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            
+                <span><a href="https://box2d.org">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
+
+    </body>
+</html>

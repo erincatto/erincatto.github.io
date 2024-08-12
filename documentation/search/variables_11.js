@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['tangentimpulse_979',['tangentImpulse',['../structb2_manifold_point.html#a15021bfbefe740207617baf5ba41a74b',1,'b2ManifoldPoint']]],
-  ['target_980',['target',['../structb2_mouse_joint_def.html#aa1b76f72df9aca8d42bdc3e9922e310a',1,'b2MouseJointDef']]],
-  ['type_981',['type',['../structb2_body_def.html#a89cc3ad1873908042b002147b3861381',1,'b2BodyDef::type()'],['../structb2_joint_def.html#a470f2879b24adb05facbd49f338856fb',1,'b2JointDef::type()']]],
-  ['typea_982',['typeA',['../structb2_contact_feature.html#a3361b651f0a88fb60ec6aba9f4921cc2',1,'b2ContactFeature']]],
-  ['typeb_983',['typeB',['../structb2_contact_feature.html#abb74afd6ee5b60834a3f8e2616182bdf',1,'b2ContactFeature']]]
+  ['segment_0',['segment',['../group__geometry.html#ac325eeb392c204c197e5dae066088a94',1,'b2SmoothSegment']]],
+  ['sensorshapeid_1',['sensorShapeId',['../group__events.html#a2013a6dbbec40599861a7ae9fc990c66',1,'b2SensorBeginTouchEvent::sensorShapeId'],['../group__events.html#aafdaf0906a73d9f9bfd32f5b3e543137',1,'b2SensorEndTouchEvent::sensorShapeId']]],
+  ['separation_2',['separation',['../group__collision.html#a77ae27a5556d1a10971eb29cde82938e',1,'b2ManifoldPoint']]],
+  ['shapeida_3',['shapeIdA',['../group__events.html#a70c5d8f83f532cfcb024631384a8e543',1,'b2ContactBeginTouchEvent::shapeIdA'],['../group__events.html#a9f500db2317884404aa59c595bfdda64',1,'b2ContactEndTouchEvent::shapeIdA'],['../group__events.html#ae4d65939a5083ed7e1a6a96c043c6c9b',1,'b2ContactHitEvent::shapeIdA']]],
+  ['shapeidb_4',['shapeIdB',['../group__events.html#a98ad1be4cc3ce2f1b50043b191a6c3ee',1,'b2ContactBeginTouchEvent::shapeIdB'],['../group__events.html#a4daaecc94e891b42f01a10a9c10f7bbb',1,'b2ContactEndTouchEvent::shapeIdB'],['../group__events.html#acf7d56fe5579c84448521f1442fafe43',1,'b2ContactHitEvent::shapeIdB']]],
+  ['simplexcount_5',['simplexCount',['../group__distance.html#af79faddd7a2d7f718b7f0bb7528e56f2',1,'b2DistanceOutput']]],
+  ['sleepthreshold_6',['sleepThreshold',['../group__body.html#a078ce783719154d2ca6c2ddae3dd7ef4',1,'b2BodyDef']]],
+  ['state_7',['state',['../group__distance.html#ac163015765f61af9a36a1ad32ce392e5',1,'b2TOIOutput']]],
+  ['sweepa_8',['sweepA',['../group__distance.html#adf63a4b9969aa839c2d520bf6d76148a',1,'b2TOIInput']]],
+  ['sweepb_9',['sweepB',['../group__distance.html#af506b6adc7eca852f08460ec76c7b9a7',1,'b2TOIInput']]]
 ];

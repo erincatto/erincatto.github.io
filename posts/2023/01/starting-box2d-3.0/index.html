@@ -76,7 +76,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation v2.4</a></li><li><a href="https://box2d.org/documentation_v3/">Documentation v3.0</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
     </ul>
 </nav>
 
@@ -118,14 +118,14 @@
                 <p>Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I'm doing a major update to Box2D I might as well tackle some other big features and make version 3.0.</p>
 <p>I think now is a good time to explain my goals for version 3.0. So lets go over the list.</p>
 <h2 id="speculative-collision">Speculative collision</h2>
-<p>Currently Box2D has a robust time of impact solver for continuous collision and response. The response includes substepping, this means:</p>
+<p>Currently Box2D has a robust time of impact solver for continuous collision and response. The response includes sub-stepping, this means:</p>
 <ol>
-<li>objects don't freeze when they collide (e.g. time loss), instead a substep is taken to finish their journey to the end of full time step.</li>
+<li>objects don't freeze when they collide (e.g. time loss), instead a sub-step is taken to finish their journey to the end of full time step.</li>
 <li>chain reactions are accounted for: a fast body hits a slow body which becomes a fast body which hits another body and so on.</li>
 </ol>
-<p>The highest quality simulation happens when all rigid bodies can participate in substepping. This is inherently serial and precludes multithreading. It is also very expensive. Version 2.4 mitigates this cost a by restricting time of impact and substepping for dynamic versus static bodies only. An exception is dynamic bodies with the <code>bullet</code> flag enabled. This is off by default, so performance stays somewhat reasonable. A single bullet can cause the entire simulation to be serial. Not good.</p>
-<p>Speculative collision predicts contact points between fast moving objects before they touch. This allows the main physics step to prevent tunneling. No substeps required! Which is great because this allows for easy multithreading. However, it is not perfect. Collisions can be missed and there can be ghost collisions. Hence the research I've been doing. Look for a future blog post on that.</p>
-<p>Another benefit of speculative collision is that I can elminate the polygon skin/radius on collision shapes. That was necessary to keep shapes separated for the time of impact algorithm. This should no longer be necessary in version 3.0. I never liked this artificial separation of shapes.</p>
+<p>The highest quality simulation happens when all rigid bodies can participate in sub-stepping. This is inherently serial and precludes multithreading. It is also very expensive. Version 2.4 mitigates this cost a by restricting time of impact and sub-stepping for dynamic versus static bodies only. An exception is dynamic bodies with the <code>bullet</code> flag enabled. This is off by default, so performance stays somewhat reasonable. A single bullet can cause the entire simulation to be serial. Not good.</p>
+<p>Speculative collision predicts contact points between fast moving objects before they touch. This allows the main physics step to prevent tunneling. No sub-steps required! Which is great because this allows for easy multithreading. However, it is not perfect. Collisions can be missed and there can be ghost collisions. Hence the research I've been doing. Look for a future blog post on that.</p>
+<p>Another benefit of speculative collision is that I can eliminate the polygon skin/radius on collision shapes. That was necessary to keep shapes separated for the time of impact algorithm. This should no longer be necessary in version 3.0. I never liked this artificial separation of shapes.</p>
 <h2 id="api-changes">API changes</h2>
 <p>The Box2D API currently operates on pointers. You have a <code>b2World</code> pointer, a <code>b2Body</code> pointer, a <code>b2Joint</code> pointer, and so on. Because the user has a pointer, that memory is pinned and reduces my ability to optimize. Also the C++ style API inherently exposes all the internal data in headers. I've always disliked APIs that are slow to compile, so why should I add to the problem?</p>
 <p>My plan is to switch to a C-style function based API with handles. These handles will be small structs and act like IDs. For example:</p>
@@ -149,9 +149,9 @@ b2DestroyWorld(worldId);
 <h2 id="why-not-language-x">Why not language X?</h2>
 <p>A couple reasons:</p>
 <ol>
-<li>I'm already taking on a lot to work on verion 3.0. I still have a full-time job as well!</li>
+<li>I'm already taking on a lot to work on version 3.0. I still have a full-time job as well!</li>
 <li>I'm a slave to tooling. I work on Windows and I place a high value on easy debugging and other tools.</li>
-<li>I want to make Box2D easy to port/wrap/bind to your favorite language! Please give me your feedback on this as verion 3.0 develops.</li>
+<li>I want to make Box2D easy to port/wrap/bind to your favorite language! Please give me your feedback on this as version 3.0 develops.</li>
 </ol>
 <h2 id="performance">Performance</h2>
 <p>I originally developed Box2D in 2006, before multithreading was important. Clearly times have changed and multithreading is now a must.
@@ -164,7 +164,7 @@ This should put Box2D into a good place for pushing on other optimizations. Box2
 <p>Once version 3.0 is ready for release, the new repo will become the main repo and the 2.4 repo will become a legacy repo (with limited/no support).</p>
 <h2 id="beyond-version-30">Beyond version 3.0</h2>
 <p>I plan to continue working on Box2D more regularly. There are lots of interesting problems to tackle. Thanks for your encouragement, support, and feedback.</p>
-<p>If you'd like to sponser Box2D development, you can sign up here: <a href="https://github.com/sponsors/erincatto">https://github.com/sponsors/erincatto</a></p>
+<p>If you'd like to sponsor Box2D development, you can sign up here: <a href="https://github.com/sponsors/erincatto">https://github.com/sponsors/erincatto</a></p>
 
             </div>
         </article>

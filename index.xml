@@ -5,10 +5,20 @@
     <link>https://box2d.org/</link>
     <description>Recent content on Box2D</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 05 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://box2d.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Releasing Box2D 3.0</title>
+      <link>https://box2d.org/posts/2024/08/releasing-box2d-3.0/</link>
+      <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://box2d.org/posts/2024/08/releasing-box2d-3.0/</guid>
+      <description>Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&#39;ve learned a lot. There is more work to do, but the library is ready to be used for game development.
+I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!</description>
+    </item>
     
     <item>
       <title>Solver2D</title>
