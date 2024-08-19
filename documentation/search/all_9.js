@@ -16,7 +16,7 @@ var searchData=
   ['fraction1_13',['fraction1',['../group__distance.html#a08fd62b2f7e10ca7dd03ae9599202f00',1,'b2SegmentDistanceResult']]],
   ['fraction2_14',['fraction2',['../group__distance.html#ab2830b4d651b65aa22fbb93889b80a85',1,'b2SegmentDistanceResult']]],
   ['freelist_15',['freeList',['../group__tree.html#abee4cd3e0327cade8cf20d679343b751',1,'b2DynamicTree']]],
-  ['friction_16',['friction',['../group__shape.html#a602ce17ce0d85dbfb079857e2f95e307',1,'b2ShapeDef::friction'],['../group__shape.html#aa678f3c36b5d5464b2873a51b815a3f0',1,'b2ChainDef::friction']]],
-  ['friction_17',['Friction',['../md_simulation.html#autotoc_md76',1,'']]],
+  ['friction_16',['Friction',['../md_simulation.html#autotoc_md76',1,'']]],
+  ['friction_17',['friction',['../group__shape.html#a602ce17ce0d85dbfb079857e2f95e307',1,'b2ShapeDef::friction'],['../group__shape.html#aa678f3c36b5d5464b2873a51b815a3f0',1,'b2ChainDef::friction']]],
   ['further_20reading_18',['Further Reading',['../md_reading.html',1,'']]]
 ];

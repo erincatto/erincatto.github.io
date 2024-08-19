@@ -1,8 +1,8 @@
 var searchData=
 [
   ['a_0',['a',['../group__distance.html#ad0dd97ab1c1be9cf427534bdbc6f8978',1,'b2SimplexVertex']]],
-  ['a_20body_1',['Creating a body',['../md_migration.html#autotoc_md158',1,'']]],
-  ['a_20body_2',['Using a Body',['../md_simulation.html#autotoc_md65',1,'']]],
+  ['a_20body_1',['Using a Body',['../md_simulation.html#autotoc_md65',1,'']]],
+  ['a_20body_2',['Creating a body',['../md_migration.html#autotoc_md158',1,'']]],
   ['a_20dll_3',['Can I use Box2D in a DLL?',['../md_faq.html#autotoc_md138',1,'']]],
   ['a_20dynamic_20body_4',['Creating a Dynamic Body',['../hello.html#autotoc_md23',1,'']]],
   ['a_20feature_20documented_5',['Why isn&apos;t a feature documented?',['../md_faq.html#autotoc_md130',1,'']]],

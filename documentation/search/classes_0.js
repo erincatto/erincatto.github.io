@@ -15,7 +15,7 @@ var searchData=
   ['b2contactendtouchevent_12',['b2ContactEndTouchEvent',['../group__events.html#structb2_contact_end_touch_event',1,'']]],
   ['b2contactevents_13',['b2ContactEvents',['../group__events.html#structb2_contact_events',1,'']]],
   ['b2contacthitevent_14',['b2ContactHitEvent',['../group__events.html#structb2_contact_hit_event',1,'']]],
-  ['b2debugdraw_15',['b2DebugDraw',['../structb2_debug_draw.html',1,'']]],
+  ['b2debugdraw_15',['b2DebugDraw',['../group__world.html#structb2_debug_draw',1,'']]],
   ['b2distancecache_16',['b2DistanceCache',['../group__distance.html#structb2_distance_cache',1,'']]],
   ['b2distanceinput_17',['b2DistanceInput',['../group__distance.html#structb2_distance_input',1,'']]],
   ['b2distancejointdef_18',['b2DistanceJointDef',['../group__distance__joint.html#structb2_distance_joint_def',1,'']]],

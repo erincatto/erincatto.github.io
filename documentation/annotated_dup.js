@@ -15,7 +15,7 @@ var annotated_dup =
     [ "b2ContactEndTouchEvent", "group__events.html#structb2_contact_end_touch_event", "group__events_structb2_contact_end_touch_event" ],
     [ "b2ContactEvents", "group__events.html#structb2_contact_events", "group__events_structb2_contact_events" ],
     [ "b2ContactHitEvent", "group__events.html#structb2_contact_hit_event", "group__events_structb2_contact_hit_event" ],
-    [ "b2DebugDraw", "structb2_debug_draw.html", "structb2_debug_draw" ],
+    [ "b2DebugDraw", "group__world.html#structb2_debug_draw", "group__world_structb2_debug_draw" ],
     [ "b2DistanceCache", "group__distance.html#structb2_distance_cache", "group__distance_structb2_distance_cache" ],
     [ "b2DistanceInput", "group__distance.html#structb2_distance_input", "group__distance_structb2_distance_input" ],
     [ "b2DistanceJointDef", "group__distance__joint.html#structb2_distance_joint_def", "group__distance__joint_structb2_distance_joint_def" ],
