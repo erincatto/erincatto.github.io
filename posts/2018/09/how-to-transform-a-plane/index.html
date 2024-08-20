@@ -4,15 +4,12 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Erin Catto ">
-<meta name="description" content="Suppose you have a plane equation in local space and you&#39;d like to express that plane equation in world space. The plane in local space is written as:
-\[P := (n, w)\]
-where \(n\) is the plane normal and \(w\) is the plane offset.
+<meta name="author" content="">
+<meta name="description" content="Suppose you have a plane equation in local space and you&rsquo;d like to express that plane equation in world space. The plane in local space is written as:
+$$P := (n, w)$$where \(n\) is the plane normal and \(w\) is the plane offset.
 A point \(x\) is on the plane if
-\[n \cdot x = w\]
-Now define a transform \(A\) as
-\[ A := (R, p) \]
-where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector." />
+$$n \cdot x = w$$Now define a transform \(A\) as
+$$A := (R, p)$$where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector." />
 <meta name="keywords" content="game physics" />
 
 <meta name="theme-color" content="#252627" />
@@ -29,7 +26,7 @@ where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.
 
 
 
-<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
 
 
 
@@ -42,16 +39,14 @@ where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to Transform a Plane"/>
-<meta name="twitter:description" content="Suppose you have a plane equation in local space and you&#39;d like to express that plane equation in world space. The plane in local space is written as:
-\[P := (n, w)\]
-where \(n\) is the plane normal and \(w\) is the plane offset.
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Transform a Plane">
+  <meta name="twitter:description" content="Suppose you have a plane equation in local space and you’d like to express that plane equation in world space. The plane in local space is written as:
+$$P := (n, w)$$where \(n\) is the plane normal and \(w\) is the plane offset.
 A point \(x\) is on the plane if
-\[n \cdot x = w\]
-Now define a transform \(A\) as
-\[ A := (R, p) \]
-where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector."/>
+$$n \cdot x = w$$Now define a transform \(A\) as
+$$A := (R, p)$$where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.">
 
 
 
@@ -129,83 +124,28 @@ where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.
             
 
             <div class="post-content">
-                <p>Suppose you have a plane equation in local space and you'd like to express that plane equation in world space. The plane in local space is written as:</p>
-
-<p><span  class="math">\[P := (n, w)\]</span></p>
-
-<p>where <span  class="math">\(n\)</span> is the plane normal and <span  class="math">\(w\)</span> is the plane offset.</p>
-
-<p>A point <span  class="math">\(x\)</span> is on the plane if</p>
-
-<p><span  class="math">\[n \cdot x = w\]</span></p>
-
-<p>Now define a transform <span  class="math">\(A\)</span> as</p>
-
-<p><span  class="math">\[ A := (R, p) \]</span></p>
-
-<p>where <span  class="math">\(R\)</span> is an orthonormal rotation matrix and <span  class="math">\(p\)</span> is a translation vector.</p>
-
-<p>Suppose we have a transform <span  class="math">\(A\)</span> that transforms points in local space into world space. With our transform <span  class="math">\(A\)</span> we can convert any point <span  class="math">\(x_1\)</span> in local space (space 1) into world space (space 2):</p>
-
-<p><span  class="math">\[x_2 = R x_1 + p\]</span></p>
-
-<p>Also any vector <span  class="math">\(n_1\)</span> in local space can be converted to world space:</p>
-
-<p><span  class="math">\[n_2 = R n_1\]</span></p>
-
-<p>Also suppose we have a plane defined in local space (space 1). Then for any point <span  class="math">\(x_1\)</span> in local space:</p>
-
-<p><span  class="math">\[n_1 \cdot x_1 = w_1 \]</span></p>
-
-<p>The main problem now is to find <span  class="math">\(w_2\)</span>, the plane offset in world space. We can achieve this by substitution. First invert the transform relations above:</p>
-
-<p><span  class="math">\[x_1 = R^T (x_2 - p)\]</span></p>
-
-<p><span  class="math">\[n_1 = R^T n_2\]</span></p>
-
-<p>where <span  class="math">\(R^T\)</span> is the transpose of <span  class="math">\(R\)</span>. Recall that the inverse of an orthonormal matrix is the equal to the transpose.</p>
-
+                <p>Suppose you have a plane equation in local space and you&rsquo;d like to express that plane equation in world space. The plane in local space is written as:</p>
+$$P := (n, w)$$<p>where \(n\) is the plane normal and \(w\) is the plane offset.</p>
+<p>A point \(x\) is on the plane if</p>
+$$n \cdot x = w$$<p>Now define a transform \(A\) as</p>
+$$A := (R, p)$$<p>where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.</p>
+<p>Suppose we have a transform \(A\) that transforms points in local space into world space. With our transform \(A\) we can convert any point \(x_1\) in local space (space 1) into world space (space 2):</p>
+$$x_2 = R x_1 + p$$<p>Also any vector \(n_1\) in local space can be converted to world space:</p>
+$$n_2 = R n_1$$<p>Also suppose we have a plane defined in local space (space 1). Then for any point \(x_1\) in local space:</p>
+$$n_1 \cdot x_1 = w_1$$<p>The main problem now is to find \(w_2\), the plane offset in world space. We can achieve this by substitution. First invert the transform relations above:</p>
+$$x_1 = R^T (x_2 - p)$$$$n_1 = R^T n_2$$<p>where \(R^T\) is the transpose of \(R\). Recall that the inverse of an orthonormal matrix is the equal to the transpose.</p>
 <p>Now substitute these expressions into the local space plane equation:</p>
-
-<p><span  class="math">\[R^T n_2 \cdot (R^T (x_2 - p)) = w_1\]</span></p>
-
-<p>Expand:</p>
-
-<p><span  class="math">\[R^T n_2 \cdot R^T x_2 - R^T n_2 \cdot R^T p = w_1\]</span></p>
-
-<p>The rotations cancel out since they are orthonormal. Also the dot product is equivalent to matrix multiplication by the transpose. For example:</p>
-
-<p><span  class="math">\[R^T n_2 \cdot R^T x_2 = n_2^T R R^T x_2 = n_2^T I x_2 = n_2 \cdot x_2\]</span></p>
-
-<p>Simplify:</p>
-
-<p><span  class="math">\[n_2 \cdot x_2 = w_1 + n_2 \cdot p\]</span></p>
-
-<p>From this we can identify the world space plane offset <span  class="math">\(w_2\)</span>:</p>
-
-<p><span  class="math">\[w_2 = w_1 + n_2 \cdot p\]</span></p>
-
-<p>Done!</p>
-
+$$R^T n_2 \cdot (R^T (x_2 - p)) = w_1$$<p>Expand:</p>
+$$R^T n_2 \cdot R^T x_2 - R^T n_2 \cdot R^T p = w_1$$<p>The rotations cancel out since they are orthonormal. Also the dot product is equivalent to matrix multiplication by the transpose. For example:</p>
+$$R^T n_2 \cdot R^T x_2 = n_2^T R R^T x_2 = n_2^T I x_2 = n_2 \cdot x_2$$<p>Simplify:</p>
+$$n_2 \cdot x_2 = w_1 + n_2 \cdot p$$<p>From this we can identify the world space plane offset \(w_2\):</p>
+$$w_2 = w_1 + n_2 \cdot p$$<p>Done!</p>
 <p>Update:</p>
-
 <p>Of course it is easy to transform a plane if you have it expressed in terms of a normal and position:</p>
-
-<p><span  class="math">\[P := (n,a)\]</span></p>
-
-<p>where <span  class="math">\(a\)</span> is a point on the plane. The trick is then to find <span  class="math">\(a\)</span> given just the normal and offset description.</p>
-
-<p><span  class="math">\[n \cdot x = w \]</span></p>
-
-<p>After looking at this for a minute, it appears that if I use the point:</p>
-
-<p><span  class="math">\[a := wn\]</span></p>
-
-<p>then</p>
-
-<p><span  class="math">\[n \cdot wn = w(n \cdot n) = w\]</span></p>
-
-<p>so it is easy to find a point on the plane given the normal and offset. Then we can just transform <span  class="math">\(n\)</span> and <span  class="math">\(a\)</span>.</p>
+$$P := (n,a)$$<p>where \(a\) is a point on the plane. The trick is then to find \(a\) given just the normal and offset description.</p>
+$$n \cdot x = w$$<p>After looking at this for a minute, it appears that if I use the point:</p>
+$$a := wn$$<p>then</p>
+$$n \cdot wn = w(n \cdot n) = w$$<p>so it is easy to find a point on the plane given the normal and offset. Then we can just transform \(n\) and \(a\).</p>
 
             </div>
         </article>
@@ -217,7 +157,7 @@ where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://box2d.org/tags/math">math</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>430 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>409 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2018-09-04 17:00 -0700</p>
         </div>
@@ -231,7 +171,7 @@ where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.
         <div class="footer__content">
             <span>&copy; 2024</span>
             
-                <span><a href="https://box2d.org">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
@@ -244,7 +184,6 @@ where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.
 
 
 
-<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
-
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
     </body>
 </html>

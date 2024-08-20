@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Erin Catto ">
+<meta name="author" content="">
 <meta name="description" content="I was recently testing the Box2D version 3.0 alpha and found a stability problem. I found a fix for the problem fairly quickly, however the experience left me thinking about the progression of v3.0 and how the engine has been getting more features and more complexity. There are several joint types now. There is island management, multithreading, SIMD, graph coloring, continuous collision, and so on. These are all important features, but there is a problem." />
 <meta name="keywords" content="game physics" />
 
@@ -22,7 +22,7 @@
 
 
 
-<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
 
 
 
@@ -35,9 +35,10 @@
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Solver2D"/>
-<meta name="twitter:description" content="I was recently testing the Box2D version 3.0 alpha and found a stability problem. I found a fix for the problem fairly quickly, however the experience left me thinking about the progression of v3.0 and how the engine has been getting more features and more complexity. There are several joint types now. There is island management, multithreading, SIMD, graph coloring, continuous collision, and so on. These are all important features, but there is a problem."/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Solver2D">
+  <meta name="twitter:description" content="I was recently testing the Box2D version 3.0 alpha and found a stability problem. I found a fix for the problem fairly quickly, however the experience left me thinking about the progression of v3.0 and how the engine has been getting more features and more complexity. There are several joint types now. There is island management, multithreading, SIMD, graph coloring, continuous collision, and so on. These are all important features, but there is a problem.">
 
 
 
@@ -123,15 +124,18 @@
 <p>Once I committed to writing a framework for testing various solvers I began to draw inspiration from the game physics community. I knew I wanted to test and compare various solvers.</p>
 <p>The Physics Engine Evaluation Lab (<a href="https://github.com/Pierre-Terdiman/PEEL_PhysX_Edition">PEEL</a>) by Pierre Terdiman is able run multiple physics engines simultaneously and show the results together in real-time. The image below shows <a href="https://github.com/NVIDIA-Omniverse/PhysX">PhysX</a> and <a href="https://github.com/jrouwe/JoltPhysics">Jolt</a> running the same simulation simultaneously in PEEL. Very cool!</p>
 <p><img src="/images/PEEL.png" alt="PEEL"><em>PEEL running PhysX and Jolt</em></p>
-<p>PEEL is concerned with behavior, stability, performance, and creating fun demos. For Solver2D, I'm mainly concerned with comparing solver behavior and stability. I've left out performance considerations because that creates a lot of the complexity that I had just removed. Performance is certainly important, but that is just another axis of physics engine development. It is easily possible to have a slow and fast version of the exact same solver. On the other hand, I'm onboard with making fun demos!</p>
-<p>I've also been inspired by the work on Position Based Dynamics (PBS) and in particular the application to rigid bodies within Extended Position Based Dynamics (XPBD). Solver2D gave me the opportunity to try out this solver.</p>
+<p>PEEL is concerned with behavior, stability, performance, and creating fun demos. For Solver2D, I&rsquo;m mainly concerned with comparing solver behavior and stability. I&rsquo;ve left out performance considerations because that creates a lot of the complexity that I had just removed. Performance is certainly important, but that is just another axis of physics engine development. It is easily possible to have a slow and fast version of the exact same solver. On the other hand, I&rsquo;m onboard with making fun demos!</p>
+<p>I&rsquo;ve also been inspired by the work on Position Based Dynamics (PBS) and in particular the application to rigid bodies within Extended Position Based Dynamics (XPBD). Solver2D gave me the opportunity to try out this solver.</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/zzy6u1z_l9A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/zzy6u1z_l9A?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="XPBD Rigid Bodies"
+      ></iframe>
+    </div>
 
 <h2 id="many-solvers">Many Solvers</h2>
-<p>So far in Solver2D I have implemented 8 solvers! These are all <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method">Gauss-Seidel</a> based solvers that attempt to solve constraints iteratively. Here's the list of solvers:</p>
+<p>So far in Solver2D I have implemented 8 solvers! These are all <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method">Gauss-Seidel</a> based solvers that attempt to solve constraints iteratively. Here&rsquo;s the list of solvers:</p>
 <ol>
 <li>PGS (Baumgarte)</li>
 <li>PGS_NGS</li>
@@ -142,7 +146,7 @@
 <li>TGS_NGS</li>
 <li>XPBD</li>
 </ol>
-<p>That's a lot of acronyms! I'll describe all the acronyms then I'll describe each solver and what makes it unique.</p>
+<p>That&rsquo;s a lot of acronyms! I&rsquo;ll describe all the acronyms then I&rsquo;ll describe each solver and what makes it unique.</p>
 <h2 id="projected-gauss-seidel-pgs">Projected Gauss-Seidel (PGS)</h2>
 <p>PGS is the classic iterative method for solving constraints in game physics. I describe it in detail in <a href="https://box2d.org/files/ErinCatto_IterativeDynamics_GDC2005.pdf">Iterative Dynamics with Temporal Coherence</a>. I implemented this method in the game <a href="https://en.wikipedia.org/wiki/Tomb_Raider:_Legend">Tomb Raider: Legend</a>. This was in the days of the Playstation 2 when game consoles started to have some reasonable computational power.</p>
 <p>Later I reframed PGS as <a href="https://box2d.org/files/ErinCatto_SequentialImpulses_GDC2006.pdf">Sequential Impulses</a>. I believe this is an easier way to conceptualize and implement a game physics engine. And this lead to the creation of Box2D.</p>
@@ -153,47 +157,47 @@
 <li><strong>iteration count</strong> : solvers generally use a fixed number of iterations. The number is generally determined offline. In game physics there are typically 4 to 8 iterations.</li>
 </ul>
 <p>In code, PGS looks like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> incrementalImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>effectiveMass <span style="color:#f92672">*</span> relativeNormalVelocity;
-<span style="color:#66d9ef">float</span> newAccumulatedImpulse <span style="color:#f92672">=</span> max(<span style="color:#ae81ff">0.0f</span>, accumulatedImpulse <span style="color:#f92672">+</span> incrementalImpulse);
-<span style="color:#66d9ef">float</span> appliedImpulse <span style="color:#f92672">=</span> newAccumulatedImpulse <span style="color:#f92672">-</span> accumulatedImpulse;
-accumulatedImpulse <span style="color:#f92672">=</span> newAccumulatedImpulse;
-</code></pre></div><p>The effective mass depends on the mass properties and the location of the contact point relative to the center of mass of the two bodies. The <code>relativeNormalVelocity</code> is the relative velocity of the contact point on the two bodies projected onto the contact normal. There some logic clamp the accumulated impulse. Notice that the applied impulse will be the change in the accumulated impulse.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> incrementalImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>effectiveMass <span style="color:#f92672">*</span> relativeNormalVelocity;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> newAccumulatedImpulse <span style="color:#f92672">=</span> max(<span style="color:#ae81ff">0.0f</span>, accumulatedImpulse <span style="color:#f92672">+</span> incrementalImpulse);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> appliedImpulse <span style="color:#f92672">=</span> newAccumulatedImpulse <span style="color:#f92672">-</span> accumulatedImpulse;
+</span></span><span style="display:flex;"><span>accumulatedImpulse <span style="color:#f92672">=</span> newAccumulatedImpulse;
+</span></span></code></pre></div><p>The effective mass depends on the mass properties and the location of the contact point relative to the center of mass of the two bodies. The <code>relativeNormalVelocity</code> is the relative velocity of the contact point on the two bodies projected onto the contact normal. There some logic clamp the accumulated impulse. Notice that the applied impulse will be the change in the accumulated impulse.</p>
 <h2 id="temporal-gauss-seidel-tgs">Temporal Gauss-Seidel (TGS)</h2>
 <p>TGS is an approach documented in the paper <a href="https://mmacklin.com/smallsteps.pdf">&ldquo;Small Steps in Physics Simulation&rdquo;</a>. Yet the phrase <em>Temporal Gauss-Seidel</em> does not appear in the paper. Instead it comes from the <a href="https://gameworksdocs.nvidia.com/PhysX/4.0/documentation/PhysXGuide/Manual/RigidBodyDynamics.html">documentation</a> for the PhysX SDK.</p>
-<p>This is probably good because TGS is a misnomer. Gauss-Seidel is numerical method for solving a linear system and Projected Gauss-Seidel is a method for solving a linear system with complementarity constraints. TGS doesn't change this. Instead TGS refers to preferring sub-stepping over iteration.</p>
+<p>This is probably good because TGS is a misnomer. Gauss-Seidel is numerical method for solving a linear system and Projected Gauss-Seidel is a method for solving a linear system with complementarity constraints. TGS doesn&rsquo;t change this. Instead TGS refers to preferring sub-stepping over iteration.</p>
 <p>Additionally, sub-stepping is not the most interesting part of TGS. It has long been known that smaller time steps are more effective than more iterations. This is based on the <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor Series</a>. As the step size gets smaller, the approximation improves and non-linearities fade away.</p>
 <p>On the other hand what <em>is interesting</em> is the idea that we can do sub-stepping without updating the broad-phase or recomputing the contact points. It turns out with a little bit of vector algebra we can update contact points by storing them in local coordinates as this figure shows.</p>
 <p><img src="/images/contact_update.svg" alt="Contact Update"><em>contact updating during sub-stepping</em></p>
 <p>We can track the contact point in both bodies across sub-steps. With that information we can update the separation value and push the bodies apart in response. Maintaining the same contact anchor points across sub-steps is approximate, but it turns out to work well. It would be very expensive to recompute the contact points every sub-step, so contact point updating has made sub-stepping a viable approach. Unfortunately this idea is not mentioned in the small steps paper.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// Compute the current contact separation for a sub-step
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> separation <span style="color:#f92672">=</span> dot(pB <span style="color:#f92672">+</span> rB <span style="color:#f92672">-</span> pA <span style="color:#f92672">-</span> rA, normal) <span style="color:#f92672">+</span> originalSeparation;
-</code></pre></div><h2 id="baumgarte-stabilization">Baumgarte Stabilization</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Compute the current contact separation for a sub-step
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> separation <span style="color:#f92672">=</span> dot(pB <span style="color:#f92672">+</span> rB <span style="color:#f92672">-</span> pA <span style="color:#f92672">-</span> rA, normal) <span style="color:#f92672">+</span> originalSeparation;
+</span></span></code></pre></div><h2 id="baumgarte-stabilization">Baumgarte Stabilization</h2>
 <p>Baumgarte Stabilization comes from a paper that sadly appears to be locked behind a <a href="https://www.sciencedirect.com/science/article/abs/pii/0045782572900187">paywall</a>. Nevertheless the concept is simple: while solving constraints using impulses, boost the impulse a little bit to account for overlap and thus push the shapes apart.</p>
 <p>Baumgarte Stabilization is simple to implement. It brings the current contact separation/overlap into the PGS impulse computation. It just changes one line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> incrementalImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>meff <span style="color:#f92672">*</span> (vn <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.2f</span> <span style="color:#f92672">*</span> contactSeparation <span style="color:#f92672">/</span> timeStep);
-</code></pre></div><p>I've abbreviated the effective mass and relative normal velocity so that everything fits on one line. The value <code>0.2f</code> is an arbitrary factor which is normally between 0 and 1. A value of 1 tries to resolve all overlap in a single time step while a factor of 0 has no effect.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> incrementalImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>meff <span style="color:#f92672">*</span> (vn <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.2f</span> <span style="color:#f92672">*</span> contactSeparation <span style="color:#f92672">/</span> timeStep);
+</span></span></code></pre></div><p>I&rsquo;ve abbreviated the effective mass and relative normal velocity so that everything fits on one line. The value <code>0.2f</code> is an arbitrary factor which is normally between 0 and 1. A value of 1 tries to resolve all overlap in a single time step while a factor of 0 has no effect.</p>
 <p>This is a cheap, yet crude way to deal with overlap. The main complaint is that it is not physically accurate and it can lead to energy creation and jitter if not tuned carefully.</p>
-<p>This is used in the PGS and TGS_Sticky solvers. Even though I'm not a fan of Baumgarte Stabilization, I think it is important to keep around for comparison.</p>
+<p>This is used in the PGS and TGS_Sticky solvers. Even though I&rsquo;m not a fan of Baumgarte Stabilization, I think it is important to keep around for comparison.</p>
 <h2 id="nonlinear-gauss-seidel-ngs">Nonlinear Gauss-Seidel (NGS)</h2>
-<p>NGS emerged in the early days of Box2D as a way of dealing with the energetic response of Baumgarte Stabilization. The main idea is to solve position constraints after the velocity constraints. The position constraint solver looks a lot like the velocity constraint solver, but it uses pseudo velocities that don't interact with the real velocities. This means that the position constraint solver doesn't affect kinetic energy.</p>
+<p>NGS emerged in the early days of Box2D as a way of dealing with the energetic response of Baumgarte Stabilization. The main idea is to solve position constraints after the velocity constraints. The position constraint solver looks a lot like the velocity constraint solver, but it uses pseudo velocities that don&rsquo;t interact with the real velocities. This means that the position constraint solver doesn&rsquo;t affect kinetic energy.</p>
 <p>There can be a small amount of <em>potential energy</em> generation. It is not possible to resolve overlap without something moving, unless you want a physics engine that shrinks things when they start to overlap. Then we have a problem with mass conservation.</p>
 <p>NGS is iterative like PGS, but instead of dealing with linear velocity constraints, it is dealing with non-linear position constraints. Position constraints are non-linear because they deal with rotations (sine/cosine/quaternions).</p>
 <p>NGS deals with position impulses that are not influenced by the time step, which in turn makes NGS have behavior that is time step dependent overall. NGS looks like Baumgarte Stabilization with the relative normal velocity and the time step removed.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> positionImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>effectiveMass <span style="color:#f92672">*</span> (<span style="color:#ae81ff">0.2f</span> <span style="color:#f92672">*</span> min(<span style="color:#ae81ff">0.0f</span>, contactSeparation));
-</code></pre></div><p>It doesn't make sense to accumulate or warm start the position impulses. At equilibrium the position impulse should be zero, so zero is always the best guess for the position impulse. This makes warm starting irrelevant. Accumulation can be problematic because it can lead to contacts pulling back. Instead, I just clamp the separation value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> positionImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>effectiveMass <span style="color:#f92672">*</span> (<span style="color:#ae81ff">0.2f</span> <span style="color:#f92672">*</span> min(<span style="color:#ae81ff">0.0f</span>, contactSeparation));
+</span></span></code></pre></div><p>It doesn&rsquo;t make sense to accumulate or warm start the position impulses. At equilibrium the position impulse should be zero, so zero is always the best guess for the position impulse. This makes warm starting irrelevant. Accumulation can be problematic because it can lead to contacts pulling back. Instead, I just clamp the separation value.</p>
 <p>In PGS the impulses are applied linearly to velocity like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">linearVelocity <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (appliedImpulse <span style="color:#f92672">*</span> normal) <span style="color:#f92672">/</span> mass;
-angularVelocity <span style="color:#f92672">+</span><span style="color:#f92672">=</span> inverseInertiaTensor <span style="color:#f92672">*</span> cross(r, appliedImpulse <span style="color:#f92672">*</span> normal);
-</code></pre></div><p>The value <code>r</code> is the vector from the center of mass to the contact point.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>linearVelocity <span style="color:#f92672">+=</span> (appliedImpulse <span style="color:#f92672">*</span> normal) <span style="color:#f92672">/</span> mass;
+</span></span><span style="display:flex;"><span>angularVelocity <span style="color:#f92672">+=</span> inverseInertiaTensor <span style="color:#f92672">*</span> cross(r, appliedImpulse <span style="color:#f92672">*</span> normal);
+</span></span></code></pre></div><p>The value <code>r</code> is the vector from the center of mass to the contact point.</p>
 <p>For NGS there is a position impulse that is applied to position and rotation:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">position <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (appliedImpulse <span style="color:#f92672">*</span> normal) <span style="color:#f92672">/</span> mass;
-rotation <span style="color:#f92672">=</span> IntegrateRotation(rotation, inverseInertiaTensor <span style="color:#f92672">*</span> cross(r, apppliedImpulse <span style="color:#f92672">*</span> normal));
-</code></pre></div><p>The position update is linear, but the rotation update is nonlinear. We need a special function <code>IntegrateRotation</code> that handles this. In Box2D version 2, I maintained the body angle directly, which looks linear until you see the resulting sine and cosine calls. In Solver2D I'm using a complex number with two components that represent the sine and cosine. The update for this is nonlinear as well because it involves a square root. This is the only thing that makes NGS nonlinear. Otherwise the math is identical to PGS.</p>
-<p>NGS has been around a long time and I don't think it is possible to attribute it to any one person or paper as far as I know.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>position <span style="color:#f92672">+=</span> (appliedImpulse <span style="color:#f92672">*</span> normal) <span style="color:#f92672">/</span> mass;
+</span></span><span style="display:flex;"><span>rotation <span style="color:#f92672">=</span> IntegrateRotation(rotation, inverseInertiaTensor <span style="color:#f92672">*</span> cross(r, apppliedImpulse <span style="color:#f92672">*</span> normal));
+</span></span></code></pre></div><p>The position update is linear, but the rotation update is nonlinear. We need a special function <code>IntegrateRotation</code> that handles this. In Box2D version 2, I maintained the body angle directly, which looks linear until you see the resulting sine and cosine calls. In Solver2D I&rsquo;m using a complex number with two components that represent the sine and cosine. The update for this is nonlinear as well because it involves a square root. This is the only thing that makes NGS nonlinear. Otherwise the math is identical to PGS.</p>
+<p>NGS has been around a long time and I don&rsquo;t think it is possible to attribute it to any one person or paper as far as I know.</p>
 <h2 id="soft-constraints">Soft Constraints</h2>
 <p>Soft constraints have been around a long time, going back at least to <a href="https://www.ode.org/">ODE</a>. I presented soft constraints at the GDC <a href="https://box2d.org/files/ErinCatto_SoftConstraints_GDC2011.pdf">here</a>.</p>
 <p>I view soft constraints as an evolution of Baumgarte Stabilization. They are based on the <a href="https://en.wikipedia.org/wiki/Harmonic_oscillator">harmonic oscillator</a>, also known as the mass-spring-damper system. Like Baumgarte, a soft constraint can be used to push shapes apart and remove overlap. The advantage of soft constraints is they can dampen the response and soft constraints can be tuned intuitively by specifying the natural frequency in Hertz and the non-dimensional damping ratio.</p>
-<p>Typically the Hertz is kept well below the time step. For example, we should keep the Hertz at 30Hz or below for a 60Hz time step. This is due to <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist's Theorem</a>.</p>
+<p>Typically the Hertz is kept well below the time step. For example, we should keep the Hertz at 30Hz or below for a 60Hz time step. This is due to <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist&rsquo;s Theorem</a>.</p>
 <p>Originally I thought of soft constraints as a nice way of simulating springs in the constraint solver. For example, in Tomb Raider, we used a soft weld (fixed) joint for the horizontal poles Lara would swing on. Those poles had a rotational frequency of just 1Hz or so and would flex as Lara would spin around them. However, with the introduction of sub-stepping (TGS), soft constraints have become more relevant.</p>
 <p>With sub-stepping we are using smaller time steps, so we can use higher Hertz values for soft constraints, allowing them to appear more rigid. This is great because we can implement an efficient solver with a similar cost to Baumgarte Stabilization and much cheaper than NGS.</p>
 <p>Recently I discovered that Ross Nordby of the <a href="https://www.bepuentertainment.com/">Bepu physics engine</a> had found a further simplification of the soft constraint parameters that makes them mass independent. Instead of two parameters that are coupled with body mass properties, he determined that you could use three parameters that are independent of the mass properties. Ross was able to express soft constraints with these three parameters that are computed using only the Hertz, damping ratio, and time step:</p>
@@ -204,44 +208,44 @@ rotation <span style="color:#f92672">=</span> IntegrateRotation(rotation, invers
 </ol>
 <p>Bepu also has a sub-stepping solver with contact separation updates and an advanced multithreading design. It is very fast! I recommend to check it out.</p>
 <p>Here are the formulas for soft constraints:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> zeta <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span>; <span style="color:#75715e">// damping ratio
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> hertz <span style="color:#f92672">=</span> <span style="color:#ae81ff">5.0f</span>; <span style="color:#75715e">// cycles per second
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> omega <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0f</span> <span style="color:#f92672">*</span> pi <span style="color:#f92672">*</span> hertz; <span style="color:#75715e">// angular frequency
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> a1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0f</span> <span style="color:#f92672">*</span> zeta <span style="color:#f92672">+</span> omega <span style="color:#f92672">*</span> timeStep;
-<span style="color:#66d9ef">float</span> a2 <span style="color:#f92672">=</span> timeStep <span style="color:#f92672">*</span> omega <span style="color:#f92672">*</span> a1;
-<span style="color:#66d9ef">float</span> a3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">+</span> a2);
-<span style="color:#66d9ef">float</span> biasRate <span style="color:#f92672">=</span> omega <span style="color:#f92672">/</span> a1;
-<span style="color:#66d9ef">float</span> massCoeff <span style="color:#f92672">=</span> a2 <span style="color:#f92672">*</span> a3;
-<span style="color:#66d9ef">float</span> impulseCoeff <span style="color:#f92672">=</span> a3;
-</code></pre></div><p>The bias rate has units of inverse time while the mass and impulse coefficients are non-dimensional.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> zeta <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span>; <span style="color:#75715e">// damping ratio
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> hertz <span style="color:#f92672">=</span> <span style="color:#ae81ff">5.0f</span>; <span style="color:#75715e">// cycles per second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> omega <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0f</span> <span style="color:#f92672">*</span> pi <span style="color:#f92672">*</span> hertz; <span style="color:#75715e">// angular frequency
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> a1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0f</span> <span style="color:#f92672">*</span> zeta <span style="color:#f92672">+</span> omega <span style="color:#f92672">*</span> timeStep;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> a2 <span style="color:#f92672">=</span> timeStep <span style="color:#f92672">*</span> omega <span style="color:#f92672">*</span> a1;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> a3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">+</span> a2);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> biasRate <span style="color:#f92672">=</span> omega <span style="color:#f92672">/</span> a1;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> massCoeff <span style="color:#f92672">=</span> a2 <span style="color:#f92672">*</span> a3;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> impulseCoeff <span style="color:#f92672">=</span> a3;
+</span></span></code></pre></div><p>The bias rate has units of inverse time while the mass and impulse coefficients are non-dimensional.</p>
 <p>The soft constraint is applied by modifying the PGS impulse:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> incrementalImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>massCoeff <span style="color:#f92672">*</span> meff <span style="color:#f92672">*</span> (vn <span style="color:#f92672">+</span> biasRate <span style="color:#f92672">*</span> contactSeparation) <span style="color:#f92672">-</span> impulseCoeff <span style="color:#f92672">*</span> accumulatedImpulse;
-</code></pre></div><p>Notice the presence of the accumulated impulse. The impulse coefficient causes the incremental impulse to be reduced as the total impulse becomes large.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> incrementalImpulse <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>massCoeff <span style="color:#f92672">*</span> meff <span style="color:#f92672">*</span> (vn <span style="color:#f92672">+</span> biasRate <span style="color:#f92672">*</span> contactSeparation) <span style="color:#f92672">-</span> impulseCoeff <span style="color:#f92672">*</span> accumulatedImpulse;
+</span></span></code></pre></div><p>Notice the presence of the accumulated impulse. The impulse coefficient causes the incremental impulse to be reduced as the total impulse becomes large.</p>
 <h2 id="relaxation">Relaxation</h2>
-<p>Relaxation is another concept that is important for my recent solver experiments. When we apply Baumgarte Stabilization or soft constraints we may be adding some undesirable springiness to the constraints. The idea is to relax that extra energy in the velocities and constraint impulses. This doesn't come for free, but it is quite simple to implement. Here is some pseudo code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> applyBias <span style="color:#f92672">=</span> true;
-<span style="color:#75715e">// Solve constraints and apply Baumgarte Stabilzation or the soft constraint spring and damper.
-</span><span style="color:#75715e"></span>SolveConstraints(timeStep, applyBias);
-IntegratePositions(timeStep);
-applyBias <span style="color:#f92672">=</span> false;
-<span style="color:#75715e">// Solve the constraints again, but don&#39;t apply any form of stabilization or softness.
-</span><span style="color:#75715e"></span>SolveConstraints(timeStep, applyBias);
-</code></pre></div><p>With Baumgarte Stabilization or soft constraints, the first call to <code>SolveConstraints</code> will add extra energy to the impulses to push the bodies apart. Then I'm updating the body positions based on those energized velocities. However, in the second call to <code>SolveConstraints</code> I'm disabling the use of Baumgarte Stabilization or soft constraints. This serves to remove the extra energy from the velocities and constraint impulses. Also notice that the positions are not updated from these relaxed velocities. This is intentional.</p>
+<p>Relaxation is another concept that is important for my recent solver experiments. When we apply Baumgarte Stabilization or soft constraints we may be adding some undesirable springiness to the constraints. The idea is to relax that extra energy in the velocities and constraint impulses. This doesn&rsquo;t come for free, but it is quite simple to implement. Here is some pseudo code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> applyBias <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Solve constraints and apply Baumgarte Stabilzation or the soft constraint spring and damper.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">SolveConstraints</span>(timeStep, applyBias);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">IntegratePositions</span>(timeStep);
+</span></span><span style="display:flex;"><span>applyBias <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Solve the constraints again, but don&#39;t apply any form of stabilization or softness.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">SolveConstraints</span>(timeStep, applyBias);
+</span></span></code></pre></div><p>With Baumgarte Stabilization or soft constraints, the first call to <code>SolveConstraints</code> will add extra energy to the impulses to push the bodies apart. Then I&rsquo;m updating the body positions based on those energized velocities. However, in the second call to <code>SolveConstraints</code> I&rsquo;m disabling the use of Baumgarte Stabilization or soft constraints. This serves to remove the extra energy from the velocities and constraint impulses. Also notice that the positions are not updated from these relaxed velocities. This is intentional.</p>
 <p>Relaxation is expensive, but it improves the simulation quality dramatically. However, we should determine empirically how useful this is and that is yet another reason I created Solver2D.</p>
 <h2 id="solver-overview">Solver Overview</h2>
-<p>Now that I have defined all the acronyms and main concepts, let's review the solvers that I have implemented! I will go through these in a somewhat chronological order, based on when they became known to me.</p>
+<p>Now that I have defined all the acronyms and main concepts, let&rsquo;s review the solvers that I have implemented! I will go through these in a somewhat chronological order, based on when they became known to me.</p>
 <h3 id="pgs">PGS</h3>
 <p>The PGS solver is essentially <a href="https://github.com/erincatto/box2d-lite">Box2D-Lite</a>, which I created in 2006. It is the Sequential Impulse version of PGS. It uses warm starting and Baumgarte Stabilization. I consider this the minimum viable rigid body solver.</p>
-<h3 id="pgs-ngs">PGS_NGS</h3>
+<h3 id="pgs_ngs">PGS_NGS</h3>
 <p>This is the PGS solver with a NGS position solver instead of Baumgarte Stabilization. This went into Box2D version 1.0 in 2007, back when Box2D was hosted on SourceForge! NGS was a nice feature in Box2D because it meant that objects that start with overlap do not fly apart, instead they are pushed apart gently.</p>
-<h3 id="pgs-ngs-block">PGS_NGS_Block</h3>
+<h3 id="pgs_ngs_block">PGS_NGS_Block</h3>
 <p>This is an evolution of PGS_NGS that adds a small direct solver for the Linear Complementarity Problem (<a href="https://en.wikipedia.org/wiki/Linear_complementarity_problem">LCP</a>) for contacts. This solves two contact points simultaneously, leading to better stacking stability. This is expensive, but the cost may be worth it in some games. Otherwise this solver is identical to PGS_NGS. This solver was implemented in Box2D version 2.0.</p>
-<h3 id="pgs-soft">PGS_Soft</h3>
+<h3 id="pgs_soft">PGS_Soft</h3>
 <p>This is the PGS solver with soft constraints rather than Baumgarte Stabilization. It also adds relaxation iterations.</p>
-<h3 id="tgs-sticky">TGS_Sticky</h3>
+<h3 id="tgs_sticky">TGS_Sticky</h3>
 <p>This is a TGS solver that uses sub-steps and no iteration. It uses Baumgarte Stabilization and relaxation, but <em>no warm starting</em>. What makes it special is that friction anchors are stored across whole time steps. Baumgarte Stabilization is applied to the friction anchors to pull them together tangentially. Friction anchors are reset if the friction forces exceed the <a href="https://en.wikipedia.org/wiki/Friction">Coulomb friction</a> limit.</p>
 <p>I think this is a very interesting solver because it achieves stable stacking with no warm starting of the impulses. The only warm starting is the friction anchors. This shows how important strong friction is to stable stacking. There are some artifacts and you may see tangential oscillations.</p>
-<h3 id="tgs-soft">TGS_Soft</h3>
+<h3 id="tgs_soft">TGS_Soft</h3>
 <p>This is a TGS solver with the whole kitchen sink:</p>
 <ul>
 <li>sub-stepping instead of iterations</li>
@@ -250,27 +254,27 @@ applyBias <span style="color:#f92672">=</span> false;
 <li>relaxation</li>
 </ul>
 <p>It is basically PGS_Soft converted to sub-stepping. I plan to use this solver in Box2D version 3.</p>
-<h3 id="tgs-ngs">TGS_NGS</h3>
+<h3 id="tgs_ngs">TGS_NGS</h3>
 <p>This is a conversion of PGS_NGS from iteration to pure sub-stepping.</p>
 <h3 id="xpbd">XPBD</h3>
 <p>This is the Extended Position Base Dynamics rigid body solver I referenced above. This solver is much different than the other solvers, yet it was fairly simple to implement in Solver2D. It is somewhat like NGS without the PGS part. Unlike NGS, XPBD has been enhanced to handle friction and compute contact forces from positional corrections.</p>
-<p>Some implementation details I had to infer. For example, I'm skipping the velocity projection if the normal impulse is zero (equation 35 in the associated <a href="https://matthias-research.github.io/pages/publications/PBDBodies.pdf">paper</a>). I had trouble getting friction to work well with XPBD as you can see in the samples. I may have made mistakes in my implementation, but I did spend quite some time going over things. Please file an issue if you find an error or something that should be improved.</p>
+<p>Some implementation details I had to infer. For example, I&rsquo;m skipping the velocity projection if the normal impulse is zero (equation 35 in the associated <a href="https://matthias-research.github.io/pages/publications/PBDBodies.pdf">paper</a>). I had trouble getting friction to work well with XPBD as you can see in the samples. I may have made mistakes in my implementation, but I did spend quite some time going over things. Please file an issue if you find an error or something that should be improved.</p>
 <h2 id="precision-improvements">Precision improvements</h2>
 <p>I made some samples that show behavior far from the origin. While I was doing this, I noticed XPBD had some serious problems. Not only was the simulation unstable, objects were actually floating. I realized this is due to code like this in XPBD:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>linearVelocity <span style="color:#f92672">=</span> (body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>position <span style="color:#f92672">-</span> body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>position0) <span style="color:#f92672">/</span> timeStep;
-</code></pre></div><p>Unlike other solvers, PBD derives velocity from positional changes. When an objects is very far from the origin, subtracting the old position from the new position may have a low number of significant digits, especially if the motion is slow. This can make bodies stop moving for even float.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>body<span style="color:#f92672">-&gt;</span>linearVelocity <span style="color:#f92672">=</span> (body<span style="color:#f92672">-&gt;</span>position <span style="color:#f92672">-</span> body<span style="color:#f92672">-&gt;</span>position0) <span style="color:#f92672">/</span> timeStep;
+</span></span></code></pre></div><p>Unlike other solvers, PBD derives velocity from positional changes. When an objects is very far from the origin, subtracting the old position from the new position may have a low number of significant digits, especially if the motion is slow. This can make bodies stop moving for even float.</p>
 <p>I modified XPBD so that the solver operates on the <em>change in position</em> or <code>deltaPosition</code>. Then the velocity is computed as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>linearVelocity <span style="color:#f92672">=</span> body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>deltaPosition <span style="color:#f92672">/</span> timeStep;
-</code></pre></div><p>The absolute position isn't touched until the end of the time step:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>position <span style="color:#f92672">=</span> body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>position0 <span style="color:#f92672">+</span> body<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>deltaPosition;
-</code></pre></div><p>This fairly small change resolved the round-off errors I was seeing relative to other solvers. But why stop there? Sub-stepping and NGS have similar round-off issues as XPBD, so I converted all solvers to use <code>deltaPosition</code>. I also went through all the collision code to make sure contact points are computed and stored in local coordinates. I also created a lot of samples that show behavior far from the origin.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>body<span style="color:#f92672">-&gt;</span>linearVelocity <span style="color:#f92672">=</span> body<span style="color:#f92672">-&gt;</span>deltaPosition <span style="color:#f92672">/</span> timeStep;
+</span></span></code></pre></div><p>The absolute position isn&rsquo;t touched until the end of the time step:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>body<span style="color:#f92672">-&gt;</span>position <span style="color:#f92672">=</span> body<span style="color:#f92672">-&gt;</span>position0 <span style="color:#f92672">+</span> body<span style="color:#f92672">-&gt;</span>deltaPosition;
+</span></span></code></pre></div><p>This fairly small change resolved the round-off errors I was seeing relative to other solvers. But why stop there? Sub-stepping and NGS have similar round-off issues as XPBD, so I converted all solvers to use <code>deltaPosition</code>. I also went through all the collision code to make sure contact points are computed and stored in local coordinates. I also created a lot of samples that show behavior far from the origin.</p>
 <p>Object size at large coordinates is an important consideration. If your game has small objects far from the origin then accuracy will diminish faster than a game with large objects. So I added a 1 meter length scale indicator to the user interface. This image shows a pile of ragdolls over 30km from the origin. The bottom left of the screen shows a one meter horizontal line.</p>
 <p><img src="/images/far_ragdoll_pile.png" alt="Ragdolls at 30km"><em>A pile of ragdolls over 30km from the origin</em></p>
 <h2 id="what-about-3d">What about 3D?</h2>
-<p>When it comes to solver algorithms there is nothing substantially different between 2D and 3D. The thing that makes rigid body solvers challenging is rotation and this is present in both 2D and 3D. A solver that doesn't work well in 2D will likely also not work well in 3D. In some ways, 2D is <em>more</em> demanding because the viewing angle shows overlap errors and/gaps more clearly. Furthermore, jitter can be <em>more</em> noticeable because objects don't obscure each other in 2D.</p>
-<p>This means that Solver2D is a good platform for developing and comparing solvers for both 2D and 3D applications. I've been developing 3D physics engines as part of my work and often I develop algorithms in 2D before I implement them in 3D. It is faster to develop the 2D version and easier to test.</p>
+<p>When it comes to solver algorithms there is nothing substantially different between 2D and 3D. The thing that makes rigid body solvers challenging is rotation and this is present in both 2D and 3D. A solver that doesn&rsquo;t work well in 2D will likely also not work well in 3D. In some ways, 2D is <em>more</em> demanding because the viewing angle shows overlap errors and/gaps more clearly. Furthermore, jitter can be <em>more</em> noticeable because objects don&rsquo;t obscure each other in 2D.</p>
+<p>This means that Solver2D is a good platform for developing and comparing solvers for both 2D and 3D applications. I&rsquo;ve been developing 3D physics engines as part of my work and often I develop algorithms in 2D before I implement them in 3D. It is faster to develop the 2D version and easier to test.</p>
 <h2 id="results">Results</h2>
-<p>I created many samples that push these solvers to their limit. I'm testing large mass ratios, large coordinates, significant overlap, etc. I've also reduced the iteration count to a number lower than is typically used in games. Here is the setup for all samples:</p>
+<p>I created many samples that push these solvers to their limit. I&rsquo;m testing large mass ratios, large coordinates, significant overlap, etc. I&rsquo;ve also reduced the iteration count to a number lower than is typically used in games. Here is the setup for all samples:</p>
 <ul>
 <li>primary/velocity iterations : 4</li>
 <li>secondary/position iterations : 2</li>
@@ -278,16 +282,19 @@ applyBias <span style="color:#f92672">=</span> false;
 </ul>
 <p>For solvers with sub-stepping (TGS solvers), the primary iteration count corresponds to the number of sub-steps. Some solvers have secondary iterations: NGS has position iterations, PGS_Soft and TGS_Sticky have separate relax iterations.</p>
 <blockquote>
-<p>Caveat: I've tuned all the solvers so they perform well on average across all samples. I am <em>not</em> tuning the solvers per sample. However, there may be tuning values I've overlooked and/or there may be bugs. This is why I'm making all this code open source. If you find a way to improve these solvers I will be happy to integrate those changes and update this post.</p>
+<p>Caveat: I&rsquo;ve tuned all the solvers so they perform well on average across all samples. I am <em>not</em> tuning the solvers per sample. However, there may be tuning values I&rsquo;ve overlooked and/or there may be bugs. This is why I&rsquo;m making all this code open source. If you find a way to improve these solvers I will be happy to integrate those changes and update this post.</p>
 </blockquote>
 <p>This videos shows the important samples and compares all the solvers.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/sKHf_o_UCzI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/sKHf_o_UCzI?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Solver2D Samples"
+      ></iframe>
+    </div>
 </p>
 <h2 id="update-performance">Update: Performance</h2>
-<p>Solver2D is not optimized, so it is not appropriate to compare absolute performance numbers for all the solvers. However, I think it is meaningful to compare the number of body and constraint traversals each solver must perform for the 4/2 iteration limits. The actual number of traversals in Solver2D may be higher as these numbers account for loops that could be easily merged. For example, constraint preparation can often be merged with warm starting, but I didn't write it that way in order to allow for more code sharing. There are some loops that could probably be merged with some extra effort, but that is not reflected in this table.</p>
+<p>Solver2D is not optimized, so it is not appropriate to compare absolute performance numbers for all the solvers. However, I think it is meaningful to compare the number of body and constraint traversals each solver must perform for the 4/2 iteration limits. The actual number of traversals in Solver2D may be higher as these numbers account for loops that could be easily merged. For example, constraint preparation can often be merged with warm starting, but I didn&rsquo;t write it that way in order to allow for more code sharing. There are some loops that could probably be merged with some extra effort, but that is not reflected in this table.</p>
 <table>
 <thead>
 <tr>
@@ -339,7 +346,7 @@ applyBias <span style="color:#f92672">=</span> false;
 </tr>
 </tbody>
 </table>
-<p>Constraint loops are much more expensive than body loops. Constraints do more math and they also have more cache misses when a constraint accesses the connected bodies. So if we want to compare solvers at a somewhat equal performance level, I would add more primary iterations to solvers with lower constraint loop counts to bring them up to par. Here's what I suggest:</p>
+<p>Constraint loops are much more expensive than body loops. Constraints do more math and they also have more cache misses when a constraint accesses the connected bodies. So if we want to compare solvers at a somewhat equal performance level, I would add more primary iterations to solvers with lower constraint loop counts to bring them up to par. Here&rsquo;s what I suggest:</p>
 <table>
 <thead>
 <tr>
@@ -391,22 +398,27 @@ applyBias <span style="color:#f92672">=</span> false;
 </tr>
 </tbody>
 </table>
-<p>Here's the result for the large pyramid test:
+<p>Here&rsquo;s the result for the large pyramid test:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/5-1cGVHTe5k" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/5-1cGVHTe5k?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Large pyramid with balanced iterations"
+      ></iframe>
+    </div>
 </p>
 <h2 id="future">Future</h2>
-<p>There are certainly more solver variations than I've tried so far. Here are some future options to try:</p>
+<p>There are certainly more solver variations than I&rsquo;ve tried so far. Here are some future options to try:</p>
 <ol>
 <li>Shock propagation, from the paper &ldquo;Nonconvex Rigid Bodies with Stacking&rdquo;</li>
 <li>Conjugate residual method, from the paper &ldquo;Non-Smooth Newton Methods for Deformable Multi-Body Dynamics&rdquo;</li>
-<li>A direct solver. I'm not sure what the state of the art is for direct solvers, so this would require more research.</li>
+<li>A direct solver. I&rsquo;m not sure what the state of the art is for direct solvers, so this would require more research.</li>
 <li>GPU friendly solvers. Jacobi, mass-splitting, etc.</li>
 </ol>
-<p>I've also thought about adding a joint coordinate solver, like Featherstone's algorithm. However, this is not a complete solver because it does not address contact. Still it might be interesting to see it for ragdolls and other samples with joints.</p>
+<p>I&rsquo;ve also thought about adding a joint coordinate solver, like Featherstone&rsquo;s algorithm. However, this is not a complete solver because it does not address contact. Still it might be interesting to see it for ragdolls and other samples with joints.</p>
 <p>However, I should probably get back to finishing Box2D version 3.0!</p>
+<h2 id="update-2">Update 2</h2>
+<p>In the release of Box2D version 3.0 I&rsquo;m not calling <code>TGS Soft</code> by the more appropriate name <code>Soft Step</code> (soft constraints + sub-stepping).</p>
 
             </div>
         </article>
@@ -415,7 +427,7 @@ applyBias <span style="color:#f92672">=</span> false;
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3884 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3909 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2024-02-04 16:00 -0800</p>
         </div>
@@ -429,7 +441,7 @@ applyBias <span style="color:#f92672">=</span> false;
         <div class="footer__content">
             <span>&copy; 2024</span>
             
-                <span><a href="https://box2d.org">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
@@ -442,7 +454,6 @@ applyBias <span style="color:#f92672">=</span> false;
 
 
 
-<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
-
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
     </body>
 </html>

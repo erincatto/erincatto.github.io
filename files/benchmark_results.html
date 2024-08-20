@@ -49,26 +49,41 @@ SPDX-License-Identifier: MIT -->
 <body>
     <h1>Box2D Benchmarks</h1>
 
-    <label for="branchSelect">Select Branch:</label>
+    Platforms tested:
+    <ul>
+        <li>AVX2 : AMD 7950X</li>
+        <li>SSE2 : AMD 7950X</li>
+        <li>scalar : AMD 7950X</li>
+        <li>Neon : Apple M2</li>
+    </ul>
+    
+    <hr/>
+
+    <label for="branchSelect">Compare Branch:</label>
     <select id="branchSelect">
         <option value="">Loading branches...</option>
     </select>
 
-    <button id="loadButton">Load Data</button>
+    <button id="loadButton">Load</button>
     
     <div class="chart-container">
+        <img src="/images/joint_grid_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="joint_grid"></canvas>
         </div>
+        <img src="/images/large_pyramid_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="large_pyramid"></canvas>
         </div>
+        <img src="/images/many_pyramids_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="many_pyramids"></canvas>
         </div>
+        <img src="/images/smash_benchmark.png" width="640" height="360">        
         <div class="chart-item">
             <canvas id="smash"></canvas>
         </div>
+        <img src="/images/tumbler_benchmark.png" width="640" height="360">   
         <div class="chart-item">
             <canvas id="tumbler"></canvas>
         </div>
@@ -126,7 +141,7 @@ SPDX-License-Identifier: MIT -->
             {
 
                 folder: 'amd7950x_float',
-                label: 'float'
+                label: 'scalar'
             }
         ];
 

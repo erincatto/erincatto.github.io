@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>physics on Box2D</title>
+    <title>Physics on Box2D</title>
     <link>https://box2d.org/tags/physics/</link>
-    <description>Recent content in physics on Box2D</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Physics on Box2D</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://box2d.org/tags/physics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://box2d.org/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Predictive Joint Limits</title>
       <link>https://box2d.org/posts/2020/04/predictive-joint-limits/</link>
       <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://box2d.org/posts/2020/04/predictive-joint-limits/</guid>
-      <description>Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.
-There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints.</description>
+      <description>Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.&#xA;There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints.</description>
     </item>
-    
   </channel>
 </rss>

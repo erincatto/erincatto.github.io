@@ -1,0 +1,83 @@
+---
+title: How to Transform a Plane
+date: 2018-09-05
+tags: ["math"]
+draft: false
+---
+Suppose you have a plane equation in local space and you'd like to express that plane equation in world space. The plane in local space is written as:
+  
+$$P := (n, w)$$
+  
+where $$n$$ is the plane normal and $$w$$ is the plane offset.
+
+A point $$x$$ is on the plane if
+  
+$$n \cdot x = w$$
+
+Now define a transform $$A$$ as
+  
+$$ A := (R, p) $$
+  
+where $$R$$ is an orthonormal rotation matrix and $$p$$ is a translation vector.
+
+Suppose we have a transform $$A$$ that transforms points in local space into world space. With our transform $$A$$ we can convert any point $$x_1$$ in local space (space 1) into world space (space 2):
+  
+$$x_2 = R x_1 + p$$
+  
+Also any vector $$n_1$$ in local space can be converted to world space:
+  
+$$n_2 = R n_1$$
+
+Also suppose we have a plane defined in local space (space 1). Then for any point $$x_1$$ in local space:
+  
+$$n_1 \cdot x_1 = w_1 $$
+
+The main problem now is to find $$w_2$$, the plane offset in world space. We can achieve this by substitution. First invert the transform relations above:
+  
+$$x_1 = R^T (x_2 - p)$$
+  
+$$n_1 = R^T n_2$$
+  
+where $$R^T$$ is the transpose of $$R$$. Recall that the inverse of an orthonormal matrix is the equal to the transpose.
+
+Now substitute these expressions into the local space plane equation:
+  
+$$R^T n_2 \cdot (R^T (x_2 - p)) = w_1$$
+
+Expand:
+  
+$$R^T n_2 \cdot R^T x_2 - R^T n_2 \cdot R^T p = w_1$$
+
+The rotations cancel out since they are orthonormal. Also the dot product is equivalent to matrix multiplication by the transpose. For example:
+  
+$$R^T n_2 \cdot R^T x_2 = n_2^T R R^T x_2 = n_2^T I x_2 = n_2 \cdot x_2$$
+
+Simplify:
+  
+$$n_2 \cdot x_2 = w_1 + n_2 \cdot p$$
+
+From this we can identify the world space plane offset $$w_2$$:
+  
+$$w_2 = w_1 + n_2 \cdot p$$
+
+Done!
+
+Update:
+  
+Of course it is easy to transform a plane if you have it expressed in terms of a normal and position:
+  
+$$P := (n,a)$$
+  
+where $$a$$ is a point on the plane. The trick is then to find $$a$$ given just the normal and offset description.
+  
+$$n \cdot x = w $$
+  
+After looking at this for a minute, it appears that if I use the point:
+  
+$$a := wn$$
+  
+then
+  
+$$n \cdot wn = w(n \cdot n) = w$$
+  
+so it is easy to find a point on the plane given the normal and offset. Then we can just transform $$n$$ and $$a$$.

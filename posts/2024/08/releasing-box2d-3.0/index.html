@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Erin Catto ">
-<meta name="description" content="Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&#39;ve learned a lot. There is more work to do, but the library is ready to be used for game development.
-I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!" />
+<meta name="author" content="">
+<meta name="description" content="Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&rsquo;ve learned a lot. There is more work to do, but the library is ready to be used for game development.
+I&rsquo;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!" />
 <meta name="keywords" content="game physics" />
 
 <meta name="theme-color" content="#252627" />
@@ -23,7 +23,7 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
 
 
 
-<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
 
 
 
@@ -36,10 +36,11 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Releasing Box2D 3.0"/>
-<meta name="twitter:description" content="Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&#39;ve learned a lot. There is more work to do, but the library is ready to be used for game development.
-I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!"/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Releasing Box2D 3.0">
+  <meta name="twitter:description" content="Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I’ve learned a lot. There is more work to do, but the library is ready to be used for game development.
+I’d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!">
 
 
 
@@ -117,9 +118,9 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
             
 
             <div class="post-content">
-                <p>Over 18 months ago I <a href="https://box2d.org/posts/2023/01/starting-box2d-3.0/">announced</a> that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I've learned a lot. There is more work to do, but the library is ready to be used for game development.</p>
-<p>I'd like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful! I made many changes and decisions based on input from the Box2D community on <a href="https://discord.gg/BQC34X4v">Discord</a> and <a href="https://github.com/erincatto/box2d">GitHub</a>.</p>
-<p>Let's review my initial goals!</p>
+                <p>Over 18 months ago I <a href="https://box2d.org/posts/2023/01/starting-box2d-3.0/">announced</a> that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&rsquo;ve learned a lot. There is more work to do, but the library is ready to be used for game development.</p>
+<p>I&rsquo;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful! I made many changes and decisions based on input from the Box2D community on <a href="https://discord.gg/BQC34X4v">Discord</a> and <a href="https://github.com/erincatto/box2d">GitHub</a>.</p>
+<p>Let&rsquo;s review my initial goals!</p>
 <h2 id="speculative-collision">Speculative collision</h2>
 <p>Version 3.0 completely overhauls continuous collision and response. It uses a hybrid speculative and time of impact approach.</p>
 <p>This approach has the following benefits:</p>
@@ -133,10 +134,10 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
 <p>The v3 continuous collision design seems to prevent almost all dynamic versus static tunneling. With bullets there is tunneling prevention for dynamic versus kinematic and dynamic, but it is not as robust.</p>
 <p>I believe this strikes a good balance between performance and robustness. Let me know what you think!</p>
 <h2 id="api-changes">API changes</h2>
-<p>The v3 API is completely new. The entire API consists of enums, structs, and functions. There are no C++ classes, operator overloads, or inheritance. I've made minimal use of macros. All internal data is hidden in the <code>src</code> directory, making the public include headers smaller and easier to read.</p>
+<p>The v3 API is completely new. The entire API consists of enums, structs, and functions. There are no C++ classes, operator overloads, or inheritance. I&rsquo;ve made minimal use of macros. All internal data is hidden in the <code>src</code> directory, making the public include headers smaller and easier to read.</p>
 <p>The use of <a href="https://box2d.org/documentation/index.html#autotoc_md20">ids</a> replaces most pointers and should help reduce the chances of double frees and orphaned objects.</p>
 <p>There are optional math operator overloads provided for C++ users.</p>
-<p>I'm satisfied with the overall design, but I'm happy to get feedback.</p>
+<p>I&rsquo;m satisfied with the overall design, but I&rsquo;m happy to get feedback.</p>
 <h2 id="moving-to-c-from-c">Moving to C from C++</h2>
 <p>Writing a whole library in C has been quite interesting! It has been challenging in some ways and refreshing in others.</p>
 <p>Pros:</p>
@@ -162,29 +163,32 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
 <p>A big part of multithreading performance was minimizing single-threaded bottlenecks. This lead to persistent <a href="https://box2d.org/posts/2023/10/simulation-islands/">islands</a>, data-oriented data layout, broad-phase threading, faster collision pair management, reworked continuous collision, and threaded island splitting.</p>
 <p>I implemented AVX2 for the contact solver since that is usually the bottleneck. This relied on graph coloring and gives a very nice speed gain. In a constraint solver it is necessary to gather and scatter body state data and in 2D it conveniently works out that this body state fits in 32 bytes, making this work great with 256-bit AVX vectors.</p>
 <p>I also developed a benchmarking console application I can use to efficiently measure performance. This application emits CSV files that can be compared with the main branch using this <a href="https://box2d.org/files/benchmark_results.html">page</a>. This also shows how well v3 scales with core count and different processors. The bottom line is that v3 scales quite well with cores as long as they share an L2/L3 cache.</p>
-<p>My initial approach to performance was multithreading but then I realized that single-threaded performance is also still important. I'm happy to say that my tests indicate that v3 is more than twice as fast as v2.4. This is mainly due to the data oriented design of v3 and the use of SIMD.</p>
+<p>My initial approach to performance was multithreading but then I realized that single-threaded performance is also still important. I&rsquo;m happy to say that my tests indicate that v3 is more than twice as fast as v2.4. This is mainly due to the data oriented design of v3 and the use of SIMD.</p>
 <h2 id="capsules">Capsules</h2>
 <p>Yes, v3 finally got capsules! As a bonus rounded polygons are also available.</p>
 <h2 id="other-improvements">Other improvements</h2>
 <p>Beyond my initial goals, I added even more stuff to v3.</p>
 <h3 id="soft-step-solver">Soft Step solver</h3>
-<p>Version 3.0 ships with a new solver I'm dubbing <em>Soft Step</em> (formerly called <code>TGS_Soft</code>). This arose from my <a href="http://box2d.org/posts/2024/02/solver2d/">Solver2D</a> experiment. This solver is more stable in almost every way than version 2.4. It handles higher mass ratios, longer chains of bodies, larger stacks, and so on. It is based on <a href="http://box2d.org/files/ErinCatto_SoftConstraints_GDC2011.pdf">soft constraints</a> and sub-stepping. Hence the name. It falls slightly behind the NGS block solver of v2.4 for vertical stacks, but that solver was basically designed for vertical stacking and I don't think it is worth the performance trade-off just for vertical box stacks.</p>
+<p>Version 3.0 ships with a new solver I&rsquo;m dubbing <em>Soft Step</em> (formerly called <code>TGS_Soft</code>). This arose from my <a href="http://box2d.org/posts/2024/02/solver2d/">Solver2D</a> experiment. This solver is more stable in almost every way than version 2.4. It handles higher mass ratios, longer chains of bodies, larger stacks, and so on. It is based on <a href="http://box2d.org/files/ErinCatto_SoftConstraints_GDC2011.pdf">soft constraints</a> and sub-stepping. Hence the name. It falls slightly behind the NGS block solver of v2.4 for vertical stacks, but that solver was basically designed for vertical stacking and I don&rsquo;t think it is worth the performance trade-off just for vertical box stacks.</p>
 <h3 id="improved-precision">Improved precision</h3>
 <p>I spent a fair bit of time adjusting the algorithms in Box2D to have improved precision. In my tests this means simulation runs well on worlds up to around 20 kilometers in size. Beyond that I think you would need to recenter the world or use doubles.</p>
 <h3 id="joints">Joints</h3>
 <p>Joints are a mixed bag. I removed the pulley and gear joints because I want to rework them later. On the other hand the remaining joints got new stuff. I added springs to many joints. I also added a motor to the distance joint.</p>
 <h3 id="extensive-testing">Extensive testing</h3>
-<p>I've made the samples application more extensive and faster. I added more unit tests. I've run sanitizers. Version 3.0 uses more complex algorithms than version 2.4 and it needs more testing.</p>
+<p>I&rsquo;ve made the samples application more extensive and faster. I added more unit tests. I&rsquo;ve run sanitizers. Version 3.0 uses more complex algorithms than version 2.4 and it needs more testing.</p>
 <h2 id="release-video">Release video</h2>
 <p>I made a video to celebrate the release of v3. I hope you enjoy it.</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/dAoM-xjOWtA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dAoM-xjOWtA?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Box2D Version 3.0 Demo"
+      ></iframe>
+    </div>
 
 <h2 id="supporting-box2d">Supporting Box2D</h2>
 <p>Box2D has been very fun to work on. However, I have put <em>a lot</em> of work into it. If your company uses Box2D, it should consider sponsoring Box2D. Of course sponsorship is optional in all cases.</p>
-<p>If you'd like to sponsor Box2D development, you can sign up using <a href="https://github.com/sponsors/erincatto">GitHub sponsors</a> or <a href="https://www.patreon.com/Box2D">Patreon</a>.</p>
+<p>If you&rsquo;d like to sponsor Box2D development, you can sign up using <a href="https://github.com/sponsors/erincatto">GitHub sponsors</a> or <a href="https://www.patreon.com/Box2D">Patreon</a>.</p>
 
             </div>
         </article>
@@ -207,7 +211,7 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
         <div class="footer__content">
             <span>&copy; 2024</span>
             
-                <span><a href="https://box2d.org">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
@@ -220,7 +224,6 @@ I&#39;d like to thank the Box2D users who tested v3 during the alpha and beta. T
 
 
 
-<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
-
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
     </body>
 </html>

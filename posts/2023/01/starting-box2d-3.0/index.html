@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Erin Catto ">
-<meta name="description" content="Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I&#39;m doing a major update to Box2D I might as well tackle some other big features and make version 3." />
+<meta name="author" content="">
+<meta name="description" content="Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I&rsquo;m doing a major update to Box2D I might as well tackle some other big features and make version 3." />
 <meta name="keywords" content="game physics" />
 
 <meta name="theme-color" content="#252627" />
@@ -22,7 +22,7 @@
 
 
 
-<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
 
 
 
@@ -35,9 +35,10 @@
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Starting Box2D 3.0"/>
-<meta name="twitter:description" content="Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I&#39;m doing a major update to Box2D I might as well tackle some other big features and make version 3."/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Starting Box2D 3.0">
+  <meta name="twitter:description" content="Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I’m doing a major update to Box2D I might as well tackle some other big features and make version 3.">
 
 
 
@@ -115,56 +116,56 @@
             
 
             <div class="post-content">
-                <p>Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I'm doing a major update to Box2D I might as well tackle some other big features and make version 3.0.</p>
+                <p>Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I&rsquo;m doing a major update to Box2D I might as well tackle some other big features and make version 3.0.</p>
 <p>I think now is a good time to explain my goals for version 3.0. So lets go over the list.</p>
 <h2 id="speculative-collision">Speculative collision</h2>
 <p>Currently Box2D has a robust time of impact solver for continuous collision and response. The response includes sub-stepping, this means:</p>
 <ol>
-<li>objects don't freeze when they collide (e.g. time loss), instead a sub-step is taken to finish their journey to the end of full time step.</li>
+<li>objects don&rsquo;t freeze when they collide (e.g. time loss), instead a sub-step is taken to finish their journey to the end of full time step.</li>
 <li>chain reactions are accounted for: a fast body hits a slow body which becomes a fast body which hits another body and so on.</li>
 </ol>
 <p>The highest quality simulation happens when all rigid bodies can participate in sub-stepping. This is inherently serial and precludes multithreading. It is also very expensive. Version 2.4 mitigates this cost a by restricting time of impact and sub-stepping for dynamic versus static bodies only. An exception is dynamic bodies with the <code>bullet</code> flag enabled. This is off by default, so performance stays somewhat reasonable. A single bullet can cause the entire simulation to be serial. Not good.</p>
-<p>Speculative collision predicts contact points between fast moving objects before they touch. This allows the main physics step to prevent tunneling. No sub-steps required! Which is great because this allows for easy multithreading. However, it is not perfect. Collisions can be missed and there can be ghost collisions. Hence the research I've been doing. Look for a future blog post on that.</p>
+<p>Speculative collision predicts contact points between fast moving objects before they touch. This allows the main physics step to prevent tunneling. No sub-steps required! Which is great because this allows for easy multithreading. However, it is not perfect. Collisions can be missed and there can be ghost collisions. Hence the research I&rsquo;ve been doing. Look for a future blog post on that.</p>
 <p>Another benefit of speculative collision is that I can eliminate the polygon skin/radius on collision shapes. That was necessary to keep shapes separated for the time of impact algorithm. This should no longer be necessary in version 3.0. I never liked this artificial separation of shapes.</p>
 <h2 id="api-changes">API changes</h2>
-<p>The Box2D API currently operates on pointers. You have a <code>b2World</code> pointer, a <code>b2Body</code> pointer, a <code>b2Joint</code> pointer, and so on. Because the user has a pointer, that memory is pinned and reduces my ability to optimize. Also the C++ style API inherently exposes all the internal data in headers. I've always disliked APIs that are slow to compile, so why should I add to the problem?</p>
+<p>The Box2D API currently operates on pointers. You have a <code>b2World</code> pointer, a <code>b2Body</code> pointer, a <code>b2Joint</code> pointer, and so on. Because the user has a pointer, that memory is pinned and reduces my ability to optimize. Also the C++ style API inherently exposes all the internal data in headers. I&rsquo;ve always disliked APIs that are slow to compile, so why should I add to the problem?</p>
 <p>My plan is to switch to a C-style function based API with handles. These handles will be small structs and act like IDs. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">b2BodyId</span>
-{
-  <span style="color:#66d9ef">int32_t</span> bodyIndex;
-}
-</code></pre></div><p>This makes them type safe yet small enough to pass around on the stack. The user should not normally care what is in <code>b2BodyId</code> unless they are debugging. I have a solution for that which I'll share later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">b2BodyId</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int32_t</span> bodyIndex;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This makes them type safe yet small enough to pass around on the stack. The user should not normally care what is in <code>b2BodyId</code> unless they are debugging. I have a solution for that which I&rsquo;ll share later.</p>
 <p>So expect to see an API like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">b2WorldId worldId <span style="color:#f92672">=</span> b2CreateWorld();
-b2BodyId bodyId <span style="color:#f92672">=</span> b2World_CreateBody(worldId, ...);
-...
-b2Transform transform <span style="color:#f92672">=</span> b2Body_GetTransform(bodyId);
-...
-b2World_DestroyBody(bodyId);
-b2DestroyWorld(worldId);
-</code></pre></div><p>The nice thing about an API like this is that it can easily fit in one header file and it should compile very quickly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>b2WorldId worldId <span style="color:#f92672">=</span> b2CreateWorld();
+</span></span><span style="display:flex;"><span>b2BodyId bodyId <span style="color:#f92672">=</span> b2World_CreateBody(worldId, ...);
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>b2Transform transform <span style="color:#f92672">=</span> b2Body_GetTransform(bodyId);
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>b2World_DestroyBody(bodyId);
+</span></span><span style="display:flex;"><span>b2DestroyWorld(worldId);
+</span></span></code></pre></div><p>The nice thing about an API like this is that it can easily fit in one header file and it should compile very quickly.</p>
 <h2 id="moving-to-c-from-c">Moving to C from C++</h2>
-<p>When I created Box2D I had no idea it would be ported/binded/wrapped to so many other languages and platforms. If I had, I would have probably written it in C to begin with. Back in those days C99 support was spotty, but that seems to have been resolved. I don't think I could stomach C89 with the declaration requirements.</p>
-<p>The C++ usage in Box2D is very light. There is no usage of <code>std</code> and polymorphism is only used for a couple classes. So there is little justification for Box2D to be in C++ rather than C, and with the API change above, there is even less reason. The main thing I am missing so far are math operator overloads. But even that is not a big deal. It hasn't slowed me down at all.</p>
+<p>When I created Box2D I had no idea it would be ported/binded/wrapped to so many other languages and platforms. If I had, I would have probably written it in C to begin with. Back in those days C99 support was spotty, but that seems to have been resolved. I don&rsquo;t think I could stomach C89 with the declaration requirements.</p>
+<p>The C++ usage in Box2D is very light. There is no usage of <code>std</code> and polymorphism is only used for a couple classes. So there is little justification for Box2D to be in C++ rather than C, and with the API change above, there is even less reason. The main thing I am missing so far are math operator overloads. But even that is not a big deal. It hasn&rsquo;t slowed me down at all.</p>
 <h2 id="why-not-language-x">Why not language X?</h2>
 <p>A couple reasons:</p>
 <ol>
-<li>I'm already taking on a lot to work on version 3.0. I still have a full-time job as well!</li>
-<li>I'm a slave to tooling. I work on Windows and I place a high value on easy debugging and other tools.</li>
+<li>I&rsquo;m already taking on a lot to work on version 3.0. I still have a full-time job as well!</li>
+<li>I&rsquo;m a slave to tooling. I work on Windows and I place a high value on easy debugging and other tools.</li>
 <li>I want to make Box2D easy to port/wrap/bind to your favorite language! Please give me your feedback on this as version 3.0 develops.</li>
 </ol>
 <h2 id="performance">Performance</h2>
 <p>I originally developed Box2D in 2006, before multithreading was important. Clearly times have changed and multithreading is now a must.
-Initially I plan to multithread contact point computation and solver islands. These are both easy to do. I plan to use callbacks to send jobs to the host application, which presumably has it's own task system. I will also provide a working example of this in the samples that you can mimic in your project. My opinion is that a library should not be creating its own threads, instead the application should be in charge of threading.
-This should put Box2D into a good place for pushing on other optimizations. Box2D was designed to have performant yet understandable algorithms. In fact Box2D originated from tutorial code. However, I think that performance has become more important than pedagogy for Box2D's future.</p>
+Initially I plan to multithread contact point computation and solver islands. These are both easy to do. I plan to use callbacks to send jobs to the host application, which presumably has it&rsquo;s own task system. I will also provide a working example of this in the samples that you can mimic in your project. My opinion is that a library should not be creating its own threads, instead the application should be in charge of threading.
+This should put Box2D into a good place for pushing on other optimizations. Box2D was designed to have performant yet understandable algorithms. In fact Box2D originated from tutorial code. However, I think that performance has become more important than pedagogy for Box2D&rsquo;s future.</p>
 <h2 id="capsules">Capsules</h2>
-<p>Besides performance, I want a reason for people to upgrade to version 3.0. I think capsules is such a feature. People have wanted capsules for years, so I'm diving back into the narrow phase.</p>
+<p>Besides performance, I want a reason for people to upgrade to version 3.0. I think capsules is such a feature. People have wanted capsules for years, so I&rsquo;m diving back into the narrow phase.</p>
 <h2 id="when-can-i-see-it">When can I see it?</h2>
-<p>I'm currently porting all the collision code and adding capsule support. Next, I plan to port the world and solver. Once I have some box stacking I will make the repo public. This will be very much alpha code! But it will useful for giving feedback about the API and such.</p>
+<p>I&rsquo;m currently porting all the collision code and adding capsule support. Next, I plan to port the world and solver. Once I have some box stacking I will make the repo public. This will be very much alpha code! But it will useful for giving feedback about the API and such.</p>
 <p>Once version 3.0 is ready for release, the new repo will become the main repo and the 2.4 repo will become a legacy repo (with limited/no support).</p>
 <h2 id="beyond-version-30">Beyond version 3.0</h2>
 <p>I plan to continue working on Box2D more regularly. There are lots of interesting problems to tackle. Thanks for your encouragement, support, and feedback.</p>
-<p>If you'd like to sponsor Box2D development, you can sign up here: <a href="https://github.com/sponsors/erincatto">https://github.com/sponsors/erincatto</a></p>
+<p>If you&rsquo;d like to sponsor Box2D development, you can sign up here: <a href="https://github.com/sponsors/erincatto">https://github.com/sponsors/erincatto</a></p>
 
             </div>
         </article>
@@ -187,7 +188,7 @@ This should put Box2D into a good place for pushing on other optimizations. Box2
         <div class="footer__content">
             <span>&copy; 2024</span>
             
-                <span><a href="https://box2d.org">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
@@ -200,7 +201,6 @@ This should put Box2D into a good place for pushing on other optimizations. Box2
 
 
 
-<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
-
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
     </body>
 </html>

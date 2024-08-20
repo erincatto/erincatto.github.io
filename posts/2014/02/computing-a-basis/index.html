@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Erin Catto ">
+<meta name="author" content="">
 <meta name="description" content="Given a normalized 3D vector, here’s an efficient method for computing a full basis. The computed basis is axis aligned if the input vector is axis aligned.
-void ComputeBasis(const Vec&amp;amp; a, Vec* b, Vec* c) { // Suppose vector a has all equal components and is a unit vector:  // a = (s, s, s)  // Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at  // least one component of a unit vector must be greater or equal  // to 0." />
+void ComputeBasis(const Vec&amp; a, Vec* b, Vec* c) { // Suppose vector a has all equal components and is a unit vector: // a = (s, s, s) // Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at // least one component of a unit vector must be greater or equal // to 0." />
 <meta name="keywords" content="game physics" />
 
 <meta name="theme-color" content="#252627" />
@@ -23,7 +23,7 @@ void ComputeBasis(const Vec&amp;amp; a, Vec* b, Vec* c) { // Suppose vector a ha
 
 
 
-<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
 
 
 
@@ -36,16 +36,17 @@ void ComputeBasis(const Vec&amp;amp; a, Vec* b, Vec* c) { // Suppose vector a ha
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Computing a Basis"/>
-<meta name="twitter:description" content="Given a normalized 3D vector, here’s an efficient method for computing a full basis. The computed basis is axis aligned if the input vector is axis aligned.
-void ComputeBasis(const Vec&amp; a, Vec* b, Vec* c) { // Suppose vector a has all equal components and is a unit vector:  // a = (s, s, s)  // Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at  // least one component of a unit vector must be greater or equal  // to 0."/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Computing a Basis">
+  <meta name="twitter:description" content="Given a normalized 3D vector, here’s an efficient method for computing a full basis. The computed basis is axis aligned if the input vector is axis aligned.
+void ComputeBasis(const Vec&amp; a, Vec* b, Vec* c) { // Suppose vector a has all equal components and is a unit vector: // a = (s, s, s) // Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at // least one component of a unit vector must be greater or equal // to 0.">
 
 
 
 
 
-    <meta property="article:published_time" content="2014-02-03 11:33:04 &#43;0000 &#43;0000" />
+    <meta property="article:published_time" content="2014-02-03 11:33:04 &#43;0000 UTC" />
 
 
 
@@ -118,23 +119,22 @@ void ComputeBasis(const Vec&amp; a, Vec* b, Vec* c) { // Suppose vector a has al
 
             <div class="post-content">
                 <p>Given a normalized 3D vector, here’s an efficient method for computing a full basis. The computed basis is axis aligned if the input vector is axis aligned.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ComputeBasis</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a, Vec<span style="color:#f92672">*</span> b, Vec<span style="color:#f92672">*</span> c)
-{
-  <span style="color:#75715e">// Suppose vector a has all equal components and is a unit vector:
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// a = (s, s, s)
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// least one component of a unit vector must be greater or equal
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// to 0.57735.
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">if</span> (Abs(a.x) <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0.57735f</span>)
-    b<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>Set(a.y, <span style="color:#f92672">-</span>a.x, <span style="color:#ae81ff">0.0f</span>);
-  <span style="color:#66d9ef">else</span>
-    b<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>Set(<span style="color:#ae81ff">0.0f</span>, a.z, <span style="color:#f92672">-</span>a.y);
-
-  b <span style="color:#f92672">=</span> Normalize(b);
-  <span style="color:#f92672">*</span>c <span style="color:#f92672">=</span> Cross(a, <span style="color:#f92672">*</span>b);
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ComputeBasis</span>(<span style="color:#66d9ef">const</span> Vec<span style="color:#f92672">&amp;</span> a, Vec<span style="color:#f92672">*</span> b, Vec<span style="color:#f92672">*</span> c)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Suppose vector a has all equal components and is a unit vector:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// a = (s, s, s)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// least one component of a unit vector must be greater or equal
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// to 0.57735.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (Abs(a.x) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.57735f</span>)
+</span></span><span style="display:flex;"><span>    b<span style="color:#f92672">-&gt;</span>Set(a.y, <span style="color:#f92672">-</span>a.x, <span style="color:#ae81ff">0.0f</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    b<span style="color:#f92672">-&gt;</span>Set(<span style="color:#ae81ff">0.0f</span>, a.z, <span style="color:#f92672">-</span>a.y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  b <span style="color:#f92672">=</span> Normalize(b);
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>c <span style="color:#f92672">=</span> Cross(a, <span style="color:#f92672">*</span>b);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>In SSE land you can eliminate the branch using a select operation.</p>
 
             </div>
@@ -161,7 +161,7 @@ void ComputeBasis(const Vec&amp; a, Vec* b, Vec* c) { // Suppose vector a has al
         <div class="footer__content">
             <span>&copy; 2024</span>
             
-                <span><a href="https://box2d.org">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
@@ -174,7 +174,6 @@ void ComputeBasis(const Vec&amp; a, Vec* b, Vec* c) { // Suppose vector a has al
 
 
 
-<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
-
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
     </body>
 </html>

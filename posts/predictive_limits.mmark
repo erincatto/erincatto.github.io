@@ -1,0 +1,48 @@
++++
+title = "Predictive Joint Limits"
+date = "2020-04-03"
+draft = false
+tags = ["physics"]
++++
+
+Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.
+
+There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints. A lower and upper limit can be set on a prismatic joint to keep the drawer from going in too deep or pulling out too far.
+
+![filing cabinet](/images/filing_cabinet.svg)
+
+However, with fast movement the drawer can temporarily end up in a bad state. This can cause a glaring visual glitch. The reason this happens is because with discrete simulation the solver doesn't consider the joint limit *until it is violated*. Discrete simulation is reactive and it is alway trying to catch up to all the mistakes that have been made (kind of like my life at times).
+
+![joint glitch](/images/filing_cabinet_broken.svg)
+
+It might be possible to compute the time of impact of the joint on a limit and then use sub-stepping. However, this is quite complicated, especially if there are multiple joints and multiple bodies involved. Admittedly, this is also quite complicated for continuous collision.
+
+Is there a simpler solution? We can draw inspiration from "A Different Approach for Continuous Physics" by Vincent Robert. The idea is to measure the gap between the current position and the limit. This is the position constraint $$C$$, but in this case the constraint is *not* being violated yet. However, suppose body velocities are such that the gap is closing. Based on the current position and velocities, I can determine if the limit would be violated once the positions are updated. In that case I can apply an impulse so that the limit is reached but not exceeded.
+
+![joint limits](/images/drawer_limits.svg)
+
+Here is some math that shows how to use predictive limits. First we have the position constraint $$C$$. In the case of the prismatic joint the position constraint for the lower limit is:
+```
+C = translation - lower_limit
+```
+We can use this formula to compute the new position constraint value based on the current position constraint value and the velocity constraint value:
+
+$$C_2 = C_1 + \Delta t \dot{C_1}$$
+
+The time step is $$\Delta t$$ and the velocity constraint value is $$\dot{C}$$. Normally when the joint limit is active we want $$\dot{C} >= 0$$, however the formula above implies that what we want:
+
+$$\dot{C_1} + \frac{C_1}{\Delta t} >= 0$$
+
+So in the velocity solver I normally use $$\dot{C}$$ to compute the impulse. Instead I replace $$\dot{C}$$ with $$\dot{C} + \frac{C}{\Delta t}$$. Simple!
+
+However, there is a special consideration for Box2D. I do not want the velocity solver to deal with position constraint errors because this can add kinetic energy if the position constraint is ever violated. Instead, I have a separate position solver that never modifies the velocity state. So instead I use this in the velocity solver:
+
+$$\dot{C_1} + \frac{\max (C_1, 0)}{\Delta t}$$
+
+This is a very cheap modification to the joint limit solver and it has very nice results. It even simplifies the solver because I don't need to track the limit state for the velocity solver. The downside is that I need two constraints: a lower limit constraint and an upper limit constraint. This is necessary because the velocity constraint value can flip signs in the middle of the solver iterations.
+
+So predictive constraints are proactive and try to anticipate constraint violations before they happen. This works particularly well for some joint limits. We should all try to be more proactive!
+
+I made a recording of the discrete and predictive prismatic joint solvers in Box2D. I reduced the iteration count and used a large time step (30 Hertz) to show the effect well. Also I had to turn off some velocity clamping.
+
+{{< youtube 6Ig3lpfen4U >}}

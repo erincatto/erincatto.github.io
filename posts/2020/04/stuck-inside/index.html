@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Erin Catto ">
+<meta name="author" content="">
 <meta name="description" content="There a several computational geometry algorithms that are relevant for preparing collision data: convex hull, mesh simplification, and convex decomposition.
 Many implementations of these algorithms are developed outside the specific context of rigid body simulation. For example, qhull computes convex hulls and appears to be application agnostic. Simplygon is focused on simplifying render mesh.
 On the other hand, convex decomposition algorithms such as V-HACD are developed with physics simulation in mind." />
@@ -24,7 +24,7 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
 
 
 
-<link rel="stylesheet" href="/main.min.0b68c58859a6caf239404b77d1246b3b50da740f6efa3354c25c541474defc57.css">
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
 
 
 
@@ -37,11 +37,12 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Stuck Inside"/>
-<meta name="twitter:description" content="There a several computational geometry algorithms that are relevant for preparing collision data: convex hull, mesh simplification, and convex decomposition.
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stuck Inside">
+  <meta name="twitter:description" content="There a several computational geometry algorithms that are relevant for preparing collision data: convex hull, mesh simplification, and convex decomposition.
 Many implementations of these algorithms are developed outside the specific context of rigid body simulation. For example, qhull computes convex hulls and appears to be application agnostic. Simplygon is focused on simplifying render mesh.
-On the other hand, convex decomposition algorithms such as V-HACD are developed with physics simulation in mind."/>
+On the other hand, convex decomposition algorithms such as V-HACD are developed with physics simulation in mind.">
 
 
 
@@ -121,7 +122,7 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
             <div class="post-content">
                 <p>There a several computational geometry algorithms that are relevant for preparing collision data: convex hull, mesh simplification, and convex decomposition.</p>
 <p>Many implementations of these algorithms are developed outside the specific context of rigid body simulation. For example, <a href="http://www.qhull.org/">qhull</a> computes convex hulls and appears to be application agnostic. <a href="https://www.simplygon.com/">Simplygon</a> is focused on simplifying render mesh.</p>
-<p>On the other hand, convex decomposition algorithms such as <a href="https://github.com/kmammou/v-hacd">V-HACD</a> are developed with physics simulation in mind. These algorithms are usually iterative and approximate. Both of these aspects are fine for games. We usually don't need or want exact collision. This figure shows a typical result.</p>
+<p>On the other hand, convex decomposition algorithms such as <a href="https://github.com/kmammou/v-hacd">V-HACD</a> are developed with physics simulation in mind. These algorithms are usually iterative and approximate. Both of these aspects are fine for games. We usually don&rsquo;t need or want exact collision. This figure shows a typical result.</p>
 <p><img src="/images/vhacd.png" alt="V-HACD"></p>
 <p>Consider a 2D table. This object is concave. If we want the object to be dynamic, it should be made into multiple convex shapes attached to a single rigid body. The reason convexity is important for dynamic objects is because convexity gives us a clear notion of inside versus outside.</p>
 <p><img src="/images/table.svg" alt="table"></p>
@@ -139,15 +140,18 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
 <li>Have the decomposition algorithm identify and tag the internal faces</li>
 <li>Have the collision algorithm somehow deal with these internal faces</li>
 <li>Remember to apply this to all relevant cases: polygon-circle, polygon-polygon, etc.</li>
-<li>Don't forget about continuous collision</li>
+<li>Don&rsquo;t forget about continuous collision</li>
 </ol>
 <p>Consider a different approach where the legs are extended to the top of the table. In this case there is no channel where the beam can get stuck.</p>
 <p><img src="/images/table_decompose2.svg" alt="table overlapped"></p>
 <p>I made a demo of this in Box2D that shows the effect for the table and a similar situation for a wedge shaped space ship. When the collision shapes are overlapped the shape is immediately ejected. In addition to fixing the visual bug, this also improves performance by allowing the bodies to go to sleep.</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/BZEydMGMapk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/BZEydMGMapk?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
 
 <p>A further refinement is to limit the overlap of parallel surfaces. This can prevent redundant contact points.</p>
 <p><img src="/images/table_decompose3.svg" alt="table refined"></p>
@@ -177,7 +181,7 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
         <div class="footer__content">
             <span>&copy; 2024</span>
             
-                <span><a href="https://box2d.org">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
@@ -190,7 +194,6 @@ On the other hand, convex decomposition algorithms such as V-HACD are developed 
 
 
 
-<script type="text/javascript" src="/bundle.min.582d94d7fb9230fda38dd4c9d5ca8014cab7228a34654fe3c3476fc00178e03398e53906f6f25d759a6e29f36ae005e4ddbed05e05a31f3c3febc33bd0e89c58.js" integrity="sha512-WC2U1/uSMP2jjdTJ1cqAFMq3Ioo0ZU/jw0dvwAF44DOY5TkG9vJddZpuKfNq4AXk3b7QXgWjHzw/68M70OicWA=="></script>
-
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
     </body>
 </html>
