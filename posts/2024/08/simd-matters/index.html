@@ -221,10 +221,10 @@ It is tempting to build a math library around SIMD hoping to get some performanc
 <p>The joint grid benchmark doesn&rsquo;t use SIMD instructions at all, so you can ignore that one. But the other ones all stress the contact solver.</p>
 <p>The large pyramid benchmark with 4 workers has the following numbers:</p>
 <ul>
-<li>AVX2 : 1117 fps</li>
-<li>Neon : 1058 fps</li>
-<li>SSE2 : 982 fps</li>
-<li>scalar : 524 fps</li>
+<li>AVX2 : 1117 fps = 0.90 ms</li>
+<li>Neon : 1058 fps = 0.95 ms</li>
+<li>SSE2 : 982 fps = 1.02 ms</li>
+<li>scalar : 524 fps = 1.91 ms</li>
 </ul>
 <p>From this I draw the following conclusions:</p>
 <ol>
@@ -251,7 +251,7 @@ It is tempting to build a math library around SIMD hoping to get some performanc
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1741 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1753 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2024-08-18 17:00 -0700</p>
         </div>
