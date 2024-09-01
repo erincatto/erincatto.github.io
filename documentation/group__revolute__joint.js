@@ -35,6 +35,7 @@ var group__revolute__joint =
     [ "b2RevoluteJoint_GetUpperLimit", "group__revolute__joint.html#gae27345fbf89128a72f427f4d65ed4bfa", null ],
     [ "b2RevoluteJoint_IsLimitEnabled", "group__revolute__joint.html#ga5215e09b816b9b292be347495aa862f7", null ],
     [ "b2RevoluteJoint_IsMotorEnabled", "group__revolute__joint.html#ga3db7cba529c7b174a0c7da35ec477c61", null ],
+    [ "b2RevoluteJoint_IsSpringEnabled", "group__revolute__joint.html#ga76ed9ed9f3d8109e74cb75c9d01aa4cc", null ],
     [ "b2RevoluteJoint_SetLimits", "group__revolute__joint.html#ga07207d40c751902667f03125449e1e44", null ],
     [ "b2RevoluteJoint_SetMaxMotorTorque", "group__revolute__joint.html#ga06b66cd0a1517b4eccd34aa9d507e402", null ],
     [ "b2RevoluteJoint_SetMotorSpeed", "group__revolute__joint.html#gaf1a8c6a8217f339a6794ccaa4068a921", null ],

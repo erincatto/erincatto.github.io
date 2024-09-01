@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -147,7 +147,7 @@ Circle</div></div>
 <div class="ttc" id="agroup__geometry_html_a757d579fa23bd9090a1f5c52c37703ad"><div class="ttname"><a href="group__geometry.html#a757d579fa23bd9090a1f5c52c37703ad">b2Circle::radius</a></div><div class="ttdeci">float radius</div><div class="ttdoc">The radius.</div><div class="ttdef"><b>Definition</b> collision.h:105</div></div>
 <div class="ttc" id="agroup__geometry_html_aa919960819f321a014ef46beafe2e3d0"><div class="ttname"><a href="group__geometry.html#aa919960819f321a014ef46beafe2e3d0">b2Circle::center</a></div><div class="ttdeci">b2Vec2 center</div><div class="ttdoc">The local center.</div><div class="ttdef"><b>Definition</b> collision.h:102</div></div>
 <div class="ttc" id="agroup__geometry_html_structb2_circle"><div class="ttname"><a href="group__geometry.html#structb2_circle">b2Circle</a></div><div class="ttdoc">A solid circle.</div><div class="ttdef"><b>Definition</b> collision.h:100</div></div>
-<div class="ttc" id="agroup__math_html_structb2_vec2"><div class="ttname"><a href="group__math.html#structb2_vec2">b2Vec2</a></div><div class="ttdoc">2D vector This can be used to represent a point or free vector</div><div class="ttdef"><b>Definition</b> math_functions.h:23</div></div>
+<div class="ttc" id="agroup__math_html_structb2_vec2"><div class="ttname"><a href="group__math.html#structb2_vec2">b2Vec2</a></div><div class="ttdoc">2D vector This can be used to represent a point or free vector</div><div class="ttdef"><b>Definition</b> math_functions.h:24</div></div>
 </div><!-- fragment --><p>You can also initialize a circle and other structures inline. This is an equivalent circle:</p>
 <div class="fragment"><div class="line"><a class="code hl_struct" href="group__geometry.html#structb2_circle">b2Circle</a> circle = {{2.0f, 3.0f}, 0.5f};</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md34"></a>
@@ -192,9 +192,9 @@ Polygon Winding Order</div></div>
 </div><!-- fragment --><p>If you want a box that is not centered on the body origin, you can use an offset box.</p>
 <div class="fragment"><div class="line"><a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a> center = {1.0f, 0.0f};</div>
 <div class="line"><span class="keywordtype">float</span> angle = <a class="code hl_define" href="group__math.html#ga3f1872f3fc3c46abc809e7f7d467eb6c">b2_pi</a> / 4.0f;</div>
-<div class="line"><a class="code hl_struct" href="group__geometry.html#structb2_polygon">b2Polygon</a> offsetBox = <a class="code hl_function" href="group__geometry.html#ga8ed56ceb8b26b09555c3f93dfadc5504">b2MakeOffsetBox</a>(0.5f, 1.0f, center, angle);</div>
-<div class="ttc" id="agroup__geometry_html_ga8ed56ceb8b26b09555c3f93dfadc5504"><div class="ttname"><a href="group__geometry.html#ga8ed56ceb8b26b09555c3f93dfadc5504">b2MakeOffsetBox</a></div><div class="ttdeci">b2Polygon b2MakeOffsetBox(float hx, float hy, b2Vec2 center, float angle)</div><div class="ttdoc">Make an offset box, bypassing the need for a convex hull.</div></div>
-<div class="ttc" id="agroup__math_html_ga3f1872f3fc3c46abc809e7f7d467eb6c"><div class="ttname"><a href="group__math.html#ga3f1872f3fc3c46abc809e7f7d467eb6c">b2_pi</a></div><div class="ttdeci">#define b2_pi</div><div class="ttdoc">https://en.wikipedia.org/wiki/Pi</div><div class="ttdef"><b>Definition</b> math_functions.h:18</div></div>
+<div class="line"><a class="code hl_struct" href="group__geometry.html#structb2_polygon">b2Polygon</a> offsetBox = <a class="code hl_function" href="group__geometry.html#ga1fcd7ef6ffbd3ebf41b01094f9de0140">b2MakeOffsetBox</a>(0.5f, 1.0f, center, angle);</div>
+<div class="ttc" id="agroup__geometry_html_ga1fcd7ef6ffbd3ebf41b01094f9de0140"><div class="ttname"><a href="group__geometry.html#ga1fcd7ef6ffbd3ebf41b01094f9de0140">b2MakeOffsetBox</a></div><div class="ttdeci">b2Polygon b2MakeOffsetBox(float hx, float hy, b2Vec2 center, b2Rot rotation)</div><div class="ttdoc">Make an offset box, bypassing the need for a convex hull.</div></div>
+<div class="ttc" id="agroup__math_html_ga3f1872f3fc3c46abc809e7f7d467eb6c"><div class="ttname"><a href="group__math.html#ga3f1872f3fc3c46abc809e7f7d467eb6c">b2_pi</a></div><div class="ttdeci">#define b2_pi</div><div class="ttdoc">https://en.wikipedia.org/wiki/Pi</div><div class="ttdef"><b>Definition</b> math_functions.h:19</div></div>
 </div><!-- fragment --><p>If you want a more general convex polygon, you can compute the hull using <code><a class="el" href="group__geometry.html#ga74371001b4360b744d7cca35a3b18861" title="Compute the convex hull of a set of points.">b2ComputeHull()</a></code>. Then you can create a polygon from the hull. You can make this rounded or not.</p>
 <div class="fragment"><div class="line"><a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a> points[] = {{-1.0f, 0.0f}, {1.0f, 0.0f}, {0.0f, 1.0f}};</div>
 <div class="line"><a class="code hl_struct" href="group__geometry.html#structb2_hull">b2Hull</a> hull = <a class="code hl_function" href="group__geometry.html#ga74371001b4360b744d7cca35a3b18861">b2ComputeHull</a>(points, 3);</div>
@@ -230,25 +230,25 @@ Ghost Collisions</h2>
 <div class="caption">
 Ghost Collision</div></div>
     <p>If edge1 did not exist this collision would seem fine. With edge1 present, the internal collision seems like a bug. But normally when Box2D collides two shapes, it views them in isolation.</p>
-<p><code><a class="el" href="group__geometry.html#structb2_smooth_segment" title="A smooth line segment with one-sided collision.">b2SmoothSegment</a></code> provides a mechanism for eliminating ghost collisions by storing the adjacent <em>ghost</em> vertices. Box2D uses these ghost vertices to prevent internal collisions.</p>
+<p><code><a class="el" href="group__geometry.html#structb2_chain_segment" title="A line segment with one-sided collision.">b2ChainSegment</a></code> provides a mechanism for eliminating ghost collisions by storing the adjacent <em>ghost</em> vertices. Box2D uses these ghost vertices to prevent internal collisions.</p>
 <div class="image">
 <object type="image/svg+xml" data="ghost_vertices.svg" width="30%" style="pointer-events: none;"></object>
 <div class="caption">
 Ghost Vertices</div></div>
     <p>The Box2D algorithm for dealing with ghost collisions only supports one-sided collision. The front face is to the right when looking from the first vertex towards the second vertex. This matches the counter-clockwise winding order used by polygons.</p>
 <h2><a class="anchor" id="autotoc_md38"></a>
-Smooth segment</h2>
-<p>Smooth segments use a concept called <em>ghost vertices</em> that Box2D can use to eliminate ghost collisions.</p>
-<div class="fragment"><div class="line"><a class="code hl_struct" href="group__geometry.html#structb2_smooth_segment">b2SmoothSegment</a> smoothSegment = {0};</div>
-<div class="line">smoothSegment.<a class="code hl_variable" href="group__geometry.html#af55c171fd068abfd5dfac18a5fa43d42">ghost1</a> = (<a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a>){1.7f, 0.0f};</div>
-<div class="line">smoothSegment.<a class="code hl_variable" href="group__geometry.html#ac325eeb392c204c197e5dae066088a94">segment</a> = (<a class="code hl_struct" href="group__geometry.html#structb2_segment">b2Segment</a>){{1.0f, 0.25f}, {0.0f, 0.0f}};</div>
-<div class="line">smoothSegment.<a class="code hl_variable" href="group__geometry.html#a90a2da7a2aebac2a181c3125ed9abe92">ghost2</a> = (<a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a>){-1.7f, 0.4f};</div>
-<div class="ttc" id="agroup__geometry_html_a90a2da7a2aebac2a181c3125ed9abe92"><div class="ttname"><a href="group__geometry.html#a90a2da7a2aebac2a181c3125ed9abe92">b2SmoothSegment::ghost2</a></div><div class="ttdeci">b2Vec2 ghost2</div><div class="ttdoc">The head ghost vertex.</div><div class="ttdef"><b>Definition</b> collision.h:168</div></div>
-<div class="ttc" id="agroup__geometry_html_ac325eeb392c204c197e5dae066088a94"><div class="ttname"><a href="group__geometry.html#ac325eeb392c204c197e5dae066088a94">b2SmoothSegment::segment</a></div><div class="ttdeci">b2Segment segment</div><div class="ttdoc">The line segment.</div><div class="ttdef"><b>Definition</b> collision.h:165</div></div>
-<div class="ttc" id="agroup__geometry_html_af55c171fd068abfd5dfac18a5fa43d42"><div class="ttname"><a href="group__geometry.html#af55c171fd068abfd5dfac18a5fa43d42">b2SmoothSegment::ghost1</a></div><div class="ttdeci">b2Vec2 ghost1</div><div class="ttdoc">The tail ghost vertex.</div><div class="ttdef"><b>Definition</b> collision.h:162</div></div>
-<div class="ttc" id="agroup__geometry_html_structb2_smooth_segment"><div class="ttname"><a href="group__geometry.html#structb2_smooth_segment">b2SmoothSegment</a></div><div class="ttdoc">A smooth line segment with one-sided collision.</div><div class="ttdef"><b>Definition</b> collision.h:160</div></div>
-</div><!-- fragment --><p>These ghost vertices must align with vertices of neighboring smooth segments, making them tedious and error-prone to setup.</p>
-<p>Smooth segments are not created directly. Instead, you can create chains of smooth segments. See <code><a class="el" href="group__shape.html#structb2_chain_def" title="Used to create a chain of edges.">b2ChainDef</a></code> and <code><a class="el" href="group__shape.html#gad94e527220dbcbfc7c9249fdc23928f8" title="Chain Shape.">b2CreateChain()</a></code>.</p>
+Chain segment</h2>
+<p>Chain segments use a concept called <em>ghost vertices</em> that Box2D can use to eliminate ghost collisions.</p>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="group__geometry.html#structb2_chain_segment">b2ChainSegment</a> chainSegment = {0};</div>
+<div class="line">chainSegment.<a class="code hl_variable" href="group__geometry.html#adffaa0a1815473f0cb47c490c75bcf2a">ghost1</a> = (<a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a>){1.7f, 0.0f};</div>
+<div class="line">chainSegment.<a class="code hl_variable" href="group__geometry.html#ae9cac70fa4299a8f6377ec6aa6cbe584">segment</a> = (<a class="code hl_struct" href="group__geometry.html#structb2_segment">b2Segment</a>){{1.0f, 0.25f}, {0.0f, 0.0f}};</div>
+<div class="line">chainSegment.<a class="code hl_variable" href="group__geometry.html#ac48f2bfcaa0a8922da1a9819c02e6180">ghost2</a> = (<a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a>){-1.7f, 0.4f};</div>
+<div class="ttc" id="agroup__geometry_html_ac48f2bfcaa0a8922da1a9819c02e6180"><div class="ttname"><a href="group__geometry.html#ac48f2bfcaa0a8922da1a9819c02e6180">b2ChainSegment::ghost2</a></div><div class="ttdeci">b2Vec2 ghost2</div><div class="ttdoc">The head ghost vertex.</div><div class="ttdef"><b>Definition</b> collision.h:168</div></div>
+<div class="ttc" id="agroup__geometry_html_adffaa0a1815473f0cb47c490c75bcf2a"><div class="ttname"><a href="group__geometry.html#adffaa0a1815473f0cb47c490c75bcf2a">b2ChainSegment::ghost1</a></div><div class="ttdeci">b2Vec2 ghost1</div><div class="ttdoc">The tail ghost vertex.</div><div class="ttdef"><b>Definition</b> collision.h:162</div></div>
+<div class="ttc" id="agroup__geometry_html_ae9cac70fa4299a8f6377ec6aa6cbe584"><div class="ttname"><a href="group__geometry.html#ae9cac70fa4299a8f6377ec6aa6cbe584">b2ChainSegment::segment</a></div><div class="ttdeci">b2Segment segment</div><div class="ttdoc">The line segment.</div><div class="ttdef"><b>Definition</b> collision.h:165</div></div>
+<div class="ttc" id="agroup__geometry_html_structb2_chain_segment"><div class="ttname"><a href="group__geometry.html#structb2_chain_segment">b2ChainSegment</a></div><div class="ttdoc">A line segment with one-sided collision.</div><div class="ttdef"><b>Definition</b> collision.h:160</div></div>
+</div><!-- fragment --><p>These ghost vertices must align with vertices of neighboring chain segments, making them tedious and error-prone to setup.</p>
+<p>Chain segments are not created directly. Instead, you can create chains of line segments. See <code><a class="el" href="group__shape.html#structb2_chain_def" title="Used to create a chain of line segments.">b2ChainDef</a></code> and <code><a class="el" href="group__shape.html#gad94e527220dbcbfc7c9249fdc23928f8" title="Chain Shape.">b2CreateChain()</a></code>.</p>
 <h1><a class="anchor" id="autotoc_md39"></a>
 Geometric Queries</h1>
 <p>You can perform a geometric queries on a single shape.</p>

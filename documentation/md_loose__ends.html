@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -111,8 +111,8 @@ $(function(){initNavTree('md_loose__ends.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Loose Ends</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md118"></a></p>
-<h1><a class="anchor" id="autotoc_md119"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md117"></a></p>
+<h1><a class="anchor" id="autotoc_md118"></a>
 User Data</h1>
 <p>Bodies, shapes, and joints allow you to attach user data as a <code>void*</code>. This is handy when you are examining Box2D data structures and you want to determine how they relate to the objects in your game engine.</p>
 <p>For example, it is typical to attach an entity pointer to the rigid body on that entity. This sets up a circular reference. If you have the entity, you can get the body. If you have the body, you can get the entity.</p>
@@ -130,7 +130,7 @@ User Data</h1>
 <li>Accessing a game structure when Box2D notifies you that a joint is going to be destroyed.</li>
 </ul>
 <p>Keep in mind that user data is optional and you can put anything in it. However, you should be consistent. For example, if you want to store an entity pointer on one body, you should keep an entity pointer on all bodies. Don't store a <code>GameEntity</code> pointer on one body, and a <code>ParticleSystem</code> pointer on another body. Casting a <code>GameEntity</code> to a <code>ParticleSystem</code> pointer may lead to a crash.</p>
-<h1><a class="anchor" id="autotoc_md120"></a>
+<h1><a class="anchor" id="autotoc_md119"></a>
 Pixels and Coordinate Systems</h1>
 <p>I recommend using MKS (meters, kilograms, and seconds) units and radians for angles. You may have trouble working with meters because your game is expressed in terms of pixels. To deal with this in the sample I have the whole <em>game</em> world in meters and just use an OpenGL viewport transformation to scale the world into screen space.</p>
 <p>You use code like this to scale your graphics.</p>
@@ -146,7 +146,7 @@ Pixels and Coordinate Systems</h1>
 </div><!-- fragment --><p>You should consider using MKS units in your game code and just convert to pixels when you render. This will simplify your game logic and reduce the chance for errors since the rendering conversion can be isolated to a small amount of code.</p>
 <p>If you use a conversion factor, you should try tweaking it globally to make sure nothing breaks. You can also try adjusting it to improve stability.</p>
 <p>If this conversion is not possible, you can set the length units used by Box2D using <code><a class="el" href="group__math.html#ga654e6f942a5d2abee54b6bba4176b15b" title="Box2D bases all length units on meters, but you may need different units for your game.">b2SetLengthUnitsPerMeter()</a></code>. This is experimental and not well tested.</p>
-<h1><a class="anchor" id="autotoc_md121"></a>
+<h1><a class="anchor" id="autotoc_md120"></a>
 Debug Drawing</h1>
 <p>You can implement the function pointers in <code><a class="el" href="group__world.html#structb2_debug_draw" title="This struct holds callbacks you can implement to draw a Box2D world.">b2DebugDraw</a></code> struct to get detailed drawing of the Box2D world. Debug draw provides:</p><ul>
 <li>shapes</li>
@@ -157,7 +157,7 @@ Debug Drawing</h1>
 </ul>
 <p>This is the preferred method of drawing the Box2D simulation, rather than accessing the data directly. The reason is that much of the necessary data is internal and subject to change.</p>
 <p>The samples application draws the Box2D world using the <code><a class="el" href="group__world.html#structb2_debug_draw" title="This struct holds callbacks you can implement to draw a Box2D world.">b2DebugDraw</a></code>.</p>
-<h1><a class="anchor" id="autotoc_md122"></a>
+<h1><a class="anchor" id="autotoc_md121"></a>
 Limitations</h1>
 <p>Box2D uses several approximations to simulate rigid body physics efficiently. This brings some limitations.</p>
 <p>Here are the current limitations:</p><ol type="1">

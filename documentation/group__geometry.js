@@ -44,11 +44,11 @@ var group__geometry =
       [ "point1", "group__geometry.html#a1e43ae93f9a3ce4aacfd3d4fa124edeb", null ],
       [ "point2", "group__geometry.html#ab2d026e2426fe8fc99b4e244680ca553", null ]
     ] ],
-    [ "b2SmoothSegment", "group__geometry.html#structb2_smooth_segment", [
-      [ "chainId", "group__geometry.html#a0142de8363f27000c3cd4b5eb12214cd", null ],
-      [ "ghost1", "group__geometry.html#af55c171fd068abfd5dfac18a5fa43d42", null ],
-      [ "ghost2", "group__geometry.html#a90a2da7a2aebac2a181c3125ed9abe92", null ],
-      [ "segment", "group__geometry.html#ac325eeb392c204c197e5dae066088a94", null ]
+    [ "b2ChainSegment", "group__geometry.html#structb2_chain_segment", [
+      [ "chainId", "group__geometry.html#a2f7fffb58c910db4dd942de41fd9afd1", null ],
+      [ "ghost1", "group__geometry.html#adffaa0a1815473f0cb47c490c75bcf2a", null ],
+      [ "ghost2", "group__geometry.html#ac48f2bfcaa0a8922da1a9819c02e6180", null ],
+      [ "segment", "group__geometry.html#ae9cac70fa4299a8f6377ec6aa6cbe584", null ]
     ] ],
     [ "b2Hull", "group__geometry.html#structb2_hull", [
       [ "count", "group__geometry.html#a6f455648912581ab08d0ecad281a300d", null ],
@@ -65,7 +65,7 @@ var group__geometry =
     [ "b2ComputeSegmentAABB", "group__geometry.html#gab490924935d4384b5f8ab7d4483a51e5", null ],
     [ "b2IsValidRay", "group__geometry.html#ga90ffd88a51aa245f4be0d307f90e092f", null ],
     [ "b2MakeBox", "group__geometry.html#ga9f61df106f05be28e4c66c83a00a0372", null ],
-    [ "b2MakeOffsetBox", "group__geometry.html#ga8ed56ceb8b26b09555c3f93dfadc5504", null ],
+    [ "b2MakeOffsetBox", "group__geometry.html#ga1fcd7ef6ffbd3ebf41b01094f9de0140", null ],
     [ "b2MakeOffsetPolygon", "group__geometry.html#gaacd7f5c324072fd911ee5a57c6c9057e", null ],
     [ "b2MakePolygon", "group__geometry.html#gaabce3498d22a93acd7ad888271d3cbe1", null ],
     [ "b2MakeRoundedBox", "group__geometry.html#gaff6f731585c819ca030db9a1008aae1e", null ],

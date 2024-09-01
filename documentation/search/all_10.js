@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['new_20solver_0',['New solver',['../md_migration.html#autotoc_md162',1,'']]],
-  ['new_20users_1',['What are the common mistakes made by new users?',['../md_faq.html#autotoc_md154',1,'']]],
+  ['new_20solver_0',['New solver',['../md_migration.html#autotoc_md161',1,'']]],
+  ['new_20users_1',['What are the common mistakes made by new users?',['../md_faq.html#autotoc_md153',1,'']]],
   ['next_2',['next',['../group__tree.html#ad0cab90d8d20d57e2f2b9be52f7dd25d',1,'b2TreeNode.__unnamed1__']]],
   ['nodecapacity_3',['nodeCapacity',['../group__tree.html#ad3f854063a1264469671000b8d51799c',1,'b2DynamicTree']]],
   ['nodecount_4',['nodeCount',['../group__tree.html#ad7b08d7e71ca0a7999f851f1fd9d4ab4',1,'b2DynamicTree']]],

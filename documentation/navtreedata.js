@@ -48,7 +48,7 @@ var NAVTREE =
         [ "Polygons", "md_collision.html#autotoc_md35", null ],
         [ "Segments", "md_collision.html#autotoc_md36", null ],
         [ "Ghost Collisions", "md_collision.html#autotoc_md37", null ],
-        [ "Smooth segment", "md_collision.html#autotoc_md38", null ]
+        [ "Chain segment", "md_collision.html#autotoc_md38", null ]
       ] ],
       [ "Geometric Queries", "md_collision.html#autotoc_md39", [
         [ "Shape Point Test", "md_collision.html#autotoc_md40", null ],
@@ -130,80 +130,79 @@ var NAVTREE =
         [ "Revolute Joint", "md_simulation.html#autotoc_md105", null ],
         [ "Prismatic Joint", "md_simulation.html#autotoc_md106", null ],
         [ "Mouse Joint", "md_simulation.html#autotoc_md107", null ],
-        [ "Wheel Joint", "md_simulation.html#autotoc_md108", null ],
-        [ "Weld Joint", "md_simulation.html#autotoc_md109", null ],
-        [ "Motor Joint", "md_simulation.html#autotoc_md110", null ],
-        [ "Wheel Joint", "md_simulation.html#autotoc_md111", null ]
+        [ "Weld Joint", "md_simulation.html#autotoc_md108", null ],
+        [ "Motor Joint", "md_simulation.html#autotoc_md109", null ],
+        [ "Wheel Joint", "md_simulation.html#autotoc_md110", null ]
       ] ],
       [ "Spatial Queries", "md_simulation.html#spatial", [
-        [ "Overlap Queries", "md_simulation.html#autotoc_md112", [
-          [ "Query Filtering", "md_simulation.html#autotoc_md113", null ],
-          [ "AABB Overlap", "md_simulation.html#autotoc_md114", null ],
-          [ "Shape Overlap", "md_simulation.html#autotoc_md115", null ]
+        [ "Overlap Queries", "md_simulation.html#autotoc_md111", [
+          [ "Query Filtering", "md_simulation.html#autotoc_md112", null ],
+          [ "AABB Overlap", "md_simulation.html#autotoc_md113", null ],
+          [ "Shape Overlap", "md_simulation.html#autotoc_md114", null ]
         ] ],
-        [ "Ray-casts", "md_simulation.html#autotoc_md116", null ],
-        [ "Shape-casts", "md_simulation.html#autotoc_md117", null ]
+        [ "Ray-casts", "md_simulation.html#autotoc_md115", null ],
+        [ "Shape-casts", "md_simulation.html#autotoc_md116", null ]
       ] ]
     ] ],
     [ "Loose Ends", "md_loose__ends.html", [
-      [ "User Data", "md_loose__ends.html#autotoc_md119", null ],
-      [ "Pixels and Coordinate Systems", "md_loose__ends.html#autotoc_md120", null ],
-      [ "Debug Drawing", "md_loose__ends.html#autotoc_md121", null ],
-      [ "Limitations", "md_loose__ends.html#autotoc_md122", null ]
+      [ "User Data", "md_loose__ends.html#autotoc_md118", null ],
+      [ "Pixels and Coordinate Systems", "md_loose__ends.html#autotoc_md119", null ],
+      [ "Debug Drawing", "md_loose__ends.html#autotoc_md120", null ],
+      [ "Limitations", "md_loose__ends.html#autotoc_md121", null ]
     ] ],
     [ "Further Reading", "md_reading.html", null ],
     [ "FAQ", "md_faq.html", [
-      [ "What is Box2D?", "md_faq.html#autotoc_md125", null ],
-      [ "What platforms does Box2D support?", "md_faq.html#autotoc_md126", null ],
-      [ "Who makes it?", "md_faq.html#autotoc_md127", null ],
-      [ "How do I get help?", "md_faq.html#autotoc_md128", null ],
-      [ "Documentation", "md_faq.html#autotoc_md129", [
-        [ "Why isn't a feature documented?", "md_faq.html#autotoc_md130", null ]
+      [ "What is Box2D?", "md_faq.html#autotoc_md124", null ],
+      [ "What platforms does Box2D support?", "md_faq.html#autotoc_md125", null ],
+      [ "Who makes it?", "md_faq.html#autotoc_md126", null ],
+      [ "How do I get help?", "md_faq.html#autotoc_md127", null ],
+      [ "Documentation", "md_faq.html#autotoc_md128", [
+        [ "Why isn't a feature documented?", "md_faq.html#autotoc_md129", null ]
       ] ],
-      [ "Prerequisites", "md_faq.html#autotoc_md131", [
-        [ "Programming", "md_faq.html#autotoc_md132", null ],
-        [ "Math and Physics", "md_faq.html#autotoc_md133", null ]
+      [ "Prerequisites", "md_faq.html#autotoc_md130", [
+        [ "Programming", "md_faq.html#autotoc_md131", null ],
+        [ "Math and Physics", "md_faq.html#autotoc_md132", null ]
       ] ],
-      [ "API", "md_faq.html#autotoc_md134", [
-        [ "What units does Box2D use?", "md_faq.html#autotoc_md135", null ],
-        [ "How do I convert pixels to meters?", "md_faq.html#autotoc_md136", null ],
-        [ "Why don't you use this awesome language?", "md_faq.html#autotoc_md137", null ],
-        [ "Can I use Box2D in a DLL?", "md_faq.html#autotoc_md138", null ],
-        [ "Is Box2D thread-safe?", "md_faq.html#autotoc_md139", null ]
+      [ "API", "md_faq.html#autotoc_md133", [
+        [ "What units does Box2D use?", "md_faq.html#autotoc_md134", null ],
+        [ "How do I convert pixels to meters?", "md_faq.html#autotoc_md135", null ],
+        [ "Why don't you use this awesome language?", "md_faq.html#autotoc_md136", null ],
+        [ "Can I use Box2D in a DLL?", "md_faq.html#autotoc_md137", null ],
+        [ "Is Box2D thread-safe?", "md_faq.html#autotoc_md138", null ]
       ] ],
-      [ "Build Issues", "md_faq.html#autotoc_md140", [
-        [ "Why doesn't my code compile and/or link?", "md_faq.html#autotoc_md141", null ]
+      [ "Build Issues", "md_faq.html#autotoc_md139", [
+        [ "Why doesn't my code compile and/or link?", "md_faq.html#autotoc_md140", null ]
       ] ],
-      [ "Rendering", "md_faq.html#autotoc_md142", [
-        [ "What are Box2D's rendering capabilities?", "md_faq.html#autotoc_md143", null ],
-        [ "But the samples application draws stuff", "md_faq.html#autotoc_md144", null ],
-        [ "How do I draw shapes?", "md_faq.html#autotoc_md145", null ]
+      [ "Rendering", "md_faq.html#autotoc_md141", [
+        [ "What are Box2D's rendering capabilities?", "md_faq.html#autotoc_md142", null ],
+        [ "But the samples application draws stuff", "md_faq.html#autotoc_md143", null ],
+        [ "How do I draw shapes?", "md_faq.html#autotoc_md144", null ]
       ] ],
-      [ "Accuracy", "md_faq.html#autotoc_md146", null ],
-      [ "Making Games", "md_faq.html#autotoc_md147", [
-        [ "Worms Clones", "md_faq.html#autotoc_md148", null ],
-        [ "Tile Based Environment", "md_faq.html#autotoc_md149", null ],
-        [ "Asteroid Type Coordinate Systems", "md_faq.html#autotoc_md150", null ]
+      [ "Accuracy", "md_faq.html#autotoc_md145", null ],
+      [ "Making Games", "md_faq.html#autotoc_md146", [
+        [ "Worms Clones", "md_faq.html#autotoc_md147", null ],
+        [ "Tile Based Environment", "md_faq.html#autotoc_md148", null ],
+        [ "Asteroid Type Coordinate Systems", "md_faq.html#autotoc_md149", null ]
       ] ],
-      [ "Determinism", "md_faq.html#autotoc_md151", [
-        [ "Is Box2D deterministic?", "md_faq.html#autotoc_md152", null ],
-        [ "But I really want determinism", "md_faq.html#autotoc_md153", null ]
+      [ "Determinism", "md_faq.html#autotoc_md150", [
+        [ "Is Box2D deterministic?", "md_faq.html#autotoc_md151", null ],
+        [ "But I really want determinism", "md_faq.html#autotoc_md152", null ]
       ] ],
-      [ "What are the common mistakes made by new users?", "md_faq.html#autotoc_md154", null ]
+      [ "What are the common mistakes made by new users?", "md_faq.html#autotoc_md153", null ]
     ] ],
     [ "Migration Guide", "md_migration.html", [
-      [ "Version 2.4 to Version 3.0", "md_migration.html#autotoc_md156", [
-        [ "Creating a world", "md_migration.html#autotoc_md157", null ],
-        [ "Creating a body", "md_migration.html#autotoc_md158", null ],
-        [ "Creating a shape", "md_migration.html#autotoc_md159", null ],
-        [ "Chains", "md_migration.html#autotoc_md160", null ],
-        [ "Creating a joint", "md_migration.html#autotoc_md161", null ],
-        [ "New solver", "md_migration.html#autotoc_md162", null ],
-        [ "Contact data", "md_migration.html#autotoc_md163", null ],
-        [ "Sensors", "md_migration.html#autotoc_md164", null ],
-        [ "Queries", "md_migration.html#autotoc_md165", null ],
-        [ "World iteration", "md_migration.html#autotoc_md166", null ],
-        [ "Library configuration", "md_migration.html#autotoc_md167", null ]
+      [ "Version 2.4 to Version 3.0", "md_migration.html#autotoc_md155", [
+        [ "Creating a world", "md_migration.html#autotoc_md156", null ],
+        [ "Creating a body", "md_migration.html#autotoc_md157", null ],
+        [ "Creating a shape", "md_migration.html#autotoc_md158", null ],
+        [ "Chains", "md_migration.html#autotoc_md159", null ],
+        [ "Creating a joint", "md_migration.html#autotoc_md160", null ],
+        [ "New solver", "md_migration.html#autotoc_md161", null ],
+        [ "Contact data", "md_migration.html#autotoc_md162", null ],
+        [ "Sensors", "md_migration.html#autotoc_md163", null ],
+        [ "Queries", "md_migration.html#autotoc_md164", null ],
+        [ "World iteration", "md_migration.html#autotoc_md165", null ],
+        [ "Library configuration", "md_migration.html#autotoc_md166", null ]
       ] ]
     ] ],
     [ "Reference", "topics.html", "topics" ],
@@ -225,9 +224,9 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "group__distance__joint.html#a001acbbd67326ab5e5d5ec6dc64faf78",
-"group__math.html#structb2_vec2",
-"group__tree.html#ga91e6cb487c7a3dd545276ccb794af7bc",
-"md_migration.html#autotoc_md156"
+"group__math.html#structb2_transform",
+"group__tree.html#ga7a44b407df8b53f0e95753ae0da43af6",
+"md_loose__ends.html#autotoc_md121"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

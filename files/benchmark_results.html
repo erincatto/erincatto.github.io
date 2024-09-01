@@ -51,10 +51,10 @@ SPDX-License-Identifier: MIT -->
 
     Platforms tested:
     <ul>
-        <li>AVX2 : AMD 7950X</li>
-        <li>SSE2 : AMD 7950X</li>
-        <li>scalar : AMD 7950X</li>
-        <li>Neon : Apple M2</li>
+        <li>r9-avx2 : AMD Ryzen 9 7950X with AVX2 intrinsics</li>
+        <li>r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics</li>
+        <li>r9-scalar : AMD Ryzen 9 7950X with no intrinsics</li>
+        <li>m2-neon : Apple M2 with ARM Neon intrinsics</li>
     </ul>
     
     <hr/>
@@ -128,21 +128,22 @@ SPDX-License-Identifier: MIT -->
         const processors = [
             {
                 folder: 'amd7950x',
-                label: 'avx2'
+                label: 'r9-avx2'
             },
-            {
-                folder: 'm2air',
-                label: 'neon'
-            },
+
             {
                 folder: 'amd7950x_sse2',
-                label: 'sse2',
+                label: 'r9-sse2',
             },
             {
 
                 folder: 'amd7950x_float',
-                label: 'scalar'
-            }
+                label: 'r9-scalar'
+            },
+            {
+                folder: 'm2air',
+                label: 'm2-neon'
+            },
         ];
 
         const branchSelect = document.getElementById('branchSelect');

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['enablecontactevents_0',['enableContactEvents',['../group__shape.html#a8a4ee544cccf26c2faacbbb5ba9f8d3c',1,'b2ShapeDef']]],
-  ['enablecontinous_1',['enableContinous',['../group__world.html#a7c83fe7f22bedaf2f4ffee4cdb48df0f',1,'b2WorldDef']]],
+  ['enablecontinuous_1',['enableContinuous',['../group__world.html#aaaec774420a78213988b1005f68badd6',1,'b2WorldDef']]],
   ['enablehitevents_2',['enableHitEvents',['../group__shape.html#aaff54dfba807092f20cb0ea1b0bbbfbf',1,'b2ShapeDef']]],
   ['enablelimit_3',['enableLimit',['../group__distance__joint.html#a00e542b7324cc6a5b3e86aa8dc1dc3e2',1,'b2DistanceJointDef::enableLimit'],['../group__prismatic__joint.html#aa61a03b68caac62a5cf66354f6756eae',1,'b2PrismaticJointDef::enableLimit'],['../group__revolute__joint.html#a2eaefc5fc5caf879cfd59ebcd852b756',1,'b2RevoluteJointDef::enableLimit'],['../group__wheel__joint.html#a3d46200f4f5342a46f5ef79f6a059d28',1,'b2WheelJointDef::enableLimit']]],
   ['enablemotor_4',['enableMotor',['../group__distance__joint.html#ab6017b5fb0b9be77ba08b252d1921586',1,'b2DistanceJointDef::enableMotor'],['../group__prismatic__joint.html#a58ac79a54a8110d3a745e1d6d36990dc',1,'b2PrismaticJointDef::enableMotor'],['../group__revolute__joint.html#aa94d9e66be9f03818d0cfbd9c70b2996',1,'b2RevoluteJointDef::enableMotor'],['../group__wheel__joint.html#a8e7193d6c34c784ffd71e79d3a70acc6',1,'b2WheelJointDef::enableMotor']]],

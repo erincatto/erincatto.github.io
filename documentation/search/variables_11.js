@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['segment_0',['segment',['../group__geometry.html#ac325eeb392c204c197e5dae066088a94',1,'b2SmoothSegment']]],
+  ['segment_0',['segment',['../group__geometry.html#ae9cac70fa4299a8f6377ec6aa6cbe584',1,'b2ChainSegment']]],
   ['sensorshapeid_1',['sensorShapeId',['../group__events.html#a2013a6dbbec40599861a7ae9fc990c66',1,'b2SensorBeginTouchEvent::sensorShapeId'],['../group__events.html#aafdaf0906a73d9f9bfd32f5b3e543137',1,'b2SensorEndTouchEvent::sensorShapeId']]],
   ['separation_2',['separation',['../group__collision.html#a77ae27a5556d1a10971eb29cde82938e',1,'b2ManifoldPoint']]],
   ['shapeida_3',['shapeIdA',['../group__events.html#a70c5d8f83f532cfcb024631384a8e543',1,'b2ContactBeginTouchEvent::shapeIdA'],['../group__events.html#a9f500db2317884404aa59c595bfdda64',1,'b2ContactEndTouchEvent::shapeIdA'],['../group__events.html#ae4d65939a5083ed7e1a6a96c043c6c9b',1,'b2ContactHitEvent::shapeIdA']]],

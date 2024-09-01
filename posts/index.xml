@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Determinism</title>
+      <link>https://box2d.org/posts/2024/08/determinism/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2024/08/determinism/</guid>
+      <description>Determinism means many things when it comes to game development and especially physics engines. Generally in game development we like things to be repeatable. This makes debugging easier. This doesn&amp;rsquo;t rule out emergent behavior though because player input can be viewed as random.&#xA;Testing Determinism Determinism is a brittle feature. It is easy to break. Code changes can break it. Compiler versions can break it. So it needs to be tested using continuous integration, or CI for short.</description>
+    </item>
     <item>
       <title>SIMD Matters</title>
       <link>https://box2d.org/posts/2024/08/simd-matters/</link>

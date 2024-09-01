@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -145,9 +145,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:structb2_segment" id="r_structb2_segment"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_segment">b2Segment</a></td></tr>
 <tr class="memdesc:structb2_segment"><td class="mdescLeft">&#160;</td><td class="mdescRight">A line segment with two-sided collision.  <a href="#structb2_segment">More...</a><br /></td></tr>
 <tr class="separator:structb2_segment"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structb2_smooth_segment" id="r_structb2_smooth_segment"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_smooth_segment">b2SmoothSegment</a></td></tr>
-<tr class="memdesc:structb2_smooth_segment"><td class="mdescLeft">&#160;</td><td class="mdescRight">A smooth line segment with one-sided collision.  <a href="#structb2_smooth_segment">More...</a><br /></td></tr>
-<tr class="separator:structb2_smooth_segment"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structb2_chain_segment" id="r_structb2_chain_segment"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_chain_segment">b2ChainSegment</a></td></tr>
+<tr class="memdesc:structb2_chain_segment"><td class="mdescLeft">&#160;</td><td class="mdescRight">A line segment with one-sided collision.  <a href="#structb2_chain_segment">More...</a><br /></td></tr>
+<tr class="separator:structb2_chain_segment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structb2_hull" id="r_structb2_hull"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_hull">b2Hull</a></td></tr>
 <tr class="memdesc:structb2_hull"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convex hull.  <a href="#structb2_hull">More...</a><br /></td></tr>
 <tr class="separator:structb2_hull"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,10 +182,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2IsValidRay</b> (con
 <a class="el" href="#structb2_polygon">b2Polygon</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2MakeRoundedBox</b> (float hx, float hy, float radius)</td></tr>
 <tr class="memdesc:gaff6f731585c819ca030db9a1008aae1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a rounded box, bypassing the need for a convex hull. <br /></td></tr>
 <tr class="separator:gaff6f731585c819ca030db9a1008aae1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8ed56ceb8b26b09555c3f93dfadc5504" id="r_ga8ed56ceb8b26b09555c3f93dfadc5504"><td class="memItemLeft" align="right" valign="top"><a id="ga8ed56ceb8b26b09555c3f93dfadc5504" name="ga8ed56ceb8b26b09555c3f93dfadc5504"></a>
-<a class="el" href="#structb2_polygon">b2Polygon</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2MakeOffsetBox</b> (float hx, float hy, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> center, float angle)</td></tr>
-<tr class="memdesc:ga8ed56ceb8b26b09555c3f93dfadc5504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an offset box, bypassing the need for a convex hull. <br /></td></tr>
-<tr class="separator:ga8ed56ceb8b26b09555c3f93dfadc5504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fcd7ef6ffbd3ebf41b01094f9de0140" id="r_ga1fcd7ef6ffbd3ebf41b01094f9de0140"><td class="memItemLeft" align="right" valign="top"><a id="ga1fcd7ef6ffbd3ebf41b01094f9de0140" name="ga1fcd7ef6ffbd3ebf41b01094f9de0140"></a>
+<a class="el" href="#structb2_polygon">b2Polygon</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2MakeOffsetBox</b> (float hx, float hy, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> center, <a class="el" href="group__math.html#structb2_rot">b2Rot</a> rotation)</td></tr>
+<tr class="memdesc:ga1fcd7ef6ffbd3ebf41b01094f9de0140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an offset box, bypassing the need for a convex hull. <br /></td></tr>
+<tr class="separator:ga1fcd7ef6ffbd3ebf41b01094f9de0140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9c6b70e62ba1b8dc1e22104af964740c" id="r_ga9c6b70e62ba1b8dc1e22104af964740c"><td class="memItemLeft" align="right" valign="top"><a id="ga9c6b70e62ba1b8dc1e22104af964740c" name="ga9c6b70e62ba1b8dc1e22104af964740c"></a>
 <a class="el" href="#structb2_polygon">b2Polygon</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2TransformPolygon</b> (<a class="el" href="group__math.html#structb2_transform">b2Transform</a> transform, const <a class="el" href="#structb2_polygon">b2Polygon</a> *polygon)</td></tr>
 <tr class="memdesc:ga9c6b70e62ba1b8dc1e22104af964740c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a polygon. This is useful for transferring a shape from one body to another. <br /></td></tr>
@@ -666,54 +666,54 @@ The second point. </td></tr>
 
 </div>
 </div>
-<a name="structb2_smooth_segment" id="structb2_smooth_segment"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structb2_smooth_segment">&#9670;&#160;</a></span>b2SmoothSegment</h2>
+<a name="structb2_chain_segment" id="structb2_chain_segment"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structb2_chain_segment">&#9670;&#160;</a></span>b2ChainSegment</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct b2SmoothSegment</td>
+          <td class="memname">struct b2ChainSegment</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>A smooth line segment with one-sided collision. </p>
+<div class="textblock"><p>A line segment with one-sided collision. </p>
 <p>Only collides on the right side. Several of these are generated for a chain shape. ghost1 -&gt; point1 -&gt; point2 -&gt; ghost2 </p>
 </div><div class="dynheader">
-Collaboration diagram for b2SmoothSegment:</div>
+Collaboration diagram for b2ChainSegment:</div>
 <div class="dyncontent">
-<div class="center"><img src="structb2_smooth_segment__coll__graph.png" border="0" usemap="#ab2_smooth_segment_coll__map" alt="Collaboration graph"/></div>
-<map name="ab2_smooth_segment_coll__map" id="ab2_smooth_segment_coll__map">
-<area shape="rect" title="A smooth line segment with one&#45;sided collision." alt="" coords="5,200,139,225"/>
-<area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="39,5,105,31"/>
-<area shape="poly" title=" " alt="" coords="70,46,66,89,65,137,73,200,67,200,60,137,61,89,65,46"/>
-<area shape="rect" href="group__geometry.html#structb2_segment" title="A line segment with two&#45;sided collision." alt="" coords="119,110,207,135"/>
-<area shape="poly" title=" " alt="" coords="94,40,154,108,150,112,90,44"/>
-<area shape="poly" title=" " alt="" coords="142,148,86,202,82,198,138,144"/>
+<div class="center"><img src="structb2_chain_segment__coll__graph.png" border="0" usemap="#ab2_chain_segment_coll__map" alt="Collaboration graph"/></div>
+<map name="ab2_chain_segment_coll__map" id="ab2_chain_segment_coll__map">
+<area shape="rect" title="A line segment with one&#45;sided collision." alt="" coords="5,200,127,225"/>
+<area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="33,5,99,31"/>
+<area shape="poly" title=" " alt="" coords="64,46,60,89,59,137,67,200,61,200,54,137,55,89,59,46"/>
+<area shape="rect" href="group__geometry.html#structb2_segment" title="A line segment with two&#45;sided collision." alt="" coords="113,110,201,135"/>
+<area shape="poly" title=" " alt="" coords="88,40,148,108,144,112,84,44"/>
+<area shape="poly" title=" " alt="" coords="136,148,80,202,76,198,132,144"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a0142de8363f27000c3cd4b5eb12214cd" name="a0142de8363f27000c3cd4b5eb12214cd"></a>int32_t</td>
+<a id="a2f7fffb58c910db4dd942de41fd9afd1" name="a2f7fffb58c910db4dd942de41fd9afd1"></a>int32_t</td>
 <td class="fieldname">
 chainId</td>
 <td class="fielddoc">
 The owning chain shape index (internal usage only) </td></tr>
 <tr><td class="fieldtype">
-<a id="af55c171fd068abfd5dfac18a5fa43d42" name="af55c171fd068abfd5dfac18a5fa43d42"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
+<a id="adffaa0a1815473f0cb47c490c75bcf2a" name="adffaa0a1815473f0cb47c490c75bcf2a"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
 <td class="fieldname">
 ghost1</td>
 <td class="fielddoc">
 The tail ghost vertex. </td></tr>
 <tr><td class="fieldtype">
-<a id="a90a2da7a2aebac2a181c3125ed9abe92" name="a90a2da7a2aebac2a181c3125ed9abe92"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
+<a id="ac48f2bfcaa0a8922da1a9819c02e6180" name="ac48f2bfcaa0a8922da1a9819c02e6180"></a><a class="el" href="group__math.html#structb2_vec2">b2Vec2</a></td>
 <td class="fieldname">
 ghost2</td>
 <td class="fielddoc">
 The head ghost vertex. </td></tr>
 <tr><td class="fieldtype">
-<a id="ac325eeb392c204c197e5dae066088a94" name="ac325eeb392c204c197e5dae066088a94"></a><a class="el" href="#structb2_segment">b2Segment</a></td>
+<a id="ae9cac70fa4299a8f6377ec6aa6cbe584" name="ae9cac70fa4299a8f6377ec6aa6cbe584"></a><a class="el" href="#structb2_segment">b2Segment</a></td>
 <td class="fieldname">
 segment</td>
 <td class="fielddoc">

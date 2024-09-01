@@ -1,5 +1,5 @@
 <map id="b2ChainDef" name="b2ChainDef">
-<area shape="rect" id="Node000001" title="Used to create a chain of edges." alt="" coords="40,93,128,119"/>
+<area shape="rect" id="Node000001" title="Used to create a chain of line segments." alt="" coords="40,93,128,119"/>
 <area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,44,62,68,78,92,73,95,58,71,46,46"/>
 <area shape="rect" id="Node000003" href="$group__shape.html#structb2_filter" title="This is used to filter collision on shapes." alt="" coords="97,5,162,31"/>

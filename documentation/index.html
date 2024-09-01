@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -216,7 +216,7 @@ Ids and Definitions</h1>
 <div class="ttc" id="agroup__body_html_gae508148d6b854188a14075edd90c7777"><div class="ttname"><a href="group__body.html#gae508148d6b854188a14075edd90c7777">b2CreateBody</a></div><div class="ttdeci">b2BodyId b2CreateBody(b2WorldId worldId, const b2BodyDef *def)</div><div class="ttdoc">Create a rigid body given a definition.</div></div>
 <div class="ttc" id="agroup__body_html_structb2_body_def"><div class="ttname"><a href="group__body.html#structb2_body_def">b2BodyDef</a></div><div class="ttdoc">A body definition holds all the data needed to construct a rigid body.</div><div class="ttdef"><b>Definition</b> types.h:146</div></div>
 <div class="ttc" id="agroup__id_html_structb2_body_id"><div class="ttname"><a href="group__id.html#structb2_body_id">b2BodyId</a></div><div class="ttdoc">Body id references a body instance. This should be treated as an opaque handle.</div><div class="ttdef"><b>Definition</b> id.h:45</div></div>
-<div class="ttc" id="agroup__math_html_structb2_vec2"><div class="ttname"><a href="group__math.html#structb2_vec2">b2Vec2</a></div><div class="ttdoc">2D vector This can be used to represent a point or free vector</div><div class="ttdef"><b>Definition</b> math_functions.h:23</div></div>
+<div class="ttc" id="agroup__math_html_structb2_vec2"><div class="ttname"><a href="group__math.html#structb2_vec2">b2Vec2</a></div><div class="ttdoc">2D vector This can be used to represent a point or free vector</div><div class="ttdef"><b>Definition</b> math_functions.h:24</div></div>
 </div><!-- fragment --><p>Notice the body definition is initialize by calling <code><a class="el" href="group__body.html#ga853e18f389eabf0e8cef10a81407e219" title="Use this to initialize your body definition.">b2DefaultBodyDef()</a></code>. This is needed because C does not have constructors and zero initialization is not suitable for the definitions used in Box2D.</p>
 <p>Also notice that the body definition is a temporary object that is fully copied into the internal body data structures. Definitions should usually be created on the stack as temporaries.</p>
 <p>This is how a body is destroyed:</p>

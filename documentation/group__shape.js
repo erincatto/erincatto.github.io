@@ -1,13 +1,13 @@
 var group__shape =
 [
     [ "b2Filter", "group__shape.html#structb2_filter", [
-      [ "categoryBits", "group__shape.html#a7f3aa385d11250a14e4afa9a298e3616", null ],
+      [ "categoryBits", "group__shape.html#aa93b718a9aecd5c5c9a05708860c8f2c", null ],
       [ "groupIndex", "group__shape.html#a61b293cdeb367fcefc3eab55847e3133", null ],
-      [ "maskBits", "group__shape.html#a638f066a367b5d907eadd6927e3cc366", null ]
+      [ "maskBits", "group__shape.html#a77f175cd1413952cc26c866cebdee259", null ]
     ] ],
     [ "b2QueryFilter", "group__shape.html#structb2_query_filter", [
-      [ "categoryBits", "group__shape.html#a4d1f63dbfba41b96dd772190a73095e8", null ],
-      [ "maskBits", "group__shape.html#ab8df1b418226ad839684d97e0d5c6917", null ]
+      [ "categoryBits", "group__shape.html#ae6ab473dc0dd363830394c899a50bbde", null ],
+      [ "maskBits", "group__shape.html#a4ba3fd17260e8f406f993ffd524c9879", null ]
     ] ],
     [ "b2ShapeDef", "group__shape.html#structb2_shape_def", [
       [ "customColor", "group__shape.html#af7c60237ab2f0d1313baaf00102c57f1", null ],
@@ -39,7 +39,7 @@ var group__shape =
       [ "b2_capsuleShape", "group__shape.html#gga7ee22c73413d850c0937526938f92ff2af997a51c9908fd78daab90e3a0240b7a", null ],
       [ "b2_segmentShape", "group__shape.html#gga7ee22c73413d850c0937526938f92ff2aade3def0e56ad48baf2637849d31b890", null ],
       [ "b2_polygonShape", "group__shape.html#gga7ee22c73413d850c0937526938f92ff2a56796d9c2e6dcd59d781e20f9a50c923", null ],
-      [ "b2_smoothSegmentShape", "group__shape.html#gga7ee22c73413d850c0937526938f92ff2a87336a67b74eee046cf39a95d287d124", null ],
+      [ "b2_chainSegmentShape", "group__shape.html#gga7ee22c73413d850c0937526938f92ff2ac719f0dedd0508f056b5d4619bd59e94", null ],
       [ "b2_shapeTypeCount", "group__shape.html#gga7ee22c73413d850c0937526938f92ff2a08417bb42d17ff6b9367f593abc824d7", null ]
     ] ],
     [ "b2Chain_IsValid", "group__shape.html#gac5d28a8219d8c5cfc6d87d4655abf7dc", null ],
@@ -67,6 +67,7 @@ var group__shape =
     [ "b2Shape_GetAABB", "group__shape.html#gaa2c85cf0d23e840435669c75137bb7bd", null ],
     [ "b2Shape_GetBody", "group__shape.html#ga131b35be367466024c3efbcd133d2af2", null ],
     [ "b2Shape_GetCapsule", "group__shape.html#ga205b2b0170b5b6fd5381ffccfb4a0a77", null ],
+    [ "b2Shape_GetChainSegment", "group__shape.html#ga11141f72fe1e601740fc642361d70b2e", null ],
     [ "b2Shape_GetCircle", "group__shape.html#ga6f1e10f5b16a68fb58a01150dc2f9dcc", null ],
     [ "b2Shape_GetClosestPoint", "group__shape.html#ga20e9aa1f7a0e2c58ecb7aaa91d7f746c", null ],
     [ "b2Shape_GetContactCapacity", "group__shape.html#ga9d2b342c9a7424e2e222ca1793582ab8", null ],
@@ -78,12 +79,11 @@ var group__shape =
     [ "b2Shape_GetPolygon", "group__shape.html#gab88e2f588a333dd8fefe92d87511748d", null ],
     [ "b2Shape_GetRestitution", "group__shape.html#gabe487ab26c33480b41713be7ba9f9424", null ],
     [ "b2Shape_GetSegment", "group__shape.html#gae034609744fbd99ff8ced65c7da5620b", null ],
-    [ "b2Shape_GetSmoothSegment", "group__shape.html#gacbdc2340aef21154d31f7355390931ff", null ],
     [ "b2Shape_GetType", "group__shape.html#ga5263a91a5ad90f44a7d8e0550d86d03d", null ],
     [ "b2Shape_GetUserData", "group__shape.html#gaa49fd43d16e9c6a110fad958ddc901d2", null ],
     [ "b2Shape_IsSensor", "group__shape.html#ga7a6eab5f27ba7aa6f3ced98a10ae02aa", null ],
     [ "b2Shape_IsValid", "group__shape.html#gae04f0a3f4037275b9b9a883e2fa6d6d2", null ],
-    [ "b2Shape_RayCast", "group__shape.html#ga4cdd1f9c003dcff503921ee1c7c74a77", null ],
+    [ "b2Shape_RayCast", "group__shape.html#gac451df0ea9926e196468b531d39e15fc", null ],
     [ "b2Shape_SetCapsule", "group__shape.html#gaa0ab3545d3e127623b9a524fa86f593c", null ],
     [ "b2Shape_SetCircle", "group__shape.html#ga9ff0ad5325e88b9bb6d1920721d34678", null ],
     [ "b2Shape_SetDensity", "group__shape.html#ga55f78dc46dd85342039bff90c8cf92a9", null ],

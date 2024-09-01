@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -131,7 +131,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:structb2_shape_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to create a shape.  <a href="#structb2_shape_def">More...</a><br /></td></tr>
 <tr class="separator:structb2_shape_def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structb2_chain_def" id="r_structb2_chain_def"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_chain_def">b2ChainDef</a></td></tr>
-<tr class="memdesc:structb2_chain_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to create a chain of edges.  <a href="#structb2_chain_def">More...</a><br /></td></tr>
+<tr class="memdesc:structb2_chain_def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to create a chain of line segments.  <a href="#structb2_chain_def">More...</a><br /></td></tr>
 <tr class="separator:structb2_chain_def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -142,7 +142,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#gga7ee22c73413d850c0937526938f92ff2aade3def0e56ad48baf2637849d31b890">b2_segmentShape</a>
 , <a class="el" href="#gga7ee22c73413d850c0937526938f92ff2a56796d9c2e6dcd59d781e20f9a50c923">b2_polygonShape</a>
 , <br />
-&#160;&#160;<a class="el" href="#gga7ee22c73413d850c0937526938f92ff2a87336a67b74eee046cf39a95d287d124">b2_smoothSegmentShape</a>
+&#160;&#160;<a class="el" href="#gga7ee22c73413d850c0937526938f92ff2ac719f0dedd0508f056b5d4619bd59e94">b2_chainSegmentShape</a>
 , <a class="el" href="#gga7ee22c73413d850c0937526938f92ff2a08417bb42d17ff6b9367f593abc824d7">b2_shapeTypeCount</a>
 <br />
  }</td></tr>
@@ -250,10 +250,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_AreHitEventsE
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_TestPoint</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> point)</td></tr>
 <tr class="memdesc:ga8f0f8edf93bb0ea1dfe0f3d2785a6e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test a point for overlap with a shape. <br /></td></tr>
 <tr class="separator:ga8f0f8edf93bb0ea1dfe0f3d2785a6e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4cdd1f9c003dcff503921ee1c7c74a77" id="r_ga4cdd1f9c003dcff503921ee1c7c74a77"><td class="memItemLeft" align="right" valign="top"><a id="ga4cdd1f9c003dcff503921ee1c7c74a77" name="ga4cdd1f9c003dcff503921ee1c7c74a77"></a>
-<a class="el" href="group__geometry.html#structb2_cast_output">b2CastOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_RayCast</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> origin, <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a> translation)</td></tr>
-<tr class="memdesc:ga4cdd1f9c003dcff503921ee1c7c74a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray cast a shape directly. <br /></td></tr>
-<tr class="separator:ga4cdd1f9c003dcff503921ee1c7c74a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac451df0ea9926e196468b531d39e15fc" id="r_gac451df0ea9926e196468b531d39e15fc"><td class="memItemLeft" align="right" valign="top"><a id="gac451df0ea9926e196468b531d39e15fc" name="gac451df0ea9926e196468b531d39e15fc"></a>
+<a class="el" href="group__geometry.html#structb2_cast_output">b2CastOutput</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_RayCast</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId, const <a class="el" href="group__geometry.html#structb2_ray_cast_input">b2RayCastInput</a> *input)</td></tr>
+<tr class="memdesc:gac451df0ea9926e196468b531d39e15fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray cast a shape directly. <br /></td></tr>
+<tr class="separator:gac451df0ea9926e196468b531d39e15fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6f1e10f5b16a68fb58a01150dc2f9dcc" id="r_ga6f1e10f5b16a68fb58a01150dc2f9dcc"><td class="memItemLeft" align="right" valign="top"><a id="ga6f1e10f5b16a68fb58a01150dc2f9dcc" name="ga6f1e10f5b16a68fb58a01150dc2f9dcc"></a>
 <a class="el" href="group__geometry.html#structb2_circle">b2Circle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_GetCircle</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
 <tr class="memdesc:ga6f1e10f5b16a68fb58a01150dc2f9dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the shape's circle. Asserts the type is correct. <br /></td></tr>
@@ -262,9 +262,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_TestPoint</b>
 <a class="el" href="group__geometry.html#structb2_segment">b2Segment</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_GetSegment</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
 <tr class="memdesc:gae034609744fbd99ff8ced65c7da5620b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the shape's line segment. Asserts the type is correct. <br /></td></tr>
 <tr class="separator:gae034609744fbd99ff8ced65c7da5620b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacbdc2340aef21154d31f7355390931ff" id="r_gacbdc2340aef21154d31f7355390931ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__geometry.html#structb2_smooth_segment">b2SmoothSegment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacbdc2340aef21154d31f7355390931ff">b2Shape_GetSmoothSegment</a> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
-<tr class="memdesc:gacbdc2340aef21154d31f7355390931ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the shape's smooth line segment.  <br /></td></tr>
-<tr class="separator:gacbdc2340aef21154d31f7355390931ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11141f72fe1e601740fc642361d70b2e" id="r_ga11141f72fe1e601740fc642361d70b2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__geometry.html#structb2_chain_segment">b2ChainSegment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga11141f72fe1e601740fc642361d70b2e">b2Shape_GetChainSegment</a> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
+<tr class="memdesc:ga11141f72fe1e601740fc642361d70b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the shape's chain segment.  <br /></td></tr>
+<tr class="separator:ga11141f72fe1e601740fc642361d70b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga205b2b0170b5b6fd5381ffccfb4a0a77" id="r_ga205b2b0170b5b6fd5381ffccfb4a0a77"><td class="memItemLeft" align="right" valign="top"><a id="ga205b2b0170b5b6fd5381ffccfb4a0a77" name="ga205b2b0170b5b6fd5381ffccfb4a0a77"></a>
 <a class="el" href="group__geometry.html#structb2_capsule">b2Capsule</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_GetCapsule</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
 <tr class="memdesc:ga205b2b0170b5b6fd5381ffccfb4a0a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the shape's capsule. Asserts the type is correct. <br /></td></tr>
@@ -288,7 +288,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_SetSegment</b
 <tr class="separator:gaaa4018a0ec7e86958db6cca2af5be723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c8a868cf15b430d5f0855e1d2266151" id="r_ga5c8a868cf15b430d5f0855e1d2266151"><td class="memItemLeft" align="right" valign="top"><a id="ga5c8a868cf15b430d5f0855e1d2266151" name="ga5c8a868cf15b430d5f0855e1d2266151"></a>
 <a class="el" href="group__id.html#structb2_chain_id">b2ChainId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_GetParentChain</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
-<tr class="memdesc:ga5c8a868cf15b430d5f0855e1d2266151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent chain id if the shape type is b2_smoothSegmentShape, otherwise returns b2_nullChainId. <br /></td></tr>
+<tr class="memdesc:ga5c8a868cf15b430d5f0855e1d2266151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent chain id if the shape type is a chain segment, otherwise returns b2_nullChainId. <br /></td></tr>
 <tr class="separator:ga5c8a868cf15b430d5f0855e1d2266151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9d2b342c9a7424e2e222ca1793582ab8" id="r_ga9d2b342c9a7424e2e222ca1793582ab8"><td class="memItemLeft" align="right" valign="top"><a id="ga9d2b342c9a7424e2e222ca1793582ab8" name="ga9d2b342c9a7424e2e222ca1793582ab8"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>b2Shape_GetContactCapacity</b> (<a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a> shapeId)</td></tr>
@@ -360,7 +360,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2Chain_IsValid</b> (
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a7f3aa385d11250a14e4afa9a298e3616" name="a7f3aa385d11250a14e4afa9a298e3616"></a>uint32_t</td>
+<a id="aa93b718a9aecd5c5c9a05708860c8f2c" name="aa93b718a9aecd5c5c9a05708860c8f2c"></a>uint64_t</td>
 <td class="fieldname">
 categoryBits</td>
 <td class="fielddoc">
@@ -381,12 +381,12 @@ groupIndex</td>
 Collision groups allow a certain group of objects to never collide (negative) or always collide (positive). <p>A group index of zero has no effect. Non-zero group filtering always wins against the mask bits. For example, you may want ragdolls to collide with other ragdolls but you don't want ragdoll self-collision. In this case you would give each ragdoll a unique negative group index and apply that group index to all shapes on the ragdoll. </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a638f066a367b5d907eadd6927e3cc366" name="a638f066a367b5d907eadd6927e3cc366"></a>uint32_t</td>
+<a id="a77f175cd1413952cc26c866cebdee259" name="a77f175cd1413952cc26c866cebdee259"></a>uint64_t</td>
 <td class="fieldname">
 maskBits</td>
 <td class="fielddoc">
-The collision mask bits. <p>This states the categories that this shape would accept for collision. For example, you may want your player to only collide with static objects and other players. </p><div class="fragment"><div class="line"><a class="code hl_variable" href="#a638f066a367b5d907eadd6927e3cc366">maskBits</a> = Static | Player;</div>
-<div class="ttc" id="agroup__shape_html_a638f066a367b5d907eadd6927e3cc366"><div class="ttname"><a href="#a638f066a367b5d907eadd6927e3cc366">b2Filter::maskBits</a></div><div class="ttdeci">uint32_t maskBits</div><div class="ttdoc">The collision mask bits.</div><div class="ttdef"><b>Definition</b> types.h:246</div></div>
+The collision mask bits. <p>This states the categories that this shape would accept for collision. For example, you may want your player to only collide with static objects and other players. </p><div class="fragment"><div class="line"><a class="code hl_variable" href="#a77f175cd1413952cc26c866cebdee259">maskBits</a> = Static | Player;</div>
+<div class="ttc" id="agroup__shape_html_a77f175cd1413952cc26c866cebdee259"><div class="ttname"><a href="#a77f175cd1413952cc26c866cebdee259">b2Filter::maskBits</a></div><div class="ttdeci">uint64_t maskBits</div><div class="ttdoc">The collision mask bits.</div><div class="ttdef"><b>Definition</b> types.h:246</div></div>
 </div><!-- fragment --> </td></tr>
 </table>
 
@@ -408,13 +408,13 @@ The collision mask bits. <p>This states the categories that this shape would acc
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a4d1f63dbfba41b96dd772190a73095e8" name="a4d1f63dbfba41b96dd772190a73095e8"></a>uint32_t</td>
+<a id="ae6ab473dc0dd363830394c899a50bbde" name="ae6ab473dc0dd363830394c899a50bbde"></a>uint64_t</td>
 <td class="fieldname">
 categoryBits</td>
 <td class="fielddoc">
 The collision category bits of this query. Normally you would just set one bit. </td></tr>
 <tr><td class="fieldtype">
-<a id="ab8df1b418226ad839684d97e0d5c6917" name="ab8df1b418226ad839684d97e0d5c6917"></a>uint32_t</td>
+<a id="a4ba3fd17260e8f406f993ffd524c9879" name="a4ba3fd17260e8f406f993ffd524c9879"></a>uint64_t</td>
 <td class="fieldname">
 maskBits</td>
 <td class="fielddoc">
@@ -516,7 +516,8 @@ Used internally to detect a valid definition. DO NOT SET. </td></tr>
 <td class="fieldname">
 isSensor</td>
 <td class="fielddoc">
-A sensor shape generates overlap events but never generates a collision response. </td></tr>
+A sensor shape generates overlap events but never generates a collision response. <p>Sensors do not collide with other sensors and do not have continuous collision. Instead use a ray or shape cast for those scenarios. </p>
+</td></tr>
 <tr><td class="fieldtype">
 <a id="a3bbd19eefb879e36b3850a3a1375f80e" name="a3bbd19eefb879e36b3850a3a1375f80e"></a>float</td>
 <td class="fieldname">
@@ -544,7 +545,7 @@ Use this to store application specific shape data. </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Used to create a chain of edges. </p>
+<div class="textblock"><p>Used to create a chain of line segments. </p>
 <p>This is designed to eliminate ghost collisions with some limitations.</p><ul>
 <li>chains are one-sided</li>
 <li>chains have no mass and should be used on static bodies</li>
@@ -555,7 +556,7 @@ Use this to store application specific shape data. </td></tr>
 <li>a chain shape should not self intersect (this is not validated)</li>
 <li>an open chain shape has NO COLLISION on the first and final edge</li>
 <li>you may overlap two open chains on their first three and/or last three points to get smooth collision</li>
-<li>a chain shape creates multiple smooth edges shapes on the body <a href="https://en.wikipedia.org/wiki/Polygonal_chain">https://en.wikipedia.org/wiki/Polygonal_chain</a> Must be initialized using <a class="el" href="#ga47bbb3d14c028cc57e1c32da92f51d44" title="Use this to initialize your chain definition.">b2DefaultChainDef()</a>. <dl class="section warning"><dt>Warning</dt><dd>Do not use chain shapes unless you understand the limitations. This is an advanced feature. </dd></dl>
+<li>a chain shape creates multiple line segment shapes on the body <a href="https://en.wikipedia.org/wiki/Polygonal_chain">https://en.wikipedia.org/wiki/Polygonal_chain</a> Must be initialized using <a class="el" href="#ga47bbb3d14c028cc57e1c32da92f51d44" title="Use this to initialize your chain definition.">b2DefaultChainDef()</a>. <dl class="section warning"><dt>Warning</dt><dd>Do not use chain shapes unless you understand the limitations. This is an advanced feature. </dd></dl>
 </li>
 </ul>
 </div><div class="dynheader">
@@ -563,7 +564,7 @@ Collaboration diagram for b2ChainDef:</div>
 <div class="dyncontent">
 <div class="center"><img src="structb2_chain_def__coll__graph.png" border="0" usemap="#ab2_chain_def_coll__map" alt="Collaboration graph"/></div>
 <map name="ab2_chain_def_coll__map" id="ab2_chain_def_coll__map">
-<area shape="rect" title="Used to create a chain of edges." alt="" coords="40,93,128,119"/>
+<area shape="rect" title="Used to create a chain of line segments." alt="" coords="40,93,128,119"/>
 <area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
 <area shape="poly" title=" " alt="" coords="51,44,62,68,78,92,73,95,58,71,46,46"/>
 <area shape="rect" href="group__shape.html#structb2_filter" title="This is used to filter collision on shapes." alt="" coords="97,5,162,31"/>
@@ -647,7 +648,7 @@ Use this to store application specific shape data. </td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga7ee22c73413d850c0937526938f92ff2a56796d9c2e6dcd59d781e20f9a50c923" name="gga7ee22c73413d850c0937526938f92ff2a56796d9c2e6dcd59d781e20f9a50c923"></a>b2_polygonShape&#160;</td><td class="fielddoc"><p>A convex polygon. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga7ee22c73413d850c0937526938f92ff2a87336a67b74eee046cf39a95d287d124" name="gga7ee22c73413d850c0937526938f92ff2a87336a67b74eee046cf39a95d287d124"></a>b2_smoothSegmentShape&#160;</td><td class="fielddoc"><p>A smooth segment owned by a chain shape. </p>
+<tr><td class="fieldname"><a id="gga7ee22c73413d850c0937526938f92ff2ac719f0dedd0508f056b5d4619bd59e94" name="gga7ee22c73413d850c0937526938f92ff2ac719f0dedd0508f056b5d4619bd59e94"></a>b2_chainSegmentShape&#160;</td><td class="fielddoc"><p>A line segment owned by a chain shape. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga7ee22c73413d850c0937526938f92ff2a08417bb42d17ff6b9367f593abc824d7" name="gga7ee22c73413d850c0937526938f92ff2a08417bb42d17ff6b9367f593abc824d7"></a>b2_shapeTypeCount&#160;</td><td class="fielddoc"><p>The number of shape types. </p>
 </td></tr>
@@ -753,7 +754,7 @@ Use this to store application specific shape data. </td></tr>
 </div><div class="memdoc">
 
 <p>Chain Shape. </p>
-<p>Create a chain shape </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#structb2_chain_def" title="Used to create a chain of edges.">b2ChainDef</a> for details </dd></dl>
+<p>Create a chain shape </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#structb2_chain_def" title="Used to create a chain of line segments.">b2ChainDef</a> for details </dd></dl>
 
 </div>
 </div>
@@ -940,14 +941,14 @@ Use this to store application specific shape data. </td></tr>
 
 </div>
 </div>
-<a id="gacbdc2340aef21154d31f7355390931ff" name="gacbdc2340aef21154d31f7355390931ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacbdc2340aef21154d31f7355390931ff">&#9670;&#160;</a></span>b2Shape_GetSmoothSegment()</h2>
+<a id="ga11141f72fe1e601740fc642361d70b2e" name="ga11141f72fe1e601740fc642361d70b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11141f72fe1e601740fc642361d70b2e">&#9670;&#160;</a></span>b2Shape_GetChainSegment()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__geometry.html#structb2_smooth_segment">b2SmoothSegment</a> b2Shape_GetSmoothSegment </td>
+          <td class="memname"><a class="el" href="group__geometry.html#structb2_chain_segment">b2ChainSegment</a> b2Shape_GetChainSegment </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__id.html#structb2_shape_id">b2ShapeId</a></td>          <td class="paramname"><span class="paramname"><em>shapeId</em></span></td><td>)</td>
           <td></td>
@@ -955,7 +956,7 @@ Use this to store application specific shape data. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a copy of the shape's smooth line segment. </p>
+<p>Get a copy of the shape's chain segment. </p>
 <p>These come from chain shapes. Asserts the type is correct. </p>
 
 </div>

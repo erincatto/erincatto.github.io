@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -146,6 +146,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga5f7ed0739a57ec192ce019f023bcf549" id="r_ga5f7ed0739a57ec192ce019f023bcf549"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5f7ed0739a57ec192ce019f023bcf549">b2Atan2</a> (float y, float x)</td></tr>
+<tr class="memdesc:ga5f7ed0739a57ec192ce019f023bcf549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an approximate arctangent in the range [-pi, pi] This is hand coded for cross platform determinism.  <br /></td></tr>
+<tr class="separator:ga5f7ed0739a57ec192ce019f023bcf549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabd8a669790278c3473b9da9e2cf2afea" id="r_gabd8a669790278c3473b9da9e2cf2afea"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd8a669790278c3473b9da9e2cf2afea">b2MinFloat</a> (float a, float b)</td></tr>
 <tr class="separator:gabd8a669790278c3473b9da9e2cf2afea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8444272da41b94e7a11ac969b15ecdaa" id="r_ga8444272da41b94e7a11ac969b15ecdaa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8444272da41b94e7a11ac969b15ecdaa">b2MaxFloat</a> (float a, float b)</td></tr>
@@ -238,14 +241,28 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Cross</b> (<a clas
 float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Length</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
 <tr class="memdesc:gac670a0c0ea120f5fbb58c8d31bd19b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length of this vector (the norm) <br /></td></tr>
 <tr class="separator:gac670a0c0ea120f5fbb58c8d31bd19b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab43ea4a9084a0a5411b8d982332679be" id="r_gab43ea4a9084a0a5411b8d982332679be"><td class="memItemLeft" align="right" valign="top"><a id="gab43ea4a9084a0a5411b8d982332679be" name="gab43ea4a9084a0a5411b8d982332679be"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>b2LengthSquared</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
-<tr class="memdesc:gab43ea4a9084a0a5411b8d982332679be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length squared of this vector. <br /></td></tr>
-<tr class="separator:gab43ea4a9084a0a5411b8d982332679be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacf68e49723e512e1fadf297e6f0940d1" id="r_gacf68e49723e512e1fadf297e6f0940d1"><td class="memItemLeft" align="right" valign="top"><a id="gacf68e49723e512e1fadf297e6f0940d1" name="gacf68e49723e512e1fadf297e6f0940d1"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Distance</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> a, <a class="el" href="#structb2_vec2">b2Vec2</a> b)</td></tr>
 <tr class="memdesc:gacf68e49723e512e1fadf297e6f0940d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance between two points. <br /></td></tr>
 <tr class="separator:gacf68e49723e512e1fadf297e6f0940d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6a5725c6835b1cafbb2711789711b37" id="r_gad6a5725c6835b1cafbb2711789711b37"><td class="memItemLeft" align="right" valign="top"><a id="gad6a5725c6835b1cafbb2711789711b37" name="gad6a5725c6835b1cafbb2711789711b37"></a>
+<a class="el" href="#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Normalize</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
+<tr class="memdesc:gad6a5725c6835b1cafbb2711789711b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a vector into a unit vector if possible, otherwise returns the zero vector. <br /></td></tr>
+<tr class="separator:gad6a5725c6835b1cafbb2711789711b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0397b1cff293851d38381f8510d46919" id="r_ga0397b1cff293851d38381f8510d46919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0397b1cff293851d38381f8510d46919">b2GetLengthAndNormalize</a> (float *length, <a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
+<tr class="memdesc:ga0397b1cff293851d38381f8510d46919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a vector into a unit vector if possible, otherwise returns the zero vector.  <br /></td></tr>
+<tr class="separator:ga0397b1cff293851d38381f8510d46919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22a0538a4f41a370e49bbd873ee79025" id="r_ga22a0538a4f41a370e49bbd873ee79025"><td class="memItemLeft" align="right" valign="top"><a id="ga22a0538a4f41a370e49bbd873ee79025" name="ga22a0538a4f41a370e49bbd873ee79025"></a>
+<a class="el" href="#structb2_rot">b2Rot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2NormalizeRot</b> (<a class="el" href="#structb2_rot">b2Rot</a> q)</td></tr>
+<tr class="memdesc:ga22a0538a4f41a370e49bbd873ee79025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize rotation. <br /></td></tr>
+<tr class="separator:ga22a0538a4f41a370e49bbd873ee79025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cd4eeead3ebca36ec93b76902d8042a" id="r_ga5cd4eeead3ebca36ec93b76902d8042a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structb2_rot">b2Rot</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5cd4eeead3ebca36ec93b76902d8042a">b2IntegrateRotation</a> (<a class="el" href="#structb2_rot">b2Rot</a> q1, float deltaAngle)</td></tr>
+<tr class="memdesc:ga5cd4eeead3ebca36ec93b76902d8042a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integration rotation from angular velocity.  <br /></td></tr>
+<tr class="separator:ga5cd4eeead3ebca36ec93b76902d8042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab43ea4a9084a0a5411b8d982332679be" id="r_gab43ea4a9084a0a5411b8d982332679be"><td class="memItemLeft" align="right" valign="top"><a id="gab43ea4a9084a0a5411b8d982332679be" name="gab43ea4a9084a0a5411b8d982332679be"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>b2LengthSquared</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
+<tr class="memdesc:gab43ea4a9084a0a5411b8d982332679be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length squared of this vector. <br /></td></tr>
+<tr class="separator:gab43ea4a9084a0a5411b8d982332679be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab71a7f55f64b0923ca8f4186cf4f81ab" id="r_gab71a7f55f64b0923ca8f4186cf4f81ab"><td class="memItemLeft" align="right" valign="top"><a id="gab71a7f55f64b0923ca8f4186cf4f81ab" name="gab71a7f55f64b0923ca8f4186cf4f81ab"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>b2DistanceSquared</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> a, <a class="el" href="#structb2_vec2">b2Vec2</a> b)</td></tr>
 <tr class="memdesc:gab71a7f55f64b0923ca8f4186cf4f81ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance squared between points. <br /></td></tr>
@@ -254,10 +271,6 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>b2DistanceSquared</b
 <a class="el" href="#structb2_rot">b2Rot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2MakeRot</b> (float angle)</td></tr>
 <tr class="memdesc:ga4b7d9e8fa697b0eb1fa7624eb9444be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a rotation using an angle in radians. <br /></td></tr>
 <tr class="separator:ga4b7d9e8fa697b0eb1fa7624eb9444be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22a0538a4f41a370e49bbd873ee79025" id="r_ga22a0538a4f41a370e49bbd873ee79025"><td class="memItemLeft" align="right" valign="top"><a id="ga22a0538a4f41a370e49bbd873ee79025" name="ga22a0538a4f41a370e49bbd873ee79025"></a>
-<a class="el" href="#structb2_rot">b2Rot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2NormalizeRot</b> (<a class="el" href="#structb2_rot">b2Rot</a> q)</td></tr>
-<tr class="memdesc:ga22a0538a4f41a370e49bbd873ee79025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize rotation. <br /></td></tr>
-<tr class="separator:ga22a0538a4f41a370e49bbd873ee79025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga70dfdd5f6a6fab66f623e940e74a8110" id="r_ga70dfdd5f6a6fab66f623e940e74a8110"><td class="memItemLeft" align="right" valign="top"><a id="ga70dfdd5f6a6fab66f623e940e74a8110" name="ga70dfdd5f6a6fab66f623e940e74a8110"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2IsNormalized</b> (<a class="el" href="#structb2_rot">b2Rot</a> q)</td></tr>
 <tr class="memdesc:ga70dfdd5f6a6fab66f623e940e74a8110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this rotation normalized? <br /></td></tr>
@@ -266,9 +279,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2IsNormalized</b> (<
 <a class="el" href="#structb2_rot">b2Rot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2NLerp</b> (<a class="el" href="#structb2_rot">b2Rot</a> q1, <a class="el" href="#structb2_rot">b2Rot</a> q2, float t)</td></tr>
 <tr class="memdesc:gaa82701444fc5659c6efc334df20bf79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalized linear interpolation <a href="https://fgiesen.wordpress.com/2012/08/15/linear-interpolation-past-present-and-future/">https://fgiesen.wordpress.com/2012/08/15/linear-interpolation-past-present-and-future/</a>. <br /></td></tr>
 <tr class="separator:gaa82701444fc5659c6efc334df20bf79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5cd4eeead3ebca36ec93b76902d8042a" id="r_ga5cd4eeead3ebca36ec93b76902d8042a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structb2_rot">b2Rot</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5cd4eeead3ebca36ec93b76902d8042a">b2IntegrateRotation</a> (<a class="el" href="#structb2_rot">b2Rot</a> q1, float deltaAngle)</td></tr>
-<tr class="memdesc:ga5cd4eeead3ebca36ec93b76902d8042a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integration rotation from angular velocity.  <br /></td></tr>
-<tr class="separator:ga5cd4eeead3ebca36ec93b76902d8042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga795b5fa1e9426d0582c45f6e4ada578a" id="r_ga795b5fa1e9426d0582c45f6e4ada578a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga795b5fa1e9426d0582c45f6e4ada578a">b2ComputeAngularVelocity</a> (<a class="el" href="#structb2_rot">b2Rot</a> q1, <a class="el" href="#structb2_rot">b2Rot</a> q2, float inv_h)</td></tr>
 <tr class="memdesc:ga795b5fa1e9426d0582c45f6e4ada578a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the angular velocity necessary to rotate between two rotations over a give time.  <br /></td></tr>
 <tr class="separator:ga795b5fa1e9426d0582c45f6e4ada578a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -300,6 +310,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>b2RelativeAngle</b> 
 float&#160;</td><td class="memItemRight" valign="bottom"><b>b2UnwindAngle</b> (float angle)</td></tr>
 <tr class="memdesc:ga5ab5cb3f07d35a2e54de41253596499c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an angle in the range [-2*pi, 2*pi] into the range [-pi, pi]. <br /></td></tr>
 <tr class="separator:ga5ab5cb3f07d35a2e54de41253596499c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b584fed2e6756317d770e0617212acb" id="r_ga0b584fed2e6756317d770e0617212acb"><td class="memItemLeft" align="right" valign="top"><a id="ga0b584fed2e6756317d770e0617212acb" name="ga0b584fed2e6756317d770e0617212acb"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>b2UnwindLargeAngle</b> (float angle)</td></tr>
+<tr class="memdesc:ga0b584fed2e6756317d770e0617212acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert any into the range [-pi, pi] (slow) <br /></td></tr>
+<tr class="separator:ga0b584fed2e6756317d770e0617212acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga91df92ef966c59edd6b908e500a34659" id="r_ga91df92ef966c59edd6b908e500a34659"><td class="memItemLeft" align="right" valign="top"><a id="ga91df92ef966c59edd6b908e500a34659" name="ga91df92ef966c59edd6b908e500a34659"></a>
 <a class="el" href="#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2RotateVector</b> (<a class="el" href="#structb2_rot">b2Rot</a> q, <a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
 <tr class="memdesc:ga91df92ef966c59edd6b908e500a34659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate a vector. <br /></td></tr>
@@ -367,17 +381,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2Rot_IsValid</b> (<a
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2AABB_IsValid</b> (<a class="el" href="#structb2_a_a_b_b">b2AABB</a> aabb)</td></tr>
 <tr class="memdesc:ga1212c9ee05f750390c8443977314c61d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a valid bounding box? Not Nan or infinity. Upper bound greater than or equal to lower bound. <br /></td></tr>
 <tr class="separator:ga1212c9ee05f750390c8443977314c61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6a5725c6835b1cafbb2711789711b37" id="r_gad6a5725c6835b1cafbb2711789711b37"><td class="memItemLeft" align="right" valign="top"><a id="gad6a5725c6835b1cafbb2711789711b37" name="gad6a5725c6835b1cafbb2711789711b37"></a>
-<a class="el" href="#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Normalize</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
-<tr class="memdesc:gad6a5725c6835b1cafbb2711789711b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a vector into a unit vector if possible, otherwise returns the zero vector. <br /></td></tr>
-<tr class="separator:gad6a5725c6835b1cafbb2711789711b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga62463f5219657cf3554a1afecd70e34a" id="r_ga62463f5219657cf3554a1afecd70e34a"><td class="memItemLeft" align="right" valign="top"><a id="ga62463f5219657cf3554a1afecd70e34a" name="ga62463f5219657cf3554a1afecd70e34a"></a>
-<a class="el" href="#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2NormalizeChecked</b> (<a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
-<tr class="memdesc:ga62463f5219657cf3554a1afecd70e34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a vector into a unit vector if possible, otherwise asserts. <br /></td></tr>
-<tr class="separator:ga62463f5219657cf3554a1afecd70e34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0397b1cff293851d38381f8510d46919" id="r_ga0397b1cff293851d38381f8510d46919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0397b1cff293851d38381f8510d46919">b2GetLengthAndNormalize</a> (float *length, <a class="el" href="#structb2_vec2">b2Vec2</a> v)</td></tr>
-<tr class="memdesc:ga0397b1cff293851d38381f8510d46919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a vector into a unit vector if possible, otherwise returns the zero vector.  <br /></td></tr>
-<tr class="separator:ga0397b1cff293851d38381f8510d46919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga654e6f942a5d2abee54b6bba4176b15b" id="r_ga654e6f942a5d2abee54b6bba4176b15b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga654e6f942a5d2abee54b6bba4176b15b">b2SetLengthUnitsPerMeter</a> (float lengthUnits)</td></tr>
 <tr class="memdesc:ga654e6f942a5d2abee54b6bba4176b15b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Box2D bases all length units on meters, but you may need different units for your game.  <br /></td></tr>
 <tr class="separator:ga654e6f942a5d2abee54b6bba4176b15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -605,6 +608,30 @@ upperBound</td>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the absolute value of an integer </dd></dl>
+
+</div>
+</div>
+<a id="ga5f7ed0739a57ec192ce019f023bcf549" name="ga5f7ed0739a57ec192ce019f023bcf549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f7ed0739a57ec192ce019f023bcf549">&#9670;&#160;</a></span>b2Atan2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float b2Atan2 </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute an approximate arctangent in the range [-pi, pi] This is hand coded for cross platform determinism. </p>
+<p>The atan2f function in the standard library is not cross platform deterministic. </p>
 
 </div>
 </div>

@@ -21,6 +21,7 @@ var group__math =
     [ "b2AbsFloat", "group__math.html#gaad6c00baedf840bdfb4bdb796f29c766", null ],
     [ "b2AbsInt", "group__math.html#ga4f16213209848d6a55dfff1bbb1479c6", null ],
     [ "b2Add", "group__math.html#ga4c1b78c6ba6122f008792eb4801cfd28", null ],
+    [ "b2Atan2", "group__math.html#ga5f7ed0739a57ec192ce019f023bcf549", null ],
     [ "b2Clamp", "group__math.html#gae5f4d065e43c65255cfd87eaabe319ad", null ],
     [ "b2ClampFloat", "group__math.html#gab895b5425fbca5cf1a96b5b78e38b544", null ],
     [ "b2ClampInt", "group__math.html#ga4126d590d0d471142d6f84837ac82447", null ],
@@ -62,7 +63,6 @@ var group__math =
     [ "b2Neg", "group__math.html#ga11fd5be42ea5d94d2f43d898fea679a4", null ],
     [ "b2NLerp", "group__math.html#gaa82701444fc5659c6efc334df20bf79c", null ],
     [ "b2Normalize", "group__math.html#gad6a5725c6835b1cafbb2711789711b37", null ],
-    [ "b2NormalizeChecked", "group__math.html#ga62463f5219657cf3554a1afecd70e34a", null ],
     [ "b2NormalizeRot", "group__math.html#ga22a0538a4f41a370e49bbd873ee79025", null ],
     [ "b2RelativeAngle", "group__math.html#ga4bdfe9b2c89f675b756c2867befba61d", null ],
     [ "b2RightPerp", "group__math.html#ga5c5f0469801bb1e9275ad639305dcd0c", null ],
@@ -76,5 +76,6 @@ var group__math =
     [ "b2Sub", "group__math.html#ga8d998480421a61c83d81d7da1820cc60", null ],
     [ "b2TransformPoint", "group__math.html#ga5e13373c4ac0f339e859723774cca6d5", null ],
     [ "b2UnwindAngle", "group__math.html#ga5ab5cb3f07d35a2e54de41253596499c", null ],
+    [ "b2UnwindLargeAngle", "group__math.html#ga0b584fed2e6756317d770e0617212acb", null ],
     [ "b2Vec2_IsValid", "group__math.html#ga445a9cb3df5be94c1e1c03c302f07440", null ]
 ];

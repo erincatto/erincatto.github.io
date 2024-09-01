@@ -2,12 +2,12 @@ var group__tree =
 [
     [ "b2TreeNode", "group__tree.html#structb2_tree_node", [
       [ "aabb", "group__tree.html#a798f1a594b33c713be45e76e79912239", null ],
-      [ "categoryBits", "group__tree.html#ae4a0624aea84a12b6ee22ebb29cf5437", null ],
+      [ "categoryBits", "group__tree.html#a2bd2d5a4e719ed31cecd7b83cb918b38", null ],
       [ "child1", "group__tree.html#a11d152cc5c8f3de25349966b8713ada0", null ],
       [ "child2", "group__tree.html#a2d7bb6cf7f6af2f238a0108fb68b5fa7", null ],
       [ "enlarged", "group__tree.html#abae76d4f6203ff686377bd320b72fffa", null ],
       [ "height", "group__tree.html#ab4d517097c4946b9c08a2dff1dec97d9", null ],
-      [ "pad", "group__tree.html#a92653572c37cc209b44a434057410afc", null ],
+      [ "pad", "group__tree.html#aa070ecf00f61dd680201d91464cfe94a", null ],
       [ "userData", "group__tree.html#a749f8e16f7a615c355192c266f3d096a", null ]
     ] ],
     [ "b2DynamicTree", "group__tree.html#structb2_dynamic_tree", [
@@ -33,7 +33,7 @@ var group__tree =
     [ "b2TreeRayCastCallbackFcn", "group__tree.html#ga68369c4634217f75a69568afc1188493", null ],
     [ "b2TreeShapeCastCallbackFcn", "group__tree.html#ga8342c5cf5135f5b94cd121b533ffbeb3", null ],
     [ "b2DynamicTree_Create", "group__tree.html#gab54e4f2cbe26d0f306b9b8b5223c1838", null ],
-    [ "b2DynamicTree_CreateProxy", "group__tree.html#gaa527d8497121becb3f52a1a1dbeda125", null ],
+    [ "b2DynamicTree_CreateProxy", "group__tree.html#gab537b36458610efdc05f38ef2572d41e", null ],
     [ "b2DynamicTree_Destroy", "group__tree.html#ga3ffc351d31681acfb3b342eaf1ad1841", null ],
     [ "b2DynamicTree_DestroyProxy", "group__tree.html#ga468a69c1fb68367892d3df66c56aaecd", null ],
     [ "b2DynamicTree_EnlargeProxy", "group__tree.html#ga7a44b407df8b53f0e95753ae0da43af6", null ],
@@ -45,11 +45,11 @@ var group__tree =
     [ "b2DynamicTree_GetProxyCount", "group__tree.html#ga84ec4a5ce6a153e67e8a48877a3b809e", null ],
     [ "b2DynamicTree_GetUserData", "group__tree.html#gadb6ae842a1e72906b6cd5fc22d93fc61", null ],
     [ "b2DynamicTree_MoveProxy", "group__tree.html#ga3656e0459417058c5146ed7f87cdcfc7", null ],
-    [ "b2DynamicTree_Query", "group__tree.html#gaa1ac68e33da490238a48031c1815c17f", null ],
-    [ "b2DynamicTree_RayCast", "group__tree.html#ga3f011295fe711740ec4299eccc7813e3", null ],
+    [ "b2DynamicTree_Query", "group__tree.html#gae9b9cd069ea514639843f6f28d24350d", null ],
+    [ "b2DynamicTree_RayCast", "group__tree.html#ga3bf0694a42bc054bb9396d2d3e7c0e68", null ],
     [ "b2DynamicTree_Rebuild", "group__tree.html#ga369a432bada6d1c97fd07978d4e93755", null ],
     [ "b2DynamicTree_RebuildBottomUp", "group__tree.html#gaf127b49f30902ac1abdd4e9fe4b97abf", null ],
-    [ "b2DynamicTree_ShapeCast", "group__tree.html#gab9383e8207f84e500db2f9c2cdbdc03e", null ],
+    [ "b2DynamicTree_ShapeCast", "group__tree.html#ga40e5d1479aae247b2575c927c2086f7c", null ],
     [ "b2DynamicTree_ShiftOrigin", "group__tree.html#gac12954d0f91a0f1e209f01e1acc65d58", null ],
     [ "b2DynamicTree_Validate", "group__tree.html#ga44e19f08118eb947ac4ded090a791e27", null ]
 ];

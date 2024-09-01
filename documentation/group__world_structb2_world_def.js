@@ -3,7 +3,7 @@ var group__world_structb2_world_def =
     [ "contactDampingRatio", "group__world.html#a6b688e8acd9a4150a21d695b71a6e932", null ],
     [ "contactHertz", "group__world.html#a5f2d7d174fdd44f9e8f1717c47b62fd8", null ],
     [ "contactPushoutVelocity", "group__world.html#ace7817103600c8590338445222e2711d", null ],
-    [ "enableContinous", "group__world.html#a7c83fe7f22bedaf2f4ffee4cdb48df0f", null ],
+    [ "enableContinuous", "group__world.html#aaaec774420a78213988b1005f68badd6", null ],
     [ "enableSleep", "group__world.html#a97dfa093c69aa2182be074e90b3c9edf", null ],
     [ "enqueueTask", "group__world.html#aee2d25f33f224008eae4825353757137", null ],
     [ "finishTask", "group__world.html#a7f1b41bc118d3d34d9d76f09523129d1", null ],

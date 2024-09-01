@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -231,10 +231,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_SetAngularVelo
 float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_GetMass</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId)</td></tr>
 <tr class="memdesc:ga4d206511d0b4ecea96773bc50f615865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mass of the body, typically in kilograms. <br /></td></tr>
 <tr class="separator:ga4d206511d0b4ecea96773bc50f615865"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa87c4802b3ee2a09e2e4b87236141a8e" id="r_gaa87c4802b3ee2a09e2e4b87236141a8e"><td class="memItemLeft" align="right" valign="top"><a id="gaa87c4802b3ee2a09e2e4b87236141a8e" name="gaa87c4802b3ee2a09e2e4b87236141a8e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_GetInertiaTensor</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId)</td></tr>
-<tr class="memdesc:gaa87c4802b3ee2a09e2e4b87236141a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the inertia tensor of the body, typically in kg*m^2. <br /></td></tr>
-<tr class="separator:gaa87c4802b3ee2a09e2e4b87236141a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga222a955e30241d55aa791c81e0ebc1b3" id="r_ga222a955e30241d55aa791c81e0ebc1b3"><td class="memItemLeft" align="right" valign="top"><a id="ga222a955e30241d55aa791c81e0ebc1b3" name="ga222a955e30241d55aa791c81e0ebc1b3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_GetRotationalInertia</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId)</td></tr>
+<tr class="memdesc:ga222a955e30241d55aa791c81e0ebc1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rotational inertia of the body, typically in kg*m^2. <br /></td></tr>
+<tr class="separator:ga222a955e30241d55aa791c81e0ebc1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25f5cda16efef422d3754f49a0c9f450" id="r_ga25f5cda16efef422d3754f49a0c9f450"><td class="memItemLeft" align="right" valign="top"><a id="ga25f5cda16efef422d3754f49a0c9f450" name="ga25f5cda16efef422d3754f49a0c9f450"></a>
 <a class="el" href="group__math.html#structb2_vec2">b2Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_GetLocalCenterOfMass</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId)</td></tr>
 <tr class="memdesc:ga25f5cda16efef422d3754f49a0c9f450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the center of mass position of the body in local space. <br /></td></tr>
@@ -296,10 +296,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_EnableSleep</b
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_IsSleepEnabled</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId)</td></tr>
 <tr class="memdesc:ga08661854471a068ccba24b66e86cd453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if sleeping is enabled for this body. <br /></td></tr>
 <tr class="separator:ga08661854471a068ccba24b66e86cd453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e89f4db4599ba77688d7479f32ba92d" id="r_ga5e89f4db4599ba77688d7479f32ba92d"><td class="memItemLeft" align="right" valign="top"><a id="ga5e89f4db4599ba77688d7479f32ba92d" name="ga5e89f4db4599ba77688d7479f32ba92d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_SetSleepThreshold</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId, float sleepVelocity)</td></tr>
-<tr class="memdesc:ga5e89f4db4599ba77688d7479f32ba92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sleep threshold, typically in meters per second. <br /></td></tr>
-<tr class="separator:ga5e89f4db4599ba77688d7479f32ba92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a5a48097ae0a93b245c07cdbf892687" id="r_ga8a5a48097ae0a93b245c07cdbf892687"><td class="memItemLeft" align="right" valign="top"><a id="ga8a5a48097ae0a93b245c07cdbf892687" name="ga8a5a48097ae0a93b245c07cdbf892687"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_SetSleepThreshold</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId, float sleepThreshold)</td></tr>
+<tr class="memdesc:ga8a5a48097ae0a93b245c07cdbf892687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sleep threshold, typically in meters per second. <br /></td></tr>
+<tr class="separator:ga8a5a48097ae0a93b245c07cdbf892687"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13529b808ae2abdeff3e66456aba695a" id="r_ga13529b808ae2abdeff3e66456aba695a"><td class="memItemLeft" align="right" valign="top"><a id="ga13529b808ae2abdeff3e66456aba695a" name="ga13529b808ae2abdeff3e66456aba695a"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>b2Body_GetSleepThreshold</b> (<a class="el" href="group__id.html#structb2_body_id">b2BodyId</a> bodyId)</td></tr>
 <tr class="memdesc:ga13529b808ae2abdeff3e66456aba695a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sleep threshold, typically in meters per second. <br /></td></tr>

@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -124,7 +124,7 @@ Creating a World</h1>
 </div><!-- fragment --><p>The world definition is a temporary object that you can create on the stack. The function <code><a class="el" href="group__world.html#gaf2777d7b8c7f2f289d5b70b3da9bd75f" title="Use this to initialize your world definition.">b2DefaultWorldDef()</a></code> populates the world definition with default values. This is necessary because C does not have constructors and zero initialization is not appropriate for <code><a class="el" href="group__world.html#structb2_world_def" title="World definition used to create a simulation world.">b2WorldDef</a></code>.</p>
 <p>Now I configure the world gravity vector. Note that Box2D has no concept of <em>up</em> and you may point gravity in any direction you like. Box2D example code uses the positive y-axis as the up direction.</p>
 <div class="fragment"><div class="line">worldDef.<a class="code hl_variable" href="group__world.html#a9152b6fd416622e7f00ba0bac86508dd">gravity</a> = (<a class="code hl_struct" href="group__math.html#structb2_vec2">b2Vec2</a>){0.0f, -10.0f};</div>
-<div class="ttc" id="agroup__math_html_structb2_vec2"><div class="ttname"><a href="group__math.html#structb2_vec2">b2Vec2</a></div><div class="ttdoc">2D vector This can be used to represent a point or free vector</div><div class="ttdef"><b>Definition</b> math_functions.h:23</div></div>
+<div class="ttc" id="agroup__math_html_structb2_vec2"><div class="ttname"><a href="group__math.html#structb2_vec2">b2Vec2</a></div><div class="ttdoc">2D vector This can be used to represent a point or free vector</div><div class="ttdef"><b>Definition</b> math_functions.h:24</div></div>
 <div class="ttc" id="agroup__world_html_a9152b6fd416622e7f00ba0bac86508dd"><div class="ttname"><a href="group__world.html#a9152b6fd416622e7f00ba0bac86508dd">b2WorldDef::gravity</a></div><div class="ttdeci">b2Vec2 gravity</div><div class="ttdoc">Gravity vector. Box2D has no up-vector defined.</div><div class="ttdef"><b>Definition</b> types.h:67</div></div>
 </div><!-- fragment --><p>Now I create the world object.</p>
 <div class="fragment"><div class="line"><a class="code hl_struct" href="group__id.html#structb2_world_id">b2WorldId</a> worldId = <a class="code hl_function" href="group__world.html#ga47d081b90cf21396822f148e06598af0">b2CreateWorld</a>(&amp;worldDef);</div>
@@ -213,9 +213,9 @@ Simulating the World</h1>
 <div class="line">}</div>
 <div class="ttc" id="agroup__body_html_ga5c069379206cffe5e529c2f522cf6bf1"><div class="ttname"><a href="group__body.html#ga5c069379206cffe5e529c2f522cf6bf1">b2Body_GetRotation</a></div><div class="ttdeci">b2Rot b2Body_GetRotation(b2BodyId bodyId)</div><div class="ttdoc">Get the world rotation of a body as a cosine/sine pair (complex number)</div></div>
 <div class="ttc" id="agroup__body_html_gadad9a88fdfad660f0794af5a55a82d16"><div class="ttname"><a href="group__body.html#gadad9a88fdfad660f0794af5a55a82d16">b2Body_GetPosition</a></div><div class="ttdeci">b2Vec2 b2Body_GetPosition(b2BodyId bodyId)</div><div class="ttdoc">Get the world position of a body. This is the location of the body origin.</div></div>
-<div class="ttc" id="agroup__math_html_a7922601d8b8ad0550c2082ebaf74c78a"><div class="ttname"><a href="group__math.html#a7922601d8b8ad0550c2082ebaf74c78a">b2Vec2::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">coordinates</div><div class="ttdef"><b>Definition</b> math_functions.h:25</div></div>
-<div class="ttc" id="agroup__math_html_ga103472b4bc6a9e0cb8009bec6389ee67"><div class="ttname"><a href="group__math.html#ga103472b4bc6a9e0cb8009bec6389ee67">b2Rot_GetAngle</a></div><div class="ttdeci">float b2Rot_GetAngle(b2Rot q)</div><div class="ttdoc">Get the angle in radians in the range [-pi, pi].</div><div class="ttdef"><b>Definition</b> math_functions.h:340</div></div>
-<div class="ttc" id="agroup__math_html_structb2_rot"><div class="ttname"><a href="group__math.html#structb2_rot">b2Rot</a></div><div class="ttdoc">2D rotation This is similar to using a complex number for rotation</div><div class="ttdef"><b>Definition</b> math_functions.h:31</div></div>
+<div class="ttc" id="agroup__math_html_a7922601d8b8ad0550c2082ebaf74c78a"><div class="ttname"><a href="group__math.html#a7922601d8b8ad0550c2082ebaf74c78a">b2Vec2::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">coordinates</div><div class="ttdef"><b>Definition</b> math_functions.h:26</div></div>
+<div class="ttc" id="agroup__math_html_ga103472b4bc6a9e0cb8009bec6389ee67"><div class="ttname"><a href="group__math.html#ga103472b4bc6a9e0cb8009bec6389ee67">b2Rot_GetAngle</a></div><div class="ttdeci">float b2Rot_GetAngle(b2Rot q)</div><div class="ttdoc">Get the angle in radians in the range [-pi, pi].</div><div class="ttdef"><b>Definition</b> math_functions.h:371</div></div>
+<div class="ttc" id="agroup__math_html_structb2_rot"><div class="ttname"><a href="group__math.html#structb2_rot">b2Rot</a></div><div class="ttdoc">2D rotation This is similar to using a complex number for rotation</div><div class="ttdef"><b>Definition</b> math_functions.h:32</div></div>
 <div class="ttc" id="agroup__world_html_ga0249cf75273319ca548d55734d7297c4"><div class="ttname"><a href="group__world.html#ga0249cf75273319ca548d55734d7297c4">b2World_Step</a></div><div class="ttdeci">void b2World_Step(b2WorldId worldId, float timeStep, int subStepCount)</div><div class="ttdoc">Simulate a world for one time step.</div></div>
 </div><!-- fragment --><p>The output shows the box falling and landing on the ground box. Your output should look like this:</p>
 <div class="fragment"><div class="line">0.00 4.00 0.00</div>

@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -123,7 +123,7 @@ $(function(){initNavTree('group__tree.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:structb2_tree_node" id="r_structb2_tree_node"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_tree_node">b2TreeNode</a></td></tr>
-<tr class="memdesc:structb2_tree_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">A node in the dynamic tree.  <a href="#structb2_tree_node">More...</a><br /></td></tr>
+<tr class="memdesc:structb2_tree_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">A node in the dynamic tree. This is private data placed here for performance reasons.  <a href="#structb2_tree_node">More...</a><br /></td></tr>
 <tr class="separator:structb2_tree_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structb2_dynamic_tree" id="r_structb2_dynamic_tree"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a></td></tr>
 <tr class="memdesc:structb2_dynamic_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dynamic tree structure.  <a href="#structb2_dynamic_tree">More...</a><br /></td></tr>
@@ -134,11 +134,11 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gaf669993b7c57317a9e9c1b339e1eb2d4" id="r_gaf669993b7c57317a9e9c1b339e1eb2d4"><td class="memItemLeft" align="right" valign="top"><a id="gaf669993b7c57317a9e9c1b339e1eb2d4" name="gaf669993b7c57317a9e9c1b339e1eb2d4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>b2_defaultCategoryBits</b>&#160;&#160;&#160;( 0x00000001 )</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>b2_defaultCategoryBits</b>&#160;&#160;&#160;( 1 )</td></tr>
 <tr class="memdesc:gaf669993b7c57317a9e9c1b339e1eb2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default category bit for a tree proxy. Used for collision filtering. <br /></td></tr>
 <tr class="separator:gaf669993b7c57317a9e9c1b339e1eb2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga91e6cb487c7a3dd545276ccb794af7bc" id="r_ga91e6cb487c7a3dd545276ccb794af7bc"><td class="memItemLeft" align="right" valign="top"><a id="ga91e6cb487c7a3dd545276ccb794af7bc" name="ga91e6cb487c7a3dd545276ccb794af7bc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>b2_defaultMaskBits</b>&#160;&#160;&#160;( 0xFFFFFFFF )</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>b2_defaultMaskBits</b>&#160;&#160;&#160;( UINT64_MAX )</td></tr>
 <tr class="memdesc:ga91e6cb487c7a3dd545276ccb794af7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience mask bits to use when you don't need collision filtering and just want all results. <br /></td></tr>
 <tr class="separator:ga91e6cb487c7a3dd545276ccb794af7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -164,10 +164,10 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_Destroy</b> (<a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree)</td></tr>
 <tr class="memdesc:ga3ffc351d31681acfb3b342eaf1ad1841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the tree, freeing the node pool. <br /></td></tr>
 <tr class="separator:ga3ffc351d31681acfb3b342eaf1ad1841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa527d8497121becb3f52a1a1dbeda125" id="r_gaa527d8497121becb3f52a1a1dbeda125"><td class="memItemLeft" align="right" valign="top"><a id="gaa527d8497121becb3f52a1a1dbeda125" name="gaa527d8497121becb3f52a1a1dbeda125"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_CreateProxy</b> (<a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, <a class="el" href="group__math.html#structb2_a_a_b_b">b2AABB</a> aabb, uint32_t categoryBits, int32_t userData)</td></tr>
-<tr class="memdesc:gaa527d8497121becb3f52a1a1dbeda125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a proxy. Provide an AABB and a userData value. <br /></td></tr>
-<tr class="separator:gaa527d8497121becb3f52a1a1dbeda125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab537b36458610efdc05f38ef2572d41e" id="r_gab537b36458610efdc05f38ef2572d41e"><td class="memItemLeft" align="right" valign="top"><a id="gab537b36458610efdc05f38ef2572d41e" name="gab537b36458610efdc05f38ef2572d41e"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_CreateProxy</b> (<a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, <a class="el" href="group__math.html#structb2_a_a_b_b">b2AABB</a> aabb, uint64_t categoryBits, int32_t userData)</td></tr>
+<tr class="memdesc:gab537b36458610efdc05f38ef2572d41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a proxy. Provide an AABB and a userData value. <br /></td></tr>
+<tr class="separator:gab537b36458610efdc05f38ef2572d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga468a69c1fb68367892d3df66c56aaecd" id="r_ga468a69c1fb68367892d3df66c56aaecd"><td class="memItemLeft" align="right" valign="top"><a id="ga468a69c1fb68367892d3df66c56aaecd" name="ga468a69c1fb68367892d3df66c56aaecd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_DestroyProxy</b> (<a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, int32_t proxyId)</td></tr>
 <tr class="memdesc:ga468a69c1fb68367892d3df66c56aaecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a proxy. This asserts if the id is invalid. <br /></td></tr>
@@ -180,15 +180,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_MovePro
 void&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_EnlargeProxy</b> (<a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, int32_t proxyId, <a class="el" href="group__math.html#structb2_a_a_b_b">b2AABB</a> aabb)</td></tr>
 <tr class="memdesc:ga7a44b407df8b53f0e95753ae0da43af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlarge a proxy and enlarge ancestors as necessary. <br /></td></tr>
 <tr class="separator:ga7a44b407df8b53f0e95753ae0da43af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1ac68e33da490238a48031c1815c17f" id="r_gaa1ac68e33da490238a48031c1815c17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa1ac68e33da490238a48031c1815c17f">b2DynamicTree_Query</a> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, <a class="el" href="group__math.html#structb2_a_a_b_b">b2AABB</a> aabb, uint32_t maskBits, <a class="el" href="#gae1e27589a84f135b12c9602deed854af">b2TreeQueryCallbackFcn</a> *callback, void *context)</td></tr>
-<tr class="memdesc:gaa1ac68e33da490238a48031c1815c17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query an AABB for overlapping proxies.  <br /></td></tr>
-<tr class="separator:gaa1ac68e33da490238a48031c1815c17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f011295fe711740ec4299eccc7813e3" id="r_ga3f011295fe711740ec4299eccc7813e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f011295fe711740ec4299eccc7813e3">b2DynamicTree_RayCast</a> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, const <a class="el" href="group__geometry.html#structb2_ray_cast_input">b2RayCastInput</a> *input, uint32_t maskBits, <a class="el" href="#ga68369c4634217f75a69568afc1188493">b2TreeRayCastCallbackFcn</a> *callback, void *context)</td></tr>
-<tr class="memdesc:ga3f011295fe711740ec4299eccc7813e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray-cast against the proxies in the tree.  <br /></td></tr>
-<tr class="separator:ga3f011295fe711740ec4299eccc7813e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9383e8207f84e500db2f9c2cdbdc03e" id="r_gab9383e8207f84e500db2f9c2cdbdc03e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab9383e8207f84e500db2f9c2cdbdc03e">b2DynamicTree_ShapeCast</a> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, const <a class="el" href="group__geometry.html#structb2_shape_cast_input">b2ShapeCastInput</a> *input, uint32_t maskBits, <a class="el" href="#ga8342c5cf5135f5b94cd121b533ffbeb3">b2TreeShapeCastCallbackFcn</a> *callback, void *context)</td></tr>
-<tr class="memdesc:gab9383e8207f84e500db2f9c2cdbdc03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray-cast against the proxies in the tree.  <br /></td></tr>
-<tr class="separator:gab9383e8207f84e500db2f9c2cdbdc03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9b9cd069ea514639843f6f28d24350d" id="r_gae9b9cd069ea514639843f6f28d24350d"><td class="memItemLeft" align="right" valign="top"><a id="gae9b9cd069ea514639843f6f28d24350d" name="gae9b9cd069ea514639843f6f28d24350d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_Query</b> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, <a class="el" href="group__math.html#structb2_a_a_b_b">b2AABB</a> aabb, uint64_t maskBits, <a class="el" href="#gae1e27589a84f135b12c9602deed854af">b2TreeQueryCallbackFcn</a> *callback, void *context)</td></tr>
+<tr class="memdesc:gae9b9cd069ea514639843f6f28d24350d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query an AABB for overlapping proxies. The callback class is called for each proxy that overlaps the supplied AABB. <br /></td></tr>
+<tr class="separator:gae9b9cd069ea514639843f6f28d24350d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3bf0694a42bc054bb9396d2d3e7c0e68" id="r_ga3bf0694a42bc054bb9396d2d3e7c0e68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3bf0694a42bc054bb9396d2d3e7c0e68">b2DynamicTree_RayCast</a> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, const <a class="el" href="group__geometry.html#structb2_ray_cast_input">b2RayCastInput</a> *input, uint64_t maskBits, <a class="el" href="#ga68369c4634217f75a69568afc1188493">b2TreeRayCastCallbackFcn</a> *callback, void *context)</td></tr>
+<tr class="memdesc:ga3bf0694a42bc054bb9396d2d3e7c0e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray-cast against the proxies in the tree.  <br /></td></tr>
+<tr class="separator:ga3bf0694a42bc054bb9396d2d3e7c0e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40e5d1479aae247b2575c927c2086f7c" id="r_ga40e5d1479aae247b2575c927c2086f7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga40e5d1479aae247b2575c927c2086f7c">b2DynamicTree_ShapeCast</a> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree, const <a class="el" href="group__geometry.html#structb2_shape_cast_input">b2ShapeCastInput</a> *input, uint64_t maskBits, <a class="el" href="#ga8342c5cf5135f5b94cd121b533ffbeb3">b2TreeShapeCastCallbackFcn</a> *callback, void *context)</td></tr>
+<tr class="memdesc:ga40e5d1479aae247b2575c927c2086f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray-cast against the proxies in the tree.  <br /></td></tr>
+<tr class="separator:ga40e5d1479aae247b2575c927c2086f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44e19f08118eb947ac4ded090a791e27" id="r_ga44e19f08118eb947ac4ded090a791e27"><td class="memItemLeft" align="right" valign="top"><a id="ga44e19f08118eb947ac4ded090a791e27" name="ga44e19f08118eb947ac4ded090a791e27"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_Validate</b> (const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *tree)</td></tr>
 <tr class="memdesc:ga44e19f08118eb947ac4ded090a791e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate this tree. For testing. <br /></td></tr>
@@ -248,14 +249,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>b2DynamicTree_GetByteC
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>A node in the dynamic tree. </p>
-<p>This is private data placed here for performance reasons. 16 + 16 + 8 + <a class="el" href="#a92653572c37cc209b44a434057410afc" title="Padding for clarity.">pad(8)</a> </p>
+<div class="textblock"><p>A node in the dynamic tree. This is private data placed here for performance reasons. </p>
 </div><div class="dynheader">
 Collaboration diagram for b2TreeNode:</div>
 <div class="dyncontent">
 <div class="center"><img src="structb2_tree_node__coll__graph.png" border="0" usemap="#ab2_tree_node_coll__map" alt="Collaboration graph"/></div>
 <map name="ab2_tree_node_coll__map" id="ab2_tree_node_coll__map">
-<area shape="rect" title="A node in the dynamic tree." alt="" coords="5,196,96,221"/>
+<area shape="rect" title="A node in the dynamic tree. This is private data placed here for performance reasons." alt="" coords="5,196,96,221"/>
 <area shape="rect" href="group__math.html#structb2_a_a_b_b" title="Axis&#45;aligned bounding box." alt="" coords="15,108,87,133"/>
 <area shape="poly" title=" " alt="" coords="53,149,53,196,48,196,48,149"/>
 <area shape="rect" href="group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="17,5,84,31"/>
@@ -277,7 +277,7 @@ aabb</td>
 <td class="fielddoc">
 The node bounding box. </td></tr>
 <tr><td class="fieldtype">
-<a id="ae4a0624aea84a12b6ee22ebb29cf5437" name="ae4a0624aea84a12b6ee22ebb29cf5437"></a>uint32_t</td>
+<a id="a2bd2d5a4e719ed31cecd7b83cb918b38" name="a2bd2d5a4e719ed31cecd7b83cb918b38"></a>uint64_t</td>
 <td class="fieldname">
 categoryBits</td>
 <td class="fielddoc">
@@ -307,9 +307,9 @@ height</td>
 <td class="fielddoc">
 Leaf = 0, free node = -1. </td></tr>
 <tr><td class="fieldtype">
-<a id="a92653572c37cc209b44a434057410afc" name="a92653572c37cc209b44a434057410afc"></a>char</td>
+<a id="aa070ecf00f61dd680201d91464cfe94a" name="aa070ecf00f61dd680201d91464cfe94a"></a>char</td>
 <td class="fieldname">
-pad[9]</td>
+pad[5]</td>
 <td class="fielddoc">
 Padding for clarity. </td></tr>
 <tr><td class="fieldtype">
@@ -341,7 +341,7 @@ Collaboration diagram for b2DynamicTree:</div>
 <div class="center"><img src="structb2_dynamic_tree__coll__graph.png" border="0" usemap="#ab2_dynamic_tree_coll__map" alt="Collaboration graph"/></div>
 <map name="ab2_dynamic_tree_coll__map" id="ab2_dynamic_tree_coll__map">
 <area shape="rect" title="The dynamic tree structure." alt="" coords="51,284,163,309"/>
-<area shape="rect" href="group__tree.html#structb2_tree_node" title="A node in the dynamic tree." alt="" coords="192,196,283,221"/>
+<area shape="rect" href="group__tree.html#structb2_tree_node" title="A node in the dynamic tree. This is private data placed here for performance reasons." alt="" coords="192,196,283,221"/>
 <area shape="poly" title=" " alt="" coords="208,232,126,286,123,281,205,228"/>
 <area shape="rect" href="group__math.html#structb2_a_a_b_b" title="Axis&#45;aligned bounding box." alt="" coords="71,108,143,133"/>
 <area shape="poly" title=" " alt="" coords="109,149,109,283,104,283,104,149"/>
@@ -557,47 +557,8 @@ The node parent index. </td></tr>
 
 </div>
 </div>
-<a id="gaa1ac68e33da490238a48031c1815c17f" name="gaa1ac68e33da490238a48031c1815c17f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa1ac68e33da490238a48031c1815c17f">&#9670;&#160;</a></span>b2DynamicTree_Query()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void b2DynamicTree_Query </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#structb2_dynamic_tree">b2DynamicTree</a> *</td>          <td class="paramname"><span class="paramname"><em>tree</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__math.html#structb2_a_a_b_b">b2AABB</a></td>          <td class="paramname"><span class="paramname"><em>aabb</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>maskBits</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#gae1e27589a84f135b12c9602deed854af">b2TreeQueryCallbackFcn</a> *</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>context</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Query an AABB for overlapping proxies. </p>
-<p>The callback class is called for each proxy that overlaps the supplied AABB. </p>
-
-</div>
-</div>
-<a id="ga3f011295fe711740ec4299eccc7813e3" name="ga3f011295fe711740ec4299eccc7813e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3f011295fe711740ec4299eccc7813e3">&#9670;&#160;</a></span>b2DynamicTree_RayCast()</h2>
+<a id="ga3bf0694a42bc054bb9396d2d3e7c0e68" name="ga3bf0694a42bc054bb9396d2d3e7c0e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bf0694a42bc054bb9396d2d3e7c0e68">&#9670;&#160;</a></span>b2DynamicTree_RayCast()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -615,7 +576,7 @@ The node parent index. </td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>maskBits</em></span>, </td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>maskBits</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -644,8 +605,8 @@ The node parent index. </td></tr>
 
 </div>
 </div>
-<a id="gab9383e8207f84e500db2f9c2cdbdc03e" name="gab9383e8207f84e500db2f9c2cdbdc03e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab9383e8207f84e500db2f9c2cdbdc03e">&#9670;&#160;</a></span>b2DynamicTree_ShapeCast()</h2>
+<a id="ga40e5d1479aae247b2575c927c2086f7c" name="ga40e5d1479aae247b2575c927c2086f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga40e5d1479aae247b2575c927c2086f7c">&#9670;&#160;</a></span>b2DynamicTree_ShapeCast()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -663,7 +624,7 @@ The node parent index. </td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>maskBits</em></span>, </td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>maskBits</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

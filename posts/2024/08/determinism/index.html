@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Determinism means many things when it comes to game development and especially physics engines. Generally in game development we like things to be repeatable. This makes debugging easier. This doesn&rsquo;t rule out emergent behavior though because player input can be viewed as random.
+Testing Determinism Determinism is a brittle feature. It is easy to break. Code changes can break it. Compiler versions can break it. So it needs to be tested using continuous integration, or CI for short." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2024/08/determinism/" />
+
+
+    <title>
+        
+            Determinism :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Determinism">
+  <meta name="twitter:description" content="Determinism means many things when it comes to game development and especially physics engines. Generally in game development we like things to be repeatable. This makes debugging easier. This doesn’t rule out emergent behavior though because player input can be viewed as random.
+Testing Determinism Determinism is a brittle feature. It is easy to break. Code changes can break it. Compiler versions can break it. So it needs to be tested using continuous integration, or CI for short.">
+
+
+
+
+
+    <meta property="article:published_time" content="2024-08-27 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Aug 27, 2024</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2024/08/determinism/">Determinism</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>Determinism means many things when it comes to game development and especially physics engines. Generally in game development we like things to be repeatable. This makes debugging easier. This doesn&rsquo;t rule out emergent behavior though because player input can be viewed as random.</p>
+<h2 id="testing-determinism">Testing Determinism</h2>
+<p>Determinism is a brittle feature. It is easy to break. Code changes can break it. Compiler versions can break it. So it needs to be tested using <a href="https://en.wikipedia.org/wiki/Continuous_integration">continuous integration</a>, or <strong>CI</strong> for short.</p>
+<p>Box2D uses <a href="https://docs.github.com/en/actions">GitHub Actions</a> to run unit tests on every pull request. As part of these unit tests I run a determinism test I call <em>Falling Hinges</em>. This scenario is designed to test all the features I suspect will affect determinism:</p>
+<ul>
+<li>MSVC, Clang, GCC, x64, ARM</li>
+<li>fast movement and collision</li>
+<li>sleeping</li>
+<li>joint limits</li>
+<li>initial rotation</li>
+</ul>
+<p>As part of this test I generate two numbers that must match after every run:</p>
+<ul>
+<li>the number of time steps it takes for all the bodies to go to sleep</li>
+<li>a hash of the transforms of all the bodies once they are all sleeping</li>
+</ul>
+<p>From the video the sleep step is 310 and the transform hash is 0x5e70e5fe. These numbers may change as I make changes to Box2D, but I will see the CI failure and I can update the target numbers, ensuring they are deterministic.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/n4rTh041AeA?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Falling Hinges"
+      ></iframe>
+    </div>
+
+<p>Now lets go over the various flavors of determinism and see where Box2D sits.</p>
+<h2 id="algorithmic-determinism">Algorithmic Determinism</h2>
+<p>First of all there is <a href="https://en.wikipedia.org/wiki/Deterministic_algorithm">algorithmic determinism</a>. This basically means there are no random numbers. This is easy enough: I simply don&rsquo;t use random numbers in Box2D. I use random numbers in the samples application but not in the Box2D library.</p>
+<p>With this sort of determinism I can guarantee that Box2D will produce the same result on the same computer from run to run. This usually requires the world to be recreated because destroying all the bodies and adding new bodies may result in the second wave of bodies having a different order. This is because Box2D maintains object pools with <a href="https://en.wikipedia.org/wiki/Free_list">free lists</a>.</p>
+<p>Box2D v2.4 and before achieved algorithmic determinism with almost no effort. However, in version 3 this became much more challenging due to multithreading.</p>
+<h2 id="multithreaded-determinism">Multithreaded Determinism</h2>
+<p>Multithreaded computation can introduce a hidden random number generator, which is the relative speed of each CPU core. Modern CPUs run at variable speeds and each core can run at a different speed. This means from run to run each core can run at a different speed. The operating system schedular is also unpredictable.</p>
+<p>Any kind of cross-thread synchronization can lead to non-deterministic results. For example, multiple threads can look for new contact pairs in the broad-phase. Each thread can create new contacts and add them to the world array of contacts. The order of different threads adding their results to the contact array depends on how fast each thread does its work. This can depend on the CPU core boost speed, which Box2D has no control over.</p>
+<p>So now the contact array has a somewhat random order of contacts. The Box2D solver produces different results if the contact array has a different order. So now the simulation is non-deterministic!</p>
+<p>This random order is not helped by using atomics or mutexes. In fact, the presence of an atomic or mutex in a program indicates a risk to determinism.</p>
+<p>In Box2D version 3 I had to be vigilant to maintain determinism under multithreading. The order that bodies and shapes are created in the world should determine the order of contacts. However, I wanted to avoid any expensive sorting. Generally I used bit arrays to maintain order. The basic idea is that each worker thread has a local bit array that it fills out. Then when the worker threads are done, these bit arrays are merge with a bit-wise <code>OR</code> operation on the main thread. This global bit array then has a deterministic sequence of set bits.</p>
+<p>I wrote more about using bit arrays in my post <a href="https://box2d.org/posts/2023/10/simulation-islands/">Simulation Islands</a>.</p>
+<p>The following video shows the Falling Hinges sample being run with various thread counts and confirms that Box2D has multithreaded determinism.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/mxMxDpG74Y0?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Multithreaded Determinism"
+      ></iframe>
+    </div>
+
+<h2 id="cross-platform-determinism">Cross-Platform Determinism</h2>
+<p>Cross-platform determinism requires that the same world produces the same results on different CPUs and compilers. I test Box2D on x64 and ARM CPUs. I also test on MSVC, GCC, and Clang compilers.</p>
+<p>Conventional wisdom is that cross-platform determinism requires <a href="https://en.wikipedia.org/wiki/Fixed-point_arithmetic">fixed-point math</a>. This used to be true in the 32-bit era, especially when math was done on scalar <a href="https://en.wikipedia.org/wiki/Floating-point_unit">FPUs</a>. FPUs such as the x87 would do math internally at a higher precision. This makes basic arithmetic give different rounding results than would be generated on other platforms. This was the <em>floating point dark ages</em>.</p>
+<p>Once <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a> and 64-bit computing emerged it seems that CPU makers stopped playing games with math and started providing identical rounding for basic arithmetic. However, there are three remaining traps that I encountered.</p>
+<h3 id="fast-math">Fast-Math</h3>
+<p>Some compiler offer a <em>fast-math</em> setting. This will jumble your arithmetic in pursuit of higher performance. In my testing on MSVC, this setting provides no significant performance benefit. Besides breaking determinism, fast-math noticeably <a href="https://mastodon.gamedev.place/@erin_catto/110778282667162942">reduced accuracy</a>. Fortunately fast-math is not the default on any compiler I&rsquo;ve tested. My advice: never use this setting.</p>
+<p><img src="/images/fp_fast.png" alt="fast-math"></p>
+<h3 id="fused-multiply-add">Fused Multiply-Add</h3>
+<p><a href="https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation">Fused multiply-add</a> (FMA) is another troublemaker. These special CPU instructions improve precision and performance slightly at the cost of determinism. Unfortunately these instructions are not standardized across CPUs and they rely on the compiler to use them. So FMA must be disabled for cross-platform determinism. It seems that only Apple Clang has FMA enabled by default. I disable FMA using <code>-ffp-contract=off</code>. Easy enough.</p>
+<h3 id="trigonometry">Trigonometry</h3>
+<p>Trigonometric functions are implemented in the C standard library specific to each compiler. Box2D uses <code>sinf</code>, <code>cosf</code>, and <code>atan2f</code>. I implemented custom approximate versions of these that give the same result on every platform. Fortunately Box2D doesn&rsquo;t need these functions to be super accurate.</p>
+<p>In my testing <code>sinf</code> and <code>cosf</code> give the same answers on all compilers and CPUs I&rsquo;ve tested. But I don&rsquo;t trust this result will hold, so I&rsquo;m still using my custom versions. Box2D doesn&rsquo;t call these internally, but they are called if you use the function <code>b2MakeRot()</code>. Further testing showed that <code>atan2f</code> gives different answers on different platforms, so it is necessary to implement.</p>
+<p>There are plenty of approximate versions of sine, cosine, and arc-tangent available. I basically picked ones that seemed easy to implement. Using SIMD for these is not necessary nor beneficial to Box2D performance.</p>
+<p>Some good news is that <code>sqrtf</code> is deterministic. Box2D uses <code>sqrtf</code> a lot and needs good accuracy. Assembly code reveals this calls the <code>sqrtss</code> SSE instruction on x64. See <a href="https://godbolt.org/z/EqbPrPTaM">this</a>.</p>
+<h3 id="results">Results</h3>
+<p>By avoiding fast-math, FMA, and implementing <code>atan2f</code> I was able to make Box2D cross-platform deterministic. This is a much better result than having to implement fixed-point math which would likely be much slower, difficult to code, reduce the feasible world size, have overflow, and likely more problems I haven&rsquo;t thought of.</p>
+<p>Because Box2D was designed with determinism in mind, there is no noticeable performance impact. I keep the benchmarks up to date <a href="https://box2d.org/files/benchmark_results.html">here</a>.</p>
+<p>The video below shows the Falling Hinges sample running on an Apple M2 and producing a result identical to an AMD Ryzen CPU.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/vlqMdg-XPmQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Cross-Platform Determinism"
+      ></iframe>
+    </div>
+
+<h2 id="roll-back-determinism">Roll-back Determinism</h2>
+<p>Further determinism requirements may become important in multiplayer games. This depends a lot on your game design.</p>
+<p>Often multiplayer games will use <a href="https://en.wikipedia.org/wiki/Client-side_prediction">client-side prediction</a>. This helps to hide latency and makes a game feel more responsive. The idea is to predict the client simulation in advance of information received from the server. Once the server sends information to the client, the client can detect a desynchronization. If the client and server disagree, the client rolls back to the server result and then re-simulates forward.</p>
+<p>Rolling back a physics world means moving the rigid bodies back to some previous transform and velocity. You would like this rollback and re-simulation to match the expected server result. However, this does not work in many physics engines because there is a lot of internal state and orderings that can get out of sync. This desynchronization means the client will always be rolling back. This can be quite expensive for the client and the simulation may jitter.</p>
+<p>There is also a cost to server performance with this re-simulation. When the client simulates ahead of the server, it can send some hash of the current state to the server along with the user input. If the server observes that the client state matches its simulation, it can skip sending data to the client.</p>
+<p>Roll-back is also problematic when a player joins a game that is in progress. The server would need to send down the entire world state to the client. This would greatly limit the world size in order to limit network bandwidth.</p>
+<p>Roll-back could be greatly simplified by reducing or eliminating the internal state in the physics engine. Unfortunately this will reduce stability, but it might work for some games if the limitations are understood.</p>
+<p>Another solution is to avoid predicting physics on the client. For example, a falling building doesn&rsquo;t need to be predicted because the player does not perceive latency.</p>
+<p>Currently Box2D does not provide roll-back determinism. Box2D has a lot of internal state that affects the simulation and there is no mechanism for rolling back this internal state.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Box2D now has 3 levels of determinism: algorithmic, multithreaded, and cross-platform. There are no settings for this. It is the default.</p>
+<p>However, Box2D does not have roll-back determinism. Roll-back determinism has many trade-offs and the choice of trade-off might depend on the specific game design.</p>
+<p>In the future, I expect to work on features to provide experimental support for roll-back determinism. You can sponsor the Box2D project <a href="https://github.com/sponsors/erincatto">here</a>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://randomascii.wordpress.com/2013/07/16/floating-point-determinism/">Floating-Point Determinism</a></li>
+<li><a href="https://www.youtube.com/watch?v=ueEmiDM94IE">It IS Rocket Science! The Physics of Rocket League Detailed</a></li>
+<li><a href="https://jrouwe.github.io/JoltPhysics/#deterministic-simulation">Jolt Deterministic Simulation</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1631 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2024-08-26 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
+    </body>
+</html>

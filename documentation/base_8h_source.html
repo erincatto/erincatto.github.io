@@ -38,7 +38,7 @@ window.MathJax = {
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Box2D<span id="projectnumber">&#160;3.0.1</span>
+   <div id="projectname">Box2D<span id="projectnumber">&#160;3.1.0</span>
    </div>
    <div id="projectbrief">A 2D physics engine for games</div>
   </td>
@@ -118,91 +118,97 @@ $(function(){initNavTree('base_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// Shared library macros</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#if defined( _MSC_VER ) &amp;&amp; defined( box2d_EXPORTS )</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// build the Windows DLL</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">    #define BOX2D_EXPORT __declspec( dllexport )</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#elif defined( _MSC_VER ) &amp;&amp; defined( BOX2D_DLL )</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// using the Windows DLL</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    #define BOX2D_EXPORT __declspec( dllimport )</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#elif defined( box2d_EXPORTS )</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// building or using the Box2D shared library</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    #define BOX2D_EXPORT __attribute__( ( visibility( &quot;default&quot; ) ) )</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// static library</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    #define BOX2D_EXPORT</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// C++ macros</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// clang-format off</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">    #define B2_API extern &quot;C&quot; BOX2D_EXPORT</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">    #define B2_INLINE inline</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">    #define B2_LITERAL(T) T</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    #define B2_ZERO_INIT {}</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">    #define B2_API BOX2D_EXPORT</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">    #define B2_INLINE static inline</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">    #define B2_LITERAL(T) (T)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    #define B2_ZERO_INIT {0}</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">   48</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span>* <a class="code hl_typedef" href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">b2AllocFcn</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> alignment );</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="group__base.html#ga7981516d12b40604a18ee6459938da8f">   52</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code hl_typedef" href="group__base.html#ga7981516d12b40604a18ee6459938da8f">b2FreeFcn</a>( <span class="keywordtype">void</span>* mem );</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">   55</a></span><span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">b2AssertFcn</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* condition, <span class="keyword">const</span> <span class="keywordtype">char</span>* fileName, <span class="keywordtype">int</span> lineNumber );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="group__base.html#ga61cd3cba135821c54537871ab731ca92">   59</a></span>B2_API <span class="keywordtype">void</span> <a class="code hl_function" href="group__base.html#ga61cd3cba135821c54537871ab731ca92">b2SetAllocator</a>( <a class="code hl_typedef" href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">b2AllocFcn</a>* allocFcn, <a class="code hl_typedef" href="group__base.html#ga7981516d12b40604a18ee6459938da8f">b2FreeFcn</a>* freeFcn );</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group__base.html#gaedd3d7b8951726dcd6a6733d6785df4a">   62</a></span>B2_API <span class="keywordtype">int</span> <a class="code hl_function" href="group__base.html#gaedd3d7b8951726dcd6a6733d6785df4a">b2GetByteCount</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__base.html#gaa1a866c5d7a43cab3353cd762dc22f1b">   66</a></span>B2_API <span class="keywordtype">void</span> <a class="code hl_function" href="group__base.html#gaa1a866c5d7a43cab3353cd762dc22f1b">b2SetAssertFcn</a>( <a class="code hl_typedef" href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">b2AssertFcn</a>* assertFcn );</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__base.html">   70</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="group__base.html#structb2_version">b2Version</a></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__base.html#aec0151dab0b5f4ca7c621a00f040adb9">   73</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="group__base.html#aec0151dab0b5f4ca7c621a00f040adb9">major</a>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group__base.html#a01eb6e0f78d658d53400340ff281ff92">   76</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="group__base.html#a01eb6e0f78d658d53400340ff281ff92">minor</a>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="group__base.html#abd9ba5666207f8055bdc8ad30ea60a85">   79</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="group__base.html#abd9ba5666207f8055bdc8ad30ea60a85">revision</a>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>} <a class="code hl_struct" href="group__base.html#structb2_version">b2Version</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// </span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Shared library macros</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if defined( _MSC_VER ) &amp;&amp; defined( box2d_EXPORTS )</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// build the Windows DLL</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    #define BOX2D_EXPORT __declspec( dllexport )</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#elif defined( _MSC_VER ) &amp;&amp; defined( BOX2D_DLL )</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// using the Windows DLL</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    #define BOX2D_EXPORT __declspec( dllimport )</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#elif defined( box2d_EXPORTS )</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// building or using the Box2D shared library</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    #define BOX2D_EXPORT __attribute__( ( visibility( &quot;default&quot; ) ) )</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// static library</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">    #define BOX2D_EXPORT</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// C++ macros</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">    #define B2_API extern &quot;C&quot; BOX2D_EXPORT</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">    #define B2_INLINE inline</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    #define B2_LITERAL(T) T</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">    #define B2_ZERO_INIT {}</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">    #define B2_API BOX2D_EXPORT</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">    #define B2_INLINE static inline</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    #define B2_LITERAL(T) (T)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">    #define B2_ZERO_INIT {0}</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">   49</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span>* <a class="code hl_typedef" href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">b2AllocFcn</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> alignment );</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="group__base.html#ga7981516d12b40604a18ee6459938da8f">   53</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code hl_typedef" href="group__base.html#ga7981516d12b40604a18ee6459938da8f">b2FreeFcn</a>( <span class="keywordtype">void</span>* mem );</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">   56</a></span><span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">b2AssertFcn</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* condition, <span class="keyword">const</span> <span class="keywordtype">char</span>* fileName, <span class="keywordtype">int</span> lineNumber );</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__base.html#ga61cd3cba135821c54537871ab731ca92">   60</a></span>B2_API <span class="keywordtype">void</span> <a class="code hl_function" href="group__base.html#ga61cd3cba135821c54537871ab731ca92">b2SetAllocator</a>( <a class="code hl_typedef" href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">b2AllocFcn</a>* allocFcn, <a class="code hl_typedef" href="group__base.html#ga7981516d12b40604a18ee6459938da8f">b2FreeFcn</a>* freeFcn );</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__base.html#gaedd3d7b8951726dcd6a6733d6785df4a">   63</a></span>B2_API <span class="keywordtype">int</span> <a class="code hl_function" href="group__base.html#gaedd3d7b8951726dcd6a6733d6785df4a">b2GetByteCount</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__base.html#gaa1a866c5d7a43cab3353cd762dc22f1b">   67</a></span>B2_API <span class="keywordtype">void</span> <a class="code hl_function" href="group__base.html#gaa1a866c5d7a43cab3353cd762dc22f1b">b2SetAssertFcn</a>( <a class="code hl_typedef" href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">b2AssertFcn</a>* assertFcn );</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group__base.html">   71</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="group__base.html#structb2_version">b2Version</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="group__base.html#aec0151dab0b5f4ca7c621a00f040adb9">   74</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="group__base.html#aec0151dab0b5f4ca7c621a00f040adb9">major</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="group__base.html#a01eb6e0f78d658d53400340ff281ff92">   77</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="group__base.html#a01eb6e0f78d658d53400340ff281ff92">minor</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__base.html#abd9ba5666207f8055bdc8ad30ea60a85">   80</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="group__base.html#abd9ba5666207f8055bdc8ad30ea60a85">revision</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <a class="code hl_struct" href="group__base.html#structb2_version">b2Version</a>;</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="group__base.html#gaf28c62fb4c067a759fb9a0a79e650fda">   83</a></span>B2_API <a class="code hl_struct" href="group__base.html#structb2_version">b2Version</a> <a class="code hl_function" href="group__base.html#gaf28c62fb4c067a759fb9a0a79e650fda">b2GetVersion</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">// Timer for profiling. This has platform specific code and may not work on every platform.</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">typedef</span> <span class="keyword">struct </span>b2Timer</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#if defined( _WIN32 )</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    int64_t start;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#elif defined( __linux__ ) || defined( __APPLE__ )</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> start_sec;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> start_usec;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    int32_t dummy;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>} b2Timer;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>B2_API b2Timer b2CreateTimer( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>B2_API int64_t b2GetTicks( b2Timer* timer );</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>B2_API <span class="keywordtype">float</span> b2GetMilliseconds( <span class="keyword">const</span> b2Timer* timer );</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>B2_API <span class="keywordtype">float</span> b2GetMillisecondsAndReset( b2Timer* timer );</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>B2_API <span class="keywordtype">void</span> b2SleepMilliseconds( <span class="keywordtype">int</span> milliseconds );</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>B2_API <span class="keywordtype">void</span> b2Yield( <span class="keywordtype">void</span> );</div>
-<div class="ttc" id="agroup__base_html_a01eb6e0f78d658d53400340ff281ff92"><div class="ttname"><a href="group__base.html#a01eb6e0f78d658d53400340ff281ff92">b2Version::minor</a></div><div class="ttdeci">int minor</div><div class="ttdoc">Incremental changes.</div><div class="ttdef"><b>Definition</b> base.h:76</div></div>
-<div class="ttc" id="agroup__base_html_abd9ba5666207f8055bdc8ad30ea60a85"><div class="ttname"><a href="group__base.html#abd9ba5666207f8055bdc8ad30ea60a85">b2Version::revision</a></div><div class="ttdeci">int revision</div><div class="ttdoc">Bug fixes.</div><div class="ttdef"><b>Definition</b> base.h:79</div></div>
-<div class="ttc" id="agroup__base_html_aec0151dab0b5f4ca7c621a00f040adb9"><div class="ttname"><a href="group__base.html#aec0151dab0b5f4ca7c621a00f040adb9">b2Version::major</a></div><div class="ttdeci">int major</div><div class="ttdoc">Significant changes.</div><div class="ttdef"><b>Definition</b> base.h:73</div></div>
-<div class="ttc" id="agroup__base_html_ga403361f17b97a6db73f97ff333f2ee3f"><div class="ttname"><a href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">b2AllocFcn</a></div><div class="ttdeci">void * b2AllocFcn(unsigned int size, int alignment)</div><div class="ttdoc">Prototype for user allocation function.</div><div class="ttdef"><b>Definition</b> base.h:48</div></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="group__base.html#gaf28c62fb4c067a759fb9a0a79e650fda">   84</a></span>B2_API <a class="code hl_struct" href="group__base.html#structb2_version">b2Version</a> <a class="code hl_function" href="group__base.html#gaf28c62fb4c067a759fb9a0a79e650fda">b2GetVersion</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">// Timer for profiling. This has platform specific code and may not work on every platform.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">typedef</span> <span class="keyword">struct </span>b2Timer</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#if defined( _WIN32 )</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    int64_t start;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#elif defined( __linux__ ) || defined( __APPLE__ )</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> start_sec;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> start_usec;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    int32_t dummy;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>} b2Timer;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>B2_API b2Timer b2CreateTimer( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>B2_API int64_t b2GetTicks( b2Timer* timer );</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>B2_API <span class="keywordtype">float</span> b2GetMilliseconds( <span class="keyword">const</span> b2Timer* timer );</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>B2_API <span class="keywordtype">float</span> b2GetMillisecondsAndReset( b2Timer* timer );</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>B2_API <span class="keywordtype">void</span> b2SleepMilliseconds( <span class="keywordtype">int</span> milliseconds );</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>B2_API <span class="keywordtype">void</span> b2Yield( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">// Simple djb2 hash function for determinism testing</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#define B2_HASH_INIT 5381</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>B2_API uint32_t b2Hash( uint32_t hash, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">int</span> count );</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="ttc" id="agroup__base_html_a01eb6e0f78d658d53400340ff281ff92"><div class="ttname"><a href="group__base.html#a01eb6e0f78d658d53400340ff281ff92">b2Version::minor</a></div><div class="ttdeci">int minor</div><div class="ttdoc">Incremental changes.</div><div class="ttdef"><b>Definition</b> base.h:77</div></div>
+<div class="ttc" id="agroup__base_html_abd9ba5666207f8055bdc8ad30ea60a85"><div class="ttname"><a href="group__base.html#abd9ba5666207f8055bdc8ad30ea60a85">b2Version::revision</a></div><div class="ttdeci">int revision</div><div class="ttdoc">Bug fixes.</div><div class="ttdef"><b>Definition</b> base.h:80</div></div>
+<div class="ttc" id="agroup__base_html_aec0151dab0b5f4ca7c621a00f040adb9"><div class="ttname"><a href="group__base.html#aec0151dab0b5f4ca7c621a00f040adb9">b2Version::major</a></div><div class="ttdeci">int major</div><div class="ttdoc">Significant changes.</div><div class="ttdef"><b>Definition</b> base.h:74</div></div>
+<div class="ttc" id="agroup__base_html_ga403361f17b97a6db73f97ff333f2ee3f"><div class="ttname"><a href="group__base.html#ga403361f17b97a6db73f97ff333f2ee3f">b2AllocFcn</a></div><div class="ttdeci">void * b2AllocFcn(unsigned int size, int alignment)</div><div class="ttdoc">Prototype for user allocation function.</div><div class="ttdef"><b>Definition</b> base.h:49</div></div>
 <div class="ttc" id="agroup__base_html_ga61cd3cba135821c54537871ab731ca92"><div class="ttname"><a href="group__base.html#ga61cd3cba135821c54537871ab731ca92">b2SetAllocator</a></div><div class="ttdeci">void b2SetAllocator(b2AllocFcn *allocFcn, b2FreeFcn *freeFcn)</div><div class="ttdoc">This allows the user to override the allocation functions.</div></div>
-<div class="ttc" id="agroup__base_html_ga7981516d12b40604a18ee6459938da8f"><div class="ttname"><a href="group__base.html#ga7981516d12b40604a18ee6459938da8f">b2FreeFcn</a></div><div class="ttdeci">void b2FreeFcn(void *mem)</div><div class="ttdoc">Prototype for user free function.</div><div class="ttdef"><b>Definition</b> base.h:52</div></div>
+<div class="ttc" id="agroup__base_html_ga7981516d12b40604a18ee6459938da8f"><div class="ttname"><a href="group__base.html#ga7981516d12b40604a18ee6459938da8f">b2FreeFcn</a></div><div class="ttdeci">void b2FreeFcn(void *mem)</div><div class="ttdoc">Prototype for user free function.</div><div class="ttdef"><b>Definition</b> base.h:53</div></div>
 <div class="ttc" id="agroup__base_html_gaa1a866c5d7a43cab3353cd762dc22f1b"><div class="ttname"><a href="group__base.html#gaa1a866c5d7a43cab3353cd762dc22f1b">b2SetAssertFcn</a></div><div class="ttdeci">void b2SetAssertFcn(b2AssertFcn *assertFcn)</div><div class="ttdoc">Override the default assert callback.</div></div>
-<div class="ttc" id="agroup__base_html_gaae40299ae9aea572fc32c7a5d47ec71d"><div class="ttname"><a href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">b2AssertFcn</a></div><div class="ttdeci">int b2AssertFcn(const char *condition, const char *fileName, int lineNumber)</div><div class="ttdoc">Prototype for the user assert callback. Return 0 to skip the debugger break.</div><div class="ttdef"><b>Definition</b> base.h:55</div></div>
+<div class="ttc" id="agroup__base_html_gaae40299ae9aea572fc32c7a5d47ec71d"><div class="ttname"><a href="group__base.html#gaae40299ae9aea572fc32c7a5d47ec71d">b2AssertFcn</a></div><div class="ttdeci">int b2AssertFcn(const char *condition, const char *fileName, int lineNumber)</div><div class="ttdoc">Prototype for the user assert callback. Return 0 to skip the debugger break.</div><div class="ttdef"><b>Definition</b> base.h:56</div></div>
 <div class="ttc" id="agroup__base_html_gaedd3d7b8951726dcd6a6733d6785df4a"><div class="ttname"><a href="group__base.html#gaedd3d7b8951726dcd6a6733d6785df4a">b2GetByteCount</a></div><div class="ttdeci">int b2GetByteCount(void)</div></div>
 <div class="ttc" id="agroup__base_html_gaf28c62fb4c067a759fb9a0a79e650fda"><div class="ttname"><a href="group__base.html#gaf28c62fb4c067a759fb9a0a79e650fda">b2GetVersion</a></div><div class="ttdeci">b2Version b2GetVersion(void)</div><div class="ttdoc">Get the current version of Box2D.</div></div>
-<div class="ttc" id="agroup__base_html_structb2_version"><div class="ttname"><a href="group__base.html#structb2_version">b2Version</a></div><div class="ttdoc">Version numbering scheme.</div><div class="ttdef"><b>Definition</b> base.h:71</div></div>
+<div class="ttc" id="agroup__base_html_structb2_version"><div class="ttname"><a href="group__base.html#structb2_version">b2Version</a></div><div class="ttdoc">Version numbering scheme.</div><div class="ttdef"><b>Definition</b> base.h:72</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

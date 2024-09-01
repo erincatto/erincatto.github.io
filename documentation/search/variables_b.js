@@ -1,7 +1,7 @@
 var searchData=
 [
   ['major_0',['major',['../group__base.html#aec0151dab0b5f4ca7c621a00f040adb9',1,'b2Version']]],
-  ['maskbits_1',['maskBits',['../group__shape.html#a638f066a367b5d907eadd6927e3cc366',1,'b2Filter::maskBits'],['../group__shape.html#ab8df1b418226ad839684d97e0d5c6917',1,'b2QueryFilter::maskBits']]],
+  ['maskbits_1',['maskBits',['../group__shape.html#a77f175cd1413952cc26c866cebdee259',1,'b2Filter::maskBits'],['../group__shape.html#a4ba3fd17260e8f406f993ffd524c9879',1,'b2QueryFilter::maskBits']]],
   ['mass_2',['mass',['../group__geometry.html#a28306cd337e0a58f07ad21648367e35b',1,'b2MassData']]],
   ['maxforce_3',['maxForce',['../group__motor__joint.html#a0048cc0264f23707214ad96273c5fc0d',1,'b2MotorJointDef::maxForce'],['../group__mouse__joint.html#a6ae811967747e4d1752b571c894c1ba7',1,'b2MouseJointDef::maxForce']]],
   ['maxfraction_4',['maxFraction',['../group__geometry.html#ae845282b02a2a8cd5c8187f8ca719627',1,'b2RayCastInput::maxFraction'],['../group__geometry.html#a4646963b95ddb1ec3dc8b46cfbfad0dc',1,'b2ShapeCastInput::maxFraction'],['../group__distance.html#a55fa0e1d762b4903cc7ec899db794ae7',1,'b2ShapeCastPairInput::maxFraction']]],

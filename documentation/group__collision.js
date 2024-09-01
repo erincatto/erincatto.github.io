@@ -19,14 +19,14 @@ var group__collision =
     ] ],
     [ "b2CollideCapsuleAndCircle", "group__collision.html#ga873487b2bd8e19b8ea543982853a61d6", null ],
     [ "b2CollideCapsules", "group__collision.html#ga2a30a6693c0a26f88111697385d66031", null ],
+    [ "b2CollideChainSegmentAndCapsule", "group__collision.html#gac4e5dd963436669f486b074b4826e09b", null ],
+    [ "b2CollideChainSegmentAndCircle", "group__collision.html#ga2a8f7fd661289943e65586af11f8b30e", null ],
+    [ "b2CollideChainSegmentAndPolygon", "group__collision.html#ga28114a573cde8a479ab4c72890b50a47", null ],
     [ "b2CollideCircles", "group__collision.html#ga743fbd552b92de3730a41a26009179c2", null ],
     [ "b2CollidePolygonAndCapsule", "group__collision.html#ga607e05c7029dc317455cc14f9cf8e188", null ],
     [ "b2CollidePolygonAndCircle", "group__collision.html#ga38723c2436af515b153da03aee701af6", null ],
     [ "b2CollidePolygons", "group__collision.html#ga8c4680c93621128941b9bcb13eb5bc00", null ],
     [ "b2CollideSegmentAndCapsule", "group__collision.html#ga5b653e7b6cfffce8afe5b7efc596ece5", null ],
     [ "b2CollideSegmentAndCircle", "group__collision.html#ga0c9ae397f90adfa30827d0a349356db9", null ],
-    [ "b2CollideSegmentAndPolygon", "group__collision.html#ga2e09e7422a016285105505c587328380", null ],
-    [ "b2CollideSmoothSegmentAndCapsule", "group__collision.html#ga47784cd176aac49dff63fa33df66e743", null ],
-    [ "b2CollideSmoothSegmentAndCircle", "group__collision.html#ga69256c3348bc64790694ae1e1e21c589", null ],
-    [ "b2CollideSmoothSegmentAndPolygon", "group__collision.html#gaee4c00dbc2c76071403e1b489e6c2d19", null ]
+    [ "b2CollideSegmentAndPolygon", "group__collision.html#ga2e09e7422a016285105505c587328380", null ]
 ];
