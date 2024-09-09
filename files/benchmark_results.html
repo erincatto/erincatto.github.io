@@ -20,13 +20,16 @@ SPDX-License-Identifier: MIT -->
             color: #e0e0e0;
             font-family: Arial, sans-serif;
         }
-        select, button {
+
+        select,
+        button {
             background-color: #333;
             color: #e0e0e0;
             border: 1px solid #555;
             padding: 5px 10px;
             margin: 5px;
         }
+
         .chart-container {
             display: flex;
             flex-direction: column;
@@ -35,13 +38,27 @@ SPDX-License-Identifier: MIT -->
             max-width: 1000px;
             margin: 0 auto;
         }
+
         .chart-item {
             width: 100%;
-            height: 700px; /* Fixed height for each chart */
+            height: 700px;
+            /* Fixed height for each chart */
         }
+
         canvas {
             background-color: #1e1e1e;
             border: 1px solid #333;
+        }
+
+        p,
+        label {
+            font:
+                1rem 'Fira Sans',
+                sans-serif;
+        }
+
+        input {
+            margin: 0.4rem;
         }
     </style>
 </head>
@@ -49,15 +66,45 @@ SPDX-License-Identifier: MIT -->
 <body>
     <h1>Box2D Benchmarks</h1>
 
-    Platforms tested:
-    <ul>
-        <li>r9-avx2 : AMD Ryzen 9 7950X with AVX2 intrinsics</li>
-        <li>r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics</li>
-        <li>r9-scalar : AMD Ryzen 9 7950X with no intrinsics</li>
-        <li>m2-neon : Apple M2 with ARM Neon intrinsics</li>
-    </ul>
-    
-    <hr/>
+    <fieldset>
+        <legend>Processors</legend>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-avx2" name="processorSelect" value="0" checked />
+                r9-avx2 : AMD Ryzen 9 7950X with AVX2 intrinsics
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-sse2" name="processorSelect" value="1" checked />
+                r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-scalar" name="processorSelect" value="2" checked />
+                r9-scalar : AMD Ryzen 9 7950X with no intrinsics
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="m2-neon" name="processorSelect" value="3" checked />
+                m2-neon : Apple M2 with ARM Neon intrinsics
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="n100-sse2" name="processorSelect" value="4" />
+                n100-sse2 : Intel N100 with SSE2 intrinsics
+            </label>
+        </div>
+
+    </fieldset>
 
     <label for="branchSelect">Compare Branch:</label>
     <select id="branchSelect">
@@ -65,7 +112,9 @@ SPDX-License-Identifier: MIT -->
     </select>
 
     <button id="loadButton">Load</button>
-    
+
+    <hr />
+
     <div class="chart-container">
         <img src="/images/joint_grid_benchmark.png" width="640" height="360">
         <div class="chart-item">
@@ -79,11 +128,11 @@ SPDX-License-Identifier: MIT -->
         <div class="chart-item">
             <canvas id="many_pyramids"></canvas>
         </div>
-        <img src="/images/smash_benchmark.png" width="640" height="360">        
+        <img src="/images/smash_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="smash"></canvas>
         </div>
-        <img src="/images/tumbler_benchmark.png" width="640" height="360">   
+        <img src="/images/tumbler_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="tumbler"></canvas>
         </div>
@@ -127,27 +176,35 @@ SPDX-License-Identifier: MIT -->
 
         const processors = [
             {
-                folder: 'amd7950x',
-                label: 'r9-avx2'
+                folder: 'amd7950x_avx2',
+                label: 'r9-avx2',
+                enabled: false,
             },
-
             {
                 folder: 'amd7950x_sse2',
                 label: 'r9-sse2',
+                enabled: false,
             },
             {
-
                 folder: 'amd7950x_float',
-                label: 'r9-scalar'
+                label: 'r9-scalar',
+                enabled: false,
             },
             {
-                folder: 'm2air',
-                label: 'm2-neon'
+                folder: 'm2air_neon',
+                label: 'm2-neon',
+                enabled: false,
+            },
+            {
+                folder: 'n100_sse2',
+                label: 'n100_sse2',
+                enabled: false,
             },
         ];
 
         const branchSelect = document.getElementById('branchSelect');
         const loadButton = document.getElementById('loadButton');
+
         var currentBranch = null;
 
         async function fetchCSV(url) {
@@ -169,18 +226,16 @@ SPDX-License-Identifier: MIT -->
                 const branches = await fetchBranches();
 
                 // Clear existing options
-                branchSelect.innerHTML = ''; 
+                branchSelect.innerHTML = '';
 
                 branches.forEach(branch => {
-                    if (branch.name != 'main')
-                    {
+                    if (branch.name != 'main') {
                         const option = document.createElement('option');
                         option.value = branch.name;
                         option.textContent = branch.name;
                         branchSelect.appendChild(option);
 
-                        if (currentBranch == null)
-                        {
+                        if (currentBranch == null) {
                             currentBranch = branch.name;
                         }
                     }
@@ -192,28 +247,27 @@ SPDX-License-Identifier: MIT -->
             }
         }
 
-        async function loadData(branches, benchmark)
-        {
+        async function loadData(branches, benchmark) {
             const datasets = [];
 
             var file = benchmark.id + '.csv';
 
-            for (const branch of branches)
-            {
-                for (const processor of processors)
-                {
+            for (const branch of branches) {
+                for (const processor of processors) {
+
+                    if (processor.enabled == false) {
+                        continue;
+                    }
+
                     const csvUrl = repoBaseUrl + '/' + branch + '/benchmark/' + processor.folder + '/' + file;
 
-                    try 
-                    {
+                    try {
                         const csv = await fetchCSV(csvUrl);
-                        const csvResult = Papa.parse(csv, {header: true, skipEmptyLines: true});
+                        const csvResult = Papa.parse(csv, { header: true, skipEmptyLines: true });
                         const data = csvResult.data;
 
-                        if (data != null)
-                        {
-                            if (branch == 'main')
-                            {
+                        if (data != null) {
+                            if (branch == 'main') {
                                 datasets.push({
                                     label: processor.label,
 
@@ -222,8 +276,7 @@ SPDX-License-Identifier: MIT -->
                                     fill: false
                                 });
                             }
-                            else
-                            {
+                            else {
                                 // remove leading name from branch name (e.g. erincatto)
                                 const branchLabel = branch.split('/').pop();
 
@@ -242,27 +295,24 @@ SPDX-License-Identifier: MIT -->
                     catch (error) {
                         console.error(`Error loading the CSV file (${csvUrl}):`, error);
                         throw new Error('Failed to load the CSV file. It may be missing or inaccessible.');
-                    }          
+                    }
                 }
             }
 
-            return {datasets: datasets, benchmark: benchmark};
+            return { datasets: datasets, benchmark: benchmark };
         }
 
-        async function createChart(datasets, benchmark)
-        {
+        async function createChart(datasets, benchmark) {
             // get the document element for this benchmark
             const ctx = document.getElementById(benchmark.id).getContext('2d');
 
-            if (benchmark.chart)
-            {
+            if (benchmark.chart) {
                 // Destroy the previous chart if it exists
-                benchmark.chart.destroy(); 
+                benchmark.chart.destroy();
                 benchmark.chart = null;
             }
 
-            if (datasets == null)
-            {
+            if (datasets == null) {
                 return;
             }
 
@@ -330,39 +380,49 @@ SPDX-License-Identifier: MIT -->
                 });
         }
 
-        async function createCharts()
-        {
+        async function createCharts() {
             const branches = ['main'];
 
-            if (currentBranch != null)
-            {
+            if (currentBranch != null) {
                 branches.push(currentBranch);
             }
 
             const dataPromises = [];
-            for (const benchmark of benchmarks)
-            {
+            for (const benchmark of benchmarks) {
                 dataPromises.push(loadData(branches, benchmark));
             }
 
-            Promise.all(dataPromises).then((values) =>
-            {
-                for (value of values)
-                {
+            Promise.all(dataPromises).then((values) => {
+                for (value of values) {
                     createChart(value.datasets, value.benchmark);
                 }
             });
         }
 
+        function updateProcessors() {
+            const checkboxes = document.querySelectorAll('input[name="processorSelect"]:checked');
+            processors.forEach(processor => {
+                processor.enabled = false;
+            });
+
+            checkboxes.forEach(checkbox => {
+                processors[checkbox.value].enabled = true;
+            });
+
+            createCharts();
+        }
+
+        document.querySelectorAll('input[name="processorSelect"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProcessors);
+        });
+
         // connect button listener
         loadButton.addEventListener('click', async () => {
-            
-            if (branchSelect.value == null)
-            {
+
+            if (branchSelect.value == null) {
                 alert('No branch selected');
             }
-            else
-            {
+            else {
                 try {
                     currentBranch = branchSelect.value;
                     await createCharts();
@@ -372,6 +432,11 @@ SPDX-License-Identifier: MIT -->
                     alert(error.message);
                 }
             }
+        });
+
+        const checkboxes = document.querySelectorAll('input[name="processorSelect"]:checked');
+        checkboxes.forEach(checkbox => {
+            processors[checkbox.value].enabled = true;
         });
 
         Chart.defaults.font.size = 14;
