@@ -35,13 +35,13 @@ SPDX-License-Identifier: MIT -->
             flex-direction: column;
             align-items: center;
             gap: 30px;
-            max-width: 1000px;
+            max-width: 1800px;
             margin: 0 auto;
         }
 
         .chart-item {
             width: 100%;
-            height: 700px;
+            height: 900px;
             /* Fixed height for each chart */
         }
 
@@ -78,28 +78,35 @@ SPDX-License-Identifier: MIT -->
 
         <div>
             <label>
-                <input type="checkbox" id="r9-sse2" name="processorSelect" value="1" checked />
+                <input type="checkbox" id="r9-avx2-nc" name="processorSelect" value="1" checked />
+                r9-avx2-nc : AMD Ryzen 9 7950X with AVX2 intrinsics (continuous collision disabled)
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-sse2" name="processorSelect" value="2" />
                 r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="r9-scalar" name="processorSelect" value="2" checked />
+                <input type="checkbox" id="r9-scalar" name="processorSelect" value="3" />
                 r9-scalar : AMD Ryzen 9 7950X with no intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="m2-neon" name="processorSelect" value="3" checked />
+                <input type="checkbox" id="m2-neon" name="processorSelect" value="4" />
                 m2-neon : Apple M2 with ARM Neon intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="n100-sse2" name="processorSelect" value="4" />
+                <input type="checkbox" id="n100-sse2" name="processorSelect" value="5" />
                 n100-sse2 : Intel N100 with SSE2 intrinsics
             </label>
         </div>
@@ -128,9 +135,17 @@ SPDX-License-Identifier: MIT -->
         <div class="chart-item">
             <canvas id="many_pyramids"></canvas>
         </div>
+        <img src="/images/rain_benchmark.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="rain"></canvas>
+        </div>
         <img src="/images/smash_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="smash"></canvas>
+        </div>
+        <img src="/images/spinner_benchmark.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="spinner"></canvas>
         </div>
         <img src="/images/tumbler_benchmark.png" width="640" height="360">
         <div class="chart-item">
@@ -139,6 +154,7 @@ SPDX-License-Identifier: MIT -->
     </div>
 
     <script>
+
         const repoBaseUrl = 'https://raw.githubusercontent.com/erincatto/box2d';
 
         const benchmarks = [
@@ -161,9 +177,21 @@ SPDX-License-Identifier: MIT -->
                 chart: null
             },
             {
+                label: 'Rain',
+                id: 'rain',
+                description: '1000 Ragdolls Dropping from 40m to a Tile Floor',
+                chart: null
+            },
+            {
                 label: 'Smash',
                 id: 'smash',
                 description: 'Large Box Colliding with 9600 Small Boxes',
+                chart: null
+            },
+            {
+                label: 'Spinner',
+                id: 'spinner',
+                description: '3038 Bodies Stirred inside a Large Hollow Circle',
                 chart: null
             },
             {
@@ -178,26 +206,37 @@ SPDX-License-Identifier: MIT -->
             {
                 folder: 'amd7950x_avx2',
                 label: 'r9-avx2',
+                dash: [],
+                enabled: false,
+            },
+            {
+                folder: 'amd7950x_avx2_nc',
+                label: 'r9-avx2-nc',
+                dash: [2, 2],
                 enabled: false,
             },
             {
                 folder: 'amd7950x_sse2',
                 label: 'r9-sse2',
+                dash: [],
                 enabled: false,
             },
             {
                 folder: 'amd7950x_float',
                 label: 'r9-scalar',
+                dash: [],
                 enabled: false,
             },
             {
                 folder: 'm2air_neon',
                 label: 'm2-neon',
+                dash: [],
                 enabled: false,
             },
             {
                 folder: 'n100_sse2',
                 label: 'n100_sse2',
+                dash: [],
                 enabled: false,
             },
         ];
@@ -208,8 +247,19 @@ SPDX-License-Identifier: MIT -->
         var currentBranch = null;
 
         async function fetchCSV(url) {
-            const response = await fetch(url);
-            return response.text();
+
+            try {
+                const response = await fetch(url);
+
+                if (response.ok) {
+                    return response.text();
+                }
+            }
+            catch (error) {
+                console.log(error.message);
+            }
+
+            return "";
         }
 
         async function fetchBranches() {
@@ -263,33 +313,42 @@ SPDX-License-Identifier: MIT -->
 
                     try {
                         const csv = await fetchCSV(csvUrl);
+                        if (csv.length == 0) {
+                            continue;
+                        }
+
                         const csvResult = Papa.parse(csv, { header: true, skipEmptyLines: true });
                         const data = csvResult.data;
 
-                        if (data != null) {
-                            if (branch == 'main') {
-                                datasets.push({
-                                    label: processor.label,
+                        if (data.length == 0) {
+                            continue;
+                        }
 
-                                    // convert the csv data into chart ready data
-                                    data: data.map(row => ({ x: row.threads, y: row.fps })),
-                                    fill: false
-                                });
-                            }
-                            else {
-                                // remove leading name from branch name (e.g. erincatto)
-                                const branchLabel = branch.split('/').pop();
+                        if (branch == 'main') {
+                            datasets.push({
+                                label: processor.label,
 
-                                datasets.push({
-                                    label: processor.label + '/' + branchLabel,
+                                // convert the csv data into chart ready data
+                                data: data.map(row => ({ x: row.threads, y: row.fps })),
 
-                                    // convert the csv data into chart ready data
-                                    data: data.map(row => ({ x: row.threads, y: row.fps })),
+                                borderDash: processor.dash,
 
-                                    borderDash: [5, 5],
-                                    fill: false
-                                });
-                            }
+                                fill: false
+                            });
+                        }
+                        else {
+                            // remove leading name from branch name (e.g. erincatto)
+                            const branchLabel = branch.split('/').pop();
+
+                            datasets.push({
+                                label: processor.label + '/' + branchLabel,
+
+                                // convert the csv data into chart ready data
+                                data: data.map(row => ({ x: row.threads, y: row.fps })),
+
+                                borderDash: [5, 5],
+                                fill: false
+                            });
                         }
                     }
                     catch (error) {
@@ -439,7 +498,7 @@ SPDX-License-Identifier: MIT -->
             processors[checkbox.value].enabled = true;
         });
 
-        Chart.defaults.font.size = 14;
+        Chart.defaults.font.size = 28;
         createCharts().then(populateBranches());
 
     </script>

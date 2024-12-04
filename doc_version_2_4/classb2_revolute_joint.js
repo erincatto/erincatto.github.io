@@ -1,0 +1,25 @@
+var classb2_revolute_joint =
+[
+    [ "Draw", "classb2_revolute_joint.html#adaa2a3c758243f39a97c43f7a2acc23e", null ],
+    [ "Dump", "classb2_revolute_joint.html#a408badabe21b169412a5c4a2f36bbbd8", null ],
+    [ "EnableLimit", "classb2_revolute_joint.html#a56bdfdd04e906e52d0258f6a481b9093", null ],
+    [ "EnableMotor", "classb2_revolute_joint.html#a80ed5a07d9a0e07d010808a73ffae6ff", null ],
+    [ "GetAnchorA", "classb2_revolute_joint.html#a9878591c460a4e1575f8a77c237608ae", null ],
+    [ "GetAnchorB", "classb2_revolute_joint.html#aa30a5d414b2ff699cc17567ff6e53e6b", null ],
+    [ "GetJointAngle", "classb2_revolute_joint.html#a23d6b56b7dbbfec7c7ef61aad4419d82", null ],
+    [ "GetJointSpeed", "classb2_revolute_joint.html#a7cfe4867f184afead2b1cefce02a85c3", null ],
+    [ "GetLocalAnchorA", "classb2_revolute_joint.html#a57cd09f25994444d34733d6d0b92dab2", null ],
+    [ "GetLocalAnchorB", "classb2_revolute_joint.html#a29897e82bb7528858ab20ff50d7c36aa", null ],
+    [ "GetLowerLimit", "classb2_revolute_joint.html#afb2fed2c431754d2ae187dc79ee762c1", null ],
+    [ "GetMotorSpeed", "classb2_revolute_joint.html#a67d84b190f845da4c70b6cbf57bb7afc", null ],
+    [ "GetMotorTorque", "classb2_revolute_joint.html#a571a5d4411e3944174d776abc6c51a1e", null ],
+    [ "GetReactionForce", "classb2_revolute_joint.html#a79a4a55ee3e70e47d06a72c052ed684c", null ],
+    [ "GetReactionTorque", "classb2_revolute_joint.html#abf81881ef8a6ba2743d387d9175490fe", null ],
+    [ "GetReferenceAngle", "classb2_revolute_joint.html#a818b019d11494450eb603c745620ccf0", null ],
+    [ "GetUpperLimit", "classb2_revolute_joint.html#a5232a0d859e8f14bf4bc008a542f58da", null ],
+    [ "IsLimitEnabled", "classb2_revolute_joint.html#a84ff9c4f82b3e7d27a4390164f81f3ab", null ],
+    [ "IsMotorEnabled", "classb2_revolute_joint.html#a37d5744e89991ebe01b974c4d15a21b5", null ],
+    [ "SetLimits", "classb2_revolute_joint.html#aea6f893b0b0b5295837e6a10aa723582", null ],
+    [ "SetMaxMotorTorque", "classb2_revolute_joint.html#a7cbdee0fa268aa82eff39a2e8a7bc19b", null ],
+    [ "SetMotorSpeed", "classb2_revolute_joint.html#a67735e2a230dc4e8a1c438aeb3fad9bc", null ]
+];
