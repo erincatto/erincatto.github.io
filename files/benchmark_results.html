@@ -172,42 +172,49 @@ SPDX-License-Identifier: MIT -->
                 label: 'Joint Grid',
                 id: 'joint_grid',
                 description: '10k Circles, 19800 Revolute Joints',
+                steps: 500,
                 chart: null
             },
             {
                 label: 'Large Pyramid',
                 id: 'large_pyramid',
                 description: '5050 boxes',
+                steps: 500,
                 chart: null
             },
             {
                 label: 'Many Pyramids',
                 id: 'many_pyramids',
                 description: '400 Pyramids with 55 Boxes Each',
+                steps: 200,
                 chart: null
             },
             {
                 label: 'Rain',
                 id: 'rain',
                 description: '1000 Ragdolls Dropping from 40m to a Tile Floor',
+                steps: 1000,
                 chart: null
             },
             {
                 label: 'Smash',
                 id: 'smash',
                 description: 'Large Box Colliding with 9600 Small Boxes',
+                steps: 300,
                 chart: null
             },
             {
                 label: 'Spinner',
                 id: 'spinner',
                 description: '3038 Bodies Stirred inside a Large Hollow Circle',
+                steps: 1400,
                 chart: null
             },
             {
                 label: 'Tumbler',
                 id: 'tumbler',
                 description: '2026 Small Boxes Tumbling in a Large Hollow Box',
+                steps: 750,
                 chart: null
             }
         ];
@@ -344,10 +351,10 @@ SPDX-License-Identifier: MIT -->
                                 // convert the csv data into chart ready data
                                 data: data.map(row => {
                                 if ('fps' in row) {
-                                    return { x: row.threads, y: 1000 / row.fps };
+                                    return ({ x: row.threads, y: 1000 / row.fps });
                                 }
                                 else if ('ms' in row) {
-                                    return { x: row.threads, y: ms };
+                                    return ({ x: row.threads, y: row.ms / benchmark.steps });
                                 }}),
                                 
                                 borderDash: processor.dash,
@@ -367,10 +374,10 @@ SPDX-License-Identifier: MIT -->
                                 // convert the csv data into chart ready data
                                 data: data.map(row => {
                                 if ('fps' in row) {
-                                    return { x: row.threads, y: 1000 / row.fps };
+                                    return ({ x: row.threads, y: 1000 / row.fps });
                                 }
                                 else if ('ms' in row) {
-                                    return { x: row.threads, y: ms };
+                                    return ({ x: row.threads, y: row.ms / benchmark.steps });
                                 }}),
 
                                 borderDash: [5, 5],
@@ -451,7 +458,7 @@ SPDX-License-Identifier: MIT -->
                                 title:
                                 {
                                     display: true,
-                                    text: 'milliseconds',
+                                    text: 'ms/step',
                                     color: '#e0e0e0'
                                 },
                                 grid: {
