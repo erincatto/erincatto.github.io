@@ -78,7 +78,7 @@ SPDX-License-Identifier: MIT -->
 
         <div>
             <label>
-                <input type="checkbox" id="r9-avx2-nc" name="processorSelect" value="1" checked />
+                <input type="checkbox" id="r9-avx2-nc" name="processorSelect" value="1" />
                 r9-avx2-nc : AMD Ryzen 9 7950X with AVX2 intrinsics (continuous collision disabled)
             </label>
         </div>
@@ -112,6 +112,16 @@ SPDX-License-Identifier: MIT -->
         </div>
 
     </fieldset>
+
+    <!-- <fieldset>
+        <legend>Display Mode</legend>
+        <div>
+            <label>
+                <input type="checkbox" id="toggle-ms" name="displayMode" value="ms" />
+                Display in milliseconds
+            </label>
+        </div>
+    </fieldset> -->
 
     <label for="branchSelect">Compare Branch:</label>
     <select id="branchSelect">
@@ -285,9 +295,9 @@ SPDX-License-Identifier: MIT -->
                         option.textContent = branch.name;
                         branchSelect.appendChild(option);
 
-                        if (currentBranch == null) {
-                            currentBranch = branch.name;
-                        }
+                        // if (currentBranch == null) {
+                        //     currentBranch = branch.name;
+                        // }
                     }
                 });
 
@@ -325,12 +335,21 @@ SPDX-License-Identifier: MIT -->
                         }
 
                         if (branch == 'main') {
+
+                            // console.log(processor.label);
+
                             datasets.push({
                                 label: processor.label,
 
                                 // convert the csv data into chart ready data
-                                data: data.map(row => ({ x: row.threads, y: row.fps })),
-
+                                data: data.map(row => {
+                                if ('fps' in row) {
+                                    return { x: row.threads, y: 1000 / row.fps };
+                                }
+                                else if ('ms' in row) {
+                                    return { x: row.threads, y: ms };
+                                }}),
+                                
                                 borderDash: processor.dash,
 
                                 fill: false
@@ -340,11 +359,19 @@ SPDX-License-Identifier: MIT -->
                             // remove leading name from branch name (e.g. erincatto)
                             const branchLabel = branch.split('/').pop();
 
+                            // console.log(branchLabel);
+
                             datasets.push({
                                 label: processor.label + '/' + branchLabel,
 
                                 // convert the csv data into chart ready data
-                                data: data.map(row => ({ x: row.threads, y: row.fps })),
+                                data: data.map(row => {
+                                if ('fps' in row) {
+                                    return { x: row.threads, y: 1000 / row.fps };
+                                }
+                                else if ('ms' in row) {
+                                    return { x: row.threads, y: ms };
+                                }}),
 
                                 borderDash: [5, 5],
                                 fill: false
@@ -424,7 +451,7 @@ SPDX-License-Identifier: MIT -->
                                 title:
                                 {
                                     display: true,
-                                    text: 'fps',
+                                    text: 'milliseconds',
                                     color: '#e0e0e0'
                                 },
                                 grid: {
@@ -446,6 +473,8 @@ SPDX-License-Identifier: MIT -->
             if (currentBranch != null) {
                 branches.push(currentBranch);
             }
+
+            // console.log(branches);
 
             const dataPromises = [];
             for (const benchmark of benchmarks) {
@@ -479,6 +508,8 @@ SPDX-License-Identifier: MIT -->
         // connect button listener
         loadButton.addEventListener('click', async () => {
 
+            // console.log('click');
+
             if (branchSelect.value == null) {
                 alert('No branch selected');
             }
@@ -498,6 +529,43 @@ SPDX-License-Identifier: MIT -->
         checkboxes.forEach(checkbox => {
             processors[checkbox.value].enabled = true;
         });
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const toggleMsCheckbox = document.getElementById('toggle-ms');
+
+        //     toggleMsCheckbox.addEventListener('change', function () {
+        //         const displayInMs = toggleMsCheckbox.checked;
+        //         updateChartsDisplayMode(displayInMs);
+        //     });
+
+        //     function updateChartsDisplayMode(displayInMs) {
+        //         benchmarks.forEach(benchmark => {
+        //             benchmark.chart.data.datasets.forEach(dataset => {
+        //                 // console.log(dataset.data);
+
+        //                 dataset.data = dataset.data.map(point => ({
+        //                     x: point.x,
+        //                     y: displayInMs ? convertToMs(point.y) : convertToFps(point.y)
+        //                 }));
+
+        //                 //console.log(dataset.data);
+
+        //             });
+        //             if (benchmark.chart.options.scales.y) {
+        //                 benchmark.chart.options.scales.y.title.text = displayInMs ? 'milliseconds' : 'fps';
+        //             }
+        //             benchmark.chart.update();
+        //         });
+        //     }
+
+        //     function convertToMs(fps) {
+        //         return 1000.0 / fps;
+        //     }
+
+        //     function convertToFps(ms) {
+        //         return 1000.0 / ms;
+        //     }
+        // });
 
         Chart.defaults.font.size = 28;
         createCharts().then(populateBranches());
