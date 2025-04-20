@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['pad_0',['pad',['../group__tree.html#aa070ecf00f61dd680201d91464cfe94a',1,'b2TreeNode']]],
-  ['parent_1',['parent',['../group__tree.html#ad0e45878043844ffc41aac437e86b602',1,'b2TreeNode.__unnamed1__']]],
-  ['persisted_2',['persisted',['../group__collision.html#ace2e4628dc24660fc1228330adf9be63',1,'b2ManifoldPoint']]],
-  ['point_3',['point',['../group__geometry.html#a39476dc3b81b3c62faed9c7fe20795a4',1,'b2CastOutput::point'],['../group__collision.html#a1c4588cd37f12711eea82fe502d8a4f2',1,'b2ManifoldPoint::point'],['../group__events.html#ae2593aaf12f0bbfdcf9290d4985886cb',1,'b2ContactHitEvent::point']]],
-  ['point1_4',['point1',['../group__geometry.html#a1e43ae93f9a3ce4aacfd3d4fa124edeb',1,'b2Segment']]],
-  ['point2_5',['point2',['../group__geometry.html#ab2d026e2426fe8fc99b4e244680ca553',1,'b2Segment']]],
-  ['pointa_6',['pointA',['../group__distance.html#a7e0f1f44a64e596dc7d37570c69eefce',1,'b2DistanceOutput']]],
-  ['pointb_7',['pointB',['../group__distance.html#aa85beca17337a506cd4a924d0c6f92cc',1,'b2DistanceOutput']]],
-  ['pointcount_8',['pointCount',['../group__collision.html#a6e4b3839a49fad5633c7a9f236ca42c8',1,'b2Manifold']]],
-  ['points_9',['points',['../group__geometry.html#a46851384fb06ccfed7258cc14f52bf0f',1,'b2ShapeCastInput::points'],['../group__geometry.html#a867173d48a6f98e4fdde76bd318896bf',1,'b2Hull::points'],['../group__distance.html#a98f1649314ec485ed05258c6dcc83e76',1,'b2DistanceProxy::points'],['../group__collision.html#a6d6d4eedb70624db1af89cefdf93304b',1,'b2Manifold::points'],['../group__shape.html#a828c614397c024606159528381be07f6',1,'b2ChainDef::points']]],
-  ['position_10',['position',['../group__body.html#a680cadc09ad6cf4b3366cbf0914c648b',1,'b2BodyDef']]],
-  ['proxya_11',['proxyA',['../group__distance.html#a84d378f4f0e2f06fbe03d413e9dfbbd9',1,'b2DistanceInput::proxyA'],['../group__distance.html#a14e2219fa434a87014f9a420c9da4481',1,'b2ShapeCastPairInput::proxyA'],['../group__distance.html#a5c5fb931435d92ac2d2080552400cd57',1,'b2TOIInput::proxyA']]],
-  ['proxyb_12',['proxyB',['../group__distance.html#ad08521a9cdf9d418ececfd44de83a5d3',1,'b2DistanceInput::proxyB'],['../group__distance.html#aa4ae8be6a73e3fbc87033381e6e7a693',1,'b2ShapeCastPairInput::proxyB'],['../group__distance.html#a7f4e614d1c574006402e9610c984a93f',1,'b2TOIInput::proxyB']]],
-  ['proxycount_13',['proxyCount',['../group__tree.html#a7404221a610fd2fdce567b4b90c06711',1,'b2DynamicTree']]]
+  ['persisted_0',['persisted',['../group__collision.html#ace2e4628dc24660fc1228330adf9be63',1,'b2ManifoldPoint']]],
+  ['plane_1',['plane',['../group__character.html#a6f44c44dedb3e8e265196b8e2e333968',1,'b2PlaneResult::plane'],['../group__character.html#ab1728889408da591ee3f493ae9ed70a8',1,'b2CollisionPlane::plane']]],
+  ['point_2',['point',['../group__geometry.html#a39476dc3b81b3c62faed9c7fe20795a4',1,'b2CastOutput::point'],['../group__collision.html#a1c4588cd37f12711eea82fe502d8a4f2',1,'b2ManifoldPoint::point'],['../group__events.html#ae2593aaf12f0bbfdcf9290d4985886cb',1,'b2ContactHitEvent::point']]],
+  ['point1_3',['point1',['../group__geometry.html#a1e43ae93f9a3ce4aacfd3d4fa124edeb',1,'b2Segment']]],
+  ['point2_4',['point2',['../group__geometry.html#ab2d026e2426fe8fc99b4e244680ca553',1,'b2Segment']]],
+  ['pointa_5',['pointA',['../group__distance.html#a7e0f1f44a64e596dc7d37570c69eefce',1,'b2DistanceOutput']]],
+  ['pointb_6',['pointB',['../group__distance.html#aa85beca17337a506cd4a924d0c6f92cc',1,'b2DistanceOutput']]],
+  ['pointcount_7',['pointCount',['../group__collision.html#a570b334909589d1d992c057ece371422',1,'b2Manifold']]],
+  ['points_8',['points',['../group__geometry.html#aa7072c4281001d9728e4b6ce70e8130d',1,'b2ShapeProxy::points'],['../group__geometry.html#a25fedadb96f1e25cba9a75eecf9028dd',1,'b2Hull::points'],['../group__collision.html#a6d6d4eedb70624db1af89cefdf93304b',1,'b2Manifold::points'],['../group__shape.html#a828c614397c024606159528381be07f6',1,'b2ChainDef::points']]],
+  ['position_9',['position',['../group__character.html#aacb55fea8d6b01f4c7612388f10a3407',1,'b2PlaneSolverResult::position'],['../group__body.html#a680cadc09ad6cf4b3366cbf0914c648b',1,'b2BodyDef::position'],['../group__world.html#ac0673962478e473eee92a348048a9311',1,'b2ExplosionDef::position']]],
+  ['proxy_10',['proxy',['../group__geometry.html#a556d5215bfe4be56d27e3c6b6c660d76',1,'b2ShapeCastInput']]],
+  ['proxya_11',['proxyA',['../group__distance.html#ad6f5c65232b35d8f07eadaf048139247',1,'b2DistanceInput::proxyA'],['../group__distance.html#ae436543506064fdfdd5bbec8ea0cc53e',1,'b2ShapeCastPairInput::proxyA'],['../group__distance.html#a7f66e7f0a7f19e87c2d799c107ed7d52',1,'b2TOIInput::proxyA']]],
+  ['proxyb_12',['proxyB',['../group__distance.html#ad2d25633f64a8b08d94f899ca16567af',1,'b2DistanceInput::proxyB'],['../group__distance.html#a32c1dc41af57af8e0d55b8c70f91e55c',1,'b2ShapeCastPairInput::proxyB'],['../group__distance.html#a3c6ec161dc5e130024544dbe9f2e5ae1',1,'b2TOIInput::proxyB']]],
+  ['proxycount_13',['proxyCount',['../group__tree.html#a51f17e1790f511755f7c78f2882b6de3',1,'b2DynamicTree']]],
+  ['push_14',['push',['../group__character.html#a00055add9574f6cfadff51d92666e78b',1,'b2CollisionPlane']]],
+  ['pushlimit_15',['pushLimit',['../group__character.html#aa5a56fb86a689add8528fe209d36141c',1,'b2CollisionPlane']]]
 ];

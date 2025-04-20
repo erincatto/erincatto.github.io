@@ -1,0 +1,5 @@
+<map id="b2ShapeProxy" name="b2ShapeProxy">
+<area shape="rect" id="Node000001" title="A distance proxy is used by the GJK algorithm." alt="" coords="5,93,112,119"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="25,5,92,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,46,61,93,56,93,56,46"/>
+</map>

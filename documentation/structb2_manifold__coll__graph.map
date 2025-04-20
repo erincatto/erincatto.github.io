@@ -1,8 +1,8 @@
 <map id="b2Manifold" name="b2Manifold">
-<area shape="rect" id="Node000001" title="A contact manifold describes the contact points between colliding shapes." alt="" coords="17,211,101,236"/>
-<area shape="rect" id="Node000002" href="$group__collision.html#structb2_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="85,123,200,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,161,72,212,68,208,118,157"/>
-<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="35,46,29,94,32,148,42,182,55,209,50,211,37,183,27,148,24,94,30,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,41,134,120,130,124,58,44"/>
+<area shape="rect" id="Node000001" title="A contact manifold describes the contact points between colliding shapes." alt="" coords="5,211,89,236"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="14,5,81,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,46,41,94,41,148,48,210,43,211,35,148,36,93,41,46"/>
+<area shape="rect" id="Node000003" href="$group__collision.html#structb2_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="94,123,209,148"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="70,41,142,120,139,124,66,44"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,160,63,212,60,208,124,156"/>
 </map>

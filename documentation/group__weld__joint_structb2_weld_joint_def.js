@@ -5,7 +5,7 @@ var group__weld__joint_structb2_weld_joint_def =
     [ "bodyIdA", "group__weld__joint.html#a9087e2e3570887eaf5803160bd3e15e2", null ],
     [ "bodyIdB", "group__weld__joint.html#a4baf9470099d262f408edf19a9ed8fc2", null ],
     [ "collideConnected", "group__weld__joint.html#af6c7fa2be85ee2608ff6c29277d5935d", null ],
-    [ "internalValue", "group__weld__joint.html#a94dcef12e9a3ba770a260a4702457fed", null ],
+    [ "internalValue", "group__weld__joint.html#af6e3f6327f98d3e02157597d495851a0", null ],
     [ "linearDampingRatio", "group__weld__joint.html#ad9f26c2040c564fdc6ff1ca59bca2545", null ],
     [ "linearHertz", "group__weld__joint.html#a2727858a639dc377213584b0c2750de5", null ],
     [ "localAnchorA", "group__weld__joint.html#a3b04af6164bb32efc3f5cf3e8d2b7109", null ],

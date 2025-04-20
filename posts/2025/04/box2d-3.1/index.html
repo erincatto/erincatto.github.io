@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Version 3.0 was released about 8 months ago. It was a huge update and it needed some refinement. Version 3.1 addresses most of the bugs and build problems. It also introduces some new features and refinements.
+Character mover I&rsquo;ve added experimental character mover support to 3.1. This uses a geometric solver. It should be useful for games that want greater control than what you get with a dynamic or kinematic body." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2025/04/box2d-3.1/" />
+
+
+    <title>
+        
+            Box2D 3.1 :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Box2D 3.1">
+  <meta name="twitter:description" content="Version 3.0 was released about 8 months ago. It was a huge update and it needed some refinement. Version 3.1 addresses most of the bugs and build problems. It also introduces some new features and refinements.
+Character mover I’ve added experimental character mover support to 3.1. This uses a geometric solver. It should be useful for games that want greater control than what you get with a dynamic or kinematic body.">
+
+
+
+
+
+    <meta property="article:published_time" content="2025-04-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Apr 19, 2025</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2025/04/box2d-3.1/">Box2D 3.1</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>Version 3.0 was released about 8 months ago. It was a huge update and it needed some refinement. Version 3.1 addresses most of the bugs and build problems. It also introduces some new features and refinements.</p>
+<h2 id="character-mover">Character mover</h2>
+<p>I&rsquo;ve added experimental character mover support to 3.1. This uses a <em>geometric solver</em>. It should be useful for games that want greater control than what you get with a dynamic or kinematic body. The geometric mover lives outside the physics world and is implemented as collision queries and a specialized solver. It is a toolkit you can mix and match to get the results you want. There are more details in the documentation and the <code>Mover</code> sample.</p>
+<p><img src="/images/mover.png" alt="Move"></p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AeQpl59RvHA?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Geometric Character Mover"
+      ></iframe>
+    </div>
+
+<h2 id="new-sensor-system">New sensor system</h2>
+<p>The sensor system was built on top of the contact system. This turns out to be the wrong choice if you need sensors to follow different rules than bodies. The new sensor system still uses shapes on bodies, but it doesn&rsquo;t consider the body type or the body sleeping status. This allows sensors on static bodies to detect shapes on other kinematic or static bodies.</p>
+<p>The new sensor system now runs at the end of the update, so the overlap events are not delayed. Sensors produce reliable begin and end touch events and you can also access the current overlaps on a sensor shape.</p>
+<p>This system is multithreaded and deterministic.</p>
+<h2 id="rolling-resistance-and-tangent-speed">Rolling resistance and tangent speed</h2>
+<p>I&rsquo;ve added rolling resistance and tangent speed as a surface property on shapes. Rolling resistance can be used with any shape with a radius to resist rolling in a manner similar to friction. This means a circle can come to a rest on an incline.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/pRe6RZiJALY?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Rolling Resistance"
+      ></iframe>
+    </div>
+
+<p>Tangent speed is back from version 2 and allows shape surfaces to behave like conveyor belts.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/WUxqUSk79nE?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Tangent Speed"
+      ></iframe>
+    </div>
+
+<p>Both of these features use the high performance SIMD contact solver.</p>
+<h2 id="simd">SIMD</h2>
+<p>It turns out not everyone has a CPU capable of running AVX2. It also turns out hand written SIMD is much more efficient than macro magic.</p>
+<p>SSE2 is now the default on x64. You also disable SIMD code completely if you want to drive in the slow lane.</p>
+<p>Neon has also been optimized and provides big gains on Apple Silicon.</p>
+<h2 id="performance">Performance</h2>
+<p>Performance continues to be very important for v3.1. Continuous collision performance is roughly doubled. The overhead of
+restitution is greatly reduced. GJK was optimized to be 20% faster. This is one of the core collision algorithms, so this benefits many collision operations.</p>
+<h2 id="supporting-box2d">Supporting Box2D</h2>
+<p>If you&rsquo;d like to sponsor Box2D development, you can sign up using <a href="https://github.com/sponsors/erincatto">GitHub sponsors</a> or <a href="https://www.patreon.com/Box2D">Patreon</a>.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>427 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2025-04-18 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2025</span>
+            
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
+    </body>
+</html>

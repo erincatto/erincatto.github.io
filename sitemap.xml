@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://box2d.org/</loc>
-    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://box2d.org/posts/2024/08/determinism/</loc>
-    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <loc>https://box2d.org/posts/2025/04/box2d-3.1/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://box2d.org/posts/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://box2d.org/posts/2024/08/determinism/</loc>
     <lastmod>2024-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://box2d.org/posts/2024/08/simd-matters/</loc>

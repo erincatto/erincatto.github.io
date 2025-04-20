@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shape_0',['Shape',['../group__shape.html',1,'']]]
+  ['revolute_20joint_0',['Revolute Joint',['../group__revolute__joint.html',1,'']]]
 ];

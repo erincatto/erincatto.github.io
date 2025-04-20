@@ -66,48 +66,42 @@ SPDX-License-Identifier: MIT -->
 <body>
     <h1>Box2D Benchmarks</h1>
 
+
     <fieldset>
         <legend>Processors</legend>
 
         <div>
             <label>
-                <input type="checkbox" id="r9-avx2" name="processorSelect" value="0" checked />
+                <input type="checkbox" id="r9-avx2" name="processorSelect" value="0" />
                 r9-avx2 : AMD Ryzen 9 7950X with AVX2 intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="r9-avx2-nc" name="processorSelect" value="1" />
-                r9-avx2-nc : AMD Ryzen 9 7950X with AVX2 intrinsics (continuous collision disabled)
-            </label>
-        </div>
-
-        <div>
-            <label>
-                <input type="checkbox" id="r9-sse2" name="processorSelect" value="2" />
+                <input type="checkbox" id="r9-sse2" name="processorSelect" value="1" checked />
                 r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="r9-scalar" name="processorSelect" value="3" />
-                r9-scalar : AMD Ryzen 9 7950X with no intrinsics
+                <input type="checkbox" id="r9-float" name="processorSelect" value="2" checked />
+                r9-float : AMD Ryzen 9 7950X with no intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="m2-neon" name="processorSelect" value="4" />
+                <input type="checkbox" id="m2-neon" name="processorSelect" value="3" />
                 m2-neon : Apple M2 with ARM Neon intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="n100-sse2" name="processorSelect" value="5" />
-                n100-sse2 : Intel N100 with SSE2 intrinsics
+                <input type="checkbox" id="m2-float" name="processorSelect" value="4" />
+                m2-float : Apple M2 with no intrinsics
             </label>
         </div>
 
@@ -122,6 +116,12 @@ SPDX-License-Identifier: MIT -->
             </label>
         </div>
     </fieldset> -->
+
+    <p>The AMD Ryzen 9 7950x is locked at 4.42GHz and threads are given affinity to the first CCD.
+        The M2 is allowed to boost so it appears faster than the AMD CPU. In practice the AMD chip is slightly
+        faster.</p>
+
+    <hr />
 
     <label for="branchSelect">Compare Branch:</label>
     <select id="branchSelect">
@@ -227,22 +227,16 @@ SPDX-License-Identifier: MIT -->
                 enabled: false,
             },
             {
-                folder: 'amd7950x_avx2_nc',
-                label: 'r9-avx2-nc',
-                dash: [2, 2],
-                enabled: false,
-            },
-            {
                 folder: 'amd7950x_sse2',
                 label: 'r9-sse2',
                 dash: [],
-                enabled: false,
+                enabled: true,
             },
             {
                 folder: 'amd7950x_float',
-                label: 'r9-scalar',
+                label: 'r9-float',
                 dash: [],
-                enabled: false,
+                enabled: true,
             },
             {
                 folder: 'm2air_neon',
@@ -251,8 +245,8 @@ SPDX-License-Identifier: MIT -->
                 enabled: false,
             },
             {
-                folder: 'n100_sse2',
-                label: 'n100_sse2',
+                folder: 'm2air_float',
+                label: 'm2-float',
                 dash: [],
                 enabled: false,
             },

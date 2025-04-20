@@ -1,7 +1,9 @@
 <map id="b2ChainDef" name="b2ChainDef">
-<area shape="rect" id="Node000001" title="Used to create a chain of line segments." alt="" coords="40,93,128,119"/>
+<area shape="rect" id="Node000001" title="Used to create a chain of line segments." alt="" coords="116,93,204,119"/>
 <area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="5,5,72,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,44,62,68,78,92,73,95,58,71,46,46"/>
-<area shape="rect" id="Node000003" href="$group__shape.html#structb2_filter" title="This is used to filter collision on shapes." alt="" coords="97,5,162,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,46,93,94,88,92,114,43"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,38,145,91,142,95,66,42"/>
+<area shape="rect" id="Node000003" href="$group__shape.html#structb2_surface_material" title="Surface materials allow chain shapes to have per segment surface properties." alt="" coords="97,5,223,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,46,163,93,157,93,157,46"/>
+<area shape="rect" id="Node000004" href="$group__shape.html#structb2_filter" title="This is used to filter collision on shapes." alt="" coords="247,5,313,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="259,43,224,72,185,95,183,90,221,67,255,39"/>
 </map>

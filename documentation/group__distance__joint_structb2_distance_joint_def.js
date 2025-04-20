@@ -8,7 +8,7 @@ var group__distance__joint_structb2_distance_joint_def =
     [ "enableMotor", "group__distance__joint.html#ab6017b5fb0b9be77ba08b252d1921586", null ],
     [ "enableSpring", "group__distance__joint.html#a593fdde24593e6b5de9ec706b37b7014", null ],
     [ "hertz", "group__distance__joint.html#ae8b1bf0b2a9d447e940a59f342e8dcfb", null ],
-    [ "internalValue", "group__distance__joint.html#a1d8cf9afd3d102343804ceea179f86d6", null ],
+    [ "internalValue", "group__distance__joint.html#a399523c1d8bc00984ada36ea27468067", null ],
     [ "length", "group__distance__joint.html#a001acbbd67326ab5e5d5ec6dc64faf78", null ],
     [ "localAnchorA", "group__distance__joint.html#a15c7a75fa277e2056bf1b44198658518", null ],
     [ "localAnchorB", "group__distance__joint.html#a3c8995be726238eee084af750442255c", null ],

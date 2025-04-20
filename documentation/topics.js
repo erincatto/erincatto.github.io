@@ -9,6 +9,7 @@ var topics =
     [ "Distance", "group__distance.html", "group__distance" ],
     [ "Collision", "group__collision.html", "group__collision" ],
     [ "Dynamic Tree", "group__tree.html", "group__tree" ],
+    [ "Character mover", "group__character.html", "group__character" ],
     [ "Ids", "group__id.html", "group__id" ],
     [ "Math", "group__math.html", "group__math" ],
     [ "C++ Math", "group__math__cpp.html", null ],

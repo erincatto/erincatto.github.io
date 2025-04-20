@@ -8,7 +8,7 @@ var group__prismatic__joint_structb2_prismatic_joint_def =
     [ "enableMotor", "group__prismatic__joint.html#a58ac79a54a8110d3a745e1d6d36990dc", null ],
     [ "enableSpring", "group__prismatic__joint.html#a6fde498d0d097f19c12285f0fecbec0a", null ],
     [ "hertz", "group__prismatic__joint.html#ab63dad8adcaa62bcaccc8ff500709656", null ],
-    [ "internalValue", "group__prismatic__joint.html#ad26ee50ed3f1b9c7b00ce2b31266e4b1", null ],
+    [ "internalValue", "group__prismatic__joint.html#a84c75daec18c31b833e076a35d49fe3d", null ],
     [ "localAnchorA", "group__prismatic__joint.html#abb51df8daff7a55f47adc83e4f7fa5b9", null ],
     [ "localAnchorB", "group__prismatic__joint.html#a5acc1f2f14d1b659fc9d804ab1baf4a3", null ],
     [ "localAxisA", "group__prismatic__joint.html#af36fdbcedca5a392a2649cd235c42676", null ],

@@ -3,6 +3,9 @@ var group__math =
     [ "b2Vec2", "group__math.html#structb2_vec2", [
       [ "x", "group__math.html#a7922601d8b8ad0550c2082ebaf74c78a", null ]
     ] ],
+    [ "b2CosSin", "group__math.html#structb2_cos_sin", [
+      [ "cosine", "group__math.html#afd11c19fda87057700fbdd47fd03f74a", null ]
+    ] ],
     [ "b2Rot", "group__math.html#structb2_rot", [
       [ "c", "group__math.html#a0f889d93df2c1b57415c148943fc8d41", null ]
     ] ],
@@ -11,11 +14,11 @@ var group__math =
       [ "cx", "group__math.html#ab47aeca5b70717b7dbd13e4e0184baac", null ]
     ] ],
     [ "b2AABB", "group__math.html#structb2_a_a_b_b", null ],
-    [ "b2_pi", "group__math.html#ga3f1872f3fc3c46abc809e7f7d467eb6c", null ],
+    [ "b2Plane", "group__math.html#structb2_plane", null ],
+    [ "B2_PI", "group__math.html#gad8c9a670f81e539d51761c8674799fa9", null ],
     [ "b2AABB_Center", "group__math.html#ga692e3793946df2eb69f7bb09cb0753f9", null ],
     [ "b2AABB_Contains", "group__math.html#ga2304e49faaa5f392d122d29f6792fc35", null ],
     [ "b2AABB_Extents", "group__math.html#gad311ad53ed7fe0907a19b80fb0521c3f", null ],
-    [ "b2AABB_IsValid", "group__math.html#ga1212c9ee05f750390c8443977314c61d", null ],
     [ "b2AABB_Union", "group__math.html#ga5d2002df653d24b05331a4fccdc28d6f", null ],
     [ "b2Abs", "group__math.html#gabbe596836e9760cfed48e4b95bdaa7b3", null ],
     [ "b2AbsFloat", "group__math.html#gaad6c00baedf840bdfb4bdb796f29c766", null ],
@@ -26,6 +29,8 @@ var group__math =
     [ "b2ClampFloat", "group__math.html#gab895b5425fbca5cf1a96b5b78e38b544", null ],
     [ "b2ClampInt", "group__math.html#ga4126d590d0d471142d6f84837ac82447", null ],
     [ "b2ComputeAngularVelocity", "group__math.html#ga795b5fa1e9426d0582c45f6e4ada578a", null ],
+    [ "b2ComputeCosSin", "group__math.html#gabacae648629d8f3c528a068f01394250", null ],
+    [ "b2ComputeRotationBetweenUnitVectors", "group__math.html#gaf3b9d9f438bb93e50d7f5ab198ca6984", null ],
     [ "b2Cross", "group__math.html#ga17188c505f0273cb93589dcf92ae59d8", null ],
     [ "b2CrossSV", "group__math.html#ga4f5d1e2d700663430190a3ef58875e04", null ],
     [ "b2CrossVS", "group__math.html#gadbbeaccacb8a19d31960370882f7a552", null ],
@@ -40,13 +45,19 @@ var group__math =
     [ "b2InvMulTransforms", "group__math.html#gaec69d0bed0f6fbfaebaf04e804ee03e3", null ],
     [ "b2InvRotateVector", "group__math.html#ga69298228801decac3478210837a93403", null ],
     [ "b2InvTransformPoint", "group__math.html#ga5ee1f8b880d4f205823cc3faaaf95437", null ],
-    [ "b2IsNormalized", "group__math.html#ga70dfdd5f6a6fab66f623e940e74a8110", null ],
-    [ "b2IsValid", "group__math.html#gaf3f21bc11b1bd0f35a25fb37e93ddbc4", null ],
+    [ "b2IsNormalized", "group__math.html#ga832629048c765d92128da3a484a195d0", null ],
+    [ "b2IsNormalizedRot", "group__math.html#ga7d08bbba1931f2556ff90f9444fd3f92", null ],
+    [ "b2IsValidAABB", "group__math.html#gad5cc83573d8b630e920aaa6a56ae28e7", null ],
+    [ "b2IsValidFloat", "group__math.html#ga6aff60046e6a7d88e1a0ea94d7e4769d", null ],
+    [ "b2IsValidPlane", "group__math.html#ga36ebb9b030a14db7747a419a5bd0d29c", null ],
+    [ "b2IsValidRotation", "group__math.html#ga99f8c73bf7675e6c1ccb81ea43249d7f", null ],
+    [ "b2IsValidVec2", "group__math.html#ga6721f4161068f4d8dd13672a65ce325a", null ],
     [ "b2LeftPerp", "group__math.html#gaea056dd8396b682b4c4fd3366da0541a", null ],
     [ "b2Length", "group__math.html#gac670a0c0ea120f5fbb58c8d31bd19b01", null ],
     [ "b2LengthSquared", "group__math.html#gab43ea4a9084a0a5411b8d982332679be", null ],
     [ "b2Lerp", "group__math.html#gad5ee87e35d1049d92436cdf62e660820", null ],
-    [ "b2MakeRot", "group__math.html#ga4b7d9e8fa697b0eb1fa7624eb9444be5", null ],
+    [ "b2MakeAABB", "group__math.html#gac1192e70739a9ac5163599d3a6c291c4", null ],
+    [ "b2MakeRot", "group__math.html#gaccebe20249e16f2d61657c9d532278ea", null ],
     [ "b2Max", "group__math.html#ga9ca569512cc165cc80ebbf1083f0d33e", null ],
     [ "b2MaxFloat", "group__math.html#ga8444272da41b94e7a11ac969b15ecdaa", null ],
     [ "b2MaxInt", "group__math.html#gabce88de726e0f3d106e1cbbff49925ad", null ],
@@ -64,18 +75,17 @@ var group__math =
     [ "b2NLerp", "group__math.html#gaa82701444fc5659c6efc334df20bf79c", null ],
     [ "b2Normalize", "group__math.html#gad6a5725c6835b1cafbb2711789711b37", null ],
     [ "b2NormalizeRot", "group__math.html#ga22a0538a4f41a370e49bbd873ee79025", null ],
+    [ "b2PlaneSeparation", "group__math.html#ga202dda2e727d17330e1b75cc768e74f2", null ],
     [ "b2RelativeAngle", "group__math.html#ga4bdfe9b2c89f675b756c2867befba61d", null ],
     [ "b2RightPerp", "group__math.html#ga5c5f0469801bb1e9275ad639305dcd0c", null ],
     [ "b2Rot_GetAngle", "group__math.html#ga103472b4bc6a9e0cb8009bec6389ee67", null ],
     [ "b2Rot_GetXAxis", "group__math.html#ga047a5e8ddd0c0dfcaf427f498caa259b", null ],
     [ "b2Rot_GetYAxis", "group__math.html#ga0060be1e7ca598b88035a5d9bdff8069", null ],
-    [ "b2Rot_IsValid", "group__math.html#ga94349c10c48d1455b6853e8f01702f97", null ],
     [ "b2RotateVector", "group__math.html#ga91df92ef966c59edd6b908e500a34659", null ],
     [ "b2SetLengthUnitsPerMeter", "group__math.html#ga654e6f942a5d2abee54b6bba4176b15b", null ],
     [ "b2Solve22", "group__math.html#gade24381f685cd87d71cc73e731f8b41a", null ],
     [ "b2Sub", "group__math.html#ga8d998480421a61c83d81d7da1820cc60", null ],
     [ "b2TransformPoint", "group__math.html#ga5e13373c4ac0f339e859723774cca6d5", null ],
-    [ "b2UnwindAngle", "group__math.html#ga5ab5cb3f07d35a2e54de41253596499c", null ],
-    [ "b2UnwindLargeAngle", "group__math.html#ga0b584fed2e6756317d770e0617212acb", null ],
-    [ "b2Vec2_IsValid", "group__math.html#ga445a9cb3df5be94c1e1c03c302f07440", null ]
+    [ "b2UnwindAngle", "group__math.html#ga5c3edca45c6f357e63ec0215fbb1984a", null ],
+    [ "b2UnwindLargeAngle", "group__math.html#ga3ad654606f9ab0f40c529b1c95df9c87", null ]
 ];

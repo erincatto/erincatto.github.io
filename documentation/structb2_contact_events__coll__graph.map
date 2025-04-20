@@ -1,15 +1,21 @@
 <map id="b2ContactEvents" name="b2ContactEvents">
-<area shape="rect" id="Node000001" title="Contact events are buffered in the Box2D world and are available as event arrays after the time step ..." alt="" coords="236,196,356,221"/>
-<area shape="rect" id="Node000002" href="$group__events.html#structb2_contact_begin_touch_event" title="A begin touch event is generated when two shapes begin touching." alt="" coords="5,108,187,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,137,269,193,267,198,137,142"/>
-<area shape="rect" id="Node000003" href="$group__id.html#structb2_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="252,5,335,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,41,121,110,118,105,255,36"/>
-<area shape="rect" id="Node000004" href="$group__events.html#structb2_contact_end_touch_event" title="An end touch event is generated when two shapes stop touching." alt="" coords="211,108,381,133"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="296,46,297,84,298,107,293,108,292,84,291,46"/>
-<area shape="rect" id="Node000005" href="$group__events.html#structb2_contact_hit_event" title="A hit touch event is generated when two shapes collide with a speed faster than the hit speed thresho..." alt="" coords="406,108,535,133"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="329,36,451,105,448,110,326,41"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="299,149,299,196,293,196,293,149"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="434,143,321,198,319,193,432,138"/>
-<area shape="rect" id="Node000006" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="439,5,505,31"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="474,46,473,108,468,107,469,46"/>
+<area shape="rect" id="Node000001" title="Contact events are buffered in the Box2D world and are available as event arrays after the time step ..." alt="" coords="236,416,356,441"/>
+<area shape="rect" id="Node000002" href="$group__events.html#structb2_contact_begin_touch_event" title="A begin touch event is generated when two shapes begin touching." alt="" coords="5,328,187,353"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,357,269,413,267,418,137,362"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb2_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="255,225,337,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,261,172,306,123,330,121,325,169,302,259,256"/>
+<area shape="rect" id="Node000007" href="$group__events.html#structb2_contact_end_touch_event" title="An end touch event is generated when two shapes stop touching." alt="" coords="211,328,381,353"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="299,266,299,327,293,327,293,266"/>
+<area shape="rect" id="Node000008" href="$group__events.html#structb2_contact_hit_event" title="A hit touch event is generated when two shapes collide with a speed faster than the hit speed thresho..." alt="" coords="406,328,535,353"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="335,256,360,273,376,288,392,302,438,325,436,330,389,306,373,292,357,277,332,261"/>
+<area shape="rect" id="Node000004" href="$group__collision.html#structb2_manifold" title="A contact manifold describes the contact points between colliding shapes." alt="" coords="103,225,187,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="127,264,120,276,108,303,101,328,96,327,103,302,115,273,123,261"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="217,5,284,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="250,47,233,121,217,164,193,203,167,227,163,223,189,200,212,162,228,120,245,46"/>
+<area shape="rect" id="Node000006" href="$group__collision.html#structb2_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="88,123,203,148"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="205,38,181,57,169,73,160,91,150,123,145,122,155,89,164,70,177,53,202,34"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="275,40,359,137,408,203,452,273,463,302,471,327,465,328,458,303,447,276,404,206,355,140,271,44"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="148,163,148,225,143,225,143,163"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="299,369,299,416,293,416,293,369"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="434,363,321,418,319,413,432,358"/>
 </map>

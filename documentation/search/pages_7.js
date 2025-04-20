@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['migration_20guide_0',['Migration Guide',['../md_migration.html',1,'']]]
+  ['loose_20ends_0',['Loose Ends',['../md_loose__ends.html',1,'']]]
 ];

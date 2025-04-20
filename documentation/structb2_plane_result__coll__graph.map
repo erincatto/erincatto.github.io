@@ -1,0 +1,7 @@
+<map id="b2PlaneResult" name="b2PlaneResult">
+<area shape="rect" id="Node000001" title="These are the collision planes returned from b2World_CollideMover." alt="" coords="5,181,112,207"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb2_plane" title="separation = dot(normal, point) &#45; offset" alt="" coords="24,93,93,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,134,61,181,56,181,56,134"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="25,5,92,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,46,61,93,56,93,56,46"/>
+</map>

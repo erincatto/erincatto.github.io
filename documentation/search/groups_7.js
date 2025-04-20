@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['math_0',['Math',['../group__math__cpp.html',1,'C++ Math'],['../group__math.html',1,'Math']]],
-  ['motor_20joint_1',['Motor Joint',['../group__motor__joint.html',1,'']]],
-  ['mouse_20joint_2',['Mouse Joint',['../group__mouse__joint.html',1,'']]]
+  ['joint_0',['Joint',['../group__distance__joint.html',1,'Distance Joint'],['../group__filter__joint.html',1,'Filter Joint'],['../group__joint.html',1,'Joint'],['../group__motor__joint.html',1,'Motor Joint'],['../group__mouse__joint.html',1,'Mouse Joint'],['../group__prismatic__joint.html',1,'Prismatic Joint'],['../group__revolute__joint.html',1,'Revolute Joint'],['../group__weld__joint.html',1,'Weld Joint'],['../group__wheel__joint.html',1,'Wheel Joint']]]
 ];

@@ -1,13 +1,13 @@
 <map id="b2ShapeCastPairInput" name="b2ShapeCastPairInput">
-<area shape="rect" id="Node000001" title="Input parameters for b2ShapeCast." alt="" coords="83,196,234,221"/>
-<area shape="rect" id="Node000002" href="$group__distance.html#structb2_distance_proxy" title="A distance proxy is used by the GJK algorithm. It encapsulates any shape." alt="" coords="98,93,219,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,134,161,195,156,195,156,134"/>
-<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="125,5,192,31"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="112,32,85,41,58,54,34,72,14,95,9,111,11,126,20,141,35,154,75,176,118,193,116,198,73,181,32,158,16,144,6,128,3,111,10,92,30,68,55,50,83,36,110,27"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="161,46,161,93,156,93,156,46"/>
-<area shape="rect" id="Node000004" href="$group__math.html#structb2_transform" title="A 2D rigid transform." alt="" coords="244,93,337,119"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="191,37,274,91,271,95,188,42"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,131,211,174,178,198,175,193,208,170,263,126"/>
-<area shape="rect" id="Node000005" href="$group__math.html#structb2_rot" title="2D rotation This is similar to using a complex number for rotation" alt="" coords="263,5,319,31"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="293,46,293,93,288,93,288,46"/>
+<area shape="rect" id="Node000001" title="Input parameters for b2ShapeCast." alt="" coords="75,196,226,221"/>
+<area shape="rect" id="Node000002" href="$group__geometry.html#structb2_shape_proxy" title="A distance proxy is used by the GJK algorithm." alt="" coords="97,93,204,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,134,153,195,148,195,148,134"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="117,5,184,31"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="103,34,54,56,32,73,14,95,8,111,11,126,20,140,34,153,72,176,113,193,111,198,70,181,31,158,16,144,6,128,3,110,9,92,28,69,51,52,101,29"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="153,46,153,93,148,93,148,46"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb2_transform" title="A 2D rigid transform." alt="" coords="228,93,321,119"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="182,37,259,91,256,95,179,42"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,132,203,174,170,198,167,193,199,170,249,127"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb2_rot" title="2D rotation This is similar to using a complex number for rotation" alt="" coords="246,5,302,31"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="277,46,277,93,272,93,272,46"/>
 </map>

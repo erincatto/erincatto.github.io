@@ -4,9 +4,9 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,251,53,270,60,288,78,311,74,314,55,291,48,271,45,252"/>
 <area shape="rect" id="Node000003" href="$group__collision.html#structb2_manifold" title="A contact manifold describes the contact points between colliding shapes." alt="" coords="113,211,197,236"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,251,118,291,102,315,97,312,114,288,138,248"/>
-<area shape="rect" id="Node000004" href="$group__collision.html#structb2_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="180,123,295,148"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="217,161,168,212,164,208,213,158"/>
-<area shape="rect" id="Node000005" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="100,5,167,31"/>
-<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="130,46,124,94,127,148,137,182,151,209,146,212,133,184,121,148,119,94,125,46"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="156,41,228,120,225,124,152,44"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="100,5,167,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="130,46,124,94,127,148,137,182,151,209,146,212,133,184,121,148,119,94,125,46"/>
+<area shape="rect" id="Node000005" href="$group__collision.html#structb2_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="180,123,295,148"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="156,41,228,120,225,124,152,44"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="217,161,168,212,164,208,213,158"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="b2FilterJointDef" name="b2FilterJointDef">
+<area shape="rect" id="Node000001" title="A filter joint is used to disable collision between two specific bodies." alt="" coords="5,108,116,133"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb2_body_id" title="Body id references a body instance. This should be treated as an opaque handle." alt="" coords="23,5,99,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,46,63,107,58,107,58,46"/>
+</map>

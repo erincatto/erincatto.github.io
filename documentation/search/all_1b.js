@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['you_20use_20this_20awesome_20language_0',['Why don&apos;t you use this awesome language?',['../md_faq.html#autotoc_md136',1,'']]]
+  ['x_0',['x',['../group__math.html#a7922601d8b8ad0550c2082ebaf74c78a',1,'b2Vec2']]]
 ];

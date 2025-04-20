@@ -8,7 +8,7 @@ var group__wheel__joint_structb2_wheel_joint_def =
     [ "enableMotor", "group__wheel__joint.html#a8e7193d6c34c784ffd71e79d3a70acc6", null ],
     [ "enableSpring", "group__wheel__joint.html#a2d6277c59091e39b6b7f8749593d00c1", null ],
     [ "hertz", "group__wheel__joint.html#a31c073abd038a1b4e707edfae4f5f8c9", null ],
-    [ "internalValue", "group__wheel__joint.html#a80bdeb6fd90cfde1f5e60b7f4bb17b0d", null ],
+    [ "internalValue", "group__wheel__joint.html#aae1db83bb8e9de54211d4ec58f827541", null ],
     [ "localAnchorA", "group__wheel__joint.html#a9429d2273bfdd8bdc0db416e73b89ae4", null ],
     [ "localAnchorB", "group__wheel__joint.html#a88ba0f7108076b9d7ced68425be95c27", null ],
     [ "localAxisA", "group__wheel__joint.html#ad635ee7b77b50037dc0e021a0f5c93a6", null ],

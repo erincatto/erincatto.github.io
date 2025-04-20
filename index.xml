@@ -6,8 +6,15 @@
     <description>Recent content on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Box2D 3.1</title>
+      <link>https://box2d.org/posts/2025/04/box2d-3.1/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2025/04/box2d-3.1/</guid>
+      <description>Version 3.0 was released about 8 months ago. It was a huge update and it needed some refinement. Version 3.1 addresses most of the bugs and build problems. It also introduces some new features and refinements.&#xA;Character mover I&amp;rsquo;ve added experimental character mover support to 3.1. This uses a geometric solver. It should be useful for games that want greater control than what you get with a dynamic or kinematic body.</description>
+    </item>
     <item>
       <title>Determinism</title>
       <link>https://box2d.org/posts/2024/08/determinism/</link>

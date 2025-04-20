@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['revolute_20joint_0',['Revolute Joint',['../group__revolute__joint.html',1,'']]]
+  ['prismatic_20joint_0',['Prismatic Joint',['../group__prismatic__joint.html',1,'']]]
 ];

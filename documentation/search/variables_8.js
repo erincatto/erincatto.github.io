@@ -1,13 +1,16 @@
 var searchData=
 [
   ['id_0',['id',['../group__collision.html#a789dcaf0bd164934cf1fe21685d936e4',1,'b2ManifoldPoint']]],
-  ['indexa_1',['indexA',['../group__distance.html#a8cabd12a0b5c8f35780843c31cb8e6f2',1,'b2DistanceCache::indexA'],['../group__distance.html#aff9e218120b975097ad716b9dd5e16c0',1,'b2SimplexVertex::indexA']]],
-  ['indexb_2',['indexB',['../group__distance.html#a277c1ec9419599b42165c0717d253115',1,'b2DistanceCache::indexB'],['../group__distance.html#a32c324a30a5fb8c2c38d191e4e61b602',1,'b2SimplexVertex::indexB']]],
-  ['internalvalue_3',['internalValue',['../group__world.html#adab21e2fc97bcf90315d58b5aa64e0ad',1,'b2WorldDef::internalValue'],['../group__body.html#afab0b4761dc06489b33f35b60f8bfa11',1,'b2BodyDef::internalValue'],['../group__shape.html#adaa44a3ab8d5bc6ec5eb69d2dfc460c9',1,'b2ShapeDef::internalValue'],['../group__shape.html#af5a5243a3a1d1ce08a90dc6126571b47',1,'b2ChainDef::internalValue'],['../group__distance__joint.html#a1d8cf9afd3d102343804ceea179f86d6',1,'b2DistanceJointDef::internalValue'],['../group__motor__joint.html#aa6638c5e1a1bca31b23c41a8939e9445',1,'b2MotorJointDef::internalValue'],['../group__mouse__joint.html#adf761e3bda0933c56f4841b8872fe8fb',1,'b2MouseJointDef::internalValue'],['../group__prismatic__joint.html#ad26ee50ed3f1b9c7b00ce2b31266e4b1',1,'b2PrismaticJointDef::internalValue'],['../group__revolute__joint.html#addc437f4ca0839fc2ae6eb0ca0abee91',1,'b2RevoluteJointDef::internalValue'],['../group__weld__joint.html#a94dcef12e9a3ba770a260a4702457fed',1,'b2WeldJointDef::internalValue'],['../group__wheel__joint.html#a80bdeb6fd90cfde1f5e60b7f4bb17b0d',1,'b2WheelJointDef::internalValue']]],
-  ['isawake_4',['isAwake',['../group__body.html#af53f854f59108948d57c1f4820b2a8f7',1,'b2BodyDef']]],
-  ['isbullet_5',['isBullet',['../group__body.html#aed1149c1b44596d5b3bb8208fdb95afa',1,'b2BodyDef']]],
-  ['isenabled_6',['isEnabled',['../group__body.html#a86763af259091cef9fad8fab0cc60ec6',1,'b2BodyDef']]],
-  ['isloop_7',['isLoop',['../group__shape.html#a3246b65130ab41dceabcb07eaf2f26fb',1,'b2ChainDef']]],
-  ['issensor_8',['isSensor',['../group__shape.html#a6851ac8355eedfff014f926015d29ff0',1,'b2ShapeDef']]],
-  ['iterations_9',['iterations',['../group__geometry.html#a58dd7b9d0582d442e717e2df9675e2fb',1,'b2CastOutput::iterations'],['../group__distance.html#a713acd7fdb880c0f61c8ae87b25a8443',1,'b2DistanceOutput::iterations']]]
+  ['impulseperlength_1',['impulsePerLength',['../group__world.html#a88b42ddaa558a7e7062985146f065f30',1,'b2ExplosionDef']]],
+  ['indexa_2',['indexA',['../group__distance.html#aa7196f921075a7659db7ebb38cba7fad',1,'b2SimplexCache::indexA'],['../group__distance.html#ae7f293d4cfe26f50e59262dbc2de4c2c',1,'b2SimplexVertex::indexA']]],
+  ['indexb_3',['indexB',['../group__distance.html#a00d06ce357b5fd0723de5c9bb47a53a0',1,'b2SimplexCache::indexB'],['../group__distance.html#ab4ccc18f55fed75ed859092c6b72d5e7',1,'b2SimplexVertex::indexB']]],
+  ['internalvalue_4',['internalValue',['../group__world.html#a31105d556b888fe927d46768e5a6fb7e',1,'b2WorldDef::internalValue'],['../group__body.html#abf8721e12951b910cd14438fa40cf490',1,'b2BodyDef::internalValue'],['../group__shape.html#ae1fd4bab428ad8be6b920961f2b0805c',1,'b2ShapeDef::internalValue'],['../group__shape.html#a50ee2ecd7e9bd385b2f691412ca02841',1,'b2ChainDef::internalValue'],['../group__distance__joint.html#a399523c1d8bc00984ada36ea27468067',1,'b2DistanceJointDef::internalValue'],['../group__motor__joint.html#a51837e06cc20cf8d46933f8ec3d0630f',1,'b2MotorJointDef::internalValue'],['../group__mouse__joint.html#a374aa85e9336ae21675fa3118bc9b6da',1,'b2MouseJointDef::internalValue'],['../group__filter__joint.html#a003e0179f80f57797c99c1774917c055',1,'b2FilterJointDef::internalValue'],['../group__prismatic__joint.html#a84c75daec18c31b833e076a35d49fe3d',1,'b2PrismaticJointDef::internalValue'],['../group__revolute__joint.html#a2af7db8b5586991c97d2e6b0803a0645',1,'b2RevoluteJointDef::internalValue'],['../group__weld__joint.html#af6e3f6327f98d3e02157597d495851a0',1,'b2WeldJointDef::internalValue'],['../group__wheel__joint.html#aae1db83bb8e9de54211d4ec58f827541',1,'b2WheelJointDef::internalValue']]],
+  ['invokecontactcreation_5',['invokeContactCreation',['../group__shape.html#a3a5a694c3182895080076d125aea34c0',1,'b2ShapeDef']]],
+  ['isawake_6',['isAwake',['../group__body.html#af53f854f59108948d57c1f4820b2a8f7',1,'b2BodyDef']]],
+  ['isbullet_7',['isBullet',['../group__body.html#aed1149c1b44596d5b3bb8208fdb95afa',1,'b2BodyDef']]],
+  ['isenabled_8',['isEnabled',['../group__body.html#a86763af259091cef9fad8fab0cc60ec6',1,'b2BodyDef']]],
+  ['isloop_9',['isLoop',['../group__shape.html#a3246b65130ab41dceabcb07eaf2f26fb',1,'b2ChainDef']]],
+  ['issensor_10',['isSensor',['../group__shape.html#a6851ac8355eedfff014f926015d29ff0',1,'b2ShapeDef']]],
+  ['iterationcount_11',['iterationCount',['../group__character.html#abe0ee840bcb231aff491a93d9dc6bf3f',1,'b2PlaneSolverResult']]],
+  ['iterations_12',['iterations',['../group__geometry.html#a3b569299a1c000b1262935ce72734505',1,'b2CastOutput::iterations'],['../group__distance.html#a8e7f2f87d70c6b88fe80718d44b0c91b',1,'b2DistanceOutput::iterations']]]
 ];

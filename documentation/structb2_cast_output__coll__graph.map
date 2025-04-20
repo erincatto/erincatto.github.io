@@ -1,5 +1,5 @@
 <map id="b2CastOutput" name="b2CastOutput">
-<area shape="rect" id="Node000001" title="Low level ray&#45;cast or shape&#45;cast output data." alt="" coords="5,108,108,133"/>
+<area shape="rect" id="Node000001" title="Low level ray cast or shape&#45;cast output data." alt="" coords="5,108,108,133"/>
 <area shape="rect" id="Node000002" href="$group__math.html#structb2_vec2" title="2D vector This can be used to represent a point or free vector" alt="" coords="23,5,90,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,46,59,107,54,107,54,46"/>
 </map>
