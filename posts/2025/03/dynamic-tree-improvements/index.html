@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Dynamic Tree Insertion Dynamic tree insertion can be expensive if you try to optimize for some metric such as the surface area heuristic (SAH). The SAH tries find a node configuration that minimizes the total surface area of all internal nodes. The idea is to create fewer node visits for ray casts on average.
+Insertion affects the surface area incrementally so it is essentially a greedy algorithm no matter how exhausive the search." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2025/03/dynamic-tree-improvements/" />
+
+
+    <title>
+        
+            Dynamic Tree Improvements :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dynamic Tree Improvements">
+  <meta name="twitter:description" content="Dynamic Tree Insertion Dynamic tree insertion can be expensive if you try to optimize for some metric such as the surface area heuristic (SAH). The SAH tries find a node configuration that minimizes the total surface area of all internal nodes. The idea is to create fewer node visits for ray casts on average.
+Insertion affects the surface area incrementally so it is essentially a greedy algorithm no matter how exhausive the search.">
+
+
+
+
+
+    <meta property="article:published_time" content="2025-03-21 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Mar 21, 2025</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2025/03/dynamic-tree-improvements/">Dynamic Tree Improvements</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <h1 id="dynamic-tree-insertion">Dynamic Tree Insertion</h1>
+<p>Dynamic tree insertion can be expensive if you try to optimize for some metric such as the surface area heuristic (SAH). The SAH tries find a node configuration that minimizes the total surface area of all internal nodes. The idea is to create fewer node visits for ray casts on average.</p>
+<p>Insertion affects the surface area incrementally so it is essentially a greedy algorithm no matter how exhausive the search. Therefore, an exhaustive search is not justified.</p>
+<p>This document describes the greedy insertion heuristic used in the Box2D dynamic tree that attempts to minimize the the surface area with a single decent through the tree. So this only follows a single path through the tree and may stop at any level to create a new internal node to parent the inserted node.</p>
+<p>The algorithm starts with an existing tree and a new proxy <code>D</code> to be inserted. The proxy has a surface area <code>areaD</code>. We are looking for a node that will be a sibling to <code>D</code>. The initial choice is the root node. The cost of making <code>D</code> a sibling of a node <code>S</code> is the direct cost, which is the area of the union of <code>D</code> and <code>S</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> directCost <span style="color:#f92672">=</span> <span style="color:#a6e22e">Area</span>(<span style="color:#a6e22e">Union</span>(D, S));
+</span></span></code></pre></div><p>This cost is because I will need to create a new node that is a parent of <code>D</code> and <code>S</code> and that is the area of the new node.</p>
+<p>There is also the area of the current sibling candidate:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> areaBase <span style="color:#f92672">=</span> <span style="color:#a6e22e">Area</span>( S );
+</span></span></code></pre></div><p>There is also an inherited cost that must be maintained as I decend the tree. This starts at zero. This is the incremental cost of increasing the internal nodes bounds as <code>D</code> is pushed down the tree.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> ineritedCost <span style="color:#f92672">+=</span> directCost <span style="color:#f92672">-</span> areaBase;
+</span></span></code></pre></div><p>For any internal node I need to predict the cost of decending the right or left branch (child1 or child2).</p>
+<p>There is the directCost:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> directCost1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">Area</span>(<span style="color:#a6e22e">Union</span>(C1, D));
+</span></span></code></pre></div><p>If child1 is a leaf then cost of choosing child1 as the sibling is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> cost1 <span style="color:#f92672">=</span> directCost1 <span style="color:#f92672">+</span> inheritedCost;
+</span></span></code></pre></div><p>This is an accurate cost because it represents the increased area of the internal nodes of the tree exactly.</p>
+<p>If child1 is an internal node then I do not know how much area that sub-tree will add as I decend it with the new proxy <code>D</code>.</p>
+<p>I choose to be optimistic about decending into a branch with an internal node. So what is the best result I can expect? I have the current inherited cost which cannot be ignored. Then I have the direct cost associated with creating a sibling with <code>D</code>. The sum of these two is actually conservative. It could be that I decent into branch 1 and I find some sibling with a lower direct cost. The lowest direct cost would be finding a sibling bounds that matches <code>D</code>. That would create a new internal node of <code>areaD</code>. And that could be a child of child1. In that case the cost would be</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> cost1 <span style="color:#f92672">=</span> inheritedCost <span style="color:#f92672">+</span> <span style="color:#a6e22e">Area</span>(<span style="color:#a6e22e">Union</span>(C1, D)) <span style="color:#f92672">-</span> <span style="color:#a6e22e">Area</span>(C1) <span style="color:#f92672">+</span> <span style="color:#a6e22e">Area</span>(D);
+</span></span></code></pre></div><p>If <code>Area(D) &gt; Area(C1)</code> then</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>cost1 <span style="color:#f92672">&gt;</span> inheritedCost <span style="color:#f92672">+</span> <span style="color:#a6e22e">Area</span>(<span style="color:#a6e22e">Union</span>(C1, D))
+</span></span></code></pre></div><p>But this is the cost of choosing <code>C1</code> as <code>S</code>. So I need to add some clamping in so that <code>C1</code> could become <code>S</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>cost1 <span style="color:#f92672">=</span> inheritedCost <span style="color:#f92672">+</span> <span style="color:#a6e22e">Area</span>(<span style="color:#a6e22e">Union</span>(C1,D)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">Min</span>(<span style="color:#a6e22e">Area</span>(D) <span style="color:#f92672">-</span> <span style="color:#a6e22e">Area</span>(C1), <span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>inheritedCost <span style="color:#f92672">+</span> directCost1 <span style="color:#75715e">// Cost of using child1 as the sibling
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>inheritedCost <span style="color:#f92672">+</span> (directCost1 <span style="color:#f92672">-</span> area1) <span style="color:#f92672">+</span> areaD <span style="color:#75715e">// Lowest possible cost of using a descendant of child1 as sibling
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Take the min of these two options and simplify:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">min</span>(inheritedCost <span style="color:#f92672">+</span> directCost1, inheritedCost <span style="color:#f92672">+</span> (directCost1 <span style="color:#f92672">-</span> area1) <span style="color:#f92672">+</span> areaD)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==</span> inheritedCost <span style="color:#f92672">+</span> directCost1 <span style="color:#f92672">+</span> <span style="color:#a6e22e">min</span>(<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span>area1 <span style="color:#f92672">+</span> areaD) 
+</span></span></code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>616 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2025-03-20 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2026</span>
+            
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
+    </body>
+</html>

@@ -86,7 +86,7 @@ SPDX-License-Identifier: MIT -->
 
         <div>
             <label>
-                <input type="checkbox" id="r9-float" name="processorSelect" value="2" checked />
+                <input type="checkbox" id="r9-float" name="processorSelect" value="2" />
                 r9-float : AMD Ryzen 9 7950X with no intrinsics
             </label>
         </div>
@@ -133,9 +133,17 @@ SPDX-License-Identifier: MIT -->
     <hr />
 
     <div class="chart-container">
+        <img src="/images/compounds_benchmark.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="compounds"></canvas>
+        </div>
         <img src="/images/joint_grid_benchmark.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="joint_grid"></canvas>
+        </div>
+        <img src="/images/junkyard_benchmark.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="junkyard"></canvas>
         </div>
         <img src="/images/large_pyramid_benchmark.png" width="640" height="360">
         <div class="chart-item">
@@ -161,6 +169,10 @@ SPDX-License-Identifier: MIT -->
         <div class="chart-item">
             <canvas id="tumbler"></canvas>
         </div>
+        <img src="/images/washer_benchmark.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="washer"></canvas>
+        </div>
     </div>
 
     <script>
@@ -169,10 +181,24 @@ SPDX-License-Identifier: MIT -->
 
         const benchmarks = [
             {
+                label: 'Compounds',
+                id: 'compounds',
+                description: '3k Compounds with 2 Shapes',
+                steps: 500,
+                chart: null
+            },
+            {
                 label: 'Joint Grid',
                 id: 'joint_grid',
                 description: '10k Circles, 19800 Revolute Joints',
                 steps: 500,
+                chart: null
+            },
+            {
+                label: 'Junkyard',
+                id: 'junkyard',
+                description: '8k Hulls with Large Kinematic Pusher',
+                steps: 800,
                 chart: null
             },
             {
@@ -216,8 +242,14 @@ SPDX-License-Identifier: MIT -->
                 description: '2026 Small Boxes Tumbling in a Large Hollow Box',
                 steps: 750,
                 chart: null
-            }
-        ];
+            },
+            {
+                label: 'Washer',
+                id: 'washer',
+                description: '8.1K Boxes in a Large Kinematic Washer',
+                steps: 500,
+                chart: null
+            }];
 
         const processors = [
             {
@@ -236,7 +268,7 @@ SPDX-License-Identifier: MIT -->
                 folder: 'amd7950x_float',
                 label: 'r9-float',
                 dash: [],
-                enabled: true,
+                enabled: false,
             },
             {
                 folder: 'm2air_neon',
@@ -344,13 +376,14 @@ SPDX-License-Identifier: MIT -->
 
                                 // convert the csv data into chart ready data
                                 data: data.map(row => {
-                                if ('fps' in row) {
-                                    return ({ x: row.threads, y: 1000 / row.fps });
-                                }
-                                else if ('ms' in row) {
-                                    return ({ x: row.threads, y: row.ms / benchmark.steps });
-                                }}),
-                                
+                                    if ('fps' in row) {
+                                        return ({ x: row.threads, y: 1000 / row.fps });
+                                    }
+                                    else if ('ms' in row) {
+                                        return ({ x: row.threads, y: row.ms / benchmark.steps });
+                                    }
+                                }),
+
                                 borderDash: processor.dash,
 
                                 fill: false
@@ -367,12 +400,13 @@ SPDX-License-Identifier: MIT -->
 
                                 // convert the csv data into chart ready data
                                 data: data.map(row => {
-                                if ('fps' in row) {
-                                    return ({ x: row.threads, y: 1000 / row.fps });
-                                }
-                                else if ('ms' in row) {
-                                    return ({ x: row.threads, y: row.ms / benchmark.steps });
-                                }}),
+                                    if ('fps' in row) {
+                                        return ({ x: row.threads, y: 1000 / row.fps });
+                                    }
+                                    else if ('ms' in row) {
+                                        return ({ x: row.threads, y: row.ms / benchmark.steps });
+                                    }
+                                }),
 
                                 borderDash: [5, 5],
                                 fill: false
