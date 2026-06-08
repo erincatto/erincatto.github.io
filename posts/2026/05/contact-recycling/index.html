@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Contact Recycling is a technique I&rsquo;ve developed for Box2D and Box3D. First you might be wondering what is Box3D? More on that later.
+Contact Recycling can drastically improve rigid body simulation performance. It can make the process of computing contact points almost free. Further it can significantly improved stability.
+Contact Recycling is inspired as a combination of other techniques. I have not seen this specific technique used in other physics engines." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="http://localhost:1313/posts/2026/05/contact-recycling/" />
+
+
+    <title>
+        
+            Contact Recycling :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact Recycling">
+  <meta name="twitter:description" content="Contact Recycling is a technique I’ve developed for Box2D and Box3D. First you might be wondering what is Box3D? More on that later.
+Contact Recycling can drastically improve rigid body simulation performance. It can make the process of computing contact points almost free. Further it can significantly improved stability.
+Contact Recycling is inspired as a combination of other techniques. I have not seen this specific technique used in other physics engines.">
+
+
+
+
+
+    <meta property="article:published_time" content="2026-05-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://localhost:1313/about/">About</a></li><li><a href="https://box2d.org/documentation/">Documentation</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="http://localhost:1313/posts/">Posts</a></li><li><a href="http://localhost:1313/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>May 3, 2026</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="http://localhost:1313/posts/2026/05/contact-recycling/">Contact Recycling</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p><em>Contact Recycling</em> is a technique I&rsquo;ve developed for Box2D and Box3D. First you might be wondering what is Box3D? More on that later.</p>
+<p>Contact Recycling can drastically improve rigid body simulation performance. It can make the process of computing contact points almost free. Further it can significantly improved stability.</p>
+<p>Contact Recycling is inspired as a combination of other techniques. I have not seen this specific technique used in other physics engines. There are similar solutions to the same problem but they have some fundamental differences. I&rsquo;ll try to make the differences clear. It is possible this specific technique already exists in some engines. Let me know and I&rsquo;ll update this blog post.</p>
+<h2 id="motivation">Motivation</h2>
+<p>The motivation for contact recycling is straight forward. Often when there are many rigid bodies stacked together, there may be parts of the stack that are not moving much. Yet other parts of the stack
+are moving a lot and keeping the whole <a href="https://box2d.org/posts/2023/10/simulation-islands/">island</a> awake. These stationary bodies should not have their contact points recomputed every timestep. Can
+we devise a way to re-use the contact points from the previous time step? If so there can be massive performance gains because computing contact points is expensive. We should try to recycle them!</p>
+<p>We can take this further. Consider a box resting on a train. Both are moving, but not relative to each other. These contact points should be recycled as well.</p>
+<p>Before I explain contact recycling there is some background knowledge and terminology that is important to review.</p>
+<h2 id="contact-manifolds">Contact manifolds</h2>
+<p>A contact manifold is the surface of intersection between colliding convex shapes. A manifold for 2D collisions it is a point or a line segment. A manifold for 3D collisions is a point, line segment, or a convex 2D polygon. Usually a line segment manifold will be represented by contact points at the end. For polygon manifold in 3D the contact points are at the vertices. In all cases the contact points all have the same normal vector, the manifold normal.</p>
+<h3 id="one-shot-contact-manifold">One-shot contact manifold</h3>
+<p>A one-shot contact manifold algorithm computes all the contact points for a manifold under one function call within one time step. Historically this implied using the Separating Axis Test (SAT) and Sutherland-Hodgman clipping. However, people have worked out how to this with GJK by identifying convex hull features from the GJK simplex. GJK requires a fallback when there is overlap, such as SAT or the Expanding Polytope Algorithm (EPA).</p>
+<h3 id="persistent-contact-manifold">Persistent contact manifold</h3>
+<p>Persistent contact manifold (PCM) algorithms seek to spread the work of building a contact manifold over several time steps. Early versions proceeded as follows:</p>
+<ol>
+<li>Compute closest point using GJK with EPA fallback</li>
+<li>Add point from 1 to manifold</li>
+<li>Look for a point to remove from the manifold using some heuristic</li>
+</ol>
+<p>Step 3 is necessary to keep the number of contact points small. Often contact points are stored in local coordinates so that they move with the simulation. So boxes sliding across each other retain contact points.</p>
+<h2 id="avoiding-computation">Avoiding computation</h2>
+<p>One-shot manifolds are clearly expensive. Even PCM requires a call to GJK every time step. GJK can be slow if the shapes are complex. By the way, I consider a 2D hull with over 8 points or a 3D hull with over 32 points to be complex.</p>
+<p>The narrow phase can detect the shapes or bodies haven&rsquo;t moved much relative to each other and simply skip the manifold update and re-use the result from the previous step. Then it becomes a problem of finding a good heuristic for <em>significant movement</em>. For this, I&rsquo;ll invoke an old friend.</p>
+<h3 id="conservative-advancement">Conservative Advancement</h3>
+<p>Conservative Advancement (CA) is traditionally a technique for continuous collision detection (CCD). The idea it to create an upper bound on the movement of two shapes relative to each other. Using this bound and the distance between the shapes, the CCD solver can iteratively move the bodies forward in time until they just touch or completely miss.</p>
+<p>The premise of CA is that you can create a bound on the relative movement of two bodies (A and B) using:</p>
+$$(v_B - v_A) \cdot n + ||\omega_A|| r_A + ||\omega_B|| r_B$$<p>Here \(n\) is the normal vector between the closes points. The parameter \(r\) is the radius of the bounding circle centered on the center of mass (the rotation pivot).</p>
+<p>This expression can be generally useful because it gives a way to combine linear and angular movement into a dimensionally consistent value. For example, Box2D uses this expression to measure the movement speed of a body for sleep and for CCD culling:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> maxVelocity <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2Length</span>( linearVelocity ) <span style="color:#f92672">+</span> <span style="color:#a6e22e">b2AbsFloat</span>( angularVelocity ) <span style="color:#f92672">*</span> body<span style="color:#f92672">-&gt;</span>maxExtent;
+</span></span></code></pre></div><p>This gives the maximum velocity of any point on the body. I can compare this with the sleep threshold to determine if the body is sleepy. This is great because I don&rsquo;t need a separate sleep threshold for angular velocity. This makes it so long skinny bodies don&rsquo;t fall asleep too soon.</p>
+<p>I can also compare <code>maxVelocity</code> to the inner circle of the smallest shape on the body to determine if the body is moving fast.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> isFast <span style="color:#f92672">=</span> maxVelocity <span style="color:#f92672">&gt;</span> safetyFactor <span style="color:#f92672">*</span> body<span style="color:#f92672">-&gt;</span>minExtent;
+</span></span></code></pre></div><p>Here <code>minExtent</code> is that inner radius and <code>safetyFactor</code> is some value between 0 and 1. If <code>isFast == false</code> then CCD can be skipped for this body. So one measure of speed can be used for two tests: sleepiness and speediness.</p>
+<h3 id="relative-movement">Relative movement</h3>
+<p>The CA formula can be used for contact pairs to determine if the relative movement is significant. This gets conceptually tricky but the code is simple. Suppose we just computed a one-shot contact manifold. At this configuration we have the transform of the two bodies:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>b2Transform cachedTransformA <span style="color:#f92672">=</span> bodyA<span style="color:#f92672">-&gt;</span>transform;
+</span></span><span style="display:flex;"><span>b2Transform cachedTransformB <span style="color:#f92672">=</span> bodyB<span style="color:#f92672">-&gt;</span>transform;
+</span></span></code></pre></div><p>The relative transform is computed using the math library:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>b2Transform cachedRelativeTransform <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2InvMulTransforms</span>(cachedTransformA, cachedTransformB);
+</span></span></code></pre></div><p>The order doesn&rsquo;t matter, it just needs to be consistent. When there is a fresh contact I cache this relative transform and set a flag to indicate the transform has been cached. Then the next time step I compute the current relative transform.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>b2Transform relativeTransform <span style="color:#f92672">=</span> <span style="color:#a6e22e">b3InvMulTransforms</span>(cachedTransformA, cachedTransformB);
+</span></span></code></pre></div><p>Abbreviate the cached relative transform as <code>xfc</code> and the current transform as <code>xf</code>. With these I can compute the relative movement
+of the bodies across the time step:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> relativeMovement <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2Distance</span>(xfc.p, xf.p) <span style="color:#f92672">+</span> <span style="color:#a6e22e">AngularDistance</span>(xfc.q, xf.q) <span style="color:#f92672">*</span> maxExtent;
+</span></span></code></pre></div><p>The <code>AngularDistance</code> function depends on how the rotations are represented. I take some shortcuts on this to avoid trigonometry. In Box2D
+rotations are represented as cosine and sine pairs. I just use the absolute value of the sine term, which makes use of the small angle approximation:</p>
+$$sin(\theta) \approx \theta$$<p>I do something similar with quaternions in 3D.</p>
+<p>With all of that, I now have a single number, the <code>relativeMovement</code>, that indicates the frame over frame movement of the bodies relative to each other. If this is small enough then I can recycle the contacts.</p>
+<p>A word of caution: do not update the cached relative transform when recycling. This causes drift. Only cache the relative transform on the step where the fresh manifold is computed.</p>
+<p>Problem solved? Not quite. If you implement this you will find that you need a tight tolerance on the relative movement. If you loosen the tolerance then the simulation degrades quickly into a jitter fest. Do we give up? No, we evolve.</p>
+<h3 id="updating-separation">Updating separation</h3>
+<p>Box2D uses a solver I dub <code>SoftStep</code>. The idea is to use sub-steps instead of iterations and to use soft constraints to manage position error. So it uses soft sub-steps, or <code>SoftStep</code> for short.</p>
+<p>A key ingredient of the sub-stepping is to avoid recomputing contact points. Otherwise I might as well just tell the user to use one iteration and small time steps. This works, but it is slow. So across sub-steps, the contact points are re-used. For each sub-step I use the relative movement of the bodies and adjust the contact point separation value, which is negative when shapes overlap. This ensures shapes are pushed apart correctly. This is much cheaper than re-computing the contact points and leads to excellent stacking stability. Better than what can be achieved with a traditional iterative solver.</p>
+<p>I borrowed this idea of contact recycling across sub-steps by adjusting the separation values, and applied this to contact recycling across full time steps. When the contact points are computed fresh then I cached the initial separation values (<code>baseSeparation</code>). As the contact points are recycled, I adjust the current separation value by using the body transforms and the <code>baseSeparation</code>. This code is compact:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( distance <span style="color:#f92672">+</span> maxExtent <span style="color:#f92672">*</span> <span style="color:#a6e22e">b2AbsFloat</span>( qr.s ) <span style="color:#f92672">&lt;</span> tolerance )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    b2Rot dqA <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2MulRot</span>( transformA.q, <span style="color:#a6e22e">b2InvertRot</span>( cachedTransformA.q ) );
+</span></span><span style="display:flex;"><span>    b2Rot dqB <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2MulRot</span>( transformB.q, <span style="color:#a6e22e">b2InvertRot</span>( cachedTransformB.q ) );
+</span></span><span style="display:flex;"><span>    b2Vec2 normal <span style="color:#f92672">=</span> manifold.normal;
+</span></span><span style="display:flex;"><span>    b2Vec2 dc <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2Sub</span>( bodyB<span style="color:#f92672">-&gt;</span>centerB, bodyA<span style="color:#f92672">-&gt;</span>centerA );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> ( <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> manifold.pointCount; <span style="color:#f92672">++</span>i )
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        b2ManifoldPoint<span style="color:#f92672">*</span> mp <span style="color:#f92672">=</span> manifold.points <span style="color:#f92672">+</span> i;
+</span></span><span style="display:flex;"><span>        b2Vec2 rA <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2RotateVector</span>( dqA, mp<span style="color:#f92672">-&gt;</span>anchorA );
+</span></span><span style="display:flex;"><span>        b2Vec2 rB <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2RotateVector</span>( dqB, mp<span style="color:#f92672">-&gt;</span>anchorB );
+</span></span><span style="display:flex;"><span>        b2Vec2 dp <span style="color:#f92672">=</span> <span style="color:#a6e22e">b2Add</span>( dc, <span style="color:#a6e22e">b2Sub</span>( rB, rA ) );
+</span></span><span style="display:flex;"><span>        mp<span style="color:#f92672">-&gt;</span>separation <span style="color:#f92672">=</span> mp<span style="color:#f92672">-&gt;</span>baseSeparation <span style="color:#f92672">+</span> <span style="color:#a6e22e">b2Dot</span>( dp, normal );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For the math to work out, I need to cache the transforms of both bodies, not just the relative transform. But the effect is glorious. Suddenly I
+can use very large tolerances, up to several centimeters. I observe increased stacking stability by recycling contact points this way. And it is thanks
+to updating the contact point separation values.</p>
+<p>As with many things in game physics, the best way to understand the value is to see the behavior and performance in practice. So watch this video
+where I show how contact recycling works in practice and some of the artifacts it has when pushed too far.</p>
+<h2 id="summary">Summary</h2>
+<p>Contact recycling has been used for sub-stepping by multiple physics engines, including Bepu and PhysX. However, as far as I know, it has not been used
+across time steps. This can be bolted on to any physics engine that can produce one-shot manifolds. The physics engine will easily achieve higher performance and stability with low effort. Having a sub-stepping solver is not required. I&rsquo;m not sure contact recycling would work will with PCM. Maybe someone will try it.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>Bepu</li>
+<li>PhysX PCM docs</li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://localhost:1313/tags/math">math</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1696 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2026-05-02 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2026</span>
+            
+                <span><a href="http://localhost:1313/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
+    </body>
+</html>

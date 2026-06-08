@@ -6,8 +6,15 @@
     <description>Recent content in Box2d on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Jul 2018 21:53:34 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/tags/box2d/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Replay</title>
+      <link>https://box2d.org/posts/2026/06/replay/</link>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2026/06/replay/</guid>
+      <description>Replay is a new system I developed for Box2D. The main goal is to allow users to send me files I can use to reproduce bugs. Because Box2D is open source, I can rarely run a user&amp;rsquo;s game or see their code in full context. This makes it hard to track down problems. Previously in v2.4 a user could use b2World::Dump to save a text file that let me reproduce bugs.</description>
+    </item>
     <item>
       <title>Box2D Subreddit</title>
       <link>https://box2d.org/posts/2018/07/box2d-subreddit/</link>

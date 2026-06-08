@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="42.83334mm"
+   height="58.45834mm"
+   viewBox="0 0 42.83334 58.45834"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="recording_file.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="3.4084035"
+     inkscape:cx="127.47904"
+     inkscape:cy="177.79585"
+     inkscape:window-width="3366"
+     inkscape:window-height="1860"
+     inkscape:window-x="252"
+     inkscape:window-y="130"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="-84.166662"
+       originy="-42.333334"
+       spacingx="2.6458333"
+       spacingy="2.6458334"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0"
+       empspacing="1"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-84.16666,-42.333333)">
+    <rect
+       style="fill:#f5f5f5;stroke:none;stroke-width:0.499999;stroke-linecap:round"
+       id="rect1"
+       width="42.333332"
+       height="57.95834"
+       x="84.416664"
+       y="42.583332" />
+    <rect
+       style="fill:#d3d3d3;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0"
+       id="rect5"
+       width="42.333332"
+       height="15.875"
+       x="84.416664"
+       y="74.083336" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-linecap:round"
+       x="98.824059"
+       y="49.05484"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#000000;stroke:none;stroke-width:0.5"
+         x="98.824059"
+         y="49.05484">header</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:none"
+       d="M 84.41666,52.947108 H 126.75"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:none"
+       d="M 84.541662,63.500002 H 126.625"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-linecap:round"
+       x="96.943039"
+       y="59.346767"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#000000;stroke:none;stroke-width:0.5"
+         x="96.943039"
+         y="59.346767">snapshot</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none"
+       x="90.273682"
+       y="69.765701"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="fill:#000000;stroke:none;stroke-width:0.5"
+         x="90.273682"
+         y="69.765701">opcode 1 + args </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none"
+       x="89.922287"
+       y="96.665375"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="fill:#000000;stroke:none;stroke-width:0.5"
+         x="89.922287"
+         y="96.665375">opcode N + args </tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0"
+       d="M 84.541661,73.825965 H 126.625"
+       id="path4"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0"
+       d="M 84.41666,89.958336 H 126.75"
+       id="path5" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none"
+       x="92.097862"
+       y="83.115341"
+       id="text5"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.5"
+         x="92.097862"
+         y="83.115341"
+         id="tspan7">more opcodes</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.499999;stroke-linecap:round"
+       id="rect2"
+       width="42.333332"
+       height="57.95834"
+       x="84.416664"
+       y="42.583332" />
+  </g>
+</svg>
