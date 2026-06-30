@@ -1,0 +1,8 @@
+<map id="b3BoxCastInput" name="b3BoxCastInput">
+<area shape="rect" id="Node000001" title="Input for sweeping an AABB through a dynamic tree." alt="" coords="5,217,120,243"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="113,121,185,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,160,75,219,71,215,126,156"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="8,5,75,31"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="38,46,32,93,35,146,46,185,59,216,54,218,41,187,29,147,27,93,33,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,40,140,119,136,123,61,43"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="b3DebugShape" name="b3DebugShape">
+<area shape="rect" id="Node000001" title="This is sent to the user for debug shape creation." alt="" coords="5,101,116,127"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="19,5,102,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,46,63,101,58,101,58,46"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="b3TOIInput" name="b3TOIInput">
+<area shape="rect" id="Node000001" title="Time of impact input." alt="" coords="38,388,122,413"/>
+<area shape="rect" id="Node000002" href="$group__query.html#structb3_shape_proxy" title="A shape proxy is used by the GJK algorithm. It can represent a convex shape." alt="" coords="5,197,112,222"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,237,81,387,76,388,59,238"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="99,5,165,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,40,72,56,57,93,53,132,54,169,59,196,53,196,49,169,47,132,52,91,67,53,84,36"/>
+<area shape="rect" id="Node000004" href="$group__query.html#structb3_sweep" title="This describes the motion of a body/shape for TOI computation." alt="" coords="132,263,207,289"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="136,46,147,164,169,263,164,264,141,164,130,46"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="229,120,293,145"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="159,39,249,117,246,121,156,43"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,303,91,389,87,386,150,300"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="247,160,179,264,175,261,243,157"/>
+</map>

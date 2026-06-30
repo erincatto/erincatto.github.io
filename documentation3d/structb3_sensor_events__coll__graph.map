@@ -1,0 +1,10 @@
+<map id="b3SensorEvents" name="b3SensorEvents">
+<area shape="rect" id="Node000001" title="Sensor events are buffered in the world and are available as begin/end overlap event arrays after the..." alt="" coords="133,217,249,243"/>
+<area shape="rect" id="Node000002" href="$group__event.html#structb3_sensor_begin_touch_event" title="A begin&#45;touch event is generated when a shape starts to overlap a sensor shape." alt="" coords="5,121,183,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,156,181,215,178,219,116,160"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="150,5,233,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="164,42,149,56,122,91,103,122,98,119,118,88,145,53,161,39"/>
+<area shape="rect" id="Node000004" href="$group__event.html#structb3_sensor_end_touch_event" title="An end touch event is generated when a shape stops overlapping a sensor shape." alt="" coords="207,121,373,147"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="226,38,244,53,270,88,287,120,282,122,266,91,240,56,223,42"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="273,161,240,195,210,219,207,215,236,191,269,157"/>
+</map>

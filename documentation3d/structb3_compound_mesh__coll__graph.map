@@ -1,0 +1,16 @@
+<map id="b3CompoundMesh" name="b3CompoundMesh">
+<area shape="rect" id="Node000001" title="A mesh with non&#45;uniform scale that lives in a compound." alt="" coords="10,313,140,339"/>
+<area shape="rect" id="Node000002" href="$group__mesh.html#structb3_mesh_data" title="This is a sorted triangle collision bounding volume hierarchy." alt="" coords="28,217,122,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,258,78,313,72,313,72,258"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="31,121,103,147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="72,162,77,217,71,217,66,162"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="70,5,136,31"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="66,41,49,56,30,86,21,122,9,183,9,209,17,242,26,262,39,281,64,311,60,315,34,284,22,265,12,244,4,210,3,182,16,121,25,84,45,53,62,37"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="69,42,59,56,54,72,55,89,64,120,59,122,50,90,49,72,54,53,65,39"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="147,217,240,243"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="127,41,136,53,148,78,154,99,167,146,192,216,187,218,162,147,149,100,143,80,131,56,123,44"/>
+<area shape="rect" id="Node000006" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="192,121,256,147"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="148,36,173,53,202,87,221,119,216,122,197,90,169,57,145,40"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="180,258,150,291,109,315,106,311,146,287,176,254"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="218,162,200,218,195,216,213,161"/>
+</map>

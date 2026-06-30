@@ -1,0 +1,9 @@
+<map id="b3ShapeDef" name="b3ShapeDef">
+<area shape="rect" id="Node000001" title="Used to create a shape." alt="" coords="85,217,177,243"/>
+<area shape="rect" id="Node000002" href="$group__shape.html#structb3_surface_material" title="Material properties supported per triangle on meshes and height fields." alt="" coords="5,101,132,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,142,66,167,74,192,85,205,100,215,97,219,82,209,69,195,61,168,61,142"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="35,5,102,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,46,71,101,66,101,66,46"/>
+<area shape="rect" id="Node000004" href="$group__shape.html#structb3_filter" title="This is used to filter collision on shapes." alt="" coords="156,101,221,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,142,162,195,144,218,140,215,157,192,179,140"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="b3MassData" name="b3MassData">
+<area shape="rect" id="Node000001" title="This holds the mass data computed for a shape." alt="" coords="5,237,100,263"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="19,5,86,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,46,47,102,46,167,54,237,48,237,41,167,41,102,46,46"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_matrix3" title="A 3x3 matrix." alt="" coords="101,141,180,167"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="71,42,135,139,131,142,66,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,180,65,239,62,235,117,176"/>
+</map>

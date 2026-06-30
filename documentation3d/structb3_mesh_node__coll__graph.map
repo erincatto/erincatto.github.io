@@ -1,0 +1,5 @@
+<map id="b3MeshNode" name="b3MeshNode">
+<area shape="rect" id="Node000001" title="A mesh BVH node." alt="" coords="5,121,104,147"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="21,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,46,57,121,52,121,52,46"/>
+</map>

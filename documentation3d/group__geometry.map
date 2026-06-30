@@ -1,0 +1,9 @@
+<map id="Geometry" name="Geometry">
+<area shape="rect" id="Node000003" href="$group__capsule.html" title="Capsule primitive." alt="" coords="149,5,218,31"/>
+<area shape="rect" id="Node000007" href="$group__compound.html" title="Compound collision shape." alt="" coords="141,55,225,80"/>
+<area shape="rect" id="Node000001" title="Geometry types and algorithms." alt="" coords="5,129,84,155"/>
+<area shape="rect" id="Node000006" href="$group__height__field.html" title="Height field collision shape." alt="" coords="138,104,229,129"/>
+<area shape="rect" id="Node000004" href="$group__hull.html" title="Convex hull primitive." alt="" coords="138,153,229,179"/>
+<area shape="rect" id="Node000005" href="$group__mesh.html" title="Triangle mesh collision shape." alt="" coords="132,203,235,228"/>
+<area shape="rect" id="Node000002" href="$group__sphere.html" title="Sphere primitive." alt="" coords="152,252,215,277"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="b3Manifold" name="b3Manifold">
+<area shape="rect" id="Node000001" title="A contact manifold describes the contact points between colliding shapes." alt="" coords="29,255,113,280"/>
+<area shape="rect" id="Node000002" href="$group__collision.html#structb3_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="133,140,248,165"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,178,85,256,82,252,165,174"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="35,46,27,110,27,147,32,183,47,222,65,253,60,256,42,225,27,185,21,147,22,109,30,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,39,179,137,175,141,62,43"/>
+</map>

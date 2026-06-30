@@ -1,0 +1,23 @@
+<map id="b3BoxHull" name="b3BoxHull">
+<area shape="rect" id="Node000001" title="Efficient box hull." alt="" coords="279,336,361,361"/>
+<area shape="rect" id="Node000002" href="$group__hull.html#structb3_hull_data" title="A convex hull." alt="" coords="116,240,201,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,278,181,295,195,310,214,322,236,331,279,341,278,346,234,336,212,327,192,314,177,298,166,281"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="137,141,209,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,182,163,191,160,240,155,239,157,190,160,180"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="132,5,199,31"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="119,36,87,57,48,95,19,131,11,150,8,170,11,191,21,215,44,247,73,273,107,294,143,310,217,332,279,342,278,347,216,337,141,315,104,298,70,277,40,250,16,217,6,192,3,170,6,148,15,129,44,91,84,53,116,32"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="145,44,110,87,94,114,82,142,80,157,83,170,97,197,119,220,142,237,138,242,115,224,93,200,78,172,75,157,77,141,90,111,106,84,141,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="167,46,169,117,173,141,168,141,164,118,162,46"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_matrix3" title="A 3x3 matrix." alt="" coords="234,141,313,167"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="215,31,231,40,246,53,260,75,269,99,275,140,270,141,264,100,255,77,242,56,228,45,212,35"/>
+<area shape="rect" id="Node000009" href="$group__math.html#structb3_plane" title="A plane." alt="" coords="316,191,385,216"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="215,19,259,29,281,39,300,53,326,86,341,125,349,162,353,190,347,190,344,163,336,127,321,89,297,57,278,43,257,34,214,24"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="243,178,223,193,199,218,174,241,170,238,195,214,219,189,240,173"/>
+<area shape="rect" id="Node000006" href="$group__hull.html#structb3_hull_vertex" title="A hull vertex." alt="" coords="343,240,439,265"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="375,280,331,338,326,334,370,276"/>
+<area shape="rect" id="Node000007" href="$group__hull.html#structb3_hull_half_edge" title="Half&#45;edge for hull data structure." alt="" coords="463,240,574,265"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="497,278,474,297,446,314,403,332,362,343,360,337,402,327,444,310,471,293,494,274"/>
+<area shape="rect" id="Node000008" href="$group__hull.html#structb3_hull_face" title="A hull face." alt="" coords="598,240,685,265"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="617,277,586,297,552,314,502,330,450,340,361,349,361,343,449,334,500,324,550,310,584,293,614,273"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="302,221,278,231,263,242,258,253,258,266,268,291,287,315,307,334,303,338,283,319,263,294,253,266,253,252,259,238,275,227,300,216"/>
+</map>

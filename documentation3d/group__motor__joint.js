@@ -1,0 +1,38 @@
+var group__motor__joint =
+[
+    [ "b3MotorJointDef", "group__motor__joint.html#structb3_motor_joint_def", [
+      [ "angularDampingRatio", "group__motor__joint.html#ac8beb9ef7c8eafa5ff1740dd2ec36254", null ],
+      [ "angularHertz", "group__motor__joint.html#a64a92fe11bcca49226172d4caad1137c", null ],
+      [ "angularVelocity", "group__motor__joint.html#af6561ae4201a0104519d4d4a7ff25f43", null ],
+      [ "base", "group__motor__joint.html#a9495bf969da6327ba32f19af7ab1810f", null ],
+      [ "linearDampingRatio", "group__motor__joint.html#ac5ee371c3fd8a66e525bbd768d706973", null ],
+      [ "linearHertz", "group__motor__joint.html#a69fd34b901a8c27e5696183969d488d3", null ],
+      [ "linearVelocity", "group__motor__joint.html#abd4cea87a386528887e05b4fedbe664c", null ],
+      [ "maxSpringForce", "group__motor__joint.html#a83ad90237a6b2e590b0fc6059eb77a08", null ],
+      [ "maxSpringTorque", "group__motor__joint.html#a220389c5eada21b11ab94075ccf697d8", null ],
+      [ "maxVelocityForce", "group__motor__joint.html#aeb59f5925bbe0ce2cfb10fd07c30e4d1", null ],
+      [ "maxVelocityTorque", "group__motor__joint.html#a298b371e56ad77628ae17d4e2e092ad1", null ]
+    ] ],
+    [ "b3CreateMotorJoint", "group__motor__joint.html#ga5762176d3868d75671baec5df5c1aef9", null ],
+    [ "b3DefaultMotorJointDef", "group__motor__joint.html#ga45e0bcc0a4551f46a3fea1c308db4e4b", null ],
+    [ "b3MotorJoint_GetAngularDampingRatio", "group__motor__joint.html#ga989f2e1fdf237d96ea9104513bbd00d8", null ],
+    [ "b3MotorJoint_GetAngularHertz", "group__motor__joint.html#ga83518afbd2430f39231cb7b13c56080a", null ],
+    [ "b3MotorJoint_GetAngularVelocity", "group__motor__joint.html#ga0a52704fec9afdbd80e83ca64b0a975a", null ],
+    [ "b3MotorJoint_GetLinearDampingRatio", "group__motor__joint.html#ga00ab1a897a26db827fc8a3334b717ecd", null ],
+    [ "b3MotorJoint_GetLinearHertz", "group__motor__joint.html#ga9e077928879bae3ca7523cf538d09dbb", null ],
+    [ "b3MotorJoint_GetLinearVelocity", "group__motor__joint.html#ga3ac004ff89e42679a255815f33c65594", null ],
+    [ "b3MotorJoint_GetMaxSpringForce", "group__motor__joint.html#ga17817ad97a60b1a2216a841afb0b2e8c", null ],
+    [ "b3MotorJoint_GetMaxSpringTorque", "group__motor__joint.html#ga939aaf38b094a8a72d6f7c7a3c06428f", null ],
+    [ "b3MotorJoint_GetMaxVelocityForce", "group__motor__joint.html#ga02a603bd4f48902e125c288a5208fd69", null ],
+    [ "b3MotorJoint_GetMaxVelocityTorque", "group__motor__joint.html#ga427f2882f0b11134bee6311285dd210f", null ],
+    [ "b3MotorJoint_SetAngularDampingRatio", "group__motor__joint.html#ga9f01bf6ec275a12071b43dd7bb2a7a6e", null ],
+    [ "b3MotorJoint_SetAngularHertz", "group__motor__joint.html#ga282cbd6f41056bba28bef336e5995daa", null ],
+    [ "b3MotorJoint_SetAngularVelocity", "group__motor__joint.html#ga0a30bc39e4e9aba834916af5f9d19b1c", null ],
+    [ "b3MotorJoint_SetLinearDampingRatio", "group__motor__joint.html#ga0cf846ca010d6e70ded4dab5e95e7d74", null ],
+    [ "b3MotorJoint_SetLinearHertz", "group__motor__joint.html#ga8aa65933db92014cc1f283adcc04e4a9", null ],
+    [ "b3MotorJoint_SetLinearVelocity", "group__motor__joint.html#ga0ee279912b25ea8ec1edfd2b4dfea5ab", null ],
+    [ "b3MotorJoint_SetMaxSpringForce", "group__motor__joint.html#ga5d9c25c945c025b3f5f88bdd1b156285", null ],
+    [ "b3MotorJoint_SetMaxSpringTorque", "group__motor__joint.html#gadcabfa02cf7503847f6c12ea80b7a204", null ],
+    [ "b3MotorJoint_SetMaxVelocityForce", "group__motor__joint.html#ga340067e20dee4d361e3b54a829b9c576", null ],
+    [ "b3MotorJoint_SetMaxVelocityTorque", "group__motor__joint.html#ga4581c94d118afcdc163b49d1242be925", null ]
+];

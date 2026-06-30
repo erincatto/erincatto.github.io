@@ -1,0 +1,13 @@
+<map id="b3DistanceInput" name="b3DistanceInput">
+<area shape="rect" id="Node000001" title="Input for b3ShapeDistance." alt="" coords="23,313,137,339"/>
+<area shape="rect" id="Node000002" href="$group__query.html#structb3_shape_proxy" title="A shape proxy is used by the GJK algorithm. It can represent a convex shape." alt="" coords="5,151,112,176"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,191,81,312,76,313,60,192"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="99,5,165,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,41,72,56,61,80,57,106,59,150,54,150,52,106,56,78,67,53,83,37"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="132,209,225,234"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="136,46,139,84,147,126,161,171,176,207,171,209,156,173,141,127,134,85,131,46"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="172,101,236,127"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="152,41,197,100,193,103,148,44"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="159,247,93,315,89,311,155,243"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="200,142,184,209,179,207,195,141"/>
+</map>

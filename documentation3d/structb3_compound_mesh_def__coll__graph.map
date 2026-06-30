@@ -1,0 +1,19 @@
+<map id="b3CompoundMeshDef" name="b3CompoundMeshDef">
+<area shape="rect" id="Node000001" title="Definition for a triangle mesh in a compound shape." alt="" coords="68,316,218,341"/>
+<area shape="rect" id="Node000002" href="$group__mesh.html#structb3_mesh_data" title="This is a sorted triangle collision bounding volume hierarchy." alt="" coords="32,220,126,245"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,260,86,276,93,291,105,303,119,313,116,318,101,307,89,293,81,278,78,261"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="31,121,103,147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,162,80,219,75,220,68,162"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="118,5,184,31"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="103,29,73,39,46,57,34,71,28,85,22,122,9,185,10,212,21,244,38,268,60,287,108,313,106,318,57,291,34,271,17,247,5,213,4,185,16,121,23,84,29,69,42,53,70,34,102,23"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,28,77,38,57,56,51,72,52,89,63,120,58,122,47,90,46,71,53,53,75,34,101,23"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="151,220,244,245"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="154,46,157,93,166,146,179,186,194,219,189,221,174,188,160,147,152,94,149,46"/>
+<area shape="rect" id="Node000006" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="191,121,255,147"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="169,42,218,119,213,122,164,45"/>
+<area shape="rect" id="Node000007" href="$group__shape.html#structb3_surface_material" title="Material properties supported per triangle on meshes and height fields." alt="" coords="229,171,356,196"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="196,36,221,53,247,81,267,114,291,169,286,171,262,117,242,85,217,57,193,40"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="186,260,152,317,147,315,181,257"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="208,161,203,171,199,197,199,219,194,219,193,196,198,170,203,158"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="290,212,275,254,263,275,247,294,227,308,205,318,203,313,225,303,244,290,259,272,270,251,285,210"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="b3JointEvent" name="b3JointEvent">
+<area shape="rect" id="Node000001" title="Joint events report joints that are awake and have a force and/or torque exceeding the threshold The ..." alt="" coords="5,101,100,127"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_joint_id" title="Joint id references a joint instance. This should be treated as an opaque handle." alt="" coords="16,5,89,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,46,55,101,50,101,50,46"/>
+</map>

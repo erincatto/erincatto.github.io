@@ -1,0 +1,7 @@
+<map id="b3JointEvents" name="b3JointEvents">
+<area shape="rect" id="Node000001" title="Joint events are buffered in the world and are available as event arrays after the time step is compl..." alt="" coords="5,197,108,223"/>
+<area shape="rect" id="Node000002" href="$group__event.html#structb3_joint_event" title="Joint events report joints that are awake and have a force and/or torque exceeding the threshold The ..." alt="" coords="9,101,104,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,142,59,197,54,197,54,142"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb3_joint_id" title="Joint id references a joint instance. This should be treated as an opaque handle." alt="" coords="20,5,93,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,46,59,101,54,101,54,46"/>
+</map>

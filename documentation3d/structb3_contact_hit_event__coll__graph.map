@@ -1,0 +1,9 @@
+<map id="b3ContactHitEvent" name="b3ContactHitEvent">
+<area shape="rect" id="Node000001" title="A hit touch event is generated when two shapes collide with a speed faster than the hit speed thresho..." alt="" coords="93,121,222,147"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="5,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,44,72,71,91,95,108,108,127,118,124,123,105,113,87,99,68,74,54,47"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb3_contact_id" title="Contact id references a contact instance. This should be treated as an opaque handle." alt="" coords="112,5,203,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,46,160,121,155,121,155,46"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="227,5,293,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,47,244,74,226,99,209,113,191,123,188,118,206,108,222,96,239,71,250,45"/>
+</map>

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['leafboxes_0',['leafBoxes',['../group__tree.html#abbd014b348416777c3aeda485205616c',1,'b3DynamicTree']]],
+  ['leafcenters_1',['leafCenters',['../group__tree.html#a142e845a1b037423eefbe6206e05c697',1,'b3DynamicTree']]],
+  ['leafindices_2',['leafIndices',['../group__tree.html#ae1ba63f357735166f6a766cdaa17e320',1,'b3DynamicTree']]],
+  ['leafvisits_3',['leafVisits',['../group__query.html#ae700429c6d6f45e3628cf557369be93a',1,'b3RayResult::leafVisits'],['../group__tree.html#aba81253949a69792ab5ef11009aea9f3',1,'b3TreeStats::leafVisits']]],
+  ['length_4',['length',['../group__distance__joint.html#acc4cdbadb3aad29c0826912b22c20a31',1,'b3DistanceJointDef']]],
+  ['lineardamping_5',['linearDamping',['../group__body.html#a29b068580ed28ff4a158a66eb0d5c192',1,'b3BodyDef']]],
+  ['lineardampingratio_6',['linearDampingRatio',['../group__motor__joint.html#ac5ee371c3fd8a66e525bbd768d706973',1,'b3MotorJointDef::linearDampingRatio'],['../group__weld__joint.html#a3475a0619a4626e25d4b0b806060e424',1,'b3WeldJointDef::linearDampingRatio']]],
+  ['linearhertz_7',['linearHertz',['../group__motor__joint.html#a69fd34b901a8c27e5696183969d488d3',1,'b3MotorJointDef::linearHertz'],['../group__weld__joint.html#a29ca72dc7f2b380179d02f40e8891353',1,'b3WeldJointDef::linearHertz']]],
+  ['linearvelocity_8',['linearVelocity',['../group__body.html#ad72479331aa46ea90bf0ee9b8afb2fd9',1,'b3BodyDef::linearVelocity'],['../group__motor__joint.html#abd4cea87a386528887e05b4fedbe664c',1,'b3MotorJointDef::linearVelocity']]],
+  ['linearx_9',['linearX',['../group__body.html#aaf1764c5b511e671fd2d6d850322178d',1,'b3MotionLocks']]],
+  ['lineary_10',['linearY',['../group__body.html#adc888ba78f02a256cd417d44bf00da54',1,'b3MotionLocks']]],
+  ['linearz_11',['linearZ',['../group__body.html#a5171b2486c7a63616f594eb116eacc35',1,'b3MotionLocks']]],
+  ['localcenter_12',['localCenter',['../group__query.html#a8aeebffbb0272cb607d4c538a54480ae',1,'b3Sweep']]],
+  ['localframea_13',['localFrameA',['../group__joint.html#aa188459f212695a8ac57b3fa60835704',1,'b3JointDef']]],
+  ['localframeb_14',['localFrameB',['../group__joint.html#a24cffba6988595f2a63da55a97e41f2d',1,'b3JointDef']]],
+  ['lowerangle_15',['lowerAngle',['../group__revolute__joint.html#a7f5182e04c82b8ab85fecafdf6715fec',1,'b3RevoluteJointDef']]],
+  ['lowerbound_16',['lowerBound',['../structb3_mesh_node.html#a9977a4a0d6f4daf4fd06b9fd2adab8de',1,'b3MeshNode']]],
+  ['lowerspringforce_17',['lowerSpringForce',['../group__distance__joint.html#a0dfd911dbbd0292aac9852c17cb65c87',1,'b3DistanceJointDef']]],
+  ['lowersteeringlimit_18',['lowerSteeringLimit',['../group__wheel__joint.html#a295eed87d47e910fba0d1796a9d72ea1',1,'b3WheelJointDef']]],
+  ['lowersuspensionlimit_19',['lowerSuspensionLimit',['../group__wheel__joint.html#ac95d2ca640ac6490bac42126eef369be',1,'b3WheelJointDef']]],
+  ['lowertranslation_20',['lowerTranslation',['../group__prismatic__joint.html#a888ff692c0a5a687787ec62036d415e7',1,'b3PrismaticJointDef']]],
+  ['lowertwistangle_21',['lowerTwistAngle',['../group__spherical__joint.html#a7125c0b29aa6f9ea581102e95c7b20a1',1,'b3SphericalJointDef']]]
+];

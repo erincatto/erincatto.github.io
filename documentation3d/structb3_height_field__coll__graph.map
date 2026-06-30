@@ -1,0 +1,8 @@
+<map id="b3HeightField" name="b3HeightField">
+<area shape="rect" id="Node000001" title="A height field with compressed storage." alt="" coords="5,217,107,243"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="84,121,156,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,161,66,219,62,216,101,158"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="8,5,75,31"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="39,47,33,93,35,146,43,185,54,216,49,218,38,186,29,147,28,93,33,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="60,42,114,119,110,122,56,45"/>
+</map>

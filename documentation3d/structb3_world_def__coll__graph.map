@@ -1,0 +1,7 @@
+<map id="b3WorldDef" name="b3WorldDef">
+<area shape="rect" id="Node000001" title="World definition used to create a simulation world." alt="" coords="45,101,134,127"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,44,68,76,83,100,79,103,63,79,47,46"/>
+<area shape="rect" id="Node000003" href="$group__world.html#structb3_capacity" title="Optional world capacities that can be use to avoid run&#45;time allocations." alt="" coords="97,5,183,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,46,113,79,99,102,94,100,108,76,125,43"/>
+</map>

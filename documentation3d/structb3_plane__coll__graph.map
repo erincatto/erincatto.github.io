@@ -1,0 +1,5 @@
+<map id="b3Plane" name="b3Plane">
+<area shape="rect" id="Node000001" title="A plane." alt="" coords="5,101,75,127"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="7,5,73,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,46,43,101,37,101,37,46"/>
+</map>

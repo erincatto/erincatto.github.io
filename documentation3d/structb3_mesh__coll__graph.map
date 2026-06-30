@@ -1,0 +1,10 @@
+<map id="b3Mesh" name="b3Mesh">
+<area shape="rect" id="Node000001" title="This allows mesh data to be re&#45;used with different scales." alt="" coords="15,313,83,339"/>
+<area shape="rect" id="Node000002" href="$group__mesh.html#structb3_mesh_data" title="This is a sorted triangle collision bounding volume hierarchy." alt="" coords="55,217,150,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,258,58,315,54,312,86,255"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="60,121,132,147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,162,105,217,99,217,95,162"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="41,46,45,243,51,313,45,313,40,243,36,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,43,92,120,88,122,49,46"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="b3ContactData" name="b3ContactData">
+<area shape="rect" id="Node000001" title="The contact data for two shapes." alt="" coords="107,371,215,396"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_contact_id" title="Contact id references a contact instance. This should be treated as an opaque handle." alt="" coords="5,255,96,280"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,293,77,320,97,345,113,358,132,368,129,372,110,362,93,349,73,323,58,296"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="120,255,203,280"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,296,164,370,159,370,159,296"/>
+<area shape="rect" id="Node000004" href="$group__collision.html#structb3_manifold" title="A contact manifold describes the contact points between colliding shapes." alt="" coords="227,255,311,280"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="263,296,250,323,231,349,214,362,195,372,192,368,211,358,227,345,246,320,258,294"/>
+<area shape="rect" id="Node000005" href="$group__collision.html#structb3_manifold_point" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="331,140,445,165"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="366,178,284,256,280,252,362,174"/>
+<area shape="rect" id="Node000006" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="203,5,269,31"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="232,46,224,110,224,147,229,183,245,223,263,253,259,256,240,225,224,185,219,147,219,109,227,46"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="263,39,376,137,373,141,259,43"/>
+</map>

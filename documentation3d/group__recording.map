@@ -1,0 +1,4 @@
+<map id="Recording" name="Recording">
+<area shape="rect" id="Node000001" title="Record and replay world state for debugging." alt="" coords="109,5,189,31"/>
+<area shape="rect" id="Node000002" href="$group__world.html" title="These functions allow you to create a simulation world." alt="" coords="5,5,61,31"/>
+</map>

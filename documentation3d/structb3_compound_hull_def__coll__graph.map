@@ -1,0 +1,22 @@
+<map id="b3CompoundHullDef" name="b3CompoundHullDef">
+<area shape="rect" id="Node000001" title="Definition for a convex hull in a compound shape." alt="" coords="232,336,371,361"/>
+<area shape="rect" id="Node000002" href="$group__hull.html#structb3_hull_data" title="A convex hull." alt="" coords="111,240,196,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,272,284,333,281,338,184,276"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="67,141,139,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,180,133,215,148,238,143,241,128,217,111,182"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="245,5,312,31"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="230,24,167,34,134,44,102,57,70,74,47,90,28,111,12,142,8,159,11,174,21,188,34,201,71,222,111,237,109,242,69,227,31,205,17,192,6,176,3,159,7,140,24,108,43,86,68,70,100,52,132,39,166,29,229,19"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="230,22,181,32,157,42,136,57,122,76,112,100,106,142,100,141,107,98,117,74,133,53,155,37,179,27,229,17"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_matrix3" title="A 3x3 matrix." alt="" coords="163,141,242,167"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="260,44,251,56,226,103,210,142,205,140,222,100,247,53,256,41"/>
+<area shape="rect" id="Node000006" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="255,240,348,265"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="284,46,303,240,297,240,279,46"/>
+<area shape="rect" id="Node000007" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="331,141,395,167"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="302,41,311,53,340,100,359,140,355,142,335,103,307,56,298,44"/>
+<area shape="rect" id="Node000008" href="$group__shape.html#structb3_surface_material" title="Material properties supported per triangle on meshes and height fields." alt="" coords="366,191,493,216"/>
+<area shape="poly" id="edge12_Node000008_Node000004" title=" " alt="" coords="328,29,348,39,367,53,394,87,412,126,430,190,425,191,407,128,389,90,363,57,346,44,326,34"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="192,182,162,241,157,238,187,179"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="304,281,304,336,299,336,299,281"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="347,181,339,192,310,241,306,238,335,189,343,178"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="422,232,402,273,371,314,353,328,334,338,332,333,351,323,367,310,398,270,417,229"/>
+</map>

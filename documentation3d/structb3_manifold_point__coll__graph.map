@@ -1,0 +1,5 @@
+<map id="b3ManifoldPoint" name="b3ManifoldPoint">
+<area shape="rect" id="Node000001" title="A manifold point is a contact point belonging to a contact manifold." alt="" coords="5,121,120,147"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="29,5,96,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,46,65,121,60,121,60,46"/>
+</map>

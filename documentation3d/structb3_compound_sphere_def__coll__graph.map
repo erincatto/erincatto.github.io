@@ -1,0 +1,10 @@
+<map id="b3CompoundSphereDef" name="b3CompoundSphereDef">
+<area shape="rect" id="Node000001" title="Definition for a sphere in a compound shape." alt="" coords="27,197,186,223"/>
+<area shape="rect" id="Node000002" href="$group__sphere.html#structb3_sphere" title="A solid sphere." alt="" coords="5,101,83,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,138,84,172,100,195,96,199,79,175,57,141"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="73,5,140,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,45,85,56,54,103,49,100,80,53,88,42"/>
+<area shape="rect" id="Node000004" href="$group__shape.html#structb3_surface_material" title="Material properties supported per triangle on meshes and height fields." alt="" coords="107,101,234,127"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="125,42,165,100,161,103,121,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="156,141,117,199,112,196,152,138"/>
+</map>

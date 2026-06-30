@@ -1,0 +1,16 @@
+<map id="b3SphericalJointDef" name="b3SphericalJointDef">
+<area shape="rect" id="Node000001" title="Spherical joint definition." alt="" coords="132,409,268,435"/>
+<area shape="rect" id="Node000002" href="$group__joint.html#structb3_joint_def" title="Base joint definition used by all joint types." alt="" coords="159,313,241,339"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,354,203,409,197,409,197,354"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb3_body_id" title="Body id references a body instance. This should be treated as an opaque handle." alt="" coords="119,197,195,223"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="155,238,155,263,161,288,170,301,182,311,178,315,166,304,156,290,150,264,150,238"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="220,197,313,223"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="254,237,248,248,209,314,204,312,243,245,249,235"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="201,5,268,31"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="186,21,129,26,71,40,46,52,26,67,13,88,8,113,8,327,11,346,19,363,32,376,49,387,89,404,132,413,131,418,87,409,46,392,29,380,15,366,6,348,3,328,3,112,8,86,22,64,43,47,69,35,129,21,185,16"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="239,46,249,126,266,196,261,198,244,127,234,47"/>
+<area shape="rect" id="Node000006" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="275,101,339,127"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="255,41,300,100,296,103,251,44"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="320,141,329,172,336,209,337,250,329,290,307,330,278,364,247,392,220,411,217,407,243,387,274,360,303,327,324,288,332,250,331,210,324,173,314,142"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="298,142,274,198,269,196,293,140"/>
+</map>

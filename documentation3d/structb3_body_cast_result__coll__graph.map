@@ -1,0 +1,7 @@
+<map id="b3BodyCastResult" name="b3BodyCastResult">
+<area shape="rect" id="Node000001" title="Body cast result for ray and shape casts." alt="" coords="31,121,161,147"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="5,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,46,56,71,65,96,84,119,80,123,60,99,51,72,46,47"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="112,5,179,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,46,118,98,105,122,101,120,114,96,134,44"/>
+</map>

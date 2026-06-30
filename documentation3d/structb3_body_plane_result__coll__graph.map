@@ -1,0 +1,12 @@
+<map id="b3BodyPlaneResult" name="b3BodyPlaneResult">
+<area shape="rect" id="Node000001" title="Body plane result for movers." alt="" coords="29,293,165,319"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="5,197,88,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,237,68,268,87,292,83,295,63,271,50,239"/>
+<area shape="rect" id="Node000003" href="$group__character.html#structb3_plane_result" title="The plane between a character mover and a shape." alt="" coords="112,197,219,223"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,237,108,295,104,292,146,234"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_plane" title="A plane." alt="" coords="192,101,261,127"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="213,141,175,199,171,196,208,138"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="119,5,185,31"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="149,46,144,84,145,126,154,165,164,196,159,198,149,166,140,127,139,84,144,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,41,220,100,215,103,169,44"/>
+</map>

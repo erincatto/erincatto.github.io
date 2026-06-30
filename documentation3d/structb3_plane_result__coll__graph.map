@@ -1,0 +1,8 @@
+<map id="b3PlaneResult" name="b3PlaneResult">
+<area shape="rect" id="Node000001" title="The plane between a character mover and a shape." alt="" coords="5,197,112,223"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_plane" title="A plane." alt="" coords="85,101,155,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,141,68,199,64,196,102,138"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="12,5,79,31"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="42,46,38,84,39,126,47,165,57,196,52,198,42,166,33,127,32,84,37,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="66,41,113,100,109,103,62,44"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="b3CompoundData" name="b3CompoundData">
+<area shape="rect" id="Node000001" title="The runtime data for a compound shape." alt="" coords="48,409,173,435"/>
+<area shape="rect" id="Node000002" href="$group__tree.html#structb3_dynamic_tree" title="The dynamic tree structure." alt="" coords="55,313,167,339"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,354,113,409,108,409,108,354"/>
+<area shape="rect" id="Node000003" href="$structb3_tree_node.html" title="A node in the dynamic tree." alt="" coords="200,217,291,243"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,254,129,315,126,311,214,250"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="75,121,147,147"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="113,162,113,313,108,313,108,162"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="142,154,230,215,227,219,139,158"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="35,46,27,113,28,153,35,193,48,228,67,262,103,311,98,314,62,264,43,231,29,194,23,154,22,113,30,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="56,42,105,119,101,122,52,45"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="b3BodyShapeCastInput" name="b3BodyShapeCastInput">
+<area shape="rect" id="Node000001" title="Body shape cast for shape casting a specific body with a specified transform." alt="" coords="85,197,243,223"/>
+<area shape="rect" id="Node000002" href="$group__query.html#structb3_shape_proxy" title="A shape proxy is used by the GJK algorithm. It can represent a convex shape." alt="" coords="111,101,217,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,142,167,197,161,197,161,142"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="31,46,24,85,25,106,32,125,50,149,74,168,126,194,124,199,71,173,46,153,27,128,20,107,18,85,26,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="68,38,150,99,147,103,65,42"/>
+<area shape="rect" id="Node000004" href="$group__query.html#structb3_query_filter" title="The query filter is used to filter collisions between queries and shapes." alt="" coords="242,101,342,127"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="265,138,182,199,179,195,262,134"/>
+</map>

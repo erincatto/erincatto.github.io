@@ -1,0 +1,5 @@
+<map id="b3Matrix3" name="b3Matrix3">
+<area shape="rect" id="Node000001" title="A 3x3 matrix." alt="" coords="5,141,84,167"/>
+<area shape="rect" id="Node000002" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="11,5,78,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,46,47,141,42,141,42,46"/>
+</map>

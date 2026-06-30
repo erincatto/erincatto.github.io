@@ -1,0 +1,7 @@
+<map id="b3ContactBeginTouchEvent" name="b3ContactBeginTouchEvent">
+<area shape="rect" id="Node000001" title="A begin&#45;touch event is generated when two shapes begin touching." alt="" coords="11,121,192,147"/>
+<area shape="rect" id="Node000002" href="$group__id.html#structb3_shape_id" title="Shape id references a shape instance. This should be treated as an opaque handle." alt="" coords="5,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,46,57,71,68,96,88,119,84,123,63,99,52,73,47,47"/>
+<area shape="rect" id="Node000003" href="$group__id.html#structb3_contact_id" title="Contact id references a contact instance. This should be treated as an opaque handle." alt="" coords="112,5,203,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,46,130,99,114,122,109,119,126,96,147,44"/>
+</map>

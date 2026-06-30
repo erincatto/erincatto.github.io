@@ -1,0 +1,19 @@
+<map id="b3CompoundHull" name="b3CompoundHull">
+<area shape="rect" id="Node000001" title="A hull that lives in a compound." alt="" coords="138,333,258,359"/>
+<area shape="rect" id="Node000002" href="$group__hull.html#structb3_hull_data" title="A convex hull." alt="" coords="100,237,185,263"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,275,194,332,189,335,155,277"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_a_a_b_b" title="Axis aligned bounding box." alt="" coords="66,141,138,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,181,119,212,134,235,130,238,114,214,104,183"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="177,5,244,31"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="163,32,130,42,98,57,45,92,27,112,11,142,8,158,11,173,20,186,32,198,66,219,103,234,101,239,64,224,29,203,15,190,6,175,3,158,6,140,23,109,41,88,96,52,128,37,161,27"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="163,32,142,42,124,56,112,77,106,100,104,141,99,141,101,99,108,75,120,53,139,37,161,27"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_matrix3" title="A 3x3 matrix." alt="" coords="163,141,242,167"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="211,47,206,141,200,141,206,46"/>
+<area shape="rect" id="Node000006" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="244,237,337,263"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="232,42,239,53,260,105,275,158,291,236,286,237,270,159,255,107,235,56,228,45"/>
+<area shape="rect" id="Node000007" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="330,141,394,167"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="260,27,286,37,311,53,330,74,344,98,361,140,357,142,340,101,326,77,307,57,284,42,258,32"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="189,181,152,239,147,236,184,178"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="270,276,211,335,208,331,266,272"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="346,180,301,239,297,236,342,177"/>
+</map>

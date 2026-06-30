@@ -1,0 +1,14 @@
+<map id="b3ShapeCastPairInput" name="b3ShapeCastPairInput">
+<area shape="rect" id="Node000001" title="Input parameters for b3ShapeCast." alt="" coords="56,313,207,339"/>
+<area shape="rect" id="Node000002" href="$group__query.html#structb3_shape_proxy" title="A shape proxy is used by the GJK algorithm. It can represent a convex shape." alt="" coords="102,151,209,176"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,191,146,201,137,264,135,313,129,313,132,263,141,199,143,190"/>
+<area shape="rect" id="Node000003" href="$group__math.html#structb3_vec3" title="A 3D vector." alt="" coords="162,5,229,31"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="152,40,116,58,77,83,42,114,15,152,9,175,11,199,21,222,37,244,76,283,114,311,111,315,73,287,33,248,16,225,6,200,3,175,11,150,38,110,74,78,113,53,149,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,44,169,56,161,81,158,107,157,150,152,150,152,107,156,80,164,54,171,41"/>
+<area shape="rect" id="Node000004" href="$group__math.html#structb3_transform" title="A rigid transform." alt="" coords="205,209,298,234"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="209,44,213,54,237,142,252,208,247,209,232,143,208,55,204,46"/>
+<area shape="rect" id="Node000005" href="$group__math.html#structb3_quat" title="A quaternion." alt="" coords="269,101,333,127"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="229,37,249,53,293,99,290,103,246,57,226,42"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,246,147,315,144,311,225,242"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="291,142,260,209,255,207,287,140"/>
+</map>
