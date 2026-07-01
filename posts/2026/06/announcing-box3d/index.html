@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,11 +8,11 @@
 <meta name="description" content="I&rsquo;m happy to announce the release of Box3D, an open source 3D physics engine. It is now available on GitHub.
 Box3D repository
 You can think of Box3D as a fork of Box2D, extended with many features needed for 3D games. Some additions:
-Triangle mesh collision Height-field collision Baked compound collision Of course many things are different between 3D and 2D. But the core architecture of Box3D remains almost identical to Box2D." />
+Triangle mesh collision Height-field collision Baked compound collision Of course many things are different between 2D and 3D. But the core architecture of Box3D remains almost identical to Box2D." />
 <meta name="keywords" content="game physics" />
 
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="http://localhost:1313/posts/2026/06/announcing-box3d/" />
+<link rel="canonical" href="https://box2d.org/posts/2026/06/announcing-box3d/" />
 
 
     <title>
@@ -44,7 +44,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
   <meta name="twitter:description" content="I’m happy to announce the release of Box3D, an open source 3D physics engine. It is now available on GitHub.
 Box3D repository
 You can think of Box3D as a fork of Box2D, extended with many features needed for 3D games. Some additions:
-Triangle mesh collision Height-field collision Baked compound collision Of course many things are different between 3D and 2D. But the core architecture of Box3D remains almost identical to Box2D.">
+Triangle mesh collision Height-field collision Baked compound collision Of course many things are different between 2D and 3D. But the core architecture of Box3D remains almost identical to Box2D.">
 
 
 
@@ -83,7 +83,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="http://localhost:1313/about/">About</a></li><li><a href="https://box2d.org/documentation/">Box2D Docs</a></li><li><a href="https://box2d.org/documentation3d/">Box3D Docs</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="http://localhost:1313/posts/">Posts</a></li><li><a href="http://localhost:1313/publications/">Publications</a></li>
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Box2D Docs</a></li><li><a href="https://box2d.org/documentation3d/">Box3D Docs</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
     </ul>
 </nav>
 
@@ -116,7 +116,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
 
         <article>
             <h1 class="post-title">
-                <a href="http://localhost:1313/posts/2026/06/announcing-box3d/">Announcing Box3D</a>
+                <a href="https://box2d.org/posts/2026/06/announcing-box3d/">Announcing Box3D</a>
             </h1>
 
             
@@ -130,7 +130,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
 <li>Height-field collision</li>
 <li>Baked compound collision</li>
 </ul>
-<p>Of course many things are different between 3D and 2D. But the core architecture of Box3D remains almost identical to Box2D.</p>
+<p>Of course many things are different between 2D and 3D. But the core architecture of Box3D remains almost identical to Box2D.</p>
 <ul>
 <li>C API</li>
 <li>All library source is C17</li>
@@ -156,7 +156,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
 <h2 id="reason-1-the-legend-of-california">Reason 1: The Legend of California</h2>
 <p>The first reason I developed Box3D is that the game I&rsquo;ve been working on needs it. Let me explain.</p>
 <h3 id="problems-with-native-unreal-physics">Problems with native Unreal physics</h3>
-<p>I&rsquo;ve been working on The Legend of California at <a href="https://www.kintsugiyama.com/">Kintsugiyama</a> since 2022. This game is built using the Unreal engine. We started with version 5.0. Being a survival game, one of the first things I worked on was chopping down trees. Our experiments with the native physics simulation (called Chaos) had some problems. First, there was no support for gyroscopic torques. This means the trees would spin forever. For example, here&rsquo;s a tree simulation in Box3D with and without gyroscopic torques.</p>
+<p>I&rsquo;ve been working on The Legend of California at <a href="https://www.kintsugiyama.com/">Kintsugiyama</a> since 2022. This game is built using the Unreal engine. We started with version 5.0. Our experiments with the native physics simulation (called Chaos) had some problems. First, there was no support for gyroscopic torques. This means slender shapes, can spin for a long time, conserving angular velocity. For example, see this video of a spinning rifle.</p>
 
 
     
@@ -166,7 +166,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
     </div>
 
 <p>I developed a ~10 line drop-in algorithm for adding gyroscopic torques to any physics engine and presented it at the Game Developer Conference in 2015: <a href="https://box2d.org/files/ErinCatto_NumericalMethods_GDC2015.pdf">presentation</a>. So I could have easily added this feature to the native solver. Epic added this feature in <a href="https://github.com/EpicGames/UnrealEngine/commit/3a3fd356b6104624ac2e27d8a7f7be4715ce0919">late 2024</a>.</p>
-<p>However, that was not my biggest problem. The falling trees moved erratically, teleporting around the screen. It is hard to describe or reason about. I actually never debugged it. My best guess is Chaos is using some sort of continuous collision fallback. This simulation was just a large capsule falling on a benign triangle mesh terrain.</p>
+<p>However, that was not my biggest problem. Being a survival game, one of the first things I worked on was chopping down trees. The falling trees moved erratically, teleporting around the screen. It is hard to describe or reason about. My best guess is that Chaos was using some sort of continuous collision fallback. This simulation was just a large capsule falling on a smooth triangle mesh terrain. This scenario should be easy to simulate.</p>
 
 
     
@@ -175,9 +175,9 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
       ></iframe>
     </div>
 
-<p>Our game needs to manage a lot of entities. Hundreds of thousands of entities exist on the server. We need a fast broad-phase for this. This is so central to our game that it seemed risky to hand this off to middleware. I have a lot of experience working on broad-phase data structures. I even did a <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">GDC presentation</a> on the topic.</p>
-<p>So I reached a pivot point with our physics tech. All these factors were adding up and I needed to make a decision: try to fix the native solution or replace it with an outside physics engine.</p>
-<p>I was considering using an existing open source physics engine, such as Jolt. Being a physics programmer I was pretty confident that I could at least fork it and get the stuff we need for our game. However, a good friend suggested another course of action.</p>
+<p>Another factor is that our game needs to manage a lot of entities. Hundreds of thousands of entities exist on the server. We need a fast broad-phase for this. This is so central to our game that it seemed risky to hand this off to middleware. I have a lot of experience working on broad-phase data structures. I even did a <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">GDC presentation</a> on the topic.</p>
+<p>So we reached a pivot point with our physics tech. All these factors were adding up and I needed to make a decision: try to fix the native solution or replace it with an outside physics engine.</p>
+<p>I was considering using an existing open source physics engine, such as Jolt. Being a physics programmer, I was pretty confident that I could at least fork Jolt and get the stuff we need for our game. However, a good friend suggested another course of action.</p>
 <h3 id="valve-to-the-rescue">Valve to the rescue</h3>
 <p>My friend Dirk Gregorius is an accomplished physics programmer, having shipped a custom physics engine in Half-Life: Alyx called <a href="https://developer.valvesoftware.com/wiki/Rubikon">Rubikon</a>. He became aware of my predicament and proposed a solution. Dirk maintains a hobby/home version of Rubikon. Let&rsquo;s call this &ldquo;Rubikon-Lite&rdquo;. He suggested that I could fork Rubikon-Lite and modify it to my needs.</p>
 <p>So that&rsquo;s what I did. I hooked Rubikon-Lite directly into Unreal. It worked great! We got gyroscopic torques and trees fell nicely. Everything just worked.</p>
@@ -188,20 +188,20 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
 <li>we have a custom ECS that hooks to Box3D directly</li>
 </ul>
 <p>Over time Rubikon-Lite evolved into Box3D. At some point I realized I needed to keep my 2D and 3D efforts as similar as possible, for efficiency and sanity. Fortunately, the data structures for 2D and 3D are largely indifferent to spatial dimensions.</p>
-<p>On the Valve side, Rubikon continues to evolve and Dirk has developed optimizations similar to Box3D in a new engine called Ragnarok. Look for that in future Valve games.</p>
+<p>On the Valve side, Rubikon continues to evolve and Dirk has developed optimizations (similar to those in Box3D) in a new engine called Ragnarok. Look for that in future Valve games.</p>
 <h3 id="custom-is-better">Custom is better</h3>
 <p>The Legend of California is an ambitious project with a large open world and server authority. Falling trees, ragdolls, voxels, saloon doors, and tumbleweeds are all simulated on the server. Having a custom physics engine means I can tailor the feature set and performance to the needs of our game.</p>
 <p>For performance, I&rsquo;ve done a lot of work to optimize for falling trees. We have huge redwood trees that fall fast onto a voxel terrain. Getting the mesh collision and CCD working well is a big effort.</p>
-<p>I&rsquo;ve also worked on building collision meshes fast for our voxel system, since they need to be built at runtime. They build well with median split because they are grid-like.</p>
+<p>I&rsquo;ve also worked on building collision meshes fast for our voxel system, since they need to be built at runtime. They build well with median split because voxels are grid-like.</p>
 <p>Streaming is another critical feature. Our strongholds are built using kitbashing. A large stronghold can easily have around 50,000 separate collision meshes. Loading these into the physics engine one-by-one is inefficient and uses a lot of memory. So I built a compound collision system where the separate collision shapes are cooked into an optimized data structure that can be loaded as a single uber shape. This removes the overhead of creating thousands of bodies and shapes.</p>
 <h2 id="reason-2-sustaining-knowledge-and-sanity">Reason 2: Sustaining knowledge (and sanity)</h2>
 <p>On the personal side, I have been making physics engines for games since 2004. Every time I change jobs, I need to leave that work behind. This is partly the reason I developed Box2D. It is an open source project that captures my knowledge and efforts so I can use it as the basis for future work. However, on the 3D side I keep re-inventing the wheel in many ways. I&rsquo;m not totally against that, but it is a big tax.</p>
 <p>Somehow I convinced the fine folks at Kintsugiyama to allow me to not only make Box3D open source, but also work on it as part of my day job. This means it is something I can feasibly support. So everyone please give a big thanks to Kintsugiyama for making Box3D possible.</p>
 <h2 id="why-use-box3d">Why use Box3D?</h2>
 <p>This one is going to be brief. If you like Box2D and its design, then you&rsquo;ll probably like Box3D. They are siblings after all.</p>
-<p>Box3D is open source. I&rsquo;m not trying to compete with other physics engines. Open source is not a business for me. I make Box2D and Box3D because I love working on game physics. I&rsquo;m delighted that people have found my work useful.</p>
+<p>Box3D is open source. I&rsquo;m not trying to compete with other physics engines. Open source is not a business for me. I develop Box2D and Box3D because I love working on game physics. I&rsquo;m delighted that people have found my work useful.</p>
 <h3 id="getting-started-with-box3d">Getting started with Box3D</h3>
-<p>Install vanilla <a href="https://git-scm.com/">git</a> and <a href="https://cmake.org/">CMake</a>, then clone the <a href="https://github.com/erincatto/box3d">Box3D repository</a>. You can find the building instructions in the <a href="https://github.com/erincatto/box3d/blob/main/README.md">README</a>. After you get a build, run the samples and see the features it has to offer. Look at the sample code to get started with coding.</p>
+<p>Install vanilla <a href="https://git-scm.com/">git</a> and <a href="https://cmake.org/">CMake</a>, then clone the <a href="https://github.com/erincatto/box3d">Box3D repository</a>. You can find the build instructions in the <a href="https://github.com/erincatto/box3d/blob/main/README.md">README</a>. After you get a build, run the samples and see the features it has to offer. Look at the sample code to get started with coding.</p>
 <p>The engine headers have full doxygen comments and the written manual is in progress. Here&rsquo;s the hosted <a href="https://box2d.org/documentation3d/">documentation</a>.</p>
 <p>You can find minimal example code in the <a href="https://github.com/erincatto/box3d/blob/main/test/test_world.c">HelloWorld test</a>.</p>
 <h3 id="who-is-using-box3d">Who is using Box3D?</h3>
@@ -238,10 +238,10 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
 
         <div class="post-info">
                 <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://localhost:1313/tags/box3d">box3d</a></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://box2d.org/tags/box3d">box3d</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1426 words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1437 words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2026-06-29 17:00 -0700</p>
         </div>
@@ -255,7 +255,7 @@ Triangle mesh collision Height-field collision Baked compound collision Of cours
         <div class="footer__content">
             <span>&copy; 2026</span>
             
-                <span><a href="http://localhost:1313/">Erin Catto</a></span>
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
             
         </div>
     </div>
