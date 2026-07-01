@@ -13,7 +13,7 @@
       <link>https://box2d.org/posts/2026/06/announcing-box3d/</link>
       <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
       <guid>https://box2d.org/posts/2026/06/announcing-box3d/</guid>
-      <description>I&amp;rsquo;m happy to announce the release of Box3D, an open source 3D physics engine. It is now available on GitHub.&#xA;Box3D repository&#xA;You can think of Box3D as a fork of Box2D, extended with many features needed for 3D games. Some additions:&#xA;Triangle mesh collision Height-field collision Baked compound collision The core architecture of Box3D remains almost identical to Box2D.&#xA;C API All library source is C17 Sub-stepping solver Continuous collision Graph coloring for large islands Wide SIMD contact solver Multi-threading hooks Optional internal scheduler Large world support with doubles for position Recording and replay If you want to see Box3D in action, watch this video:</description>
+      <description>I&amp;rsquo;m happy to announce the release of Box3D, an open source 3D physics engine. It is now available on GitHub.&#xA;Box3D repository&#xA;You can think of Box3D as a fork of Box2D, extended with many features needed for 3D games. Some additions:&#xA;Triangle mesh collision Height-field collision Baked compound collision The core architecture of Box3D remains almost identical to Box2D.&#xA;C API All library source is C17 Sub-stepping solver Continuous collision Graph coloring for large islands Wide SIMD contact solver Multi-threading hooks Optional internal scheduler Large world support with doubles for position Cross platform determinism Recording and replay If you want to see Box3D in action, watch this video:</description>
     </item>
     <item>
       <title>Replay</title>
