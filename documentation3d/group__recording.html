@@ -190,7 +190,9 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight"><b>b3RecPlayer_Destroy</b> (<a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memdesc:ga4aac11f833aeb550be77273e3b214348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the player and free all memory. Restores the previous global length scale. <br /></td></tr>
 <tr class="memitem:ga253a06f79af630ec270cf9a010e2f6a5" id="r_ga253a06f79af630ec270cf9a010e2f6a5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga253a06f79af630ec270cf9a010e2f6a5">b3RecPlayer_StepFrame</a> (<a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
-<tr class="memdesc:ga253a06f79af630ec270cf9a010e2f6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance one frame: dispatch ops until the next Step completes.  <br /></td></tr>
+<tr class="memdesc:ga253a06f79af630ec270cf9a010e2f6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance one frame.  <br /></td></tr>
+<tr class="memitem:gab2616c650ffd3017b6ae0b6f9e7656bf" id="r_gab2616c650ffd3017b6ae0b6f9e7656bf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gab2616c650ffd3017b6ae0b6f9e7656bf">b3RecPlayer_SubStepFrame</a> (<a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
+<tr class="memdesc:gab2616c650ffd3017b6ae0b6f9e7656bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sub-step one frame.  <br /></td></tr>
 <tr class="memitem:gafd6e8f524c61aa6835107a2b84f72251" id="r_gafd6e8f524c61aa6835107a2b84f72251"><td class="memItemLeft"><a id="gafd6e8f524c61aa6835107a2b84f72251" name="gafd6e8f524c61aa6835107a2b84f72251"></a>
 void&#160;</td><td class="memItemRight"><b>b3RecPlayer_Restart</b> (<a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memdesc:gafd6e8f524c61aa6835107a2b84f72251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewind to frame 0 (in-place restore so the world id stays stable). <br /></td></tr>
@@ -200,6 +202,7 @@ void&#160;</td><td class="memItemRight"><b>b3RecPlayer_Restart</b> (<a class="el
 <tr class="memitem:gaa1b4213d86eeed82976bb4e5db8e5c54" id="r_gaa1b4213d86eeed82976bb4e5db8e5c54"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaa1b4213d86eeed82976bb4e5db8e5c54">b3RecPlayer_GetFrame</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memitem:ga09939b7abe22b865c610085255535482" id="r_ga09939b7abe22b865c610085255535482"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga09939b7abe22b865c610085255535482">b3RecPlayer_GetFrameCount</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memitem:ga7afb8b4234311ab2edc285ac3fc96c95" id="r_ga7afb8b4234311ab2edc285ac3fc96c95"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga7afb8b4234311ab2edc285ac3fc96c95">b3RecPlayer_IsAtEnd</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
+<tr class="memitem:ga71b61f6999b7f0e82f323321f9a1b240" id="r_ga71b61f6999b7f0e82f323321f9a1b240"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga71b61f6999b7f0e82f323321f9a1b240">b3RecPlayer_IsAtPreStep</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memitem:gae394d1a5c409b6fb3072c7f5fc754f2b" id="r_gae394d1a5c409b6fb3072c7f5fc754f2b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#gae394d1a5c409b6fb3072c7f5fc754f2b">b3RecPlayer_HasDiverged</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memitem:ga1297af33ab51b35d2d0b6c753dda0fe5" id="r_ga1297af33ab51b35d2d0b6c753dda0fe5"><td class="memItemLeft"><a class="el" href="#structb3_rec_player_info">b3RecPlayerInfo</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga1297af33ab51b35d2d0b6c753dda0fe5">b3RecPlayer_GetInfo</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
 <tr class="memitem:ga65196af3cdeb381a82c5da203ae3c7f4" id="r_ga65196af3cdeb381a82c5da203ae3c7f4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga65196af3cdeb381a82c5da203ae3c7f4">b3RecPlayer_GetDivergeFrame</a> (const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *player)</td></tr>
@@ -895,6 +898,24 @@ shape</td>
 
 </div>
 </div>
+<a id="ga71b61f6999b7f0e82f323321f9a1b240" name="ga71b61f6999b7f0e82f323321f9a1b240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71b61f6999b7f0e82f323321f9a1b240">&#9670;&#160;</a></span>b3RecPlayer_IsAtPreStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool b3RecPlayer_IsAtPreStep </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true when the op stream is paused between body creation and world step. </dd></dl>
+
+</div>
+</div>
 <a id="ga2a4af5a1e8def526d1cef8360975e60f" name="ga2a4af5a1e8def526d1cef8360975e60f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2a4af5a1e8def526d1cef8360975e60f">&#9670;&#160;</a></span>b3RecPlayer_SeekFrame()</h2>
 
@@ -1036,8 +1057,28 @@ shape</td>
       </table>
 </div><div class="memdoc">
 
-<p>Advance one frame: dispatch ops until the next Step completes. </p>
-<dl class="section return"><dt>Returns</dt><dd>true when a frame was stepped, false at end-of-recording </dd></dl>
+<p>Advance one frame. </p>
+<p>dispatch ops until the next Step completes. </p><dl class="section return"><dt>Returns</dt><dd>true when a frame was stepped, false at end-of-recording </dd></dl>
+
+</div>
+</div>
+<a id="gab2616c650ffd3017b6ae0b6f9e7656bf" name="gab2616c650ffd3017b6ae0b6f9e7656bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2616c650ffd3017b6ae0b6f9e7656bf">&#9670;&#160;</a></span>b3RecPlayer_SubStepFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void b3RecPlayer_SubStepFrame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga8c4db08dc857f7aa7c6e03cd61552b23">b3RecPlayer</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sub-step one frame. </p>
+<p>This will sub-step and return immediately after body creation. The next call will execute the time step. This allows bodies to be rendered at the creation pose. </p>
 
 </div>
 </div>

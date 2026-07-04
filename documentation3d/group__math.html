@@ -172,8 +172,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga09f8a82a01ab7fac630136e92a2edbdb" id="r_ga09f8a82a01ab7fac630136e92a2edbdb"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga09f8a82a01ab7fac630136e92a2edbdb">b3MinInt</a> (int a, int b)</td></tr>
 <tr class="memitem:ga92ace1100dfbbd7d1cbfbbd953652946" id="r_ga92ace1100dfbbd7d1cbfbbd953652946"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga92ace1100dfbbd7d1cbfbbd953652946">b3MaxInt</a> (int a, int b)</td></tr>
 <tr class="memitem:gaac07130b743cbb7f9f28bbdd6d4bba9b" id="r_gaac07130b743cbb7f9f28bbdd6d4bba9b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaac07130b743cbb7f9f28bbdd6d4bba9b">b3ClampInt</a> (int a, int lower, int upper)</td></tr>
-<tr class="memitem:gad50166d080e80469c3784f53b48bdc62" id="r_gad50166d080e80469c3784f53b48bdc62"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#gad50166d080e80469c3784f53b48bdc62">b3IsValidFloat</a> (float a)</td></tr>
-<tr class="memdesc:gad50166d080e80469c3784f53b48bdc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a valid number? Not NaN or infinity.  <br /></td></tr>
 <tr class="memitem:ga4ef010c419d1d5ffce74d69acd4977a6" id="r_ga4ef010c419d1d5ffce74d69acd4977a6"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ga4ef010c419d1d5ffce74d69acd4977a6">b3AbsFloat</a> (float a)</td></tr>
 <tr class="memitem:gaf856aa79696186be16614c4b51b905ae" id="r_gaf856aa79696186be16614c4b51b905ae"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#gaf856aa79696186be16614c4b51b905ae">b3MinFloat</a> (float a, float b)</td></tr>
 <tr class="memitem:gac96c157017448d3aadf20472a6876697" id="r_gac96c157017448d3aadf20472a6876697"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#gac96c157017448d3aadf20472a6876697">b3MaxFloat</a> (float a, float b)</td></tr>
@@ -440,6 +438,9 @@ bool&#160;</td><td class="memItemRight"><b>b3AABB_Overlaps</b> (<a class="el" hr
 <tr class="memitem:ga27a5ff308c61e3efe534c29392e2ecdb" id="r_ga27a5ff308c61e3efe534c29392e2ecdb"><td class="memItemLeft"><a id="ga27a5ff308c61e3efe534c29392e2ecdb" name="ga27a5ff308c61e3efe534c29392e2ecdb"></a>
 <a class="el" href="#structb3_segment_distance_result">b3SegmentDistanceResult</a>&#160;</td><td class="memItemRight"><b>b3SegmentDistance</b> (<a class="el" href="#structb3_vec3">b3Vec3</a> p1, <a class="el" href="#structb3_vec3">b3Vec3</a> q1, <a class="el" href="#structb3_vec3">b3Vec3</a> p2, <a class="el" href="#structb3_vec3">b3Vec3</a> q2)</td></tr>
 <tr class="memdesc:ga27a5ff308c61e3efe534c29392e2ecdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the closest points on two line segments. <br /></td></tr>
+<tr class="memitem:gad50166d080e80469c3784f53b48bdc62" id="r_gad50166d080e80469c3784f53b48bdc62"><td class="memItemLeft"><a id="gad50166d080e80469c3784f53b48bdc62" name="gad50166d080e80469c3784f53b48bdc62"></a>
+bool&#160;</td><td class="memItemRight"><b>b3IsValidFloat</b> (float a)</td></tr>
+<tr class="memdesc:gad50166d080e80469c3784f53b48bdc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a valid number? Not NaN or infinity. <br /></td></tr>
 <tr class="memitem:gae1c9e22cc0cdf07bafb14868292645ea" id="r_gae1c9e22cc0cdf07bafb14868292645ea"><td class="memItemLeft"><a id="gae1c9e22cc0cdf07bafb14868292645ea" name="gae1c9e22cc0cdf07bafb14868292645ea"></a>
 bool&#160;</td><td class="memItemRight"><b>b3IsValidVec3</b> (<a class="el" href="#structb3_vec3">b3Vec3</a> a)</td></tr>
 <tr class="memdesc:gae1c9e22cc0cdf07bafb14868292645ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a valid vector? Not NaN or infinity. <br /></td></tr>
@@ -1085,26 +1086,6 @@ point2</td>
 
 <p>Creates a transform that converts a local point in frame B to a local point in frame A. </p>
 <p>This is useful for transforming points between the local spaces of two frames that are in world space. </p>
-
-</div>
-</div>
-<a id="gad50166d080e80469c3784f53b48bdc62" name="gad50166d080e80469c3784f53b48bdc62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad50166d080e80469c3784f53b48bdc62">&#9670;&#160;</a></span>b3IsValidFloat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool b3IsValidFloat </td>
-          <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Is this a valid number? Not NaN or infinity. </p>
-<dl class="section return"><dt>Returns</dt><dd>is this float valid (finite and not NaN). </dd></dl>
 
 </div>
 </div>
