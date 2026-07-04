@@ -256,7 +256,8 @@ External scheduler</h2>
 <div class="line">    MyTask* t = AllocTask();</div>
 <div class="line">    t-&gt;task        = task;</div>
 <div class="line">    t-&gt;taskContext = taskContext;</div>
-<div class="line">    SubmitToThreadPool(t);</div>
+<div class="line">    Scheduler* myScheduler = (Scheduler*)userContact;</div>
+<div class="line">    SubmitToThreadPool(myScheduler, t);</div>
 <div class="line">    <span class="keywordflow">return</span> t;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -271,8 +272,10 @@ External scheduler</h2>
 <div class="line"><a class="code hl_struct" href="group__world.html#structb3_world_def">b3WorldDef</a> worldDef = <a class="code hl_function" href="group__world.html#ga1d1770b87acf5ec11b3ae8c2e3b4ecd3">b3DefaultWorldDef</a>();</div>
 <div class="line">worldDef.<a class="code hl_variable" href="group__world.html#aec92da53d03603b1d2d4d04f4d834968">enqueueTask</a> = MyEnqueueTask;</div>
 <div class="line">worldDef.<a class="code hl_variable" href="group__world.html#a82484be0a29a16a8c00c3218f4e517e4">finishTask</a> = MyFinishTask;</div>
+<div class="line">worldDef.<a class="code hl_variable" href="group__world.html#ac8d35978bc579c65a52145b1c1aa8171">userTaskContext</a> = myScheduler;</div>
 <div class="line">worldDef.<a class="code hl_variable" href="group__world.html#a50d7f16b396ed412e4e7f734c7c764e9">workerCount</a> = GetMyWorkerCount();</div>
 <div class="ttc" id="agroup__world_html_a82484be0a29a16a8c00c3218f4e517e4"><div class="ttname"><a href="group__world.html#a82484be0a29a16a8c00c3218f4e517e4">b3WorldDef::finishTask</a></div><div class="ttdeci">b3FinishTaskCallback * finishTask</div><div class="ttdoc">function to finish a task</div><div class="ttdef"><b>Definition</b> types.h:192</div></div>
+<div class="ttc" id="agroup__world_html_ac8d35978bc579c65a52145b1c1aa8171"><div class="ttname"><a href="group__world.html#ac8d35978bc579c65a52145b1c1aa8171">b3WorldDef::userTaskContext</a></div><div class="ttdeci">void * userTaskContext</div><div class="ttdoc">User context that is provided to enqueueTask and finishTask.</div><div class="ttdef"><b>Definition</b> types.h:195</div></div>
 <div class="ttc" id="agroup__world_html_aec92da53d03603b1d2d4d04f4d834968"><div class="ttname"><a href="group__world.html#aec92da53d03603b1d2d4d04f4d834968">b3WorldDef::enqueueTask</a></div><div class="ttdeci">b3EnqueueTaskCallback * enqueueTask</div><div class="ttdoc">function to spawn task</div><div class="ttdef"><b>Definition</b> types.h:189</div></div>
 <div class="ttc" id="agroup__world_html_ga03ae4560a299e1f216714e6b10aa7d63"><div class="ttname"><a href="group__world.html#ga03ae4560a299e1f216714e6b10aa7d63">b3TaskCallback</a></div><div class="ttdeci">void b3TaskCallback(void *taskContext)</div><div class="ttdoc">Task interface This is the prototype for a Box3D task.</div><div class="ttdef"><b>Definition</b> types.h:20</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
