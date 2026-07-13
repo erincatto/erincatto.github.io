@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+SPDX-FileCopyrightText: 2026 Erin Catto
+SPDX-License-Identifier: MIT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box3D Benchmarks</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <style>
+        body {
+            background-color: #181818;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+        }
+
+        select,
+        button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .chart-item {
+            width: 100%;
+            height: 800px;
+            /* Fixed height for each chart */
+        }
+
+        canvas {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+        }
+
+        p,
+        label {
+            font:
+                1rem 'Fira Sans',
+                sans-serif;
+        }
+
+        input {
+            margin: 0.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Box3D Benchmarks</h1>
+
+
+    <fieldset>
+        <legend>Processors</legend>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-sse2" name="processorSelect" value="0" checked />
+                r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-scalar" name="processorSelect" value="1" />
+                r9-scalar : AMD Ryzen 9 7950X with no intrinsics
+            </label>
+        </div>
+
+    </fieldset>
+
+    <p>The AMD Ryzen 9 7950x is locked at 4.42GHz and threads are given affinity to the first CCD.</p>
+
+    <hr />
+
+    <label for="branchSelect">Compare Branch:</label>
+    <select id="branchSelect">
+        <option value="">Loading branches...</option>
+    </select>
+
+    <button id="loadButton">Load</button>
+
+    <hr />
+
+    <div class="chart-container">
+        <img src="/images/convex_pile_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="convex_pile"></canvas>
+        </div>
+        <img src="/images/joint_grid_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="joint_grid"></canvas>
+        </div>
+        <img src="/images/junkyard_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="junkyard"></canvas>
+        </div>
+        <img src="/images/large_pyramid_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="large_pyramid"></canvas>
+        </div>
+        <img src="/images/large_world_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="large_world"></canvas>
+        </div>
+        <img src="/images/many_pyramids_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="many_pyramids"></canvas>
+        </div>
+        <img src="/images/rain_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="rain"></canvas>
+        </div>
+        <img src="/images/trees100_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="trees100"></canvas>
+        </div>
+        <img src="/images/trees50_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="trees50"></canvas>
+        </div>
+        <img src="/images/trees25_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="trees25"></canvas>
+        </div>
+        <img src="/images/washer_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="washer"></canvas>
+        </div>
+    </div>
+
+    <script>
+
+        const repoBaseUrl = 'https://raw.githubusercontent.com/erincatto/box3d';
+
+        const benchmarks = [
+            {
+                label: 'Convex Pile',
+                id: 'convex_pile',
+                description: '5120 Random Convex Hulls with 32 Points Each',
+                steps: 500,
+                chart: null
+            },
+            {
+                label: 'Joint Grid',
+                id: 'joint_grid',
+                description: '10k Spheres, 19800 Spherical Joints',
+                steps: 100,
+                chart: null
+            },
+            {
+                label: 'Junkyard',
+                id: 'junkyard',
+                description: '10.6k Rocks with a Large Kinematic Pusher',
+                steps: 500,
+                chart: null
+            },
+            {
+                label: 'Large Pyramid',
+                id: 'large_pyramid',
+                description: '5050 Boxes',
+                steps: 200,
+                chart: null
+            },
+            {
+                label: 'Large World',
+                id: 'large_world',
+                description: '1M Static Boxes with 100 Spheres Dropped Over Time',
+                steps: 500,
+                chart: null
+            },
+            {
+                label: 'Many Pyramids',
+                id: 'many_pyramids',
+                description: '196 Pyramids with 55 Boxes Each',
+                steps: 100,
+                chart: null
+            },
+            {
+                label: 'Rain',
+                id: 'rain',
+                description: '300 Ragdolls Dropping onto a Mesh Grid',
+                steps: 400,
+                chart: null
+            },
+            {
+                label: 'Trees 100',
+                id: 'trees100',
+                description: '50 Trees Rolling on a 60k Triangle Mesh',
+                steps: 500,
+                chart: null
+            },
+            {
+                label: 'Trees 50',
+                id: 'trees50',
+                description: '50 Trees Rolling on a 240k Triangle Mesh',
+                steps: 500,
+                chart: null
+            },
+            {
+                label: 'Trees 25',
+                id: 'trees25',
+                description: '50 Trees Rolling on a 960k Triangle Mesh',
+                steps: 500,
+                chart: null
+            },
+            {
+                label: 'Washer',
+                id: 'washer',
+                description: '8000 Boxes in a Large Kinematic Washer',
+                steps: 1000,
+                chart: null
+            }];
+
+        const processors = [
+            {
+                folder: 'amd7950x_sse2',
+                label: 'r9-sse2',
+                dash: [],
+                enabled: true,
+            },
+            {
+                folder: 'amd7950x_scalar',
+                label: 'r9-scalar',
+                dash: [],
+                enabled: false,
+            },
+        ];
+
+        const branchSelect = document.getElementById('branchSelect');
+        const loadButton = document.getElementById('loadButton');
+
+        var currentBranch = null;
+
+        async function fetchCSV(url) {
+
+            try {
+                const response = await fetch(url);
+
+                if (response.ok) {
+                    return response.text();
+                }
+            }
+            catch (error) {
+                console.log(error.message);
+            }
+
+            return "";
+        }
+
+        async function fetchBranches() {
+            const url = `https://api.github.com/repos/erincatto/box3d/branches`;
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        }
+
+        async function populateBranches() {
+            try {
+                const branches = await fetchBranches();
+
+                // Clear existing options
+                branchSelect.innerHTML = '';
+
+                branches.forEach(branch => {
+                    if (branch.name != 'main') {
+                        const option = document.createElement('option');
+                        option.value = branch.name;
+                        option.textContent = branch.name;
+                        branchSelect.appendChild(option);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error fetching branches:', error);
+                branchSelect.innerHTML = '<option value="">Error loading branches</option>';
+            }
+        }
+
+        async function loadData(branches, benchmark) {
+            const datasets = [];
+
+            var file = benchmark.id + '.csv';
+
+            for (const branch of branches) {
+                for (const processor of processors) {
+
+                    if (processor.enabled == false) {
+                        continue;
+                    }
+
+                    const csvUrl = repoBaseUrl + '/' + branch + '/benchmark/' + processor.folder + '/' + file;
+
+                    try {
+                        const csv = await fetchCSV(csvUrl);
+                        if (csv.length == 0) {
+                            continue;
+                        }
+
+                        const csvResult = Papa.parse(csv, { header: true, skipEmptyLines: true });
+                        const data = csvResult.data;
+
+                        if (data.length == 0) {
+                            continue;
+                        }
+
+                        if (branch == 'main') {
+
+                            datasets.push({
+                                label: processor.label,
+
+                                // convert the csv data into chart ready data
+                                data: data.map(row => {
+                                    if ('fps' in row) {
+                                        return ({ x: row.threads, y: 1000 / row.fps });
+                                    }
+                                    else if ('ms' in row) {
+                                        return ({ x: row.threads, y: row.ms / benchmark.steps });
+                                    }
+                                }),
+
+                                borderDash: processor.dash,
+
+                                fill: false
+                            });
+                        }
+                        else {
+                            // remove leading name from branch name (e.g. erincatto)
+                            const branchLabel = branch.split('/').pop();
+
+                            datasets.push({
+                                label: processor.label + '/' + branchLabel,
+
+                                // convert the csv data into chart ready data
+                                data: data.map(row => {
+                                    if ('fps' in row) {
+                                        return ({ x: row.threads, y: 1000 / row.fps });
+                                    }
+                                    else if ('ms' in row) {
+                                        return ({ x: row.threads, y: row.ms / benchmark.steps });
+                                    }
+                                }),
+
+                                borderDash: [5, 5],
+                                fill: false
+                            });
+                        }
+                    }
+                    catch (error) {
+                        console.error(`Error loading the CSV file (${csvUrl}):`, error);
+                        throw new Error('Failed to load the CSV file. It may be missing or inaccessible.');
+                    }
+                }
+            }
+
+            return { datasets: datasets, benchmark: benchmark };
+        }
+
+        async function createChart(datasets, benchmark) {
+            // get the document element for this benchmark
+            const ctx = document.getElementById(benchmark.id).getContext('2d');
+
+            if (benchmark.chart) {
+                // Destroy the previous chart if it exists
+                benchmark.chart.destroy();
+                benchmark.chart = null;
+            }
+
+            if (datasets == null) {
+                return;
+            }
+
+            benchmark.chart = new Chart(ctx,
+                {
+                    type: 'line',
+                    data: { datasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        layout: {
+                            padding: {
+                                left: 10,
+                                right: 20,
+                                top: 10,
+                                bottom: 10
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: benchmark.label + ': ' + benchmark.description,
+                                color: '#e0e0e0'
+                            },
+                            legend: {
+                                display: true,
+                                labels: {
+                                    color: '#e0e0e0'
+                                }
+                            },
+                        },
+                        scales: {
+                            x: {
+                                title:
+                                {
+                                    display: true,
+                                    text: 'threads',
+                                    color: '#e0e0e0'
+                                },
+                                type: 'linear',
+                                position: 'bottom',
+                                grid: {
+                                    color: '#333'
+                                },
+                                ticks: {
+                                    color: '#e0e0e0'
+                                }
+                            },
+                            y: {
+                                title:
+                                {
+                                    display: true,
+                                    text: 'ms/step',
+                                    color: '#e0e0e0'
+                                },
+                                grid: {
+                                    color: '#333'
+                                },
+                                ticks: {
+                                    color: '#e0e0e0'
+                                },
+                                min: 0
+                            }
+                        }
+                    }
+                });
+        }
+
+        async function createCharts() {
+            const branches = ['main'];
+
+            if (currentBranch != null) {
+                branches.push(currentBranch);
+            }
+
+            const dataPromises = [];
+            for (const benchmark of benchmarks) {
+                dataPromises.push(loadData(branches, benchmark));
+            }
+
+            Promise.all(dataPromises).then((values) => {
+                for (value of values) {
+                    createChart(value.datasets, value.benchmark);
+                }
+            });
+        }
+
+        function updateProcessors() {
+            const checkboxes = document.querySelectorAll('input[name="processorSelect"]:checked');
+            processors.forEach(processor => {
+                processor.enabled = false;
+            });
+
+            checkboxes.forEach(checkbox => {
+                processors[checkbox.value].enabled = true;
+            });
+
+            createCharts();
+        }
+
+        document.querySelectorAll('input[name="processorSelect"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProcessors);
+        });
+
+        // connect button listener
+        loadButton.addEventListener('click', async () => {
+
+            if (branchSelect.value == null) {
+                alert('No branch selected');
+            }
+            else {
+                try {
+                    currentBranch = branchSelect.value;
+                    await createCharts();
+                }
+                catch (error) {
+                    // failed to load data
+                    alert(error.message);
+                }
+            }
+        });
+
+        const checkboxes = document.querySelectorAll('input[name="processorSelect"]:checked');
+        checkboxes.forEach(checkbox => {
+            processors[checkbox.value].enabled = true;
+        });
+
+        Chart.defaults.font.size = 28;
+        createCharts().then(populateBranches());
+
+    </script>
+</body>
+
+</html>
