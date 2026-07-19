@@ -82,9 +82,18 @@ SPDX-License-Identifier: MIT -->
             </label>
         </div>
 
+        <div>
+            <label>
+                <input type="checkbox" id="m2-neon" name="processorSelect" value="2" />
+                m2-neon : Apple M2 with ARM Neon intrinsics
+            </label>
+        </div>
+
     </fieldset>
 
-    <p>The AMD Ryzen 9 7950x is locked at 4.42GHz and threads are given affinity to the first CCD.</p>
+    <p>The AMD Ryzen 9 7950x is locked at 4.42GHz and threads are given affinity to the first CCD.
+        The M2 is allowed to boost so it appears faster than the AMD CPU. In practice the AMD chip is slightly
+        faster.</p>
 
     <hr />
 
@@ -237,6 +246,12 @@ SPDX-License-Identifier: MIT -->
             {
                 folder: 'amd7950x_scalar',
                 label: 'r9-scalar',
+                dash: [],
+                enabled: false,
+            },
+            {
+                folder: 'm2air_neon',
+                label: 'm2-neon',
                 dash: [],
                 enabled: false,
             },
