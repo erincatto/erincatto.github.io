@@ -6,8 +6,15 @@
     <description>Recent content on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SIMD for Collision</title>
+      <link>https://box2d.org/posts/2026/07/simd-for-collision/</link>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2026/07/simd-for-collision/</guid>
+      <description>In a previous post SIMD Matters I discussed the big wins I got from graph coloring to make the contact solver faster. That same approach exists in Box3D. I like to call this approach &amp;ldquo;wide SIMD&amp;rdquo;. The idea is to solve multiple work units at the same time. In the contact solver this means solving four contact points at the same time.&#xA;This is different from &amp;ldquo;narrow SIMD&amp;rdquo; where a 3-vector (xyz) is put into a SIMD register and then standard vector math is expressed as SIMD intrinsics.</description>
+    </item>
     <item>
       <title>Announcing Box3D</title>
       <link>https://box2d.org/posts/2026/06/announcing-box3d/</link>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="In a previous post SIMD Matters I discussed the big wins I got from graph coloring to make the contact solver faster. That same approach exists in Box3D. I like to call this approach &ldquo;wide SIMD&rdquo;. The idea is to solve multiple work units at the same time. In the contact solver this means solving four contact points at the same time.
+This is different from &ldquo;narrow SIMD&rdquo; where a 3-vector (xyz) is put into a SIMD register and then standard vector math is expressed as SIMD intrinsics." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://box2d.org/posts/2026/07/simd-for-collision/" />
+
+
+    <title>
+        
+            SIMD for Collision :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.b61fe372529dcadaf46f8d62e54d2b9f554667012150b9e4cfc019eae2843483.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SIMD for Collision">
+  <meta name="twitter:description" content="In a previous post SIMD Matters I discussed the big wins I got from graph coloring to make the contact solver faster. That same approach exists in Box3D. I like to call this approach “wide SIMD”. The idea is to solve multiple work units at the same time. In the contact solver this means solving four contact points at the same time.
+This is different from “narrow SIMD” where a 3-vector (xyz) is put into a SIMD register and then standard vector math is expressed as SIMD intrinsics.">
+
+
+
+
+
+    <meta property="article:published_time" content="2026-07-18 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://box2d.org/about/">About</a></li><li><a href="https://box2d.org/documentation/">Box2D Docs</a></li><li><a href="https://box2d.org/documentation3d/">Box3D Docs</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="https://box2d.org/posts/">Posts</a></li><li><a href="https://box2d.org/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Jul 18, 2026</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://box2d.org/posts/2026/07/simd-for-collision/">SIMD for Collision</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>In a previous post <a href="https://box2d.org/posts/2024/08/simd-matters/">SIMD Matters</a> I discussed the big wins I got from graph coloring to make the contact solver faster. That same approach exists in Box3D. I like to call this approach &ldquo;wide SIMD&rdquo;. The idea is to solve multiple work units at the same time. In the contact solver this means solving four contact points at the same time.</p>
+<p>This is different from &ldquo;narrow SIMD&rdquo; where a 3-vector (xyz) is put into a SIMD register and then standard vector math is expressed as SIMD intrinsics. Narrow SIMD can be useful, but the gains are not as obvious.</p>
+<p>In 3D there is an opportunity for using wide SIMD that doesn&rsquo;t exist in 2D. Consider the convex pile benchmark ported from <a href="https://github.com/Pierre-Terdiman/PEEL_PhysX_Edition">PEEL</a>. This benchmark drops 5120 convex hulls, each with 32 points.</p>
+<p><img src="/images/convex_pile_benchmark_3d.png" alt="Convex Pile"></p>
+<p>Box3D treats boxes as hulls and many of the benchmarks use boxes. The performance with boxes has been good and typically most of the cost is not in the narrow phase. But the 32 point hull is a different beast. Let&rsquo;s call it &ldquo;boulder&rdquo;. The table below shows the hull details for a box compared to the boulder.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Hull</th>
+<th style="text-align:center">Vertices</th>
+<th style="text-align:center">Faces</th>
+<th style="text-align:center">Edges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Box</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:left">Boulder</td>
+<td style="text-align:center">32</td>
+<td style="text-align:center">59</td>
+<td style="text-align:center">89</td>
+</tr>
+</tbody>
+</table>
+<p>Box3D uses the <a href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem">Separating Axis Test</a> for collision detection. This is abbreviated as SAT. Using SAT I can find the best features to use for pushing the shapes apart and precisely how far apart they need to be pushed to remove overlap. Furthermore, I use these results to compute the contact normal and the contact points.</p>
+<p>Other physics engines may use the distance algorithm <a href="https://en.wikipedia.org/wiki/Gilbert%E2%80%93Johnson%E2%80%93Keerthi_distance_algorithm">GJK</a> instead with an overlap fallback such as the <a href="https://graphics.stanford.edu/courses/cs468-01-fall/Papers/van-den-bergen.pdf">Expanding Polytope Algorithm</a>, also known as EPA.</p>
+<p>I&rsquo;m a big fan of SAT for convex hull collision because it doesn&rsquo;t require a collision margin. Shapes can rest directly on each other. The GJK and EPA combo usually tries to keep shapes slightly separated to make collision faster. This can lead to visual gaps. Also, EPA can be numerically brittle and often physics engines will need a fallback if EPA fails: a fallback for the fallback. EPA is essentially an algorithm for computing a convex hull, and the input data can be flat slivers. That is a challenging scenario for convex hull computation. Hence the need for a second fallback.</p>
+<p>Unfortunately, SAT in 3D has quadratic complexity. With two hulls A and B, the collision algorithm must test the faces of hull A against the vertices of hull B, the faces of hull B against the vertices of hull A, and the edges of hull A against the edges of hull B. In the worst case, every combination must be evaluated.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Combination</th>
+<th style="text-align:center">Face-Vertex</th>
+<th style="text-align:center">Vertex-Face</th>
+<th style="text-align:center">Edge-Edge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Box-Box</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">144</td>
+</tr>
+<tr>
+<td style="text-align:left">Boulder-Boulder</td>
+<td style="text-align:center">59</td>
+<td style="text-align:center">59</td>
+<td style="text-align:center">7921</td>
+</tr>
+</tbody>
+</table>
+<p>The number of edge-edge combinations grows quadratically. There are some tricks to speed up the edge tests using the <a href="https://en.wikipedia.org/wiki/Gauss_map">Gauss Map</a>. See <a href="https://cairno.substack.com/p/improvements-to-the-separating-axis">Improvements to the Separating Axis Test</a> for more details. Regardless, the edge-edge test can easily dominate the entire simulation.</p>
+<p>So what does this edge-edge code look like? At a basic level it looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Edge edgeA : hullA.edges)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Edge edgeB : hullB.edges)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        TestCrossProduct(edgeA, edgeB);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If there are just 12 edges in each hull, doing SIMD on this is not a big win because SIMD requires some setup work. For SIMD to work well the data needs to be in <a href="https://en.wikipedia.org/wiki/AoS_and_SoA">structure of arrays</a> format (SoA).</p>
+<p>With 89 edges in each hull the story changes drastically. There are 7921 calls to <code>TestCrossProduct</code>. With wide SIMD I can test one edge of hullA against four edges of hullB simultaneously. It looks sort of like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Edge edgeA : hullA.edges)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (EdgeWide edgeWideB : hullB.edgesWide)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        TestCrossProductWide(edgeA, edgeWideB);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>There are a lot of hidden details in the snippet and you can look at the Box3D code if you are curious. But I&rsquo;m here to answer the question: should we care about SIMD for collision detection? Well, I have results! These are the results for the convex pile benchmark with the total milliseconds for a 500 step run. I tested 1 to 8 threads on an AMD 7950x with the CPU pegged at 4.42GHz. The results are the best of 4 runs.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Threads</th>
+<th style="text-align:center">Scalar</th>
+<th style="text-align:center">SSE2</th>
+<th style="text-align:center">AVX2-Lite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">40706</td>
+<td style="text-align:center">17337</td>
+<td style="text-align:center">15762</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">20799</td>
+<td style="text-align:center">8857</td>
+<td style="text-align:center">8131</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">13789</td>
+<td style="text-align:center">5946</td>
+<td style="text-align:center">5471</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center">10324</td>
+<td style="text-align:center">4509</td>
+<td style="text-align:center">4084</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:center">8359</td>
+<td style="text-align:center">3675</td>
+<td style="text-align:center">3361</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:center">6958</td>
+<td style="text-align:center">3106</td>
+<td style="text-align:center">2843</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:center">6006</td>
+<td style="text-align:center">2697</td>
+<td style="text-align:center">2477</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:center">5292</td>
+<td style="text-align:center">2410</td>
+<td style="text-align:center">2277</td>
+</tr>
+</tbody>
+</table>
+<p>SSE2 is over twice as fast as scalar! Keep in mind these timings are for the entire simulation, not just the edge-edge test. The scalar column also indicates that the contact solver runs in scalar mode. So this is the full picture of the simulation.</p>
+<p>Box3D only implements SSE2 intrinsics. In Box2D I have AVX2 intrinsics as well, but there were a surprising number of users without AVX2 capable CPUs. Nevertheless, just enabling the AVX2 architecture in Box3D gives a nice gain, as indicated in the AVX2-Lite column. Free performance gains are great to see. In the future I may try a real AVX2 implementation testing 8 edges at a time.</p>
+<p>This benchmark represents a 32-point hull with 89 edges. Surely SAT will be overrun as the point count grows further. Well, fortunately Box3D has a hard 128 edge limit. This limit already existed and has to do with keeping the hull storage compact (8-bit indices and two half-edges per edge). Somewhat surprisingly, converting complex hulls to meshes can solve the quadratic growth problem, but it makes the shape less suitable for a dynamic body.</p>
+<p>You may wonder if the SIMD edge tests moved the needle on box-box. Sadly it has almost no effect. This optimization seems to only benefit complex hulls. Such hulls can come up in several scenarios, such as destruction. So it is a worthy addition to Box3D.</p>
+<p>Finally, here is a video comparison and a side-by-side of the frame timings.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/7DYLTV4Gw-M?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Convex Pile Benchmark"
+      ></iframe>
+    </div>
+
+<p><img src="/images/sat_scalar_vs_sse2.png" alt="Frame Timings"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://box2d.org/tags/box3d">box3d</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>988 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2026-07-17 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2026</span>
+            
+                <span><a href="https://box2d.org/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e9104ec7f3e4b984c7f16d4ae9525f96d56c5cfd1c6eb78b9ddf3d3e675d3b40c222fd229e5ce55d43569e87a05921c5cad0ec1d686dcb09b62bcd77cf7cbe9e.js" integrity="sha512-6RBOx/PkuYTH8W1K6VJfltVsXP0cbreLnd89PmddO0DCIv0inlzlXUNWnoegWSHFytDsHWhtywm2K813z3y&#43;ng=="></script>
+    </body>
+</html>
