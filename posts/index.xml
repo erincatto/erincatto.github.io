@@ -2,192 +2,171 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Box2D</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://box2d.org/posts/</link>
     <description>Recent content in Posts on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Faster SAT</title>
-      <link>http://localhost:1313/posts/2026/09/faster-sat/</link>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/09/faster-sat/</guid>
-      <description>The separating axis test (SAT) works well for computing contact manifolds. Unlike GJK, it is robust when shapes are very close together and it works when shapes are overlapped. Box3D uses SAT for computing the contact manifolds between convex hulls (polytopes). I like using SAT because I can get all the contact points at once and it doesn&amp;rsquo;t need a fallback algorithm for overlap like GJK does. So I don&amp;rsquo;t need to waste time calling GJK only to have it fail and then drop to a fallback algorithm like EPA or SAT.</description>
-    </item>
-    <item>
-      <title>Math Tricks</title>
-      <link>http://localhost:1313/posts/2026/08/math-tricks/</link>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/08/math-tricks/</guid>
-      <description>Distance between rotations If you want the distance between two rotations you could compute the relative rotation like this:&#xA;$$R = R_1^T * R_2$$Then you can extract the axis and angle. Usually this is done with quaternions.&#xA;$$q = q_1^* q_2$$Where \(^*\) is the conjugate. The length of the vector part is:&#xA;$$a = \sqrt{ q_v \cdot q_v }$$Then you can get the angle:&#xA;$$\theta = 2 * \operatorname{atan2}(a, q_s)$$But this required an expensive square root and arctangent.</description>
-    </item>
+    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://box2d.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SIMD for Collision</title>
-      <link>http://localhost:1313/posts/2026/07/simd-for-collision/</link>
+      <link>https://box2d.org/posts/2026/07/simd-for-collision/</link>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/07/simd-for-collision/</guid>
+      <guid>https://box2d.org/posts/2026/07/simd-for-collision/</guid>
       <description>In a previous post SIMD Matters I discussed the big wins I got from graph coloring to make the contact solver faster. That same approach exists in Box3D. I like to call this approach &amp;ldquo;wide SIMD&amp;rdquo;. The idea is to process multiple work units at the same time. In the contact solver this means solving four contact points at the same time.&#xA;This is different from &amp;ldquo;narrow SIMD&amp;rdquo; where a 3-vector (xyz) is put into a SIMD register and then standard vector math is expressed as SIMD intrinsics.</description>
     </item>
     <item>
       <title>Announcing Box3D</title>
-      <link>http://localhost:1313/posts/2026/06/announcing-box3d/</link>
+      <link>https://box2d.org/posts/2026/06/announcing-box3d/</link>
       <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/06/announcing-box3d/</guid>
+      <guid>https://box2d.org/posts/2026/06/announcing-box3d/</guid>
       <description>I&amp;rsquo;m happy to announce the release of Box3D, an open source 3D physics engine. It is now available on GitHub.&#xA;Box3D repository&#xA;You can think of Box3D as a fork of Box2D, extended with many features needed for 3D games. Some additions:&#xA;Triangle mesh collision Height-field collision Baked compound collision The core architecture of Box3D remains almost identical to Box2D.&#xA;C API All library source is C17 Sub-stepping solver Continuous collision Graph coloring for large islands Wide SIMD contact solver Multi-threading hooks Optional internal scheduler Large world support with doubles for position Cross platform determinism Recording and replay If you want to see Box3D in action, watch this video:</description>
     </item>
     <item>
       <title>Replay</title>
-      <link>http://localhost:1313/posts/2026/06/replay/</link>
+      <link>https://box2d.org/posts/2026/06/replay/</link>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/06/replay/</guid>
+      <guid>https://box2d.org/posts/2026/06/replay/</guid>
       <description>Replay is a new system I developed for Box2D. The main goal is to allow users to send me files I can use to reproduce bugs. Because Box2D is open source, I can rarely run a user&amp;rsquo;s game or see their code in full context. This makes it hard to track down problems. Previously in v2.4 a user could use b2World::Dump to save a text file that let me reproduce bugs.</description>
     </item>
     <item>
-      <title>Contact Recycling</title>
-      <link>http://localhost:1313/posts/2026/05/contact-recycling/</link>
-      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/05/contact-recycling/</guid>
-      <description>Contact Recycling is a technique I&amp;rsquo;ve developed for Box2D and Box3D. First you might be wondering what is Box3D? More on that later.&#xA;Contact Recycling can drastically improve rigid body simulation performance. It can make the process of computing contact points almost free. Further it can significantly improved stability.&#xA;Contact Recycling is inspired as a combination of other techniques. I have not seen this specific technique used in other physics engines.</description>
-    </item>
-    <item>
       <title>Box2D 3.1</title>
-      <link>http://localhost:1313/posts/2025/04/box2d-3.1/</link>
+      <link>https://box2d.org/posts/2025/04/box2d-3.1/</link>
       <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025/04/box2d-3.1/</guid>
+      <guid>https://box2d.org/posts/2025/04/box2d-3.1/</guid>
       <description>Version 3.0 was released about 8 months ago. It was a huge update and it needed some refinement. Version 3.1 addresses most of the bugs and build problems. It also introduces some new features and refinements.&#xA;Character mover I&amp;rsquo;ve added experimental character mover support to 3.1. This uses a geometric solver. It should be useful for games that want greater control than what you get with a dynamic or kinematic body.</description>
     </item>
     <item>
       <title>Dynamic Tree Improvements</title>
-      <link>http://localhost:1313/posts/2025/03/dynamic-tree-improvements/</link>
+      <link>https://box2d.org/posts/2025/03/dynamic-tree-improvements/</link>
       <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2025/03/dynamic-tree-improvements/</guid>
+      <guid>https://box2d.org/posts/2025/03/dynamic-tree-improvements/</guid>
       <description>Dynamic Tree Insertion Dynamic tree insertion can be expensive if you try to optimize for some metric such as the surface area heuristic (SAH). The SAH tries find a node configuration that minimizes the total surface area of all internal nodes. The idea is to create fewer node visits for ray casts on average.&#xA;Insertion affects the surface area incrementally so it is essentially a greedy algorithm no matter how exhausive the search.</description>
     </item>
     <item>
       <title>Determinism</title>
-      <link>http://localhost:1313/posts/2024/08/determinism/</link>
+      <link>https://box2d.org/posts/2024/08/determinism/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2024/08/determinism/</guid>
+      <guid>https://box2d.org/posts/2024/08/determinism/</guid>
       <description>Determinism means many things when it comes to game development and especially physics engines. Generally in game development we like things to be repeatable. This makes debugging easier. This doesn&amp;rsquo;t rule out emergent behavior though because player input can be viewed as random.&#xA;Testing Determinism Determinism is a brittle feature. It is easy to break. Code changes can break it. Compiler versions can break it. So it needs to be tested using continuous integration, or CI for short.</description>
     </item>
     <item>
       <title>SIMD Matters</title>
-      <link>http://localhost:1313/posts/2024/08/simd-matters/</link>
+      <link>https://box2d.org/posts/2024/08/simd-matters/</link>
       <pubDate>Mon, 19 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2024/08/simd-matters/</guid>
+      <guid>https://box2d.org/posts/2024/08/simd-matters/</guid>
       <description>SIMD in game development Often in game development we talk about SIMD. It is the holy grail of CPU performance, often out of reach. The conventional wisdom is that it is difficult to achieve real gains from SIMD.&#xA;It is tempting to build a math library around SIMD hoping to get some performance gains. However, it often has no proven benefit. It just feels good to be using something we know can improve performance.</description>
     </item>
     <item>
       <title>Releasing Box2D 3.0</title>
-      <link>http://localhost:1313/posts/2024/08/releasing-box2d-3.0/</link>
+      <link>https://box2d.org/posts/2024/08/releasing-box2d-3.0/</link>
       <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2024/08/releasing-box2d-3.0/</guid>
+      <guid>https://box2d.org/posts/2024/08/releasing-box2d-3.0/</guid>
       <description>Over 18 months ago I announced that I was working on Box2D version 3.0 (v3 for short). And it has finally arrived! It has been a long journey and I&amp;rsquo;ve learned a lot. There is more work to do, but the library is ready to be used for game development.&#xA;I&amp;rsquo;d like to thank the Box2D users who tested v3 during the alpha and beta. Their feedback and bug reports have been super helpful!</description>
     </item>
     <item>
       <title>Solver2D</title>
-      <link>http://localhost:1313/posts/2024/02/solver2d/</link>
+      <link>https://box2d.org/posts/2024/02/solver2d/</link>
       <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2024/02/solver2d/</guid>
+      <guid>https://box2d.org/posts/2024/02/solver2d/</guid>
       <description>I was recently testing the Box2D version 3.0 alpha and found a stability problem. I found a fix for the problem fairly quickly, however the experience left me thinking about the progression of v3.0 and how the engine has been getting more features and more complexity. There are several joint types now. There is island management, multithreading, SIMD, graph coloring, continuous collision, and so on. These are all important features, but there is a problem.</description>
     </item>
     <item>
       <title>Simulation Islands</title>
-      <link>http://localhost:1313/posts/2023/10/simulation-islands/</link>
+      <link>https://box2d.org/posts/2023/10/simulation-islands/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/10/simulation-islands/</guid>
+      <guid>https://box2d.org/posts/2023/10/simulation-islands/</guid>
       <description>Island management is a fundamental low level feature of physics engines and can have a big impact on solver design and performance. This was one of the first problems I decided to work on for Box2D version 3 (v3).&#xA;Since I began working on v3 I&amp;rsquo;ve been comparing several algorithms for island management. My goal has been to make island building scale better with multiple CPU cores. Here are the three approaches I&amp;rsquo;ve considered:</description>
     </item>
     <item>
       <title>Starting Box2D 3.0</title>
-      <link>http://localhost:1313/posts/2023/01/starting-box2d-3.0/</link>
+      <link>https://box2d.org/posts/2023/01/starting-box2d-3.0/</link>
       <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2023/01/starting-box2d-3.0/</guid>
+      <guid>https://box2d.org/posts/2023/01/starting-box2d-3.0/</guid>
       <description>Over the holidays I started working on version 3.0 of Box2D. I started closing out some issues for v2.4 and then moved onto a backlog task: speculative collision. Speculative collision is a technique for continuous collision that promises to remove the serial bottleneck of time of impact sub-stepping. I made good progress in my research and then I realized that this would be a major update to Box2D. And if I&amp;rsquo;m doing a major update to Box2D I might as well tackle some other big features and make version 3.</description>
     </item>
     <item>
       <title>Ghost Collisions</title>
-      <link>http://localhost:1313/posts/2020/06/ghost-collisions/</link>
+      <link>https://box2d.org/posts/2020/06/ghost-collisions/</link>
       <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/06/ghost-collisions/</guid>
+      <guid>https://box2d.org/posts/2020/06/ghost-collisions/</guid>
       <description>Dealing with ghost collisions is a challenging problem in game physics. The basic idea comes from motion across a flat surface. You may have several shapes joined together to make a flat surface, like a triangle mesh in 3D or a chain of edges in 2D. Convex shapes can hit the internal connections and have their motion blocked. This is undesirable, we would rather have the convex shape move smoothly across the surface.</description>
     </item>
     <item>
       <title>Stuck Inside</title>
-      <link>http://localhost:1313/posts/2020/04/stuck-inside/</link>
+      <link>https://box2d.org/posts/2020/04/stuck-inside/</link>
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/04/stuck-inside/</guid>
+      <guid>https://box2d.org/posts/2020/04/stuck-inside/</guid>
       <description>There a several computational geometry algorithms that are relevant for preparing collision data: convex hull, mesh simplification, and convex decomposition.&#xA;Many implementations of these algorithms are developed outside the specific context of rigid body simulation. For example, qhull computes convex hulls and appears to be application agnostic. Simplygon is focused on simplifying render mesh.&#xA;On the other hand, convex decomposition algorithms such as V-HACD are developed with physics simulation in mind.</description>
     </item>
     <item>
       <title>Predictive Joint Limits</title>
-      <link>http://localhost:1313/posts/2020/04/predictive-joint-limits/</link>
+      <link>https://box2d.org/posts/2020/04/predictive-joint-limits/</link>
       <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/04/predictive-joint-limits/</guid>
+      <guid>https://box2d.org/posts/2020/04/predictive-joint-limits/</guid>
       <description>Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.&#xA;There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints.</description>
     </item>
     <item>
       <title>How to Transform a Plane</title>
-      <link>http://localhost:1313/posts/2018/09/how-to-transform-a-plane/</link>
+      <link>https://box2d.org/posts/2018/09/how-to-transform-a-plane/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/09/how-to-transform-a-plane/</guid>
+      <guid>https://box2d.org/posts/2018/09/how-to-transform-a-plane/</guid>
       <description>Suppose you have a plane equation in local space and you&amp;rsquo;d like to express that plane equation in world space. The plane in local space is written as:&#xA;$$P := (n, w)$$where \(n\) is the plane normal and \(w\) is the plane offset.&#xA;A point \(x\) is on the plane if&#xA;$$n \cdot x = w$$Now define a transform \(A\) as&#xA;$$A := (R, p)$$where \(R\) is an orthonormal rotation matrix and \(p\) is a translation vector.</description>
     </item>
     <item>
       <title>Box2D Subreddit</title>
-      <link>http://localhost:1313/posts/2018/07/box2d-subreddit/</link>
+      <link>https://box2d.org/posts/2018/07/box2d-subreddit/</link>
       <pubDate>Sat, 07 Jul 2018 21:53:34 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/07/box2d-subreddit/</guid>
+      <guid>https://box2d.org/posts/2018/07/box2d-subreddit/</guid>
       <description>I&amp;rsquo;m now a moderator on the Box2D subreddit. So I think this makes it the official!&#xA;r/box2d&#xA;I look forward to seeing Box2D discussion on reddit.</description>
     </item>
     <item>
       <title>Box2D Discord Server</title>
-      <link>http://localhost:1313/posts/2018/06/box2d-discord-server/</link>
+      <link>https://box2d.org/posts/2018/06/box2d-discord-server/</link>
       <pubDate>Sun, 24 Jun 2018 11:03:23 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/06/box2d-discord-server/</guid>
+      <guid>https://box2d.org/posts/2018/06/box2d-discord-server/</guid>
       <description>Hi All! I created a Box2D server on Discord.&#xA;Discord&#xA;On a related note, I&amp;rsquo;m considering locking the forums because I&amp;rsquo;d rather spend my limited free time working on Box2D than maintaining the forums. I&amp;rsquo;ve looked for new moderators over the last year or so unsuccessfully. Also updating phpBB and dealing with spam is not my cup of tea.&#xA;In the future I&amp;rsquo;d like to see most Box2D community interactions be on GitHub and Discord, with announcements on my Twitter account.</description>
     </item>
     <item>
       <title>Balancing Dynamic Trees</title>
-      <link>http://localhost:1313/posts/2014/08/balancing-dynamic-trees/</link>
+      <link>https://box2d.org/posts/2014/08/balancing-dynamic-trees/</link>
       <pubDate>Thu, 07 Aug 2014 09:36:34 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2014/08/balancing-dynamic-trees/</guid>
+      <guid>https://box2d.org/posts/2014/08/balancing-dynamic-trees/</guid>
       <description>I received this question on LinkedIn:&#xA;I&amp;rsquo;m working on a 3d dynamic aabb tree based on the concepts of Presson&amp;rsquo;s bullet contribution. I came across a bullet forum thread in which Dirk recommended looking at your box2d implementation. I noticed the major difference is that box2d is a balanced tree using a surface area heuristic while bullet&amp;rsquo;s is unbalanced with manhattan distance heuristic.&#xA;My guess is that keeping your tree balanced resulted in increased maintenance overhead but decreased tree query times.</description>
     </item>
     <item>
       <title>Computing a Basis</title>
-      <link>http://localhost:1313/posts/2014/02/computing-a-basis/</link>
+      <link>https://box2d.org/posts/2014/02/computing-a-basis/</link>
       <pubDate>Mon, 03 Feb 2014 11:33:04 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2014/02/computing-a-basis/</guid>
+      <guid>https://box2d.org/posts/2014/02/computing-a-basis/</guid>
       <description>Given a normalized 3D vector, here’s an efficient method for computing a full basis. The computed basis is axis aligned if the input vector is axis aligned.&#xA;void ComputeBasis(const Vec&amp;amp; a, Vec* b, Vec* c) { // Suppose vector a has all equal components and is a unit vector: // a = (s, s, s) // Then 3*s*s = 1, s = sqrt(1/3) = 0.57735. This means that at // least one component of a unit vector must be greater or equal // to 0.</description>
     </item>
     <item>
       <title>Troublesome Triangle</title>
-      <link>http://localhost:1313/posts/2014/01/troublesome-triangle/</link>
+      <link>https://box2d.org/posts/2014/01/troublesome-triangle/</link>
       <pubDate>Fri, 31 Jan 2014 16:50:09 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2014/01/troublesome-triangle/</guid>
+      <guid>https://box2d.org/posts/2014/01/troublesome-triangle/</guid>
       <description>I ran into a problem computing a polygon normal using Newell&amp;rsquo;s method as described in Christer Ericson&amp;rsquo;s excellent book Real-Time Collision Detection. In this case the polygon happens to a be a triangle that is close to the origin. So I would guess that Newell&amp;rsquo;s method would yield a great result. However, this is not true. I only get 2 digits of accuracy in single precision.&#xA;Here is the triangle:</description>
     </item>
     <item>
       <title>m128</title>
-      <link>http://localhost:1313/posts/2012/08/m128/</link>
+      <link>https://box2d.org/posts/2012/08/m128/</link>
       <pubDate>Fri, 31 Aug 2012 12:28:59 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2012/08/m128/</guid>
+      <guid>https://box2d.org/posts/2012/08/m128/</guid>
       <description>The best way to use SSE is to use the __m128 intrinsic directly. Unfortunately Visual Studio displays the values backwards (w,z,y,x). Bleh. Here is a change to autoexp.dat to correct the order.&#xA;First comment out this line:&#xA;__m128=$BUILTIN(M128) And add this line:&#xA;__m128=&amp;lt;m128_f32[0]&amp;gt;, &amp;lt;m128_f32[1]&amp;gt;, &amp;lt;m128_f32[2]&amp;gt;, &amp;lt;m128_f32[3]&amp;gt; </description>
     </item>
     <item>
       <title>Shape Coordinates</title>
-      <link>http://localhost:1313/posts/2012/03/shape-coordinates/</link>
+      <link>https://box2d.org/posts/2012/03/shape-coordinates/</link>
       <pubDate>Sun, 25 Mar 2012 20:52:29 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2012/03/shape-coordinates/</guid>
+      <guid>https://box2d.org/posts/2012/03/shape-coordinates/</guid>
       <description>Keep in mind that a shape does not know about bodies and stand apart from the dynamics system. Shapes are stored in a compact form that is optimized for size and performance. As such, shapes are not easily moved around. You have to manually set the shape vertex positions to move a shape. However, when a shape is attached to a body using a fixture, the shapes move rigidly with the host body.</description>
     </item>
     <item>
       <title>Pixels</title>
-      <link>http://localhost:1313/posts/2011/12/pixels/</link>
+      <link>https://box2d.org/posts/2011/12/pixels/</link>
       <pubDate>Sat, 17 Dec 2011 17:10:25 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2011/12/pixels/</guid>
+      <guid>https://box2d.org/posts/2011/12/pixels/</guid>
       <description>Box2D uses MKS (meters, kilograms, and seconds) units and radians for angles. You may have trouble working with meters because your game is expressed in terms of pixels. To deal with this in the testbed I have the whole game work in meters and just use an OpenGL viewport transformation to scale the world into screen space.&#xA;float lowerX = -25.0f, upperX = 25.0f, lowerY = -5.0f, upperY = 25.0f; gluOrtho2D(lowerX, upperX, lowerY, upperY); If your game must work in pixel units then you should convert your length units from pixels to meters when passing values from Box2D.</description>
     </item>
   </channel>

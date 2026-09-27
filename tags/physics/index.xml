@@ -2,24 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Physics on Box2D</title>
-    <link>http://localhost:1313/tags/physics/</link>
+    <link>https://box2d.org/tags/physics/</link>
     <description>Recent content in Physics on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/physics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Contact Recycling</title>
-      <link>http://localhost:1313/posts/2026/05/contact-recycling/</link>
-      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/05/contact-recycling/</guid>
-      <description>Contact Recycling is a technique I&amp;rsquo;ve developed for Box2D and Box3D. First you might be wondering what is Box3D? More on that later.&#xA;Contact Recycling can drastically improve rigid body simulation performance. It can make the process of computing contact points almost free. Further it can significantly improved stability.&#xA;Contact Recycling is inspired as a combination of other techniques. I have not seen this specific technique used in other physics engines.</description>
-    </item>
+    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://box2d.org/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Predictive Joint Limits</title>
-      <link>http://localhost:1313/posts/2020/04/predictive-joint-limits/</link>
+      <link>https://box2d.org/posts/2020/04/predictive-joint-limits/</link>
       <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2020/04/predictive-joint-limits/</guid>
+      <guid>https://box2d.org/posts/2020/04/predictive-joint-limits/</guid>
       <description>Box2D has support for continuous collision. This solves the problem of fast moving objects passing through each other due to discrete time steps. The Box2D continuous collision algorithm uses a time of impact (TOI) collision algorithm along with time sub-stepping for the response.&#xA;There are other artifacts due to discrete time steps. Joint limits can also suffer from fast movement. For example, consider a filing cabinet where the drawers use prismatic (slider) joints.</description>
     </item>
   </channel>
