@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="The separating axis test (SAT) works well for computing contact manifolds. Unlike GJK, it is robust when shapes are very close together and it works when shapes are overlapped. Box3D uses SAT for computing the contact manifolds between convex hulls (polytopes). I like using SAT because I can get all the contact points at once and it doesn&rsquo;t need a fallback algorithm for overlap like GJK does. So I don&rsquo;t need to waste time calling GJK only to have it fail and then drop to a fallback algorithm like EPA or SAT." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="http://localhost:1313/posts/2026/09/faster-sat/" />
+
+
+    <title>
+        
+            Faster SAT :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.c558bdf0d8e55a7c22abb792c60e9c32a08056aa550dfd80e77643221a54a3e3.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Faster SAT">
+  <meta name="twitter:description" content="The separating axis test (SAT) works well for computing contact manifolds. Unlike GJK, it is robust when shapes are very close together and it works when shapes are overlapped. Box3D uses SAT for computing the contact manifolds between convex hulls (polytopes). I like using SAT because I can get all the contact points at once and it doesn’t need a fallback algorithm for overlap like GJK does. So I don’t need to waste time calling GJK only to have it fail and then drop to a fallback algorithm like EPA or SAT.">
+
+
+
+
+
+    <meta property="article:published_time" content="2026-09-27 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://localhost:1313/about/">About</a></li><li><a href="https://box2d.org/documentation/">Box2D Docs</a></li><li><a href="https://box2d.org/documentation3d/">Box3D Docs</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="http://localhost:1313/posts/">Posts</a></li><li><a href="http://localhost:1313/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Sep 27, 2026</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="http://localhost:1313/posts/2026/09/faster-sat/">Faster SAT</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>The separating axis test (SAT) works well for computing contact manifolds. Unlike GJK, it is robust when shapes are very close together and it works when shapes are overlapped. Box3D uses SAT for computing the contact manifolds between convex hulls (polytopes). I like using SAT because I can get all the contact points at once and it doesn&rsquo;t need a fallback algorithm for overlap like GJK does. So I don&rsquo;t need to waste time calling GJK only to have it fail and then drop to a fallback algorithm like EPA or SAT. I also don&rsquo;t need to shrink shapes to keep collision in the cheaper GJK regime.</p>
+<h2 id="sat-is-expensive">SAT is expensive</h2>
+<p>However, SAT between polytopes can be quite expensive. If you are not careful it can become \(O(N^3)\) in the number of vertices. Most of the cost is testing edge pairs for separation. Box3D already has many different ways to speed up SAT between polytopes:</p>
+<ol>
+<li>The Gauss map is used to test edge pairs and reject them quickly when they don&rsquo;t live on the surface of the Minkowski difference.</li>
+<li>Faces adjacent to an edge are used to avoid computing support points in the edge pair tests.</li>
+<li>SIMD is used to test four edge pairs at once.</li>
+<li>The narrow-phase caches feature pairs and re-uses them across time steps until a separation tolerance is exceeded.</li>
+<li>Contact recycling is used to completely skip the contact point computation when the relative motion between shapes is less than around 5cm. I update the separation values when a manifold is recycled to keep stacking stable.</li>
+</ol>
+<p>As you can see, there is a lot of effort made to speed up SAT. Despite all that, Box3D can still be a bit slow when dealing with large piles of complex polytopes. The Convex Pile benchmark shows this. It is dominated by SAT. Namely the edge pair test is a hot loop that consumes many cycles. The feature cache and contact recycling don&rsquo;t help much in the beginning when everything is moving quickly.</p>
+<p><img src="/images/convex_pile.png" alt="convex_pile"><em>Convex Pile</em></p>
+<h2 id="inscribed-sphere-technique">Inscribed sphere technique</h2>
+<p>In 2011 the illustrious Pierre Terdiman suggested using internal objects to speed up SAT. The main idea is to use inscribed spheres to compute a cheap upper bound on the separation achievable by every face and edge pair. The work described here goes further than what Pierre documented. The headline is that I have developed a scheme to use the Gauss map edge arc to cull edges before they even reach the edge pair test. Before I get to that, let&rsquo;s warm up by looking at 2D.</p>
+<p>Consider the 2D case with convex polygons and inscribed circles.</p>
+<p><img src="/images/sat_01.svg" alt="sat_01"><em>Boxes with inscribed circles</em></p>
+<p>The vector \(d\) connects the centers of the two circles inscribed in A and B. The key observation is that the separation between the boxes is never more than:</p>
+$$||d|| - (r_A + r_B)$$<p>This means no separating axis can achieve a separation greater than this.</p>
+<p>Let&rsquo;s remove the boxes and focus on the circles. Then I&rsquo;ll combine the circles using the standard Minkowski equivalence. So we are looking at the separation between a circle and a point.</p>
+<p><img src="/images/sat_02.svg" alt="sat_02"><em>Inscribed circles</em></p>
+<p><img src="/images/sat_03.svg" alt="sat_03"><em>Minkowski conversion to circle and point</em></p>
+<p>This all seems pretty basic. But now consider any candidate unit length separating axis \(n\) coming out of \(A\). The upper bound on the separation is:</p>
+$$n \cdot d - r$$<p>where \(r = r_A + r_B\).</p>
+<p><img src="/images/sat_04.svg" alt="sat_04"><em>Candidate axis n</em></p>
+<p>Keep in mind that this is not the escape distance, this is a bound on what the SAT gives us for each axis. The escape distance can be smaller. Consider a point in a unit circle at (1/2, 0). Then \(d = [1/2, 0]\). In the +y normal direction the upper bound separation computed is:</p>
+$$n \cdot d - r = [0, 1] \cdot [1/2, 0] - 1 = -1$$<p>The separation is -1, so the overlap value is +1. The escape distance \(s\) is smaller, around 0.866. But this is fine. SAT doesn&rsquo;t give us the escape distance in every direction. It projects shapes along an axis and finds the overlap of the intervals. The inscribed circle technique gives us an upper bound on separation of the projected intervals.</p>
+<p><img src="/images/sat_05.svg" alt="sat_05"><em>Escape distance</em></p>
+<p>This is also not a local search technique. SAT is inherently a non-convex optimization problem, so a local search can get stuck in a local maximum. The inscribed circle technique is still doing a global search.</p>
+<p>So how does this help? Here&rsquo;s a separating axis test for the faces of A:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> bestIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> maxSeparation <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>FLT_MAX;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> countA; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Normal and point for face on polygon A.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Vec nA <span style="color:#f92672">=</span> nAs[i];
+</span></span><span style="display:flex;"><span>  Vec vA <span style="color:#f92672">=</span> vAs[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Find deepest vertex on polygon B along normal.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">float</span> si <span style="color:#f92672">=</span> FLT_MAX;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> countB; <span style="color:#f92672">++</span>j)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> sij <span style="color:#f92672">=</span> <span style="color:#a6e22e">Dot</span>(nA, vBs[j] <span style="color:#f92672">-</span> vA);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (sij <span style="color:#f92672">&lt;</span> si)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      si <span style="color:#f92672">=</span> sij;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (si <span style="color:#f92672">&gt;</span> maxSeparation)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    maxSeparation <span style="color:#f92672">=</span> si;
+</span></span><span style="display:flex;"><span>    bestIndex <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If both polygons have \(N\) points then this computation is \(O(N^2)\). Using the inscribed circle bound this can be
+re-written as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> bestIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> maxSeparation <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>FLT_MAX;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> countA; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Normal and point for face on polygon A.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Vec nA <span style="color:#f92672">=</span> nAs[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Skip this face if it can&#39;t beat the current maximum.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Dot</span>(nA, d) <span style="color:#f92672">-</span> r <span style="color:#f92672">&lt;</span> maxSeparation)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Vec vA <span style="color:#f92672">=</span> vAs[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Find deepest vertex on polygon B along normal.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">float</span> si <span style="color:#f92672">=</span> FLT_MAX;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> countB; <span style="color:#f92672">++</span>j)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> sij <span style="color:#f92672">=</span> <span style="color:#a6e22e">Dot</span>(nA, vBs[j] <span style="color:#f92672">-</span> vA);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( sij <span style="color:#f92672">&lt;</span> si )
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      si <span style="color:#f92672">=</span> sij;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (si <span style="color:#f92672">&gt;</span> maxSeparation)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    maxSeparation <span style="color:#f92672">=</span> si;
+</span></span><span style="display:flex;"><span>    bestIndex <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This on its own is quite amazing because it can trade \(N\) dot products for 1. Since this culling is desirable, it is helpful to seed the initial maximum with the separation along the face most aligned with \(d\). For hull B I test the faces seeded with the face most aligned with \(-d\). Again, this is not a local search. It is just setting an upper bound.</p>
+<p>Note value of \(r\) used above should be reduced slightly to protect against found off problems. Box3D requires this reduction so the seed face passes. Look at the Box3D source for details.</p>
+<h2 id="edge-culling">Edge culling</h2>
+<p>Speeding up the face tests is nice, but the elephant in the room is the 3D edge pair tests needed for colliding polytopes. The inscribed sphere test can be used to completely rule out an edge of a polytope for consideration before it even reaches the pair test. This way we can vastly reduce the number of pairs tested.</p>
+<p>Consider a top-down view of an edge of a polytope. The Gauss map has an arc for every edge that joins the adjacent face normals. There can be a separating axis formed from the cross product of an edge from A and an edge from B. That separating axis is at the intersection of the two edge arcs. So for a given edge we know any separation axis it generates will be somewhere along its Gauss arc.</p>
+<p>This means we can compute an upper bound for the separation an edge can achieve by finding the normal along that arc that generates the upper bound separation using the same inscribed sphere test as used for the faces. Except for an edge it is not a single normal, it is a range of normals. If that range of normals cannot possibly generate a separation greater than the maximum face separation (already computed earlier in the algorithm), then that edge can be culled. This culling is very valuable because each edge culled removes \(O(N)\) edge pair tests.</p>
+<p><img src="/images/sat_06.svg" alt="sat_06"><em>Gauss arc for an edge</em></p>
+<p>The math for finding the edge upper bound separation is conceptually simple but a refined approach covers a few details and can yield considerable gains. Another thing to consider is that culling edges does not involve updating the current maximum separation. That comes later when edge pairs are considered. All we want is a yes/no result: is this edge a candidate for the edge pair stage?</p>
+<p>I&rsquo;ve already put a lot of detailed comments in the Box3D code for this. So I&rsquo;ll just put the whole thing here so you don&rsquo;t need to dig through the code. Note that when testing hull B the direction \(d\) must be flipped.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// A hull edge is bounded by two face normals. On the Gauss map the edge becomes an arc between
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// those two face normals. An edge can only build the best separating axis if a normal on that arc
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// can beat the best separation value seen so far. This function determines if the upper bound
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// separation on that arc can possibly beat the current maximum face separation.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// This follows the upper bound used for hull faces:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// separation_upper_bound = dot(axis, centerB - centerA) - innerRadiusA - innerRadiusB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Inputs:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// d the vector connecting the hull centers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// a1 = dot(n1, d)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// a2 = dot(n2, d)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// c = dot(n1, n2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// bound = maxFaceSeparation + radiusBound
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// This returns 1 if the edge is a candidate and 0 otherwise.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">b3TestEdgeCandidate</span>( <span style="color:#66d9ef">float</span> a1, <span style="color:#66d9ef">float</span> a2, <span style="color:#66d9ef">float</span> c, <span style="color:#66d9ef">float</span> bound )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// c = cos(theta), the angle between the normals.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// s = sin(theta)^2 &gt;= 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">float</span> s <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">-</span> c <span style="color:#f92672">*</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// This is coincidentally the law of cosines. Break out your protractor.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">float</span> t <span style="color:#f92672">=</span> a1 <span style="color:#f92672">*</span> a1 <span style="color:#f92672">+</span> a2 <span style="color:#f92672">*</span> a2 <span style="color:#f92672">-</span> <span style="color:#ae81ff">2.0f</span> <span style="color:#f92672">*</span> a1 <span style="color:#f92672">*</span> a2 <span style="color:#f92672">*</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Exterior conditions:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Can either face normal beat the best separation? These cover the case where
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// d is outside the arc. Note that d pointing outside the arc does not cull this
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// edge. It can still generate the maximum separation (happens commonly).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> exterior <span style="color:#f92672">=</span> <span style="color:#a6e22e">b3MaxFloat</span>( a1, a2 ) <span style="color:#f92672">&gt;=</span> bound;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Project d into the plane that holds both n1 and n2, call that vector dp.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Introduce the coordinates b1 and b2 (these have units of length).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// dp = b1*n1 + b2*n2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Since dp is the projection of d into the plane of cross(n1, n2):
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// dot(n1, dp) == dot(n1, d) == a1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// dot(n2, dp) == dot(n2, d) == a2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Dot the equation with n1 and n2:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// a1 = b1 + b2*c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// a2 = b1*c + b2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Solve for b1 and b2 using Cramer&#39;s Rule
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// b1 = (a1 - a2 * c) / s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// b2 = (a2 - a1 * c) / s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// s = 1 - c * c is positive, so b1 and b2 must be positive for d to live in
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// the arc between n1 and n2.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// The peak value along d is then norm(dp):
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// dot(dp, dp) = dot(b1*n1 + b2*n2, d)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//             = b1*a1 + b2*a2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//             = (a1*a1 - a1*a2*c + a2*a2 - a1*a2*c) / s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//             = (a1*a1 + a2*a2 - 2*a1*a2*c) / s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//             = t / s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// The interior is a candidate if:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// norm(dp) &gt;= bound
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// sqrt(t / s) &gt;= bound
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// If bound &lt; 0 this is always true. Otherwise
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// t &gt; bound^2 * s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Interior conditions:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// b1 and b2 positive (interior arc): a1 &gt;= c * a2 &amp; a2 &gt;= c * a1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// bound &lt;= 0.0: the interior arc is automatically a candidate because it is positive
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// s &lt; B3_PARALLEL_TOL : n1 and n2 are nearly parallel so give up and pass the edge to the next stage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// t &gt;= bound * bound * s : bound is positive and the interior normal direction is a candidate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Using bit ops here to avoid branches.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> interior <span style="color:#f92672">=</span> ( a1 <span style="color:#f92672">&gt;=</span> c <span style="color:#f92672">*</span> a2 ) <span style="color:#f92672">&amp;</span> ( a2 <span style="color:#f92672">&gt;=</span> c <span style="color:#f92672">*</span> a1 ) <span style="color:#f92672">&amp;</span> 
+</span></span><span style="display:flex;"><span>            ( ( bound <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0.0f</span> ) <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>              ( s <span style="color:#f92672">&lt;</span> B3_PARALLEL_TOL ) <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>              ( t <span style="color:#f92672">&gt;=</span> bound <span style="color:#f92672">*</span> bound <span style="color:#f92672">*</span> s ) );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> exterior <span style="color:#f92672">|</span> interior;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="results">Results</h2>
+<p>There is a Hull Culling sample in Box3D that shows the culling results for a pair of hulls from the Convex Pile sample.</p>
+<p><img src="/images/hull_culling.png" alt="hull_culling"><em>Hull culling</em></p>
+<p>These hulls have 32 vertices, 59 faces, and 89 edges. Typically games can get away with simpler hulls, so this hull is a good stress test for the narrow-phase.</p>
+<p>For the configuration shown 86% of the face tests are culled and 98% of the edge pair tests are culled. This results in a dramatic speed up of SAT. The Convex Pile benchmark roughly doubled in performance, meaning the narrow-phase more than doubled in performance.</p>
+<p>I&rsquo;m guessing you are curious about other less sphere-like shapes. So I tested two skinny cylinders, each with 64 vertices. The relatively small embedded spheres lead to less culling. In this case 76% of the edge pairs get culled. This is somewhat like back-face culling. If we can cull 50% of the edges from a hull then the number of pairs is reduced by 75%.</p>
+<p><img src="/images/cylinder_cull.png" alt="cylinder_culling"><em>Cylinder culling</em></p>
+<p>And when does culling completely fail? When shapes are deeply overlapped almost nothing is culled. Deep overlap rarely happens in games and it is usually short lived.</p>
+<p>I ran benchmark deltas with and without the inscribed sphere cull. These have progressively more complex hulls. The washer benchmark shows a gain for box hulls so there is no regression on simple hulls. Junkyard uses a 10 point <em>rock</em> shaped hull with a solid gain. And finally the Convex Pile shows the top gain. I&rsquo;ve included the other stages to indicate the level of noise in the benchmarks and to provide perspective on the relative costs of each stage. The millisecond timing values here are for the full run: washer runs 1000 steps, junkyard 500, and convex_pile 500.</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Stage</th>
+<th style="text-align:right">Before (ms)</th>
+<th style="text-align:right">After (ms)</th>
+<th style="text-align:right">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>washer</td>
+<td>pairs</td>
+<td style="text-align:right">481.2</td>
+<td style="text-align:right">483.5</td>
+<td style="text-align:right">+0.5%</td>
+</tr>
+<tr>
+<td></td>
+<td>collide</td>
+<td style="text-align:right">2,191.5</td>
+<td style="text-align:right">2,034.8</td>
+<td style="text-align:right">-7.1%</td>
+</tr>
+<tr>
+<td></td>
+<td>solve</td>
+<td style="text-align:right">1,892.0</td>
+<td style="text-align:right">1,892.5</td>
+<td style="text-align:right">0.0%</td>
+</tr>
+<tr>
+<td></td>
+<td>total</td>
+<td style="text-align:right">4,573.9</td>
+<td style="text-align:right">4,431.1</td>
+<td style="text-align:right">-3.1%</td>
+</tr>
+<tr>
+<td>junkyard</td>
+<td>pairs</td>
+<td style="text-align:right">257.5</td>
+<td style="text-align:right">266.5</td>
+<td style="text-align:right">+3.5%</td>
+</tr>
+<tr>
+<td></td>
+<td>collide</td>
+<td style="text-align:right">1,699.5</td>
+<td style="text-align:right">1,473.6</td>
+<td style="text-align:right">-13.3%</td>
+</tr>
+<tr>
+<td></td>
+<td>solve</td>
+<td style="text-align:right">1,037.2</td>
+<td style="text-align:right">1,031.2</td>
+<td style="text-align:right">-0.6%</td>
+</tr>
+<tr>
+<td></td>
+<td>total</td>
+<td style="text-align:right">3,003.9</td>
+<td style="text-align:right">2,779.2</td>
+<td style="text-align:right">-7.5%</td>
+</tr>
+<tr>
+<td>convex_pile</td>
+<td>pairs</td>
+<td style="text-align:right">178.0</td>
+<td style="text-align:right">173.7</td>
+<td style="text-align:right">-2.4%</td>
+</tr>
+<tr>
+<td></td>
+<td>collide</td>
+<td style="text-align:right">2,567.6</td>
+<td style="text-align:right">976.7</td>
+<td style="text-align:right">-62.0%</td>
+</tr>
+<tr>
+<td></td>
+<td>solve</td>
+<td style="text-align:right">360.0</td>
+<td style="text-align:right">357.3</td>
+<td style="text-align:right">-0.7%</td>
+</tr>
+<tr>
+<td></td>
+<td>total</td>
+<td style="text-align:right">3,109.4</td>
+<td style="text-align:right">1,512.3</td>
+<td style="text-align:right">-51.4%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary</h2>
+<p>Edge culling using inscribed spheres speeds up the global SAT search. This is still a global search and it gives the global maximum separation value. It is not approximate and cannot get stuck in a local maxima. It is a simple addition to the SAT algorithm. You can bolt this culling approach into your code using a couple small functions and  get large performance gains for complex hulls.</p>
+<p>The main pipeline requirement is to compute the inscribed sphere. This doesn&rsquo;t have to be optimal. Box3D just computes the hull centroid and then finds the closest face plane to determine the radius. Just an \(O(N)\) scan while the hull is being built.</p>
+<h2 id="references">References</h2>
+<p>Pierre&rsquo;s article is the inspiration for the inscribed sphere technique. Choi et al provide the fast edge pair Minkowski test popularized by Dirk. Cairn sketched the SIMD edge pair test in Box3D. The last three provide detailed explanations of the Guass map.</p>
+<ul>
+<li>Pierre Terdiman: Faster convex-convex SAT: internal objects: <a href="https://www.codercorner.com/blog/?p=461">https://www.codercorner.com/blog/?p=461</a></li>
+<li>Choi et al: Computing the Minimum Directional Distance between Two Convex Polyhedra: <a href="https://cs.hku.hk/data/techreps/document/TR-2006-01.pdf">https://cs.hku.hk/data/techreps/document/TR-2006-01.pdf</a></li>
+<li>Dirk Gregorius: The Separating Axis Test between Convex Polyhedra: <a href="https://www.gdcvault.com/play/1017646">https://www.gdcvault.com/play/1017646</a></li>
+<li>Cairn Overturf: Improvements to the Separating Axis Test: <a href="https://cairnc.github.io/posts/improvements-to-the-separating-axis/">https://cairnc.github.io/posts/improvements-to-the-separating-axis/</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://localhost:1313/tags/collision">collision</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2582 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2026-09-26 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2026</span>
+            
+                <span><a href="http://localhost:1313/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.5e8dce0f66b31462903ee23382fed33b3e4e36e01df84590a8b567c38681e71b04ee196a21cfed0d05e58c0cdb7b8503aa09e518646d10555e8d327e65501e29.js" integrity="sha512-Xo3OD2azFGKQPuIzgv7TOz5ONuAd&#43;EWQqLVnw4aB5xsE7hlqIc/tDQXljAzbe4UDqgnlGGRtEFVejTJ&#43;ZVAeKQ=="></script>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="58.782207mm"
+   height="36.796677mm"
+   viewBox="0 0 58.782207 36.796677"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="sat_03.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.2050526"
+     inkscape:cx="-112.85814"
+     inkscape:cy="198.74651"
+     inkscape:window-width="2409"
+     inkscape:window-height="1651"
+     inkscape:window-x="789"
+     inkscape:window-y="262"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="-47.74749"
+       originy="-148.16667"
+       spacingx="2.6458333"
+       spacingy="2.6458334"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0"
+       empspacing="1"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="0.75"
+       markerHeight="0.75"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="strokeWidth">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-47.747491,-148.16666)">
+    <circle
+       style="fill:#a9a9a9;stroke:none;stroke-width:0.3;stroke-linecap:round"
+       id="path3"
+       cx="105.83334"
+       cy="166.6875"
+       r="0.69635528" />
+    <ellipse
+       style="fill:none;stroke:#a9a9a9;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:none"
+       id="ellipse2"
+       cx="21.34881"
+       cy="177.94212"
+       rx="18.144255"
+       ry="18.144253"
+       transform="rotate(-14.817453)" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
+       d="M 66.145833,166.68751 H 104.48014"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:2.3;font-family:'Hack Nerd Font';-inkscape-font-specification:'Hack Nerd Font, Normal';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.3;stroke-linecap:round;stroke-dasharray:none"
+       x="88.288445"
+       y="171.10492"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#000000;stroke:none;stroke-width:0.3"
+         x="88.288445"
+         y="171.10492">d</tspan></text>
+  </g>
+</svg>

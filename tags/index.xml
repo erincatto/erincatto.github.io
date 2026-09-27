@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Box2D</title>
-    <link>https://box2d.org/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://box2d.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math</title>
+      <link>http://localhost:1313/tags/math/</link>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/math/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Box3d</title>
-      <link>https://box2d.org/tags/box3d/</link>
+      <link>http://localhost:1313/tags/box3d/</link>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>https://box2d.org/tags/box3d/</guid>
+      <guid>http://localhost:1313/tags/box3d/</guid>
       <description></description>
     </item>
     <item>
       <title>Box2d</title>
-      <link>https://box2d.org/tags/box2d/</link>
+      <link>http://localhost:1313/tags/box2d/</link>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://box2d.org/tags/box2d/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Collision</title>
-      <link>https://box2d.org/tags/collision/</link>
-      <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://box2d.org/tags/collision/</guid>
+      <guid>http://localhost:1313/tags/box2d/</guid>
       <description></description>
     </item>
     <item>
       <title>Physics</title>
-      <link>https://box2d.org/tags/physics/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://box2d.org/tags/physics/</guid>
+      <link>http://localhost:1313/tags/physics/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/physics/</guid>
       <description></description>
     </item>
     <item>
-      <title>Math</title>
-      <link>https://box2d.org/tags/math/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://box2d.org/tags/math/</guid>
+      <title>Collision</title>
+      <link>http://localhost:1313/tags/collision/</link>
+      <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/collision/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://box2d.org/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Fri, 31 Aug 2012 12:28:59 +0000</pubDate>
-      <guid>https://box2d.org/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
   </channel>

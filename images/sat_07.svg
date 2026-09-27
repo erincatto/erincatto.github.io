@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="760"
+   height="320"
+   viewBox="0 0 760 320"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="sat_07.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="0.75"
+       markerHeight="0.75"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="strokeWidth">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#292a2d"
+     bordercolor="#666666"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:current-layer="drawing"
+     inkscape:zoom="2.425658"
+     inkscape:cx="330.42581"
+     inkscape:cy="103.88934"
+     inkscape:window-width="2104"
+     inkscape:window-height="1224"
+     inkscape:window-x="726"
+     inkscape:window-y="286"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="10"
+       spacingy="10"
+       empspacing="5"
+       color="#0099e5"
+       opacity="0.15"
+       empcolor="#0099e5"
+       empopacity="0.3"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     id="background"
+     inkscape:label="background"
+     sodipodi:insensitive="true">
+    <rect
+       id="panel"
+       x="0"
+       y="0"
+       width="760"
+       height="320"
+       style="fill:#e1e1e1;fill-opacity:1;stroke:none" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="drawing"
+     inkscape:label="drawing">
+    <path
+       style="fill:none;stroke:#a9a9a9;stroke-width:1.88975;stroke-linecap:round;stroke-dasharray:none"
+       id="path1"
+       transform="matrix(0.96663436,-0.25616015,0.25532095,0.96685636,0,0)"
+       sodipodi:type="arc"
+       sodipodi:cx="335.24539"
+       sodipodi:cy="245.0112"
+       sodipodi:rx="97.857445"
+       sodipodi:ry="98.006859"
+       sodipodi:start="4.955149"
+       sodipodi:end="5.8324193"
+       sodipodi:arc-type="arc"
+       d="m 358.76862,149.87808 a 97.857445,98.006859 0 0 1 64.55959,52.43593"
+       sodipodi:open="true" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
+       d="M 385.17967,149.91734 V 57.490591"
+       id="path5"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none"
+       x="353.41797"
+       y="110.9913"
+       id="text13"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         x="353.41797"
+         y="110.9913"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.13386">n<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+   id="tspan2">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none"
+       x="454.20499"
+       y="62.377739"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         x="454.20499"
+         y="62.377739"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.13386">d</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 250,150 H 385.42969 L 460,240"
+       id="path2" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
+       d="M 385.70798,150.18484 457.96947,89.999997"
+       id="path7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
+       d="M 385.70798,150.18484 451.84773,32.30902"
+       id="path8"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none"
+       x="427.96875"
+       y="136.36328"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="427.96875"
+         y="136.36328"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.13386">n<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+   id="tspan11">2</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:2.3;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       x="286.13672"
+       y="169.75781"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         x="286.13672"
+         y="169.75781">face 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:2.3;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       x="375.80469"
+       y="215.99609"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         x="375.80469"
+         y="215.99609">face 2</tspan></text>
+  </g>
+</svg>

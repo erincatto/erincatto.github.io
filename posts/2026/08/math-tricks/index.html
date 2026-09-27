@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Distance between rotations If you want the distance between two rotations you could compute the relative rotation like this:
+$$R = R_1^T * R_2$$Then you can extract the axis and angle. Usually this is done with quaternions.
+$$q = q_1^* q_2$$Where \(^*\) is the conjugate. The length of the vector part is:
+$$a = \sqrt{ q_v \cdot q_v }$$Then you can get the angle:
+$$\theta = 2 * \operatorname{atan2}(a, q_s)$$But this required an expensive square root and arctangent." />
+<meta name="keywords" content="game physics" />
+
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="http://localhost:1313/posts/2026/08/math-tricks/" />
+
+
+    <title>
+        
+            Math Tricks :: Box2D 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.min.c558bdf0d8e55a7c22abb792c60e9c32a08056aa550dfd80e77643221a54a3e3.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Math Tricks">
+  <meta name="twitter:description" content="Distance between rotations If you want the distance between two rotations you could compute the relative rotation like this:
+$$R = R_1^T * R_2$$Then you can extract the axis and angle. Usually this is done with quaternions.
+$$q = q_1^* q_2$$Where \(^*\) is the conjugate. The length of the vector part is:
+$$a = \sqrt{ q_v \cdot q_v }$$Then you can get the angle:
+$$\theta = 2 * \operatorname{atan2}(a, q_s)$$But this required an expensive square root and arctangent.">
+
+
+
+
+
+    <meta property="article:published_time" content="2026-08-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="/images/logo.svg" alt="Box2D" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://localhost:1313/about/">About</a></li><li><a href="https://box2d.org/documentation/">Box2D Docs</a></li><li><a href="https://box2d.org/documentation3d/">Box3D Docs</a></li><li><a href="https://box2d.org/doc_version_2_4/">Old Docs</a></li><li><a href="http://localhost:1313/posts/">Posts</a></li><li><a href="http://localhost:1313/publications/">Publications</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <span>Aug 3, 2026</span>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="http://localhost:1313/posts/2026/08/math-tricks/">Math Tricks</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <h2 id="distance-between-rotations">Distance between rotations</h2>
+<p>If you want the distance between two rotations you could compute the relative rotation like
+this:</p>
+$$R = R_1^T * R_2$$<p>Then you can extract the axis and angle. Usually this is done with quaternions.</p>
+$$q = q_1^* q_2$$<p>Where \(^*\) is the conjugate. The length of the vector part is:</p>
+$$a = \sqrt{ q_v \cdot q_v }$$<p>Then you can get the angle:</p>
+$$\theta = 2 * \operatorname{atan2}(a, q_s)$$<p>But this required an expensive square root and arctangent.</p>
+<p>A standard trick for finding the distance between two unit vectors is to take the dot product of them. This is equal to the cosine of the angle between them. The angle will between the vectors gets smaller as the dot product approaches one. For example, you can determine if the angle between two unit vectors is less than an angle \(\phi\) using this test:</p>
+$$n_1 \cdot n_2 > \cos{\phi}$$<p>Typically \(\phi\) is a constant like 5 degrees. You can compute this cosine offline and use the constant:</p>
+$$n_1 \cdot n_2 > 0.9962$$<p>Wouldn&rsquo;t it be nice if we can use the same trick for quaternions? Well we can!</p>
+<p>The relative quaternion has a vector component and scalar component expressed as:</p>
+$$q = \sin(\theta / 2) q_v + \cos(\theta / 2)$$<p>Notice the scalar part is \(\cos(\theta / 2)\). If we can find the scalar part efficiently, we can use this test to determine the size of the relative rotation.</p>
+$$q_s > \cos(\phi / 2)$$<p>It turns out the quaternion multiplication gives us the scalar result efficiently:</p>
+$$q_s = q_{1v} \cdot q_{2v} + q_{1s} q_{2s}$$<p>Or we can use the simple test:</p>
+$$q_1 \cdot q_2 > \cos(\phi / 2)$$<p>This is just the four component quaternion dot product. This is similar to the unit vector case and cheap to compute. No square root or arctangent is needed.</p>
+<p>However, I left one crucial detail out. Quaternions have double cover, so \(q\) and \(-q\) are the same rotation. The quaternion dot product can be close to negative one and be a small angle. So use this test instead:</p>
+$$(q_1 \cdot q_2)^2 > \cos(\phi / 2)^2$$
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://localhost:1313/tags/math">math</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>345 words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2026-08-02 17:00 -0700</p>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2026</span>
+            
+                <span><a href="http://localhost:1313/">Erin Catto</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.5e8dce0f66b31462903ee23382fed33b3e4e36e01df84590a8b567c38681e71b04ee196a21cfed0d05e58c0cdb7b8503aa09e518646d10555e8d327e65501e29.js" integrity="sha512-Xo3OD2azFGKQPuIzgv7TOz5ONuAd&#43;EWQqLVnw4aB5xsE7hlqIc/tDQXljAzbe4UDqgnlGGRtEFVejTJ&#43;ZVAeKQ=="></script>
+    </body>
+</html>
