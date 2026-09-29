@@ -5,7 +5,7 @@
    viewBox="0 0 760 320"
    version="1.1"
    id="svg1"
-   sodipodi:docname="sat_07.svg"
+   sodipodi:docname="sat_06.svg"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -46,14 +46,14 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:current-layer="drawing"
-     inkscape:zoom="2.425658"
-     inkscape:cx="330.42581"
-     inkscape:cy="103.88934"
+     inkscape:zoom="3.4303984"
+     inkscape:cx="441.34815"
+     inkscape:cy="114.56395"
      inkscape:window-width="2104"
      inkscape:window-height="1224"
      inkscape:window-x="726"
      inkscape:window-y="286"
-     inkscape:window-maximized="0">
+     inkscape:window-maximized="1">
     <inkscape:grid
        id="grid1"
        units="px"
@@ -87,7 +87,7 @@
      id="drawing"
      inkscape:label="drawing">
     <path
-       style="fill:none;stroke:#a9a9a9;stroke-width:1.88975;stroke-linecap:round;stroke-dasharray:none"
+       style="fill:none;stroke:#a9a9a9;stroke-width:1.5118113;stroke-linecap:round;stroke-dasharray:6.0472452,6.0472452;stroke-dashoffset:0"
        id="path1"
        transform="matrix(0.96663436,-0.25616015,0.25532095,0.96685636,0,0)"
        sodipodi:type="arc"
@@ -121,18 +121,18 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none"
-       x="454.20499"
-       y="62.377739"
+       x="471.89258"
+       y="58.273586"
        id="text8"><tspan
          sodipodi:role="line"
-         id="tspan8"
-         x="454.20499"
-         y="62.377739"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.13386">d</tspan></text>
+         id="tspan1"
+         x="471.89258"
+         y="58.273586">w</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
-       d="M 250,150 H 385.42969 L 460,240"
-       id="path2" />
+       d="M 210,150 385.70798,150.18484 480,264.55907"
+       id="path2"
+       sodipodi:nodetypes="ccc" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
        d="M 385.70798,150.18484 457.96947,89.999997"
@@ -140,7 +140,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
-       d="M 385.70798,150.18484 451.84773,32.30902"
+       d="M 385.70798,150.18484 466.4233,40"
        id="path8"
        sodipodi:nodetypes="cc" />
     <text
@@ -159,22 +159,22 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:2.3;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
-       x="286.13672"
+       x="266.13672"
        y="169.75781"
        id="text12"><tspan
          sodipodi:role="line"
          id="tspan12"
-         x="286.13672"
+         x="266.13672"
          y="169.75781">face 1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:2.3;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
-       x="375.80469"
-       y="215.99609"
+       x="385.80469"
+       y="229.75781"
        id="text14"><tspan
          sodipodi:role="line"
          id="tspan14"
-         x="375.80469"
-         y="215.99609">face 2</tspan></text>
+         x="385.80469"
+         y="229.75781">face 2</tspan></text>
   </g>
 </svg>

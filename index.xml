@@ -6,8 +6,15 @@
     <description>Recent content on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inscribed Spheres</title>
+      <link>https://box2d.org/posts/2026/09/inscribed-spheres/</link>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2026/09/inscribed-spheres/</guid>
+      <description>The separating axis test (SAT) works well for computing contact manifolds. Unlike GJK, it is robust when shapes are very close together and it works when shapes are overlapped. Box3D uses SAT for computing the contact manifolds between convex hulls (polytopes). I like using SAT because I can get all the contact points at once and it doesn&amp;rsquo;t need a fallback algorithm for overlap like GJK does. So I don&amp;rsquo;t need to waste time calling GJK only to have it fail and then drop to a fallback algorithm like EPA or SAT.</description>
+    </item>
     <item>
       <title>SIMD for Collision</title>
       <link>https://box2d.org/posts/2026/07/simd-for-collision/</link>

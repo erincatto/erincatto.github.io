@@ -46,9 +46,9 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:current-layer="drawing"
-     inkscape:zoom="1.7151991"
-     inkscape:cx="456.79828"
-     inkscape:cy="253.32336"
+     inkscape:zoom="2.4256578"
+     inkscape:cx="423.59643"
+     inkscape:cy="252.92108"
      inkscape:window-width="3840"
      inkscape:window-height="2131"
      inkscape:window-x="-9"
@@ -89,8 +89,8 @@
     <ellipse
        style="fill:none;stroke:#a9a9a9;stroke-width:1.88976;stroke-linecap:round;stroke-dasharray:none"
        id="path2"
-       cx="579.91077"
-       cy="170"
+       cx="193.73915"
+       cy="152.12144"
        rx="39.910736"
        ry="40.459164" />
     <rect
@@ -98,13 +98,13 @@
        id="rect2"
        width="79.821457"
        height="80.918304"
-       x="540"
-       y="129.54092" />
+       x="153.82838"
+       y="111.66236" />
     <ellipse
        style="fill:none;stroke:#a9a9a9;stroke-width:1.88976;stroke-linecap:round;stroke-dasharray:none"
        id="path1"
-       cx="229.11362"
-       cy="236.05486"
+       cx="439.48041"
+       cy="273.2988"
        rx="60.244831"
        ry="60.337376"
        transform="matrix(0.96663368,-0.2561627,0.25531841,0.96685703,0,0)" />
@@ -113,49 +113,49 @@
        id="rect1"
        width="281.14252"
        height="120.67475"
-       x="88.542328"
-       y="175.71748"
+       x="298.90912"
+       y="212.96141"
        transform="matrix(0.96663368,-0.2561627,0.25531841,0.96685703,0,0)" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.88976;stroke-linecap:round;stroke-dasharray:none"
-       x="251.83601"
-       y="99.052444"
+       x="184.75787"
+       y="102.03129"
        id="text3"
        transform="scale(0.99911728,1.0008835)"><tspan
          sodipodi:role="line"
          id="tspan3"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:1.88976"
-         x="251.83601"
-         y="99.052444">A</tspan></text>
+         x="184.75787"
+         y="102.03129">A</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.88976;stroke-linecap:round;stroke-dasharray:none"
-       x="570.43628"
-       y="110.41042"
+       x="464.9379"
+       y="82.556458"
        id="text4"
        transform="scale(0.99911728,1.0008835)"><tspan
          sodipodi:role="line"
          id="tspan4"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:1.88976"
-         x="570.43628"
-         y="110.41042">B</tspan></text>
+         x="464.9379"
+         y="82.556458">B</tspan></text>
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#DartArrow)"
-       d="M 282.30885,169.54092 H 575.19136"
+       d="M 196.90363,151.66235 H 489.78614"
        id="path4"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:2.3;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:1.13386;stroke-linecap:round;stroke-dasharray:none"
-       x="439.9288"
-       y="159.73575"
+       x="277.24792"
+       y="142.3316"
        id="text5"
        transform="scale(0.99911728,1.0008835)"><tspan
          sodipodi:role="line"
          id="tspan5"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:1.13386"
-         x="439.9288"
-         y="159.73575">d</tspan></text>
+         x="277.24792"
+         y="142.3316">d</tspan></text>
   </g>
 </svg>
