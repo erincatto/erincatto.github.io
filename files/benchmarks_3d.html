@@ -262,6 +262,9 @@ SPDX-License-Identifier: MIT -->
 
         var currentBranch = null;
 
+        // Chart labels for refs whose last path segment is not descriptive
+        const branchLabels = {};
+
         async function fetchCSV(url) {
 
             try {
@@ -287,9 +290,18 @@ SPDX-License-Identifier: MIT -->
             return response.json();
         }
 
+        async function fetchPulls() {
+            const url = `https://api.github.com/repos/erincatto/box3d/pulls?state=open&per_page=100`;
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        }
+
         async function populateBranches() {
             try {
-                const branches = await fetchBranches();
+                const [branches, pulls] = await Promise.all([fetchBranches(), fetchPulls()]);
 
                 // Clear existing options
                 branchSelect.innerHTML = '';
@@ -301,6 +313,17 @@ SPDX-License-Identifier: MIT -->
                         option.textContent = branch.name;
                         branchSelect.appendChild(option);
                     }
+                });
+
+                // The pull ref lives on the main repo, so PRs from forks load without knowing the fork
+                pulls.forEach(pull => {
+                    const ref = `refs/pull/${pull.number}/head`;
+                    branchLabels[ref] = `pr${pull.number}`;
+
+                    const option = document.createElement('option');
+                    option.value = ref;
+                    option.textContent = `PR #${pull.number}: ${pull.title} (${pull.user.login})`;
+                    branchSelect.appendChild(option);
                 });
 
             } catch (error) {
@@ -358,7 +381,7 @@ SPDX-License-Identifier: MIT -->
                         }
                         else {
                             // remove leading name from branch name (e.g. erincatto)
-                            const branchLabel = branch.split('/').pop();
+                            const branchLabel = branchLabels[branch] ?? branch.split('/').pop();
 
                             datasets.push({
                                 label: processor.label + '/' + branchLabel,
