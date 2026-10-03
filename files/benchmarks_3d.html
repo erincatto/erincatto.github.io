@@ -70,21 +70,28 @@ SPDX-License-Identifier: MIT -->
 
         <div>
             <label>
-                <input type="checkbox" id="r9-sse2" name="processorSelect" value="0" checked />
+                <input type="checkbox" id="r9-avx2" name="processorSelect" value="0" />
+                r9-avx2 : AMD Ryzen 9 7950X with AVX2 intrinsics
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="r9-sse2" name="processorSelect" value="1" checked />
                 r9-sse2 : AMD Ryzen 9 7950X with SSE2 intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="r9-scalar" name="processorSelect" value="1" />
+                <input type="checkbox" id="r9-scalar" name="processorSelect" value="2" />
                 r9-scalar : AMD Ryzen 9 7950X with no intrinsics
             </label>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" id="m2-neon" name="processorSelect" value="2" />
+                <input type="checkbox" id="m2-neon" name="processorSelect" value="3" />
                 m2-neon : Apple M2 with ARM Neon intrinsics
             </label>
         </div>
@@ -237,6 +244,12 @@ SPDX-License-Identifier: MIT -->
             }];
 
         const processors = [
+            {
+                folder: 'amd7950x_avx2',
+                label: 'r9-avx2',
+                dash: [],
+                enabled: false,
+            },
             {
                 folder: 'amd7950x_sse2',
                 label: 'r9-sse2',
