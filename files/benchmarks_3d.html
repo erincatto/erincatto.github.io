@@ -138,6 +138,10 @@ SPDX-License-Identifier: MIT -->
         <div class="chart-item">
             <canvas id="many_pyramids"></canvas>
         </div>
+        <img src="/images/mesh_drop_benchmark_3d.png" width="640" height="360">
+        <div class="chart-item">
+            <canvas id="mesh_drop"></canvas>
+        </div>
         <img src="/images/rain_benchmark_3d.png" width="640" height="360">
         <div class="chart-item">
             <canvas id="rain"></canvas>
@@ -205,6 +209,13 @@ SPDX-License-Identifier: MIT -->
                 id: 'many_pyramids',
                 description: '196 Pyramids with 55 Boxes Each',
                 steps: 100,
+                chart: null
+            },
+            {
+                label: 'Mesh Drop',
+                id: 'mesh_drop',
+                description: '10k Thin Boxes Dropping onto a 28.8k Triangle Wave Mesh',
+                steps: 170,
                 chart: null
             },
             {
