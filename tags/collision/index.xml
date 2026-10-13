@@ -6,8 +6,15 @@
     <description>Recent content in Collision on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/tags/collision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contact Recycling</title>
+      <link>https://box2d.org/posts/2026/10/contact-recycling/</link>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2026/10/contact-recycling/</guid>
+      <description>Contact recycling is a technique I developed for Box2D and Box3D. Contact recycling can drastically improve rigid body simulation performance, making the process of computing contact points almost free. Further, recycling can significantly improve stability.&#xA;Contact recycling combines ideas from other techniques. I had not seen this specific technique used in other physics engines as of March 2026 when I added it to Box2D in this pull request. There are similar solutions to the same problem but they have some fundamental differences.</description>
+    </item>
     <item>
       <title>Inscribed Spheres</title>
       <link>https://box2d.org/posts/2026/09/inscribed-spheres/</link>
