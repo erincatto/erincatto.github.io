@@ -10,17 +10,5 @@ var group__id =
     [ "B2_ID_INLINE", "group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17", null ],
     [ "B2_IS_NON_NULL", "group__id.html#ga03e01c7edcf0e9fd00bdfeda812dc715", null ],
     [ "B2_IS_NULL", "group__id.html#ga9e9f041452be21982f129ec4f2b3e259", null ],
-    [ "B2_NULL_ID", "group__id.html#ga04272bd688f0ee4c8943ea7e50cfee89", null ],
-    [ "b2LoadBodyId", "group__id.html#gaf188cb0902a41def8649864fecd7ac35", null ],
-    [ "b2LoadChainId", "group__id.html#ga81ae3d5afdf71280bcf724177ddc954d", null ],
-    [ "b2LoadContactId", "group__id.html#gabb6325e86081e0e12aae4e74665c4893", null ],
-    [ "b2LoadJointId", "group__id.html#ga7604fcb5af8ca2f56a12dca8b521184f", null ],
-    [ "b2LoadShapeId", "group__id.html#ga6ab01ab53a4d6b87a0914efa275d7d62", null ],
-    [ "b2LoadWorldId", "group__id.html#gae0bdb018fe8b832aeb09b753fce9acd2", null ],
-    [ "b2StoreBodyId", "group__id.html#ga62e960201450510eacde330f5d1e3595", null ],
-    [ "b2StoreChainId", "group__id.html#ga9b838a7345770019b89750e408ba3d23", null ],
-    [ "b2StoreContactId", "group__id.html#gaeaf65e88adb7253d43a46fdfbc2665d2", null ],
-    [ "b2StoreJointId", "group__id.html#ga7ec830b1528bbd0d43e5fa8e2fa2ea7a", null ],
-    [ "b2StoreShapeId", "group__id.html#ga5c07231299b480d28c8df498e588933c", null ],
-    [ "b2StoreWorldId", "group__id.html#ga7c8a835721ef12da5bbafcc5833f2297", null ]
+    [ "B2_NULL_ID", "group__id.html#ga04272bd688f0ee4c8943ea7e50cfee89", null ]
 ];

@@ -180,92 +180,69 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('id_8h_source.h
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">      ( id1 ).generation == ( id2 ).generation )</span></div>
 </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
-<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__id.html#ga7c8a835721ef12da5bbafcc5833f2297">  119</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint32_t <a class="code hl_function" href="group__id.html#ga7c8a835721ef12da5bbafcc5833f2297">b2StoreWorldId</a>( <a class="code hl_struct" href="group__id.html#structb2_world_id">b2WorldId</a> <span class="keywordtype">id</span> )</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint32_t b2StoreWorldId( <a class="code hl_struct" href="group__id.html#structb2_world_id">b2WorldId</a> <span class="keywordtype">id</span> )</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> ( (uint32_t)<span class="keywordtype">id</span>.index1 &lt;&lt; 16 ) | (uint32_t)<span class="keywordtype">id</span>.generation;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
-</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
-<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="group__id.html#gae0bdb018fe8b832aeb09b753fce9acd2">  125</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_world_id">b2WorldId</a> <a class="code hl_function" href="group__id.html#gae0bdb018fe8b832aeb09b753fce9acd2">b2LoadWorldId</a>( uint32_t x )</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_world_id">b2WorldId</a> b2LoadWorldId( uint32_t x )</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_struct" href="group__id.html#structb2_world_id">b2WorldId</a> <span class="keywordtype">id</span> = { (uint16_t)( x &gt;&gt; 16 ), (uint16_t)( x ) };</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
-</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
-<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="group__id.html#ga62e960201450510eacde330f5d1e3595">  132</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t <a class="code hl_function" href="group__id.html#ga62e960201450510eacde330f5d1e3595">b2StoreBodyId</a>( <a class="code hl_struct" href="group__id.html#structb2_body_id">b2BodyId</a> <span class="keywordtype">id</span> )</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t b2StoreBodyId( <a class="code hl_struct" href="group__id.html#structb2_body_id">b2BodyId</a> <span class="keywordtype">id</span> )</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">return</span> ( (uint64_t)<span class="keywordtype">id</span>.index1 &lt;&lt; 32 ) | ( (uint64_t)<span class="keywordtype">id</span>.world0 ) &lt;&lt; 16 | (uint64_t)<span class="keywordtype">id</span>.generation;</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
-</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
-<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="group__id.html#gaf188cb0902a41def8649864fecd7ac35">  138</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_body_id">b2BodyId</a> <a class="code hl_function" href="group__id.html#gaf188cb0902a41def8649864fecd7ac35">b2LoadBodyId</a>( uint64_t x )</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_body_id">b2BodyId</a> b2LoadBodyId( uint64_t x )</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_struct" href="group__id.html#structb2_body_id">b2BodyId</a> <span class="keywordtype">id</span> = { (int32_t)( x &gt;&gt; 32 ), (uint16_t)( x &gt;&gt; 16 ), (uint16_t)( x ) };</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
-</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
-<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="group__id.html#ga5c07231299b480d28c8df498e588933c">  145</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t <a class="code hl_function" href="group__id.html#ga5c07231299b480d28c8df498e588933c">b2StoreShapeId</a>( <a class="code hl_struct" href="group__id.html#structb2_shape_id">b2ShapeId</a> <span class="keywordtype">id</span> )</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t b2StoreShapeId( <a class="code hl_struct" href="group__id.html#structb2_shape_id">b2ShapeId</a> <span class="keywordtype">id</span> )</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">return</span> ( (uint64_t)<span class="keywordtype">id</span>.index1 &lt;&lt; 32 ) | ( (uint64_t)<span class="keywordtype">id</span>.world0 ) &lt;&lt; 16 | (uint64_t)<span class="keywordtype">id</span>.generation;</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
-</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="group__id.html#ga6ab01ab53a4d6b87a0914efa275d7d62">  151</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_shape_id">b2ShapeId</a> <a class="code hl_function" href="group__id.html#ga6ab01ab53a4d6b87a0914efa275d7d62">b2LoadShapeId</a>( uint64_t x )</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_shape_id">b2ShapeId</a> b2LoadShapeId( uint64_t x )</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>{</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_struct" href="group__id.html#structb2_shape_id">b2ShapeId</a> <span class="keywordtype">id</span> = { (int32_t)( x &gt;&gt; 32 ), (uint16_t)( x &gt;&gt; 16 ), (uint16_t)( x ) };</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
-</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
-<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="group__id.html#ga9b838a7345770019b89750e408ba3d23">  158</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t <a class="code hl_function" href="group__id.html#ga9b838a7345770019b89750e408ba3d23">b2StoreChainId</a>( <a class="code hl_struct" href="group__id.html#structb2_chain_id">b2ChainId</a> <span class="keywordtype">id</span> )</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t b2StoreChainId( <a class="code hl_struct" href="group__id.html#structb2_chain_id">b2ChainId</a> <span class="keywordtype">id</span> )</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>{</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> ( (uint64_t)<span class="keywordtype">id</span>.index1 &lt;&lt; 32 ) | ( (uint64_t)<span class="keywordtype">id</span>.world0 ) &lt;&lt; 16 | (uint64_t)<span class="keywordtype">id</span>.generation;</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
-</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
-<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="group__id.html#ga81ae3d5afdf71280bcf724177ddc954d">  164</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_chain_id">b2ChainId</a> <a class="code hl_function" href="group__id.html#ga81ae3d5afdf71280bcf724177ddc954d">b2LoadChainId</a>( uint64_t x )</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_chain_id">b2ChainId</a> b2LoadChainId( uint64_t x )</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_struct" href="group__id.html#structb2_chain_id">b2ChainId</a> <span class="keywordtype">id</span> = { (int32_t)( x &gt;&gt; 32 ), (uint16_t)( x &gt;&gt; 16 ), (uint16_t)( x ) };</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
-</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span></div>
-<div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="group__id.html#ga7ec830b1528bbd0d43e5fa8e2fa2ea7a">  171</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t <a class="code hl_function" href="group__id.html#ga7ec830b1528bbd0d43e5fa8e2fa2ea7a">b2StoreJointId</a>( <a class="code hl_struct" href="group__id.html#structb2_joint_id">b2JointId</a> <span class="keywordtype">id</span> )</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t b2StoreJointId( <a class="code hl_struct" href="group__id.html#structb2_joint_id">b2JointId</a> <span class="keywordtype">id</span> )</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>{</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">return</span> ( (uint64_t)<span class="keywordtype">id</span>.index1 &lt;&lt; 32 ) | ( (uint64_t)<span class="keywordtype">id</span>.world0 ) &lt;&lt; 16 | (uint64_t)<span class="keywordtype">id</span>.generation;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}</div>
-</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
-<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="group__id.html#ga7604fcb5af8ca2f56a12dca8b521184f">  177</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_joint_id">b2JointId</a> <a class="code hl_function" href="group__id.html#ga7604fcb5af8ca2f56a12dca8b521184f">b2LoadJointId</a>( uint64_t x )</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_joint_id">b2JointId</a> b2LoadJointId( uint64_t x )</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>{</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_struct" href="group__id.html#structb2_joint_id">b2JointId</a> <span class="keywordtype">id</span> = { (int32_t)( x &gt;&gt; 32 ), (uint16_t)( x &gt;&gt; 16 ), (uint16_t)( x ) };</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>}</div>
-</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
-<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="group__id.html#gaeaf65e88adb7253d43a46fdfbc2665d2">  184</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="group__id.html#gaeaf65e88adb7253d43a46fdfbc2665d2">b2StoreContactId</a>( <a class="code hl_struct" href="group__id.html#structb2_contact_id">b2ContactId</a> <span class="keywordtype">id</span>, uint32_t values[3] )</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <span class="keywordtype">void</span> b2StoreContactId( <a class="code hl_struct" href="group__id.html#structb2_contact_id">b2ContactId</a> <span class="keywordtype">id</span>, uint32_t values[3] )</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>{</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    values[0] = (uint32_t)<span class="keywordtype">id</span>.index1;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    values[1] = (uint32_t)<span class="keywordtype">id</span>.world0;</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    values[2] = (uint32_t)<span class="keywordtype">id</span>.generation;</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
-</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
-<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="group__id.html#gabb6325e86081e0e12aae4e74665c4893">  192</a></span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_contact_id">b2ContactId</a> <a class="code hl_function" href="group__id.html#gabb6325e86081e0e12aae4e74665c4893">b2LoadContactId</a>( uint32_t values[3] )</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><a class="code hl_define" href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="code hl_struct" href="group__id.html#structb2_contact_id">b2ContactId</a> b2LoadContactId( uint32_t values[3] )</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>{</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_struct" href="group__id.html#structb2_contact_id">b2ContactId</a> id;</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">id</span>.index1 = (int32_t)values[0];</div>
@@ -274,22 +251,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('id_8h_source.h
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">id</span>.generation = (uint32_t)values[2];</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">return</span> id;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
-</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span></div>
 <div class="ttc" id="agroup__id_html_ga04272bd688f0ee4c8943ea7e50cfee89"><div class="ttname"><a href="group__id.html#ga04272bd688f0ee4c8943ea7e50cfee89">B2_NULL_ID</a></div><div class="ttdeci">#define B2_NULL_ID</div><div class="ttdoc">A null id. Works for any id type.</div><div class="ttdef"><b>Definition</b> id.h:93</div></div>
-<div class="ttc" id="agroup__id_html_ga5c07231299b480d28c8df498e588933c"><div class="ttname"><a href="group__id.html#ga5c07231299b480d28c8df498e588933c">b2StoreShapeId</a></div><div class="ttdeci">B2_ID_INLINE uint64_t b2StoreShapeId(b2ShapeId id)</div><div class="ttdoc">Store a shape id into a uint64_t.</div><div class="ttdef"><b>Definition</b> id.h:145</div></div>
-<div class="ttc" id="agroup__id_html_ga62e960201450510eacde330f5d1e3595"><div class="ttname"><a href="group__id.html#ga62e960201450510eacde330f5d1e3595">b2StoreBodyId</a></div><div class="ttdeci">B2_ID_INLINE uint64_t b2StoreBodyId(b2BodyId id)</div><div class="ttdoc">Store a body id into a uint64_t.</div><div class="ttdef"><b>Definition</b> id.h:132</div></div>
-<div class="ttc" id="agroup__id_html_ga6ab01ab53a4d6b87a0914efa275d7d62"><div class="ttname"><a href="group__id.html#ga6ab01ab53a4d6b87a0914efa275d7d62">b2LoadShapeId</a></div><div class="ttdeci">B2_ID_INLINE b2ShapeId b2LoadShapeId(uint64_t x)</div><div class="ttdoc">Load a uint64_t into a shape id.</div><div class="ttdef"><b>Definition</b> id.h:151</div></div>
-<div class="ttc" id="agroup__id_html_ga7604fcb5af8ca2f56a12dca8b521184f"><div class="ttname"><a href="group__id.html#ga7604fcb5af8ca2f56a12dca8b521184f">b2LoadJointId</a></div><div class="ttdeci">B2_ID_INLINE b2JointId b2LoadJointId(uint64_t x)</div><div class="ttdoc">Load a uint64_t into a joint id.</div><div class="ttdef"><b>Definition</b> id.h:177</div></div>
-<div class="ttc" id="agroup__id_html_ga7c8a835721ef12da5bbafcc5833f2297"><div class="ttname"><a href="group__id.html#ga7c8a835721ef12da5bbafcc5833f2297">b2StoreWorldId</a></div><div class="ttdeci">B2_ID_INLINE uint32_t b2StoreWorldId(b2WorldId id)</div><div class="ttdoc">Store a world id into a uint32_t.</div><div class="ttdef"><b>Definition</b> id.h:119</div></div>
-<div class="ttc" id="agroup__id_html_ga7ec830b1528bbd0d43e5fa8e2fa2ea7a"><div class="ttname"><a href="group__id.html#ga7ec830b1528bbd0d43e5fa8e2fa2ea7a">b2StoreJointId</a></div><div class="ttdeci">B2_ID_INLINE uint64_t b2StoreJointId(b2JointId id)</div><div class="ttdoc">Store a joint id into a uint64_t.</div><div class="ttdef"><b>Definition</b> id.h:171</div></div>
-<div class="ttc" id="agroup__id_html_ga81ae3d5afdf71280bcf724177ddc954d"><div class="ttname"><a href="group__id.html#ga81ae3d5afdf71280bcf724177ddc954d">b2LoadChainId</a></div><div class="ttdeci">B2_ID_INLINE b2ChainId b2LoadChainId(uint64_t x)</div><div class="ttdoc">Load a uint64_t into a chain id.</div><div class="ttdef"><b>Definition</b> id.h:164</div></div>
-<div class="ttc" id="agroup__id_html_ga9b838a7345770019b89750e408ba3d23"><div class="ttname"><a href="group__id.html#ga9b838a7345770019b89750e408ba3d23">b2StoreChainId</a></div><div class="ttdeci">B2_ID_INLINE uint64_t b2StoreChainId(b2ChainId id)</div><div class="ttdoc">Store a chain id into a uint64_t.</div><div class="ttdef"><b>Definition</b> id.h:158</div></div>
 <div class="ttc" id="agroup__id_html_gaa572f4330cdc08f6bd27816ba3d3ac17"><div class="ttname"><a href="group__id.html#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a></div><div class="ttdeci">#define B2_ID_INLINE</div><div class="ttdoc">Inline function.</div><div class="ttdef"><b>Definition</b> id.h:95</div></div>
-<div class="ttc" id="agroup__id_html_gabb6325e86081e0e12aae4e74665c4893"><div class="ttname"><a href="group__id.html#gabb6325e86081e0e12aae4e74665c4893">b2LoadContactId</a></div><div class="ttdeci">B2_ID_INLINE b2ContactId b2LoadContactId(uint32_t values[3])</div><div class="ttdoc">Load a contact id.</div><div class="ttdef"><b>Definition</b> id.h:192</div></div>
-<div class="ttc" id="agroup__id_html_gae0bdb018fe8b832aeb09b753fce9acd2"><div class="ttname"><a href="group__id.html#gae0bdb018fe8b832aeb09b753fce9acd2">b2LoadWorldId</a></div><div class="ttdeci">B2_ID_INLINE b2WorldId b2LoadWorldId(uint32_t x)</div><div class="ttdoc">Load a uint32_t into a world id.</div><div class="ttdef"><b>Definition</b> id.h:125</div></div>
-<div class="ttc" id="agroup__id_html_gaeaf65e88adb7253d43a46fdfbc2665d2"><div class="ttname"><a href="group__id.html#gaeaf65e88adb7253d43a46fdfbc2665d2">b2StoreContactId</a></div><div class="ttdeci">B2_ID_INLINE void b2StoreContactId(b2ContactId id, uint32_t values[3])</div><div class="ttdoc">Store a contact id.</div><div class="ttdef"><b>Definition</b> id.h:184</div></div>
-<div class="ttc" id="agroup__id_html_gaf188cb0902a41def8649864fecd7ac35"><div class="ttname"><a href="group__id.html#gaf188cb0902a41def8649864fecd7ac35">b2LoadBodyId</a></div><div class="ttdeci">B2_ID_INLINE b2BodyId b2LoadBodyId(uint64_t x)</div><div class="ttdoc">Load a uint64_t into a body id.</div><div class="ttdef"><b>Definition</b> id.h:138</div></div>
 <div class="ttc" id="agroup__id_html_structb2_body_id"><div class="ttname"><a href="group__id.html#structb2_body_id">b2BodyId</a></div><div class="ttdoc">Body id references a body instance. This should be treated as an opaque handle.</div><div class="ttdef"><b>Definition</b> id.h:46</div></div>
 <div class="ttc" id="agroup__id_html_structb2_chain_id"><div class="ttname"><a href="group__id.html#structb2_chain_id">b2ChainId</a></div><div class="ttdoc">Chain id references a chain instance. This should be treated as an opaque handle.</div><div class="ttdef"><b>Definition</b> id.h:62</div></div>
 <div class="ttc" id="agroup__id_html_structb2_contact_id"><div class="ttname"><a href="group__id.html#structb2_contact_id">b2ContactId</a></div><div class="ttdoc">Contact id references a contact instance. This should be treated as an opaque handle.</div><div class="ttdef"><b>Definition</b> id.h:78</div></div>

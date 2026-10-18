@@ -5,7 +5,7 @@ var searchData=
   ['c2_2',['c2',['../group__distance.html#a561466c67626619e5b8440043182fa46',1,'b2Sweep']]],
   ['canencroach_3',['canEncroach',['../group__geometry.html#a34b9ccf638bb00a292c06a513697779b',1,'b2ShapeCastInput::canEncroach'],['../group__distance.html#a6fff2ddf9eb1f247c1e7feb319a3ec5d',1,'b2ShapeCastPairInput::canEncroach']]],
   ['capacity_4',['capacity',['../group__world.html#ad503107b2f7392c34e683b7a8b70d1a8',1,'b2WorldDef']]],
-  ['categorybits_5',['categoryBits',['../group__tree.html#a47f85e7e48fdec053ad7ce4f06d8085c',1,'b2TreeProxy::categoryBits'],['../group__shape.html#aa93b718a9aecd5c5c9a05708860c8f2c',1,'b2Filter::categoryBits'],['../group__shape.html#ae6ab473dc0dd363830394c899a50bbde',1,'b2QueryFilter::categoryBits']]],
+  ['categorybits_5',['categoryBits',['../group__shape.html#aa93b718a9aecd5c5c9a05708860c8f2c',1,'b2Filter::categoryBits'],['../group__shape.html#ae6ab473dc0dd363830394c899a50bbde',1,'b2QueryFilter::categoryBits']]],
   ['center_6',['center',['../group__geometry.html#a1d59bebc7030c4dded0c2febc57ebdd7',1,'b2MassData::center'],['../group__geometry.html#aa919960819f321a014ef46beafe2e3d0',1,'b2Circle::center']]],
   ['center1_7',['center1',['../group__geometry.html#a825009725db4bb7af7da39cb2f9ea766',1,'b2Capsule']]],
   ['center2_8',['center2',['../group__geometry.html#a053ceb3737252925b71660efc43d0978',1,'b2Capsule']]],

@@ -97,8 +97,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__id.html
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">Ids </div></div>
 </div><!--header-->
 <div class="contents">
@@ -135,45 +134,6 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga03e01c7edcf0e9fd00bdfeda812dc715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to determine if any id is non-null.  <br /></td></tr>
 <tr class="memitem:ga757f40080dd2997c5f80e7b68e2b0cf9" id="r_ga757f40080dd2997c5f80e7b68e2b0cf9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga757f40080dd2997c5f80e7b68e2b0cf9">B2_ID_EQUALS</a>(id1,  id2)</td></tr>
 <tr class="memdesc:ga757f40080dd2997c5f80e7b68e2b0cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two ids for equality. Doesn't work for <a class="el" href="#structb2_world_id" title="World id references a world instance. This should be treated as an opaque handle.">b2WorldId</a>. Don't mix types.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga7c8a835721ef12da5bbafcc5833f2297" id="r_ga7c8a835721ef12da5bbafcc5833f2297"><td class="memItemLeft"><a id="ga7c8a835721ef12da5bbafcc5833f2297" name="ga7c8a835721ef12da5bbafcc5833f2297"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint32_t&#160;</td><td class="memItemRight"><b>b2StoreWorldId</b> (<a class="el" href="#structb2_world_id">b2WorldId</a> id)</td></tr>
-<tr class="memdesc:ga7c8a835721ef12da5bbafcc5833f2297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a world id into a uint32_t. <br /></td></tr>
-<tr class="memitem:gae0bdb018fe8b832aeb09b753fce9acd2" id="r_gae0bdb018fe8b832aeb09b753fce9acd2"><td class="memItemLeft"><a id="gae0bdb018fe8b832aeb09b753fce9acd2" name="gae0bdb018fe8b832aeb09b753fce9acd2"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="el" href="#structb2_world_id">b2WorldId</a>&#160;</td><td class="memItemRight"><b>b2LoadWorldId</b> (uint32_t x)</td></tr>
-<tr class="memdesc:gae0bdb018fe8b832aeb09b753fce9acd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a uint32_t into a world id. <br /></td></tr>
-<tr class="memitem:ga62e960201450510eacde330f5d1e3595" id="r_ga62e960201450510eacde330f5d1e3595"><td class="memItemLeft"><a id="ga62e960201450510eacde330f5d1e3595" name="ga62e960201450510eacde330f5d1e3595"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t&#160;</td><td class="memItemRight"><b>b2StoreBodyId</b> (<a class="el" href="#structb2_body_id">b2BodyId</a> id)</td></tr>
-<tr class="memdesc:ga62e960201450510eacde330f5d1e3595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a body id into a uint64_t. <br /></td></tr>
-<tr class="memitem:gaf188cb0902a41def8649864fecd7ac35" id="r_gaf188cb0902a41def8649864fecd7ac35"><td class="memItemLeft"><a id="gaf188cb0902a41def8649864fecd7ac35" name="gaf188cb0902a41def8649864fecd7ac35"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="el" href="#structb2_body_id">b2BodyId</a>&#160;</td><td class="memItemRight"><b>b2LoadBodyId</b> (uint64_t x)</td></tr>
-<tr class="memdesc:gaf188cb0902a41def8649864fecd7ac35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a uint64_t into a body id. <br /></td></tr>
-<tr class="memitem:ga5c07231299b480d28c8df498e588933c" id="r_ga5c07231299b480d28c8df498e588933c"><td class="memItemLeft"><a id="ga5c07231299b480d28c8df498e588933c" name="ga5c07231299b480d28c8df498e588933c"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t&#160;</td><td class="memItemRight"><b>b2StoreShapeId</b> (<a class="el" href="#structb2_shape_id">b2ShapeId</a> id)</td></tr>
-<tr class="memdesc:ga5c07231299b480d28c8df498e588933c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a shape id into a uint64_t. <br /></td></tr>
-<tr class="memitem:ga6ab01ab53a4d6b87a0914efa275d7d62" id="r_ga6ab01ab53a4d6b87a0914efa275d7d62"><td class="memItemLeft"><a id="ga6ab01ab53a4d6b87a0914efa275d7d62" name="ga6ab01ab53a4d6b87a0914efa275d7d62"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="el" href="#structb2_shape_id">b2ShapeId</a>&#160;</td><td class="memItemRight"><b>b2LoadShapeId</b> (uint64_t x)</td></tr>
-<tr class="memdesc:ga6ab01ab53a4d6b87a0914efa275d7d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a uint64_t into a shape id. <br /></td></tr>
-<tr class="memitem:ga9b838a7345770019b89750e408ba3d23" id="r_ga9b838a7345770019b89750e408ba3d23"><td class="memItemLeft"><a id="ga9b838a7345770019b89750e408ba3d23" name="ga9b838a7345770019b89750e408ba3d23"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t&#160;</td><td class="memItemRight"><b>b2StoreChainId</b> (<a class="el" href="#structb2_chain_id">b2ChainId</a> id)</td></tr>
-<tr class="memdesc:ga9b838a7345770019b89750e408ba3d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a chain id into a uint64_t. <br /></td></tr>
-<tr class="memitem:ga81ae3d5afdf71280bcf724177ddc954d" id="r_ga81ae3d5afdf71280bcf724177ddc954d"><td class="memItemLeft"><a id="ga81ae3d5afdf71280bcf724177ddc954d" name="ga81ae3d5afdf71280bcf724177ddc954d"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="el" href="#structb2_chain_id">b2ChainId</a>&#160;</td><td class="memItemRight"><b>b2LoadChainId</b> (uint64_t x)</td></tr>
-<tr class="memdesc:ga81ae3d5afdf71280bcf724177ddc954d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a uint64_t into a chain id. <br /></td></tr>
-<tr class="memitem:ga7ec830b1528bbd0d43e5fa8e2fa2ea7a" id="r_ga7ec830b1528bbd0d43e5fa8e2fa2ea7a"><td class="memItemLeft"><a id="ga7ec830b1528bbd0d43e5fa8e2fa2ea7a" name="ga7ec830b1528bbd0d43e5fa8e2fa2ea7a"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> uint64_t&#160;</td><td class="memItemRight"><b>b2StoreJointId</b> (<a class="el" href="#structb2_joint_id">b2JointId</a> id)</td></tr>
-<tr class="memdesc:ga7ec830b1528bbd0d43e5fa8e2fa2ea7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a joint id into a uint64_t. <br /></td></tr>
-<tr class="memitem:ga7604fcb5af8ca2f56a12dca8b521184f" id="r_ga7604fcb5af8ca2f56a12dca8b521184f"><td class="memItemLeft"><a id="ga7604fcb5af8ca2f56a12dca8b521184f" name="ga7604fcb5af8ca2f56a12dca8b521184f"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="el" href="#structb2_joint_id">b2JointId</a>&#160;</td><td class="memItemRight"><b>b2LoadJointId</b> (uint64_t x)</td></tr>
-<tr class="memdesc:ga7604fcb5af8ca2f56a12dca8b521184f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a uint64_t into a joint id. <br /></td></tr>
-<tr class="memitem:gaeaf65e88adb7253d43a46fdfbc2665d2" id="r_gaeaf65e88adb7253d43a46fdfbc2665d2"><td class="memItemLeft"><a id="gaeaf65e88adb7253d43a46fdfbc2665d2" name="gaeaf65e88adb7253d43a46fdfbc2665d2"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> void&#160;</td><td class="memItemRight"><b>b2StoreContactId</b> (<a class="el" href="#structb2_contact_id">b2ContactId</a> id, uint32_t values[3])</td></tr>
-<tr class="memdesc:gaeaf65e88adb7253d43a46fdfbc2665d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a contact id. <br /></td></tr>
-<tr class="memitem:gabb6325e86081e0e12aae4e74665c4893" id="r_gabb6325e86081e0e12aae4e74665c4893"><td class="memItemLeft"><a id="gabb6325e86081e0e12aae4e74665c4893" name="gabb6325e86081e0e12aae4e74665c4893"></a>
-<a class="el" href="#gaa572f4330cdc08f6bd27816ba3d3ac17">B2_ID_INLINE</a> <a class="el" href="#structb2_contact_id">b2ContactId</a>&#160;</td><td class="memItemRight"><b>b2LoadContactId</b> (uint32_t values[3])</td></tr>
-<tr class="memdesc:gabb6325e86081e0e12aae4e74665c4893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a contact id. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>These ids serve as handles to internal Box2D objects. </p>

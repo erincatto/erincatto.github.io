@@ -7,14 +7,12 @@ var searchData=
   ['shapeid_4',['shapeId',['../group__world.html#afce3c934c21a8986fae0f6407630d907',1,'b2RayResult::shapeId'],['../group__replay.html#abf2a2d440c453ff2fa90a03aa6acdc0f',1,'b2ReplayQueryInfo::shapeId'],['../group__replay.html#a12c47922a779d0348752d03ef19a78f3',1,'b2ReplayQueryHit::shapeId']]],
   ['shapeida_5',['shapeIdA',['../group__events.html#a70c5d8f83f532cfcb024631384a8e543',1,'b2ContactBeginTouchEvent::shapeIdA'],['../group__events.html#a9f500db2317884404aa59c595bfdda64',1,'b2ContactEndTouchEvent::shapeIdA'],['../group__events.html#ae4d65939a5083ed7e1a6a96c043c6c9b',1,'b2ContactHitEvent::shapeIdA'],['../group__contact.html#a876df41f15c59e50e2786383acb38ff2',1,'b2ContactData::shapeIdA']]],
   ['shapeidb_6',['shapeIdB',['../group__events.html#a98ad1be4cc3ce2f1b50043b191a6c3ee',1,'b2ContactBeginTouchEvent::shapeIdB'],['../group__events.html#a4daaecc94e891b42f01a10a9c10f7bbb',1,'b2ContactEndTouchEvent::shapeIdB'],['../group__events.html#acf7d56fe5579c84448521f1442fafe43',1,'b2ContactHitEvent::shapeIdB'],['../group__contact.html#a48fe9b8ef08777052a5e2f768fca86ed',1,'b2ContactData::shapeIdB']]],
-  ['shapeindex_7',['shapeIndex',['../group__tree.html#a459322e4bbb7ad59769a05c6128fb710',1,'b2TreeNode::[union].__unnamed0__']]],
-  ['simplexcount_8',['simplexCount',['../group__distance.html#ada4d7802fc3cea9356b0688d75f85cde',1,'b2DistanceOutput']]],
-  ['sleepthreshold_9',['sleepThreshold',['../group__body.html#a078ce783719154d2ca6c2ddae3dd7ef4',1,'b2BodyDef']]],
-  ['state_10',['state',['../group__distance.html#ac163015765f61af9a36a1ad32ce392e5',1,'b2TOIOutput']]],
-  ['staticbodycount_11',['staticBodyCount',['../group__world.html#acd5a4c80c46c11a4b50c62f7a055651b',1,'b2Capacity']]],
-  ['staticshapecount_12',['staticShapeCount',['../group__world.html#a12cfe2e106022a5fc5b03671a3b0d6d9',1,'b2Capacity']]],
-  ['substepcount_13',['subStepCount',['../group__replay.html#ae8478e402426f3bd6bd119958a6800d6',1,'b2ReplayInfo']]],
-  ['swapnodes_14',['swapNodes',['../group__tree.html#ad794f165faff595357153256c7a6e34f',1,'b2DynamicTree']]],
-  ['sweepa_15',['sweepA',['../group__distance.html#adf63a4b9969aa839c2d520bf6d76148a',1,'b2TOIInput']]],
-  ['sweepb_16',['sweepB',['../group__distance.html#af506b6adc7eca852f08460ec76c7b9a7',1,'b2TOIInput']]]
+  ['simplexcount_7',['simplexCount',['../group__distance.html#ada4d7802fc3cea9356b0688d75f85cde',1,'b2DistanceOutput']]],
+  ['sleepthreshold_8',['sleepThreshold',['../group__body.html#a078ce783719154d2ca6c2ddae3dd7ef4',1,'b2BodyDef']]],
+  ['state_9',['state',['../group__distance.html#ac163015765f61af9a36a1ad32ce392e5',1,'b2TOIOutput']]],
+  ['staticbodycount_10',['staticBodyCount',['../group__world.html#acd5a4c80c46c11a4b50c62f7a055651b',1,'b2Capacity']]],
+  ['staticshapecount_11',['staticShapeCount',['../group__world.html#a12cfe2e106022a5fc5b03671a3b0d6d9',1,'b2Capacity']]],
+  ['substepcount_12',['subStepCount',['../group__replay.html#ae8478e402426f3bd6bd119958a6800d6',1,'b2ReplayInfo']]],
+  ['sweepa_13',['sweepA',['../group__distance.html#adf63a4b9969aa839c2d520bf6d76148a',1,'b2TOIInput']]],
+  ['sweepb_14',['sweepB',['../group__distance.html#af506b6adc7eca852f08460ec76c7b9a7',1,'b2TOIInput']]]
 ];

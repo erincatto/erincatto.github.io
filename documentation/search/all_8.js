@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['games_0',['Making games',['../md_questions.html#autotoc_md67',1,'']]],
-  ['geometric_20mover_1',['Geometric mover',['../md_character.html#autotoc_md52',1,'']]],
-  ['geometric_20queries_2',['Geometric queries',['../md_collision.html#autotoc_md25',1,'']]],
-  ['geometry_3',['Geometry',['../group__geometry.html',1,'']]],
-  ['get_20help_4',['How do I get help?',['../md_questions.html#autotoc_md60',1,'']]],
-  ['ghost1_5',['ghost1',['../group__geometry.html#adffaa0a1815473f0cb47c490c75bcf2a',1,'b2ChainSegment::ghost1'],['../group__chain.html#a6afcdc56e453772079bade00eac08d70',1,'b2ChainDef::ghost1']]],
-  ['ghost2_6',['ghost2',['../group__geometry.html#ac48f2bfcaa0a8922da1a9819c02e6180',1,'b2ChainSegment::ghost2'],['../group__chain.html#ad2132d89eef6204dcc12eafc456832b1',1,'b2ChainDef::ghost2']]],
-  ['gravity_7',['gravity',['../group__world.html#a9152b6fd416622e7f00ba0bac86508dd',1,'b2WorldDef']]],
-  ['gravityscale_8',['gravityScale',['../group__body.html#ac9e6956338f4bd35c162bf1ac8deddd6',1,'b2BodyDef']]],
-  ['ground_20box_9',['Creating a ground box',['../hello.html#autotoc_md10',1,'']]],
-  ['groupindex_10',['groupIndex',['../group__shape.html#a088d78964113bf9236f600631c6d5934',1,'b2Filter']]]
+  ['hello_20box2d_0',['Hello Box2D',['../hello.html',1,'']]],
+  ['help_1',['How do I get help?',['../md_questions.html#autotoc_md60',1,'']]],
+  ['hertz_2',['hertz',['../group__distance__joint.html#ae8b1bf0b2a9d447e940a59f342e8dcfb',1,'b2DistanceJointDef::hertz'],['../group__pogo__joint.html#a03fe22ceb67869e21cdc0a1590b071c1',1,'b2PogoJointDef::hertz'],['../group__prismatic__joint.html#ab63dad8adcaa62bcaccc8ff500709656',1,'b2PrismaticJointDef::hertz'],['../group__revolute__joint.html#aa60da822544123d5cb77e2b38b934837',1,'b2RevoluteJointDef::hertz'],['../group__wheel__joint.html#a31c073abd038a1b4e707edfae4f5f8c9',1,'b2WheelJointDef::hertz']]],
+  ['hit_3',['hit',['../group__geometry.html#a45767f486cf22b7fa774202a904dff45',1,'b2CastOutput::hit'],['../group__character.html#a9132c6cf7b28cda542596ae47fc7f370',1,'b2PlaneResult::hit'],['../group__world.html#adc4afe94c61933845189ceeeb89c9b9c',1,'b2RayResult::hit']]],
+  ['hitcount_4',['hitCount',['../group__events.html#a1faa3caeb5851df278c028d759e25a7b',1,'b2ContactEvents::hitCount'],['../group__replay.html#a8e59185d51334f2f46effb013b474e99',1,'b2ReplayQueryInfo::hitCount']]],
+  ['hitevents_5',['hitEvents',['../group__events.html#a95c01c5482e19410e57af65d977606cf',1,'b2ContactEvents']]],
+  ['hiteventthreshold_6',['hitEventThreshold',['../group__world.html#a8fad064bf7a90119a4e4690b137afc4f',1,'b2WorldDef']]],
+  ['how_20do_20i_20get_20help_7',['How do I get help?',['../md_questions.html#autotoc_md60',1,'']]]
 ];

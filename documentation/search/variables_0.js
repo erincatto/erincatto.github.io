@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['a',['../group__distance.html#ad0dd97ab1c1be9cf427534bdbc6f8978',1,'b2SimplexVertex']]],
-  ['aabb_1',['aabb',['../structb2_tree_node.html#a798f1a594b33c713be45e76e79912239',1,'b2TreeNode::aabb'],['../group__replay.html#abe55e5d657db5328076f4373a8064304',1,'b2ReplayQueryInfo::aabb']]],
+  ['aabb_1',['aabb',['../group__replay.html#abe55e5d657db5328076f4373a8064304',1,'b2ReplayQueryInfo']]],
   ['allowfastrotation_2',['allowFastRotation',['../group__body.html#a7b32902be3a382ae46fcf2bb4e742825',1,'b2BodyDef']]],
   ['anchora_3',['anchorA',['../group__collision.html#a51c2f8440a0331a4a580cffe6c77f5b5',1,'b2ManifoldPoint']]],
   ['anchorb_4',['anchorB',['../group__collision.html#a939210078653e6269de2599310107572',1,'b2ManifoldPoint']]],

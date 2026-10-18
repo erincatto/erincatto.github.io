@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['joint_0',['Joint',['../group__distance__joint.html',1,'Distance Joint'],['../group__filter__joint.html',1,'Filter Joint'],['../group__joint.html',1,'Joint'],['../group__motor__joint.html',1,'Motor Joint'],['../group__mover__joint.html',1,'Mover Joint'],['../group__pogo__joint.html',1,'Pogo Joint'],['../group__prismatic__joint.html',1,'Prismatic Joint'],['../group__revolute__joint.html',1,'Revolute Joint'],['../group__weld__joint.html',1,'Weld Joint'],['../group__wheel__joint.html',1,'Wheel Joint']]],
-  ['jointevents_1',['jointEvents',['../group__events.html#a83ddd7019b2184eea548cfe5808fd615',1,'b2JointEvents']]],
-  ['jointid_2',['jointId',['../group__events.html#aedbc0d77a6c803274b8cf36cce22462c',1,'b2JointEvent']]],
-  ['joints_3',['Joints',['../md_simulation.html#autotoc_md33',1,'']]],
-  ['jointscale_4',['jointScale',['../structb2_debug_draw.html#a5025ca7cf1f5e2f2736c16a225346d2e',1,'b2DebugDraw']]]
+  ['large_20world_20support_0',['Enabling large world support',['../large-worlds.html#autotoc_md46',1,'']]],
+  ['large_20worlds_1',['Large Worlds',['../large-worlds.html',1,'']]],
+  ['leafvisits_2',['leafVisits',['../group__tree.html#a1924201b28551255701196675f33659a',1,'b2TreeStats::leafVisits'],['../group__world.html#a9e03fe4622851e93843bc3d5f5d9bf50',1,'b2RayResult::leafVisits']]],
+  ['length_3',['length',['../group__distance__joint.html#a001acbbd67326ab5e5d5ec6dc64faf78',1,'b2DistanceJointDef']]],
+  ['length_20units_4',['Changing the length units',['../index.html#autotoc_md7',1,'']]],
+  ['lengthscale_5',['lengthScale',['../group__replay.html#a36ab3e3ee33f3e7f00c8c5aa40f639ba',1,'b2ReplayInfo']]],
+  ['limitations_6',['Limitations',['../md_loose__ends.html#autotoc_md40',1,'Limitations'],['../recording.html#autotoc_md45',1,'Limitations']]],
+  ['lineardamping_7',['linearDamping',['../group__body.html#a973e312d5d95d2cd53c335ac3994d3ec',1,'b2BodyDef']]],
+  ['lineardampingratio_8',['linearDampingRatio',['../group__motor__joint.html#a613a53b9032d8ec8b27c1563cead6acb',1,'b2MotorJointDef::linearDampingRatio'],['../group__weld__joint.html#ad9f26c2040c564fdc6ff1ca59bca2545',1,'b2WeldJointDef::linearDampingRatio']]],
+  ['linearhertz_9',['linearHertz',['../group__motor__joint.html#a1b14c9d0512cd27394af0bbd770948bb',1,'b2MotorJointDef::linearHertz'],['../group__weld__joint.html#a2727858a639dc377213584b0c2750de5',1,'b2WeldJointDef::linearHertz']]],
+  ['linearvelocity_10',['linearVelocity',['../group__body.html#a25fa5aa78d93159c344241af95bec2bf',1,'b2BodyDef::linearVelocity'],['../group__motor__joint.html#ad56d239d4184c072602e9a80d00df911',1,'b2MotorJointDef::linearVelocity'],['../group__mover__joint.html#a84825b230764b803f62d652905e935af',1,'b2MoverJointDef::linearVelocity']]],
+  ['linearx_11',['linearX',['../group__body.html#a04f3ccfbacf77953d4f31a2c5673992d',1,'b2MotionLocks']]],
+  ['lineary_12',['linearY',['../group__body.html#abf0cbc6fb4c17d422392013638befa88',1,'b2MotionLocks']]],
+  ['localcenter_13',['localCenter',['../group__distance.html#a4bcc302cf78771896d6256fc53f2f8be',1,'b2Sweep']]],
+  ['localframea_14',['localFrameA',['../group__joint.html#ada0f8fddb0e1fa292381acf7e928dd26',1,'b2JointDef']]],
+  ['localframeb_15',['localFrameB',['../group__joint.html#a08d615f0c98bd09d60e67934d47bfa55',1,'b2JointDef']]],
+  ['logging_16',['Logging',['../md_foundation.html#autotoc_md17',1,'']]],
+  ['loop_17',['Simulation loop',['../md_simulation.html#autotoc_md34',1,'']]],
+  ['loose_20ends_18',['Loose Ends',['../md_loose__ends.html',1,'']]],
+  ['lowerangle_19',['lowerAngle',['../group__revolute__joint.html#a27e17792157fff2aedcabb4b98d96f24',1,'b2RevoluteJointDef']]],
+  ['lowerspringforce_20',['lowerSpringForce',['../group__distance__joint.html#a80bec256e14771161af948175837355d',1,'b2DistanceJointDef']]],
+  ['lowertranslation_21',['lowerTranslation',['../group__prismatic__joint.html#a4ad5f83296c7be60f1b0ecd5a442f8dc',1,'b2PrismaticJointDef::lowerTranslation'],['../group__wheel__joint.html#a74d5dd6cf83e7984e599da98500fd949',1,'b2WheelJointDef::lowerTranslation']]]
 ];

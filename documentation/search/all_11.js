@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['q1_0',['q1',['../group__distance.html#a8fcaa714bea5f99ffcd8c9dcf45bb529',1,'b2Sweep']]],
-  ['q2_1',['q2',['../group__distance.html#a25b52d75f7fde5ca00c679bddce56957',1,'b2Sweep']]],
-  ['queries_2',['queries',['../md_collision.html#autotoc_md25',1,'Geometric queries'],['../md_simulation.html#spatial',1,'Spatial queries'],['../recording.html#autotoc_md44',1,'Spatial queries']]],
-  ['query_20origins_3',['Query origins',['../large-worlds.html#autotoc_md49',1,'']]]
+  ['radius_0',['radius',['../group__geometry.html#a1e0bfc60c8f6fed5392ea4fa9140734d',1,'b2ShapeProxy::radius'],['../group__geometry.html#a757d579fa23bd9090a1f5c52c37703ad',1,'b2Circle::radius'],['../group__geometry.html#ab3ce676ad6729815f57cbe4ee8e7a9f4',1,'b2Capsule::radius'],['../group__geometry.html#a8626cdffafaec82e0ec78d1e3626677f',1,'b2Polygon::radius'],['../group__world.html#ac13978e0b2590da62694bfdb4bf660c2',1,'b2ExplosionDef::radius']]],
+  ['range_1',['Operating range',['../large-worlds.html#autotoc_md48',1,'']]],
+  ['reading_2',['Further Reading',['../md_reading.html',1,'']]],
+  ['recording_3',['Recording',['../group__recording.html',1,'Recording'],['../recording.html#autotoc_md41',1,'Recording']]],
+  ['recording_4',['Viewing a recording',['../recording.html#autotoc_md42',1,'']]],
+  ['recording_20and_20replay_5',['Recording and Replay',['../recording.html',1,'']]],
+  ['recordings_20and_20snapshots_6',['Recordings and snapshots',['../large-worlds.html#autotoc_md50',1,'']]],
+  ['recycledcontactcount_7',['recycledContactCount',['../group__world.html#a3c1d67c53a323a63d8282ced30d622b2',1,'b2Counters']]],
+  ['release_20notes_8',['v3.2 Release Notes',['../md_release__notes__v320.html',1,'']]],
+  ['rendering_9',['Rendering',['../md_questions.html#autotoc_md65',1,'']]],
+  ['replay_10',['Replay',['../recording.html',1,'Recording and Replay'],['../group__replay.html',1,'Replay']]],
+  ['restitution_11',['restitution',['../group__shape.html#a212740e5c4394e8af31342d0398b51ad',1,'b2SurfaceMaterial']]],
+  ['restitutioncallback_12',['restitutionCallback',['../group__world.html#aadc34991871fe88eada54446c01078d3',1,'b2WorldDef']]],
+  ['restitutioniterations_13',['restitutionIterations',['../group__world.html#ada092a9602a1d9d75edbd77f1f8e7b87',1,'b2WorldDef']]],
+  ['restitutionthreshold_14',['restitutionThreshold',['../group__world.html#aac6834c8e6e29c0aba4ecaff28cf8195',1,'b2WorldDef']]],
+  ['restlength_15',['restLength',['../group__pogo__joint.html#a9b3ea93cb1a2f85c400c4543e5347e36',1,'b2PogoJointDef']]],
+  ['revision_16',['revision',['../group__base.html#abd9ba5666207f8055bdc8ad30ea60a85',1,'b2Version']]],
+  ['revolute_20joint_17',['Revolute Joint',['../group__revolute__joint.html',1,'']]],
+  ['rigid_20bodies_18',['Rigid bodies',['../md_simulation.html#autotoc_md30',1,'']]],
+  ['rollingimpulse_19',['rollingImpulse',['../group__collision.html#aeb67c8a6bba8d84337c9da07106294df',1,'b2Manifold']]],
+  ['rollingresistance_20',['rollingResistance',['../group__shape.html#accadaf1212f716bfb0da498fe0c4913f',1,'b2SurfaceMaterial']]],
+  ['rotation_21',['rotation',['../group__body.html#a73b6b262aaa294604bd92784d3acd474',1,'b2BodyDef']]],
+  ['rotationalinertia_22',['rotationalInertia',['../group__geometry.html#afef6d5063a10b4cf60ee3b2976544e07',1,'b2MassData']]]
 ];

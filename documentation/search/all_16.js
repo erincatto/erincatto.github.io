@@ -1,11 +1,16 @@
 var searchData=
 [
-  ['v3_0',['v3',['../group__distance.html#a75bc998a7f38f44c2f699c0f0fc85870',1,'b2Simplex']]],
-  ['v3_202_20release_20notes_1',['v3.2 Release Notes',['../md_release__notes__v320.html',1,'']]],
-  ['vector_20math_2',['Vector math',['../md_foundation.html#autotoc_md20',1,'']]],
-  ['velocity_3',['velocity',['../group__pogo__joint.html#a42b3d7f997fe5e82e4f45df692eaadca',1,'b2PogoJointDef']]],
-  ['version_4',['Version',['../md_foundation.html#autotoc_md18',1,'']]],
-  ['vertices_5',['vertices',['../group__geometry.html#ac9ee673bae4ff4d7b78b3419adbc3d0c',1,'b2Polygon']]],
-  ['viewing_20a_20recording_6',['Viewing a recording',['../recording.html#autotoc_md42',1,'']]],
-  ['visitorshapeid_7',['visitorShapeId',['../group__events.html#af698b66e2b4a1a7514376ea311ab9a66',1,'b2SensorBeginTouchEvent::visitorShapeId'],['../group__events.html#ac9141778f6331246ee9ea2248694ae3b',1,'b2SensorEndTouchEvent::visitorShapeId']]]
+  ['w_0',['w',['../group__distance.html#a32e374d7bbb6d8a0589a91bd3de3029f',1,'b2SimplexVertex']]],
+  ['wa_1',['wA',['../group__distance.html#a35098ec42d2615c7dc6d645e4a7c0674',1,'b2SimplexVertex']]],
+  ['wb_2',['wB',['../group__distance.html#a73d6b5be3648a293b103d559e9d03534',1,'b2SimplexVertex']]],
+  ['weld_20joint_3',['Weld Joint',['../group__weld__joint.html',1,'']]],
+  ['what_20is_20box2d_4',['What is Box2D?',['../md_questions.html#autotoc_md57',1,'']]],
+  ['wheel_20joint_5',['Wheel Joint',['../group__wheel__joint.html',1,'']]],
+  ['who_20makes_20it_6',['Who makes it?',['../md_questions.html#autotoc_md59',1,'']]],
+  ['workercount_7',['workerCount',['../group__world.html#aa7ae0e5c67b81b218378cc21a362f288',1,'b2WorldDef::workerCount'],['../group__replay.html#a4a2ba46ca7f1bbd5158a5afa8453944b',1,'b2ReplayInfo::workerCount']]],
+  ['world_8',['World',['../group__world.html',1,'World'],['../md_simulation.html#autotoc_md29',1,'World']]],
+  ['world_9',['world',['../hello.html#autotoc_md9',1,'Creating a world'],['../hello.html#autotoc_md12',1,'Simulating the world']]],
+  ['world_20support_10',['Enabling large world support',['../large-worlds.html#autotoc_md46',1,'']]],
+  ['worlds_11',['Large Worlds',['../large-worlds.html',1,'']]],
+  ['worlds_12',['Multithreading multiple worlds',['../md_foundation.html#autotoc_md21',1,'']]]
 ];
