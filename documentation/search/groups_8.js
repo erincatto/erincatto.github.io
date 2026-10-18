@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['math_0',['Math',['../group__math__cpp.html',1,'C++ Math'],['../group__math.html',1,'Math']]],
+  ['math_0',['Math',['../group__math.html',1,'']]],
   ['motor_20joint_1',['Motor Joint',['../group__motor__joint.html',1,'']]],
-  ['mouse_20joint_2',['Mouse Joint',['../group__mouse__joint.html',1,'']]],
-  ['mover_3',['Character mover',['../group__character.html',1,'']]]
+  ['mover_2',['Character mover',['../group__character.html',1,'']]],
+  ['mover_20joint_3',['Mover Joint',['../group__mover__joint.html',1,'']]]
 ];

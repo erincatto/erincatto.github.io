@@ -1,9 +1,27 @@
 var searchData=
 [
-  ['of_20impact_0',['Time of Impact',['../md_collision.html#autotoc_md45',1,'']]],
-  ['or_20link_1',['Why doesn&apos;t my code compile and/or link?',['../md_faq.html#autotoc_md159',1,'']]],
-  ['origin_2',['origin',['../group__geometry.html#a2cf529e4ce1598c24912cd3e9fc6eb19',1,'b2RayCastInput']]],
-  ['overlap_3',['Overlap',['../md_simulation.html#autotoc_md115',1,'AABB Overlap'],['../md_simulation.html#autotoc_md116',1,'Shape Overlap']]],
-  ['overlap_20queries_4',['Overlap Queries',['../md_simulation.html#autotoc_md113',1,'']]],
-  ['overview_5',['Overview',['../index.html',1,'']]]
+  ['radius_0',['radius',['../group__geometry.html#a1e0bfc60c8f6fed5392ea4fa9140734d',1,'b2ShapeProxy::radius'],['../group__geometry.html#a757d579fa23bd9090a1f5c52c37703ad',1,'b2Circle::radius'],['../group__geometry.html#ab3ce676ad6729815f57cbe4ee8e7a9f4',1,'b2Capsule::radius'],['../group__geometry.html#a8626cdffafaec82e0ec78d1e3626677f',1,'b2Polygon::radius'],['../group__world.html#ac13978e0b2590da62694bfdb4bf660c2',1,'b2ExplosionDef::radius']]],
+  ['range_1',['Operating range',['../large-worlds.html#autotoc_md48',1,'']]],
+  ['reading_2',['Further Reading',['../md_reading.html',1,'']]],
+  ['rebuildcapacity_3',['rebuildCapacity',['../group__tree.html#a69fe38e3ccdc1a09e51f5d280419759a',1,'b2DynamicTree']]],
+  ['recording_4',['Recording',['../group__recording.html',1,'Recording'],['../recording.html#autotoc_md41',1,'Recording']]],
+  ['recording_5',['Viewing a recording',['../recording.html#autotoc_md42',1,'']]],
+  ['recording_20and_20replay_6',['Recording and Replay',['../recording.html',1,'']]],
+  ['recordings_20and_20snapshots_7',['Recordings and snapshots',['../large-worlds.html#autotoc_md50',1,'']]],
+  ['recycledcontactcount_8',['recycledContactCount',['../group__world.html#a3c1d67c53a323a63d8282ced30d622b2',1,'b2Counters']]],
+  ['release_20notes_9',['v3.2 Release Notes',['../md_release__notes__v320.html',1,'']]],
+  ['rendering_10',['Rendering',['../md_questions.html#autotoc_md65',1,'']]],
+  ['replay_11',['Replay',['../recording.html',1,'Recording and Replay'],['../group__replay.html',1,'Replay']]],
+  ['restitution_12',['restitution',['../group__shape.html#a212740e5c4394e8af31342d0398b51ad',1,'b2SurfaceMaterial']]],
+  ['restitutioncallback_13',['restitutionCallback',['../group__world.html#aadc34991871fe88eada54446c01078d3',1,'b2WorldDef']]],
+  ['restitutioniterations_14',['restitutionIterations',['../group__world.html#ada092a9602a1d9d75edbd77f1f8e7b87',1,'b2WorldDef']]],
+  ['restitutionthreshold_15',['restitutionThreshold',['../group__world.html#aac6834c8e6e29c0aba4ecaff28cf8195',1,'b2WorldDef']]],
+  ['restlength_16',['restLength',['../group__pogo__joint.html#a9b3ea93cb1a2f85c400c4543e5347e36',1,'b2PogoJointDef']]],
+  ['revision_17',['revision',['../group__base.html#abd9ba5666207f8055bdc8ad30ea60a85',1,'b2Version']]],
+  ['revolute_20joint_18',['Revolute Joint',['../group__revolute__joint.html',1,'']]],
+  ['rigid_20bodies_19',['Rigid bodies',['../md_simulation.html#autotoc_md30',1,'']]],
+  ['rollingimpulse_20',['rollingImpulse',['../group__collision.html#aeb67c8a6bba8d84337c9da07106294df',1,'b2Manifold']]],
+  ['rollingresistance_21',['rollingResistance',['../group__shape.html#accadaf1212f716bfb0da498fe0c4913f',1,'b2SurfaceMaterial']]],
+  ['rotation_22',['rotation',['../group__body.html#a73b6b262aaa294604bd92784d3acd474',1,'b2BodyDef']]],
+  ['rotationalinertia_23',['rotationalInertia',['../group__geometry.html#afef6d5063a10b4cf60ee3b2976544e07',1,'b2MassData']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['migration_20guide_0',['Migration Guide',['../md_migration.html',1,'']]],
-  ['mover_1',['Character mover',['../md_character.html',1,'']]]
+  ['hello_20box2d_0',['Hello Box2D',['../hello.html',1,'']]],
+  ['help_1',['How do I get help?',['../md_questions.html#autotoc_md60',1,'']]],
+  ['how_20do_20i_20get_20help_2',['How do I get help?',['../md_questions.html#autotoc_md60',1,'']]]
 ];

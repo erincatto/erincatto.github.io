@@ -5,5 +5,5 @@ var group__shape_structb2_surface_material =
     [ "restitution", "group__shape.html#a212740e5c4394e8af31342d0398b51ad", null ],
     [ "rollingResistance", "group__shape.html#accadaf1212f716bfb0da498fe0c4913f", null ],
     [ "tangentSpeed", "group__shape.html#a001a2d803260dc612dc6935337ba0c9c", null ],
-    [ "userMaterialId", "group__shape.html#a3234fa407a5f7eaee5529512928896e0", null ]
+    [ "userMaterialId", "group__shape.html#a09a8a4a1c1280eeaf626e33013562ff2", null ]
 ];

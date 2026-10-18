@@ -15,8 +15,7 @@ var group__distance =
     [ "b2DistanceInput", "group__distance.html#structb2_distance_input", [
       [ "proxyA", "group__distance.html#ad6f5c65232b35d8f07eadaf048139247", null ],
       [ "proxyB", "group__distance.html#ad2d25633f64a8b08d94f899ca16567af", null ],
-      [ "transformA", "group__distance.html#a0889c2f7120ba521d6e40e2a22834ddb", null ],
-      [ "transformB", "group__distance.html#a47352d7c5b3db80b2fb8cf338f1c1895", null ],
+      [ "transform", "group__distance.html#a156706d374ed1ab4f6ddacd4ee53e572", null ],
       [ "useRadii", "group__distance.html#ab72a770be4a91997d00112409de5fea7", null ]
     ] ],
     [ "b2DistanceOutput", "group__distance.html#structb2_distance_output", [
@@ -44,8 +43,7 @@ var group__distance =
       [ "maxFraction", "group__distance.html#a55fa0e1d762b4903cc7ec899db794ae7", null ],
       [ "proxyA", "group__distance.html#ae436543506064fdfdd5bbec8ea0cc53e", null ],
       [ "proxyB", "group__distance.html#a32c1dc41af57af8e0d55b8c70f91e55c", null ],
-      [ "transformA", "group__distance.html#a65ae5c9349d646b5873c954a2393fa7b", null ],
-      [ "transformB", "group__distance.html#a8a553e9dd04fe767dc40fec3b436967b", null ],
+      [ "transform", "group__distance.html#a41da5dbf7c78127e27c05c5c78ab07ae", null ],
       [ "translationB", "group__distance.html#a7b63a53126ab4fa5fc627a77e4d127ab", null ]
     ] ],
     [ "b2Sweep", "group__distance.html#structb2_sweep", [
@@ -64,14 +62,16 @@ var group__distance =
     ] ],
     [ "b2TOIOutput", "group__distance.html#structb2_t_o_i_output", [
       [ "fraction", "group__distance.html#a21d14b31336a998dc69d6ca5de1af448", null ],
+      [ "normal", "group__distance.html#a0b5ae92852d10deb3cd887322a5c5520", null ],
+      [ "point", "group__distance.html#a614fdaa2c8108deffc931af5ca8ebad8", null ],
       [ "state", "group__distance.html#ac163015765f61af9a36a1ad32ce392e5", null ]
     ] ],
     [ "b2TOIState", "group__distance.html#ga6c633ed61237bf696a04a839c4213d85", null ],
+    [ "b2CastShape", "group__distance.html#ga0c4368eb8e3cc4499991a5c27381dd5d", null ],
+    [ "b2ComputeSegmentDistance", "group__distance.html#ga583f518ba1c544480cc76dd0373a5d14", null ],
+    [ "b2ComputeShapeDistance", "group__distance.html#ga0143fb6302dfa3c1955db76dd8fb251c", null ],
+    [ "b2ComputeTimeOfImpact", "group__distance.html#ga9eb1e4032a2c8c1b63e57d964d16f62b", null ],
     [ "b2GetSweepTransform", "group__distance.html#ga21ed2ab72afaf9dfcbeb6b72d21aeaa3", null ],
     [ "b2MakeOffsetProxy", "group__distance.html#gab8693e707c5041b61e0e051e7f33fa53", null ],
-    [ "b2MakeProxy", "group__distance.html#ga6f8ad971653ec8d13e7f8666b9f8e3bb", null ],
-    [ "b2SegmentDistance", "group__distance.html#ga01ce5ae3a29a436e19ded886074e0968", null ],
-    [ "b2ShapeCast", "group__distance.html#ga71e2e7028b67d243282f232537a811da", null ],
-    [ "b2ShapeDistance", "group__distance.html#ga21da902582731fbe7e38c1bdbad47d68", null ],
-    [ "b2TimeOfImpact", "group__distance.html#ga0d7b925f60608f2fb551c0cd755a4f58", null ]
+    [ "b2MakeProxy", "group__distance.html#ga6f8ad971653ec8d13e7f8666b9f8e3bb", null ]
 ];

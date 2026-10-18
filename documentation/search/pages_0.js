@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['1_20release_20notes_0',['v3.1 Release Notes',['../md_release__notes__v310.html',1,'']]]
+  ['2_20release_20notes_0',['v3.2 Release Notes',['../md_release__notes__v320.html',1,'']]]
 ];

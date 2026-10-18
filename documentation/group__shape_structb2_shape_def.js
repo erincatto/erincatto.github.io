@@ -2,6 +2,7 @@ var group__shape_structb2_shape_def =
 [
     [ "density", "group__shape.html#ab0ddf90317622a46ac9cb54e47342b54", null ],
     [ "enableContactEvents", "group__shape.html#a8a4ee544cccf26c2faacbbb5ba9f8d3c", null ],
+    [ "enableCustomFiltering", "group__shape.html#a664f86014465f4367962cf012f9ec345", null ],
     [ "enableHitEvents", "group__shape.html#aaff54dfba807092f20cb0ea1b0bbbfbf", null ],
     [ "enablePreSolveEvents", "group__shape.html#a5353edd5b5781b64a243795d5e485f70", null ],
     [ "enableSensorEvents", "group__shape.html#adf048879e1f6c0226fe5db754acdb350", null ],

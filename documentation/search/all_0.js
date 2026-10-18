@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['0_0',['Version 2.4 to Version 3.0',['../md_migration.html#autotoc_md174',1,'']]]
+  ['2_20release_20notes_0',['v3.2 Release Notes',['../md_release__notes__v320.html',1,'']]]
 ];
