@@ -6,8 +6,15 @@
     <description>Recent content on Box2D</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://box2d.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Box2D 3.2</title>
+      <link>https://box2d.org/posts/2026/10/box2d-3.2/</link>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://box2d.org/posts/2026/10/box2d-3.2/</guid>
+      <description>Version 3.1 was released about 18 months ago. I&amp;rsquo;ve been busy with Box3D and work, but I&amp;rsquo;ve managed to add a lot of cool stuff to Box2D. Also it has been heavily optimized and tested. Here I&amp;rsquo;ll cover the most interesting bits. The full details of changes are in the release notes.&#xA;Grab the new release at the repository.&#xA;Large world support I followed Jolt&amp;rsquo;s big world approach of using double-precision for body positions.</description>
+    </item>
     <item>
       <title>Contact Recycling</title>
       <link>https://box2d.org/posts/2026/10/contact-recycling/</link>
